@@ -25,15 +25,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>The time when the report was generated.</summary>
         public DateTimeOffset? GeneratedTime { get; set; }
-        /// <summary>The results of the Plaid Check score. For existing customers only; for new customers, the Plaid Check Score has been replaced by the LendScore, which can be obtained by calling `/cra/check_report/lend_score/get`.</summary>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PlaidCheckScore? PlaidCheckScore { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PlaidCheckScore PlaidCheckScore { get; set; }
-#endif
         /// <summary>The unique identifier associated with the report object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,7 +60,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "attributes", n => { Attributes = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CashflowAttributesSchema>(global::Soenneker.Plaid.OpenApiClient.Models.CashflowAttributesSchema.CreateFromDiscriminatorValue); } },
                 { "generated_time", n => { GeneratedTime = n.GetDateTimeOffsetValue(); } },
-                { "plaid_check_score", n => { PlaidCheckScore = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PlaidCheckScore>(global::Soenneker.Plaid.OpenApiClient.Models.PlaidCheckScore.CreateFromDiscriminatorValue); } },
                 { "report_id", n => { ReportId = n.GetStringValue(); } },
             };
         }
@@ -82,7 +72,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CashflowAttributesSchema>("attributes", Attributes);
             writer.WriteDateTimeOffsetValue("generated_time", GeneratedTime);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PlaidCheckScore>("plaid_check_score", PlaidCheckScore);
             writer.WriteStringValue("report_id", ReportId);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -107,15 +107,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string PhoneNumber { get; set; }
 #endif
-        /// <summary>This schema was for beta and is no longer populated.Insights relating to expenses and deposits that are predicted to occur on a scheduled basis, such as biweekly, monthly, or annually.Common examples include loan payments, bill payments, subscriptions, and payroll income.This is a beta field, available to all users.</summary>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.Recurrence? Recurrence { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Plaid.OpenApiClient.Models.Recurrence Recurrence { get; set; }
-#endif
         /// <summary>The website associated with this transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -161,7 +152,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "personal_finance_category", n => { PersonalFinanceCategory = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory>(global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory.CreateFromDiscriminatorValue); } },
                 { "personal_finance_category_icon_url", n => { PersonalFinanceCategoryIconUrl = n.GetStringValue(); } },
                 { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
-                { "recurrence", n => { Recurrence = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Recurrence>(global::Soenneker.Plaid.OpenApiClient.Models.Recurrence.CreateFromDiscriminatorValue); } },
                 { "website", n => { Website = n.GetStringValue(); } },
             };
         }
@@ -184,7 +174,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory>("personal_finance_category", PersonalFinanceCategory);
             writer.WriteStringValue("personal_finance_category_icon_url", PersonalFinanceCategoryIconUrl);
             writer.WriteStringValue("phone_number", PhoneNumber);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Recurrence>("recurrence", Recurrence);
             writer.WriteStringValue("website", Website);
             writer.WriteAdditionalData(AdditionalData);
         }

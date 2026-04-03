@@ -43,6 +43,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning disable CS1591
         EducationSavingsAccount,
         #pragma warning restore CS1591
+        [EnumMember(Value = "fhsa")]
+        #pragma warning disable CS1591
+        Fhsa,
+        #pragma warning restore CS1591
         [EnumMember(Value = "fixed annuity")]
         #pragma warning disable CS1591
         FixedAnnuity,
@@ -78,6 +82,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         [EnumMember(Value = "life insurance")]
         #pragma warning disable CS1591
         LifeInsurance,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "line of credit")]
+        #pragma warning disable CS1591
+        LineOfCredit,
         #pragma warning restore CS1591
         [EnumMember(Value = "lira")]
         #pragma warning disable CS1591
@@ -155,6 +163,26 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning disable CS1591
         Roth401k,
         #pragma warning restore CS1591
+        [EnumMember(Value = "roth 403B")]
+        #pragma warning disable CS1591
+        Roth403B,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "roth 457b")]
+        #pragma warning disable CS1591
+        Roth457b,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "roth pension")]
+        #pragma warning disable CS1591
+        RothPension,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "roth profit sharing plan")]
+        #pragma warning disable CS1591
+        RothProfitSharingPlan,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "roth thrift savings plan")]
+        #pragma warning disable CS1591
+        RothThriftSavingsPlan,
+        #pragma warning restore CS1591
         [EnumMember(Value = "rrif")]
         #pragma warning disable CS1591
         Rrif,
@@ -182,6 +210,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         [EnumMember(Value = "stock plan")]
         #pragma warning disable CS1591
         StockPlan,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "thrift savings plan")]
+        #pragma warning disable CS1591
+        ThriftSavingsPlan,
         #pragma warning restore CS1591
         [EnumMember(Value = "tfsa")]
         #pragma warning disable CS1591

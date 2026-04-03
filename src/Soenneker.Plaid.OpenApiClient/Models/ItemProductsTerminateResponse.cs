@@ -8,48 +8,37 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// The results of the Plaid Check score. For existing customers only; for new customers, the Plaid Check Score has been replaced by the LendScore, which can be obtained by calling `/cra/check_report/lend_score/get`.
+    /// ItemProductsTerminateResponse defines the response schema for `/item/products/terminate`
     /// </summary>
-    [Obsolete("")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PlaidCheckScore : IAdditionalDataHolder, IParsable
+    public partial class ItemProductsTerminateResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Human-readable description of why the score could not be computed.</summary>
+        /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorReason { get; set; }
+        public string? RequestId { get; set; }
 #nullable restore
 #else
-        public string ErrorReason { get; set; }
+        public string RequestId { get; set; }
 #endif
-        /// <summary>The reasons for an individual having risk according to the Plaid Check score.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? ReasonCodes { get; set; }
-#nullable restore
-#else
-        public List<string> ReasonCodes { get; set; }
-#endif
-        /// <summary>The score returned by the Plaid Check Score model. Will be an integer in the range 1 to 99.</summary>
-        public int? Score { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PlaidCheckScore"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ItemProductsTerminateResponse"/> and sets the default values.
         /// </summary>
-        public PlaidCheckScore()
+        public ItemProductsTerminateResponse()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PlaidCheckScore"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ItemProductsTerminateResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Plaid.OpenApiClient.Models.PlaidCheckScore CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Plaid.OpenApiClient.Models.ItemProductsTerminateResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.PlaidCheckScore();
+            return new global::Soenneker.Plaid.OpenApiClient.Models.ItemProductsTerminateResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,9 +48,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "error_reason", n => { ErrorReason = n.GetStringValue(); } },
-                { "reason_codes", n => { ReasonCodes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "score", n => { Score = n.GetIntValue(); } },
+                { "request_id", n => { RequestId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -71,9 +58,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("error_reason", ErrorReason);
-            writer.WriteCollectionOfPrimitiveValues<string>("reason_codes", ReasonCodes);
-            writer.WriteIntValue("score", Score);
+            writer.WriteStringValue("request_id", RequestId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

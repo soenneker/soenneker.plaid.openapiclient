@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>The version of cashflow attributes</summary>
+    /// <summary>The version of cashflow attributes. Required if using Cash Flow Insights.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CashflowAttributesVersion
     {

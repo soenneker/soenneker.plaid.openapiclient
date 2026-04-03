@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The version of network insights</summary>
+        /// <summary>The version of Network Insights. Required if using Network Insights.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.NetworkInsightsVersion? NetworkInsightsVersion { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsNetworkInsights"/> and sets the default values.

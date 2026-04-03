@@ -17,15 +17,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum integer number of days of history to compute Credit Partner Insights. Defaults to 180 if not specified</summary>
         public int? DaysRequested { get; set; }
-        /// <summary>The specific Prism products to return. If none are passed in, then all products will be returned.</summary>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.PrismProduct?>? PrismProducts { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.PrismProduct?> PrismProducts { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCreditPartnerInsights"/> and sets the default values.
         /// </summary>
@@ -52,7 +43,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "days_requested", n => { DaysRequested = n.GetIntValue(); } },
-                { "prism_products", n => { PrismProducts = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.PrismProduct>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -63,7 +53,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("days_requested", DaysRequested);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.PrismProduct>("prism_products", PrismProducts);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

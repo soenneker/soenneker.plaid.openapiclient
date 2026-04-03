@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Plaid.OpenApiClient.Processor.Investments.Auth;
 using Soenneker.Plaid.OpenApiClient.Processor.Investments.Holdings;
 using Soenneker.Plaid.OpenApiClient.Processor.Investments.Transactions;
 using System.Collections.Generic;
@@ -16,6 +17,11 @@ namespace Soenneker.Plaid.OpenApiClient.Processor.Investments
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InvestmentsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The auth property</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Processor.Investments.Auth.AuthRequestBuilder Auth
+        {
+            get => new global::Soenneker.Plaid.OpenApiClient.Processor.Investments.Auth.AuthRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The holdings property</summary>
         public global::Soenneker.Plaid.OpenApiClient.Processor.Investments.Holdings.HoldingsRequestBuilder Holdings
         {

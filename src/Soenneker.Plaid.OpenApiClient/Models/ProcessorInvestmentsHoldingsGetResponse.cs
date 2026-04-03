@@ -13,13 +13,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProcessorInvestmentsHoldingsGetResponse : IAdditionalDataHolder, IParsable
     {
-        /// <summary>A single account at a financial institution.</summary>
+        /// <summary>A single account at a financial institution, with additional investment-specific balance information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountBase? Account { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.InvestmentAccount? Account { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountBase Account { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.InvestmentAccount Account { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -74,7 +74,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "account", n => { Account = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountBase>(global::Soenneker.Plaid.OpenApiClient.Models.AccountBase.CreateFromDiscriminatorValue); } },
+                { "account", n => { Account = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentAccount>(global::Soenneker.Plaid.OpenApiClient.Models.InvestmentAccount.CreateFromDiscriminatorValue); } },
                 { "holdings", n => { Holdings = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.Holding>(global::Soenneker.Plaid.OpenApiClient.Models.Holding.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "is_investments_fallback_item", n => { IsInvestmentsFallbackItem = n.GetBoolValue(); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
@@ -88,7 +88,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountBase>("account", Account);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentAccount>("account", Account);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.Holding>("holdings", Holdings);
             writer.WriteBoolValue("is_investments_fallback_item", IsInvestmentsFallbackItem);
             writer.WriteStringValue("request_id", RequestId);

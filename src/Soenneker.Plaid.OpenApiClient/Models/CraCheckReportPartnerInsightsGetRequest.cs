@@ -64,6 +64,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string UserId { get; set; }
 #endif
+        /// <summary>The tier of the user.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraUserTier? UserTier { get; set; }
         /// <summary>The user token associated with the User data is being requested for. This field is used only by customers with pre-existing integrations that already use the `user_token` field. All other customers should use the `user_id` instead. For more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,6 +105,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "secret", n => { Secret = n.GetStringValue(); } },
                 { "third_party_user_token", n => { ThirdPartyUserToken = n.GetStringValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
+                { "user_tier", n => { UserTier = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraUserTier>(); } },
                 { "user_token", n => { UserToken = n.GetStringValue(); } },
             };
         }
@@ -119,6 +122,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("secret", Secret);
             writer.WriteStringValue("third_party_user_token", ThirdPartyUserToken);
             writer.WriteStringValue("user_id", UserId);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraUserTier>("user_tier", UserTier);
             writer.WriteStringValue("user_token", UserToken);
             writer.WriteAdditionalData(AdditionalData);
         }

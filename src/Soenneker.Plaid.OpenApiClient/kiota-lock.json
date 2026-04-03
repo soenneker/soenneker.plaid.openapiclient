@@ -1,5 +1,5 @@
 {
-  "descriptionHash": "9648BED9EC1A710886F08BF12BB19B2BF51322589C723BEDAD3FABFA5ADB749E1359BB92F9D778C5BA708939288A2DBBE85BB0D0AD3CA75EE7F3739B9351AD67",
+  "descriptionHash": "338E2918666C5A9F3F104BD1069D91D270FB55BB36F560071211477E28B31ADF3DD41F3A49581ADAFDF9E2DD31BF627F3E0CE2B18EBB32A32AFE34F98F1F9DE7",
   "descriptionLocation": "../../openapi.yml",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.30.0",
@@ -8,7 +8,7 @@
   "clientNamespaceName": "Soenneker.Plaid.OpenApiClient",
   "language": "CSharp",
   "usesBackingStore": false,
-  "excludeBackwardCompatible": false,
+  "excludeBackwardCompatible": true,
   "includeAdditionalData": true,
   "disableSSLValidation": false,
   "serializers": [

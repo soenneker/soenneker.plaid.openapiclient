@@ -31,7 +31,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string DateOfBirth { get; set; }
 #endif
-        /// <summary>The user&apos;s email address.Note: email is currently not returned for users, and will be added later in 2026.</summary>
+        /// <summary>The user&apos;s email address.Note: email is currently not returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email { get; set; }

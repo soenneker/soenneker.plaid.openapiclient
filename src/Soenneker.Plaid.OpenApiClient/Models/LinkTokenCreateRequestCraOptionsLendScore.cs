@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The version of the LendScore</summary>
+        /// <summary>The version of the LendScore to use. Required if using LendScore.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.PlaidLendScoreVersion? LendScoreVersion { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsLendScore"/> and sets the default values.

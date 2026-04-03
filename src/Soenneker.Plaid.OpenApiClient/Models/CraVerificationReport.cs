@@ -31,6 +31,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.CraEmploymentRefreshReport EmploymentRefresh { get; set; }
 #endif
+        /// <summary>A unique token that can be shared with GSEs in order to provide them access to the report. This is automatically created during report generation when GSE options are specified.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GseReferenceId { get; set; }
+#nullable restore
+#else
+        public string GseReferenceId { get; set; }
+#endif
         /// <summary>The unique identifier associated with the Home Lending Report object. This ID will be the same as the Base Report ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,6 +82,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "client_report_id", n => { ClientReportId = n.GetStringValue(); } },
                 { "employment_refresh", n => { EmploymentRefresh = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraEmploymentRefreshReport>(global::Soenneker.Plaid.OpenApiClient.Models.CraEmploymentRefreshReport.CreateFromDiscriminatorValue); } },
+                { "gse_reference_id", n => { GseReferenceId = n.GetStringValue(); } },
                 { "report_id", n => { ReportId = n.GetStringValue(); } },
                 { "voa", n => { Voa = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraVoaReport>(global::Soenneker.Plaid.OpenApiClient.Models.CraVoaReport.CreateFromDiscriminatorValue); } },
             };
@@ -87,6 +96,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("client_report_id", ClientReportId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraEmploymentRefreshReport>("employment_refresh", EmploymentRefresh);
+            writer.WriteStringValue("gse_reference_id", GseReferenceId);
             writer.WriteStringValue("report_id", ReportId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraVoaReport>("voa", Voa);
             writer.WriteAdditionalData(AdditionalData);

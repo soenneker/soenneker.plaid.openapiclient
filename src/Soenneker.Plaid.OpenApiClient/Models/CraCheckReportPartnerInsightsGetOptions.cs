@@ -16,15 +16,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The specific Prism Data products to return. If none are passed in, then all products will be returned.</summary>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.PrismProduct?>? PrismProducts { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.PrismProduct?> PrismProducts { get; set; }
-#endif
         /// <summary>Deprecated, use `partner_insights.prism_versions` instead.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,7 +50,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "prism_products", n => { PrismProducts = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.PrismProduct>()?.AsList(); } },
                 { "prism_versions", n => { PrismVersions = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismVersionsDeprecated>(global::Soenneker.Plaid.OpenApiClient.Models.PrismVersionsDeprecated.CreateFromDiscriminatorValue); } },
             };
         }
@@ -70,7 +60,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.PrismProduct>("prism_products", PrismProducts);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismVersionsDeprecated>("prism_versions", PrismVersions);
             writer.WriteAdditionalData(AdditionalData);
         }

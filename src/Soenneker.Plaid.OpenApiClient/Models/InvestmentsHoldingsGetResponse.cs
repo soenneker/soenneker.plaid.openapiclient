@@ -16,10 +16,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The accounts associated with the Item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.AccountBase>? Accounts { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentAccount>? Accounts { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.AccountBase> Accounts { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentAccount> Accounts { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -82,7 +82,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accounts", n => { Accounts = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.AccountBase>(global::Soenneker.Plaid.OpenApiClient.Models.AccountBase.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "accounts", n => { Accounts = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentAccount>(global::Soenneker.Plaid.OpenApiClient.Models.InvestmentAccount.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "holdings", n => { Holdings = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.Holding>(global::Soenneker.Plaid.OpenApiClient.Models.Holding.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "is_investments_fallback_item", n => { IsInvestmentsFallbackItem = n.GetBoolValue(); } },
                 { "item", n => { Item = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Item>(global::Soenneker.Plaid.OpenApiClient.Models.Item.CreateFromDiscriminatorValue); } },
@@ -97,7 +97,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.AccountBase>("accounts", Accounts);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentAccount>("accounts", Accounts);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.Holding>("holdings", Holdings);
             writer.WriteBoolValue("is_investments_fallback_item", IsInvestmentsFallbackItem);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Item>("item", Item);

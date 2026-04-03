@@ -63,7 +63,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Secret { get; set; }
 #endif
-        /// <summary>When `true`, a new user will be created and a `user_id` will be returned. Otherwise, a legacy user will be created and a `user_token` will be returned.</summary>
+        /// <summary>If your integration with the User API predates December 10, 2025, set this field to `true` to opt into the [new User API](https://plaid.com/docs/api/users/user-apis/). When enabled, you can use the `identity` field instead of `consumer_report_user_identity`.</summary>
         public bool? WithUpgradedUser { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.UserCreateRequest"/> and sets the default values.

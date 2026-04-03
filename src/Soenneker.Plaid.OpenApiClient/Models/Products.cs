@@ -155,5 +155,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning disable CS1591
         Protect_linked_bank,
         #pragma warning restore CS1591
+        [EnumMember(Value = "protect_transactions")]
+        #pragma warning disable CS1591
+        Protect_transactions,
+        #pragma warning restore CS1591
     }
 }

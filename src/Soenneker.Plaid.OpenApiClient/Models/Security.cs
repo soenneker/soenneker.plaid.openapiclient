@@ -16,6 +16,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The ISO-10962 Classification of Financial Instruments Code used to classify the security based on its structure and function.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CfiCode { get; set; }
+#nullable restore
+#else
+        public string CfiCode { get; set; }
+#endif
         /// <summary>Price of the security at the close of the previous trading session. Null for non-public securities.If the security is a foreign currency this field will be updated daily and will be priced in USD.If the security is a cryptocurrency, this field will be updated multiple times a day. As crypto prices can fluctuate quickly and data may become stale sooner than other asset classes, refer to `update_datetime` with the time when the price was last updated.</summary>
         public double? ClosePrice { get; set; }
         /// <summary>Date for which `close_price` is accurate. Always `null` if `close_price` is `null`.</summary>
@@ -194,6 +202,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "cfi_code", n => { CfiCode = n.GetStringValue(); } },
                 { "close_price", n => { ClosePrice = n.GetDoubleValue(); } },
                 { "close_price_as_of", n => { ClosePriceAsOf = n.GetDateValue(); } },
                 { "cusip", n => { Cusip = n.GetStringValue(); } },
@@ -225,6 +234,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("cfi_code", CfiCode);
             writer.WriteDoubleValue("close_price", ClosePrice);
             writer.WriteDateValue("close_price_as_of", ClosePriceAsOf);
             writer.WriteStringValue("cusip", Cusip);

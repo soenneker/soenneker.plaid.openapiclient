@@ -83,6 +83,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning disable CS1591
         EducationSavingsAccount,
         #pragma warning restore CS1591
+        [EnumMember(Value = "fhsa")]
+        #pragma warning disable CS1591
+        Fhsa,
+        #pragma warning restore CS1591
         [EnumMember(Value = "fixed annuity")]
         #pragma warning disable CS1591
         FixedAnnuity,
@@ -203,6 +207,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning disable CS1591
         ProfitSharingPlan,
         #pragma warning restore CS1591
+        [EnumMember(Value = "qshr")]
+        #pragma warning disable CS1591
+        Qshr,
+        #pragma warning restore CS1591
         [EnumMember(Value = "rdsp")]
         #pragma warning disable CS1591
         Rdsp,
@@ -226,6 +234,26 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         [EnumMember(Value = "roth 401k")]
         #pragma warning disable CS1591
         Roth401k,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "roth 403B")]
+        #pragma warning disable CS1591
+        Roth403B,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "roth 457b")]
+        #pragma warning disable CS1591
+        Roth457b,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "roth pension")]
+        #pragma warning disable CS1591
+        RothPension,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "roth profit sharing plan")]
+        #pragma warning disable CS1591
+        RothProfitSharingPlan,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "roth thrift savings plan")]
+        #pragma warning disable CS1591
+        RothThriftSavingsPlan,
         #pragma warning restore CS1591
         [EnumMember(Value = "rrif")]
         #pragma warning disable CS1591

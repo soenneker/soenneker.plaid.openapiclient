@@ -55,6 +55,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Secret { get; set; }
 #endif
+        /// <summary>The user_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserId { get; set; }
+#nullable restore
+#else
+        public string UserId { get; set; }
+#endif
         /// <summary>The user token associated with the User data is being requested for. This field is used only by customers with pre-existing integrations that already use the `user_token` field. All other customers should use the `user_id` instead. For more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,6 +110,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "payroll_institution", n => { PayrollInstitution = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationPrecheckPayrollInstitution>(global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationPrecheckPayrollInstitution.CreateFromDiscriminatorValue); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
                 { "us_military_info", n => { UsMilitaryInfo = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationPrecheckMilitaryInfo>(global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationPrecheckMilitaryInfo.CreateFromDiscriminatorValue); } },
+                { "user_id", n => { UserId = n.GetStringValue(); } },
                 { "user_token", n => { UserToken = n.GetStringValue(); } },
             };
         }
@@ -117,6 +126,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationPrecheckEmployer>("employer", Employer);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationPrecheckPayrollInstitution>("payroll_institution", PayrollInstitution);
             writer.WriteStringValue("secret", Secret);
+            writer.WriteStringValue("user_id", UserId);
             writer.WriteStringValue("user_token", UserToken);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationPrecheckMilitaryInfo>("us_military_info", UsMilitaryInfo);
             writer.WriteAdditionalData(AdditionalData);

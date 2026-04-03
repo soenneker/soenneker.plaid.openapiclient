@@ -7,6 +7,26 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum FDXNotificationType
     {
+        [EnumMember(Value = "ACCOUNT_TAKEOVER")]
+        #pragma warning disable CS1591
+        ACCOUNT_TAKEOVER,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ADDRESS_CHANGED")]
+        #pragma warning disable CS1591
+        ADDRESS_CHANGED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "BALANCE")]
+        #pragma warning disable CS1591
+        BALANCE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CONSENT_EXPIRED")]
+        #pragma warning disable CS1591
+        CONSENT_EXPIRED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CONSENT_GRANTED")]
+        #pragma warning disable CS1591
+        CONSENT_GRANTED,
+        #pragma warning restore CS1591
         [EnumMember(Value = "CONSENT_REVOKED")]
         #pragma warning disable CS1591
         CONSENT_REVOKED,
@@ -19,21 +39,45 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning disable CS1591
         CUSTOM,
         #pragma warning restore CS1591
-        [EnumMember(Value = "SERVICE")]
+        [EnumMember(Value = "MFA_TARGET_CHANGED")]
         #pragma warning disable CS1591
-        SERVICE,
+        MFA_TARGET_CHANGED,
         #pragma warning restore CS1591
-        [EnumMember(Value = "BALANCE")]
+        [EnumMember(Value = "PHONE_CHANGED")]
         #pragma warning disable CS1591
-        BALANCE,
+        PHONE_CHANGED,
         #pragma warning restore CS1591
         [EnumMember(Value = "PLANNED_OUTAGE")]
         #pragma warning disable CS1591
         PLANNED_OUTAGE,
         #pragma warning restore CS1591
+        [EnumMember(Value = "RISK")]
+        #pragma warning disable CS1591
+        RISK,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SERVICE")]
+        #pragma warning disable CS1591
+        SERVICE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SUSPECTED_INCIDENT")]
+        #pragma warning disable CS1591
+        SUSPECTED_INCIDENT,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TAN_ACTIVATED")]
+        #pragma warning disable CS1591
+        TAN_ACTIVATED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TAN_CREATED")]
+        #pragma warning disable CS1591
+        TAN_CREATED,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TAN_REVOKED")]
         #pragma warning disable CS1591
         TAN_REVOKED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TAN_SUSPENDED")]
+        #pragma warning disable CS1591
+        TAN_SUSPENDED,
         #pragma warning restore CS1591
     }
 }

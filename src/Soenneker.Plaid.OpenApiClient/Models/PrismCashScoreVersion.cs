@@ -7,6 +7,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PrismCashScoreVersion
     {
+        [EnumMember(Value = "4.1")]
+        #pragma warning disable CS1591
+        FourOne,
+        #pragma warning restore CS1591
         [EnumMember(Value = "4")]
         #pragma warning disable CS1591
         Four,

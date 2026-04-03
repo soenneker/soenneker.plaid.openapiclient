@@ -25,7 +25,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
-        /// <summary>Must be the same as the `client_transaction_id` supplied when calling `/signal/evaluate`</summary>
+        /// <summary>Must be the same as the `client_transaction_id` supplied when calling `/processor/signal/evaluate`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientTransactionId { get; set; }

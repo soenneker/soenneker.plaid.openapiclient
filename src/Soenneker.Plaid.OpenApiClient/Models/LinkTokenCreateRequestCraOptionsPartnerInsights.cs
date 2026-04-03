@@ -23,15 +23,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsFicoInput Fico { get; set; }
 #endif
-        /// <summary>The specific Prism products to return. If none are passed in, then all products will be returned.</summary>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.PrismProduct?>? PrismProducts { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.PrismProduct?> PrismProducts { get; set; }
-#endif
         /// <summary>The versions of Prism products to evaluate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,7 +57,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "fico", n => { Fico = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsFicoInput>(global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsFicoInput.CreateFromDiscriminatorValue); } },
-                { "prism_products", n => { PrismProducts = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.PrismProduct>()?.AsList(); } },
                 { "prism_versions", n => { PrismVersions = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismVersions>(global::Soenneker.Plaid.OpenApiClient.Models.PrismVersions.CreateFromDiscriminatorValue); } },
             };
         }
@@ -78,7 +68,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsFicoInput>("fico", Fico);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.PrismProduct>("prism_products", PrismProducts);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismVersions>("prism_versions", PrismVersions);
             writer.WriteAdditionalData(AdditionalData);
         }

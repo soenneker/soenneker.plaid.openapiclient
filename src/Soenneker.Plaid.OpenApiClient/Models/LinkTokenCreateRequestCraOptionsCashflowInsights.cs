@@ -15,11 +15,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The version of cashflow attributes</summary>
+        /// <summary>The version of cashflow attributes. Required if using Cash Flow Insights.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.CashflowAttributesVersion? AttributesVersion { get; set; }
-        /// <summary>The version of the Check Score. New integrations should use `/cra/check_report/lend_score/get` and the LendScore instead.</summary>
-        [Obsolete("")]
-        public global::Soenneker.Plaid.OpenApiClient.Models.PlaidCheckScoreVersion? PlaidCheckScoreVersion { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsCashflowInsights"/> and sets the default values.
         /// </summary>
@@ -46,7 +43,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "attributes_version", n => { AttributesVersion = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CashflowAttributesVersion>(); } },
-                { "plaid_check_score_version", n => { PlaidCheckScoreVersion = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PlaidCheckScoreVersion>(); } },
             };
         }
         /// <summary>
@@ -57,7 +53,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CashflowAttributesVersion>("attributes_version", AttributesVersion);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PlaidCheckScoreVersion>("plaid_check_score_version", PlaidCheckScoreVersion);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -55,6 +55,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.FDXParty Subscriber { get; set; }
 #endif
+        /// <summary>An optional initiator-defined event subtype code or description if the event type needs to be further categorized or described.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Subtype { get; set; }
+#nullable restore
+#else
+        public string Subtype { get; set; }
+#endif
         /// <summary>Type of Notification</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.FDXNotificationType? Type { get; set; }
         /// <summary>REST application constraint (Hypermedia As The Engine Of Application State)</summary>
@@ -98,6 +106,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "sentOn", n => { SentOn = n.GetDateTimeOffsetValue(); } },
                 { "severity", n => { Severity = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FDXNotificationSeverity>(); } },
                 { "subscriber", n => { Subscriber = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.FDXParty>(global::Soenneker.Plaid.OpenApiClient.Models.FDXParty.CreateFromDiscriminatorValue); } },
+                { "subtype", n => { Subtype = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FDXNotificationType>(); } },
                 { "url", n => { Url = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.FDXHateoasLink>(global::Soenneker.Plaid.OpenApiClient.Models.FDXHateoasLink.CreateFromDiscriminatorValue); } },
             };
@@ -117,6 +126,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("sentOn", SentOn);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FDXNotificationSeverity>("severity", Severity);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.FDXParty>("subscriber", Subscriber);
+            writer.WriteStringValue("subtype", Subtype);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FDXNotificationType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.FDXHateoasLink>("url", Url);
             writer.WriteAdditionalData(AdditionalData);

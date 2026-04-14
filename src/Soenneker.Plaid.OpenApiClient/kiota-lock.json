@@ -2,7 +2,7 @@
   "descriptionHash": "338E2918666C5A9F3F104BD1069D91D270FB55BB36F560071211477E28B31ADF3DD41F3A49581ADAFDF9E2DD31BF627F3E0CE2B18EBB32A32AFE34F98F1F9DE7",
   "descriptionLocation": "../../openapi.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.31.0",
+  "kiotaVersion": "1.31.1",
   "clientClassName": "PlaidOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Plaid.OpenApiClient",

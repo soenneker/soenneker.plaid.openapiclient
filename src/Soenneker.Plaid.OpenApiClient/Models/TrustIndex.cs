@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents a calculate Trust Index Score.
+    /// Represents a calculated Trust Index Score.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TrustIndex : IAdditionalDataHolder, IParsable

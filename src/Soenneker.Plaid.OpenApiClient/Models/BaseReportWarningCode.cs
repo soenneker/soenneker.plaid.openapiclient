@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>The warning code identifies a specific kind of warning. `IDENTITY_UNAVAILABLE`: Account-owner information is not available. `TRANSACTIONS_UNAVAILABLE`: Transactions information associated with Credit and Depository accounts are unavailable. `USER_FRAUD_ALERT`: The User has placed a fraud alert on their Plaid Check consumer report due to suspected fraud. Note: when a fraud alert is in place, the recipient of the consumer report has an obligation to verify the consumer’s identity.</summary>
+    /// <summary>The warning code identifies a specific kind of warning.`IDENTITY_UNAVAILABLE`: Account-owner information is not available.`TRANSACTIONS_UNAVAILABLE`: Transactions information associated with Credit and Depository accounts are unavailable.`USER_FRAUD_ALERT`: The User has placed a fraud alert on their Plaid Check consumer report due to suspected fraud. Note: when a fraud alert is in place, the recipient of the consumer report has an obligation to verify the consumer’s identity.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BaseReportWarningCode
     {

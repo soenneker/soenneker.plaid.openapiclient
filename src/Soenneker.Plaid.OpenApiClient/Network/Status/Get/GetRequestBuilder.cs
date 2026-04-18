@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Network.Status.Get
         {
         }
         /// <summary>
-        /// The `/network/status/get` endpoint can be used to check whether Plaid has a matching profile for the user.This is useful for determining if a user is eligible for a streamlined experience, such as Layer.Note: it is strongly recommended to check for Layer eligibility in the frontend. `/network/status/get` should only be used for checking Layer eligibility if a frontend check is not possible for your use case.For instructions on performing a frontend eligibility check, see the [Layer documentation](https://plaid.com/docs/layer/#integration-overview).
+        /// The `/network/status/get` endpoint can be used to check whether Plaid has a matching profile for the user.This is useful for determining if a user is eligible for a streamlined experience, such as Layer. To access this endpoint, contact your Plaid Account Manager.Note: it is strongly recommended to check for Layer eligibility in the frontend. `/network/status/get` should only be used for checking Layer eligibility if a frontend check is not possible for your use case.For instructions on performing a frontend eligibility check, see the [Layer documentation](https://plaid.com/docs/layer/#integration-overview).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.NetworkStatusGetResponse"/></returns>
         /// <param name="body">NetworkStatusGetRequest defines the request schema for `/network/status/get`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Network.Status.Get
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.NetworkStatusGetResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.NetworkStatusGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The `/network/status/get` endpoint can be used to check whether Plaid has a matching profile for the user.This is useful for determining if a user is eligible for a streamlined experience, such as Layer.Note: it is strongly recommended to check for Layer eligibility in the frontend. `/network/status/get` should only be used for checking Layer eligibility if a frontend check is not possible for your use case.For instructions on performing a frontend eligibility check, see the [Layer documentation](https://plaid.com/docs/layer/#integration-overview).
+        /// The `/network/status/get` endpoint can be used to check whether Plaid has a matching profile for the user.This is useful for determining if a user is eligible for a streamlined experience, such as Layer. To access this endpoint, contact your Plaid Account Manager.Note: it is strongly recommended to check for Layer eligibility in the frontend. `/network/status/get` should only be used for checking Layer eligibility if a frontend check is not possible for your use case.For instructions on performing a frontend eligibility check, see the [Layer documentation](https://plaid.com/docs/layer/#integration-overview).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">NetworkStatusGetRequest defines the request schema for `/network/status/get`</param>

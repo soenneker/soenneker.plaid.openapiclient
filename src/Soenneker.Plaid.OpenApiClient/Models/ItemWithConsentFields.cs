@@ -21,7 +21,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public List<global::Soenneker.Plaid.OpenApiClient.Models.ItemConsentedDataScope?> ConsentedDataScopes { get; set; }
 #endif
-        /// <summary>A list of use cases that the user has consented to for the Item via [Data Transparency Messaging](https://plaid.com/docs/link/data-transparency-messaging-migration-guide). You can see the full list of use cases or update the list of use cases to request at any time via the Link Customization section of the [Plaid Dashboard](https://dashboard.plaid.com/link/data-transparency-v5).</summary>
+        /// <summary>A list of use cases that the user has consented to for the Item via [Data Transparency Messaging](https://plaid.com/docs/link/data-transparency-messaging-migration-guide).You can see the full list of use cases or update the list of use cases to request at any time via the Link Customization section of the [Plaid Dashboard](https://dashboard.plaid.com/link/data-transparency-v5).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ConsentedUseCases { get; set; }

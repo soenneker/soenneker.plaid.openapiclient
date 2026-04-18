@@ -33,7 +33,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>The timestamp of the event, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format, e.g. `&quot;2017-09-14T14:42:19.350Z&quot;`</summary>
         public DateTimeOffset? Timestamp { get; set; }
-        /// <summary>Represents a calculate Trust Index Score.</summary>
+        /// <summary>Represents a calculated Trust Index Score.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.TrustIndex? TrustIndex { get; set; }

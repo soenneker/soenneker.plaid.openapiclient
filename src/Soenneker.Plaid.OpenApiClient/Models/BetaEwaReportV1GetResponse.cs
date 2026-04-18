@@ -15,6 +15,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>A set of attributes providing context about the factors that contributed to the EWA scores. Each key is the attribute name and the value is its numeric score, or null if the attribute could not be computed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.EwaAttributes? EwaAttributes { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.EwaAttributes EwaAttributes { get; set; }
+#endif
         /// <summary>Unique identifier for the generated EWA score group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +74,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "ewa_attributes", n => { EwaAttributes = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.EwaAttributes>(global::Soenneker.Plaid.OpenApiClient.Models.EwaAttributes.CreateFromDiscriminatorValue); } },
                 { "ewa_report_id", n => { EwaReportId = n.GetStringValue(); } },
                 { "ewa_scores", n => { EwaScores = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.EwaScore>(global::Soenneker.Plaid.OpenApiClient.Models.EwaScore.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "generation_time", n => { GenerationTime = n.GetDateTimeOffsetValue(); } },
@@ -79,6 +88,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.EwaAttributes>("ewa_attributes", EwaAttributes);
             writer.WriteStringValue("ewa_report_id", EwaReportId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.EwaScore>("ewa_scores", EwaScores);
             writer.WriteDateTimeOffsetValue("generation_time", GenerationTime);

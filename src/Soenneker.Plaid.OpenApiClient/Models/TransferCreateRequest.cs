@@ -58,7 +58,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
-        /// <summary>The transfer description, maximum of 15 characters (RTP transactions) or 10 characters (ACH transactions). Should represent why the money is moving, not your company name. For recommendations on setting the `description` field to avoid ACH returns, see [Description field recommendations](https://www.plaid.com/docs/transfer/creating-transfers/#description-field-recommendations). If reprocessing a returned transfer, the `description` field must be `&quot;Retry 1&quot;` or `&quot;Retry 2&quot;`. You may retry a transfer up to 2 times, within 180 days of creating the original transfer. Only transfers that were returned with code `R01` or `R09` may be retried.</summary>
+        /// <summary>The transfer description, maximum of 15 characters (RTP transactions) or 10 characters (ACH transactions). Should represent why the money is moving, not your company name. For recommendations on setting the `description` field to avoid ACH returns, see [Description field recommendations](https://www.plaid.com/docs/transfer/creating-transfers/#description-field-recommendations).If reprocessing a returned transfer, the `description` field must be `&quot;Retry 1&quot;` or `&quot;Retry 2&quot;`. You may retry a transfer up to 2 times, within 180 days of creating the original transfer. Only transfers that were returned with code `R01` or `R09` may be retried.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }

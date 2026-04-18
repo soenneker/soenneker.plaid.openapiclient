@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Summary for income across all income sources and items (max history of 730 days).</summary>
+        /// <summary>This is a V1 (II1) schema. For the V2 (II2) equivalent, use `CraIncomeInsightsUserSummary`. Summary for income across all income sources and items (max history of 730 days).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeSummary? BankIncomeSummary { get; set; }
@@ -35,6 +35,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public int? DaysRequested { get; set; }
         /// <summary>The time when the Check Income Insights Report was generated.</summary>
         public DateTimeOffset? GeneratedTime { get; set; }
+        /// <summary>The list of income streams for this user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeStream>? IncomeStreams { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeStream> IncomeStreams { get; set; }
+#endif
         /// <summary>The list of Items in the report along with the associated metadata about the Item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,6 +58,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #nullable restore
 #else
         public string ReportId { get; set; }
+#endif
+        /// <summary>Aggregated summary of all income streams for this user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeInsightsUserSummary? UserSummary { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeInsightsUserSummary UserSummary { get; set; }
 #endif
         /// <summary>If data from the report was unable to be retrieved, the warnings object will contain information about the error that caused the data to be incomplete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,8 +104,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "client_report_id", n => { ClientReportId = n.GetStringValue(); } },
                 { "days_requested", n => { DaysRequested = n.GetIntValue(); } },
                 { "generated_time", n => { GeneratedTime = n.GetDateTimeOffsetValue(); } },
+                { "income_streams", n => { IncomeStreams = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeStream>(global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeStream.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeItem>(global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "report_id", n => { ReportId = n.GetStringValue(); } },
+                { "user_summary", n => { UserSummary = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeInsightsUserSummary>(global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeInsightsUserSummary.CreateFromDiscriminatorValue); } },
                 { "warnings", n => { Warnings = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeWarning>(global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeWarning.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -104,8 +122,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("client_report_id", ClientReportId);
             writer.WriteIntValue("days_requested", DaysRequested);
             writer.WriteDateTimeOffsetValue("generated_time", GeneratedTime);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeStream>("income_streams", IncomeStreams);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeItem>("items", Items);
             writer.WriteStringValue("report_id", ReportId);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeInsightsUserSummary>("user_summary", UserSummary);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeWarning>("warnings", Warnings);
             writer.WriteAdditionalData(AdditionalData);
         }

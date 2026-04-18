@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Credit.Audit_copy_token.Create
         {
         }
         /// <summary>
-        /// Plaid can create an Audit Copy token of an Asset Report and/or Income Report to share with participating Government Sponsored Entity (GSE). If you participate in the Day 1 Certainty™ program, Plaid can supply an Audit Copy token directly to Fannie Mae on your behalf. An Audit Copy token contains the same underlying data as the Asset Report and/or Income Report (result of `/credit/payroll_income/get`).Use the `/credit/audit_copy_token/create` endpoint to create an `audit_copy_token` and then pass that token to the GSE who needs access.
+        /// Plaid can create an Audit Copy token of an Asset Report and/or Income Report to share with a participating Government Sponsored Entity (GSE) if you participate in Fannie Mae&apos;s Day 1 Certainty™ program or utilize Freddie Mac&apos;s Loan Product Advisor® (LPA®) Asset and Income Modeler (AIM). An Audit Copy token contains the same underlying data as the Asset Report and/or Income Report (result of `/credit/payroll_income/get`).Use the `/credit/audit_copy_token/create` endpoint to create an `audit_copy_token` and then pass that token to the GSE who needs access.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CreditAuditCopyTokenCreateResponse"/></returns>
         /// <param name="body">CreditAuditCopyTokenCreateRequest defines the request schema for `/credit/audit_copy_token/create`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Credit.Audit_copy_token.Create
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.CreditAuditCopyTokenCreateResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.CreditAuditCopyTokenCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Plaid can create an Audit Copy token of an Asset Report and/or Income Report to share with participating Government Sponsored Entity (GSE). If you participate in the Day 1 Certainty™ program, Plaid can supply an Audit Copy token directly to Fannie Mae on your behalf. An Audit Copy token contains the same underlying data as the Asset Report and/or Income Report (result of `/credit/payroll_income/get`).Use the `/credit/audit_copy_token/create` endpoint to create an `audit_copy_token` and then pass that token to the GSE who needs access.
+        /// Plaid can create an Audit Copy token of an Asset Report and/or Income Report to share with a participating Government Sponsored Entity (GSE) if you participate in Fannie Mae&apos;s Day 1 Certainty™ program or utilize Freddie Mac&apos;s Loan Product Advisor® (LPA®) Asset and Income Modeler (AIM). An Audit Copy token contains the same underlying data as the Asset Report and/or Income Report (result of `/credit/payroll_income/get`).Use the `/credit/audit_copy_token/create` endpoint to create an `audit_copy_token` and then pass that token to the GSE who needs access.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">CreditAuditCopyTokenCreateRequest defines the request schema for `/credit/audit_copy_token/create`</param>

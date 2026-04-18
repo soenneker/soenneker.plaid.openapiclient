@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Auth.Verify
         {
         }
         /// <summary>
-        /// The `/auth/verify` endpoint verifies bank account and routing numbers and (optionally) account owner names against Plaid&apos;s database via [Database Auth](https://plaid.com/docs/auth/coverage/database-auth/). It can be used to verify account numbers that were not collected via the Plaid Link flow. This endpoint is currently in Early Availability; contact Sales or your Plaid account manager to request access.
+        /// The `/auth/verify` endpoint verifies bank account and routing numbers and (optionally) account owner names against Plaid&apos;s database via [Database Auth](https://plaid.com/docs/auth/coverage/database-auth/). It can be used to verify account numbers that were not collected via the Plaid Link flow.This endpoint is currently in Early Availability; contact Sales or your Plaid account manager to request access.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.AuthVerifyResponse"/></returns>
         /// <param name="body">AuthVerifyRequest defines the request schema for `/auth/verify`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Auth.Verify
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.AuthVerifyResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.AuthVerifyResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The `/auth/verify` endpoint verifies bank account and routing numbers and (optionally) account owner names against Plaid&apos;s database via [Database Auth](https://plaid.com/docs/auth/coverage/database-auth/). It can be used to verify account numbers that were not collected via the Plaid Link flow. This endpoint is currently in Early Availability; contact Sales or your Plaid account manager to request access.
+        /// The `/auth/verify` endpoint verifies bank account and routing numbers and (optionally) account owner names against Plaid&apos;s database via [Database Auth](https://plaid.com/docs/auth/coverage/database-auth/). It can be used to verify account numbers that were not collected via the Plaid Link flow.This endpoint is currently in Early Availability; contact Sales or your Plaid account manager to request access.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">AuthVerifyRequest defines the request schema for `/auth/verify`</param>

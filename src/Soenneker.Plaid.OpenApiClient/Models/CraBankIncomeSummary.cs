@@ -9,7 +9,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Summary for income across all income sources and items (max history of 730 days).
+    /// This is a V1 (II1) schema. For the V2 (II2) equivalent, use `CraIncomeInsightsUserSummary`. Summary for income across all income sources and items (max history of 730 days).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraBankIncomeSummary : IAdditionalDataHolder, IParsable

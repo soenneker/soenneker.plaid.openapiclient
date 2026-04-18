@@ -17,6 +17,38 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether inquiries adversely affected the score but were not represented in one of the four reason codes. Sometimes referred to as the FACTA Flag.</summary>
         public bool? DidInquiriesAdverselyAffectScore { get; set; }
+        /// <summary>The first positive reason code associated with the score.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PositiveReasonCode1 { get; set; }
+#nullable restore
+#else
+        public string PositiveReasonCode1 { get; set; }
+#endif
+        /// <summary>The second positive reason code associated with the score.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PositiveReasonCode2 { get; set; }
+#nullable restore
+#else
+        public string PositiveReasonCode2 { get; set; }
+#endif
+        /// <summary>The third positive reason code associated with the score.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PositiveReasonCode3 { get; set; }
+#nullable restore
+#else
+        public string PositiveReasonCode3 { get; set; }
+#endif
+        /// <summary>The fourth positive reason code associated with the score.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PositiveReasonCode4 { get; set; }
+#nullable restore
+#else
+        public string PositiveReasonCode4 { get; set; }
+#endif
         /// <summary>The first reason code associated with the score.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,6 +111,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "did_inquiries_adversely_affect_score", n => { DidInquiriesAdverselyAffectScore = n.GetBoolValue(); } },
+                { "positive_reason_code_1", n => { PositiveReasonCode1 = n.GetStringValue(); } },
+                { "positive_reason_code_2", n => { PositiveReasonCode2 = n.GetStringValue(); } },
+                { "positive_reason_code_3", n => { PositiveReasonCode3 = n.GetStringValue(); } },
+                { "positive_reason_code_4", n => { PositiveReasonCode4 = n.GetStringValue(); } },
                 { "reason_code_1", n => { ReasonCode1 = n.GetStringValue(); } },
                 { "reason_code_2", n => { ReasonCode2 = n.GetStringValue(); } },
                 { "reason_code_3", n => { ReasonCode3 = n.GetStringValue(); } },
@@ -95,6 +131,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("did_inquiries_adversely_affect_score", DidInquiriesAdverselyAffectScore);
+            writer.WriteStringValue("positive_reason_code_1", PositiveReasonCode1);
+            writer.WriteStringValue("positive_reason_code_2", PositiveReasonCode2);
+            writer.WriteStringValue("positive_reason_code_3", PositiveReasonCode3);
+            writer.WriteStringValue("positive_reason_code_4", PositiveReasonCode4);
             writer.WriteStringValue("reason_code_1", ReasonCode1);
             writer.WriteStringValue("reason_code_2", ReasonCode2);
             writer.WriteStringValue("reason_code_3", ReasonCode3);

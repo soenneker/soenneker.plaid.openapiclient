@@ -23,6 +23,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.RequestBusinessAddress Address { get; set; }
 #endif
+        /// <summary>The name of the business. Must have at least one character and a maximum length of 500 characters.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AlternativeName { get; set; }
+#nullable restore
+#else
+        public string AlternativeName { get; set; }
+#endif
         /// <summary>A valid email address. Must not have leading or trailing spaces and address must be RFC compliant. For more information, see [RFC 3696](https://datatracker.ietf.org/doc/html/rfc3696).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,6 +89,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.RequestBusinessAddress>(global::Soenneker.Plaid.OpenApiClient.Models.RequestBusinessAddress.CreateFromDiscriminatorValue); } },
+                { "alternative_name", n => { AlternativeName = n.GetStringValue(); } },
                 { "email_address", n => { EmailAddress = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
@@ -95,6 +104,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.RequestBusinessAddress>("address", Address);
+            writer.WriteStringValue("alternative_name", AlternativeName);
             writer.WriteStringValue("email_address", EmailAddress);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("phone_number", PhoneNumber);

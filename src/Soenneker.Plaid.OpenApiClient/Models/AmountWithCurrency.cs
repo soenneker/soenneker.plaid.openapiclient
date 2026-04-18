@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>If the parent object represents a category of transactions, such as `total_amount`, `transfers_in`, `total_income`, etc. the `amount` represents the sum of all of the transactions in the group. If the parent object is `cash_flow`, the `amount` represents the total value of all the inflows minus all the outflows across all the accounts in the report in the given time window. If the parent object is `minimum_balance`, the `amount` represents the lowest balance of the account during the given time window.</summary>
+        /// <summary>If the parent object represents a category of transactions, such as `total_amount`, `transfers_in`, `total_income`, etc. the `amount` represents the sum of all of the transactions in the group.If the parent object is `cash_flow`, the `amount` represents the total value of all the inflows minus all the outflows across all the accounts in the report in the given time window.If the parent object is `minimum_balance`, the `amount` represents the lowest balance of the account during the given time window.</summary>
         public double? Amount { get; set; }
         /// <summary>The ISO-4217 currency code of the amount. Always `null` if `unofficial_currency_code` is non-`null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

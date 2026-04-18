@@ -127,6 +127,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning disable CS1591
         LifeInsurance,
         #pragma warning restore CS1591
+        [EnumMember(Value = "limited purpose checking")]
+        #pragma warning disable CS1591
+        LimitedPurposeChecking,
+        #pragma warning restore CS1591
         [EnumMember(Value = "line of credit")]
         #pragma warning disable CS1591
         LineOfCredit,

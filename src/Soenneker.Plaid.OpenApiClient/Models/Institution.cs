@@ -73,7 +73,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMetadata PaymentInitiationMetadata { get; set; }
 #endif
-        /// <summary>Hexadecimal representation of the primary color used by the institution</summary>
+        /// <summary>Hexadecimal representation of the primary color used by the institution. If Plaid does not have primary color data for the institution, this field will be a deterministically generated fallback color.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrimaryColor { get; set; }

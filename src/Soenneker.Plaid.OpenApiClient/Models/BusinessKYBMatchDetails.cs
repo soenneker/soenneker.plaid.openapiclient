@@ -36,13 +36,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public global::Soenneker.Plaid.OpenApiClient.Models.BusinessEntityType? EntityType { get; set; }
         /// <summary>A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).</summary>
         public Date? FormationDate { get; set; }
-        /// <summary>The business name from the data provider</summary>
+        /// <summary>Names associated with the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.ProviderBusinessName>? Names { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.ProviderBusinessName> Names { get; set; }
 #endif
         /// <summary>Phone numbers associated with the business</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,7 +89,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "email_addresses", n => { EmailAddresses = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.BusinessEmailAddress>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessEmailAddress.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "entity_type", n => { EntityType = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessEntityType>(); } },
                 { "formation_date", n => { FormationDate = n.GetDateValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
+                { "names", n => { Names = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.ProviderBusinessName>(global::Soenneker.Plaid.OpenApiClient.Models.ProviderBusinessName.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "phone_numbers", n => { PhoneNumbers = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.BusinessPhoneNumber>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessPhoneNumber.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "websites", n => { Websites = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsite>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsite.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -105,7 +105,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.BusinessEmailAddress>("email_addresses", EmailAddresses);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessEntityType>("entity_type", EntityType);
             writer.WriteDateValue("formation_date", FormationDate);
-            writer.WriteStringValue("name", Name);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.ProviderBusinessName>("names", Names);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.BusinessPhoneNumber>("phone_numbers", PhoneNumbers);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsite>("websites", Websites);
             writer.WriteAdditionalData(AdditionalData);

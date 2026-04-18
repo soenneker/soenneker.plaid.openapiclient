@@ -23,6 +23,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>An array of limited purpose types. When set, it will restrict which kinds of limited purpose checking accounts may be connected in Link. Only applicable when &apos;limited purpose checking&apos; is in the subtypes filter.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LimitedPurposeType?>? LimitedPurposeTypes { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LimitedPurposeType?> LimitedPurposeTypes { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.DepositoryFilter"/> and sets the default values.
         /// </summary>
@@ -49,6 +57,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account_subtypes", n => { AccountSubtypes = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.DepositoryAccountSubtype>()?.AsList(); } },
+                { "limited_purpose_types", n => { LimitedPurposeTypes = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.LimitedPurposeType>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -59,6 +68,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.DepositoryAccountSubtype>("account_subtypes", AccountSubtypes);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.LimitedPurposeType>("limited_purpose_types", LimitedPurposeTypes);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

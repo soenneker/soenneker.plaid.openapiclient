@@ -23,6 +23,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.ResponseBusinessAddress Address { get; set; }
 #endif
+        /// <summary>Alternative business names that were submitted as search inputs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? AlternativeNames { get; set; }
+#nullable restore
+#else
+        public List<string> AlternativeNames { get; set; }
+#endif
         /// <summary>A valid email address. Must not have leading or trailing spaces and address must be RFC compliant. For more information, see [RFC 3696](https://datatracker.ietf.org/doc/html/rfc3696).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,6 +89,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ResponseBusinessAddress>(global::Soenneker.Plaid.OpenApiClient.Models.ResponseBusinessAddress.CreateFromDiscriminatorValue); } },
+                { "alternative_names", n => { AlternativeNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "email_address", n => { EmailAddress = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
@@ -95,6 +104,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ResponseBusinessAddress>("address", Address);
+            writer.WriteCollectionOfPrimitiveValues<string>("alternative_names", AlternativeNames);
             writer.WriteStringValue("email_address", EmailAddress);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("phone_number", PhoneNumber);

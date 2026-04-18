@@ -23,6 +23,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
+        /// <summary>Defines configuration options to generate Income Insights.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportIncomeInsightsGetOptions? Options { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportIncomeInsightsGetOptions Options { get; set; }
+#endif
         /// <summary>Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,6 +89,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
+                { "options", n => { Options = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportIncomeInsightsGetOptions>(global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportIncomeInsightsGetOptions.CreateFromDiscriminatorValue); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
                 { "third_party_user_token", n => { ThirdPartyUserToken = n.GetStringValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
@@ -95,6 +104,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("client_id", ClientId);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportIncomeInsightsGetOptions>("options", Options);
             writer.WriteStringValue("secret", Secret);
             writer.WriteStringValue("third_party_user_token", ThirdPartyUserToken);
             writer.WriteStringValue("user_id", UserId);

@@ -43,6 +43,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning disable CS1591
         Ebt,
         #pragma warning restore CS1591
+        [EnumMember(Value = "limited purpose checking")]
+        #pragma warning disable CS1591
+        LimitedPurposeChecking,
+        #pragma warning restore CS1591
         [EnumMember(Value = "all")]
         #pragma warning disable CS1591
         All,

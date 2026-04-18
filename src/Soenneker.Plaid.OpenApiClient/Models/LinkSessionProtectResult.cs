@@ -31,7 +31,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionProtectResultFraudAttributes FraudAttributes { get; set; }
 #endif
-        /// <summary>Represents a calculate Trust Index Score.</summary>
+        /// <summary>Represents a calculated Trust Index Score.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.TrustIndex? TrustIndex { get; set; }

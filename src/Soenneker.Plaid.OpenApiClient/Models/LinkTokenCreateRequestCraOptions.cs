@@ -45,6 +45,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public int? DaysRequired { get; set; }
         /// <summary>Indicates that investment data should be extracted from the linked account(s).</summary>
         public bool? IncludeInvestments { get; set; }
+        /// <summary>Specifies options for initializing Link for use with the CRA Income Insights product.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsIncomeInsights? IncomeInsights { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsIncomeInsights IncomeInsights { get; set; }
+#endif
         /// <summary>Specifies options for initializing Link for use with the CRA LendScore product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,6 +108,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "days_requested", n => { DaysRequested = n.GetIntValue(); } },
                 { "days_required", n => { DaysRequired = n.GetIntValue(); } },
                 { "include_investments", n => { IncludeInvestments = n.GetBoolValue(); } },
+                { "income_insights", n => { IncomeInsights = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsIncomeInsights>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsIncomeInsights.CreateFromDiscriminatorValue); } },
                 { "lend_score", n => { LendScore = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsLendScore>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsLendScore.CreateFromDiscriminatorValue); } },
                 { "network_insights", n => { NetworkInsights = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsNetworkInsights>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsNetworkInsights.CreateFromDiscriminatorValue); } },
                 { "partner_insights", n => { PartnerInsights = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsPartnerInsights>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsPartnerInsights.CreateFromDiscriminatorValue); } },
@@ -118,6 +127,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteIntValue("days_requested", DaysRequested);
             writer.WriteIntValue("days_required", DaysRequired);
             writer.WriteBoolValue("include_investments", IncludeInvestments);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsIncomeInsights>("income_insights", IncomeInsights);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsLendScore>("lend_score", LendScore);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsNetworkInsights>("network_insights", NetworkInsights);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsPartnerInsights>("partner_insights", PartnerInsights);

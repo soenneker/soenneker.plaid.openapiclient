@@ -13,9 +13,17 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraBankIncomeItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>The Item&apos;s accounts that have bank income data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeAccount>? Accounts { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeAccount> Accounts { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The Item&apos;s accounts that have bank income data.</summary>
+        /// <summary>This is a V1 (II1) field. For the V2 (II2) equivalent, use the `accounts` field. The Item&apos;s accounts that have bank income data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeAccount>? BankIncomeAccounts { get; set; }
@@ -23,7 +31,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public List<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeAccount> BankIncomeAccounts { get; set; }
 #endif
-        /// <summary>The income sources for this Item. Each entry in the array is a single income source.</summary>
+        /// <summary>This is a V1 (II1) field. For the V2 (II2) equivalent, use the report-level `income_streams` field. The income sources for this Item. Each entry in the array is a single income source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeSource>? BankIncomeSources { get; set; }
@@ -82,6 +90,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "accounts", n => { Accounts = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeAccount>(global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeAccount.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "bank_income_accounts", n => { BankIncomeAccounts = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeAccount>(global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeAccount.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "bank_income_sources", n => { BankIncomeSources = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeSource>(global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeSource.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "institution_id", n => { InstitutionId = n.GetStringValue(); } },
@@ -97,6 +106,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeAccount>("accounts", Accounts);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeAccount>("bank_income_accounts", BankIncomeAccounts);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeSource>("bank_income_sources", BankIncomeSources);
             writer.WriteStringValue("institution_id", InstitutionId);

@@ -31,6 +31,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsBaseReportGSEOptions GseOptions { get; set; }
 #endif
+        /// <summary>Options for configuring Home Lending Report (Verification Report) generation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportHomeLendingReportOptions? HomeLendingReportOptions { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportHomeLendingReportOptions HomeLendingReportOptions { get; set; }
+#endif
         /// <summary>Indicates that the report must include identity information. If identity information is not available, the report will fail.</summary>
         public bool? RequireIdentity { get; set; }
         /// <summary>
@@ -60,6 +68,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "client_report_id", n => { ClientReportId = n.GetStringValue(); } },
                 { "gse_options", n => { GseOptions = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsBaseReportGSEOptions>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsBaseReportGSEOptions.CreateFromDiscriminatorValue); } },
+                { "home_lending_report_options", n => { HomeLendingReportOptions = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportHomeLendingReportOptions>(global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportHomeLendingReportOptions.CreateFromDiscriminatorValue); } },
                 { "require_identity", n => { RequireIdentity = n.GetBoolValue(); } },
             };
         }
@@ -72,6 +81,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("client_report_id", ClientReportId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsBaseReportGSEOptions>("gse_options", GseOptions);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportHomeLendingReportOptions>("home_lending_report_options", HomeLendingReportOptions);
             writer.WriteBoolValue("require_identity", RequireIdentity);
             writer.WriteAdditionalData(AdditionalData);
         }

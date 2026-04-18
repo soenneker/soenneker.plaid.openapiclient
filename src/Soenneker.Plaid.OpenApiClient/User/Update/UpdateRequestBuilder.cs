@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.User.Update
         {
         }
         /// <summary>
-        /// This endpoint updates user information for an existing `user_id` or `user_token`. If an existing `user_id` or `user_token` is missing fields required for a given use case (e.g. creating a Consumer Report) use `/user/update` to add values for those fields. Identity updates use merge semantics: provided fields overwrite existing ones; omitted fields remain unchanged.
+        /// This endpoint updates user information for an existing `user_id` or `user_token`. If an existing `user_id` or `user_token` is missing fields required for a given use case (e.g. creating a Consumer Report) use `/user/update` to add values for those fields.Identity updates use merge semantics: provided fields overwrite existing ones; omitted fields remain unchanged.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.UserUpdateResponse"/></returns>
         /// <param name="body">UserUpdateRequest defines the request schema for `/user/update`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.User.Update
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.UserUpdateResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.UserUpdateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint updates user information for an existing `user_id` or `user_token`. If an existing `user_id` or `user_token` is missing fields required for a given use case (e.g. creating a Consumer Report) use `/user/update` to add values for those fields. Identity updates use merge semantics: provided fields overwrite existing ones; omitted fields remain unchanged.
+        /// This endpoint updates user information for an existing `user_id` or `user_token`. If an existing `user_id` or `user_token` is missing fields required for a given use case (e.g. creating a Consumer Report) use `/user/update` to add values for those fields.Identity updates use merge semantics: provided fields overwrite existing ones; omitted fields remain unchanged.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">UserUpdateRequest defines the request schema for `/user/update`</param>

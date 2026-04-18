@@ -15,6 +15,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning disable CS1591
         Nine,
         #pragma warning restore CS1591
+        [EnumMember(Value = "10")]
+        #pragma warning disable CS1591
+        OneZero,
+        #pragma warning restore CS1591
         [EnumMember(Value = "10T")]
         #pragma warning disable CS1591
         OneZeroT,

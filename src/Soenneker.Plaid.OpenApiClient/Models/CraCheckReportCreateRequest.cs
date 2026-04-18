@@ -55,6 +55,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public int? DaysRequired { get; set; }
         /// <summary>Indicates that investment data should be extracted from the linked account(s).</summary>
         public bool? IncludeInvestments { get; set; }
+        /// <summary>Defines configuration options to generate Income Insights.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportIncomeInsightsGetOptions? IncomeInsights { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportIncomeInsightsGetOptions IncomeInsights { get; set; }
+#endif
         /// <summary>Defines configuration options to generate the LendScore</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -152,6 +160,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "days_requested", n => { DaysRequested = n.GetIntValue(); } },
                 { "days_required", n => { DaysRequired = n.GetIntValue(); } },
                 { "include_investments", n => { IncludeInvestments = n.GetBoolValue(); } },
+                { "income_insights", n => { IncomeInsights = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportIncomeInsightsGetOptions>(global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportIncomeInsightsGetOptions.CreateFromDiscriminatorValue); } },
                 { "lend_score", n => { LendScore = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportLendScoreGetOptions>(global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportLendScoreGetOptions.CreateFromDiscriminatorValue); } },
                 { "network_insights", n => { NetworkInsights = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportNetworkInsightsGetOptions>(global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportNetworkInsightsGetOptions.CreateFromDiscriminatorValue); } },
                 { "partner_insights", n => { PartnerInsights = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreatePartnerInsightsOptions>(global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreatePartnerInsightsOptions.CreateFromDiscriminatorValue); } },
@@ -177,6 +186,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteIntValue("days_requested", DaysRequested);
             writer.WriteIntValue("days_required", DaysRequired);
             writer.WriteBoolValue("include_investments", IncludeInvestments);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportIncomeInsightsGetOptions>("income_insights", IncomeInsights);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportLendScoreGetOptions>("lend_score", LendScore);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportNetworkInsightsGetOptions>("network_insights", NetworkInsights);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreatePartnerInsightsOptions>("partner_insights", PartnerInsights);

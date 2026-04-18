@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// The details for the newly created end customer, including secrets for Sandbox and Limited Production.
+    /// The details for the newly created end customer, including secrets for non-Production environments.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PartnerEndCustomerWithSecrets : global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomer, IParsable

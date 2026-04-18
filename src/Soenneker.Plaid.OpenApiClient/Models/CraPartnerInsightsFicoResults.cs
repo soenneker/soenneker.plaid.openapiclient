@@ -23,6 +23,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string LenderApplicationId { get; set; }
 #endif
+        /// <summary>Report characteristics returned by FICO describing the banking data used to generate the UltraFICO score.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsFicoReportCharacteristics? ReportCharacteristics { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsFicoReportCharacteristics ReportCharacteristics { get; set; }
+#endif
         /// <summary>UltraFICO scoring results, one per provided base FICO score request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +65,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "lender_application_id", n => { LenderApplicationId = n.GetStringValue(); } },
+                { "report_characteristics", n => { ReportCharacteristics = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsFicoReportCharacteristics>(global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsFicoReportCharacteristics.CreateFromDiscriminatorValue); } },
                 { "ultrafico_score_results", n => { UltraficoScoreResults = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreResult>(global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreResult.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -68,6 +77,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("lender_application_id", LenderApplicationId);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsFicoReportCharacteristics>("report_characteristics", ReportCharacteristics);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreResult>("ultrafico_score_results", UltraficoScoreResults);
             writer.WriteAdditionalData(AdditionalData);
         }

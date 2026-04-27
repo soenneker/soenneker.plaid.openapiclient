@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Plaid.OpenApiClient.Sandbox.Item_Escaped.Application;
 using Soenneker.Plaid.OpenApiClient.Sandbox.Item_Escaped.Fire_webhook;
 using Soenneker.Plaid.OpenApiClient.Sandbox.Item_Escaped.Reset_login;
 using Soenneker.Plaid.OpenApiClient.Sandbox.Item_Escaped.Set_verification_status;
@@ -17,6 +18,11 @@ namespace Soenneker.Plaid.OpenApiClient.Sandbox.Item_Escaped
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Item_EscapedRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The application property</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Sandbox.Item_Escaped.Application.ApplicationRequestBuilder Application
+        {
+            get => new global::Soenneker.Plaid.OpenApiClient.Sandbox.Item_Escaped.Application.ApplicationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The fire_webhook property</summary>
         public global::Soenneker.Plaid.OpenApiClient.Sandbox.Item_Escaped.Fire_webhook.Fire_webhookRequestBuilder Fire_webhook
         {

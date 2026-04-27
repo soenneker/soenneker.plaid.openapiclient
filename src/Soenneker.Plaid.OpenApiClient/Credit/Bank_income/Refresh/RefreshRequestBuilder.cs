@@ -34,13 +34,14 @@ namespace Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Refresh
         {
         }
         /// <summary>
-        /// `/credit/bank_income/refresh` refreshes the most recent bank income report data for a specific user. If the most recent bank income report is no longer valid (i.e. deleted), the endpoint will refresh the most recent valid report instead.
+        /// `/credit/bank_income/refresh` is deprecated. The backend implementation was removed (returns an `Unimplemented` error at runtime), and the endpoint is no longer part of the documented API surface. To refresh Bank Income data for an existing user, send the user through Link Update Mode so they can confirm their income sources. For a fully backend refresh, migrate to CRA Income Insights and call `/cra/check_report/create`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeRefreshResponse"/></returns>
         /// <param name="body">CreditBankIncomeRefreshRequest defines the request schema for `/credit/bank_income/refresh`.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Plaid.OpenApiClient.Models.PlaidError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeRefreshResponse?> PostAsync(global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeRefreshRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -59,11 +60,12 @@ namespace Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Refresh
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeRefreshResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeRefreshResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// `/credit/bank_income/refresh` refreshes the most recent bank income report data for a specific user. If the most recent bank income report is no longer valid (i.e. deleted), the endpoint will refresh the most recent valid report instead.
+        /// `/credit/bank_income/refresh` is deprecated. The backend implementation was removed (returns an `Unimplemented` error at runtime), and the endpoint is no longer part of the documented API surface. To refresh Bank Income data for an existing user, send the user through Link Update Mode so they can confirm their income sources. For a fully backend refresh, migrate to CRA Income Insights and call `/cra/check_report/create`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">CreditBankIncomeRefreshRequest defines the request schema for `/credit/bank_income/refresh`.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeRefreshRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -85,6 +87,7 @@ namespace Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Refresh
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Refresh.RefreshRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Refresh.RefreshRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Refresh.RefreshRequestBuilder(rawUrl, RequestAdapter);

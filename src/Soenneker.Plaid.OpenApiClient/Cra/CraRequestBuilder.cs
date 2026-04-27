@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Plaid.OpenApiClient.Cra.Check_report;
+using Soenneker.Plaid.OpenApiClient.Cra.Credit_profile;
 using Soenneker.Plaid.OpenApiClient.Cra.Loans;
 using Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights;
 using Soenneker.Plaid.OpenApiClient.Cra.Partner_insights;
@@ -22,6 +23,11 @@ namespace Soenneker.Plaid.OpenApiClient.Cra
         public global::Soenneker.Plaid.OpenApiClient.Cra.Check_report.Check_reportRequestBuilder Check_report
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Cra.Check_report.Check_reportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The credit_profile property</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Cra.Credit_profile.Credit_profileRequestBuilder Credit_profile
+        {
+            get => new global::Soenneker.Plaid.OpenApiClient.Cra.Credit_profile.Credit_profileRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The loans property</summary>
         public global::Soenneker.Plaid.OpenApiClient.Cra.Loans.LoansRequestBuilder Loans

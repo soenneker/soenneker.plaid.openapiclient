@@ -40,6 +40,7 @@ namespace Soenneker.Plaid.OpenApiClient.Protect.Event.Send
         /// <param name="body">Request object for /protect/event/send</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Plaid.OpenApiClient.Models.ProtectEventSendResponse?> PostAsync(global::Soenneker.Plaid.OpenApiClient.Models.ProtectEventSendRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -59,6 +60,7 @@ namespace Soenneker.Plaid.OpenApiClient.Protect.Event.Send
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request object for /protect/event/send</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Soenneker.Plaid.OpenApiClient.Models.ProtectEventSendRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -80,6 +82,7 @@ namespace Soenneker.Plaid.OpenApiClient.Protect.Event.Send
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Protect.Event.Send.SendRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Protect.Event.Send.SendRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Plaid.OpenApiClient.Protect.Event.Send.SendRequestBuilder(rawUrl, RequestAdapter);

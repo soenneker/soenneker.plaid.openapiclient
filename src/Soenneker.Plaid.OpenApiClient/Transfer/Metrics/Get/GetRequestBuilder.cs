@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Transfer.Metrics.Get
         {
         }
         /// <summary>
-        /// Use the `/transfer/metrics/get` endpoint to view your transfer product usage metrics.
+        /// Use the `/transfer/metrics/get` endpoint to view your transfer product usage metrics.In the Sandbox environment, this endpoint returns static placeholder values rather than metrics computed from your Sandbox transfer activity.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetResponse"/></returns>
         /// <param name="body">Defines the request schema for `/transfer/metrics/get`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Transfer.Metrics.Get
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use the `/transfer/metrics/get` endpoint to view your transfer product usage metrics.
+        /// Use the `/transfer/metrics/get` endpoint to view your transfer product usage metrics.In the Sandbox environment, this endpoint returns static placeholder values rather than metrics computed from your Sandbox transfer activity.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Defines the request schema for `/transfer/metrics/get`</param>

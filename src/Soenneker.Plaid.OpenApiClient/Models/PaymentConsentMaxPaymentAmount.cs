@@ -8,30 +8,17 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// The amount and currency of a payment
+    /// Maximum amount of a single payment initiated using the payment consent.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PaymentConsentMaxPaymentAmount : IAdditionalDataHolder, IParsable
+    public partial class PaymentConsentMaxPaymentAmount : global::Soenneker.Plaid.OpenApiClient.Models.PaymentAmount, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ISO-4217 currency code of the payment. For standing orders and payment consents, `&quot;GBP&quot;` must be used. For Poland, Denmark, Sweden and Norway, only the local currency is currently supported.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentAmountCurrency? Currency { get; set; }
-        /// <summary>The amount of the payment. Must contain at most two digits of precision e.g. `1.23`. Minimum accepted value is `1`.</summary>
-        public double? Value { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentMaxPaymentAmount"/> and sets the default values.
-        /// </summary>
-        public PaymentConsentMaxPaymentAmount()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentMaxPaymentAmount"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentMaxPaymentAmount CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentMaxPaymentAmount CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentMaxPaymentAmount();
@@ -40,24 +27,20 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "currency", n => { Currency = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentAmountCurrency>(); } },
-                { "value", n => { Value = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer)
+        public override void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentAmountCurrency>("currency", Currency);
-            writer.WriteDoubleValue("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            base.Serialize(writer);
         }
     }
 }

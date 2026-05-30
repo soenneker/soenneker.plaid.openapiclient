@@ -31,14 +31,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentConstraints Constraints { get; set; }
 #endif
-        /// <summary>(Deprecated) Additional payment consent options. Please use `payer_details` to specify the account.</summary>
-        [Obsolete("")]
+        /// <summary>The options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentInitiationConsentOptions? Options { get; set; }
+        public string? Options { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentInitiationConsentOptions Options { get; set; }
+        public string Options { get; set; }
 #endif
         /// <summary>An object representing the payment consent payer details.Payer `name` and account `numbers` are required to lock the account to which the consent can be created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +80,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Secret { get; set; }
 #endif
-        /// <summary>Payment consent type. Defines possible use case for payments made with the given consent.`SWEEPING`: Allows moving money between accounts owned by the same user.`COMMERCIAL`: Allows initiating payments from the user&apos;s account to third parties.</summary>
+        /// <summary>&quot;Payment consent type. Defines possible use case for payments made with the given consent.`SWEEPING`: Allows moving money between accounts owned by the same user.`COMMERCIAL`: Allows initiating payments from the user&apos;s account to third parties.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentCreateRequest"/> and sets the default values.
@@ -110,7 +109,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
                 { "constraints", n => { Constraints = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentConstraints>(global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentConstraints.CreateFromDiscriminatorValue); } },
-                { "options", n => { Options = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentInitiationConsentOptions>(global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentInitiationConsentOptions.CreateFromDiscriminatorValue); } },
+                { "options", n => { Options = n.GetStringValue(); } },
                 { "payer_details", n => { PayerDetails = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentPayerDetails>(global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentPayerDetails.CreateFromDiscriminatorValue); } },
                 { "recipient_id", n => { RecipientId = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
@@ -128,7 +127,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("client_id", ClientId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentConstraints>("constraints", Constraints);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentInitiationConsentOptions>("options", Options);
+            writer.WriteStringValue("options", Options);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentPayerDetails>("payer_details", PayerDetails);
             writer.WriteStringValue("recipient_id", RecipientId);
             writer.WriteStringValue("reference", Reference);

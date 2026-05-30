@@ -26,7 +26,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).</summary>
         public Date? DateOfBirth { get; set; }
-        /// <summary>Provide a list of bank accounts that are associated with this Beacon User. These accounts will be scanned across the Beacon Network and used to find duplicate records.Note: These accounts will not have Bank Account Insights. To receive Bank Account Insights please supply `access_tokens`.</summary>
+        /// <summary>&quot;Provide a list of bank accounts that are associated with this Beacon User. These accounts will be scanned across the Beacon Network and used to find duplicate records.Note: These accounts will not have Bank Account Insights. To receive Bank Account Insights please supply `access_tokens`.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserRequestDepositoryAccount>? DepositoryAccounts { get; set; }

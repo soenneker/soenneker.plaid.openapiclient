@@ -36,18 +36,18 @@ namespace Soenneker.Plaid.OpenApiClient.Sandbox.Oauth.Select_accounts
         /// <summary>
         /// Save the selected accounts when connecting to the Platypus Oauth institution
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.SandboxOauthSelectAccountsResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Sandbox.Oauth.Select_accounts.Select_accountsPostResponse"/></returns>
         /// <param name="body">Defines the request schema for `sandbox/oauth/select_accounts`</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Plaid.OpenApiClient.Models.PlaidError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Plaid.OpenApiClient.Models.SandboxOauthSelectAccountsResponse?> PostAsync(global::Soenneker.Plaid.OpenApiClient.Models.SandboxOauthSelectAccountsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Plaid.OpenApiClient.Sandbox.Oauth.Select_accounts.Select_accountsPostResponse?> PostAsync(global::Soenneker.Plaid.OpenApiClient.Models.SandboxOauthSelectAccountsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Plaid.OpenApiClient.Models.SandboxOauthSelectAccountsResponse> PostAsync(global::Soenneker.Plaid.OpenApiClient.Models.SandboxOauthSelectAccountsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Plaid.OpenApiClient.Sandbox.Oauth.Select_accounts.Select_accountsPostResponse> PostAsync(global::Soenneker.Plaid.OpenApiClient.Models.SandboxOauthSelectAccountsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -56,7 +56,7 @@ namespace Soenneker.Plaid.OpenApiClient.Sandbox.Oauth.Select_accounts
             {
                 { "XXX", global::Soenneker.Plaid.OpenApiClient.Models.PlaidError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.SandboxOauthSelectAccountsResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.SandboxOauthSelectAccountsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Sandbox.Oauth.Select_accounts.Select_accountsPostResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Sandbox.Oauth.Select_accounts.Select_accountsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Save the selected accounts when connecting to the Platypus Oauth institution

@@ -39,7 +39,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Secret { get; set; }
 #endif
-        /// <summary>A status of a Beacon User.`rejected`: The Beacon User has been rejected for fraud. Users can be automatically or manually rejected.`pending_review`: The Beacon User has been marked for review.`cleared`: The Beacon User has been cleared of fraud.</summary>
+        /// <summary>&quot;A status of a Beacon User.`rejected`: The Beacon User has been rejected for fraud. Users can be automatically or manually rejected.`pending_review`: The Beacon User has been marked for review.`cleared`: The Beacon User has been cleared of fraud.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserReviewRequest"/> and sets the default values.

@@ -100,7 +100,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string MerchantName { get; set; }
 #endif
-        /// <summary>The merchant name or transaction description.Note: This is a legacy field that is not actively maintained. Use `merchant_name` instead for the merchant name.</summary>
+        /// <summary>&quot;The merchant name or transaction description.Note: This is a legacy field that is not actively maintained. Use `merchant_name` instead for the merchant name.&quot;</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -122,10 +122,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The personal_finance_category property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory? PersonalFinanceCategory { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransaction_personal_finance_category? PersonalFinanceCategory { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory PersonalFinanceCategory { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransaction_personal_finance_category PersonalFinanceCategory { get; set; }
 #endif
         /// <summary>The unique ID of the transaction. Like all Plaid identifiers, the `transaction_id` is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -185,7 +185,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "original_description", n => { OriginalDescription = n.GetStringValue(); } },
                 { "pending", n => { Pending = n.GetBoolValue(); } },
-                { "personal_finance_category", n => { PersonalFinanceCategory = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory>(global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory.CreateFromDiscriminatorValue); } },
+                { "personal_finance_category", n => { PersonalFinanceCategory = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransaction_personal_finance_category>(global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransaction_personal_finance_category.CreateFromDiscriminatorValue); } },
                 { "transaction_id", n => { TransactionId = n.GetStringValue(); } },
                 { "transaction_type", n => { TransactionType = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransactionType>(); } },
                 { "unofficial_currency_code", n => { UnofficialCurrencyCode = n.GetStringValue(); } },
@@ -213,7 +213,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("original_description", OriginalDescription);
             writer.WriteBoolValue("pending", Pending);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory>("personal_finance_category", PersonalFinanceCategory);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransaction_personal_finance_category>("personal_finance_category", PersonalFinanceCategory);
             writer.WriteStringValue("transaction_id", TransactionId);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransactionType>("transaction_type", TransactionType);
             writer.WriteStringValue("unofficial_currency_code", UnofficialCurrencyCode);

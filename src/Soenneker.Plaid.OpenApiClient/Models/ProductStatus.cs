@@ -25,7 +25,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>[ISO 8601](https://wikipedia.org/wiki/ISO_8601) formatted timestamp of the last status change for the institution.</summary>
         public DateTimeOffset? LastStatusChange { get; set; }
-        /// <summary>This field is deprecated in favor of the `breakdown` object, which provides more granular institution health data.`HEALTHY`: the majority of requests are successful`DEGRADED`: only some requests are successful`DOWN`: all requests are failing</summary>
+        /// <summary>&quot;This field is deprecated in favor of the `breakdown` object, which provides more granular institution health data.`HEALTHY`: the majority of requests are successful`DEGRADED`: only some requests are successful`DOWN`: all requests are failing&quot;</summary>
         [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus_status? Status { get; set; }
         /// <summary>

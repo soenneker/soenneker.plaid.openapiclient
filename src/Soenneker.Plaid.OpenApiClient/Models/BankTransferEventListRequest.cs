@@ -43,7 +43,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>The maximum number of bank transfer events to return. If the number of events matching the above parameters is greater than `count`, the most recent events will be returned.</summary>
         public int? Count { get; set; }
-        /// <summary>Indicates the direction of the transfer: `outbound`: for API-initiated transfers`inbound`: for payments received by the FBO account.</summary>
+        /// <summary>&quot;Indicates the direction of the transfer: `outbound`: for API-initiated transfers`inbound`: for payments received by the FBO account.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventListDirection? Direction { get; set; }
         /// <summary>The end datetime of bank transfers to list. This should be in RFC 3339 format (i.e. `2019-12-06T22:35:49Z`)</summary>
         public DateTimeOffset? EndDate { get; set; }

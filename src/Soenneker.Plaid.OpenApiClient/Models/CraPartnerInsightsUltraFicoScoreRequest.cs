@@ -40,7 +40,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public string RequestCorrelationId { get; set; }
 #endif
         /// <summary>The version of the UltraFICO score.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreVersion? UltraficoScoreVersion { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UltraficoScoreVersion { get; set; }
+#nullable restore
+#else
+        public string UltraficoScoreVersion { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreRequest"/> and sets the default values.
         /// </summary>
@@ -69,7 +75,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "base_fico_score", n => { BaseFicoScore = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsBaseFicoScore>(global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsBaseFicoScore.CreateFromDiscriminatorValue); } },
                 { "fico_scoring_request_id", n => { FicoScoringRequestId = n.GetStringValue(); } },
                 { "request_correlation_id", n => { RequestCorrelationId = n.GetStringValue(); } },
-                { "ultrafico_score_version", n => { UltraficoScoreVersion = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreVersion>(); } },
+                { "ultrafico_score_version", n => { UltraficoScoreVersion = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -82,7 +88,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsBaseFicoScore>("base_fico_score", BaseFicoScore);
             writer.WriteStringValue("fico_scoring_request_id", FicoScoringRequestId);
             writer.WriteStringValue("request_correlation_id", RequestCorrelationId);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreVersion>("ultrafico_score_version", UltraficoScoreVersion);
+            writer.WriteStringValue("ultrafico_score_version", UltraficoScoreVersion);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

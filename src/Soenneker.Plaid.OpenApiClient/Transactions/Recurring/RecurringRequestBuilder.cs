@@ -2,7 +2,6 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Plaid.OpenApiClient.Transactions.Recurring.Deactivate;
 using Soenneker.Plaid.OpenApiClient.Transactions.Recurring.Get;
 using System.Collections.Generic;
 using System.IO;
@@ -16,11 +15,6 @@ namespace Soenneker.Plaid.OpenApiClient.Transactions.Recurring
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecurringRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The deactivate property</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Transactions.Recurring.Deactivate.DeactivateRequestBuilder Deactivate
-        {
-            get => new global::Soenneker.Plaid.OpenApiClient.Transactions.Recurring.Deactivate.DeactivateRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The getPath property</summary>
         public global::Soenneker.Plaid.OpenApiClient.Transactions.Recurring.Get.GetRequestBuilder GetPath
         {

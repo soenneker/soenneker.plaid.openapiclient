@@ -41,7 +41,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientUserId { get; set; }
 #endif
-        /// <summary>The default ACH or non-ACH payment method to complete the transaction.`SAME_DAY_ACH`: Same Day ACH by Nacha. The debit transaction is processed and settled on the same day.`STANDARD_ACH`: standard ACH by Nacha.`MULTIPLE_PAYMENT_METHODS`: if there is no default debit rail or there are multiple payment methods.Possible values:  `SAME_DAY_ACH`, `STANDARD_ACH`, `MULTIPLE_PAYMENT_METHODS`</summary>
+        /// <summary>&quot;The default ACH or non-ACH payment method to complete the transaction.`SAME_DAY_ACH`: Same Day ACH by Nacha. The debit transaction is processed and settled on the same day.`STANDARD_ACH`: standard ACH by Nacha.`MULTIPLE_PAYMENT_METHODS`: if there is no default debit rail or there are multiple payment methods.Possible values:  `SAME_DAY_ACH`, `STANDARD_ACH`, `MULTIPLE_PAYMENT_METHODS`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DefaultPaymentMethod { get; set; }
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>**true** if the ACH transaction is a recurring transaction; **false** otherwise </summary>
         public bool? IsRecurring { get; set; }
-        /// <summary>The processor token obtained from the Plaid integration partner. Processor tokens are in the format: `processor-&lt;environment&gt;-&lt;identifier&gt;`</summary>
+        /// <summary>&quot;The processor token obtained from the Plaid integration partner. Processor tokens are in the format: `processor-&lt;environment&gt;-&lt;identifier&gt;`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProcessorToken { get; set; }

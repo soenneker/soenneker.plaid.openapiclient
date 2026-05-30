@@ -4,7 +4,6 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Get;
 using Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Pdf;
-using Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Refresh;
 using Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Webhook;
 using System.Collections.Generic;
 using System.IO;
@@ -27,11 +26,6 @@ namespace Soenneker.Plaid.OpenApiClient.Credit.Bank_income
         public global::Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Pdf.PdfRequestBuilder Pdf
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Pdf.PdfRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The refresh property</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Refresh.RefreshRequestBuilder Refresh
-        {
-            get => new global::Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Refresh.RefreshRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The webhook property</summary>
         public global::Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Webhook.WebhookRequestBuilder Webhook

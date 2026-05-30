@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>A list of add-ons that can be included in the PDF.`cra_income_insights`: Include Income Insights report in the PDF.`cra_partner_insights`: Include Partner Insights report in the PDF.</summary>
+    /// <summary>&quot;A list of add-ons that can be included in the PDF.`cra_income_insights`: Include Income Insights report in the PDF.`cra_partner_insights`: Include Partner Insights report in the PDF.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CraPDFAddOns
     {

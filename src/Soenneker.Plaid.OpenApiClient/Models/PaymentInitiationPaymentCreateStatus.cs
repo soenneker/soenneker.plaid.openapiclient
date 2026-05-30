@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>For a payment returned by this endpoint, there is only one possible value:`PAYMENT_STATUS_INPUT_NEEDED`: The initial phase of the payment</summary>
+    /// <summary>&quot;For a payment returned by this endpoint, there is only one possible value:`PAYMENT_STATUS_INPUT_NEEDED`: The initial phase of the payment&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PaymentInitiationPaymentCreateStatus
     {

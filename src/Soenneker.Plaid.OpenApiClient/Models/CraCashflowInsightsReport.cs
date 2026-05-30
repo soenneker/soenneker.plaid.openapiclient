@@ -18,10 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>A map of cash flow attributes, where the key is a string, and the value is a float, int, or boolean. The specific list of attributes will depend on the cash flow attributes version used. For a full list of attributes, contact your account manager.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowAttributesSchema? Attributes { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCashflowInsightsReport_attributes? Attributes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowAttributesSchema Attributes { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCashflowInsightsReport_attributes Attributes { get; set; }
 #endif
         /// <summary>The time when the report was generated.</summary>
         public DateTimeOffset? GeneratedTime { get; set; }
@@ -58,7 +58,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attributes", n => { Attributes = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CashflowAttributesSchema>(global::Soenneker.Plaid.OpenApiClient.Models.CashflowAttributesSchema.CreateFromDiscriminatorValue); } },
+                { "attributes", n => { Attributes = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCashflowInsightsReport_attributes>(global::Soenneker.Plaid.OpenApiClient.Models.CraCashflowInsightsReport_attributes.CreateFromDiscriminatorValue); } },
                 { "generated_time", n => { GeneratedTime = n.GetDateTimeOffsetValue(); } },
                 { "report_id", n => { ReportId = n.GetStringValue(); } },
             };
@@ -70,7 +70,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CashflowAttributesSchema>("attributes", Attributes);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCashflowInsightsReport_attributes>("attributes", Attributes);
             writer.WriteDateTimeOffsetValue("generated_time", GeneratedTime);
             writer.WriteStringValue("report_id", ReportId);
             writer.WriteAdditionalData(AdditionalData);

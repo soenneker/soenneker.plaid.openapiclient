@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>The status of the recurring transfer.`active`: The recurring transfer is currently active.`cancelled`: The recurring transfer was cancelled by the client or Plaid.`expired`: The recurring transfer has completed all originations according to its recurring schedule.</summary>
+    /// <summary>&quot;The status of the recurring transfer.`active`: The recurring transfer is currently active.`cancelled`: The recurring transfer was cancelled by the client or Plaid.`expired`: The recurring transfer has completed all originations according to its recurring schedule.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransferRecurringStatus
     {

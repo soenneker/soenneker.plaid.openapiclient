@@ -3,14 +3,10 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>How an asset is owned.`association`: Ownership by a corporation, partnership, or unincorporated association, including for-profit and not-for-profit organizations.`individual`: Ownership by an individual.`joint`: Joint ownership by multiple parties.`trust`: Ownership by a revocable or irrevocable trust.</summary>
+    /// <summary>&quot;How an asset is owned.`association`: Ownership by a corporation, partnership, or unincorporated association, including for-profit and not-for-profit organizations.`individual`: Ownership by an individual.`joint`: Joint ownership by multiple parties.`trust`: Ownership by a revocable or irrevocable trust.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum OwnershipType
     {
-        [EnumMember(Value = "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
-        #pragma warning disable CS1591
-        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
-        #pragma warning restore CS1591
         [EnumMember(Value = "individual")]
         #pragma warning disable CS1591
         Individual,

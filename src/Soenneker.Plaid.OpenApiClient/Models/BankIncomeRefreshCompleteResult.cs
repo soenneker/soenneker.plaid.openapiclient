@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>The result of the bank income refresh report generation`SUCCESS`: The refreshed report was successfully generated and can be retrieved via `/credit/bank_income/get`.`FAILURE`: The refreshed report failed to be generated</summary>
+    /// <summary>&quot;The result of the bank income refresh report generation`SUCCESS`: The refreshed report was successfully generated and can be retrieved via `/credit/bank_income/get`.`FAILURE`: The refreshed report failed to be generated&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BankIncomeRefreshCompleteResult
     {

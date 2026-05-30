@@ -24,7 +24,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Outcome { get; set; }
 #endif
-        /// <summary>The result of the rule that was triggered for this transaction.`ACCEPT`: Accept the transaction for processing.`REROUTE`: Reroute the transaction to a different payment method, as this transaction is too risky.`REVIEW`: Review the transaction before proceeding.</summary>
+        /// <summary>&quot;The result of the rule that was triggered for this transaction.`ACCEPT`: Accept the transaction for processing.`REROUTE`: Reroute the transaction to a different payment method, as this transaction is too risky.`REVIEW`: Review the transaction before proceeding.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.RuleResult? Result { get; set; }
         /// <summary>The key of the Ruleset used for this transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

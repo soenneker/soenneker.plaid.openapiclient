@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
-        /// <summary>The asynchronous event to be simulated. May be: `refund.posted`, `refund.settled`, `refund.failed`, or `refund.returned`.An error will be returned if the event type is incompatible with the current refund status. Compatible status --&gt; event type transitions include:`refund.pending` --&gt; `refund.failed``refund.pending` --&gt; `refund.posted``refund.posted` --&gt; `refund.returned``refund.posted` --&gt; `refund.settled``refund.posted` events can only be simulated if the refunded transfer has been transitioned to settled. This mimics the ordering of events in Production.</summary>
+        /// <summary>&quot;The asynchronous event to be simulated. May be: `refund.posted`, `refund.settled`, `refund.failed`, or `refund.returned`.An error will be returned if the event type is incompatible with the current refund status. Compatible status --&gt; event type transitions include:`refund.pending` --&gt; `refund.failed``refund.pending` --&gt; `refund.posted``refund.posted` --&gt; `refund.returned``refund.posted` --&gt; `refund.settled``refund.posted` events can only be simulated if the refunded transfer has been transitioned to settled. This mimics the ordering of events in Production.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventType { get; set; }

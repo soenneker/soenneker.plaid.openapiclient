@@ -28,10 +28,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>A map of network attributes, where the key is a string, and the value is a float, int, or boolean. For a full list of attributes, contact your account manager.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.NetworkInsightsSchema? NetworkAttributes { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.NetworkInsightsReport_network_attributes? NetworkAttributes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.NetworkInsightsSchema NetworkAttributes { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.NetworkInsightsReport_network_attributes NetworkAttributes { get; set; }
 #endif
         /// <summary>The unique identifier associated with the Network Insights report object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,7 +68,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "generated_time", n => { GeneratedTime = n.GetDateTimeOffsetValue(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NetworkInsightsItem>(global::Soenneker.Plaid.OpenApiClient.Models.NetworkInsightsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "network_attributes", n => { NetworkAttributes = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NetworkInsightsSchema>(global::Soenneker.Plaid.OpenApiClient.Models.NetworkInsightsSchema.CreateFromDiscriminatorValue); } },
+                { "network_attributes", n => { NetworkAttributes = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NetworkInsightsReport_network_attributes>(global::Soenneker.Plaid.OpenApiClient.Models.NetworkInsightsReport_network_attributes.CreateFromDiscriminatorValue); } },
                 { "report_id", n => { ReportId = n.GetStringValue(); } },
             };
         }
@@ -81,7 +81,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("generated_time", GeneratedTime);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NetworkInsightsItem>("items", Items);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NetworkInsightsSchema>("network_attributes", NetworkAttributes);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NetworkInsightsReport_network_attributes>("network_attributes", NetworkAttributes);
             writer.WriteStringValue("report_id", ReportId);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -15,13 +15,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A mapping of currency to maximum payment amount (denominated in the smallest unit of currency) supported by the institution.Example: `{&quot;GBP&quot;: &quot;10000&quot;}`</summary>
+        /// <summary>&quot;A mapping of currency to maximum payment amount (denominated in the smallest unit of currency) supported by the institution.Example: `{\&quot;GBP\&quot;: \&quot;10000\&quot;}`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMaximumPaymentAmount? MaximumPaymentAmount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMetadata_maximum_payment_amount? MaximumPaymentAmount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMaximumPaymentAmount MaximumPaymentAmount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMetadata_maximum_payment_amount MaximumPaymentAmount { get; set; }
 #endif
         /// <summary>Metadata specifically related to valid Payment Initiation standing order configurations for the institution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "maximum_payment_amount", n => { MaximumPaymentAmount = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMaximumPaymentAmount>(global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMaximumPaymentAmount.CreateFromDiscriminatorValue); } },
+                { "maximum_payment_amount", n => { MaximumPaymentAmount = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMetadata_maximum_payment_amount>(global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMetadata_maximum_payment_amount.CreateFromDiscriminatorValue); } },
                 { "standing_order_metadata", n => { StandingOrderMetadata = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationStandingOrderMetadata>(global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationStandingOrderMetadata.CreateFromDiscriminatorValue); } },
                 { "supports_international_payments", n => { SupportsInternationalPayments = n.GetBoolValue(); } },
                 { "supports_payment_consents", n => { SupportsPaymentConsents = n.GetBoolValue(); } },
@@ -79,7 +79,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMaximumPaymentAmount>("maximum_payment_amount", MaximumPaymentAmount);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMetadata_maximum_payment_amount>("maximum_payment_amount", MaximumPaymentAmount);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationStandingOrderMetadata>("standing_order_metadata", StandingOrderMetadata);
             writer.WriteBoolValue("supports_international_payments", SupportsInternationalPayments);
             writer.WriteBoolValue("supports_payment_consents", SupportsPaymentConsents);

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>The status of the wallet.`UNKNOWN`: The wallet status is unknown.`ACTIVE`: The wallet is active and ready to send money to and receive money from.`CLOSED`: The wallet is closed. Any transactions made to or from this wallet will error.</summary>
+    /// <summary>&quot;The status of the wallet.`UNKNOWN`: The wallet status is unknown.`ACTIVE`: The wallet is active and ready to send money to and receive money from.`CLOSED`: The wallet is closed. Any transactions made to or from this wallet will error.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WalletStatus
     {

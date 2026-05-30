@@ -45,14 +45,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>This object includes the scores and risk level. This response is offered as an add-on to /transfer/authorization/create. To request access to these fields please contact your Plaid account manager.</summary>
-        [Obsolete("")]
+        /// <summary>The payment_risk property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationPaymentRisk? PaymentRisk { get; set; }
+        public string? PaymentRisk { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationPaymentRisk PaymentRisk { get; set; }
+        public string PaymentRisk { get; set; }
 #endif
         /// <summary>Details regarding the proposed transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -93,7 +92,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "guarantee_decision", n => { GuaranteeDecision = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecision>(); } },
                 { "guarantee_decision_rationale", n => { GuaranteeDecisionRationale = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale>(global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "payment_risk", n => { PaymentRisk = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationPaymentRisk>(global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationPaymentRisk.CreateFromDiscriminatorValue); } },
+                { "payment_risk", n => { PaymentRisk = n.GetStringValue(); } },
                 { "proposed_transfer", n => { ProposedTransfer = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransfer>(global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransfer.CreateFromDiscriminatorValue); } },
             };
         }
@@ -110,7 +109,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecision>("guarantee_decision", GuaranteeDecision);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale>("guarantee_decision_rationale", GuaranteeDecisionRationale);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationPaymentRisk>("payment_risk", PaymentRisk);
+            writer.WriteStringValue("payment_risk", PaymentRisk);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransfer>("proposed_transfer", ProposedTransfer);
             writer.WriteAdditionalData(AdditionalData);
         }

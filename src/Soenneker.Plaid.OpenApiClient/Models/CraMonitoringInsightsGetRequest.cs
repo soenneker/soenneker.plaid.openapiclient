@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
-        /// <summary>Describes the reason you are generating a Consumer Report for this user.`ACCOUNT_REVIEW_CREDIT`: In connection with a consumer credit transaction for the review or collection of an account pursuant to FCRA Section 604(a)(3)(A).`WRITTEN_INSTRUCTION_OTHER`: In accordance with the written instructions of the consumer pursuant to FCRA Section 604(a)(2), such as when an individual agrees to act as a guarantor or assumes personal liability for a consumer, business, or commercial loan.</summary>
+        /// <summary>&quot;Describes the reason you are generating a Consumer Report for this user.`ACCOUNT_REVIEW_CREDIT`: In connection with a consumer credit transaction for the review or collection of an account pursuant to FCRA Section 604(a)(3)(A).`WRITTEN_INSTRUCTION_OTHER`: In accordance with the written instructions of the consumer pursuant to FCRA Section 604(a)(2), such as when an individual agrees to act as a guarantor or assumes personal liability for a consumer, business, or commercial loan.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.MonitoringConsumerReportPermissiblePurpose? ConsumerReportPermissiblePurpose { get; set; }
         /// <summary>Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

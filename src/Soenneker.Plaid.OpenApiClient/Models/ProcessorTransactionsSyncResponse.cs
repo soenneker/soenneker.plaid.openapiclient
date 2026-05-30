@@ -65,7 +65,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string RequestId { get; set; }
 #endif
-        /// <summary>A description of the update status for transaction pulls of an Item. This field contains the same information provided by transactions webhooks, and may be helpful for webhook troubleshooting or when recovering from missed webhooks.`TRANSACTIONS_UPDATE_STATUS_UNKNOWN`: Unable to fetch transactions update status for Item.`NOT_READY`: The Item is pending transaction pull.`INITIAL_UPDATE_COMPLETE`: Initial pull for the Item is complete, historical pull is pending.`HISTORICAL_UPDATE_COMPLETE`: Both initial and historical pull for Item are complete.</summary>
+        /// <summary>&quot;A description of the update status for transaction pulls of an Item. This field contains the same information provided by transactions webhooks, and may be helpful for webhook troubleshooting or when recovering from missed webhooks.`TRANSACTIONS_UPDATE_STATUS_UNKNOWN`: Unable to fetch transactions update status for Item.`NOT_READY`: The Item is pending transaction pull.`INITIAL_UPDATE_COMPLETE`: Initial pull for the Item is complete, historical pull is pending.`HISTORICAL_UPDATE_COMPLETE`: Both initial and historical pull for Item are complete.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.TransactionsUpdateStatus? TransactionsUpdateStatus { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ProcessorTransactionsSyncResponse"/> and sets the default values.

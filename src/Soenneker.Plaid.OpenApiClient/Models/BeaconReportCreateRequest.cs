@@ -50,7 +50,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Secret { get; set; }
 #endif
-        /// <summary>The type of Beacon Report.`first_party`: If this is the same individual as the one who submitted the KYC.`stolen`: If this is a different individual from the one who submitted the KYC.`synthetic`: If this is an individual using fabricated information.`account_takeover`: If this individual&apos;s account was compromised.`unknown`: If you aren&apos;t sure who committed the fraud.</summary>
+        /// <summary>&quot;The type of Beacon Report.`first_party`: If this is the same individual as the one who submitted the KYC.`stolen`: If this is a different individual from the one who submitted the KYC.`synthetic`: If this is an individual using fabricated information.`account_takeover`: If this individual&apos;s account was compromised.`unknown`: If you aren&apos;t sure who committed the fraud.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.BeaconReportCreateType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BeaconReportCreateRequest"/> and sets the default values.

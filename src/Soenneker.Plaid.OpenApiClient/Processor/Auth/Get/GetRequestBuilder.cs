@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Processor.Auth.Get
         {
         }
         /// <summary>
-        /// The `/processor/auth/get` endpoint returns the bank account and bank identification number (such as the routing number, for US accounts), for a checking, savings, or cash management account that&apos;&apos;s associated with a given `processor_token`. The endpoint also returns high-level account data and balances when available.Versioning note: API versions 2019-05-29 and earlier use a different schema for the `numbers` object returned by this endpoint. For details, see [Plaid API versioning](https://plaid.com/docs/api/versioning/#version-2020-09-14).
+        /// &quot;The `/processor/auth/get` endpoint returns the bank account and bank identification number (such as the routing number, for US accounts), for a checking, savings, or cash management account that&apos;&apos;s associated with a given `processor_token`. The endpoint also returns high-level account data and balances when available.Versioning note: API versions 2019-05-29 and earlier use a different schema for the `numbers` object returned by this endpoint. For details, see [Plaid API versioning](https://plaid.com/docs/api/versioning/#version-2020-09-14).&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ProcessorAuthGetResponse"/></returns>
         /// <param name="body">ProcessorAuthGetRequest defines the request schema for `/processor/auth/get`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Processor.Auth.Get
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.ProcessorAuthGetResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.ProcessorAuthGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The `/processor/auth/get` endpoint returns the bank account and bank identification number (such as the routing number, for US accounts), for a checking, savings, or cash management account that&apos;&apos;s associated with a given `processor_token`. The endpoint also returns high-level account data and balances when available.Versioning note: API versions 2019-05-29 and earlier use a different schema for the `numbers` object returned by this endpoint. For details, see [Plaid API versioning](https://plaid.com/docs/api/versioning/#version-2020-09-14).
+        /// &quot;The `/processor/auth/get` endpoint returns the bank account and bank identification number (such as the routing number, for US accounts), for a checking, savings, or cash management account that&apos;&apos;s associated with a given `processor_token`. The endpoint also returns high-level account data and balances when available.Versioning note: API versions 2019-05-29 and earlier use a different schema for the `numbers` object returned by this endpoint. For details, see [Plaid API versioning](https://plaid.com/docs/api/versioning/#version-2020-09-14).&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">ProcessorAuthGetRequest defines the request schema for `/processor/auth/get`</param>

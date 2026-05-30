@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Oauth.Introspect
         {
         }
         /// <summary>
-        /// `/oauth/introspect` returns metadata about an access token or refresh token.Note: This endpoint supports `Content-Type: application/x-www-form-urlencoded` as well as JSON. The fields for the form are equivalent to the fields for JSON and conform to the OAuth 2.0 specification.
+        /// &quot;`/oauth/introspect` returns metadata about an access token or refresh token.Note: This endpoint supports `Content-Type: application/x-www-form-urlencoded` as well as JSON. The fields for the form are equivalent to the fields for JSON and conform to the OAuth 2.0 specification.&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.OAuthIntrospectResponse"/></returns>
         /// <param name="body">OAuth token introspect request.</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Oauth.Introspect
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.OAuthIntrospectResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.OAuthIntrospectResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// `/oauth/introspect` returns metadata about an access token or refresh token.Note: This endpoint supports `Content-Type: application/x-www-form-urlencoded` as well as JSON. The fields for the form are equivalent to the fields for JSON and conform to the OAuth 2.0 specification.
+        /// &quot;`/oauth/introspect` returns metadata about an access token or refresh token.Note: This endpoint supports `Content-Type: application/x-www-form-urlencoded` as well as JSON. The fields for the form are equivalent to the fields for JSON and conform to the OAuth 2.0 specification.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">OAuth token introspect request.</param>

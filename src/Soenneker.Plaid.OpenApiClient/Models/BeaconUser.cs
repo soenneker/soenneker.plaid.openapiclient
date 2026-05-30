@@ -57,7 +57,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ProgramId { get; set; }
 #endif
-        /// <summary>A status of a Beacon User.`rejected`: The Beacon User has been rejected for fraud. Users can be automatically or manually rejected.`pending_review`: The Beacon User has been marked for review.`cleared`: The Beacon User has been cleared of fraud.</summary>
+        /// <summary>&quot;A status of a Beacon User.`rejected`: The Beacon User has been rejected for fraud. Users can be automatically or manually rejected.`pending_review`: The Beacon User has been marked for review.`cleared`: The Beacon User has been cleared of fraud.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserStatus? Status { get; set; }
         /// <summary>An ISO8601 formatted timestamp. This field indicates the last time the resource was modified.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }

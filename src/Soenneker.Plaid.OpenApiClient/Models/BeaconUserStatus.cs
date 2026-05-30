@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>A status of a Beacon User.`rejected`: The Beacon User has been rejected for fraud. Users can be automatically or manually rejected.`pending_review`: The Beacon User has been marked for review.`cleared`: The Beacon User has been cleared of fraud.</summary>
+    /// <summary>&quot;A status of a Beacon User.`rejected`: The Beacon User has been rejected for fraud. Users can be automatically or manually rejected.`pending_review`: The Beacon User has been marked for review.`cleared`: The Beacon User has been cleared of fraud.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BeaconUserStatus
     {

@@ -26,10 +26,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The Insights Result object is a map of cash flow attributes, where the key is a string, and the value is a float or string. For a full list of attributes, contact your account manager. The attributes may vary depending on the Prism version used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsResult? Result { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismInsights_result? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsResult Result { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismInsights_result Result { get; set; }
 #endif
         /// <summary>The version of Prism Data&apos;s insights model used.</summary>
         public int? Version { get; set; }
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "error_reason", n => { ErrorReason = n.GetStringValue(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsResult>(global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsResult.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismInsights_result>(global::Soenneker.Plaid.OpenApiClient.Models.PrismInsights_result.CreateFromDiscriminatorValue); } },
                 { "version", n => { Version = n.GetIntValue(); } },
             };
         }
@@ -71,7 +71,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("error_reason", ErrorReason);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsResult>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismInsights_result>("result", Result);
             writer.WriteIntValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }

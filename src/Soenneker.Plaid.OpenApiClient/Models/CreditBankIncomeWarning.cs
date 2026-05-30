@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeCause Cause { get; set; }
 #endif
-        /// <summary>The warning code identifies a specific kind of warning.`IDENTITY_UNAVAILABLE`: Unable to extract identity for the Item`TRANSACTIONS_UNAVAILABLE`: Unable to extract transactions for the Item`ITEM_UNAPPROVED`: User exited flow before giving permission to share data for the Item`REPORT_DELETED`: Report deleted due to customer or consumer request`DATA_UNAVAILABLE`: No relevant data was found for the Item</summary>
+        /// <summary>&quot;The warning code identifies a specific kind of warning.`IDENTITY_UNAVAILABLE`: Unable to extract identity for the Item`TRANSACTIONS_UNAVAILABLE`: Unable to extract transactions for the Item`ITEM_UNAPPROVED`: User exited flow before giving permission to share data for the Item`REPORT_DELETED`: Report deleted due to customer or consumer request`DATA_UNAVAILABLE`: No relevant data was found for the Item&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeWarningCode? WarningCode { get; set; }
         /// <summary>The warning type which will always be `BANK_INCOME_WARNING`.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeWarningType? WarningType { get; set; }

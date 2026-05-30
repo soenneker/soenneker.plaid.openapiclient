@@ -39,7 +39,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string PostalCode { get; set; }
 #endif
-        /// <summary>The region or state. In API versions 2018-05-22 and earlier, this field is called `state`.Example: `&quot;NC&quot;`</summary>
+        /// <summary>&quot;The region or state. In API versions 2018-05-22 and earlier, this field is called `state`.Example: `\&quot;NC\&quot;`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Region { get; set; }
@@ -47,7 +47,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Region { get; set; }
 #endif
-        /// <summary>The full street addressExample: `&quot;564 Main Street, APT 15&quot;`</summary>
+        /// <summary>&quot;The full street addressExample: `\&quot;564 Main Street, APT 15\&quot;`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Street { get; set; }

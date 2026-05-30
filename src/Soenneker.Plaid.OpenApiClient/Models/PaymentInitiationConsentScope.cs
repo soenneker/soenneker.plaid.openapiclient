@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>This field is deprecated in favor of the consent `type` field. Consents are required to have a single type.Payment consent scope. Defines possible directions for payments made with the given consent.`ME_TO_ME`: Allows moving money between accounts owned by the same user.`EXTERNAL`: Allows initiating payments from the user&apos;s account to third parties.</summary>
+    /// <summary>&quot;This field is deprecated in favor of the consent `type` field. Consents are required to have a single type.Payment consent scope. Defines possible directions for payments made with the given consent.`ME_TO_ME`: Allows moving money between accounts owned by the same user.`EXTERNAL`: Allows initiating payments from the user&apos;s account to third parties.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PaymentInitiationConsentScope
     {

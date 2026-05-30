@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>Payment consent type. Defines possible use case for payments made with the given consent.`SWEEPING`: Allows moving money between accounts owned by the same user.`COMMERCIAL`: Allows initiating payments from the user&apos;s account to third parties.</summary>
+    /// <summary>&quot;Payment consent type. Defines possible use case for payments made with the given consent.`SWEEPING`: Allows moving money between accounts owned by the same user.`COMMERCIAL`: Allows initiating payments from the user&apos;s account to third parties.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PaymentInitiationConsentType
     {

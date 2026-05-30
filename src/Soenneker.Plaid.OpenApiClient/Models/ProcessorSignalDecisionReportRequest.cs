@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount (in USD) made available to your customers instantly following the debit transaction. It could be a partial amount of the requested transaction (example: 102.05).</summary>
+        /// <summary>&quot;The amount (in USD) made available to your customers instantly following the debit transaction. It could be a partial amount of the requested transaction (example: 102.05).&quot;</summary>
         public double? AmountInstantlyAvailable { get; set; }
         /// <summary>Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -35,13 +35,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>The actual number of days (hold time) since the ACH debit transaction that you wait before making funds available to your customers. The holding time could affect the ACH return rate.For example, use 0 if you make funds available to your customers instantly or the same day following the debit transaction, or 1 if you make funds available the next day following the debit initialization.</summary>
         public int? DaysFundsOnHold { get; set; }
-        /// <summary>The payment decision from the risk assessment.`APPROVE`: approve the transaction without requiring further actions from your customers. For example, use this field if you are placing a standard hold for all the approved transactions before making funds available to your customers. You should also use this field if you decide to accelerate the fund availability for your customers.`REVIEW`: the transaction requires manual review`REJECT`: reject the transaction`TAKE_OTHER_RISK_MEASURES`: for example, placing a longer hold on funds than those approved transactions or introducing customer frictions such as step-up verification/authentication`NOT_EVALUATED`: if only logging the results without using them</summary>
+        /// <summary>&quot;The payment decision from the risk assessment.`APPROVE`: approve the transaction without requiring further actions from your customers. For example, use this field if you are placing a standard hold for all the approved transactions before making funds available to your customers. You should also use this field if you decide to accelerate the fund availability for your customers.`REVIEW`: the transaction requires manual review`REJECT`: reject the transaction`TAKE_OTHER_RISK_MEASURES`: for example, placing a longer hold on funds than those approved transactions or introducing customer frictions such as step-up verification/authentication`NOT_EVALUATED`: if only logging the results without using them&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.SignalDecisionOutcome? DecisionOutcome { get; set; }
         /// <summary>`true` if the ACH transaction was initiated, `false` otherwise.This field must be returned as a boolean. If formatted incorrectly, this will result in an [`INVALID_FIELD`](https://plaid.com/docs/errors/invalid-request/#invalid_field) error.</summary>
         public bool? Initiated { get; set; }
-        /// <summary>The payment method to complete the transaction after the risk assessment. It may be different from the default payment method.`SAME_DAY_ACH`: Same Day ACH by Nacha. The debit transaction is processed and settled on the same day.`STANDARD_ACH`: Standard ACH by Nacha.`MULTIPLE_PAYMENT_METHODS`: if there is no default debit rail or there are multiple payment methods.</summary>
+        /// <summary>&quot;The payment method to complete the transaction after the risk assessment. It may be different from the default payment method.`SAME_DAY_ACH`: Same Day ACH by Nacha. The debit transaction is processed and settled on the same day.`STANDARD_ACH`: Standard ACH by Nacha.`MULTIPLE_PAYMENT_METHODS`: if there is no default debit rail or there are multiple payment methods.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.SignalPaymentMethod? PaymentMethod { get; set; }
-        /// <summary>The processor token obtained from the Plaid integration partner. Processor tokens are in the format: `processor-&lt;environment&gt;-&lt;identifier&gt;`</summary>
+        /// <summary>&quot;The processor token obtained from the Plaid integration partner. Processor tokens are in the format: `processor-&lt;environment&gt;-&lt;identifier&gt;`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProcessorToken { get; set; }

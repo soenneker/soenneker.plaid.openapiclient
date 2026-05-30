@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>An identifier classifying the transaction type.This field is only populated for European institutions. For institutions in the US and Canada, this field is set to `null`.`adjustment:` Bank adjustment`atm:` Cash deposit or withdrawal via an automated teller machine`bank charge:` Charge or fee levied by the institution`bill payment`: Payment of a bill`cash:` Cash deposit or withdrawal`cashback:` Cash withdrawal while making a debit card purchase`cheque:` Document ordering the payment of money to another person or organization`direct debit:` Automatic withdrawal of funds initiated by a third party at a regular interval`interest:` Interest earned or incurred`purchase:` Purchase made with a debit or credit card`standing order:` Payment instructed by the account holder to a third party at a regular interval`transfer:` Transfer of money between accounts</summary>
+    /// <summary>&quot;An identifier classifying the transaction type.This field is only populated for European institutions. For institutions in the US and Canada, this field is set to `null`.`adjustment:` Bank adjustment`atm:` Cash deposit or withdrawal via an automated teller machine`bank charge:` Charge or fee levied by the institution`bill payment`: Payment of a bill`cash:` Cash deposit or withdrawal`cashback:` Cash withdrawal while making a debit card purchase`cheque:` Document ordering the payment of money to another person or organization`direct debit:` Automatic withdrawal of funds initiated by a third party at a regular interval`interest:` Interest earned or incurred`purchase:` Purchase made with a debit or credit card`standing order:` Payment instructed by the account holder to a third party at a regular interval`transfer:` Transfer of money between accounts&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransactionCode
     {
@@ -54,10 +54,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         [EnumMember(Value = "transfer")]
         #pragma warning disable CS1591
         Transfer,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
-        #pragma warning disable CS1591
-        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
         #pragma warning restore CS1591
     }
 }

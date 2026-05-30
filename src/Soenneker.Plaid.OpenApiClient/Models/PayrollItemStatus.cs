@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Denotes the processing status for the verification.`UNKNOWN`: The processing status could not be determined.`PROCESSING_COMPLETE`: The processing has completed and the user has approved for sharing. The data is available to be retrieved.`PROCESSING`: The verification is still processing. The data is not available yet.`FAILED`: The processing failed to complete successfully.`APPROVAL_STATUS_PENDING`: The processing has completed but the user has not yet approved the sharing of the data.</summary>
+        /// <summary>&quot;Denotes the processing status for the verification.`UNKNOWN`: The processing status could not be determined.`PROCESSING_COMPLETE`: The processing has completed and the user has approved for sharing. The data is available to be retrieved.`PROCESSING`: The verification is still processing. The data is not available yet.`FAILED`: The processing failed to complete successfully.`APPROVAL_STATUS_PENDING`: The processing has completed but the user has not yet approved the sharing of the data.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProcessingStatus { get; set; }

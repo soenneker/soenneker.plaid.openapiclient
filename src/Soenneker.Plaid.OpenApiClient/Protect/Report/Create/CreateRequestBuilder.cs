@@ -37,7 +37,7 @@ namespace Soenneker.Plaid.OpenApiClient.Protect.Report.Create
         /// Use this endpoint to create a Protect report to document fraud incidents, investigation outcomes, or other risk events.This endpoint allows you to report various types of incidents including account takeovers, identity fraud, unauthorized transactions, and other security events.The reported data helps improve fraud detection models and provides valuable feedback to enhance the overall security of the Plaid network.Reports can be created for confirmed incidents that have been fully investigated, or for suspected incidents that require further review.You can associate reports with specific users, sessions, or transactions to provide comprehensive context about the incident.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportCreateResponse"/></returns>
-        /// <param name="body">Request object for `/protect/report/create`.Must provide either `user_id` or at least one of the following identifiers in `incident_event`: `link_session_id`, `idv_session_id`, `protect_event_id`, or `signal_client_transaction_id`.</param>
+        /// <param name="body">&quot;Request object for `/protect/report/create`.Must provide either `user_id` or at least one of the following identifiers in `incident_event`: `link_session_id`, `idv_session_id`, `protect_event_id`, or `signal_client_transaction_id`.&quot;</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,7 +57,7 @@ namespace Soenneker.Plaid.OpenApiClient.Protect.Report.Create
         /// Use this endpoint to create a Protect report to document fraud incidents, investigation outcomes, or other risk events.This endpoint allows you to report various types of incidents including account takeovers, identity fraud, unauthorized transactions, and other security events.The reported data helps improve fraud detection models and provides valuable feedback to enhance the overall security of the Plaid network.Reports can be created for confirmed incidents that have been fully investigated, or for suspected incidents that require further review.You can associate reports with specific users, sessions, or transactions to provide comprehensive context about the incident.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request object for `/protect/report/create`.Must provide either `user_id` or at least one of the following identifiers in `incident_event`: `link_session_id`, `idv_session_id`, `protect_event_id`, or `signal_client_transaction_id`.</param>
+        /// <param name="body">&quot;Request object for `/protect/report/create`.Must provide either `user_id` or at least one of the following identifiers in `incident_event`: `link_session_id`, `idv_session_id`, `protect_event_id`, or `signal_client_transaction_id`.&quot;</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

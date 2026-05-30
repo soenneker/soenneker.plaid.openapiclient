@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>Indicator of account number format validity for institution.`valid`: indicates that the account number has a correct format for the institution.`invalid`: indicates that the account number has an incorrect format for the institution.`unknown`: indicates that there was not enough information to determine whether the format is correct for the institution.</summary>
+    /// <summary>&quot;Indicator of account number format validity for institution.`valid`: indicates that the account number has a correct format for the institution.`invalid`: indicates that the account number has an incorrect format for the institution.`unknown`: indicates that there was not enough information to determine whether the format is correct for the institution.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AccountVerificationInsightsAccountNumberFormat
     {

@@ -39,7 +39,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string LegalName { get; set; }
 #endif
-        /// <summary>The user&apos;s phone number, in E.164 format: +{countrycode}{number}. For example: &quot;+14157452130&quot;. Phone numbers provided in other formats will be parsed on a best-effort basis. Phone number input is validated against valid number ranges; number strings that do not match a real-world phone numbering scheme may cause the request to fail, even in the Sandbox test environment.</summary>
+        /// <summary>&quot;The user&apos;s phone number, in E.164 format: +{countrycode}{number}. For example: \&quot;+14157452130\&quot;. Phone numbers provided in other formats will be parsed on a best-effort basis. Phone number input is validated against valid number ranges; number strings that do not match a real-world phone numbering scheme may cause the request to fail, even in the Sandbox test environment.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PhoneNumber { get; set; }

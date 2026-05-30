@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Oauth.Token
         {
         }
         /// <summary>
-        /// `/oauth/token` issues an access token and refresh token depending on the `grant_type` provided. This endpoint supports `Content-Type: application/x-www-form-urlencoded` as well as JSON. The fields for the form are equivalent to the fields for JSON and conform to the OAuth 2.0 specification.
+        /// &quot;`/oauth/token` issues an access token and refresh token depending on the `grant_type` provided. This endpoint supports `Content-Type: application/x-www-form-urlencoded` as well as JSON. The fields for the form are equivalent to the fields for JSON and conform to the OAuth 2.0 specification.&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.OAuthTokenResponse"/></returns>
         /// <param name="body">OAuth token grant request.</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Oauth.Token
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.OAuthTokenResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.OAuthTokenResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// `/oauth/token` issues an access token and refresh token depending on the `grant_type` provided. This endpoint supports `Content-Type: application/x-www-form-urlencoded` as well as JSON. The fields for the form are equivalent to the fields for JSON and conform to the OAuth 2.0 specification.
+        /// &quot;`/oauth/token` issues an access token and refresh token depending on the `grant_type` provided. This endpoint supports `Content-Type: application/x-www-form-urlencoded` as well as JSON. The fields for the form are equivalent to the fields for JSON and conform to the OAuth 2.0 specification.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">OAuth token grant request.</param>

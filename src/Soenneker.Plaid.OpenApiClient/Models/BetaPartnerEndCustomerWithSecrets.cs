@@ -11,8 +11,42 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// The details for the newly created end customer, including secrets for non-Production environments.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class BetaPartnerEndCustomerWithSecrets : global::Soenneker.Plaid.OpenApiClient.Models.BetaPartnerEndCustomer, IParsable
+    public partial class BetaPartnerEndCustomerWithSecrets : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The `client_id` of the end customer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientId { get; set; }
+#nullable restore
+#else
+        public string ClientId { get; set; }
+#endif
+        /// <summary>The company name associated with the end customer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CompanyName { get; set; }
+#nullable restore
+#else
+        public string CompanyName { get; set; }
+#endif
+        /// <summary>Mapping of product names to their current status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.BetaPartnerEndCustomerWithSecrets_product_statuses? ProductStatuses { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.BetaPartnerEndCustomerWithSecrets_product_statuses ProductStatuses { get; set; }
+#endif
+        /// <summary>A list of fields that are still required to be submitted.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerRequirementDue?>? RequirementsDue { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerRequirementDue?> RequirementsDue { get; set; }
+#endif
         /// <summary>The secrets for the newly created end customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,12 +55,21 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerSecrets Secrets { get; set; }
 #endif
+        /// <summary>&quot;The status of the given end customer.`UNDER_REVIEW`: The end customer has been created and enabled in the Sandbox environment. The end customer must be manually reviewed by the Plaid team before it can be enabled in Production, at which point its status will automatically transition to `PENDING_ENABLEMENT` or `DENIED`.`PENDING_ENABLEMENT`: The end customer is ready to be fully enabled in the Production environment. Call the `/partner/customer/enable` endpoint to enable the end customer in full Production.`ACTIVE`: The end customer has been fully enabled in all environments.`DENIED`: The end customer has been created and enabled in the Sandbox environment, but it did not pass review by the Plaid team and therefore cannot be enabled for Production access. Talk to your Account Manager for more information.&quot;</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BetaPartnerEndCustomerWithSecrets"/> and sets the default values.
+        /// </summary>
+        public BetaPartnerEndCustomerWithSecrets()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BetaPartnerEndCustomerWithSecrets"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Plaid.OpenApiClient.Models.BetaPartnerEndCustomerWithSecrets CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Plaid.OpenApiClient.Models.BetaPartnerEndCustomerWithSecrets CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Plaid.OpenApiClient.Models.BetaPartnerEndCustomerWithSecrets();
@@ -35,22 +78,32 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            return new Dictionary<string, Action<IParseNode>>
             {
+                { "client_id", n => { ClientId = n.GetStringValue(); } },
+                { "company_name", n => { CompanyName = n.GetStringValue(); } },
+                { "product_statuses", n => { ProductStatuses = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BetaPartnerEndCustomerWithSecrets_product_statuses>(global::Soenneker.Plaid.OpenApiClient.Models.BetaPartnerEndCustomerWithSecrets_product_statuses.CreateFromDiscriminatorValue); } },
+                { "requirements_due", n => { RequirementsDue = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerRequirementDue>()?.AsList(); } },
                 { "secrets", n => { Secrets = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerSecrets>(global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerSecrets.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerStatus>(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer)
+        public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
+            writer.WriteStringValue("client_id", ClientId);
+            writer.WriteStringValue("company_name", CompanyName);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BetaPartnerEndCustomerWithSecrets_product_statuses>("product_statuses", ProductStatuses);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerRequirementDue>("requirements_due", RequirementsDue);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerSecrets>("secrets", Secrets);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

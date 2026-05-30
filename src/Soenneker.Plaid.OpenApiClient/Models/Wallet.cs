@@ -39,7 +39,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string RecipientId { get; set; }
 #endif
-        /// <summary>The status of the wallet.`UNKNOWN`: The wallet status is unknown.`ACTIVE`: The wallet is active and ready to send money to and receive money from.`CLOSED`: The wallet is closed. Any transactions made to or from this wallet will error.</summary>
+        /// <summary>&quot;The status of the wallet.`UNKNOWN`: The wallet status is unknown.`ACTIVE`: The wallet is active and ready to send money to and receive money from.`CLOSED`: The wallet is closed. Any transactions made to or from this wallet will error.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.WalletStatus? Status { get; set; }
         /// <summary>A unique ID identifying the e-wallet</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

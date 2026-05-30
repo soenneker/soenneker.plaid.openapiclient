@@ -39,7 +39,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string TickerSymbol { get; set; }
 #endif
-        /// <summary>The security type of the holding. Valid security types are:`cash`: Cash, currency, and money market funds`cryptocurrency`: Digital or virtual currencies`derivative`: Options, warrants, and other derivative instruments`equity`: Domestic and foreign equities`etf`: Multi-asset exchange-traded investment funds`fixed income`: Bonds and certificates of deposit (CDs)`loan`: Loans and loan receivables`mutual fund`: Open- and closed-end vehicles pooling funds of multiple investors`other`: Unknown or other investment types</summary>
+        /// <summary>&quot;The security type of the holding. Valid security types are:`cash`: Cash, currency, and money market funds`cryptocurrency`: Digital or virtual currencies`derivative`: Options, warrants, and other derivative instruments`equity`: Domestic and foreign equities`etf`: Multi-asset exchange-traded investment funds`fixed income`: Bonds and certificates of deposit (CDs)`loan`: Loans and loan receivables`mutual fund`: Open- and closed-end vehicles pooling funds of multiple investors`other`: Unknown or other investment types&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

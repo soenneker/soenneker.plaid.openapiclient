@@ -16,10 +16,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>An access token associated with the Item related to this incident.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccessToken { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEvent_access_token? AccessToken { get; set; }
 #nullable restore
 #else
-        public string AccessToken { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEvent_access_token AccessToken { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -98,7 +98,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access_token", n => { AccessToken = n.GetStringValue(); } },
+                { "access_token", n => { AccessToken = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEvent_access_token>(global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEvent_access_token.CreateFromDiscriminatorValue); } },
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentAmount>(global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentAmount.CreateFromDiscriminatorValue); } },
                 { "idv_session_id", n => { IdvSessionId = n.GetStringValue(); } },
                 { "internal_reference", n => { InternalReference = n.GetStringValue(); } },
@@ -115,7 +115,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("access_token", AccessToken);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEvent_access_token>("access_token", AccessToken);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentAmount>("amount", Amount);
             writer.WriteStringValue("idv_session_id", IdvSessionId);
             writer.WriteStringValue("internal_reference", InternalReference);

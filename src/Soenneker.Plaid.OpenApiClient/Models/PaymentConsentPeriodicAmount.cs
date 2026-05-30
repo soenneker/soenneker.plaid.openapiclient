@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Where the payment consent period should start.If the institution is Monzo, only `CONSENT` alignments are supported.`CALENDAR`: line up with a calendar.`CONSENT`: on the date of consent creation.</summary>
+        /// <summary>&quot;Where the payment consent period should start.If the institution is Monzo, only `CONSENT` alignments are supported.`CALENDAR`: line up with a calendar.`CONSENT`: on the date of consent creation.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentPeriodicAlignment? Alignment { get; set; }
         /// <summary>Maximum cumulative amount for all payments in the specified interval.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

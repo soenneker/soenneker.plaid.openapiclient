@@ -24,7 +24,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The type of employment for the individual.`&quot;FULL_TIME&quot;`: A full-time employee.`&quot;PART_TIME&quot;`: A part-time employee.`&quot;CONTRACTOR&quot;`: An employee typically hired externally through a contracting group.`&quot;TEMPORARY&quot;`: A temporary employee.`&quot;OTHER&quot;`: The employee type is not one of the above defined types.</summary>
+        /// <summary>&quot;The type of employment for the individual.`\&quot;FULL_TIME\&quot;`: A full-time employee.`\&quot;PART_TIME\&quot;`: A part-time employee.`\&quot;CONTRACTOR\&quot;`: An employee typically hired externally through a contracting group.`\&quot;TEMPORARY\&quot;`: A temporary employee.`\&quot;OTHER\&quot;`: The employee type is not one of the above defined types.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EmployeeType { get; set; }

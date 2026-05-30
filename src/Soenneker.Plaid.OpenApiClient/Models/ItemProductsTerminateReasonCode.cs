@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>The reason for terminating products on the Item.`OTHER`: Any other reason for terminating products not covered by the above categories</summary>
+    /// <summary>&quot;The reason for terminating products on the Item.`OTHER`: Any other reason for terminating products not covered by the above categories&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ItemProductsTerminateReasonCode
     {

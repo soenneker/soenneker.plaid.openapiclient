@@ -21,14 +21,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string AccountId { get; set; }
 #endif
-        /// <summary>Calculated insights derived from transaction-level data. This field has been deprecated in favor of [Base Report attributes aggregated across accounts](https://plaid.com/docs/api/products/check/#cra-check_report-base_report-get-response-report-attributes) and will be removed in a future release.</summary>
-        [Obsolete("")]
+        /// <summary>The account_insights property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAccountInsights? AccountInsights { get; set; }
+        public string? AccountInsights { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAccountInsights AccountInsights { get; set; }
+        public string AccountInsights { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -106,7 +105,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public List<global::Soenneker.Plaid.OpenApiClient.Models.Owner> Owners { get; set; }
 #endif
-        /// <summary>How an asset is owned.`association`: Ownership by a corporation, partnership, or unincorporated association, including for-profit and not-for-profit organizations.`individual`: Ownership by an individual.`joint`: Joint ownership by multiple parties.`trust`: Ownership by a revocable or irrevocable trust.</summary>
+        /// <summary>&quot;How an asset is owned.`association`: Ownership by a corporation, partnership, or unincorporated association, including for-profit and not-for-profit organizations.`individual`: Ownership by an individual.`joint`: Joint ownership by multiple parties.`trust`: Ownership by a revocable or irrevocable trust.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.OwnershipType? OwnershipType { get; set; }
         /// <summary>See the [Account type schema](https://plaid.com/docs/api/accounts/#account-type-schema) for a full listing of account types and corresponding subtypes.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.AccountSubtype? Subtype { get; set; }
@@ -146,7 +145,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
-                { "account_insights", n => { AccountInsights = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAccountInsights>(global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAccountInsights.CreateFromDiscriminatorValue); } },
+                { "account_insights", n => { AccountInsights = n.GetStringValue(); } },
                 { "attributes", n => { Attributes = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAttributes>(global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAttributes.CreateFromDiscriminatorValue); } },
                 { "balances", n => { Balances = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAccountBalances>(global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAccountBalances.CreateFromDiscriminatorValue); } },
                 { "consumer_disputes", n => { ConsumerDisputes = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDispute>(global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDispute.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -171,7 +170,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAccountInsights>("account_insights", AccountInsights);
+            writer.WriteStringValue("account_insights", AccountInsights);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAttributes>("attributes", Attributes);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAccountBalances>("balances", Balances);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDispute>("consumer_disputes", ConsumerDisputes);

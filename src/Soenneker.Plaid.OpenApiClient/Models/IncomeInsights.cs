@@ -18,26 +18,26 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Income excluding account transfer transactions for the period, including a monthly average.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrencyWithMonthlyAverage? IncomeExcludingTransfers { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsights_income_excluding_transfers? IncomeExcludingTransfers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrencyWithMonthlyAverage IncomeExcludingTransfers { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsights_income_excluding_transfers IncomeExcludingTransfers { get; set; }
 #endif
         /// <summary>The total amount of all income transactions in the given time period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrency? TotalIncome { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsights_total_income? TotalIncome { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrency TotalIncome { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsights_total_income TotalIncome { get; set; }
 #endif
         /// <summary>Sum of inbound transfer transactions for the period, including a monthly average.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrencyWithMonthlyAverage? TransfersIn { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsights_transfers_in? TransfersIn { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrencyWithMonthlyAverage TransfersIn { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsights_transfers_in TransfersIn { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsights"/> and sets the default values.
@@ -64,9 +64,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "income_excluding_transfers", n => { IncomeExcludingTransfers = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrencyWithMonthlyAverage>(global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrencyWithMonthlyAverage.CreateFromDiscriminatorValue); } },
-                { "total_income", n => { TotalIncome = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrency>(global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrency.CreateFromDiscriminatorValue); } },
-                { "transfers_in", n => { TransfersIn = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrencyWithMonthlyAverage>(global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrencyWithMonthlyAverage.CreateFromDiscriminatorValue); } },
+                { "income_excluding_transfers", n => { IncomeExcludingTransfers = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsights_income_excluding_transfers>(global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsights_income_excluding_transfers.CreateFromDiscriminatorValue); } },
+                { "total_income", n => { TotalIncome = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsights_total_income>(global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsights_total_income.CreateFromDiscriminatorValue); } },
+                { "transfers_in", n => { TransfersIn = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsights_transfers_in>(global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsights_transfers_in.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -76,9 +76,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrencyWithMonthlyAverage>("income_excluding_transfers", IncomeExcludingTransfers);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrency>("total_income", TotalIncome);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrencyWithMonthlyAverage>("transfers_in", TransfersIn);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsights_income_excluding_transfers>("income_excluding_transfers", IncomeExcludingTransfers);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsights_total_income>("total_income", TotalIncome);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsights_transfers_in>("transfers_in", TransfersIn);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -31,7 +31,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string RequestId { get; set; }
 #endif
-        /// <summary>The status of the payment consent.`UNAUTHORISED`: Consent created, but requires user authorisation.`REJECTED`: Consent authorisation was rejected by the bank.`AUTHORISED`: Consent is active and ready to be used.`REVOKED`: Consent has been revoked and can no longer be used.`EXPIRED`: Consent is no longer valid.</summary>
+        /// <summary>&quot;The status of the payment consent.`UNAUTHORISED`: Consent created, but requires user authorisation.`REJECTED`: Consent authorisation was rejected by the bank.`AUTHORISED`: Consent is active and ready to be used.`REVOKED`: Consent has been revoked and can no longer be used.`EXPIRED`: Consent is no longer valid.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentCreateResponse"/> and sets the default values.

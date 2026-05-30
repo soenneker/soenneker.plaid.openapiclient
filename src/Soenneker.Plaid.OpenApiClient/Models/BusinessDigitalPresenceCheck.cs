@@ -42,7 +42,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>A score from 0 to 100 indicating digital presence confidence.</summary>
         public int? Score { get; set; }
         /// <summary>Status of the digital presence check</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatus__WebPresenceCheck? Status { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatusWebPresenceCheck? Status { get; set; }
         /// <summary>Summary of how a specific business field matched against data provider results</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,7 +88,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "email_address", n => { EmailAddress = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary.CreateFromDiscriminatorValue); } },
                 { "phone_number", n => { PhoneNumber = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary.CreateFromDiscriminatorValue); } },
                 { "score", n => { Score = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatus__WebPresenceCheck>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatusWebPresenceCheck>(); } },
                 { "website", n => { Website = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary.CreateFromDiscriminatorValue); } },
                 { "website_analysis", n => { WebsiteAnalysis = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteAnalysis>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteAnalysis.CreateFromDiscriminatorValue); } },
             };
@@ -104,7 +104,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary>("email_address", EmailAddress);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary>("phone_number", PhoneNumber);
             writer.WriteIntValue("score", Score);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatus__WebPresenceCheck>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatusWebPresenceCheck>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary>("website", Website);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteAnalysis>("website_analysis", WebsiteAnalysis);
             writer.WriteAdditionalData(AdditionalData);

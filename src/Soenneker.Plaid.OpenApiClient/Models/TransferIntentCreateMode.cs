@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>The direction of the flow of transfer funds.`PAYMENT`: Transfers funds from an end user&apos;s account to your business account.`DISBURSEMENT`: Transfers funds from your business account to an end user&apos;s account.</summary>
+    /// <summary>&quot;The direction of the flow of transfer funds.`PAYMENT`: Transfers funds from an end user&apos;s account to your business account.`DISBURSEMENT`: Transfers funds from your business account to an end user&apos;s account.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransferIntentCreateMode
     {

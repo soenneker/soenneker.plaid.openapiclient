@@ -16,16 +16,22 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The consent property</summary>
-        public bool? Consent { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIdentityVerification_consent? Consent { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIdentityVerification_consent Consent { get; set; }
+#endif
         /// <summary>A flag specifying whether the end user has already agreed to a privacy policy specifying that their data will be shared with Plaid for verification purposes.If `gave_consent` is set to `true`, the `accept_tos` step will be marked as `skipped` and the end user&apos;s session will start at the next step requirement.</summary>
         public bool? GaveConsent { get; set; }
         /// <summary>The template_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TemplateId { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIdentityVerification_template_id? TemplateId { get; set; }
 #nullable restore
 #else
-        public string TemplateId { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIdentityVerification_template_id TemplateId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIdentityVerification"/> and sets the default values.
@@ -52,9 +58,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "consent", n => { Consent = n.GetBoolValue(); } },
+                { "consent", n => { Consent = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIdentityVerification_consent>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIdentityVerification_consent.CreateFromDiscriminatorValue); } },
                 { "gave_consent", n => { GaveConsent = n.GetBoolValue(); } },
-                { "template_id", n => { TemplateId = n.GetStringValue(); } },
+                { "template_id", n => { TemplateId = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIdentityVerification_template_id>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIdentityVerification_template_id.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -64,9 +70,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("consent", Consent);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIdentityVerification_consent>("consent", Consent);
             writer.WriteBoolValue("gave_consent", GaveConsent);
-            writer.WriteStringValue("template_id", TemplateId);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIdentityVerification_template_id>("template_id", TemplateId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,24 +15,19 @@ using Soenneker.Plaid.OpenApiClient.Beacon;
 using Soenneker.Plaid.OpenApiClient.Beta;
 using Soenneker.Plaid.OpenApiClient.Business_verification;
 using Soenneker.Plaid.OpenApiClient.Cashflow_report;
-using Soenneker.Plaid.OpenApiClient.Categories;
 using Soenneker.Plaid.OpenApiClient.Consent;
 using Soenneker.Plaid.OpenApiClient.Consumer_report;
 using Soenneker.Plaid.OpenApiClient.Cra;
 using Soenneker.Plaid.OpenApiClient.Credit;
 using Soenneker.Plaid.OpenApiClient.Dashboard_user;
 using Soenneker.Plaid.OpenApiClient.Employers;
-using Soenneker.Plaid.OpenApiClient.Employment;
 using Soenneker.Plaid.OpenApiClient.Fdx;
 using Soenneker.Plaid.OpenApiClient.Identity;
 using Soenneker.Plaid.OpenApiClient.Identity_verification;
-using Soenneker.Plaid.OpenApiClient.Idv_classic;
-using Soenneker.Plaid.OpenApiClient.Income;
 using Soenneker.Plaid.OpenApiClient.Institutions;
 using Soenneker.Plaid.OpenApiClient.Investments;
 using Soenneker.Plaid.OpenApiClient.Issues;
 using Soenneker.Plaid.OpenApiClient.Item_Escaped;
-using Soenneker.Plaid.OpenApiClient.Items;
 using Soenneker.Plaid.OpenApiClient.Liabilities;
 using Soenneker.Plaid.OpenApiClient.Link;
 using Soenneker.Plaid.OpenApiClient.Link_delivery;
@@ -41,7 +36,6 @@ using Soenneker.Plaid.OpenApiClient.Network_insights;
 using Soenneker.Plaid.OpenApiClient.Oauth;
 using Soenneker.Plaid.OpenApiClient.Partner;
 using Soenneker.Plaid.OpenApiClient.Payment_initiation;
-using Soenneker.Plaid.OpenApiClient.Payment_profile;
 using Soenneker.Plaid.OpenApiClient.Processor;
 using Soenneker.Plaid.OpenApiClient.Profile;
 using Soenneker.Plaid.OpenApiClient.Protect;
@@ -113,11 +107,6 @@ namespace Soenneker.Plaid.OpenApiClient
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Cashflow_report.Cashflow_reportRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The categories property</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Categories.CategoriesRequestBuilder Categories
-        {
-            get => new global::Soenneker.Plaid.OpenApiClient.Categories.CategoriesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The consent property</summary>
         public global::Soenneker.Plaid.OpenApiClient.Consent.ConsentRequestBuilder Consent
         {
@@ -148,11 +137,6 @@ namespace Soenneker.Plaid.OpenApiClient
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Employers.EmployersRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The employment property</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Employment.EmploymentRequestBuilder Employment
-        {
-            get => new global::Soenneker.Plaid.OpenApiClient.Employment.EmploymentRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The fdx property</summary>
         public global::Soenneker.Plaid.OpenApiClient.Fdx.FdxRequestBuilder Fdx
         {
@@ -167,16 +151,6 @@ namespace Soenneker.Plaid.OpenApiClient
         public global::Soenneker.Plaid.OpenApiClient.Identity_verification.Identity_verificationRequestBuilder Identity_verification
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Identity_verification.Identity_verificationRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The idv_classic property</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Idv_classic.Idv_classicRequestBuilder Idv_classic
-        {
-            get => new global::Soenneker.Plaid.OpenApiClient.Idv_classic.Idv_classicRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The income property</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Income.IncomeRequestBuilder Income
-        {
-            get => new global::Soenneker.Plaid.OpenApiClient.Income.IncomeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The institutions property</summary>
         public global::Soenneker.Plaid.OpenApiClient.Institutions.InstitutionsRequestBuilder Institutions
@@ -197,11 +171,6 @@ namespace Soenneker.Plaid.OpenApiClient
         public global::Soenneker.Plaid.OpenApiClient.Item_Escaped.Item_EscapedRequestBuilder Item
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Item_Escaped.Item_EscapedRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The items property</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Items.ItemsRequestBuilder Items
-        {
-            get => new global::Soenneker.Plaid.OpenApiClient.Items.ItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The liabilities property</summary>
         public global::Soenneker.Plaid.OpenApiClient.Liabilities.LiabilitiesRequestBuilder Liabilities
@@ -242,11 +211,6 @@ namespace Soenneker.Plaid.OpenApiClient
         public global::Soenneker.Plaid.OpenApiClient.Payment_initiation.Payment_initiationRequestBuilder Payment_initiation
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Payment_initiation.Payment_initiationRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The payment_profile property</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Payment_profile.Payment_profileRequestBuilder Payment_profile
-        {
-            get => new global::Soenneker.Plaid.OpenApiClient.Payment_profile.Payment_profileRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The processor property</summary>
         public global::Soenneker.Plaid.OpenApiClient.Processor.ProcessorRequestBuilder Processor

@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Auth.Get
         {
         }
         /// <summary>
-        /// The `/auth/get` endpoint returns the bank account and bank identification numbers (such as routing numbers, for US accounts) associated with an Item&apos;s checking, savings, and cash management accounts, along with high-level account data and balances when available.Versioning note: In API version 2017-03-08, the schema of the `numbers` object returned by this endpoint is substantially different. For details, see [Plaid API versioning](https://plaid.com/docs/api/versioning/#version-2018-05-22).
+        /// &quot;The `/auth/get` endpoint returns the bank account and bank identification numbers (such as routing numbers, for US accounts) associated with an Item&apos;s checking, savings, and cash management accounts, along with high-level account data and balances when available.Versioning note: In API version 2017-03-08, the schema of the `numbers` object returned by this endpoint is substantially different. For details, see [Plaid API versioning](https://plaid.com/docs/api/versioning/#version-2018-05-22).&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.AuthGetResponse"/></returns>
         /// <param name="body">AuthGetRequest defines the request schema for `/auth/get`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Auth.Get
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.AuthGetResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.AuthGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The `/auth/get` endpoint returns the bank account and bank identification numbers (such as routing numbers, for US accounts) associated with an Item&apos;s checking, savings, and cash management accounts, along with high-level account data and balances when available.Versioning note: In API version 2017-03-08, the schema of the `numbers` object returned by this endpoint is substantially different. For details, see [Plaid API versioning](https://plaid.com/docs/api/versioning/#version-2018-05-22).
+        /// &quot;The `/auth/get` endpoint returns the bank account and bank identification numbers (such as routing numbers, for US accounts) associated with an Item&apos;s checking, savings, and cash management accounts, along with high-level account data and balances when available.Versioning note: In API version 2017-03-08, the schema of the `numbers` object returned by this endpoint is substantially different. For details, see [Plaid API versioning](https://plaid.com/docs/api/versioning/#version-2018-05-22).&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">AuthGetRequest defines the request schema for `/auth/get`</param>

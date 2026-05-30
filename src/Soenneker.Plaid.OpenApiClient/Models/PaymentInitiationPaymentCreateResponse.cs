@@ -31,7 +31,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string RequestId { get; set; }
 #endif
-        /// <summary>For a payment returned by this endpoint, there is only one possible value:`PAYMENT_STATUS_INPUT_NEEDED`: The initial phase of the payment</summary>
+        /// <summary>&quot;For a payment returned by this endpoint, there is only one possible value:`PAYMENT_STATUS_INPUT_NEEDED`: The initial phase of the payment&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationPaymentCreateStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationPaymentCreateResponse"/> and sets the default values.

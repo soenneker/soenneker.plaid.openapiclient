@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The object contains a risk score and a risk tier that evaluate the transaction return risk because an account is overdrawn or because an ineligible account is used. Common return codes in this category include: &quot;R01&quot;, &quot;R02&quot;, &quot;R03&quot;, &quot;R04&quot;, &quot;R06&quot;, &quot;R08&quot;, &quot;R09&quot;, &quot;R13&quot;, &quot;R16&quot;, &quot;R17&quot;, &quot;R20&quot;, &quot;R23&quot;. These returns have a turnaround time of 2 banking days.</summary>
+        /// <summary>&quot;The object contains a risk score and a risk tier that evaluate the transaction return risk because an account is overdrawn or because an ineligible account is used. Common return codes in this category include: \&quot;R01\&quot;, \&quot;R02\&quot;, \&quot;R03\&quot;, \&quot;R04\&quot;, \&quot;R06\&quot;, \&quot;R08\&quot;, \&quot;R09\&quot;, \&quot;R13\&quot;, \&quot;R16\&quot;, \&quot;R17\&quot;, \&quot;R20\&quot;, \&quot;R23\&quot;. These returns have a turnaround time of 2 banking days.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.BankInitiatedReturnRisk? BankInitiatedReturnRisk { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.BankInitiatedReturnRisk BankInitiatedReturnRisk { get; set; }
 #endif
-        /// <summary>The object contains a risk score and a risk tier that evaluate the transaction return risk of an unauthorized debit. Common return codes in this category include: &quot;R05&quot;, &quot;R07&quot;, &quot;R10&quot;, &quot;R11&quot;, &quot;R29&quot;. These returns typically have a return time frame of up to 60 calendar days. During this period, the customer of financial institutions can dispute a transaction as unauthorized.</summary>
+        /// <summary>&quot;The object contains a risk score and a risk tier that evaluate the transaction return risk of an unauthorized debit. Common return codes in this category include: \&quot;R05\&quot;, \&quot;R07\&quot;, \&quot;R10\&quot;, \&quot;R11\&quot;, \&quot;R29\&quot;. These returns typically have a return time frame of up to 60 calendar days. During this period, the customer of financial institutions can dispute a transaction as unauthorized.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.CustomerInitiatedReturnRisk? CustomerInitiatedReturnRisk { get; set; }

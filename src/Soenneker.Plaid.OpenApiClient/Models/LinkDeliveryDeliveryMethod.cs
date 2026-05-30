@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>The delivery method to be used to deliver the Hosted Link session URL.`SMS`: The URL will be delivered through SMS`EMAIL`: The URL will be delivered through email</summary>
+    /// <summary>&quot;The delivery method to be used to deliver the Hosted Link session URL.`SMS`: The URL will be delivered through SMS`EMAIL`: The URL will be delivered through email&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum LinkDeliveryDeliveryMethod
     {

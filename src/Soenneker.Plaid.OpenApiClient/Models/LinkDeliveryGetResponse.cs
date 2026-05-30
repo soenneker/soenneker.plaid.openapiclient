@@ -43,7 +43,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string RequestId { get; set; }
 #endif
-        /// <summary>The status of the given Hosted Link session.`CREATED`: The session is created but not yet accessed by the user`OPENED`: The session is opened by the user but not yet completed`EXITED`: The session has been exited by the user`COMPLETED`: The session has been completed by the user`EXPIRED`: The session has expired</summary>
+        /// <summary>&quot;The status of the given Hosted Link session.`CREATED`: The session is created but not yet accessed by the user`OPENED`: The session is opened by the user but not yet completed`EXITED`: The session has been exited by the user`COMPLETED`: The session has been completed by the user`EXPIRED`: The session has expired&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.LinkDeliverySessionStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkDeliveryGetResponse"/> and sets the default values.

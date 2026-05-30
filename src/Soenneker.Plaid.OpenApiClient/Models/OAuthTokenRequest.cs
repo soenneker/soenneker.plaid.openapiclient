@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Used when exchanging a token. The meaning depends on the `subject_token_type`:- For `urn:plaid:params:tokens:user`: Must be the same as the `client_id`.- For `urn:plaid:params:oauth:user-token`: The other `client_id` to exchange tokens to.- For `urn:plaid:params:credit:multi-user`:  a `client_id` or one of the supported CRA partner URNs: `urn:plaid:params:cra-partner:experian`, `urn:plaid:params:cra-partner:fannie-mae`, or `urn:plaid:params:cra-partner:freddie-mac`.</summary>
+        /// <summary>&quot;Used when exchanging a token. The meaning depends on the `subject_token_type`:- For `urn:plaid:params:tokens:user`: Must be the same as the `client_id`.- For `urn:plaid:params:oauth:user-token`: The other `client_id` to exchange tokens to.- For `urn:plaid:params:credit:multi-user`:  a `client_id` or one of the supported CRA partner URNs: `urn:plaid:params:cra-partner:experian`, `urn:plaid:params:cra-partner:fannie-mae`, or `urn:plaid:params:cra-partner:freddie-mac`.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Audience { get; set; }

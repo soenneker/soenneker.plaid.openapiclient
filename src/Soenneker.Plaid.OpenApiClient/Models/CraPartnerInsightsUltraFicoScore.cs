@@ -84,7 +84,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Numeric value of the UltraFICO score.</summary>
         public int? Score { get; set; }
         /// <summary>The version of the UltraFICO score.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreVersion? UltraficoScoreVersion { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UltraficoScoreVersion { get; set; }
+#nullable restore
+#else
+        public string UltraficoScoreVersion { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScore"/> and sets the default values.
         /// </summary>
@@ -120,7 +126,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "reason_code_3", n => { ReasonCode3 = n.GetStringValue(); } },
                 { "reason_code_4", n => { ReasonCode4 = n.GetStringValue(); } },
                 { "score", n => { Score = n.GetIntValue(); } },
-                { "ultrafico_score_version", n => { UltraficoScoreVersion = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreVersion>(); } },
+                { "ultrafico_score_version", n => { UltraficoScoreVersion = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -140,7 +146,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("reason_code_3", ReasonCode3);
             writer.WriteStringValue("reason_code_4", ReasonCode4);
             writer.WriteIntValue("score", Score);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreVersion>("ultrafico_score_version", UltraficoScoreVersion);
+            writer.WriteStringValue("ultrafico_score_version", UltraficoScoreVersion);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

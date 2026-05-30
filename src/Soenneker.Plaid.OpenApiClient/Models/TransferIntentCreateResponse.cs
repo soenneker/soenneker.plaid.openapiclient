@@ -26,10 +26,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Represents a transfer intent within Transfer UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentCreate? TransferIntent { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentCreateBody? TransferIntent { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentCreate TransferIntent { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentCreateBody TransferIntent { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentCreateResponse"/> and sets the default values.
@@ -57,7 +57,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
-                { "transfer_intent", n => { TransferIntent = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentCreate>(global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentCreate.CreateFromDiscriminatorValue); } },
+                { "transfer_intent", n => { TransferIntent = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentCreateBody>(global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentCreateBody.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("request_id", RequestId);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentCreate>("transfer_intent", TransferIntent);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentCreateBody>("transfer_intent", TransferIntent);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

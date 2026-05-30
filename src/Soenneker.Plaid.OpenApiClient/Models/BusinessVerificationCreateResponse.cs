@@ -86,7 +86,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public string ShareableUrl { get; set; }
 #endif
         /// <summary>Status of the overall business verification</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatus__Overall? Status { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatusOverall? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationCreateResponse"/> and sets the default values.
         /// </summary>
@@ -123,7 +123,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "risk_check", n => { RiskCheck = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessRiskCheck>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessRiskCheck.CreateFromDiscriminatorValue); } },
                 { "search_terms", n => { SearchTerms = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessSearchTerms>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessSearchTerms.CreateFromDiscriminatorValue); } },
                 { "shareable_url", n => { ShareableUrl = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatus__Overall>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatusOverall>(); } },
             };
         }
         /// <summary>
@@ -144,7 +144,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessRiskCheck>("risk_check", RiskCheck);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessSearchTerms>("search_terms", SearchTerms);
             writer.WriteStringValue("shareable_url", ShareableUrl);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatus__Overall>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatusOverall>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

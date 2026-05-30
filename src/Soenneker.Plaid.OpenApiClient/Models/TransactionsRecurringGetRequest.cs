@@ -21,7 +21,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string AccessToken { get; set; }
 #endif
-        /// <summary>An optional list of `account_ids` to retrieve for the Item. Retrieves all active accounts on item if no `account_id`s are provided.Note: An error will be returned if a provided `account_id` is not associated with the Item.</summary>
+        /// <summary>&quot;An optional list of `account_ids` to retrieve for the Item. Retrieves all active accounts on item if no `account_id`s are provided.Note: An error will be returned if a provided `account_id` is not associated with the Item.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AccountIds { get; set; }

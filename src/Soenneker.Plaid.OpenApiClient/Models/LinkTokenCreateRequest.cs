@@ -29,7 +29,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public List<string> AccessTokens { get; set; }
 #endif
-        /// <summary>By default, Link will provide limited account filtering: it will only display Institutions that are compatible with all products supplied in the `products` parameter of `/link/token/create`, and, if `auth` is specified in the `products` array, will also filter out accounts other than `checking`, `savings`, and `cash management` accounts on the Account Select pane. You can further limit the accounts shown in Link by using `account_filters` to specify the account subtypes to be shown in Link. Only the specified subtypes will be shown. This filtering applies to both the Account Select view (if enabled) and the Institution Select view. Institutions that do not support the selected subtypes will be omitted from Link. To indicate that all subtypes should be shown, use the value `&quot;all&quot;`. If the `account_filters` filter is used, any account type for which a filter is not specified will be entirely omitted from Link. For a full list of valid types and subtypes, see the [Account schema](https://plaid.com/docs/api/accounts#account-type-schema).The filter may or may not impact the list of accounts shown by the institution in the OAuth account selection flow, depending on the specific institution. If the user selects excluded account subtypes in the OAuth flow, these accounts will not be added to the Item. If the user selects only excluded account subtypes, the link attempt will fail and the user will be prompted to try again.</summary>
+        /// <summary>&quot;By default, Link will provide limited account filtering: it will only display Institutions that are compatible with all products supplied in the `products` parameter of `/link/token/create`, and, if `auth` is specified in the `products` array, will also filter out accounts other than `checking`, `savings`, and `cash management` accounts on the Account Select pane. You can further limit the accounts shown in Link by using `account_filters` to specify the account subtypes to be shown in Link. Only the specified subtypes will be shown. This filtering applies to both the Account Select view (if enabled) and the Institution Select view. Institutions that do not support the selected subtypes will be omitted from Link. To indicate that all subtypes should be shown, use the value `\&quot;all\&quot;`. If the `account_filters` filter is used, any account type for which a filter is not specified will be entirely omitted from Link. For a full list of valid types and subtypes, see the [Account schema](https://plaid.com/docs/api/accounts#account-type-schema).The filter may or may not impact the list of accounts shown by the institution in the OAuth account selection flow, depending on the specific institution. If the user selects excluded account subtypes in the OAuth flow, these accounts will not be added to the Item. If the user selects only excluded account subtypes, the link attempt will fail and the user will be prompted to try again.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenAccountFilters? AccountFilters { get; set; }
@@ -65,14 +65,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuth Auth { get; set; }
 #endif
-        /// <summary>Specifies options for initializing Link for use with the Base Report product. This field is required if `assets` is included in the `products` array and the client is CRA-enabled.</summary>
-        [Obsolete("")]
+        /// <summary>The base_report property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestBaseReport? BaseReport { get; set; }
+        public string? BaseReport { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestBaseReport BaseReport { get; set; }
+        public string BaseReport { get; set; }
 #endif
         /// <summary>A map containing data to pass in for the Card Switch flow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +105,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientName { get; set; }
 #endif
-        /// <summary>Describes the reason you are generating a Consumer Report for this user. When calling `/link/token/create`, this field is required when using Plaid Check (CRA) products; invalid if not using Plaid Check (CRA) products.`ACCOUNT_REVIEW_CREDIT`: In connection with a consumer credit transaction for the review or collection of an account pursuant to FCRA Section 604(a)(3)(A).`ACCOUNT_REVIEW_NON_CREDIT`: For a legitimate business need of the information to review a non-credit account provided primarily for personal, family, or household purposes to determine whether the consumer continues to meet the terms of the account pursuant to FCRA Section 604(a)(3)(F)(2).`EXTENSION_OF_CREDIT`: In connection with a credit transaction initiated by and involving the consumer pursuant to FCRA Section 604(a)(3)(A).`LEGITIMATE_BUSINESS_NEED_TENANT_SCREENING`: For a legitimate business need in connection with a business transaction initiated by the consumer primarily for personal, family, or household purposes in connection with a property rental assessment pursuant to FCRA Section 604(a)(3)(F)(i).`LEGITIMATE_BUSINESS_NEED_OTHER`: For a legitimate business need in connection with a business transaction made primarily for personal, family, or household initiated by the consumer pursuant to FCRA Section 604(a)(3)(F)(i).`WRITTEN_INSTRUCTION_PREQUALIFICATION`: In accordance with the written instructions of the consumer pursuant to FCRA Section 604(a)(2), to evaluate an application’s profile to make an offer to the consumer.`WRITTEN_INSTRUCTION_OTHER`: In accordance with the written instructions of the consumer pursuant to FCRA Section 604(a)(2), such as when an individual agrees to act as a guarantor or assumes personal liability for a consumer, business, or commercial loan.`ELIGIBILITY_FOR_GOVT_BENEFITS`:  In connection with an eligibility determination for a government benefit where the entity is required to consider an applicant’s financial status pursuant to FCRA Section 604(a)(3)(D).</summary>
+        /// <summary>&quot;Describes the reason you are generating a Consumer Report for this user. When calling `/link/token/create`, this field is required when using Plaid Check (CRA) products; invalid if not using Plaid Check (CRA) products.`ACCOUNT_REVIEW_CREDIT`: In connection with a consumer credit transaction for the review or collection of an account pursuant to FCRA Section 604(a)(3)(A).`ACCOUNT_REVIEW_NON_CREDIT`: For a legitimate business need of the information to review a non-credit account provided primarily for personal, family, or household purposes to determine whether the consumer continues to meet the terms of the account pursuant to FCRA Section 604(a)(3)(F)(2).`EXTENSION_OF_CREDIT`: In connection with a credit transaction initiated by and involving the consumer pursuant to FCRA Section 604(a)(3)(A).`LEGITIMATE_BUSINESS_NEED_TENANT_SCREENING`: For a legitimate business need in connection with a business transaction initiated by the consumer primarily for personal, family, or household purposes in connection with a property rental assessment pursuant to FCRA Section 604(a)(3)(F)(i).`LEGITIMATE_BUSINESS_NEED_OTHER`: For a legitimate business need in connection with a business transaction made primarily for personal, family, or household initiated by the consumer pursuant to FCRA Section 604(a)(3)(F)(i).`WRITTEN_INSTRUCTION_PREQUALIFICATION`: In accordance with the written instructions of the consumer pursuant to FCRA Section 604(a)(2), to evaluate an application’s profile to make an offer to the consumer.`WRITTEN_INSTRUCTION_OTHER`: In accordance with the written instructions of the consumer pursuant to FCRA Section 604(a)(2), such as when an individual agrees to act as a guarantor or assumes personal liability for a consumer, business, or commercial loan.`ELIGIBILITY_FOR_GOVT_BENEFITS`:  In connection with an eligibility determination for a government benefit where the entity is required to consider an applicant’s financial status pursuant to FCRA Section 604(a)(3)(D).&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.ConsumerReportPermissiblePurpose? ConsumerReportPermissiblePurpose { get; set; }
         /// <summary>Specify an array of Plaid-supported country codes using the ISO-3166-1 alpha-2 country code standard. Institutions from all listed countries will be shown. For a complete mapping of supported products by country, see https://plaid.com/global/. For access to additional countries beyond what you have been approved for, [contact Sales](https://plaid.com/contact/), your account manager, or support.If using Identity Verification, `country_codes` should be set to the country where your company is based, not the country where your user is located. For all other products, `country_codes` represents the location of your user&apos;s financial institution.If Link is launched with multiple country codes, only products that you are enabled for in all countries will be used by Link. While all countries are enabled by default in Sandbox, in Production only the countries you have requested access for are shown. To request access to additional countries, [file a product access Support ticket](https://dashboard.plaid.com/support/new/product-and-development/product-troubleshooting/request-product-access) via the Plaid dashboard.If using a Link customization, make sure the country codes in the customization match those specified in `country_codes`, or the customization may not be applied.If using the Auth features Instant Match, Instant Micro-deposits, Same-day Micro-deposits, Automated Micro-deposits, or Database Auth, `country_codes` must be set to `[&apos;US&apos;]`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,14 +143,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>If `true`, enable linking multiple items in the same Link session. Defaults to `false`.</summary>
         public bool? EnableMultiItemLink { get; set; }
-        /// <summary>Configuration parameters for EU flows</summary>
-        [Obsolete("")]
+        /// <summary>The eu_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenEUConfig? EuConfig { get; set; }
+        public string? EuConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenEUConfig EuConfig { get; set; }
+        public string EuConfig { get; set; }
 #endif
         /// <summary>If `true`, indicates that client supports linking FinanceKit / AppleCard items. Defaults to `false`.</summary>
         public bool? FinancekitSupported { get; set; }
@@ -395,7 +393,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "android_package_name", n => { AndroidPackageName = n.GetStringValue(); } },
                 { "appearance_mode", n => { AppearanceMode = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAppearanceMode>(); } },
                 { "auth", n => { Auth = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuth>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuth.CreateFromDiscriminatorValue); } },
-                { "base_report", n => { BaseReport = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestBaseReport>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestBaseReport.CreateFromDiscriminatorValue); } },
+                { "base_report", n => { BaseReport = n.GetStringValue(); } },
                 { "card_switch", n => { CardSwitch = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateCardSwitch>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateCardSwitch.CreateFromDiscriminatorValue); } },
                 { "cashflow_report", n => { CashflowReport = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCashflowReport>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCashflowReport.CreateFromDiscriminatorValue); } },
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
@@ -407,7 +405,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "credit_partner_insights", n => { CreditPartnerInsights = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCreditPartnerInsights>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCreditPartnerInsights.CreateFromDiscriminatorValue); } },
                 { "employment", n => { Employment = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestEmployment>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestEmployment.CreateFromDiscriminatorValue); } },
                 { "enable_multi_item_link", n => { EnableMultiItemLink = n.GetBoolValue(); } },
-                { "eu_config", n => { EuConfig = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenEUConfig>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenEUConfig.CreateFromDiscriminatorValue); } },
+                { "eu_config", n => { EuConfig = n.GetStringValue(); } },
                 { "financekit_supported", n => { FinancekitSupported = n.GetBoolValue(); } },
                 { "hosted_link", n => { HostedLink = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateHostedLink>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateHostedLink.CreateFromDiscriminatorValue); } },
                 { "identity", n => { Identity = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateIdentity>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateIdentity.CreateFromDiscriminatorValue); } },
@@ -451,7 +449,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("android_package_name", AndroidPackageName);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAppearanceMode>("appearance_mode", AppearanceMode);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuth>("auth", Auth);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestBaseReport>("base_report", BaseReport);
+            writer.WriteStringValue("base_report", BaseReport);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateCardSwitch>("card_switch", CardSwitch);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCashflowReport>("cashflow_report", CashflowReport);
             writer.WriteStringValue("client_id", ClientId);
@@ -463,7 +461,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCreditPartnerInsights>("credit_partner_insights", CreditPartnerInsights);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestEmployment>("employment", Employment);
             writer.WriteBoolValue("enable_multi_item_link", EnableMultiItemLink);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenEUConfig>("eu_config", EuConfig);
+            writer.WriteStringValue("eu_config", EuConfig);
             writer.WriteBoolValue("financekit_supported", FinancekitSupported);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateHostedLink>("hosted_link", HostedLink);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateIdentity>("identity", Identity);

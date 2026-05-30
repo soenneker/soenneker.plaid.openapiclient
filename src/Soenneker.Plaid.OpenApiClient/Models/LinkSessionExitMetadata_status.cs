@@ -18,74 +18,74 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>User prompted to select a device on which to receive a one-time passcode</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? ChooseDevice { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_choose_device? ChooseDevice { get; set; }
 #nullable restore
 #else
-        public UntypedNode ChooseDevice { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_choose_device ChooseDevice { get; set; }
 #endif
         /// <summary>User exited the Link flow after unsuccessfully (no results returned) searching for a financial institution</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? InstitutionNotFound { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_institution_not_found? InstitutionNotFound { get; set; }
 #nullable restore
 #else
-        public UntypedNode InstitutionNotFound { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_institution_not_found InstitutionNotFound { get; set; }
 #endif
         /// <summary>User exited the Link flow after discovering their selected institution is no longer supported by Plaid</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? InstitutionNotSupported { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_institution_not_supported? InstitutionNotSupported { get; set; }
 #nullable restore
 #else
-        public UntypedNode InstitutionNotSupported { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_institution_not_supported InstitutionNotSupported { get; set; }
 #endif
         /// <summary>User prompted to select one or more financial accounts to share</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? RequiresAccountSelection { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_account_selection? RequiresAccountSelection { get; set; }
 #nullable restore
 #else
-        public UntypedNode RequiresAccountSelection { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_account_selection RequiresAccountSelection { get; set; }
 #endif
         /// <summary>User prompted to provide a one-time passcode</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? RequiresCode { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_code? RequiresCode { get; set; }
 #nullable restore
 #else
-        public UntypedNode RequiresCode { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_code RequiresCode { get; set; }
 #endif
         /// <summary>User prompted to provide credentials for the selected financial institution or has not yet selected a financial institution</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? RequiresCredentials { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_credentials? RequiresCredentials { get; set; }
 #nullable restore
 #else
-        public UntypedNode RequiresCredentials { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_credentials RequiresCredentials { get; set; }
 #endif
         /// <summary>User prompted to enter an OAuth flow</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? RequiresOauth { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_oauth? RequiresOauth { get; set; }
 #nullable restore
 #else
-        public UntypedNode RequiresOauth { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_oauth RequiresOauth { get; set; }
 #endif
         /// <summary>User prompted to answer security questions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? RequiresQuestions { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_questions? RequiresQuestions { get; set; }
 #nullable restore
 #else
-        public UntypedNode RequiresQuestions { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_questions RequiresQuestions { get; set; }
 #endif
         /// <summary>User prompted to answer multiple choice question(s)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? RequiresSelections { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_selections? RequiresSelections { get; set; }
 #nullable restore
 #else
-        public UntypedNode RequiresSelections { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_selections RequiresSelections { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status"/> and sets the default values.
@@ -112,15 +112,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "choose_device", n => { ChooseDevice = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "institution_not_found", n => { InstitutionNotFound = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "institution_not_supported", n => { InstitutionNotSupported = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "requires_account_selection", n => { RequiresAccountSelection = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "requires_code", n => { RequiresCode = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "requires_credentials", n => { RequiresCredentials = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "requires_oauth", n => { RequiresOauth = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "requires_questions", n => { RequiresQuestions = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "requires_selections", n => { RequiresSelections = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "choose_device", n => { ChooseDevice = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_choose_device>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_choose_device.CreateFromDiscriminatorValue); } },
+                { "institution_not_found", n => { InstitutionNotFound = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_institution_not_found>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_institution_not_found.CreateFromDiscriminatorValue); } },
+                { "institution_not_supported", n => { InstitutionNotSupported = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_institution_not_supported>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_institution_not_supported.CreateFromDiscriminatorValue); } },
+                { "requires_account_selection", n => { RequiresAccountSelection = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_account_selection>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_account_selection.CreateFromDiscriminatorValue); } },
+                { "requires_code", n => { RequiresCode = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_code>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_code.CreateFromDiscriminatorValue); } },
+                { "requires_credentials", n => { RequiresCredentials = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_credentials>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_credentials.CreateFromDiscriminatorValue); } },
+                { "requires_oauth", n => { RequiresOauth = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_oauth>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_oauth.CreateFromDiscriminatorValue); } },
+                { "requires_questions", n => { RequiresQuestions = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_questions>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_questions.CreateFromDiscriminatorValue); } },
+                { "requires_selections", n => { RequiresSelections = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_selections>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_selections.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -130,15 +130,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("choose_device", ChooseDevice);
-            writer.WriteObjectValue<UntypedNode>("institution_not_found", InstitutionNotFound);
-            writer.WriteObjectValue<UntypedNode>("institution_not_supported", InstitutionNotSupported);
-            writer.WriteObjectValue<UntypedNode>("requires_account_selection", RequiresAccountSelection);
-            writer.WriteObjectValue<UntypedNode>("requires_code", RequiresCode);
-            writer.WriteObjectValue<UntypedNode>("requires_credentials", RequiresCredentials);
-            writer.WriteObjectValue<UntypedNode>("requires_oauth", RequiresOauth);
-            writer.WriteObjectValue<UntypedNode>("requires_questions", RequiresQuestions);
-            writer.WriteObjectValue<UntypedNode>("requires_selections", RequiresSelections);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_choose_device>("choose_device", ChooseDevice);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_institution_not_found>("institution_not_found", InstitutionNotFound);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_institution_not_supported>("institution_not_supported", InstitutionNotSupported);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_account_selection>("requires_account_selection", RequiresAccountSelection);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_code>("requires_code", RequiresCode);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_credentials>("requires_credentials", RequiresCredentials);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_oauth>("requires_oauth", RequiresOauth);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_questions>("requires_questions", RequiresQuestions);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status_requires_selections>("requires_selections", RequiresSelections);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

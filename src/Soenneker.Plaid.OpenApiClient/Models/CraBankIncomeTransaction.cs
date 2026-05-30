@@ -18,7 +18,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The settled value of the transaction, denominated in the transaction&apos;s currency as stated in `iso_currency_code` or `unofficial_currency_code`.Positive values when money moves out of the account; negative values when money moves in.For example, credit card purchases are positive; credit card payment, direct deposits, and refunds are negative.</summary>
         public double? Amount { get; set; }
-        /// <summary>The type of bonus that this transaction represents, if it is a bonus.`BONUS_INCLUDED`: Bonus is included in this transaction along with the normal pay`BONUS_ONLY`: This transaction is a standalone bonus</summary>
+        /// <summary>&quot;The type of bonus that this transaction represents, if it is a bonus.`BONUS_INCLUDED`: Bonus is included in this transaction along with the normal pay`BONUS_ONLY`: This transaction is a standalone bonus&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeBonusType? BonusType { get; set; }
         /// <summary>The check number of the transaction. This field is only populated for check transactions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

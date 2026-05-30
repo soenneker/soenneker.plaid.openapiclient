@@ -26,7 +26,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>A score from 0 to 100 indicating the risk assessment for the business</summary>
         public int? Score { get; set; }
         /// <summary>Status of the business risk assessment check</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatus__RiskCheck? Status { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatusRiskCheck? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BusinessRiskCheck"/> and sets the default values.
         /// </summary>
@@ -54,7 +54,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "industry_prediction", n => { IndustryPrediction = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessIndustryPredictionNullable>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessIndustryPredictionNullable.CreateFromDiscriminatorValue); } },
                 { "score", n => { Score = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatus__RiskCheck>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatusRiskCheck>(); } },
             };
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessIndustryPredictionNullable>("industry_prediction", IndustryPrediction);
             writer.WriteIntValue("score", Score);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatus__RiskCheck>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatusRiskCheck>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

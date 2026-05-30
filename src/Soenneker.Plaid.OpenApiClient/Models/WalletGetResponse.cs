@@ -11,8 +11,34 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// WalletGetResponse defines the response schema for `/wallet/get`
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WalletGetResponse : global::Soenneker.Plaid.OpenApiClient.Models.Wallet, IParsable
+    public partial class WalletGetResponse : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>An object representing the e-wallet balance</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletBalance? Balance { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletBalance Balance { get; set; }
+#endif
+        /// <summary>An object representing the e-wallet account numbers</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletNumbers? Numbers { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletNumbers Numbers { get; set; }
+#endif
+        /// <summary>The ID of the recipient that corresponds to the e-wallet account numbers</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RecipientId { get; set; }
+#nullable restore
+#else
+        public string RecipientId { get; set; }
+#endif
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,12 +47,29 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string RequestId { get; set; }
 #endif
+        /// <summary>&quot;The status of the wallet.`UNKNOWN`: The wallet status is unknown.`ACTIVE`: The wallet is active and ready to send money to and receive money from.`CLOSED`: The wallet is closed. Any transactions made to or from this wallet will error.&quot;</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletStatus? Status { get; set; }
+        /// <summary>A unique ID identifying the e-wallet</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WalletId { get; set; }
+#nullable restore
+#else
+        public string WalletId { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.WalletGetResponse"/> and sets the default values.
+        /// </summary>
+        public WalletGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.WalletGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Plaid.OpenApiClient.Models.WalletGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Plaid.OpenApiClient.Models.WalletGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Plaid.OpenApiClient.Models.WalletGetResponse();
@@ -35,22 +78,32 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            return new Dictionary<string, Action<IParseNode>>
             {
+                { "balance", n => { Balance = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletBalance>(global::Soenneker.Plaid.OpenApiClient.Models.WalletBalance.CreateFromDiscriminatorValue); } },
+                { "numbers", n => { Numbers = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletNumbers>(global::Soenneker.Plaid.OpenApiClient.Models.WalletNumbers.CreateFromDiscriminatorValue); } },
+                { "recipient_id", n => { RecipientId = n.GetStringValue(); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletStatus>(); } },
+                { "wallet_id", n => { WalletId = n.GetStringValue(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer)
+        public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletBalance>("balance", Balance);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletNumbers>("numbers", Numbers);
+            writer.WriteStringValue("recipient_id", RecipientId);
             writer.WriteStringValue("request_id", RequestId);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletStatus>("status", Status);
+            writer.WriteStringValue("wallet_id", WalletId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -36,13 +36,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>market value of investment position</summary>
         public double? AssetHoldingMarketValueAmount { get; set; }
         /// <summary>Whether or not the stock is restricted, i.e. &quot;Restricted&quot; or &quot;Not Restricted&quot;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AssetHoldingRestrictedIndicator { get; set; }
-#nullable restore
-#else
-        public string AssetHoldingRestrictedIndicator { get; set; }
-#endif
+        public bool? AssetHoldingRestrictedIndicator { get; set; }
         /// <summary>Security name of investment holding</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +96,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "AssetHoldingDescription", n => { AssetHoldingDescription = n.GetStringValue(); } },
                 { "AssetHoldingID", n => { AssetHoldingID = n.GetStringValue(); } },
                 { "AssetHoldingMarketValueAmount", n => { AssetHoldingMarketValueAmount = n.GetDoubleValue(); } },
-                { "AssetHoldingRestrictedIndicator", n => { AssetHoldingRestrictedIndicator = n.GetStringValue(); } },
+                { "AssetHoldingRestrictedIndicator", n => { AssetHoldingRestrictedIndicator = n.GetBoolValue(); } },
                 { "AssetHoldingSecurityName", n => { AssetHoldingSecurityName = n.GetStringValue(); } },
                 { "AssetHoldingSymbol", n => { AssetHoldingSymbol = n.GetStringValue(); } },
                 { "AssetHoldingType", n => { AssetHoldingType = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetHolding_AssetHoldingType>(); } },
@@ -122,7 +116,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("AssetHoldingDescription", AssetHoldingDescription);
             writer.WriteStringValue("AssetHoldingID", AssetHoldingID);
             writer.WriteDoubleValue("AssetHoldingMarketValueAmount", AssetHoldingMarketValueAmount);
-            writer.WriteStringValue("AssetHoldingRestrictedIndicator", AssetHoldingRestrictedIndicator);
+            writer.WriteBoolValue("AssetHoldingRestrictedIndicator", AssetHoldingRestrictedIndicator);
             writer.WriteStringValue("AssetHoldingSecurityName", AssetHoldingSecurityName);
             writer.WriteStringValue("AssetHoldingSymbol", AssetHoldingSymbol);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetHolding_AssetHoldingType>("AssetHoldingType", AssetHoldingType);

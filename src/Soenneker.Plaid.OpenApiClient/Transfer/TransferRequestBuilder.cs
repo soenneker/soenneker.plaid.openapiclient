@@ -3,7 +3,6 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Plaid.OpenApiClient.Transfer.Authorization;
-using Soenneker.Plaid.OpenApiClient.Transfer.Balance;
 using Soenneker.Plaid.OpenApiClient.Transfer.Cancel;
 using Soenneker.Plaid.OpenApiClient.Transfer.Capabilities;
 using Soenneker.Plaid.OpenApiClient.Transfer.Configuration;
@@ -39,11 +38,6 @@ namespace Soenneker.Plaid.OpenApiClient.Transfer
         public global::Soenneker.Plaid.OpenApiClient.Transfer.Authorization.AuthorizationRequestBuilder Authorization
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Transfer.Authorization.AuthorizationRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The balance property</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Transfer.Balance.BalanceRequestBuilder Balance
-        {
-            get => new global::Soenneker.Plaid.OpenApiClient.Transfer.Balance.BalanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The cancel property</summary>
         public global::Soenneker.Plaid.OpenApiClient.Transfer.Cancel.CancelRequestBuilder Cancel

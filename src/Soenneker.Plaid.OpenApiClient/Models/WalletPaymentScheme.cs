@@ -3,14 +3,10 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>The payment scheme used to execute this transaction. This is present only for transaction types `PAYOUT` and `REFUND`.`FASTER_PAYMENTS`: The standard payment scheme within the UK.`SEPA_CREDIT_TRANSFER`: The standard payment to a beneficiary within the SEPA area.`SEPA_CREDIT_TRANSFER_INSTANT`: Instant payment to a beneficiary within the SEPA area.</summary>
+    /// <summary>&quot;The payment scheme used to execute this transaction. This is present only for transaction types `PAYOUT` and `REFUND`.`FASTER_PAYMENTS`: The standard payment scheme within the UK.`SEPA_CREDIT_TRANSFER`: The standard payment to a beneficiary within the SEPA area.`SEPA_CREDIT_TRANSFER_INSTANT`: Instant payment to a beneficiary within the SEPA area.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WalletPaymentScheme
     {
-        [EnumMember(Value = "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
-        #pragma warning disable CS1591
-        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
-        #pragma warning restore CS1591
         [EnumMember(Value = "FASTER_PAYMENTS")]
         #pragma warning disable CS1591
         FASTER_PAYMENTS,

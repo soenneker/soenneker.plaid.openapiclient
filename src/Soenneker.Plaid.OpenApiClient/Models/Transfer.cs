@@ -22,7 +22,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string AccountId { get; set; }
 #endif
-        /// <summary>Specifies the use case of the transfer. Required for transfers on an ACH network. For more details, see [ACH SEC codes](https://plaid.com/docs/transfer/creating-transfers/#ach-sec-codes).Codes supported for credits: `ccd`, `ppd`Codes supported for debits: `ccd`, `tel`, `web``&quot;ccd&quot;` - Corporate Credit or Debit - fund transfer between two corporate bank accounts`&quot;ppd&quot;` - Prearranged Payment or Deposit - The transfer is part of a pre-existing relationship with a consumer. Authorization was obtained in writing either in person or via an electronic document signing, e.g. Docusign, by the consumer. Can be used for credits or debits.`&quot;web&quot;` - Internet-Initiated Entry. The transfer debits a consumer’s bank account. Authorization from the consumer is obtained over the Internet (e.g. a web or mobile application). Can be used for single debits or recurring debits.`&quot;tel&quot;` - Telephone-Initiated Entry. The transfer debits a consumer. Debit authorization has been received orally over the telephone via a recorded call.</summary>
+        /// <summary>&quot;Specifies the use case of the transfer. Required for transfers on an ACH network. For more details, see [ACH SEC codes](https://plaid.com/docs/transfer/creating-transfers/#ach-sec-codes).Codes supported for credits: `ccd`, `ppd`Codes supported for debits: `ccd`, `tel`, `web``\&quot;ccd\&quot;` - Corporate Credit or Debit - fund transfer between two corporate bank accounts`\&quot;ppd\&quot;` - Prearranged Payment or Deposit - The transfer is part of a pre-existing relationship with a consumer. Authorization was obtained in writing either in person or via an electronic document signing, e.g. Docusign, by the consumer. Can be used for credits or debits.`\&quot;web\&quot;` - Internet-Initiated Entry. The transfer debits a consumer’s bank account. Authorization from the consumer is obtained over the Internet (e.g. a web or mobile application). Can be used for single debits or recurring debits.`\&quot;tel\&quot;` - Telephone-Initiated Entry. The transfer debits a consumer. Debit authorization has been received orally over the telephone via a recorded call.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.ACHClass? AchClass { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -48,7 +48,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public DateTimeOffset? Created { get; set; }
         /// <summary>The credit_funds_source property</summary>
         [Obsolete("")]
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferCreditFundsSource? CreditFundsSource { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.Transfer_credit_funds_source? CreditFundsSource { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.Transfer_credit_funds_source CreditFundsSource { get; set; }
+#endif
         /// <summary>The description of the transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -179,15 +185,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public List<global::Soenneker.Plaid.OpenApiClient.Models.TransferRefund> Refunds { get; set; }
 #endif
-        /// <summary>The date 3 business days from settlement date indicating the following ACH returns can no longer happen: R01, R02, R03, R29. This will be of the form YYYY-MM-DD.</summary>
+        /// <summary>&quot;The date 3 business days from settlement date indicating the following ACH returns can no longer happen: R01, R02, R03, R29. This will be of the form YYYY-MM-DD.&quot;</summary>
         public Date? StandardReturnWindow { get; set; }
-        /// <summary>The status of the transfer.`pending`: A new transfer was created; it is in the pending state.`posted`: The transfer has been successfully submitted to the payment network.`settled`: The transfer was successfully completed by the payment network. Note that funds from received debits are not available to be moved out of the Ledger until the transfer reaches `funds_available` status. For credit transactions, `settled` means the funds have been delivered to the receiving bank account. This is the terminal state of a successful credit transfer.`funds_available`: Funds from the transfer have been released from hold and applied to the ledger&apos;s available balance. (Only applicable to ACH debits.) This is the terminal state of a successful debit transfer.`cancelled`: The transfer was cancelled by the client. This is the terminal state of a cancelled transfer.`failed`: The transfer failed, no funds were moved. This is the terminal state of a failed transfer.`returned`: A posted transfer was returned. This is the terminal state of a returned transfer.</summary>
+        /// <summary>&quot;The status of the transfer.`pending`: A new transfer was created; it is in the pending state.`posted`: The transfer has been successfully submitted to the payment network.`settled`: The transfer was successfully completed by the payment network. Note that funds from received debits are not available to be moved out of the Ledger until the transfer reaches `funds_available` status. For credit transactions, `settled` means the funds have been delivered to the receiving bank account. This is the terminal state of a successful credit transfer.`funds_available`: Funds from the transfer have been released from hold and applied to the ledger&apos;s available balance. (Only applicable to ACH debits.) This is the terminal state of a successful debit transfer.`cancelled`: The transfer was cancelled by the client. This is the terminal state of a cancelled transfer.`failed`: The transfer failed, no funds were moved. This is the terminal state of a failed transfer.`returned`: A posted transfer was returned. This is the terminal state of a returned transfer.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferStatus? Status { get; set; }
-        /// <summary>The status of the sweep for the transfer.`unswept`: The transfer hasn&apos;t been swept yet.`swept`: The transfer was swept to the sweep account.`swept_settled`: Credits are available to be withdrawn or debits have been deducted from the customer’s business checking account.`return_swept`: The transfer was returned, funds were pulled back or pushed back to the sweep account.`null`: The transfer will never be swept (e.g. if the transfer is cancelled or returned before being swept)</summary>
+        /// <summary>&quot;The status of the sweep for the transfer.`unswept`: The transfer hasn&apos;t been swept yet.`swept`: The transfer was swept to the sweep account.`swept_settled`: Credits are available to be withdrawn or debits have been deducted from the customer’s business checking account.`return_swept`: The transfer was returned, funds were pulled back or pushed back to the sweep account.`null`: The transfer will never be swept (e.g. if the transfer is cancelled or returned before being swept)&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferSweepStatus? SweepStatus { get; set; }
         /// <summary>The type of transfer. This will be either `debit` or `credit`.  A `debit` indicates a transfer of money into the origination account; a `credit` indicates a transfer of money out of the origination account.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferType? Type { get; set; }
-        /// <summary>The date 61 business days from settlement date indicating the following ACH returns can no longer happen: R05, R07, R10, R11, R51, R33, R37, R38, R51, R52, R53. This will be of the form YYYY-MM-DD.</summary>
+        /// <summary>&quot;The date 61 business days from settlement date indicating the following ACH returns can no longer happen: R05, R07, R10, R11, R51, R33, R37, R38, R51, R52, R53. This will be of the form YYYY-MM-DD.&quot;</summary>
         public Date? UnauthorizedReturnWindow { get; set; }
         /// <summary>The legal name and other information for the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -236,7 +242,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "authorization_id", n => { AuthorizationId = n.GetStringValue(); } },
                 { "cancellable", n => { Cancellable = n.GetBoolValue(); } },
                 { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "credit_funds_source", n => { CreditFundsSource = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferCreditFundsSource>(); } },
+                { "credit_funds_source", n => { CreditFundsSource = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Transfer_credit_funds_source>(global::Soenneker.Plaid.OpenApiClient.Models.Transfer_credit_funds_source.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "expected_funds_available_date", n => { ExpectedFundsAvailableDate = n.GetDateValue(); } },
                 { "expected_settlement_date", n => { ExpectedSettlementDate = n.GetDateValue(); } },
@@ -278,7 +284,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("authorization_id", AuthorizationId);
             writer.WriteBoolValue("cancellable", Cancellable);
             writer.WriteDateTimeOffsetValue("created", Created);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferCreditFundsSource>("credit_funds_source", CreditFundsSource);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Transfer_credit_funds_source>("credit_funds_source", CreditFundsSource);
             writer.WriteStringValue("description", Description);
             writer.WriteDateValue("expected_funds_available_date", ExpectedFundsAvailableDate);
             writer.WriteDateValue("expected_settlement_date", ExpectedSettlementDate);

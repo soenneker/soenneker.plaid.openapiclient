@@ -41,7 +41,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>The income pay frequency.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomePayFrequency? PayFrequency { get; set; }
-        /// <summary>The status of the income sources.`ACTIVE`: The income source is active.`INACTIVE`: The income source is inactive.`UNKNOWN`: The income source status is unknown.</summary>
+        /// <summary>&quot;The status of the income sources.`ACTIVE`: The income source is active.`INACTIVE`: The income source is inactive.`UNKNOWN`: The income source status is unknown.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeStreamInsights"/> and sets the default values.

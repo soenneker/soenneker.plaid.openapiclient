@@ -18,13 +18,37 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The version of Prism CashScore. If not specified, will default to v3.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScoreVersion? Cashscore { get; set; }
         /// <summary>The version of Prism Detect</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismDetectVersion? Detect { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Detect { get; set; }
+#nullable restore
+#else
+        public string Detect { get; set; }
+#endif
         /// <summary>The version of Prism Extend</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismExtendVersion? Extend { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Extend { get; set; }
+#nullable restore
+#else
+        public string Extend { get; set; }
+#endif
         /// <summary>The version of Prism FirstDetect. If not specified, will default to v3.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismFirstDetectVersion? Firstdetect { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Firstdetect { get; set; }
+#nullable restore
+#else
+        public string Firstdetect { get; set; }
+#endif
         /// <summary>The version of Prism Insights. If not specified, will default to v3.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsVersion? Insights { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Insights { get; set; }
+#nullable restore
+#else
+        public string Insights { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PrismVersions"/> and sets the default values.
         /// </summary>
@@ -51,10 +75,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cashscore", n => { Cashscore = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScoreVersion>(); } },
-                { "detect", n => { Detect = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismDetectVersion>(); } },
-                { "extend", n => { Extend = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismExtendVersion>(); } },
-                { "firstdetect", n => { Firstdetect = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismFirstDetectVersion>(); } },
-                { "insights", n => { Insights = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsVersion>(); } },
+                { "detect", n => { Detect = n.GetStringValue(); } },
+                { "extend", n => { Extend = n.GetStringValue(); } },
+                { "firstdetect", n => { Firstdetect = n.GetStringValue(); } },
+                { "insights", n => { Insights = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -65,10 +89,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScoreVersion>("cashscore", Cashscore);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismDetectVersion>("detect", Detect);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismExtendVersion>("extend", Extend);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismFirstDetectVersion>("firstdetect", Firstdetect);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsVersion>("insights", Insights);
+            writer.WriteStringValue("detect", Detect);
+            writer.WriteStringValue("extend", Extend);
+            writer.WriteStringValue("firstdetect", Firstdetect);
+            writer.WriteStringValue("insights", Insights);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

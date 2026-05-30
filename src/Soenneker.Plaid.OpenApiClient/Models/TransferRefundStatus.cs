@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>The status of the refund.`pending`: A new refund was created; it is in the pending state.`posted`: The refund has been successfully submitted to the payment network.`settled`: Credits have been refunded to the Plaid linked account.`cancelled`: The refund was cancelled by the client.`failed`: The refund has failed.`returned`: The refund was returned.</summary>
+    /// <summary>&quot;The status of the refund.`pending`: A new refund was created; it is in the pending state.`posted`: The refund has been successfully submitted to the payment network.`settled`: Credits have been refunded to the Plaid linked account.`cancelled`: The refund was cancelled by the client.`failed`: The refund has failed.`returned`: The refund was returned.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransferRefundStatus
     {

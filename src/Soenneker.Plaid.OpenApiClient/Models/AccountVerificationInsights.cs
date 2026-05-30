@@ -13,7 +13,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccountVerificationInsights : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Indicator of account number format validity for institution.`valid`: indicates that the account number has a correct format for the institution.`invalid`: indicates that the account number has an incorrect format for the institution.`unknown`: indicates that there was not enough information to determine whether the format is correct for the institution.</summary>
+        /// <summary>&quot;Indicator of account number format validity for institution.`valid`: indicates that the account number has a correct format for the institution.`invalid`: indicates that the account number has an incorrect format for the institution.`unknown`: indicates that there was not enough information to determine whether the format is correct for the institution.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsAccountNumberFormat? AccountNumberFormat { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

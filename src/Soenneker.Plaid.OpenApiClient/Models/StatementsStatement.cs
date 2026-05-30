@@ -18,7 +18,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Date when the statement was posted by the FI, if known</summary>
         public Date? DatePosted { get; set; }
-        /// <summary>Month of the year. Possible values: 1 through 12 (January through December).</summary>
+        /// <summary>&quot;Month of the year. Possible values: 1 through 12 (January through December).&quot;</summary>
         public int? Month { get; set; }
         /// <summary>Plaid&apos;s unique identifier for the statement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

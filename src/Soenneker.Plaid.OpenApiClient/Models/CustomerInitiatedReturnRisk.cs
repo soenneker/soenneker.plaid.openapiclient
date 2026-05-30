@@ -8,17 +8,16 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// The object contains a risk score and a risk tier that evaluate the transaction return risk of an unauthorized debit. Common return codes in this category include: &quot;R05&quot;, &quot;R07&quot;, &quot;R10&quot;, &quot;R11&quot;, &quot;R29&quot;. These returns typically have a return time frame of up to 60 calendar days. During this period, the customer of financial institutions can dispute a transaction as unauthorized.
+    /// &quot;The object contains a risk score and a risk tier that evaluate the transaction return risk of an unauthorized debit. Common return codes in this category include: \&quot;R05\&quot;, \&quot;R07\&quot;, \&quot;R10\&quot;, \&quot;R11\&quot;, \&quot;R29\&quot;. These returns typically have a return time frame of up to 60 calendar days. During this period, the customer of financial institutions can dispute a transaction as unauthorized.&quot;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomerInitiatedReturnRisk : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>DEPRECATED. Use Signal Rules instead to transform the `score` into a useful action.A tier corresponding to the projected likelihood that the transaction, if initiated, will be subject to a return.In the `customer_initiated_return_risk` object, there are five risk tiers corresponding to the scores:  1: Predicted customer-initiated return incidence rate between 0.00% - 0.02%  2: Predicted customer-initiated return incidence rate between 0.02% - 0.05%  3: Predicted customer-initiated return incidence rate between 0.05% - 0.1%  4: Predicted customer-initiated return incidence rate between 0.1% - 0.5%  5: Predicted customer-initiated return incidence rate greater than 0.5%</summary>
-        [Obsolete("")]
+        /// <summary>&quot;DEPRECATED. Use Signal Rules instead to transform the `score` into a useful action.A tier corresponding to the projected likelihood that the transaction, if initiated, will be subject to a return.In the `customer_initiated_return_risk` object, there are five risk tiers corresponding to the scores:  1: Predicted customer-initiated return incidence rate between 0.00% - 0.02%  2: Predicted customer-initiated return incidence rate between 0.02% - 0.05%  3: Predicted customer-initiated return incidence rate between 0.05% - 0.1%  4: Predicted customer-initiated return incidence rate between 0.1% - 0.5%  5: Predicted customer-initiated return incidence rate greater than 0.5%&quot;</summary>
         public int? RiskTier { get; set; }
-        /// <summary>A score from 1-99 that indicates the transaction return risk: a higher risk score suggests a higher return likelihood.</summary>
+        /// <summary>&quot;A score from 1-99 that indicates the transaction return risk: a higher risk score suggests a higher return likelihood.&quot;</summary>
         public int? Score { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CustomerInitiatedReturnRisk"/> and sets the default values.

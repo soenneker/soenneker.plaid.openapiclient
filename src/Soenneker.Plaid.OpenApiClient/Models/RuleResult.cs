@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>The result of the rule that was triggered for this transaction.`ACCEPT`: Accept the transaction for processing.`REROUTE`: Reroute the transaction to a different payment method, as this transaction is too risky.`REVIEW`: Review the transaction before proceeding.</summary>
+    /// <summary>&quot;The result of the rule that was triggered for this transaction.`ACCEPT`: Accept the transaction for processing.`REROUTE`: Reroute the transaction to a different payment method, as this transaction is too risky.`REVIEW`: Review the transaction before proceeding.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum RuleResult
     {

@@ -18,10 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Net cash flow for the period (inflows minus outflows), including a monthly average.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrencyWithMonthlyAverage? CashFlow { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureInsights_cash_flow? CashFlow { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrencyWithMonthlyAverage CashFlow { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureInsights_cash_flow CashFlow { get; set; }
 #endif
         /// <summary>Summary statistics for a specific expenditure category, including total amount, monthly average, and percentage of income.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,7 +96,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cash_flow", n => { CashFlow = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrencyWithMonthlyAverage>(global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrencyWithMonthlyAverage.CreateFromDiscriminatorValue); } },
+                { "cash_flow", n => { CashFlow = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureInsights_cash_flow>(global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureInsights_cash_flow.CreateFromDiscriminatorValue); } },
                 { "essential_expenditure", n => { EssentialExpenditure = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary>(global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary.CreateFromDiscriminatorValue); } },
                 { "non_essential_expenditure", n => { NonEssentialExpenditure = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary>(global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary.CreateFromDiscriminatorValue); } },
                 { "other", n => { Other = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary>(global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary.CreateFromDiscriminatorValue); } },
@@ -112,7 +112,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrencyWithMonthlyAverage>("cash_flow", CashFlow);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureInsights_cash_flow>("cash_flow", CashFlow);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary>("essential_expenditure", EssentialExpenditure);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary>("non_essential_expenditure", NonEssentialExpenditure);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary>("other", Other);

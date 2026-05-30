@@ -39,7 +39,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string PostalCode { get; set; }
 #endif
-        /// <summary>The region or state.Example: `&quot;NC&quot;`</summary>
+        /// <summary>&quot;The region or state.Example: `\&quot;NC\&quot;`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Region { get; set; }

@@ -50,7 +50,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentPayerNumbers Numbers { get; set; }
 #endif
-        /// <summary>The payer&apos;s phone numbers in E.164 format: +{countrycode}{number}</summary>
+        /// <summary>&quot;The payer&apos;s phone numbers in E.164 format: +{countrycode}{number}&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PhoneNumbers { get; set; }

@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A file to upload. The file size must be less than 20MB. Supported file extensions: .pdf.</summary>
+        /// <summary>&quot;A file to upload. The file size must be less than 20MB. Supported file extensions: .pdf.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? File { get; set; }

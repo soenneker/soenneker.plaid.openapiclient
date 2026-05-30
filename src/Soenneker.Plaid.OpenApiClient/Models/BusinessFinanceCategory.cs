@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A description of how confident we are that the provided categories accurately describe the transaction intent.`VERY_HIGH`: We are more than 98% confident that this category reflects the intent of the transaction.`HIGH`: We are more than 90% confident that this category reflects the intent of the transaction.`MEDIUM`: We are moderately confident that this category reflects the intent of the transaction.`LOW`: This category may reflect the intent, but there may be other categories that are more accurate.`UNKNOWN`: We don’t know the confidence level for this category.</summary>
+        /// <summary>&quot;A description of how confident we are that the provided categories accurately describe the transaction intent.`VERY_HIGH`: We are more than 98% confident that this category reflects the intent of the transaction.`HIGH`: We are more than 90% confident that this category reflects the intent of the transaction.`MEDIUM`: We are moderately confident that this category reflects the intent of the transaction.`LOW`: This category may reflect the intent, but there may be other categories that are more accurate.`UNKNOWN`: We don’t know the confidence level for this category.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConfidenceLevel { get; set; }

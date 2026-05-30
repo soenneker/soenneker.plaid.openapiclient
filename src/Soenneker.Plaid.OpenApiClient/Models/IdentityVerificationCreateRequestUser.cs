@@ -16,7 +16,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Home address for the user. Supported values are: not provided, address with only country code or full address.For more context on this field, see [Input Validation by Country](https://plaid.com/docs/identity-verification/hybrid-input-validation/#input-validation-by-country).</summary>
+        /// <summary>&quot;Home address for the user. Supported values are: not provided, address with only country code or full address.For more context on this field, see [Input Validation by Country](https://plaid.com/docs/identity-verification/hybrid-input-validation/#input-validation-by-country).&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.UserAddress? Address { get; set; }
@@ -24,8 +24,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.UserAddress Address { get; set; }
 #endif
-        /// <summary>Specifying `user.client_user_id` is deprecated. Please provide `client_user_id` at the root level instead.</summary>
-        [Obsolete("")]
+        /// <summary>The client_user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientUserId { get; set; }

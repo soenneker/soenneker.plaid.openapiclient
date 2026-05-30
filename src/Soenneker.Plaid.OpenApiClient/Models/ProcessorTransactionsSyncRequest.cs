@@ -25,7 +25,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>The number of transaction updates to fetch.</summary>
         public int? Count { get; set; }
-        /// <summary>The cursor value represents the last update requested. Providing it will cause the response to only return changes after this update.If omitted, the entire history of updates will be returned, starting with the first-added transactions on the item.Note: The upper-bound length of this cursor is 256 characters of base64.</summary>
+        /// <summary>&quot;The cursor value represents the last update requested. Providing it will cause the response to only return changes after this update.If omitted, the entire history of updates will be returned, starting with the first-added transactions on the item.Note: The upper-bound length of this cursor is 256 characters of base64.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Cursor { get; set; }
@@ -41,7 +41,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.TransactionsSyncRequestOptions Options { get; set; }
 #endif
-        /// <summary>The processor token obtained from the Plaid integration partner. Processor tokens are in the format: `processor-&lt;environment&gt;-&lt;identifier&gt;`</summary>
+        /// <summary>&quot;The processor token obtained from the Plaid integration partner. Processor tokens are in the format: `processor-&lt;environment&gt;-&lt;identifier&gt;`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProcessorToken { get; set; }

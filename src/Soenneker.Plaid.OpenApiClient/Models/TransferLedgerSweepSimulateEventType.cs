@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>The asynchronous event to be simulated. May be: `posted`, `settled`, `failed`, or `returned`.An error will be returned if the event type is incompatible with the current ledger sweep status. Compatible status --&gt; event type transitions include:`sweep.pending` --&gt; `sweep.posted``sweep.pending` --&gt; `sweep.failed``sweep.posted` --&gt; `sweep.settled``sweep.posted` --&gt; `sweep.returned``sweep.settled` --&gt; `sweep.returned`</summary>
+    /// <summary>&quot;The asynchronous event to be simulated. May be: `posted`, `settled`, `failed`, or `returned`.An error will be returned if the event type is incompatible with the current ledger sweep status. Compatible status --&gt; event type transitions include:`sweep.pending` --&gt; `sweep.posted``sweep.pending` --&gt; `sweep.failed``sweep.posted` --&gt; `sweep.settled``sweep.posted` --&gt; `sweep.returned``sweep.settled` --&gt; `sweep.returned`&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransferLedgerSweepSimulateEventType
     {

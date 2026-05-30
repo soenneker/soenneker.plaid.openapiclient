@@ -9,7 +9,6 @@ using Soenneker.Plaid.OpenApiClient.Sandbox.Income;
 using Soenneker.Plaid.OpenApiClient.Sandbox.Item_Escaped;
 using Soenneker.Plaid.OpenApiClient.Sandbox.Oauth;
 using Soenneker.Plaid.OpenApiClient.Sandbox.Payment;
-using Soenneker.Plaid.OpenApiClient.Sandbox.Payment_profile;
 using Soenneker.Plaid.OpenApiClient.Sandbox.Processor_token;
 using Soenneker.Plaid.OpenApiClient.Sandbox.Public_token;
 using Soenneker.Plaid.OpenApiClient.Sandbox.Transactions;
@@ -61,11 +60,6 @@ namespace Soenneker.Plaid.OpenApiClient.Sandbox
         public global::Soenneker.Plaid.OpenApiClient.Sandbox.Payment.PaymentRequestBuilder Payment
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Sandbox.Payment.PaymentRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The payment_profile property</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Sandbox.Payment_profile.Payment_profileRequestBuilder Payment_profile
-        {
-            get => new global::Soenneker.Plaid.OpenApiClient.Sandbox.Payment_profile.Payment_profileRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The processor_token property</summary>
         public global::Soenneker.Plaid.OpenApiClient.Sandbox.Processor_token.Processor_tokenRequestBuilder Processor_token

@@ -12,8 +12,28 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// A representation of a transaction
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Transaction : global::Soenneker.Plaid.OpenApiClient.Models.TransactionBase, IParsable
+    public partial class Transaction : IAdditionalDataHolder, IParsable
     {
+        /// <summary>The ID of the account in which this transaction occurred.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountId { get; set; }
+#nullable restore
+#else
+        public string AccountId { get; set; }
+#endif
+        /// <summary>This field is not typically populated and only relevant when dealing with sub-accounts. A sub-account most commonly exists in cases where a single account is linked to multiple cards, each with its own card number and card holder name; each card will be considered a sub-account. If the account does have sub-accounts, this field will typically be some combination of the sub-account owner&apos;s name and/or the sub-account mask. The format of this field is not standardized and will vary based on institution.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountOwner { get; set; }
+#nullable restore
+#else
+        public string AccountOwner { get; set; }
+#endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>&quot;The settled value of the transaction, denominated in the transactions&apos;s currency, as stated in `iso_currency_code` or `unofficial_currency_code`. For all products except Income: Positive values when money moves out of the account; negative values when money moves in. For example, debit card purchases are positive; credit card payments, direct deposits, and refunds are negative. For Income endpoints, values are positive when representing income.&quot;</summary>
+        public double? Amount { get; set; }
         /// <summary>The date that the transaction was authorized. For posted transactions, the `date` field will indicate the posted date, but `authorized_date` will indicate the day the transaction was authorized by the financial institution. If presenting transactions to the user in a UI, the `authorized_date`, when available, is generally preferable to use over the `date` field for posted transactions, as it will generally represent the date the user actually made the transaction. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ( `YYYY-MM-DD` ).</summary>
         public Date? AuthorizedDate { get; set; }
         /// <summary>Date and time when a transaction was authorized in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ( `YYYY-MM-DDTHH:mm:ssZ` ). For posted transactions, the `datetime` field will indicate the posted date, but `authorized_datetime` will indicate the day the transaction was authorized by the financial institution. If presenting transactions to the user in a UI, the `authorized_datetime`, when available, is generally preferable to use over the `datetime` field for posted transactions, as it will generally represent the date the user actually made the transaction.This field is returned for select financial institutions and comes as provided by the institution. It may contain default time values (such as 00:00:00). This field is only populated in API version 2019-05-29 and later.</summary>
@@ -25,6 +45,32 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFinanceCategory BusinessFinanceCategory { get; set; }
+#endif
+        /// <summary>A hierarchical array of the categories to which this transaction belongs. For a full list of categories, see [`/categories/get`](https://plaid.com/docs/api/products/transactions/#categoriesget).All Transactions implementations are recommended to use the new `personal_finance_category` instead of `category`, as it provides greater accuracy and more meaningful categorization.If the `transactions` object was returned by an Assets endpoint such as `/asset_report/get/` or `/asset_report/pdf/get`, this field will only appear in an Asset Report with Insights.</summary>
+        [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Category { get; set; }
+#nullable restore
+#else
+        public List<string> Category { get; set; }
+#endif
+        /// <summary>The ID of the category to which this transaction belongs. For a full list of categories, see [`/categories/get`](https://plaid.com/docs/api/products/transactions/#categoriesget).All Transactions implementations are recommended to use the new `personal_finance_category` instead of `category`, as it provides greater accuracy and more meaningful categorization.If the `transactions` object was returned by an Assets endpoint such as `/asset_report/get/` or `/asset_report/pdf/get`, this field will only appear in an Asset Report with Insights.</summary>
+        [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CategoryId { get; set; }
+#nullable restore
+#else
+        public string CategoryId { get; set; }
+#endif
+        /// <summary>The check number of the transaction. This field is only populated for check transactions.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CheckNumber { get; set; }
+#nullable restore
+#else
+        public string CheckNumber { get; set; }
 #endif
         /// <summary>Custom client fields</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,8 +88,34 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public List<global::Soenneker.Plaid.OpenApiClient.Models.TransactionCounterparty> Counterparties { get; set; }
 #endif
+        /// <summary>For pending transactions, the date that the transaction occurred; for posted transactions, the date that the transaction posted. Both dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ( `YYYY-MM-DD` ). To receive information about the date that a posted transaction was initiated, see the `authorized_date` field.</summary>
+        public Date? Date { get; set; }
         /// <summary>Date and time when a transaction was posted in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ( `YYYY-MM-DDTHH:mm:ssZ` ). For the date that the transaction was initiated, rather than posted, see the `authorized_datetime` field.This field is returned for select financial institutions and comes as provided by the institution. It may contain default time values (such as 00:00:00). This field is only populated in API version 2019-05-29 and later.</summary>
         public DateTimeOffset? Datetime { get; set; }
+        /// <summary>The ISO-4217 currency code of the transaction. Always `null` if `unofficial_currency_code` is non-null.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IsoCurrencyCode { get; set; }
+#nullable restore
+#else
+        public string IsoCurrencyCode { get; set; }
+#endif
+        /// <summary>A representation of where a transaction took place. Location data is provided only for transactions at physical locations, not for online transactions. Location data availability depends primarily on the merchant and is most likely to be populated for transactions at large retail chains; small, local businesses are less likely to have location data available.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.Location? Location { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.Location Location { get; set; }
+#endif
+        /// <summary>The URL of a logo associated with this transaction, if available. The logo will always be 100×100 pixel PNG file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LogoUrl { get; set; }
+#nullable restore
+#else
+        public string LogoUrl { get; set; }
+#endif
         /// <summary>A unique, stable, Plaid-generated ID that maps to the merchant. In the case of a merchant with multiple retail locations, this field will map to the broader merchant, not a specific location or store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,8 +124,51 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string MerchantEntityId { get; set; }
 #endif
+        /// <summary>The merchant name, as enriched by Plaid from the `name` field. This is typically a more human-readable version of the merchant counterparty in the transaction. For some bank transactions (such as checks or account transfers) where there is no meaningful merchant name, this value will be `null`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MerchantName { get; set; }
+#nullable restore
+#else
+        public string MerchantName { get; set; }
+#endif
+        /// <summary>&quot;The merchant name or transaction description.Note: While Plaid does not currently plan to remove this field, it is a legacy field that is not actively maintained. Use `merchant_name` instead for the merchant name.If the `transactions` object was returned by a Transactions endpoint such as `/transactions/sync` or `/transactions/get`, this field will always appear. If the `transactions` object was returned by an Assets endpoint such as `/asset_report/get/` or `/asset_report/pdf/get`, this field will only appear in an Asset Report with Insights.&quot;</summary>
+        [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>The string returned by the financial institution to describe the transaction. For transactions returned by `/transactions/sync` or `/transactions/get`, this field will only be included if the client has set `options.include_original_description` to `true`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OriginalDescription { get; set; }
+#nullable restore
+#else
+        public string OriginalDescription { get; set; }
+#endif
         /// <summary>The channel used to make a payment.`online:` transactions that took place online.`in store:` transactions that were made at a physical location.`other:` transactions that relate to banks, e.g. fees or deposits.This field replaces the `transaction_type` field.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.Transaction_payment_channel? PaymentChannel { get; set; }
+        /// <summary>Transaction information specific to inter-bank transfers. If the transaction was not an inter-bank transfer, all fields will be `null`.If the `transactions` object was returned by a Transactions endpoint such as `/transactions/sync` or `/transactions/get`, the `payment_meta` key will always appear, but no data elements are guaranteed. If the `transactions` object was returned by an Assets endpoint such as `/asset_report/get/` or `/asset_report/pdf/get`, this field will only appear in an Asset Report with Insights.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentMeta? PaymentMeta { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentMeta PaymentMeta { get; set; }
+#endif
+        /// <summary>When `true`, identifies the transaction as pending or unsettled. Pending transaction details (name, type, amount, category ID) may change before they are settled. Not all institutions provide pending transactions.</summary>
+        public bool? Pending { get; set; }
+        /// <summary>The ID of a posted transaction&apos;s associated pending transaction, where applicable. Not all institutions provide pending transactions.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PendingTransactionId { get; set; }
+#nullable restore
+#else
+        public string PendingTransactionId { get; set; }
+#endif
         /// <summary>Information describing the intent of the transaction. Most relevant for personal finance use cases, but not limited to such use cases.See the [taxonomy CSV file](https://plaid.com/documents/pfc-taxonomy-all.csv) for a full list of personal finance categories. If you are migrating to personal finance categories from the legacy categories, also refer to the [migration guide](https://plaid.com/docs/transactions/pfc-migration/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,14 +185,48 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string PersonalFinanceCategoryIconUrl { get; set; }
 #endif
-        /// <summary>An identifier classifying the transaction type.This field is only populated for European institutions. For institutions in the US and Canada, this field is set to `null`.`adjustment:` Bank adjustment`atm:` Cash deposit or withdrawal via an automated teller machine`bank charge:` Charge or fee levied by the institution`bill payment`: Payment of a bill`cash:` Cash deposit or withdrawal`cashback:` Cash withdrawal while making a debit card purchase`cheque:` Document ordering the payment of money to another person or organization`direct debit:` Automatic withdrawal of funds initiated by a third party at a regular interval`interest:` Interest earned or incurred`purchase:` Purchase made with a debit or credit card`standing order:` Payment instructed by the account holder to a third party at a regular interval`transfer:` Transfer of money between accounts</summary>
+        /// <summary>&quot;An identifier classifying the transaction type.This field is only populated for European institutions. For institutions in the US and Canada, this field is set to `null`.`adjustment:` Bank adjustment`atm:` Cash deposit or withdrawal via an automated teller machine`bank charge:` Charge or fee levied by the institution`bill payment`: Payment of a bill`cash:` Cash deposit or withdrawal`cashback:` Cash withdrawal while making a debit card purchase`cheque:` Document ordering the payment of money to another person or organization`direct debit:` Automatic withdrawal of funds initiated by a third party at a regular interval`interest:` Interest earned or incurred`purchase:` Purchase made with a debit or credit card`standing order:` Payment instructed by the account holder to a third party at a regular interval`transfer:` Transfer of money between accounts&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.TransactionCode? TransactionCode { get; set; }
+        /// <summary>The unique ID of the transaction. Like all Plaid identifiers, the `transaction_id` is case sensitive.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TransactionId { get; set; }
+#nullable restore
+#else
+        public string TransactionId { get; set; }
+#endif
+        /// <summary>Please use the `payment_channel` field, `transaction_type` will be deprecated in the future.`digital:` transactions that took place online.`place:` transactions that were made at a physical location.`special:` transactions that relate to banks, e.g. fees or deposits.`unresolved:` transactions that do not fit into the other three types.</summary>
+        [Obsolete("")]
+        public global::Soenneker.Plaid.OpenApiClient.Models.Transaction_transaction_type? TransactionType { get; set; }
+        /// <summary>The unofficial currency code associated with the transaction. Always `null` if `iso_currency_code` is non-`null`. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `iso_currency_code`s.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UnofficialCurrencyCode { get; set; }
+#nullable restore
+#else
+        public string UnofficialCurrencyCode { get; set; }
+#endif
+        /// <summary>The website associated with this transaction, if available.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Website { get; set; }
+#nullable restore
+#else
+        public string Website { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.Transaction"/> and sets the default values.
+        /// </summary>
+        public Transaction()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.Transaction"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Plaid.OpenApiClient.Models.Transaction CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Plaid.OpenApiClient.Models.Transaction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Plaid.OpenApiClient.Models.Transaction();
@@ -86,42 +235,82 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            return new Dictionary<string, Action<IParseNode>>
             {
+                { "account_id", n => { AccountId = n.GetStringValue(); } },
+                { "account_owner", n => { AccountOwner = n.GetStringValue(); } },
+                { "amount", n => { Amount = n.GetDoubleValue(); } },
                 { "authorized_date", n => { AuthorizedDate = n.GetDateValue(); } },
                 { "authorized_datetime", n => { AuthorizedDatetime = n.GetDateTimeOffsetValue(); } },
                 { "business_finance_category", n => { BusinessFinanceCategory = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessFinanceCategory>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessFinanceCategory.CreateFromDiscriminatorValue); } },
+                { "category", n => { Category = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "category_id", n => { CategoryId = n.GetStringValue(); } },
+                { "check_number", n => { CheckNumber = n.GetStringValue(); } },
                 { "client_customization", n => { ClientCustomization = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ClientCustomization>(global::Soenneker.Plaid.OpenApiClient.Models.ClientCustomization.CreateFromDiscriminatorValue); } },
                 { "counterparties", n => { Counterparties = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.TransactionCounterparty>(global::Soenneker.Plaid.OpenApiClient.Models.TransactionCounterparty.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "date", n => { Date = n.GetDateValue(); } },
                 { "datetime", n => { Datetime = n.GetDateTimeOffsetValue(); } },
+                { "iso_currency_code", n => { IsoCurrencyCode = n.GetStringValue(); } },
+                { "location", n => { Location = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Location>(global::Soenneker.Plaid.OpenApiClient.Models.Location.CreateFromDiscriminatorValue); } },
+                { "logo_url", n => { LogoUrl = n.GetStringValue(); } },
                 { "merchant_entity_id", n => { MerchantEntityId = n.GetStringValue(); } },
+                { "merchant_name", n => { MerchantName = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "original_description", n => { OriginalDescription = n.GetStringValue(); } },
                 { "payment_channel", n => { PaymentChannel = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.Transaction_payment_channel>(); } },
+                { "payment_meta", n => { PaymentMeta = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentMeta>(global::Soenneker.Plaid.OpenApiClient.Models.PaymentMeta.CreateFromDiscriminatorValue); } },
+                { "pending", n => { Pending = n.GetBoolValue(); } },
+                { "pending_transaction_id", n => { PendingTransactionId = n.GetStringValue(); } },
                 { "personal_finance_category", n => { PersonalFinanceCategory = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory>(global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory.CreateFromDiscriminatorValue); } },
                 { "personal_finance_category_icon_url", n => { PersonalFinanceCategoryIconUrl = n.GetStringValue(); } },
                 { "transaction_code", n => { TransactionCode = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransactionCode>(); } },
+                { "transaction_id", n => { TransactionId = n.GetStringValue(); } },
+                { "transaction_type", n => { TransactionType = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.Transaction_transaction_type>(); } },
+                { "unofficial_currency_code", n => { UnofficialCurrencyCode = n.GetStringValue(); } },
+                { "website", n => { Website = n.GetStringValue(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer)
+        public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
+            writer.WriteStringValue("account_id", AccountId);
+            writer.WriteStringValue("account_owner", AccountOwner);
+            writer.WriteDoubleValue("amount", Amount);
             writer.WriteDateValue("authorized_date", AuthorizedDate);
             writer.WriteDateTimeOffsetValue("authorized_datetime", AuthorizedDatetime);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessFinanceCategory>("business_finance_category", BusinessFinanceCategory);
+            writer.WriteCollectionOfPrimitiveValues<string>("category", Category);
+            writer.WriteStringValue("category_id", CategoryId);
+            writer.WriteStringValue("check_number", CheckNumber);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ClientCustomization>("client_customization", ClientCustomization);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.TransactionCounterparty>("counterparties", Counterparties);
+            writer.WriteDateValue("date", Date);
             writer.WriteDateTimeOffsetValue("datetime", Datetime);
+            writer.WriteStringValue("iso_currency_code", IsoCurrencyCode);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Location>("location", Location);
+            writer.WriteStringValue("logo_url", LogoUrl);
             writer.WriteStringValue("merchant_entity_id", MerchantEntityId);
+            writer.WriteStringValue("merchant_name", MerchantName);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("original_description", OriginalDescription);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.Transaction_payment_channel>("payment_channel", PaymentChannel);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentMeta>("payment_meta", PaymentMeta);
+            writer.WriteBoolValue("pending", Pending);
+            writer.WriteStringValue("pending_transaction_id", PendingTransactionId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory>("personal_finance_category", PersonalFinanceCategory);
             writer.WriteStringValue("personal_finance_category_icon_url", PersonalFinanceCategoryIconUrl);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransactionCode>("transaction_code", TransactionCode);
+            writer.WriteStringValue("transaction_id", TransactionId);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.Transaction_transaction_type>("transaction_type", TransactionType);
+            writer.WriteStringValue("unofficial_currency_code", UnofficialCurrencyCode);
+            writer.WriteStringValue("website", Website);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

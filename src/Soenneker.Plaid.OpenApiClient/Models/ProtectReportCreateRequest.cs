@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Request object for `/protect/report/create`.Must provide either `user_id` or at least one of the following identifiers in `incident_event`: `link_session_id`, `idv_session_id`, `protect_event_id`, or `signal_client_transaction_id`.
+    /// &quot;Request object for `/protect/report/create`.Must provide either `user_id` or at least one of the following identifiers in `incident_event`: `link_session_id`, `idv_session_id`, `protect_event_id`, or `signal_client_transaction_id`.&quot;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProtectReportCreateRequest : IAdditionalDataHolder, IParsable

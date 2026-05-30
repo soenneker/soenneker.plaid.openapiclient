@@ -49,11 +49,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>The type of bank transfer. This will be either `debit` or `credit`.  A `debit` indicates a transfer of money into the origination account; a `credit` indicates a transfer of money out of the origination account.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferType? BankTransferType { get; set; }
-        /// <summary>Indicates the direction of the transfer: `outbound` for API-initiated transfers, or `inbound` for payments received by the FBO account.</summary>
+        /// <summary>&quot;Indicates the direction of the transfer: `outbound` for API-initiated transfers, or `inbound` for payments received by the FBO account.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferDirection? Direction { get; set; }
         /// <summary>Plaid’s unique identifier for this event. IDs are sequential unsigned 64-bit integers.</summary>
         public int? EventId { get; set; }
-        /// <summary>The type of event that this bank transfer represents.`pending`: A new transfer was created; it is in the pending state.`cancelled`: The transfer was cancelled by the client.`failed`: The transfer failed, no funds were moved.`posted`: The transfer has been successfully submitted to the payment network.`reversed`: A posted transfer was reversed.</summary>
+        /// <summary>&quot;The type of event that this bank transfer represents.`pending`: A new transfer was created; it is in the pending state.`cancelled`: The transfer was cancelled by the client.`failed`: The transfer failed, no funds were moved.`posted`: The transfer has been successfully submitted to the payment network.`reversed`: A posted transfer was reversed.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventType? EventType { get; set; }
         /// <summary>The failure reason if the type of this transfer is `&quot;failed&quot;` or `&quot;reversed&quot;`. Null value otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

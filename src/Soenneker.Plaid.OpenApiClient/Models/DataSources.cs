@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>A description of the source of data for a given product/data type.`INSTITUTION`: The institution supports this product, and the data was provided by the institution.`INSTITUTION_MASK`: The user manually provided the full account number, which was matched to the account mask provided by the institution. Only applicable to the `numbers` data type.`USER`: The institution does not support this product, and the data was manually provided by the user.</summary>
+    /// <summary>&quot;A description of the source of data for a given product/data type.`INSTITUTION`: The institution supports this product, and the data was provided by the institution.`INSTITUTION_MASK`: The user manually provided the full account number, which was matched to the account mask provided by the institution. Only applicable to the `numbers` data type.`USER`: The institution does not support this product, and the data was manually provided by the user.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum DataSources
     {

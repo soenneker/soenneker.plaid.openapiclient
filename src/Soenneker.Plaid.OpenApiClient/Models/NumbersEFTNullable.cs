@@ -11,14 +11,55 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// Identifying information for transferring money to or from a Canadian bank account via EFT.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class NumbersEFTNullable : global::Soenneker.Plaid.OpenApiClient.Models.NumbersEFT, IParsable
+    public partial class NumbersEFTNullable : IAdditionalDataHolder, IParsable
     {
+        /// <summary>The EFT account number for the account</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Account { get; set; }
+#nullable restore
+#else
+        public string Account { get; set; }
+#endif
+        /// <summary>The Plaid account ID associated with the account numbers</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountId { get; set; }
+#nullable restore
+#else
+        public string AccountId { get; set; }
+#endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The EFT branch number for the account</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Branch { get; set; }
+#nullable restore
+#else
+        public string Branch { get; set; }
+#endif
+        /// <summary>The EFT institution number for the account</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Institution { get; set; }
+#nullable restore
+#else
+        public string Institution { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.NumbersEFTNullable"/> and sets the default values.
+        /// </summary>
+        public NumbersEFTNullable()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.NumbersEFTNullable"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Plaid.OpenApiClient.Models.NumbersEFTNullable CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Plaid.OpenApiClient.Models.NumbersEFTNullable CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Plaid.OpenApiClient.Models.NumbersEFTNullable();
@@ -27,20 +68,28 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            return new Dictionary<string, Action<IParseNode>>
             {
+                { "account", n => { Account = n.GetStringValue(); } },
+                { "account_id", n => { AccountId = n.GetStringValue(); } },
+                { "branch", n => { Branch = n.GetStringValue(); } },
+                { "institution", n => { Institution = n.GetStringValue(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer)
+        public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
+            writer.WriteStringValue("account", Account);
+            writer.WriteStringValue("account_id", AccountId);
+            writer.WriteStringValue("branch", Branch);
+            writer.WriteStringValue("institution", Institution);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

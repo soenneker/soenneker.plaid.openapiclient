@@ -42,7 +42,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>A score from 0 to 100 indicating the confidence in KYB (Know Your Business) identity assessment for the business</summary>
         public int? Score { get; set; }
         /// <summary>Status of the KYB (Know Your Business) identity assessment check</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatus__KYBCheck? Status { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatusKYBCheck? Status { get; set; }
         /// <summary>Summary of how a specific business field matched against data provider results</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,7 +80,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "match_details", n => { MatchDetails = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessKYBMatchDetails>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessKYBMatchDetails.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary.CreateFromDiscriminatorValue); } },
                 { "score", n => { Score = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatus__KYBCheck>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatusKYBCheck>(); } },
                 { "website", n => { Website = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary.CreateFromDiscriminatorValue); } },
             };
         }
@@ -95,7 +95,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessKYBMatchDetails>("match_details", MatchDetails);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary>("name", Name);
             writer.WriteIntValue("score", Score);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatus__KYBCheck>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatusKYBCheck>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary>("website", Website);
             writer.WriteAdditionalData(AdditionalData);
         }

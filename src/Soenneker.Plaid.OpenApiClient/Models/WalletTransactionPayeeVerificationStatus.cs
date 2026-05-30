@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>Result of payee verification check for EUR payouts. Payee verification checks whether the payee name provided matches the account holder name at the destination institution.`FULL_MATCH`: The payee name fully matches the account holder.`PARTIAL_MATCH`: The payee name partially matches the account holder.`NO_MATCH`: The payee name does not match the account holder.`ERROR`: An error occurred during payee verification.`CHECK_NOT_POSSIBLE`: Payee verification could not be performed.This field is only populated for applicable EUR payout transactions and will be `null` for other transaction types.</summary>
+    /// <summary>&quot;Result of payee verification check for EUR payouts. Payee verification checks whether the payee name provided matches the account holder name at the destination institution.`FULL_MATCH`: The payee name fully matches the account holder.`PARTIAL_MATCH`: The payee name partially matches the account holder.`NO_MATCH`: The payee name does not match the account holder.`ERROR`: An error occurred during payee verification.`CHECK_NOT_POSSIBLE`: Payee verification could not be performed.This field is only populated for applicable EUR payout transactions and will be `null` for other transaction types.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WalletTransactionPayeeVerificationStatus
     {

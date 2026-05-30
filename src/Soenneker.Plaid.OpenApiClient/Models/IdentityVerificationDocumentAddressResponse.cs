@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// The address extracted from the document. The address must at least contain the following fields to be a valid address: `street`, `city`, `country`. If any are missing or unable to be extracted, the address will be null.`region`, and `postal_code` may be null based on the addressing system. For example:Addresses from the United Kingdom will not include a regionAddresses from Hong Kong will not include postal codeNote: Optical Character Recognition (OCR) technology may sometimes extract incorrect data from a document.
+    /// &quot;The address extracted from the document. The address must at least contain the following fields to be a valid address: `street`, `city`, `country`. If any are missing or unable to be extracted, the address will be null.`region`, and `postal_code` may be null based on the addressing system. For example:Addresses from the United Kingdom will not include a regionAddresses from Hong Kong will not include postal codeNote: Optical Character Recognition (OCR) technology may sometimes extract incorrect data from a document.&quot;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IdentityVerificationDocumentAddressResponse : IAdditionalDataHolder, IParsable

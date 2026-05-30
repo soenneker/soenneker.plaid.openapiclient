@@ -31,7 +31,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ItemId { get; set; }
 #endif
-        /// <summary>Status of the Bank Income Link session.`APPROVED`: User has approved and verified their income`NO_DEPOSITS_FOUND`: We attempted, but were unable to find any income in the connected account.`USER_REPORTED_NO_INCOME`: The user explicitly indicated that they don&apos;t receive income in the connected account.`STARTED`: The user began the bank income portion of the link flow.`INTERNAL_ERROR`: The user encountered an internal error.</summary>
+        /// <summary>&quot;Status of the Bank Income Link session.`APPROVED`: User has approved and verified their income`NO_DEPOSITS_FOUND`: We attempted, but were unable to find any income in the connected account.`USER_REPORTED_NO_INCOME`: The user explicitly indicated that they don&apos;t receive income in the connected account.`STARTED`: The user began the bank income portion of the link flow.`INTERNAL_ERROR`: The user encountered an internal error.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionBankIncomeStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionBankIncomeResult"/> and sets the default values.

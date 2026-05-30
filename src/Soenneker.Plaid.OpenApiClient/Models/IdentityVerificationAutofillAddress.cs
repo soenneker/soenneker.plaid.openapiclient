@@ -65,7 +65,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Street2 { get; set; }
 #endif
-        /// <summary>Field describing whether the associated address is being used for commercial or residential purposes.Note: This value will be `no_data` when Plaid does not have sufficient data to determine the address&apos;s use.</summary>
+        /// <summary>&quot;Field describing whether the associated address is being used for commercial or residential purposes.Note: This value will be `no_data` when Plaid does not have sufficient data to determine the address&apos;s use.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.AddressPurposeLabel? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationAutofillAddress"/> and sets the default values.

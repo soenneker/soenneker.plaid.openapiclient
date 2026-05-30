@@ -57,7 +57,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientUserId { get; set; }
 #endif
-        /// <summary>The default ACH payment method to complete the transaction. When using a Balance-only ruleset, this field is ignored.`SAME_DAY_ACH`: Same Day ACH by Nacha. The debit transaction is processed and settled on the same day.`STANDARD_ACH`: Standard ACH by Nacha.`MULTIPLE_PAYMENT_METHODS`: If there is no default debit rail or there are multiple payment methods.Possible values:  `SAME_DAY_ACH`, `STANDARD_ACH`, `MULTIPLE_PAYMENT_METHODS`</summary>
+        /// <summary>&quot;The default ACH payment method to complete the transaction. When using a Balance-only ruleset, this field is ignored.`SAME_DAY_ACH`: Same Day ACH by Nacha. The debit transaction is processed and settled on the same day.`STANDARD_ACH`: Standard ACH by Nacha.`MULTIPLE_PAYMENT_METHODS`: If there is no default debit rail or there are multiple payment methods.Possible values:  `SAME_DAY_ACH`, `STANDARD_ACH`, `MULTIPLE_PAYMENT_METHODS`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DefaultPaymentMethod { get; set; }

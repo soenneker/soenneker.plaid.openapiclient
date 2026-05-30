@@ -34,10 +34,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Mapping of product names to their current status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerProductStatuses? ProductStatuses { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BetaPartnerCustomerV1EnableResponse_product_statuses? ProductStatuses { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerProductStatuses ProductStatuses { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BetaPartnerCustomerV1EnableResponse_product_statuses ProductStatuses { get; set; }
 #endif
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,7 +47,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string RequestId { get; set; }
 #endif
-        /// <summary>The status of the given end customer.`UNDER_REVIEW`: The end customer has been created and enabled in the Sandbox environment. The end customer must be manually reviewed by the Plaid team before it can be enabled in Production, at which point its status will automatically transition to `PENDING_ENABLEMENT` or `DENIED`.`PENDING_ENABLEMENT`: The end customer is ready to be fully enabled in the Production environment. Call the `/partner/customer/enable` endpoint to enable the end customer in full Production.`ACTIVE`: The end customer has been fully enabled in all environments.`DENIED`: The end customer has been created and enabled in the Sandbox environment, but it did not pass review by the Plaid team and therefore cannot be enabled for Production access. Talk to your Account Manager for more information.</summary>
+        /// <summary>&quot;The status of the given end customer.`UNDER_REVIEW`: The end customer has been created and enabled in the Sandbox environment. The end customer must be manually reviewed by the Plaid team before it can be enabled in Production, at which point its status will automatically transition to `PENDING_ENABLEMENT` or `DENIED`.`PENDING_ENABLEMENT`: The end customer is ready to be fully enabled in the Production environment. Call the `/partner/customer/enable` endpoint to enable the end customer in full Production.`ACTIVE`: The end customer has been fully enabled in all environments.`DENIED`: The end customer has been created and enabled in the Sandbox environment, but it did not pass review by the Plaid team and therefore cannot be enabled for Production access. Talk to your Account Manager for more information.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BetaPartnerCustomerV1EnableResponse"/> and sets the default values.
@@ -75,7 +75,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "end_customer_client_id", n => { EndCustomerClientId = n.GetStringValue(); } },
-                { "product_statuses", n => { ProductStatuses = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerProductStatuses>(global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerProductStatuses.CreateFromDiscriminatorValue); } },
+                { "product_statuses", n => { ProductStatuses = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BetaPartnerCustomerV1EnableResponse_product_statuses>(global::Soenneker.Plaid.OpenApiClient.Models.BetaPartnerCustomerV1EnableResponse_product_statuses.CreateFromDiscriminatorValue); } },
                 { "production_secret", n => { ProductionSecret = n.GetStringValue(); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerStatus>(); } },
@@ -90,7 +90,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("end_customer_client_id", EndCustomerClientId);
             writer.WriteStringValue("production_secret", ProductionSecret);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerProductStatuses>("product_statuses", ProductStatuses);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BetaPartnerCustomerV1EnableResponse_product_statuses>("product_statuses", ProductStatuses);
             writer.WriteStringValue("request_id", RequestId);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);

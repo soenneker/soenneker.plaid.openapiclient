@@ -11,14 +11,29 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// Allow the application to access specific products on this account
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AccountProductAccessNullable : global::Soenneker.Plaid.OpenApiClient.Models.AccountProductAccess, IParsable
+    public partial class AccountProductAccessNullable : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Allow the application to access account data. Only used by certain partners. If relevant to the partner and unset, defaults to `true`.</summary>
+        public bool? AccountData { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Allow the application to access bank statements. Only used by certain partners. If relevant to the partner and unset, defaults to `true`.</summary>
+        public bool? Statements { get; set; }
+        /// <summary>Allow the application to access tax documents. Only used by certain partners. If relevant to the partner and unset, defaults to `true`.</summary>
+        public bool? TaxDocuments { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.AccountProductAccessNullable"/> and sets the default values.
+        /// </summary>
+        public AccountProductAccessNullable()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.AccountProductAccessNullable"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Plaid.OpenApiClient.Models.AccountProductAccessNullable CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Plaid.OpenApiClient.Models.AccountProductAccessNullable CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Plaid.OpenApiClient.Models.AccountProductAccessNullable();
@@ -27,20 +42,26 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            return new Dictionary<string, Action<IParseNode>>
             {
+                { "account_data", n => { AccountData = n.GetBoolValue(); } },
+                { "statements", n => { Statements = n.GetBoolValue(); } },
+                { "tax_documents", n => { TaxDocuments = n.GetBoolValue(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer)
+        public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
+            writer.WriteBoolValue("account_data", AccountData);
+            writer.WriteBoolValue("statements", Statements);
+            writer.WriteBoolValue("tax_documents", TaxDocuments);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

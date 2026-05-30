@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>The type of bonus that this transaction represents, if it is a bonus.`BONUS_INCLUDED`: Bonus is included in this transaction along with the normal pay`BONUS_ONLY`: This transaction is a standalone bonus</summary>
+    /// <summary>&quot;The type of bonus that this transaction represents, if it is a bonus.`BONUS_INCLUDED`: Bonus is included in this transaction along with the normal pay`BONUS_ONLY`: This transaction is a standalone bonus&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CraBankIncomeBonusType
     {
@@ -14,10 +14,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         [EnumMember(Value = "BONUS_ONLY")]
         #pragma warning disable CS1591
         BONUS_ONLY,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
-        #pragma warning disable CS1591
-        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
         #pragma warning restore CS1591
     }
 }

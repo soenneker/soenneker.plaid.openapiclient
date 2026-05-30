@@ -39,7 +39,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.SignalPersonName Name { get; set; }
 #endif
-        /// <summary>The user&apos;s phone number, in E.164 format: +{countrycode}{number}. For example: &quot;+14151234567&quot;</summary>
+        /// <summary>&quot;The user&apos;s phone number, in E.164 format: +{countrycode}{number}. For example: \&quot;+14151234567\&quot;&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PhoneNumber { get; set; }

@@ -4,7 +4,6 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Plaid.OpenApiClient.Credit.Payroll_income.Get;
 using Soenneker.Plaid.OpenApiClient.Credit.Payroll_income.Parsing_config;
-using Soenneker.Plaid.OpenApiClient.Credit.Payroll_income.Precheck;
 using Soenneker.Plaid.OpenApiClient.Credit.Payroll_income.Refresh;
 using Soenneker.Plaid.OpenApiClient.Credit.Payroll_income.Risk_signals;
 using System.Collections.Generic;
@@ -28,11 +27,6 @@ namespace Soenneker.Plaid.OpenApiClient.Credit.Payroll_income
         public global::Soenneker.Plaid.OpenApiClient.Credit.Payroll_income.Parsing_config.Parsing_configRequestBuilder Parsing_config
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Credit.Payroll_income.Parsing_config.Parsing_configRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The precheck property</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Credit.Payroll_income.Precheck.PrecheckRequestBuilder Precheck
-        {
-            get => new global::Soenneker.Plaid.OpenApiClient.Credit.Payroll_income.Precheck.PrecheckRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The refresh property</summary>
         public global::Soenneker.Plaid.OpenApiClient.Credit.Payroll_income.Refresh.RefreshRequestBuilder Refresh

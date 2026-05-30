@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>This field is deprecated in favor of the `breakdown` object, which provides more granular institution health data.`HEALTHY`: the majority of requests are successful`DEGRADED`: only some requests are successful`DOWN`: all requests are failing</summary>
+    /// <summary>&quot;This field is deprecated in favor of the `breakdown` object, which provides more granular institution health data.`HEALTHY`: the majority of requests are successful`DEGRADED`: only some requests are successful`DOWN`: all requests are failing&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     [Obsolete("")]
     public enum ProductStatus_status

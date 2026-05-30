@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>The status of the income sources.`ACTIVE`: The income source is active.`INACTIVE`: The income source is inactive.`UNKNOWN`: The income source status is unknown.</summary>
+    /// <summary>&quot;The status of the income sources.`ACTIVE`: The income source is active.`INACTIVE`: The income source is inactive.`UNKNOWN`: The income source status is unknown.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CraBankIncomeStatus
     {

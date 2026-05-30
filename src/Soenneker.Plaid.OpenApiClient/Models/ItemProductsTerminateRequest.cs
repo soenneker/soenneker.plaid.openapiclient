@@ -31,7 +31,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
-        /// <summary>The reason for terminating products on the Item.`OTHER`: Any other reason for terminating products not covered by the above categories</summary>
+        /// <summary>&quot;The reason for terminating products on the Item.`OTHER`: Any other reason for terminating products not covered by the above categories&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.ItemProductsTerminateReasonCode? ReasonCode { get; set; }
         /// <summary>Additional context or details about the reason for terminating products on the Item. Personally identifiable information, such as an email address or phone number, should not be included in the `reason_note`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Address { get; set; }
 #endif
-        /// <summary>The delivery method to be used to deliver the Hosted Link session URL.`SMS`: The URL will be delivered through SMS`EMAIL`: The URL will be delivered through email</summary>
+        /// <summary>&quot;The delivery method to be used to deliver the Hosted Link session URL.`SMS`: The URL will be delivered through SMS`EMAIL`: The URL will be delivered through email&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.LinkDeliveryDeliveryMethod? Method { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkDeliveryCommunicationMethod"/> and sets the default values.

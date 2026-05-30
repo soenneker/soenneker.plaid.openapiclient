@@ -8,17 +8,16 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// The object contains a risk score and a risk tier that evaluate the transaction return risk because an account is overdrawn or because an ineligible account is used. Common return codes in this category include: &quot;R01&quot;, &quot;R02&quot;, &quot;R03&quot;, &quot;R04&quot;, &quot;R06&quot;, &quot;R08&quot;, &quot;R09&quot;, &quot;R13&quot;, &quot;R16&quot;, &quot;R17&quot;, &quot;R20&quot;, &quot;R23&quot;. These returns have a turnaround time of 2 banking days.
+    /// &quot;The object contains a risk score and a risk tier that evaluate the transaction return risk because an account is overdrawn or because an ineligible account is used. Common return codes in this category include: \&quot;R01\&quot;, \&quot;R02\&quot;, \&quot;R03\&quot;, \&quot;R04\&quot;, \&quot;R06\&quot;, \&quot;R08\&quot;, \&quot;R09\&quot;, \&quot;R13\&quot;, \&quot;R16\&quot;, \&quot;R17\&quot;, \&quot;R20\&quot;, \&quot;R23\&quot;. These returns have a turnaround time of 2 banking days.&quot;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BankInitiatedReturnRisk : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>DEPRECATED. Use Signal Rules instead to transform the `score` into a useful action.In the `bank_initiated_return_risk` object, there are eight risk tiers corresponding to the scores:  1: Predicted bank-initiated return incidence rate between 0.0% - 0.5%  2: Predicted bank-initiated return incidence rate between 0.5% - 1.5%  3: Predicted bank-initiated return incidence rate between 1.5% - 3%  4: Predicted bank-initiated return incidence rate between 3% - 5%  5: Predicted bank-initiated return incidence rate between 5% - 10%  6: Predicted bank-initiated return incidence rate between 10% - 15%  7: Predicted bank-initiated return incidence rate between 15% and 50%  8: Predicted bank-initiated return incidence rate greater than 50%</summary>
-        [Obsolete("")]
+        /// <summary>&quot;DEPRECATED. Use Signal Rules instead to transform the `score` into a useful action.In the `bank_initiated_return_risk` object, there are eight risk tiers corresponding to the scores:  1: Predicted bank-initiated return incidence rate between 0.0% - 0.5%  2: Predicted bank-initiated return incidence rate between 0.5% - 1.5%  3: Predicted bank-initiated return incidence rate between 1.5% - 3%  4: Predicted bank-initiated return incidence rate between 3% - 5%  5: Predicted bank-initiated return incidence rate between 5% - 10%  6: Predicted bank-initiated return incidence rate between 10% - 15%  7: Predicted bank-initiated return incidence rate between 15% and 50%  8: Predicted bank-initiated return incidence rate greater than 50%&quot;</summary>
         public int? RiskTier { get; set; }
-        /// <summary>A score from 1-99 that indicates the transaction return risk: a higher risk score suggests a higher return likelihood.</summary>
+        /// <summary>&quot;A score from 1-99 that indicates the transaction return risk: a higher risk score suggests a higher return likelihood.&quot;</summary>
         public int? Score { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BankInitiatedReturnRisk"/> and sets the default values.

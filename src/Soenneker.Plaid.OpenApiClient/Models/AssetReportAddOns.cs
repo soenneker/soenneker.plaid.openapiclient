@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>Add-ons that should be included in the Asset Report.`investments`: The Investments add-on`fast_assets`: The Fast Assets add-on</summary>
+    /// <summary>&quot;Add-ons that should be included in the Asset Report.`investments`: The Investments add-on`fast_assets`: The Fast Assets add-on&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AssetReportAddOns
     {

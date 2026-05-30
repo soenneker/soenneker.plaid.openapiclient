@@ -23,14 +23,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
-        /// <summary>Deprecated, specify `partner_insights.prism_versions` instead.</summary>
-        [Obsolete("")]
+        /// <summary>The options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportPartnerInsightsGetOptions? Options { get; set; }
+        public string? Options { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportPartnerInsightsGetOptions Options { get; set; }
+        public string Options { get; set; }
 #endif
         /// <summary>Defines configuration to generate Partner Insights</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +99,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
-                { "options", n => { Options = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportPartnerInsightsGetOptions>(global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportPartnerInsightsGetOptions.CreateFromDiscriminatorValue); } },
+                { "options", n => { Options = n.GetStringValue(); } },
                 { "partner_insights", n => { PartnerInsights = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportPartnerInsightsGetPartnerInsights>(global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportPartnerInsightsGetPartnerInsights.CreateFromDiscriminatorValue); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
                 { "third_party_user_token", n => { ThirdPartyUserToken = n.GetStringValue(); } },
@@ -117,7 +116,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("client_id", ClientId);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportPartnerInsightsGetOptions>("options", Options);
+            writer.WriteStringValue("options", Options);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportPartnerInsightsGetPartnerInsights>("partner_insights", PartnerInsights);
             writer.WriteStringValue("secret", Secret);
             writer.WriteStringValue("third_party_user_token", ThirdPartyUserToken);

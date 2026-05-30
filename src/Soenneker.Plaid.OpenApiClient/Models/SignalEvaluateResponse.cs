@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The core attributes object contains additional data that can be used to assess the ACH return risk.If using a Balance-only ruleset, only `available_balance` and `current_balance` will be returned as core attributes. If using a Signal Transaction Scores ruleset, over 80 core attributes will be returned. Examples of attributes include:`available_balance` and `current_balance`: The balance in the ACH transaction funding account`days_since_first_plaid_connection`: The number of days since the first time the Item was connected to an application via Plaid`plaid_connections_count_7d`: The number of times the Item has been connected to applications via Plaid over the past 7 days`plaid_connections_count_30d`: The number of times the Item has been connected to applications via Plaid over the past 30 days`total_plaid_connections_count`: The number of times the Item has been connected to applications via Plaid`is_savings_or_money_market_account`: Indicates whether the ACH transaction funding account is a savings/money market accountFor the full list and detailed documentation of core attributes available, or to request that core attributes not be returned, contact Sales or your Plaid account manager.</summary>
+        /// <summary>&quot;The core attributes object contains additional data that can be used to assess the ACH return risk.If using a Balance-only ruleset, only `available_balance` and `current_balance` will be returned as core attributes. If using a Signal Transaction Scores ruleset, over 80 core attributes will be returned. Examples of attributes include:`available_balance` and `current_balance`: The balance in the ACH transaction funding account`days_since_first_plaid_connection`: The number of days since the first time the Item was connected to an application via Plaid`plaid_connections_count_7d`: The number of times the Item has been connected to applications via Plaid over the past 7 days`plaid_connections_count_30d`: The number of times the Item has been connected to applications via Plaid over the past 30 days`total_plaid_connections_count`: The number of times the Item has been connected to applications via Plaid`is_savings_or_money_market_account`: Indicates whether the ACH transaction funding account is a savings/money market accountFor the full list and detailed documentation of core attributes available, or to request that core attributes not be returned, contact Sales or your Plaid account manager.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.SignalEvaluateCoreAttributes? CoreAttributes { get; set; }
@@ -31,14 +31,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string RequestId { get; set; }
 #endif
-        /// <summary>RiskProfile is deprecated, use `ruleset` instead.</summary>
-        [Obsolete("")]
+        /// <summary>The risk_profile property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskProfile? RiskProfile { get; set; }
+        public string? RiskProfile { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskProfile RiskProfile { get; set; }
+        public string RiskProfile { get; set; }
 #endif
         /// <summary>Details about the transaction result after evaluation by the requested Ruleset. If a `ruleset_key` is not provided, for customers who began using Signal Transaction Scores before October 15, 2025, by default, this field will be omitted. To learn more, see [Signal Rules](https://plaid.com/docs/signal/signal-rules/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,7 +90,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "core_attributes", n => { CoreAttributes = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.SignalEvaluateCoreAttributes>(global::Soenneker.Plaid.OpenApiClient.Models.SignalEvaluateCoreAttributes.CreateFromDiscriminatorValue); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
-                { "risk_profile", n => { RiskProfile = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskProfile>(global::Soenneker.Plaid.OpenApiClient.Models.RiskProfile.CreateFromDiscriminatorValue); } },
+                { "risk_profile", n => { RiskProfile = n.GetStringValue(); } },
                 { "ruleset", n => { Ruleset = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Ruleset>(global::Soenneker.Plaid.OpenApiClient.Models.Ruleset.CreateFromDiscriminatorValue); } },
                 { "scores", n => { Scores = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.SignalScores>(global::Soenneker.Plaid.OpenApiClient.Models.SignalScores.CreateFromDiscriminatorValue); } },
                 { "warnings", n => { Warnings = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning>(global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -106,7 +105,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.SignalEvaluateCoreAttributes>("core_attributes", CoreAttributes);
             writer.WriteStringValue("request_id", RequestId);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskProfile>("risk_profile", RiskProfile);
+            writer.WriteStringValue("risk_profile", RiskProfile);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Ruleset>("ruleset", Ruleset);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.SignalScores>("scores", Scores);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning>("warnings", Warnings);

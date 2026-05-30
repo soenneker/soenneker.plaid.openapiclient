@@ -50,10 +50,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayrollIncomeParsingConfigUpdateRequest_user_id? UserId { get; set; }
 #nullable restore
 #else
-        public string UserId { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayrollIncomeParsingConfigUpdateRequest_user_id UserId { get; set; }
 #endif
         /// <summary>The user token associated with the User data is being requested for. This field is used only by customers with pre-existing integrations that already use the `user_token` field. All other customers should use the `user_id` instead. For more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,7 +92,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "item_id", n => { ItemId = n.GetStringValue(); } },
                 { "parsing_config", n => { ParsingConfig = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationDocParsingConfig>()?.AsList(); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
-                { "user_id", n => { UserId = n.GetStringValue(); } },
+                { "user_id", n => { UserId = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CreditPayrollIncomeParsingConfigUpdateRequest_user_id>(global::Soenneker.Plaid.OpenApiClient.Models.CreditPayrollIncomeParsingConfigUpdateRequest_user_id.CreateFromDiscriminatorValue); } },
                 { "user_token", n => { UserToken = n.GetStringValue(); } },
             };
         }
@@ -107,7 +107,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("item_id", ItemId);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationDocParsingConfig>("parsing_config", ParsingConfig);
             writer.WriteStringValue("secret", Secret);
-            writer.WriteStringValue("user_id", UserId);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CreditPayrollIncomeParsingConfigUpdateRequest_user_id>("user_id", UserId);
             writer.WriteStringValue("user_token", UserToken);
             writer.WriteAdditionalData(AdditionalData);
         }

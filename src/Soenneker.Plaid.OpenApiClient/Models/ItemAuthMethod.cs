@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>The method used to populate Auth data for the Item. This field is only populated for Items that have had Auth numbers data set on at least one of its accounts, and will be `null` otherwise. For info about the various flows, see our [Auth coverage documentation](https://plaid.com/docs/auth/coverage/).`INSTANT_AUTH`: The Item&apos;s Auth data was provided directly by the user&apos;s institution connection.`INSTANT_MATCH`: The Item&apos;s Auth data was provided via the Instant Match fallback flow.`AUTOMATED_MICRODEPOSITS`: The Item&apos;s Auth data was provided via the Automated Micro-deposits flow.`SAME_DAY_MICRODEPOSITS`: The Item&apos;s Auth data was provided via the Same Day Micro-deposits flow.`INSTANT_MICRODEPOSITS`: The Item&apos;s Auth data was provided via the Instant Micro-deposits flow.`DATABASE_MATCH`: The Item&apos;s Auth data was provided via the Database Match flow.`DATABASE_INSIGHTS`: The Item&apos;s Auth data was provided via the Database Insights flow.`TRANSFER_MIGRATED`: The Item&apos;s Auth data was provided via [`/transfer/migrate_account`](https://plaid.com/docs/api/products/transfer/account-linking/#migrate-account-into-transfers).`INVESTMENTS_FALLBACK`: The Item&apos;s Auth data for Investments Move was provided via a [fallback flow](https://plaid.com/docs/investments-move/#fallback-flows).</summary>
+    /// <summary>&quot;The method used to populate Auth data for the Item. This field is only populated for Items that have had Auth numbers data set on at least one of its accounts, and will be `null` otherwise. For info about the various flows, see our [Auth coverage documentation](https://plaid.com/docs/auth/coverage/).`INSTANT_AUTH`: The Item&apos;s Auth data was provided directly by the user&apos;s institution connection.`INSTANT_MATCH`: The Item&apos;s Auth data was provided via the Instant Match fallback flow.`AUTOMATED_MICRODEPOSITS`: The Item&apos;s Auth data was provided via the Automated Micro-deposits flow.`SAME_DAY_MICRODEPOSITS`: The Item&apos;s Auth data was provided via the Same Day Micro-deposits flow.`INSTANT_MICRODEPOSITS`: The Item&apos;s Auth data was provided via the Instant Micro-deposits flow.`DATABASE_MATCH`: The Item&apos;s Auth data was provided via the Database Match flow.`DATABASE_INSIGHTS`: The Item&apos;s Auth data was provided via the Database Insights flow.`TRANSFER_MIGRATED`: The Item&apos;s Auth data was provided via [`/transfer/migrate_account`](https://plaid.com/docs/api/products/transfer/account-linking/#migrate-account-into-transfers).`INVESTMENTS_FALLBACK`: The Item&apos;s Auth data for Investments Move was provided via a [fallback flow](https://plaid.com/docs/investments-move/#fallback-flows).&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ItemAuthMethod
     {
@@ -42,10 +42,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         [EnumMember(Value = "INVESTMENTS_FALLBACK")]
         #pragma warning disable CS1591
         INVESTMENTS_FALLBACK,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
-        #pragma warning disable CS1591
-        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
         #pragma warning restore CS1591
     }
 }

@@ -31,7 +31,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
-        /// <summary>The asynchronous event to be simulated. May be: `posted`, `failed`, or `reversed`.An error will be returned if the event type is incompatible with the current transfer status. Compatible status --&gt; event type transitions include:`pending` --&gt; `failed``pending` --&gt; `posted``posted` --&gt; `reversed`</summary>
+        /// <summary>&quot;The asynchronous event to be simulated. May be: `posted`, `failed`, or `reversed`.An error will be returned if the event type is incompatible with the current transfer status. Compatible status --&gt; event type transitions include:`pending` --&gt; `failed``pending` --&gt; `posted``posted` --&gt; `reversed`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventType { get; set; }

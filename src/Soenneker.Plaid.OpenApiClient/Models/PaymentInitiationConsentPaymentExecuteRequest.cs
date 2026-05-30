@@ -47,7 +47,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string IdempotencyKey { get; set; }
 #endif
-        /// <summary>Decides the mode under which the payment processing should be performed, using `IMMEDIATE` as default.`IMMEDIATE`: Will immediately execute the payment, waiting for a response from the ASPSP before returning the result of the payment initiation. This is ideal for user-present flows. `ASYNC`: Will accept a payment execution request and schedule it for processing, immediately returning the new `payment_id`. Listen for webhooks to obtain real-time updates on the payment status. This is ideal for non user-present flows.</summary>
+        /// <summary>&quot;Decides the mode under which the payment processing should be performed, using `IMMEDIATE` as default.`IMMEDIATE`: Will immediately execute the payment, waiting for a response from the ASPSP before returning the result of the payment initiation. This is ideal for user-present flows. `ASYNC`: Will accept a payment execution request and schedule it for processing, immediately returning the new `payment_id`. Listen for webhooks to obtain real-time updates on the payment status. This is ideal for non user-present flows.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentProcessingMode? ProcessingMode { get; set; }
         /// <summary>A reference for the payment. This must be an alphanumeric string with at most 18 characters and must not contain any special characters (since not all institutions support them).If not provided, Plaid will automatically fall back to the reference from consent. In order to track settlement via Payment Confirmation, each payment must have a unique reference. If the reference provided through the API is not unique, Plaid will adjust it.Some institutions may limit the reference to less than 18 characters. If necessary, Plaid will adjust the reference by truncating it to fit the institution&apos;s requirements.Both the originally provided and automatically adjusted references (if any) can be found in the `reference` and `adjusted_reference` fields, respectively.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,8 +57,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Reference { get; set; }
 #endif
-        /// <summary>The scope property</summary>
-        [Obsolete("")]
+        /// <summary>&quot;This field is deprecated in favor of the consent `type` field. Consents are required to have a single type.Payment consent scope. Defines possible directions for payments made with the given consent.`ME_TO_ME`: Allows moving money between accounts owned by the same user.`EXTERNAL`: Allows initiating payments from the user&apos;s account to third parties.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentScope? Scope { get; set; }
         /// <summary>Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

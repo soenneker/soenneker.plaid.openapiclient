@@ -29,7 +29,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string AccountId { get; set; }
 #endif
-        /// <summary>Specifies the use case of the transfer. Required for transfers on an ACH network. For more details, see [ACH SEC codes](https://plaid.com/docs/transfer/creating-transfers/#ach-sec-codes).Codes supported for credits: `ccd`, `ppd`Codes supported for debits: `ccd`, `tel`, `web``&quot;ccd&quot;` - Corporate Credit or Debit - fund transfer between two corporate bank accounts`&quot;ppd&quot;` - Prearranged Payment or Deposit - The transfer is part of a pre-existing relationship with a consumer. Authorization was obtained in writing either in person or via an electronic document signing, e.g. Docusign, by the consumer. Can be used for credits or debits.`&quot;web&quot;` - Internet-Initiated Entry. The transfer debits a consumer’s bank account. Authorization from the consumer is obtained over the Internet (e.g. a web or mobile application). Can be used for single debits or recurring debits.`&quot;tel&quot;` - Telephone-Initiated Entry. The transfer debits a consumer. Debit authorization has been received orally over the telephone via a recorded call.</summary>
+        /// <summary>&quot;Specifies the use case of the transfer. Required for transfers on an ACH network. For more details, see [ACH SEC codes](https://plaid.com/docs/transfer/creating-transfers/#ach-sec-codes).Codes supported for credits: `ccd`, `ppd`Codes supported for debits: `ccd`, `tel`, `web``\&quot;ccd\&quot;` - Corporate Credit or Debit - fund transfer between two corporate bank accounts`\&quot;ppd\&quot;` - Prearranged Payment or Deposit - The transfer is part of a pre-existing relationship with a consumer. Authorization was obtained in writing either in person or via an electronic document signing, e.g. Docusign, by the consumer. Can be used for credits or debits.`\&quot;web\&quot;` - Internet-Initiated Entry. The transfer debits a consumer’s bank account. Authorization from the consumer is obtained over the Internet (e.g. a web or mobile application). Can be used for single debits or recurring debits.`\&quot;tel\&quot;` - Telephone-Initiated Entry. The transfer debits a consumer. Debit authorization has been received orally over the telephone via a recorded call.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.ACHClass? AchClass { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -59,7 +59,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>The credit_funds_source property</summary>
         [Obsolete("")]
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferCreditFundsSource? CreditFundsSource { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationCreateRequest_credit_funds_source? CreditFundsSource { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationCreateRequest_credit_funds_source CreditFundsSource { get; set; }
+#endif
         /// <summary>Information about the device being used to initiate the authorization. These fields are not currently incorporated into the risk check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -207,7 +213,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "amount", n => { Amount = n.GetStringValue(); } },
                 { "beacon_session_id", n => { BeaconSessionId = n.GetStringValue(); } },
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
-                { "credit_funds_source", n => { CreditFundsSource = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferCreditFundsSource>(); } },
+                { "credit_funds_source", n => { CreditFundsSource = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationCreateRequest_credit_funds_source>(global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationCreateRequest_credit_funds_source.CreateFromDiscriminatorValue); } },
                 { "device", n => { Device = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDevice>(global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDevice.CreateFromDiscriminatorValue); } },
                 { "funding_account_id", n => { FundingAccountId = n.GetStringValue(); } },
                 { "idempotency_key", n => { IdempotencyKey = n.GetStringValue(); } },
@@ -241,7 +247,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("amount", Amount);
             writer.WriteStringValue("beacon_session_id", BeaconSessionId);
             writer.WriteStringValue("client_id", ClientId);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferCreditFundsSource>("credit_funds_source", CreditFundsSource);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationCreateRequest_credit_funds_source>("credit_funds_source", CreditFundsSource);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDevice>("device", Device);
             writer.WriteStringValue("funding_account_id", FundingAccountId);
             writer.WriteStringValue("idempotency_key", IdempotencyKey);

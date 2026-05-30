@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The value of the transaction with direction. (NOTE: this will affect enrichment results, so directions are important):.  Negative (-) for credits (e.g., incoming transfers, refunds)  Positive (+) for debits (e.g., purchases, fees, outgoing transfers)</summary>
+        /// <summary>&quot;The value of the transaction with direction. (NOTE: this will affect enrichment results, so directions are important):.  Negative (-) for credits (e.g., incoming transfers, refunds)  Positive (+) for debits (e.g., purchases, fees, outgoing transfers)&quot;</summary>
         public double? Amount { get; set; }
         /// <summary>The raw description of the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

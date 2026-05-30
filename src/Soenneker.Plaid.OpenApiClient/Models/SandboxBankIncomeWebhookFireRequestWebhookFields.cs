@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The result of the bank income refresh report generation`SUCCESS`: The refreshed report was successfully generated and can be retrieved via `/credit/bank_income/get`.`FAILURE`: The refreshed report failed to be generated</summary>
+        /// <summary>&quot;The result of the bank income refresh report generation`SUCCESS`: The refreshed report was successfully generated and can be retrieved via `/credit/bank_income/get`.`FAILURE`: The refreshed report failed to be generated&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.BankIncomeRefreshCompleteResult? BankIncomeRefreshCompleteResult { get; set; }
         /// <summary>The user id to be returned in INCOME webhooks</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

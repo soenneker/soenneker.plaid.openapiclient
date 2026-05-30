@@ -57,7 +57,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string NetworkTraceId { get; set; }
 #endif
-        /// <summary>The status of the refund.`pending`: A new refund was created; it is in the pending state.`posted`: The refund has been successfully submitted to the payment network.`settled`: Credits have been refunded to the Plaid linked account.`cancelled`: The refund was cancelled by the client.`failed`: The refund has failed.`returned`: The refund was returned.</summary>
+        /// <summary>&quot;The status of the refund.`pending`: A new refund was created; it is in the pending state.`posted`: The refund has been successfully submitted to the payment network.`settled`: Credits have been refunded to the Plaid linked account.`cancelled`: The refund was cancelled by the client.`failed`: The refund has failed.`returned`: The refund was returned.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferRefundStatus? Status { get; set; }
         /// <summary>The ID of the transfer to refund.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

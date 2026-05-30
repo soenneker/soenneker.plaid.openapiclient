@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Describes the frequency of the transaction stream.`WEEKLY`: Assigned to a transaction stream that occurs approximately every week.`BIWEEKLY`: Assigned to a transaction stream that occurs approximately every 2 weeks.`SEMI_MONTHLY`: Assigned to a transaction stream that occurs approximately twice per month. This frequency is typically seen for inflow transaction streams.`MONTHLY`: Assigned to a transaction stream that occurs approximately every month.`ANNUALLY`: Assigned to a transaction stream that occurs approximately every year.`UNKNOWN`: Assigned to a transaction stream that does not fit any of the pre-defined frequencies.</summary>
+        /// <summary>&quot;Describes the frequency of the transaction stream.`WEEKLY`: Assigned to a transaction stream that occurs approximately every week.`BIWEEKLY`: Assigned to a transaction stream that occurs approximately every 2 weeks.`SEMI_MONTHLY`: Assigned to a transaction stream that occurs approximately twice per month. This frequency is typically seen for inflow transaction streams.`MONTHLY`: Assigned to a transaction stream that occurs approximately every month.`ANNUALLY`: Assigned to a transaction stream that occurs approximately every year.`UNKNOWN`: Assigned to a transaction stream that does not fit any of the pre-defined frequencies.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.RecurringTransactionFrequency? Frequency { get; set; }
         /// <summary>Indicates whether the transaction stream is still live.</summary>
         public bool? IsActive { get; set; }
@@ -74,7 +74,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string PersonalFinanceCategoryPrimary { get; set; }
 #endif
-        /// <summary>The current status of the transaction stream.`MATURE`: A `MATURE` recurring stream should have at least 3 transactions and happen on a regular cadence (For Annual recurring stream, we will mark it `MATURE` after 2 instances).`EARLY_DETECTION`: When a recurring transaction first appears in the transaction history and before it fulfills the requirement of a mature stream, the status will be `EARLY_DETECTION`.`TOMBSTONED`: A stream that was previously in the `EARLY_DETECTION` status will move to the `TOMBSTONED` status when no further transactions were found at the next expected date.`UNKNOWN`: A stream is assigned an `UNKNOWN` status when none of the other statuses are applicable.</summary>
+        /// <summary>&quot;The current status of the transaction stream.`MATURE`: A `MATURE` recurring stream should have at least 3 transactions and happen on a regular cadence (For Annual recurring stream, we will mark it `MATURE` after 2 instances).`EARLY_DETECTION`: When a recurring transaction first appears in the transaction history and before it fulfills the requirement of a mature stream, the status will be `EARLY_DETECTION`.`TOMBSTONED`: A stream that was previously in the `EARLY_DETECTION` status will move to the `TOMBSTONED` status when no further transactions were found at the next expected date.`UNKNOWN`: A stream is assigned an `UNKNOWN` status when none of the other statuses are applicable.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.TransactionStreamStatus? Status { get; set; }
         /// <summary>A unique id for the stream.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

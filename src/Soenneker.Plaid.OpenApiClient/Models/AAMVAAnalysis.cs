@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Analyzed AAMVA data for the associated hit.Note: This field is only available for U.S. driver&apos;s licenses issued by participating states.
+    /// &quot;Analyzed AAMVA data for the associated hit.Note: This field is only available for U.S. driver&apos;s licenses issued by participating states.&quot;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AAMVAAnalysis : IAdditionalDataHolder, IParsable

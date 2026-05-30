@@ -39,7 +39,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ErrorCode { get; set; }
 #endif
-        /// <summary>The error message that the user encountered. Emitted by: `ERROR`, `EXIT`.</summary>
+        /// <summary>&quot;The error message that the user encountered. Emitted by: `ERROR`, `EXIT`.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ErrorMessage { get; set; }
@@ -47,7 +47,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ErrorMessage { get; set; }
 #endif
-        /// <summary>The error type that the user encountered. Emitted by: `ERROR`, `EXIT`.</summary>
+        /// <summary>&quot;The error type that the user encountered. Emitted by: `ERROR`, `EXIT`.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ErrorType { get; set; }
@@ -55,7 +55,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ErrorType { get; set; }
 #endif
-        /// <summary>The status key indicates the point at which the user exited the Link flow. Emitted by: `EXIT`.</summary>
+        /// <summary>&quot;The status key indicates the point at which the user exited the Link flow. Emitted by: `EXIT`.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExitStatus { get; set; }
@@ -63,7 +63,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ExitStatus { get; set; }
 #endif
-        /// <summary>The ID of the selected institution. Emitted by: all events.</summary>
+        /// <summary>&quot;The ID of the selected institution. Emitted by: all events.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InstitutionId { get; set; }
@@ -71,7 +71,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string InstitutionId { get; set; }
 #endif
-        /// <summary>The name of the selected institution. Emitted by: all events.</summary>
+        /// <summary>&quot;The name of the selected institution. Emitted by: all events.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InstitutionName { get; set; }
@@ -79,7 +79,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string InstitutionName { get; set; }
 #endif
-        /// <summary>The query used to search for institutions. Emitted by: `SEARCH_INSTITUTION`.</summary>
+        /// <summary>&quot;The query used to search for institutions. Emitted by: `SEARCH_INSTITUTION`.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InstitutionSearchQuery { get; set; }
@@ -95,7 +95,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string MatchReason { get; set; }
 #endif
-        /// <summary>If set, the user has encountered one of the following MFA types: code, device, questions, selections. Emitted by: `SUBMIT_MFA` and `TRANSITION_VIEW` when `view_name` is `MFA`.</summary>
+        /// <summary>&quot;If set, the user has encountered one of the following MFA types: code, device, questions, selections. Emitted by: `SUBMIT_MFA` and `TRANSITION_VIEW` when `view_name` is `MFA`.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MfaType { get; set; }
@@ -103,7 +103,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string MfaType { get; set; }
 #endif
-        /// <summary>The request ID for the last request made by Link. This can be shared with Plaid Support to expedite investigation. Emitted by: all events.</summary>
+        /// <summary>&quot;The request ID for the last request made by Link. This can be shared with Plaid Support to expedite investigation. Emitted by: all events.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RequestId { get; set; }
@@ -119,7 +119,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string RoutingNumber { get; set; }
 #endif
-        /// <summary>Either the verification method for a matched institution selected by the user or the Auth Type Select flow type selected by the user. If selection is used to describe selected verification method, then possible values are `phoneotp` or `password`;  if selection is used to describe the selected Auth Type Select flow, then possible values are `flow_type_manual` or `flow_type_instant`. Emitted by: `MATCHED_SELECT_VERIFY_METHOD` and `SELECT_AUTH_TYPE`.</summary>
+        /// <summary>&quot;Either the verification method for a matched institution selected by the user or the Auth Type Select flow type selected by the user. If selection is used to describe selected verification method, then possible values are `phoneotp` or `password`;  if selection is used to describe the selected Auth Type Select flow, then possible values are `flow_type_manual` or `flow_type_instant`. Emitted by: `MATCHED_SELECT_VERIFY_METHOD` and `SELECT_AUTH_TYPE`.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Selection { get; set; }
@@ -127,7 +127,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Selection { get; set; }
 #endif
-        /// <summary>The name of the view that is being transitioned to. Emitted by: `TRANSITION_VIEW`.</summary>
+        /// <summary>&quot;The name of the view that is being transitioned to. Emitted by: `TRANSITION_VIEW`.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ViewName { get; set; }

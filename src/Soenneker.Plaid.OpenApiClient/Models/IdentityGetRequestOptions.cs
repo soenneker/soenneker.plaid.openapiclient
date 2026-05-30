@@ -13,7 +13,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IdentityGetRequestOptions : IAdditionalDataHolder, IParsable
     {
-        /// <summary>A list of `account_ids` to retrieve for the Item.Note: An error will be returned if a provided `account_id` is not associated with the Item.</summary>
+        /// <summary>&quot;A list of `account_ids` to retrieve for the Item.Note: An error will be returned if a provided `account_id` is not associated with the Item.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AccountIds { get; set; }

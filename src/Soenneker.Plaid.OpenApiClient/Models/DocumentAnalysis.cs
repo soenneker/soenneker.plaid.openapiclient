@@ -13,7 +13,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DocumentAnalysis : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Analyzed AAMVA data for the associated hit.Note: This field is only available for U.S. driver&apos;s licenses issued by participating states.</summary>
+        /// <summary>&quot;Analyzed AAMVA data for the associated hit.Note: This field is only available for U.S. driver&apos;s licenses issued by participating states.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.AAMVAAnalysis? AamvaVerification { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.HumanReview HumanReview { get; set; }
 #endif
-        /// <summary>A high level description of the quality of the image the user submitted.For example, an image that is blurry, distorted by glare from a nearby light source, or improperly framed might be marked as low or medium quality. Poor quality images are more likely to fail OCR and/or template conformity checks.Note: By default, Plaid will let a user recapture document images twice before failing the entire session if we attribute the failure to low image quality.</summary>
+        /// <summary>&quot;A high level description of the quality of the image the user submitted.For example, an image that is blurry, distorted by glare from a nearby light source, or improperly framed might be marked as low or medium quality. Poor quality images are more likely to fail OCR and/or template conformity checks.Note: By default, Plaid will let a user recapture document images twice before failing the entire session if we attribute the failure to low image quality.&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.ImageQuality? ImageQuality { get; set; }
         /// <summary>Details about the image quality of the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

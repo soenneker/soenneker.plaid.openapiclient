@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
-        /// <summary>The asynchronous event to be simulated. May be: `posted`, `settled`, `failed`, or `returned`.An error will be returned if the event type is incompatible with the current ledger sweep status. Compatible status --&gt; event type transitions include:`sweep.pending` --&gt; `sweep.posted``sweep.pending` --&gt; `sweep.failed``sweep.posted` --&gt; `sweep.settled``sweep.posted` --&gt; `sweep.returned``sweep.settled` --&gt; `sweep.returned`</summary>
+        /// <summary>&quot;The asynchronous event to be simulated. May be: `posted`, `settled`, `failed`, or `returned`.An error will be returned if the event type is incompatible with the current ledger sweep status. Compatible status --&gt; event type transitions include:`sweep.pending` --&gt; `sweep.posted``sweep.pending` --&gt; `sweep.failed``sweep.posted` --&gt; `sweep.settled``sweep.posted` --&gt; `sweep.returned``sweep.settled` --&gt; `sweep.returned`&quot;</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferLedgerSweepSimulateEventType? EventType { get; set; }
         /// <summary>The failure reason if the event type for a transfer is `&quot;failed&quot;` or `&quot;returned&quot;`. Null value otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

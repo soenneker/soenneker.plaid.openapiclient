@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>The status of the transfer intent.`PENDING`: The transfer intent is pending.`SUCCEEDED`: The transfer intent was successfully created.`FAILED`: The transfer intent was unable to be created.</summary>
+    /// <summary>&quot;The status of the transfer intent.`PENDING`: The transfer intent is pending.`SUCCEEDED`: The transfer intent was successfully created.`FAILED`: The transfer intent was unable to be created.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransferIntentStatus
     {

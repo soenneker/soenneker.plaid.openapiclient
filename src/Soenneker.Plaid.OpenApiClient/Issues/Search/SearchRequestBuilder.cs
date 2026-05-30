@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Issues.Search
         {
         }
         /// <summary>
-        /// Search for an issue associated with one of the following identifiers:  `item_id`, `link_session_id` or Link session `request_id`. This endpoint returns a list of `Issue` objects, with an empty list indicating that no issues are associated with the provided identifier. At least one of the identifiers must be provided to perform the search.
+        /// &quot;Search for an issue associated with one of the following identifiers:  `item_id`, `link_session_id` or Link session `request_id`. This endpoint returns a list of `Issue` objects, with an empty list indicating that no issues are associated with the provided identifier. At least one of the identifiers must be provided to perform the search.&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.IssuesSearchResponse"/></returns>
         /// <param name="body">IssuesSearchRequest defines the request schema for `/issues/search`.</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Issues.Search
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.IssuesSearchResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.IssuesSearchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Search for an issue associated with one of the following identifiers:  `item_id`, `link_session_id` or Link session `request_id`. This endpoint returns a list of `Issue` objects, with an empty list indicating that no issues are associated with the provided identifier. At least one of the identifiers must be provided to perform the search.
+        /// &quot;Search for an issue associated with one of the following identifiers:  `item_id`, `link_session_id` or Link session `request_id`. This endpoint returns a list of `Issue` objects, with an empty list indicating that no issues are associated with the provided identifier. At least one of the identifiers must be provided to perform the search.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">IssuesSearchRequest defines the request schema for `/issues/search`.</param>

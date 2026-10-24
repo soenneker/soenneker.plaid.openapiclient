@@ -55,10 +55,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning disable CS1591
         Expire,
         #pragma warning restore CS1591
-        [EnumMember(Value = "fund fee")]
-        #pragma warning disable CS1591
-        FundFee,
-        #pragma warning restore CS1591
         [EnumMember(Value = "interest")]
         #pragma warning disable CS1591
         Interest,
@@ -74,10 +70,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         [EnumMember(Value = "legal fee")]
         #pragma warning disable CS1591
         LegalFee,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "loan payment")]
-        #pragma warning disable CS1591
-        LoanPayment,
         #pragma warning restore CS1591
         [EnumMember(Value = "long-term capital gain")]
         #pragma warning disable CS1591
@@ -122,10 +114,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         [EnumMember(Value = "qualified dividend")]
         #pragma warning disable CS1591
         QualifiedDividend,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "rebalance")]
-        #pragma warning disable CS1591
-        Rebalance,
         #pragma warning restore CS1591
         [EnumMember(Value = "return of principal")]
         #pragma warning disable CS1591

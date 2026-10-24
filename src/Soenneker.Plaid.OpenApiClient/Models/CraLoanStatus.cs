@@ -9,43 +9,43 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "APPROVED")]
         #pragma warning disable CS1591
-        APPROVED,
+        Approved,
         #pragma warning restore CS1591
         [EnumMember(Value = "DECLINED")]
         #pragma warning disable CS1591
-        DECLINED,
+        Declined,
         #pragma warning restore CS1591
         [EnumMember(Value = "BOOKED")]
         #pragma warning disable CS1591
-        BOOKED,
+        Booked,
         #pragma warning restore CS1591
         [EnumMember(Value = "CURRENT")]
         #pragma warning disable CS1591
-        CURRENT,
+        Current,
         #pragma warning restore CS1591
         [EnumMember(Value = "DELINQUENT")]
         #pragma warning disable CS1591
-        DELINQUENT,
+        Delinquent,
         #pragma warning restore CS1591
         [EnumMember(Value = "DEFAULT")]
         #pragma warning disable CS1591
-        DEFAULT,
+        DefaultValue,
         #pragma warning restore CS1591
         [EnumMember(Value = "CHARGED_OFF")]
         #pragma warning disable CS1591
-        CHARGED_OFF,
+        ChargedOff,
         #pragma warning restore CS1591
         [EnumMember(Value = "TRANSFERRED")]
         #pragma warning disable CS1591
-        TRANSFERRED,
+        Transferred,
         #pragma warning restore CS1591
         [EnumMember(Value = "PAID_OFF")]
         #pragma warning disable CS1591
-        PAID_OFF,
+        PaidOff,
         #pragma warning restore CS1591
         [EnumMember(Value = "OTHER")]
         #pragma warning disable CS1591
-        OTHER,
+        Other,
         #pragma warning restore CS1591
     }
 }

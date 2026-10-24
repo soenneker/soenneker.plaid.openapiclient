@@ -21,8 +21,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string AccountId { get; set; }
 #endif
-        /// <summary>&quot;Specifies the use case of the transfer. Required for transfers on an ACH network. For more details, see [ACH SEC codes](https://plaid.com/docs/transfer/creating-transfers/#ach-sec-codes).Codes supported for credits: `ccd`, `ppd`Codes supported for debits: `ccd`, `tel`, `web``\&quot;ccd\&quot;` - Corporate Credit or Debit - fund transfer between two corporate bank accounts`\&quot;ppd\&quot;` - Prearranged Payment or Deposit - The transfer is part of a pre-existing relationship with a consumer. Authorization was obtained in writing either in person or via an electronic document signing, e.g. Docusign, by the consumer. Can be used for credits or debits.`\&quot;web\&quot;` - Internet-Initiated Entry. The transfer debits a consumer’s bank account. Authorization from the consumer is obtained over the Internet (e.g. a web or mobile application). Can be used for single debits or recurring debits.`\&quot;tel\&quot;` - Telephone-Initiated Entry. The transfer debits a consumer. Debit authorization has been received orally over the telephone via a recorded call.&quot;</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ACHClass? AchClass { get; set; }
+        /// <summary>Specifies the use case of the transfer. Required for transfers on an ACH network. For more details, see [ACH SEC codes](https://plaid.com/docs/transfer/creating-transfers/#ach-sec-codes).Codes supported for credits: `ccd`, `ppd`Codes supported for debits: `ccd`, `ppd`, `tel`, `web``&quot;ccd&quot;` - Corporate Credit or Debit - fund transfer between two corporate bank accounts`&quot;ppd&quot;` - Prearranged Payment or Deposit - The transfer is part of a pre-existing relationship with a consumer. Authorization was obtained in writing either in person or via an electronic document signing, e.g. Docusign, by the consumer. Can be used for credits or debits.`&quot;web&quot;` - Internet-Initiated Entry. The transfer debits a consumer&apos;s bank account. Authorization from the consumer is obtained over the Internet (e.g. a web or mobile application). Can be used for single debits or recurring debits.`&quot;tel&quot;` - Telephone-Initiated Entry. The transfer debits a consumer. Debit authorization has been received orally over the telephone via a recorded call.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.AchClass? AchClass { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount of the bank transfer (decimal string with two digits of precision e.g. &quot;10.00&quot;).</summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>&quot;Indicates the direction of the transfer: `outbound` for API-initiated transfers, or `inbound` for payments received by the FBO account.&quot;</summary>
+        /// <summary>Indicates the direction of the transfer: `outbound` for API-initiated transfers, or `inbound` for payments received by the FBO account.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferDirection? Direction { get; set; }
         /// <summary>The failure reason if the type of this transfer is `&quot;failed&quot;` or `&quot;reversed&quot;`. Null value otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,7 +63,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferFailure FailureReason { get; set; }
 #endif
-        /// <summary>Plaid’s unique identifier for a bank transfer.</summary>
+        /// <summary>Plaid&apos;s unique identifier for a bank transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -82,14 +82,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The Metadata object is a mapping of client-provided string fields to any string value. The following limitations apply:The JSON values must be Strings (no nested JSON objects allowed)Only ASCII characters may be usedMaximum of 50 key/value pairsMaximum key length of 40 charactersMaximum value length of 500 characters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferMetadata? Metadata { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferMetadataProperty? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferMetadata Metadata { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferMetadataProperty Metadata { get; set; }
 #endif
         /// <summary>The network or rails used for the transfer. Valid options are `ach`, `same-day-ach`, or `wire`.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferNetwork? Network { get; set; }
-        /// <summary>Plaid’s unique identifier for the origination account that was used for this transfer.</summary>
+        /// <summary>Plaid&apos;s unique identifier for the origination account that was used for this transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OriginationAccountId { get; set; }
@@ -135,7 +135,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
-                { "ach_class", n => { AchClass = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ACHClass>(); } },
+                { "ach_class", n => { AchClass = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AchClass>(); } },
                 { "amount", n => { Amount = n.GetStringValue(); } },
                 { "cancellable", n => { Cancellable = n.GetBoolValue(); } },
                 { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
@@ -145,7 +145,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "failure_reason", n => { FailureReason = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferFailure>(global::Soenneker.Plaid.OpenApiClient.Models.BankTransferFailure.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "iso_currency_code", n => { IsoCurrencyCode = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferMetadata>(global::Soenneker.Plaid.OpenApiClient.Models.BankTransferMetadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferMetadataProperty>(global::Soenneker.Plaid.OpenApiClient.Models.BankTransferMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "network", n => { Network = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferNetwork>(); } },
                 { "origination_account_id", n => { OriginationAccountId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferStatus>(); } },
@@ -161,7 +161,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ACHClass>("ach_class", AchClass);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AchClass>("ach_class", AchClass);
             writer.WriteStringValue("amount", Amount);
             writer.WriteBoolValue("cancellable", Cancellable);
             writer.WriteDateTimeOffsetValue("created", Created);
@@ -171,7 +171,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferFailure>("failure_reason", FailureReason);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("iso_currency_code", IsoCurrencyCode);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferMetadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferMetadataProperty>("metadata", Metadata);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferNetwork>("network", Network);
             writer.WriteStringValue("origination_account_id", OriginationAccountId);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferStatus>("status", Status);

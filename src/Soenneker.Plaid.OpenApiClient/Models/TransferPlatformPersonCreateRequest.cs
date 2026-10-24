@@ -45,10 +45,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>ID number of the person</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformPersonIDNumber? IdNumber { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformPersonIdNumber? IdNumber { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformPersonIDNumber IdNumber { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformPersonIdNumber IdNumber { get; set; }
 #endif
         /// <summary>The person&apos;s legal name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -129,7 +129,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
                 { "date_of_birth", n => { DateOfBirth = n.GetDateValue(); } },
                 { "email_address", n => { EmailAddress = n.GetStringValue(); } },
-                { "id_number", n => { IdNumber = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformPersonIDNumber>(global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformPersonIDNumber.CreateFromDiscriminatorValue); } },
+                { "id_number", n => { IdNumber = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformPersonIdNumber>(global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformPersonIdNumber.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformPersonName>(global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformPersonName.CreateFromDiscriminatorValue); } },
                 { "originator_client_id", n => { OriginatorClientId = n.GetStringValue(); } },
                 { "ownership_percentage", n => { OwnershipPercentage = n.GetIntValue(); } },
@@ -150,7 +150,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("client_id", ClientId);
             writer.WriteDateValue("date_of_birth", DateOfBirth);
             writer.WriteStringValue("email_address", EmailAddress);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformPersonIDNumber>("id_number", IdNumber);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformPersonIdNumber>("id_number", IdNumber);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformPersonName>("name", Name);
             writer.WriteStringValue("originator_client_id", OriginatorClientId);
             writer.WriteIntValue("ownership_percentage", OwnershipPercentage);

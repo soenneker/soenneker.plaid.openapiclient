@@ -18,7 +18,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Personal finance categories are now returned by default.</summary>
         [Obsolete("")]
         public bool? IncludePersonalFinanceCategory { get; set; }
-        /// <summary>Indicates which version of the personal finance category taxonomy is being used. [View PFCv2 and PFCv1 taxonomies](https://plaid.com/documents/pfc-taxonomy-all.csv).If you enabled Transactions or Enrich before December 2025 you will receive the `v1` taxonomy by default and may request `v2` by explicitly setting this field to `v2` in the request.If you enabled Transactions or Enrich on or after December 2025, you may only receive the `v2` taxonomy.</summary>
+        /// <summary>Indicates which version of the personal finance category taxonomy is being used. [View PFCv2 and PFCv1 taxonomies](https://plaid.com/documents/pfc-taxonomy-all.csv).If you enabled Transactions or Enrich before December 3, 2025 you will receive the `v1` taxonomy by default and may request `v2` by explicitly setting this field to `v2` in the request.If you enabled Transactions or Enrich on or after December 3, 2025, you may only receive the `v2` taxonomy.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategoryVersion? PersonalFinanceCategoryVersion { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransactionsRecurringGetRequestOptions"/> and sets the default values.
@@ -26,6 +26,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public TransactionsRecurringGetRequestOptions()
         {
             AdditionalData = new Dictionary<string, object>();
+            IncludePersonalFinanceCategory = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

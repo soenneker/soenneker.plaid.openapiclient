@@ -41,6 +41,7 @@ namespace Soenneker.Plaid.OpenApiClient.Sandbox.Bank_transfer.Simulate
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Plaid.OpenApiClient.Models.PlaidError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Plaid.OpenApiClient.Models.SandboxBankTransferSimulateResponse?> PostAsync(global::Soenneker.Plaid.OpenApiClient.Models.SandboxBankTransferSimulateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -64,6 +65,7 @@ namespace Soenneker.Plaid.OpenApiClient.Sandbox.Bank_transfer.Simulate
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Defines the request schema for `/sandbox/bank_transfer/simulate`</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Soenneker.Plaid.OpenApiClient.Models.SandboxBankTransferSimulateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -85,6 +87,7 @@ namespace Soenneker.Plaid.OpenApiClient.Sandbox.Bank_transfer.Simulate
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Sandbox.Bank_transfer.Simulate.SimulateRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Sandbox.Bank_transfer.Simulate.SimulateRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Plaid.OpenApiClient.Sandbox.Bank_transfer.Simulate.SimulateRequestBuilder(rawUrl, RequestAdapter);

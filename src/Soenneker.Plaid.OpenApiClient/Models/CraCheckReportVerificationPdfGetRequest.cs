@@ -23,8 +23,19 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
+        /// <summary>If `true`, the GSE identifiers (the Report ID and `gse_reference_id`) are omitted from the returned Home Lending Report PDF. Defaults to `false`. These identifiers are always present in the `/cra/check_report/verification/get` JSON response regardless of this field.</summary>
+        public bool? HideGseDetails { get; set; }
         /// <summary>The type of verification PDF report to fetch.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportVerificationPdfReportType? ReportRequested { get; set; }
+        [Obsolete("")]
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportVerificationPdfGetRequestReportRequested? ReportRequested { get; set; }
+        /// <summary>Specifies which types of verification reports to include in the returned PDF. Supported combinations are: `[voa]`, `[employment_refresh]`, `[income]`, or `[voa, income]`. Other combinations are not supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportVerificationPdfReportType?>? ReportsRequested { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportVerificationPdfReportType?> ReportsRequested { get; set; }
+#endif
         /// <summary>Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,7 +52,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ThirdPartyUserToken { get; set; }
 #endif
-        /// <summary>A unique user identifier, created by `/user/create`. Integrations that began using `/user/create` after December 10, 2025 use this field to identify a user instead of the `user_token`. For more details, see [new user APIs](https://plaid.com/docs/api/users/user-apis).</summary>
+        /// <summary>A unique user identifier, created by `/user/create`. Integrations that began using `/user/create` after December 10, 2025 use this field to identify a user instead of the `user_token`. For more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }
@@ -49,7 +60,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string UserId { get; set; }
 #endif
-        /// <summary>The user token associated with the User data is being requested for. This field is used only by customers with pre-existing integrations that already use the `user_token` field. All other customers should use the `user_id` instead. For more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis).</summary>
+        /// <summary>The user token associated with the user for which data is being requested. This field is used only by customers with pre-existing integrations that already use the `user_token` field. All other customers should use the `user_id` instead. For more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserToken { get; set; }
@@ -83,7 +94,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
-                { "report_requested", n => { ReportRequested = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportVerificationPdfReportType>(); } },
+                { "hide_gse_details", n => { HideGseDetails = n.GetBoolValue(); } },
+                { "report_requested", n => { ReportRequested = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportVerificationPdfGetRequestReportRequested>(); } },
+                { "reports_requested", n => { ReportsRequested = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportVerificationPdfReportType>()?.AsList(); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
                 { "third_party_user_token", n => { ThirdPartyUserToken = n.GetStringValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
@@ -98,7 +111,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("client_id", ClientId);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportVerificationPdfReportType>("report_requested", ReportRequested);
+            writer.WriteBoolValue("hide_gse_details", HideGseDetails);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportVerificationPdfGetRequestReportRequested>("report_requested", ReportRequested);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportVerificationPdfReportType>("reports_requested", ReportsRequested);
             writer.WriteStringValue("secret", Secret);
             writer.WriteStringValue("third_party_user_token", ThirdPartyUserToken);
             writer.WriteStringValue("user_id", UserId);

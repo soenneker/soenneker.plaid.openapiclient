@@ -13,7 +13,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraPartnerInsightsItem : IAdditionalDataHolder, IParsable
     {
-        /// <summary>A list of accounts in the item</summary>
+        /// <summary>A list of accounts in the Item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsItemAccount>? Accounts { get; set; }
@@ -39,7 +39,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string InstitutionName { get; set; }
 #endif
-        /// <summary>The identifier for the item.</summary>
+        /// <summary>The identifier for the Item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ItemId { get; set; }

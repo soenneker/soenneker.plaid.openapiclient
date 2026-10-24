@@ -15,13 +15,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Indicates if automated microdeposits are supported.</summary>
+        /// <summary>Indicates if automated micro-deposits are supported.</summary>
         public bool? AutomatedMicroDeposits { get; set; }
         /// <summary>Indicates if instant auth is supported.</summary>
         public bool? InstantAuth { get; set; }
         /// <summary>Indicates if instant match is supported.</summary>
         public bool? InstantMatch { get; set; }
-        /// <summary>Indicates if instant microdeposits are supported.</summary>
+        /// <summary>Indicates if instant micro-deposits are supported.</summary>
         public bool? InstantMicroDeposits { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.AuthSupportedMethods"/> and sets the default values.

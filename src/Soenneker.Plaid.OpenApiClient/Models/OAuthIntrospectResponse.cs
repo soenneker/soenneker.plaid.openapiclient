@@ -53,7 +53,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string RequestId { get; set; }
 #endif
-        /// <summary>A JSON string containing a space-separated list of scopes associated with this token, in the format described in [https://datatracker.ietf.org/doc/html/rfc6749#section-3.3](https://datatracker.ietf.org/doc/html/rfc6749#section-3.3). Currently accepted values are:`user:read` allows reading user data.`user:write` allows writing user data.`exchange` allows exchanging a token using the `urn:plaid:params:oauth:user-token` grant type.`mcp:dashboard` allows access to the MCP dashboard server.</summary>
+        /// <summary>A space-separated list of scopes associated with this token, in the format described in [https://datatracker.ietf.org/doc/html/rfc6749#section-3.3](https://datatracker.ietf.org/doc/html/rfc6749#section-3.3). Currently accepted values are:`user:read` allows reading user data.`user:write` allows writing user data.`exchange` allows exchanging a token using the `urn:plaid:params:oauth:user-token` subject token type.`mcp:dashboard` allows access to the MCP dashboard server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Scope { get; set; }

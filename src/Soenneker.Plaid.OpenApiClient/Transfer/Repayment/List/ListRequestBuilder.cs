@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Transfer.Repayment.List
         {
         }
         /// <summary>
-        /// The `/transfer/repayment/list` endpoint fetches repayments matching the given filters. Repayments are returned in reverse-chronological order (most recent first) starting at the given `start_time`.
+        /// The `/transfer/repayment/list` endpoint fetches repayments matching the given filters. Repayments are returned in reverse-chronological order (most recent first) starting at the given `start_date`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransferRepaymentListResponse"/></returns>
         /// <param name="body">Defines the request schema for `/transfer/repayment/list`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Transfer.Repayment.List
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.TransferRepaymentListResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.TransferRepaymentListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The `/transfer/repayment/list` endpoint fetches repayments matching the given filters. Repayments are returned in reverse-chronological order (most recent first) starting at the given `start_time`.
+        /// The `/transfer/repayment/list` endpoint fetches repayments matching the given filters. Repayments are returned in reverse-chronological order (most recent first) starting at the given `start_date`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Defines the request schema for `/transfer/repayment/list`</param>

@@ -37,10 +37,11 @@ namespace Soenneker.Plaid.OpenApiClient.Beacon.Account_risk.V1.Evaluate
         /// Use `/beacon/account_risk/v1/evaluate` to get risk insights for a linked account.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BeaconAccountRiskEvaluateResponse"/></returns>
-        /// <param name="body">BeaconAccountRiskEvaluateRequest defines the request schema for `/v1/beacon/account_risk/risk/evaluate`</param>
+        /// <param name="body">BeaconAccountRiskEvaluateRequest defines the request schema for `/beacon/account_risk/v1/evaluate`</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Plaid.OpenApiClient.Models.PlaidError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Plaid.OpenApiClient.Models.BeaconAccountRiskEvaluateResponse?> PostAsync(global::Soenneker.Plaid.OpenApiClient.Models.BeaconAccountRiskEvaluateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,8 +63,9 @@ namespace Soenneker.Plaid.OpenApiClient.Beacon.Account_risk.V1.Evaluate
         /// Use `/beacon/account_risk/v1/evaluate` to get risk insights for a linked account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">BeaconAccountRiskEvaluateRequest defines the request schema for `/v1/beacon/account_risk/risk/evaluate`</param>
+        /// <param name="body">BeaconAccountRiskEvaluateRequest defines the request schema for `/beacon/account_risk/v1/evaluate`</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Soenneker.Plaid.OpenApiClient.Models.BeaconAccountRiskEvaluateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -85,6 +87,7 @@ namespace Soenneker.Plaid.OpenApiClient.Beacon.Account_risk.V1.Evaluate
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Beacon.Account_risk.V1.Evaluate.EvaluateRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Beacon.Account_risk.V1.Evaluate.EvaluateRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Plaid.OpenApiClient.Beacon.Account_risk.V1.Evaluate.EvaluateRequestBuilder(rawUrl, RequestAdapter);

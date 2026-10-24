@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Insights into a user’s top merchants.
+    /// Insights into a user&apos;s top merchants.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MerchantInsights : IAdditionalDataHolder, IParsable

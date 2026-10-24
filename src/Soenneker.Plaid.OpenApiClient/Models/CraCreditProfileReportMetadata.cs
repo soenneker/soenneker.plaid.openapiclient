@@ -32,6 +32,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public List<string> InstitutionIds { get; set; }
 #endif
+        /// <summary>The number of investment accounts in the report.</summary>
+        public int? InvestmentAccountTypeCount { get; set; }
         /// <summary>The number of items used to calculate the report.</summary>
         public int? ItemCount { get; set; }
         /// <summary>The date of the most recent transaction in the report.</summary>
@@ -40,7 +42,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public int? MultipleOwnerAccountCount { get; set; }
         /// <summary>The date of the oldest transaction in the report.</summary>
         public Date? OldestTransactionDate { get; set; }
-        /// <summary>The number of other accounts in the report.</summary>
+        /// <summary>The number of accounts that are neither depository, credit, nor investment.</summary>
         public int? OtherAccountTypeCount { get; set; }
         /// <summary>The number of primary accounts in the report.</summary>
         public int? PrimaryAccountCount { get; set; }
@@ -74,6 +76,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "depository_account_type_count", n => { DepositoryAccountTypeCount = n.GetIntValue(); } },
                 { "generated_at", n => { GeneratedAt = n.GetDateTimeOffsetValue(); } },
                 { "institution_ids", n => { InstitutionIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "investment_account_type_count", n => { InvestmentAccountTypeCount = n.GetIntValue(); } },
                 { "item_count", n => { ItemCount = n.GetIntValue(); } },
                 { "most_recent_transaction_date", n => { MostRecentTransactionDate = n.GetDateValue(); } },
                 { "multiple_owner_account_count", n => { MultipleOwnerAccountCount = n.GetIntValue(); } },
@@ -94,6 +97,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteIntValue("depository_account_type_count", DepositoryAccountTypeCount);
             writer.WriteDateTimeOffsetValue("generated_at", GeneratedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("institution_ids", InstitutionIds);
+            writer.WriteIntValue("investment_account_type_count", InvestmentAccountTypeCount);
             writer.WriteIntValue("item_count", ItemCount);
             writer.WriteDateValue("most_recent_transaction_date", MostRecentTransactionDate);
             writer.WriteIntValue("multiple_owner_account_count", MultipleOwnerAccountCount);

@@ -33,7 +33,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.MonthlyAverage MonthlyAverage { get; set; }
 #endif
-        /// <summary>The percentage of the total inflows that was spent in this expenses group, within the given time window across all the accounts in the report.For example, a value of 100 represents that 100% of the inflows were spent on transactions that fall into this expenditure group.If there&apos;s no available income for the giving time period, this field value will be `-1`.</summary>
+        /// <summary>The percentage of the total inflows that was spent in this expenses group, within the given time window across all the accounts in the report.For example, a value of 100 represents that 100% of the inflows were spent on transactions that fall into this expenditure group.If there&apos;s no available income for the given time period, this field value will be `-1`.</summary>
         public double? PercentageOfIncome { get; set; }
         /// <summary>The primary credit categories of the expenses within the given time window, across all the accounts in the report.The categories are sorted in descending order by the total value spent.See the [category taxonomy](https://plaid.com/documents/credit-category-taxonomy.csv) for a full listing of category IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

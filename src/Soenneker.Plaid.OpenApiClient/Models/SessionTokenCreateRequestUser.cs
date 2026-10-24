@@ -23,13 +23,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientUserId { get; set; }
 #endif
-        /// <summary>The user_id property</summary>
+        /// <summary>The Plaid `user_id` of the User associated with this webhook, warning, or error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.SessionTokenCreateRequestUser_user_id? UserId { get; set; }
+        public string? UserId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.SessionTokenCreateRequestUser_user_id UserId { get; set; }
+        public string UserId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.SessionTokenCreateRequestUser"/> and sets the default values.
@@ -57,7 +57,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "client_user_id", n => { ClientUserId = n.GetStringValue(); } },
-                { "user_id", n => { UserId = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.SessionTokenCreateRequestUser_user_id>(global::Soenneker.Plaid.OpenApiClient.Models.SessionTokenCreateRequestUser_user_id.CreateFromDiscriminatorValue); } },
+                { "user_id", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("client_user_id", ClientUserId);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.SessionTokenCreateRequestUser_user_id>("user_id", UserId);
+            writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

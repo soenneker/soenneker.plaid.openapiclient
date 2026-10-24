@@ -13,7 +13,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "pending_review")]
         #pragma warning disable CS1591
-        Pending_review,
+        PendingReview,
         #pragma warning restore CS1591
         [EnumMember(Value = "dismissed")]
         #pragma warning disable CS1591

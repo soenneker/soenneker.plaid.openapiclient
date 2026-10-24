@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.MatchSummary Analysis { get; set; }
 #endif
-        /// <summary>Location information for the associated individual watchlist hit</summary>
+        /// <summary>Location information for the associated watchlist hit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningHitLocations? Data { get; set; }

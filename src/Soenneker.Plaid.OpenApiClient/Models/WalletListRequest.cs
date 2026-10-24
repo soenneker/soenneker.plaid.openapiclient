@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public string Cursor { get; set; }
 #endif
         /// <summary>An ISO-4217 currency code, used with e-wallets and transactions.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.WalletISOCurrencyCode? IsoCurrencyCode { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletIsoCurrencyCode? IsoCurrencyCode { get; set; }
         /// <summary>Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,6 +49,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public WalletListRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Count = 10;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -71,7 +72,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
                 { "count", n => { Count = n.GetIntValue(); } },
                 { "cursor", n => { Cursor = n.GetStringValue(); } },
-                { "iso_currency_code", n => { IsoCurrencyCode = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletISOCurrencyCode>(); } },
+                { "iso_currency_code", n => { IsoCurrencyCode = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletIsoCurrencyCode>(); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
             };
         }
@@ -85,7 +86,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("client_id", ClientId);
             writer.WriteIntValue("count", Count);
             writer.WriteStringValue("cursor", Cursor);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletISOCurrencyCode>("iso_currency_code", IsoCurrencyCode);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletIsoCurrencyCode>("iso_currency_code", IsoCurrencyCode);
             writer.WriteStringValue("secret", Secret);
             writer.WriteAdditionalData(AdditionalData);
         }

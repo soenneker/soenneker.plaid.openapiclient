@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Total amount of debit transactions into the account in the time period of the report. This field will be empty for non-depository accounts. This field only takes into account USD transactions from the account.
+    /// Total amount of money into the account in the time period of the report. For non-depository accounts, or accounts with no transactions, `amount` is `0` and both currency codes are `null`. This field only takes into account USD transactions from the account.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TotalInflowAmount : IAdditionalDataHolder, IParsable

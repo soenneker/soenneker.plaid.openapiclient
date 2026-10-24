@@ -16,7 +16,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An ISO-4217 currency code, used with e-wallets and transactions.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.WalletISOCurrencyCode? IsoCurrencyCode { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletIsoCurrencyCode? IsoCurrencyCode { get; set; }
         /// <summary>The amount of the transaction. Must contain at most two digits of precision e.g. `1.23`.</summary>
         public double? Value { get; set; }
         /// <summary>
@@ -44,7 +44,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "iso_currency_code", n => { IsoCurrencyCode = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletISOCurrencyCode>(); } },
+                { "iso_currency_code", n => { IsoCurrencyCode = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletIsoCurrencyCode>(); } },
                 { "value", n => { Value = n.GetDoubleValue(); } },
             };
         }
@@ -55,7 +55,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletISOCurrencyCode>("iso_currency_code", IsoCurrencyCode);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletIsoCurrencyCode>("iso_currency_code", IsoCurrencyCode);
             writer.WriteDoubleValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

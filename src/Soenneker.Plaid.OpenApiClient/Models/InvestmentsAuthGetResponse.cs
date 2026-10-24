@@ -16,10 +16,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Additional information for accounts of 401k subtype.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthAccountDetails401k>? AccountDetails401k { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthAccountDetails401K>? AccountDetails401k { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthAccountDetails401k> AccountDetails401k { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthAccountDetails401K> AccountDetails401k { get; set; }
 #endif
         /// <summary>The accounts for which data is being retrieved</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,12 +50,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Metadata about the Item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.Item? Item { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ItemValue? Item { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.Item Item { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ItemValue Item { get; set; }
 #endif
-        /// <summary>Identifying information for transferring holdings to an investments account.</summary>
+        /// <summary>Identifying information for transferring holdings to an investment account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthGetNumbers? Numbers { get; set; }
@@ -112,11 +112,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "account_details_401k", n => { AccountDetails401k = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthAccountDetails401k>(global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthAccountDetails401k.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "account_details_401k", n => { AccountDetails401k = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthAccountDetails401K>(global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthAccountDetails401K.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "accounts", n => { Accounts = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentAccount>(global::Soenneker.Plaid.OpenApiClient.Models.InvestmentAccount.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "data_sources", n => { DataSources = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthDataSources>(global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthDataSources.CreateFromDiscriminatorValue); } },
                 { "holdings", n => { Holdings = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.Holding>(global::Soenneker.Plaid.OpenApiClient.Models.Holding.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "item", n => { Item = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Item>(global::Soenneker.Plaid.OpenApiClient.Models.Item.CreateFromDiscriminatorValue); } },
+                { "item", n => { Item = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ItemValue>(global::Soenneker.Plaid.OpenApiClient.Models.ItemValue.CreateFromDiscriminatorValue); } },
                 { "numbers", n => { Numbers = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthGetNumbers>(global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthGetNumbers.CreateFromDiscriminatorValue); } },
                 { "owners", n => { Owners = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthOwner>(global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthOwner.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
@@ -130,11 +130,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthAccountDetails401k>("account_details_401k", AccountDetails401k);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthAccountDetails401K>("account_details_401k", AccountDetails401k);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentAccount>("accounts", Accounts);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthDataSources>("data_sources", DataSources);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.Holding>("holdings", Holdings);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Item>("item", Item);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ItemValue>("item", Item);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthGetNumbers>("numbers", Numbers);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthOwner>("owners", Owners);
             writer.WriteStringValue("request_id", RequestId);

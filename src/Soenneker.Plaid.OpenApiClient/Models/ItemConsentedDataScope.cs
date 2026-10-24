@@ -9,15 +9,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "account_balance_info")]
         #pragma warning disable CS1591
-        Account_balance_info,
+        AccountBalanceInfo,
         #pragma warning restore CS1591
         [EnumMember(Value = "contact_info")]
         #pragma warning disable CS1591
-        Contact_info,
+        ContactInfo,
         #pragma warning restore CS1591
         [EnumMember(Value = "account_routing_number")]
         #pragma warning disable CS1591
-        Account_routing_number,
+        AccountRoutingNumber,
         #pragma warning restore CS1591
         [EnumMember(Value = "transactions")]
         #pragma warning disable CS1591
@@ -25,7 +25,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "credit_loan_info")]
         #pragma warning disable CS1591
-        Credit_loan_info,
+        CreditLoanInfo,
         #pragma warning restore CS1591
         [EnumMember(Value = "investments")]
         #pragma warning disable CS1591
@@ -33,39 +33,39 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "payroll_info")]
         #pragma warning disable CS1591
-        Payroll_info,
+        PayrollInfo,
         #pragma warning restore CS1591
         [EnumMember(Value = "income_verification_paystubs_info")]
         #pragma warning disable CS1591
-        Income_verification_paystubs_info,
+        IncomeVerificationPaystubsInfo,
         #pragma warning restore CS1591
         [EnumMember(Value = "income_verification_w2s_info")]
         #pragma warning disable CS1591
-        Income_verification_w2s_info,
+        IncomeVerificationW2SInfo,
         #pragma warning restore CS1591
         [EnumMember(Value = "income_verification_bank_statements")]
         #pragma warning disable CS1591
-        Income_verification_bank_statements,
+        IncomeVerificationBankStatements,
         #pragma warning restore CS1591
         [EnumMember(Value = "income_verification_employment_info")]
         #pragma warning disable CS1591
-        Income_verification_employment_info,
+        IncomeVerificationEmploymentInfo,
         #pragma warning restore CS1591
         [EnumMember(Value = "bank_statements")]
         #pragma warning disable CS1591
-        Bank_statements,
+        BankStatements,
         #pragma warning restore CS1591
         [EnumMember(Value = "risk_info")]
         #pragma warning disable CS1591
-        Risk_info,
+        RiskInfo,
         #pragma warning restore CS1591
         [EnumMember(Value = "network_insights_lite")]
         #pragma warning disable CS1591
-        Network_insights_lite,
+        NetworkInsightsLite,
         #pragma warning restore CS1591
         [EnumMember(Value = "fraud_info")]
         #pragma warning disable CS1591
-        Fraud_info,
+        FraudInfo,
         #pragma warning restore CS1591
     }
 }

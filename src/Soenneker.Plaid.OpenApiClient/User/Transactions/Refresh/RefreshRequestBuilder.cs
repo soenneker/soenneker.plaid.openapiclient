@@ -37,7 +37,7 @@ namespace Soenneker.Plaid.OpenApiClient.User.Transactions.Refresh
         /// `/user/transactions/refresh` is an optional endpoint that initiates an on-demand extraction to fetch the newest transactions for a User using the Transactions bundle.This bundle refreshes only the Transactions product data.This endpoint is for clients who use the Transactions Insights bundle and want to proactively update all linked Items under a user.The refresh may succeed or fail on a per-Item basis. Use the `results` array in the response to understand the outcome for each Item.This endpoint is distinct from `/transactions/refresh`, which triggers a refresh for a single Item. Use `/user/transactions/refresh` to target all Items for a user instead.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.UserTransactionsRefreshResponse"/></returns>
-        /// <param name="body">UserTransactionsRefreshRequest defines the request schema for `user/transactions/refresh`</param>
+        /// <param name="body">UserTransactionsRefreshRequest defines the request schema for `/user/transactions/refresh`</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Plaid.OpenApiClient.Models.PlaidError">When receiving a 4XX or 5XX status code</exception>
@@ -62,7 +62,7 @@ namespace Soenneker.Plaid.OpenApiClient.User.Transactions.Refresh
         /// `/user/transactions/refresh` is an optional endpoint that initiates an on-demand extraction to fetch the newest transactions for a User using the Transactions bundle.This bundle refreshes only the Transactions product data.This endpoint is for clients who use the Transactions Insights bundle and want to proactively update all linked Items under a user.The refresh may succeed or fail on a per-Item basis. Use the `results` array in the response to understand the outcome for each Item.This endpoint is distinct from `/transactions/refresh`, which triggers a refresh for a single Item. Use `/user/transactions/refresh` to target all Items for a user instead.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">UserTransactionsRefreshRequest defines the request schema for `user/transactions/refresh`</param>
+        /// <param name="body">UserTransactionsRefreshRequest defines the request schema for `/user/transactions/refresh`</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

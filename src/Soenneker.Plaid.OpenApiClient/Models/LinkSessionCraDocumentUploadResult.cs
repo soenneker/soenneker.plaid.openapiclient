@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// The details of a document upload CRA session in link
+    /// The details of a document upload CRA session in Link
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LinkSessionCraDocumentUploadResult : IAdditionalDataHolder, IParsable

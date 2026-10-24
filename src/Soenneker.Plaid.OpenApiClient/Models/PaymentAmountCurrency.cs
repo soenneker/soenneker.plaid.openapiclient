@@ -9,27 +9,27 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "GBP")]
         #pragma warning disable CS1591
-        GBP,
+        Gbp,
         #pragma warning restore CS1591
         [EnumMember(Value = "EUR")]
         #pragma warning disable CS1591
-        EUR,
+        Eur,
         #pragma warning restore CS1591
         [EnumMember(Value = "PLN")]
         #pragma warning disable CS1591
-        PLN,
+        Pln,
         #pragma warning restore CS1591
         [EnumMember(Value = "SEK")]
         #pragma warning disable CS1591
-        SEK,
+        Sek,
         #pragma warning restore CS1591
         [EnumMember(Value = "DKK")]
         #pragma warning disable CS1591
-        DKK,
+        Dkk,
         #pragma warning restore CS1591
         [EnumMember(Value = "NOK")]
         #pragma warning disable CS1591
-        NOK,
+        Nok,
         #pragma warning restore CS1591
     }
 }

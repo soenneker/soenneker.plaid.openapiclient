@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// CreditPayrollIncomeParsingConfigUpdateRequest defines the request schema for `/credit/payroll_income/documents/update`.
+    /// CreditPayrollIncomeParsingConfigUpdateRequest defines the request schema for `/credit/payroll_income/parsing_config/update`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreditPayrollIncomeParsingConfigUpdateRequest : IAdditionalDataHolder, IParsable
@@ -47,15 +47,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Secret { get; set; }
 #endif
-        /// <summary>The user_id property</summary>
+        /// <summary>A unique user identifier, created by `/user/create`. Integrations that began using `/user/create` after December 10, 2025 use this field to identify a user instead of the `user_token`. For more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayrollIncomeParsingConfigUpdateRequest_user_id? UserId { get; set; }
+        public string? UserId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayrollIncomeParsingConfigUpdateRequest_user_id UserId { get; set; }
+        public string UserId { get; set; }
 #endif
-        /// <summary>The user token associated with the User data is being requested for. This field is used only by customers with pre-existing integrations that already use the `user_token` field. All other customers should use the `user_id` instead. For more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis).</summary>
+        /// <summary>The user token associated with the user for which data is being requested. This field is used only by customers with pre-existing integrations that already use the `user_token` field. All other customers should use the `user_id` instead. For more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserToken { get; set; }
@@ -92,7 +92,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "item_id", n => { ItemId = n.GetStringValue(); } },
                 { "parsing_config", n => { ParsingConfig = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationDocParsingConfig>()?.AsList(); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
-                { "user_id", n => { UserId = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CreditPayrollIncomeParsingConfigUpdateRequest_user_id>(global::Soenneker.Plaid.OpenApiClient.Models.CreditPayrollIncomeParsingConfigUpdateRequest_user_id.CreateFromDiscriminatorValue); } },
+                { "user_id", n => { UserId = n.GetStringValue(); } },
                 { "user_token", n => { UserToken = n.GetStringValue(); } },
             };
         }
@@ -107,7 +107,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("item_id", ItemId);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationDocParsingConfig>("parsing_config", ParsingConfig);
             writer.WriteStringValue("secret", Secret);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CreditPayrollIncomeParsingConfigUpdateRequest_user_id>("user_id", UserId);
+            writer.WriteStringValue("user_id", UserId);
             writer.WriteStringValue("user_token", UserToken);
             writer.WriteAdditionalData(AdditionalData);
         }

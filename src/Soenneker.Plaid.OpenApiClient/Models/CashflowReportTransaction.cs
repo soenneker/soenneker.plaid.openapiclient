@@ -32,7 +32,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;The settled value of the transaction, denominated in the transactions&apos;s currency, as stated in `iso_currency_code` or `unofficial_currency_code`. For all products except Income: Positive values when money moves out of the account; negative values when money moves in. For example, debit card purchases are positive; credit card payments, direct deposits, and refunds are negative. For Income endpoints, values are positive when representing income.&quot;</summary>
+        /// <summary>The settled value of the transaction, denominated in the transaction&apos;s currency, as stated in `iso_currency_code` or `unofficial_currency_code`. For all products except Income: Positive values when money moves out of the account; negative values when money moves in. For example, debit card purchases are positive; credit card payments, direct deposits, and refunds are negative. For Income endpoints, values are positive when representing income.</summary>
         public double? Amount { get; set; }
         /// <summary>The date that the transaction was authorized. For posted transactions, the `date` field will indicate the posted date, but `authorized_date` will indicate the day the transaction was authorized by the financial institution. If presenting transactions to the user in a UI, the `authorized_date`, when available, is generally preferable to use over the `date` field for posted transactions, as it will generally represent the date the user actually made the transaction. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ( `YYYY-MM-DD` ).</summary>
         public Date? AuthorizedDate { get; set; }
@@ -90,7 +90,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.Location Location { get; set; }
 #endif
-        /// <summary>The URL of a logo associated with this transaction, if available. The logo will always be 100×100 pixel PNG file.</summary>
+        /// <summary>The URL of a logo associated with this transaction, if available. The logo will always be a 100×100 pixel PNG file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LogoUrl { get; set; }
@@ -114,7 +114,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string MerchantName { get; set; }
 #endif
-        /// <summary>&quot;The merchant name or transaction description.Note: This is a legacy field that is not actively maintained. Use `merchant_name` instead for the merchant name.If the `transactions` object was returned by a Transactions endpoint such as `/transactions/sync` or `/transactions/get`, this field will always appear. If the `transactions` object was returned by an Assets endpoint such as `/asset_report/get/` or `/asset_report/pdf/get`, this field will only appear in an Asset Report with Insights.&quot;</summary>
+        /// <summary>The merchant name or transaction description.Note: This is a legacy field that is not actively maintained. Use `merchant_name` instead for the merchant name.If the `transactions` object was returned by a Transactions endpoint such as `/transactions/sync` or `/transactions/get`, this field will always appear. If the `transactions` object was returned by an Assets endpoint such as `/asset_report/get` or `/asset_report/pdf/get`, this field will only appear in an Asset Report with Insights.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -158,7 +158,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory PersonalFinanceCategory { get; set; }
 #endif
-        /// <summary>The URL of an icon associated with the primary personal finance category. The icon will always be 100×100 pixel PNG file.</summary>
+        /// <summary>The URL of an icon associated with the primary personal finance category. The icon will always be a 100×100 pixel PNG file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PersonalFinanceCategoryIconUrl { get; set; }
@@ -166,7 +166,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string PersonalFinanceCategoryIconUrl { get; set; }
 #endif
-        /// <summary>&quot;An identifier classifying the transaction type.This field is only populated for European institutions. For institutions in the US and Canada, this field is set to `null`.`adjustment:` Bank adjustment`atm:` Cash deposit or withdrawal via an automated teller machine`bank charge:` Charge or fee levied by the institution`bill payment`: Payment of a bill`cash:` Cash deposit or withdrawal`cashback:` Cash withdrawal while making a debit card purchase`cheque:` Document ordering the payment of money to another person or organization`direct debit:` Automatic withdrawal of funds initiated by a third party at a regular interval`interest:` Interest earned or incurred`purchase:` Purchase made with a debit or credit card`standing order:` Payment instructed by the account holder to a third party at a regular interval`transfer:` Transfer of money between accounts&quot;</summary>
+        /// <summary>An identifier classifying the transaction type.This field is populated for European institutions, as well as certain institutions in the United States. For institutions where this classification is not available, this field is set to `null`.`adjustment:` Bank adjustment`atm:` Cash deposit or withdrawal via an automated teller machine`bank charge:` Charge or fee levied by the institution`bill payment`: Payment of a bill`cash:` Cash deposit or withdrawal`cash advance:` Cash advance drawn against a credit card or line of credit`cashback:` Cash withdrawal while making a debit card purchase`cheque:` Document ordering the payment of money to another person or organization`direct debit:` Automatic withdrawal of funds initiated by a third party at a regular interval`interest:` Interest earned or incurred`late fee:` Fee associated with a late or past-due payment`membership fee:` Annual or recurring membership fee`payment:` One-off outbound payment not classified as a bill payment, direct debit, or standing order`purchase:` Purchase made with a debit or credit card`refund:` Merchant credit or return, such as a refund of a prior purchase`returned item fee:` Fee for a returned item, such as a returned check or stop payment`standing order:` Payment instructed by the account holder to a third party at a regular interval`transfer:` Transfer of money between accounts</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.TransactionCode? TransactionCode { get; set; }
         /// <summary>The unique ID of the transaction. Like all Plaid identifiers, the `transaction_id` is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -176,7 +176,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string TransactionId { get; set; }
 #endif
-        /// <summary>The unofficial currency code associated with the transaction. Always `null` if `iso_currency_code` is non-`null`. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `iso_currency_code`s.</summary>
+        /// <summary>The unofficial currency code associated with the transaction. Always `null` if `iso_currency_code` is non-`null`. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `unofficial_currency_code`s.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UnofficialCurrencyCode { get; set; }

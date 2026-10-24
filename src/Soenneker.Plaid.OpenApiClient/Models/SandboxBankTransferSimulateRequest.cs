@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Plaid’s unique identifier for a bank transfer.</summary>
+        /// <summary>Plaid&apos;s unique identifier for a bank transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BankTransferId { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
-        /// <summary>&quot;The asynchronous event to be simulated. May be: `posted`, `failed`, or `reversed`.An error will be returned if the event type is incompatible with the current transfer status. Compatible status --&gt; event type transitions include:`pending` --&gt; `failed``pending` --&gt; `posted``posted` --&gt; `reversed`&quot;</summary>
+        /// <summary>The asynchronous event to be simulated. May be: `posted`, `failed`, or `reversed`.An error will be returned if the event type is incompatible with the current transfer status. Compatible status --&gt; event type transitions include:`pending` --&gt; `failed``pending` --&gt; `posted``posted` --&gt; `reversed`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventType { get; set; }

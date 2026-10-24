@@ -13,7 +13,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionsSyncRequestOptions : IAdditionalDataHolder, IParsable
     {
-        /// <summary>&quot;If provided, the returned updates and cursor will only reflect the specified account&apos;s transactions. Omitting `account_id` returns updates for all accounts under the Item. Note that specifying an `account_id` effectively creates a separate incremental update stream—and therefore a separate cursor—for that account. If multiple accounts are queried this way, you will maintain multiple cursors, one per `account_id`.If you decide to begin filtering by `account_id` after using no `account_id`, start fresh with a null cursor and maintain separate `(account_id, cursor)` pairs going forward. Do not reuse any previously saved cursors, as this can cause pagination errors or incomplete data.Note: An error will be returned if a provided `account_id` is not associated with the Item.&quot;</summary>
+        /// <summary>If provided, the returned updates and cursor will only reflect the specified account&apos;s transactions. Omitting `account_id` returns updates for all accounts under the Item. Note that specifying an `account_id` effectively creates a separate incremental update stream -- and therefore a separate cursor -- for that account. If multiple accounts are queried this way, you will maintain multiple cursors, one per `account_id`.If you decide to begin filtering by `account_id` after using no `account_id`, start fresh with a null cursor and maintain separate `(account_id, cursor)` pairs going forward. Do not reuse any previously saved cursors, as this can cause pagination errors or incomplete data.Note: An error will be returned if a provided `account_id` is not associated with the Item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountId { get; set; }
@@ -33,7 +33,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Personal finance categories are now returned by default.</summary>
         [Obsolete("")]
         public bool? IncludePersonalFinanceCategory { get; set; }
-        /// <summary>Indicates which version of the personal finance category taxonomy is being used. [View PFCv2 and PFCv1 taxonomies](https://plaid.com/documents/pfc-taxonomy-all.csv).If you enabled Transactions or Enrich before December 2025 you will receive the `v1` taxonomy by default and may request `v2` by explicitly setting this field to `v2` in the request.If you enabled Transactions or Enrich on or after December 2025, you may only receive the `v2` taxonomy.</summary>
+        /// <summary>Indicates which version of the personal finance category taxonomy is being used. [View PFCv2 and PFCv1 taxonomies](https://plaid.com/documents/pfc-taxonomy-all.csv).If you enabled Transactions or Enrich before December 3, 2025 you will receive the `v1` taxonomy by default and may request `v2` by explicitly setting this field to `v2` in the request.If you enabled Transactions or Enrich on or after December 3, 2025, you may only receive the `v2` taxonomy.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategoryVersion? PersonalFinanceCategoryVersion { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransactionsSyncRequestOptions"/> and sets the default values.
@@ -41,6 +41,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public TransactionsSyncRequestOptions()
         {
             AdditionalData = new Dictionary<string, object>();
+            DaysRequested = 90;
+            IncludeLogoAndCounterpartyBeta = false;
+            IncludeOriginalDescription = false;
+            IncludePersonalFinanceCategory = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

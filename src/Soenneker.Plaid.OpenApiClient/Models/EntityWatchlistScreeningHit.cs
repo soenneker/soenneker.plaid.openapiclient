@@ -45,7 +45,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>An ISO8601 formatted timestamp.</summary>
         public DateTimeOffset? InactiveSince { get; set; }
-        /// <summary>&quot;Shorthand identifier for a specific screening list for entities. `AU_CON`: Australia Department of Foreign Affairs and Trade Consolidated List `CA_CON`: Government of Canada Consolidated List of Sanctions `EU_CON`: European External Action Service Consolidated List `IZ_SOE`: State Owned Enterprise List `IZ_UNC`: United Nations Consolidated Sanctions `IZ_WBK`: World Bank Listing of Ineligible Firms and Individuals `US_CAP`: US OFAC Correspondent Account or Payable-Through Account Sanctions `US_FSE`: US OFAC Foreign Sanctions Evaders `US_MBS`: US Non-SDN Menu-Based Sanctions `US_SDN`: US Specially Designated Nationals List `US_SSI`: US OFAC Sectoral Sanctions Identifications `US_CMC`: US OFAC Non-SDN Chinese Military-Industrial Complex List `US_UVL`: Bureau of Industry and Security Unverified List `US_SAM`: US System for Award Management Exclusion List `US_TEL`: US Terrorist Exclusion List `UK_HMC`: UK HM Treasury Consolidated List&quot;</summary>
+        /// <summary>Shorthand identifier for a specific screening list for entities. `AU_CON`: Australia Department of Foreign Affairs and Trade Consolidated List `CA_CON`: Government of Canada Consolidated List of Sanctions `EU_CON`: European External Action Service Consolidated List `IZ_SOE`: State Owned Enterprise List `IZ_UNC`: United Nations Consolidated Sanctions `IZ_WBK`: World Bank Listing of Ineligible Firms and Individuals `US_CAP`: US OFAC Correspondent Account or Payable-Through Account Sanctions `US_FSE`: US OFAC Foreign Sanctions Evaders `US_MBS`: US Non-SDN Menu-Based Sanctions `US_SDN`: US OFAC Specially Designated Nationals List `US_SSI`: US OFAC Sectoral Sanctions Identifications `US_CMC`: US OFAC Non-SDN Chinese Military-Industrial Complex List `US_UVL`: Bureau of Industry and Security Unverified List `US_SAM`: US System for Award Management Exclusion List `US_TEL`: US Terrorist Exclusion List `UK_HMC`: Foreign, Commonwealth &amp; Development Office UK Sanctions List</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.EntityWatchlistCode? ListCode { get; set; }
         /// <summary>A universal identifier for a watchlist individual that is stable across searches and updates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,6 +64,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #nullable restore
 #else
         public string SourceUid { get; set; }
+#endif
+        /// <summary>Sub-program designations that may be attached to the watchlist entry by the issuing authority. For OFAC SDNentries these are the program codes published in the SDN list (for example `SDGT` for SpeciallyDesignated Global Terrorists, `SDNTK` for Specially Designated Narcotics Trafficking Kingpins,`IRAN`, `RUSSIA-EO14024`). New codes are added by sanctioning authorities without prior notice,so callers should treat unknown values as opaque strings rather than enum members.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? SubPrograms { get; set; }
+#nullable restore
+#else
+        public List<string> SubPrograms { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.EntityWatchlistScreeningHit"/> and sets the default values.
@@ -100,6 +108,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "plaid_uid", n => { PlaidUid = n.GetStringValue(); } },
                 { "review_status", n => { ReviewStatus = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningHitStatus>(); } },
                 { "source_uid", n => { SourceUid = n.GetStringValue(); } },
+                { "sub_programs", n => { SubPrograms = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -119,6 +128,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("plaid_uid", PlaidUid);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningHitStatus>("review_status", ReviewStatus);
             writer.WriteStringValue("source_uid", SourceUid);
+            writer.WriteCollectionOfPrimitiveValues<string>("sub_programs", SubPrograms);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

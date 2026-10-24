@@ -9,7 +9,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "none_detected")]
         #pragma warning disable CS1591
-        None_detected,
+        NoneDetected,
         #pragma warning restore CS1591
         [EnumMember(Value = "tor")]
         #pragma warning disable CS1591
@@ -21,11 +21,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "web_proxy")]
         #pragma warning disable CS1591
-        Web_proxy,
+        WebProxy,
         #pragma warning restore CS1591
         [EnumMember(Value = "public_proxy")]
         #pragma warning disable CS1591
-        Public_proxy,
+        PublicProxy,
         #pragma warning restore CS1591
     }
 }

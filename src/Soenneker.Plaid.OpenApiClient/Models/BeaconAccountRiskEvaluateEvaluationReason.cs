@@ -3,29 +3,29 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>&quot;Description of the reason you want to evaluate risk.`ONBOARDING`: user links a first bank account as part of the onboarding flow of your platform.`NEW_ACCOUNT`: user links another bank account or replaces the currently linked bank account on your platform.`INFORMATION_CHANGE`: user changes their information on your platform, e.g., updating their phone number.`DORMANT_USER`:  you decide to re-evaluate a user that becomes active after a period of inactivity.`OTHER`: any other reasons not listed herePossible values:  `ONBOARDING`, `NEW_ACCOUNT`, `INFORMATION_CHANGE`, `DORMANT_USER`, `OTHER`&quot;</summary>
+    /// <summary>Description of the reason you want to evaluate risk.`ONBOARDING`: user links a first bank account as part of the onboarding flow of your platform.`NEW_ACCOUNT`: user links another bank account or replaces the currently linked bank account on your platform.`INFORMATION_CHANGE`: user changes their information on your platform, e.g., updating their phone number.`DORMANT_USER`:  you decide to re-evaluate a user that becomes active after a period of inactivity.`OTHER`: any other reasons not listed herePossible values:  `ONBOARDING`, `NEW_ACCOUNT`, `INFORMATION_CHANGE`, `DORMANT_USER`, `OTHER`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BeaconAccountRiskEvaluateEvaluationReason
     {
         [EnumMember(Value = "ONBOARDING")]
         #pragma warning disable CS1591
-        ONBOARDING,
+        Onboarding,
         #pragma warning restore CS1591
         [EnumMember(Value = "NEW_ACCOUNT")]
         #pragma warning disable CS1591
-        NEW_ACCOUNT,
+        NewAccount,
         #pragma warning restore CS1591
         [EnumMember(Value = "INFORMATION_CHANGE")]
         #pragma warning disable CS1591
-        INFORMATION_CHANGE,
+        InformationChange,
         #pragma warning restore CS1591
         [EnumMember(Value = "DORMANT_USER")]
         #pragma warning disable CS1591
-        DORMANT_USER,
+        DormantUser,
         #pragma warning restore CS1591
         [EnumMember(Value = "OTHER")]
         #pragma warning disable CS1591
-        OTHER,
+        Other,
         #pragma warning restore CS1591
     }
 }

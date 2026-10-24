@@ -3,13 +3,13 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>&quot;For a payment returned by this endpoint, there is only one possible value:`PAYMENT_STATUS_INPUT_NEEDED`: The initial phase of the payment&quot;</summary>
+    /// <summary>For a payment returned by this endpoint, there is only one possible value:`PAYMENT_STATUS_INPUT_NEEDED`: The initial phase of the payment</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PaymentInitiationPaymentCreateStatus
     {
         [EnumMember(Value = "PAYMENT_STATUS_INPUT_NEEDED")]
         #pragma warning disable CS1591
-        PAYMENT_STATUS_INPUT_NEEDED,
+        PaymentStatusInputNeeded,
         #pragma warning restore CS1591
     }
 }

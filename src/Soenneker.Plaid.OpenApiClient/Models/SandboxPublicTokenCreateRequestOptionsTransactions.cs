@@ -16,11 +16,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The maximum number of days of transaction history to request for the Transactions product.</summary>
+        /// <summary>The maximum number of days of transaction history to request for the Transactions product, matching [`transactions.days_requested`](https://plaid.com/docs/api/link/#link-token-create-request-transactions-days-requested) on `/link/token/create`. If no value is specified, this defaults to 90 days. Once Transactions has been added to an Item, this value cannot be updated.</summary>
         public int? DaysRequested { get; set; }
-        /// <summary>The most recent date for which to fetch transaction history. Dates should be formatted as YYYY-MM-DD.</summary>
+        /// <summary>Use `days_requested` instead. This field has no effect on the amount of transaction history available on the Item.</summary>
+        [Obsolete("")]
         public Date? EndDate { get; set; }
-        /// <summary>The earliest date for which to fetch transaction history. Dates should be formatted as YYYY-MM-DD.</summary>
+        /// <summary>Use `days_requested` instead. This field has no effect on the amount of transaction history available on the Item.</summary>
+        [Obsolete("")]
         public Date? StartDate { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.SandboxPublicTokenCreateRequestOptionsTransactions"/> and sets the default values.
@@ -28,6 +30,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public SandboxPublicTokenCreateRequestOptionsTransactions()
         {
             AdditionalData = new Dictionary<string, object>();
+            DaysRequested = 90;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

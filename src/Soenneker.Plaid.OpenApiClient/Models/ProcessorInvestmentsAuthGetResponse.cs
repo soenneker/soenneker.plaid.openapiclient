@@ -24,10 +24,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Additional information for accounts of 401k subtype.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthAccountDetails401k>? AccountDetails401k { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthAccountDetails401K>? AccountDetails401k { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthAccountDetails401k> AccountDetails401k { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthAccountDetails401K> AccountDetails401k { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>When true, this field indicates that the Item&apos;s portfolio was manually created with the Investments Fallback flow.</summary>
         public bool? IsInvestmentsFallbackItem { get; set; }
-        /// <summary>Identifying information for transferring holdings to an investments account.</summary>
+        /// <summary>Identifying information for transferring holdings to an investment account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthGetNumbers? Numbers { get; set; }
@@ -107,7 +107,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account", n => { Account = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountBase>(global::Soenneker.Plaid.OpenApiClient.Models.AccountBase.CreateFromDiscriminatorValue); } },
-                { "account_details_401k", n => { AccountDetails401k = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthAccountDetails401k>(global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthAccountDetails401k.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "account_details_401k", n => { AccountDetails401k = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthAccountDetails401K>(global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthAccountDetails401K.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "data_sources", n => { DataSources = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthDataSources>(global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthDataSources.CreateFromDiscriminatorValue); } },
                 { "holdings", n => { Holdings = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.Holding>(global::Soenneker.Plaid.OpenApiClient.Models.Holding.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "is_investments_fallback_item", n => { IsInvestmentsFallbackItem = n.GetBoolValue(); } },
@@ -125,7 +125,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountBase>("account", Account);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthAccountDetails401k>("account_details_401k", AccountDetails401k);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthAccountDetails401K>("account_details_401k", AccountDetails401k);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthDataSources>("data_sources", DataSources);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.Holding>("holdings", Holdings);
             writer.WriteBoolValue("is_investments_fallback_item", IsInvestmentsFallbackItem);

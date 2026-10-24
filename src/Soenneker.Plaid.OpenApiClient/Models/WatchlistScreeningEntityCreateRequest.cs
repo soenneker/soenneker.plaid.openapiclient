@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Request input for creating an entity screening review
+    /// Request input for creating an entity watchlist screening
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WatchlistScreeningEntityCreateRequest : IAdditionalDataHolder, IParsable

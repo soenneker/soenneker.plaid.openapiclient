@@ -27,14 +27,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public bool? DatabaseMatchEnabled { get; set; }
         /// <summary>This field has been deprecated in favor of `auth_type_select_enabled`.</summary>
         [Obsolete("")]
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuth_flow_type? FlowType { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FlexibleAuthFlowType? FlowType { get; set; }
         /// <summary>Specifies whether the Link session is enabled for the Instant Match flow. Instant Match is enabled by default. Instant Match can be disabled by setting this field to `false`.</summary>
         public bool? InstantMatchEnabled { get; set; }
         /// <summary>Specifies whether the Link session is enabled for the Instant Micro-deposits flow.  Default behavior for Plaid teams created after November 2023 is `false`; default behavior for Plaid teams created before that date is `true`.</summary>
         public bool? InstantMicrodepositsEnabled { get; set; }
-        /// <summary>Specifies what type of [Reroute to Credentials](https://plaid.com/docs/auth/coverage/flow-options/#removing-manual-verification-entry-points-with-reroute-to-credentials) pane should be used in the Link session for the Same Day Micro-deposits flow. Default behavior is `OPTIONAL`.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuth_reroute_to_credentials? RerouteToCredentials { get; set; }
-        /// <summary>Specifies whether the Link session is enabled for the Same Day Micro-deposits flow.  Default behavior is `false`.</summary>
+        /// <summary>Specifies what type of [Reroute to Credentials](https://plaid.com/docs/auth/coverage/flow-options/#removing-manual-verification-entry-points-with-reroute-to-credentials) pane should be used in the Link session for the Same-Day Micro-deposits flow. Default behavior is `OPTIONAL`.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuthRerouteToCredentials? RerouteToCredentials { get; set; }
+        /// <summary>Specifies whether the Link session is enabled for the Same-Day Micro-deposits flow.  Default behavior is `false`.</summary>
         public bool? SameDayMicrodepositsEnabled { get; set; }
         /// <summary>Specifies whether the Link session is enabled for SMS micro-deposits verification. Default behavior is `true`.</summary>
         public bool? SmsMicrodepositsVerificationEnabled { get; set; }
@@ -67,10 +67,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "automated_microdeposits_enabled", n => { AutomatedMicrodepositsEnabled = n.GetBoolValue(); } },
                 { "database_insights_enabled", n => { DatabaseInsightsEnabled = n.GetBoolValue(); } },
                 { "database_match_enabled", n => { DatabaseMatchEnabled = n.GetBoolValue(); } },
-                { "flow_type", n => { FlowType = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuth_flow_type>(); } },
+                { "flow_type", n => { FlowType = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FlexibleAuthFlowType>(); } },
                 { "instant_match_enabled", n => { InstantMatchEnabled = n.GetBoolValue(); } },
                 { "instant_microdeposits_enabled", n => { InstantMicrodepositsEnabled = n.GetBoolValue(); } },
-                { "reroute_to_credentials", n => { RerouteToCredentials = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuth_reroute_to_credentials>(); } },
+                { "reroute_to_credentials", n => { RerouteToCredentials = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuthRerouteToCredentials>(); } },
                 { "same_day_microdeposits_enabled", n => { SameDayMicrodepositsEnabled = n.GetBoolValue(); } },
                 { "sms_microdeposits_verification_enabled", n => { SmsMicrodepositsVerificationEnabled = n.GetBoolValue(); } },
             };
@@ -86,10 +86,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteBoolValue("automated_microdeposits_enabled", AutomatedMicrodepositsEnabled);
             writer.WriteBoolValue("database_insights_enabled", DatabaseInsightsEnabled);
             writer.WriteBoolValue("database_match_enabled", DatabaseMatchEnabled);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuth_flow_type>("flow_type", FlowType);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FlexibleAuthFlowType>("flow_type", FlowType);
             writer.WriteBoolValue("instant_match_enabled", InstantMatchEnabled);
             writer.WriteBoolValue("instant_microdeposits_enabled", InstantMicrodepositsEnabled);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuth_reroute_to_credentials>("reroute_to_credentials", RerouteToCredentials);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuthRerouteToCredentials>("reroute_to_credentials", RerouteToCredentials);
             writer.WriteBoolValue("same_day_microdeposits_enabled", SameDayMicrodepositsEnabled);
             writer.WriteBoolValue("sms_microdeposits_verification_enabled", SmsMicrodepositsVerificationEnabled);
             writer.WriteAdditionalData(AdditionalData);

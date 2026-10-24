@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string RequestId { get; set; }
 #endif
-        /// <summary>The verification refresh status. One of the following:`&quot;USER_PRESENCE_REQUIRED&quot;` User presence is required to refresh an income verification.`&quot;SUCCESSFUL&quot;` The income verification refresh was successful.`&quot;NOT_FOUND&quot;` No new data was found after the income verification refresh.</summary>
+        /// <summary>The verification refresh status. One of the following:`&quot;VERIFICATION_REFRESH_SUCCESSFUL&quot;` The income verification refresh was successful.`&quot;VERIFICATION_REFRESH_NOT_FOUND&quot;` No new data was found after the income verification refresh.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VerificationRefreshStatus { get; set; }

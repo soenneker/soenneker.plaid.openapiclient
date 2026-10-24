@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
-        /// <summary>The Plaid Institution ID associated with the Item.</summary>
+        /// <summary>The Plaid Institution ID associated with the Item. Most callers omit this field; Plaid resolves your institution automatically. If your organization has multiple institutions, contact Plaid to determine whether you should send it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InstitutionId { get; set; }
@@ -31,7 +31,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string InstitutionId { get; set; }
 #endif
-        /// <summary>An optional object to configure `/item/import` request.</summary>
+        /// <summary>An optional object to configure `/item/import` request. Retained for the legacy Plaid Exchange integration; not required for Permissions Manager callers.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.ItemImportRequestOptions? Options { get; set; }
@@ -39,7 +40,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.ItemImportRequestOptions Options { get; set; }
 #endif
-        /// <summary>Array of product strings</summary>
+        /// <summary>Array of product strings. Sent only by a Plaid-internal caller, the Data Partner Dashboard validation tool; external callers never need it. Not required for Permissions Manager callers, who authenticate with `user_auth.user_id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? Products { get; set; }
@@ -55,7 +56,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Secret { get; set; }
 #endif
-        /// <summary>Object of user ID and auth token pair, permitting Plaid to aggregate a user’s accounts</summary>
+        /// <summary>Object of user ID and auth token pair, permitting Plaid to aggregate a user&apos;s accounts</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.ItemImportRequestUserAuth? UserAuth { get; set; }

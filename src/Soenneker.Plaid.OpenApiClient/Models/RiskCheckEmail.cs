@@ -36,8 +36,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).</summary>
         public Date? FirstBreachedAt { get; set; }
+        /// <summary>Indicates whether the email address includes the date of birth or year of birth if known.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailIncludesDateOfBirth? IncludesDateOfBirth { get; set; }
         /// <summary>SMTP-MX check to confirm the email address exists if known.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailIsDeliverableStatus? IsDeliverable { get; set; }
+        /// <summary>Indicates whether the email address domain is an educational institution domain if known.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailIsEdu? IsEdu { get; set; }
         /// <summary>A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).</summary>
         public Date? LastBreachedAt { get; set; }
         /// <summary>A list of online services where this email address has been detected to have accounts or other activity.</summary>
@@ -48,6 +52,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public List<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckLinkedService?> LinkedServices { get; set; }
 #endif
+        /// <summary>Indicates whether the provided name matches the email address according to the KYC name-matches-email inference result if known.`match` - &quot;The email&apos;s name identifiers match the user&apos;s name.&quot;`partial_match` - &quot;The email&apos;s name identifiers partially match the user&apos;s name.&quot;`no_match` - &quot;The email&apos;s name identifiers do not match the user&apos;s name.&quot;`indeterminate` - &quot;The email does not contain any name identifiers, and a match could not be determined.&quot;`no_input` - &quot;The user&apos;s profile does not contain the required user inputs to determine a match.&quot;`no_data` - &quot;Field could not be verified against available sources.&quot;</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailName? Name { get; set; }
         /// <summary>Risk level for the given risk check type.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.RiskLevel? RiskLevel { get; set; }
         /// <summary>Indicates whether the email address top level domain, which is the last part of the domain, is fraudulent or risky if known. In most cases, a suspicious top level domain is also associated with a disposable or high-risk domain.</summary>
@@ -84,9 +90,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "domain_registered_at", n => { DomainRegisteredAt = n.GetDateValue(); } },
                 { "factors", n => { Factors = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "first_breached_at", n => { FirstBreachedAt = n.GetDateValue(); } },
+                { "includes_date_of_birth", n => { IncludesDateOfBirth = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailIncludesDateOfBirth>(); } },
                 { "is_deliverable", n => { IsDeliverable = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailIsDeliverableStatus>(); } },
+                { "is_edu", n => { IsEdu = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailIsEdu>(); } },
                 { "last_breached_at", n => { LastBreachedAt = n.GetDateValue(); } },
                 { "linked_services", n => { LinkedServices = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckLinkedService>()?.AsList(); } },
+                { "name", n => { Name = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailName>(); } },
                 { "risk_level", n => { RiskLevel = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskLevel>(); } },
                 { "top_level_domain_is_suspicious", n => { TopLevelDomainIsSuspicious = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailTopLevelDomainIsSuspicious>(); } },
             };
@@ -105,9 +114,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDateValue("domain_registered_at", DomainRegisteredAt);
             writer.WriteCollectionOfPrimitiveValues<string>("factors", Factors);
             writer.WriteDateValue("first_breached_at", FirstBreachedAt);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailIncludesDateOfBirth>("includes_date_of_birth", IncludesDateOfBirth);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailIsDeliverableStatus>("is_deliverable", IsDeliverable);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailIsEdu>("is_edu", IsEdu);
             writer.WriteDateValue("last_breached_at", LastBreachedAt);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckLinkedService>("linked_services", LinkedServices);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailName>("name", Name);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskLevel>("risk_level", RiskLevel);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailTopLevelDomainIsSuspicious>("top_level_domain_is_suspicious", TopLevelDomainIsSuspicious);
             writer.WriteAdditionalData(AdditionalData);

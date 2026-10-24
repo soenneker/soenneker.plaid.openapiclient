@@ -16,7 +16,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The category that the recipient falls under</summary>
+        /// <summary>The category the recipient (application) falls under</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Category { get; set; }
@@ -24,7 +24,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Category { get; set; }
 #endif
-        /// <summary>The recipient name displayed by the Data Provider during the consent flow</summary>
+        /// <summary>The recipient&apos;s (application&apos;s) name, as displayed to your customers during the consent flow</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientName { get; set; }
@@ -32,11 +32,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientName { get; set; }
 #endif
-        /// <summary>The number of Data Partner consumers that are connected to the recipient for the specific Data Partner</summary>
+        /// <summary>The number of your customers connected to this recipient (application)</summary>
         public int? ConnectionCount { get; set; }
-        /// <summary>The date at which the recipient gained production access to Plaid</summary>
+        /// <summary>The date the recipient (application) gained production access to Plaid</summary>
         public Date? JoinedDate { get; set; }
-        /// <summary>Data Recipient Logo URL location</summary>
+        /// <summary>URL for the recipient&apos;s (application&apos;s) logo</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LogoUri { get; set; }
@@ -44,7 +44,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string LogoUri { get; set; }
 #endif
-        /// <summary>The recipient identifier</summary>
+        /// <summary>The recipient&apos;s (application&apos;s) identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecipientId { get; set; }
@@ -52,7 +52,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string RecipientId { get; set; }
 #endif
-        /// <summary>The legal name of the recipient</summary>
+        /// <summary>The recipient&apos;s (application&apos;s) legal entity name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ThirdPartyLegalName { get; set; }

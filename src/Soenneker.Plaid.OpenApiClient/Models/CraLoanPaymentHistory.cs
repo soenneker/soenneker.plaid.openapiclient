@@ -20,7 +20,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public double? AmountPastDue { get; set; }
         /// <summary>The balance remaining on the loan at the end of the payment period.</summary>
         public double? BalanceRemaining { get; set; }
-        /// <summary>The number of days the loan was delinquent at the end of the pay period.If specified, should be greater of equal to 0.</summary>
+        /// <summary>The number of days the loan was delinquent at the end of the pay period.If specified, should be greater than or equal to 0.</summary>
         public int? DaysPastDue { get; set; }
         /// <summary>The payment due date or end date of the payment period. The date should be in ISO 8601 format (YYYY-MM-DD).</summary>
         public Date? DueDate { get; set; }

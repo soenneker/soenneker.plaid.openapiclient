@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>The outcome status for the associated Identity Verification attempt&apos;s `selfie_check` step. This field will always have the same value as `steps.selfie_check`.</summary>
+    /// <summary>The outcome status for the associated Identity Verification attempt&apos;s `selfie_check` step. This field will be `success` if `steps.selfie_check` is `success` or `manually_approved`, and `failed` if `steps.selfie_check` is `failed` or `manually_rejected`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum SelfieCheckStatus
     {

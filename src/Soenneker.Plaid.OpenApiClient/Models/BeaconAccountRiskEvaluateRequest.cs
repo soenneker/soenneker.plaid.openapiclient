@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// BeaconAccountRiskEvaluateRequest defines the request schema for `/v1/beacon/account_risk/risk/evaluate`
+    /// BeaconAccountRiskEvaluateRequest defines the request schema for `/beacon/account_risk/v1/evaluate`
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BeaconAccountRiskEvaluateRequest : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The access token associated with the Item data is being requested for.</summary>
+        /// <summary>The access token associated with the Item for which data is being requested.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccessToken { get; set; }
@@ -55,7 +55,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.SignalDevice Device { get; set; }
 #endif
-        /// <summary>The time the event for evaluation has occurred. Populate this field for backfilling data. If you don’t populate this field, we’ll use the timestamp at the time of receipt. Use ISO 8601 format (YYYY-MM-DDTHH:mm:ssZ).</summary>
+        /// <summary>The time the event for evaluation has occurred. Populate this field for backfilling data. If you don&apos;t populate this field, we&apos;ll use the timestamp at the time of receipt. Use ISO 8601 format (YYYY-MM-DDTHH:mm:ssZ).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EvaluateTime { get; set; }
@@ -63,7 +63,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string EvaluateTime { get; set; }
 #endif
-        /// <summary>&quot;Description of the reason you want to evaluate risk.`ONBOARDING`: user links a first bank account as part of the onboarding flow of your platform.`NEW_ACCOUNT`: user links another bank account or replaces the currently linked bank account on your platform.`INFORMATION_CHANGE`: user changes their information on your platform, e.g., updating their phone number.`DORMANT_USER`:  you decide to re-evaluate a user that becomes active after a period of inactivity.`OTHER`: any other reasons not listed herePossible values:  `ONBOARDING`, `NEW_ACCOUNT`, `INFORMATION_CHANGE`, `DORMANT_USER`, `OTHER`&quot;</summary>
+        /// <summary>Description of the reason you want to evaluate risk.`ONBOARDING`: user links a first bank account as part of the onboarding flow of your platform.`NEW_ACCOUNT`: user links another bank account or replaces the currently linked bank account on your platform.`INFORMATION_CHANGE`: user changes their information on your platform, e.g., updating their phone number.`DORMANT_USER`:  you decide to re-evaluate a user that becomes active after a period of inactivity.`OTHER`: any other reasons not listed herePossible values:  `ONBOARDING`, `NEW_ACCOUNT`, `INFORMATION_CHANGE`, `DORMANT_USER`, `OTHER`</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.BeaconAccountRiskEvaluateEvaluationReason? EvaluationReason { get; set; }
         /// <summary>An optional object to filter `/beacon/account_risk/v1/evaluate` results to a subset of the accounts on the linked Item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

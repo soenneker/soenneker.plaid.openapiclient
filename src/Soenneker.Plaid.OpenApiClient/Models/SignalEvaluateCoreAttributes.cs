@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;The core attributes object contains additional data that can be used to assess the ACH return risk.If using a Balance-only ruleset, only `available_balance` and `current_balance` will be returned as core attributes. If using a Signal Transaction Scores ruleset, over 80 core attributes will be returned. Examples of attributes include:`available_balance` and `current_balance`: The balance in the ACH transaction funding account`days_since_first_plaid_connection`: The number of days since the first time the Item was connected to an application via Plaid`plaid_connections_count_7d`: The number of times the Item has been connected to applications via Plaid over the past 7 days`plaid_connections_count_30d`: The number of times the Item has been connected to applications via Plaid over the past 30 days`total_plaid_connections_count`: The number of times the Item has been connected to applications via Plaid`is_savings_or_money_market_account`: Indicates whether the ACH transaction funding account is a savings/money market accountFor the full list and detailed documentation of core attributes available, or to request that core attributes not be returned, contact Sales or your Plaid account manager.&quot;
+    /// The core attributes object contains additional data that can be used to assess the ACH return risk.If using a Balance-only ruleset, only `available_balance` and `current_balance` will be returned as core attributes. If using a Signal Transaction Scores ruleset, over 80 core attributes will be returned. Examples of attributes include:`available_balance` and `current_balance`: The balance in the ACH transaction funding account`days_since_first_plaid_connection`: The number of days since the first time the Item was connected to an application via Plaid`plaid_connections_count_7d`: The number of times the Item has been connected to applications via Plaid over the past 7 days`plaid_connections_count_30d`: The number of times the Item has been connected to applications via Plaid over the past 30 days`total_plaid_connections_count`: The number of times the Item has been connected to applications via Plaid`is_savings_or_money_market_account`: Indicates whether the ACH transaction funding account is a savings/money market accountFor the full list and detailed documentation of core attributes available, or to request that core attributes not be returned, contact sales or your Plaid account manager.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SignalEvaluateCoreAttributes : IAdditionalDataHolder, IParsable
@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public double? AvailableBalance { get; set; }
         /// <summary>Timestamp in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DDTHH:mm:ssZ) indicating the last time that the balance for the given account has been updated.</summary>
         public DateTimeOffset? BalanceLastUpdated { get; set; }
-        /// <summary>Taking `available_or_current_balance` and dividing it by the transaction amount. Useful to say “10% buffer”, for example. This is a convenience function to build Signal Rules upon.</summary>
+        /// <summary>Taking `available_or_current_balance` and dividing it by the transaction amount. Useful to say &quot;10% buffer&quot;, for example. This is a convenience function to build Signal Rules upon.</summary>
         public double? BalanceToTransactionAmountRatio { get; set; }
         /// <summary>The total number of credit (inflow) transactions over the past 10 days from the account that will be debited</summary>
         public int? CreditTransactionsCount10d { get; set; }
@@ -83,9 +83,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public int? FailedPlaidNonOauthAuthenticationAttemptsCount3d { get; set; }
         /// <summary>The number of failed non-OAuth authentication attempts via Plaid for this bank account over the past 7 days</summary>
         public int? FailedPlaidNonOauthAuthenticationAttemptsCount7d { get; set; }
-        /// <summary>Indicates if the receiver bank account is closed</summary>
+        /// <summary>Indicates if the account that will be debited is closed</summary>
         public bool? IsAccountClosed { get; set; }
-        /// <summary>Indicates if the receiver bank account is either frozen or restricted</summary>
+        /// <summary>Indicates if the account that will be debited is either frozen or restricted</summary>
         public bool? IsAccountFrozenOrRestricted { get; set; }
         /// <summary>Indicates if the ACH transaction funding account is a savings/money market account</summary>
         public bool? IsSavingsOrMoneyMarketAccount { get; set; }
@@ -103,7 +103,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public double? P10EodBalance31dTo60d { get; set; }
         /// <summary>The 10th percentile of the end-of-day available balance over the past 60 days of the account that will be debited</summary>
         public double? P10EodBalance60d { get; set; }
-        /// <summary>The 10th percentile of the end-of-day available balance between day 61 and day 90 over the past 60 days of the account that will be debited</summary>
+        /// <summary>The 10th percentile of the end-of-day available balance between day 61 and day 90 over the past 90 days of the account that will be debited</summary>
         public double? P10EodBalance61dTo90d { get; set; }
         /// <summary>The 10th percentile of the end-of-day available balance over the past 90 days of the account that will be debited</summary>
         public double? P10EodBalance90d { get; set; }
@@ -117,7 +117,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public double? P50EodBalance31dTo60d { get; set; }
         /// <summary>The 50th percentile of the end-of-day available balance over the past 60 days of the account that will be debited</summary>
         public double? P50EodBalance60d { get; set; }
-        /// <summary>The 50th percentile of the end-of-day available balance between day 61 and day 90 over the past 60 days of the account that will be debited</summary>
+        /// <summary>The 50th percentile of the end-of-day available balance between day 61 and day 90 over the past 90 days of the account that will be debited</summary>
         public double? P50EodBalance61dTo90d { get; set; }
         /// <summary>The 50th percentile of the end-of-day available balance over the past 90 days of the account that will be debited</summary>
         public double? P50EodBalance90d { get; set; }
@@ -127,7 +127,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public double? P90EodBalance31dTo60d { get; set; }
         /// <summary>The 90th percentile of the end-of-day available balance over the past 60 days of the account that will be debited</summary>
         public double? P90EodBalance60d { get; set; }
-        /// <summary>The 90th percentile of the end-of-day available balance between day 61 and day 90 over the past 60 days of the account that will be debited</summary>
+        /// <summary>The 90th percentile of the end-of-day available balance between day 61 and day 90 over the past 90 days of the account that will be debited</summary>
         public double? P90EodBalance61dTo90d { get; set; }
         /// <summary>The 90th percentile of the end-of-day available balance over the past 90 days of the account that will be debited</summary>
         public double? P90EodBalance90d { get; set; }

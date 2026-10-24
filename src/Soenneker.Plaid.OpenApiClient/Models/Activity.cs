@@ -48,7 +48,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>Enum representing the state of the action/activity.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.ActionState? State { get; set; }
-        /// <summary>This field will map to the application ID that is returned from /item/application/list, or provided to the institution in an oauth redirect.</summary>
+        /// <summary>This field will map to the application ID that is returned from `/item/application/list`, or provided to the institution in an oauth redirect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetApplicationId { get; set; }

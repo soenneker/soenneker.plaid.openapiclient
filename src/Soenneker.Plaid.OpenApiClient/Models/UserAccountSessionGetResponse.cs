@@ -31,6 +31,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditHistory IdentityEditHistory { get; set; }
 #endif
+        /// <summary>The status of this Identity Verification attempt.`active` - The Identity Verification attempt is incomplete. The user may have completed part of the session, but has neither failed nor passed.`success` - The Identity Verification attempt has completed, passing all steps defined to the associated Identity Verification template.`failed` - The user failed one or more steps in the session and was told to contact support.`expired` - The Identity Verification attempt was active for a long period of time without being completed and was automatically marked as expired. Note that sessions currently do not expire. Automatic expiration is expected to be enabled in the future.`canceled` - The Identity Verification attempt was canceled, either via the dashboard by a user, or via API. The user may have completed part of the session, but has neither failed nor passed.`pending_review` - The Identity Verification attempt template was configured to perform a screening that had one or more hits needing review.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountSessionGetResponseIdvSessionStatus? IdvSessionStatus { get; set; }
         /// <summary>The items property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,6 +40,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #nullable restore
 #else
         public List<global::Soenneker.Plaid.OpenApiClient.Models.UserAccountItem> Items { get; set; }
+#endif
+        /// <summary>The Link session identifier associated with this session. Null for sessions without a valid Link session identifier.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LinkSessionId { get; set; }
+#nullable restore
+#else
+        public string LinkSessionId { get; set; }
 #endif
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,7 +84,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "identity", n => { Identity = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentity>(global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentity.CreateFromDiscriminatorValue); } },
                 { "identity_edit_history", n => { IdentityEditHistory = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditHistory>(global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditHistory.CreateFromDiscriminatorValue); } },
+                { "idv_session_status", n => { IdvSessionStatus = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.UserAccountSessionGetResponseIdvSessionStatus>(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.UserAccountItem>(global::Soenneker.Plaid.OpenApiClient.Models.UserAccountItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "link_session_id", n => { LinkSessionId = n.GetStringValue(); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
             };
         }
@@ -87,7 +99,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentity>("identity", Identity);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditHistory>("identity_edit_history", IdentityEditHistory);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.UserAccountSessionGetResponseIdvSessionStatus>("idv_session_status", IdvSessionStatus);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.UserAccountItem>("items", Items);
+            writer.WriteStringValue("link_session_id", LinkSessionId);
             writer.WriteStringValue("request_id", RequestId);
             writer.WriteAdditionalData(AdditionalData);
         }

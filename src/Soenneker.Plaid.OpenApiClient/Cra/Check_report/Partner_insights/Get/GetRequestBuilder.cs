@@ -34,10 +34,10 @@ namespace Soenneker.Plaid.OpenApiClient.Cra.Check_report.Partner_insights.Get
         {
         }
         /// <summary>
-        /// This endpoint allows you to retrieve the Partner Insights report for your user. You should call this endpoint after you&apos;ve received a `CHECK_REPORT_READY` or a `USER_CHECK_REPORT_READY` webhook, either after the Link session for the user or after calling `/cra/check_report/create`. If the most recent consumer report for the user doesn’t have sufficient data to generate the base report, or the consumer report has expired, you will receive an error indicating that you should create a new consumer report by calling `/cra/check_report/create`.If you did not initialize Link with the `credit_partner_insights` product or have generated a report using `/cra/check_report/create`, we will call our partners to generate the insights when you call this endpoint. In this case, you may optionally provide parameters under `options` to configure which insights you want to receive.
+        /// This endpoint allows you to retrieve the Partner Insights report for your user. You should call this endpoint after you&apos;ve received a `CHECK_REPORT_READY` or a `USER_CHECK_REPORT_READY` webhook, either after the Link session for the user or after calling `/cra/check_report/create`. If the most recent consumer report for the user doesn&apos;t have sufficient data to generate the report, or the consumer report has expired, you will receive an error indicating that you should create a new consumer report by calling `/cra/check_report/create`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportPartnerInsightsGetResponse"/></returns>
-        /// <param name="body">CraPartnerInsightsGetRequest defines the request schema for `/cra/partner_insights/get`.</param>
+        /// <param name="body">CraCheckReportPartnerInsightsGetRequest defines the request schema for `/cra/check_report/partner_insights/get`.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Plaid.OpenApiClient.Models.PlaidError">When receiving a 4XX or 5XX status code</exception>
@@ -59,10 +59,10 @@ namespace Soenneker.Plaid.OpenApiClient.Cra.Check_report.Partner_insights.Get
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportPartnerInsightsGetResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportPartnerInsightsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint allows you to retrieve the Partner Insights report for your user. You should call this endpoint after you&apos;ve received a `CHECK_REPORT_READY` or a `USER_CHECK_REPORT_READY` webhook, either after the Link session for the user or after calling `/cra/check_report/create`. If the most recent consumer report for the user doesn’t have sufficient data to generate the base report, or the consumer report has expired, you will receive an error indicating that you should create a new consumer report by calling `/cra/check_report/create`.If you did not initialize Link with the `credit_partner_insights` product or have generated a report using `/cra/check_report/create`, we will call our partners to generate the insights when you call this endpoint. In this case, you may optionally provide parameters under `options` to configure which insights you want to receive.
+        /// This endpoint allows you to retrieve the Partner Insights report for your user. You should call this endpoint after you&apos;ve received a `CHECK_REPORT_READY` or a `USER_CHECK_REPORT_READY` webhook, either after the Link session for the user or after calling `/cra/check_report/create`. If the most recent consumer report for the user doesn&apos;t have sufficient data to generate the report, or the consumer report has expired, you will receive an error indicating that you should create a new consumer report by calling `/cra/check_report/create`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">CraPartnerInsightsGetRequest defines the request schema for `/cra/partner_insights/get`.</param>
+        /// <param name="body">CraCheckReportPartnerInsightsGetRequest defines the request schema for `/cra/check_report/partner_insights/get`.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

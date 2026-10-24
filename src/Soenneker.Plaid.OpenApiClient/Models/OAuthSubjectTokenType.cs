@@ -9,15 +9,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "urn:plaid:params:tokens:user")]
         #pragma warning disable CS1591
-        UrnPlaidParamsTokensUser,
+        UrnColonPlaidColonParamsColonTokensColonUser,
         #pragma warning restore CS1591
         [EnumMember(Value = "urn:plaid:params:oauth:user-token")]
         #pragma warning disable CS1591
-        UrnPlaidParamsOauthUserToken,
+        UrnColonPlaidColonParamsColonOauthColonUserToken,
         #pragma warning restore CS1591
         [EnumMember(Value = "urn:plaid:params:credit:multi-user")]
         #pragma warning disable CS1591
-        UrnPlaidParamsCreditMultiUser,
+        UrnColonPlaidColonParamsColonCreditColonMultiUser,
         #pragma warning restore CS1591
     }
 }

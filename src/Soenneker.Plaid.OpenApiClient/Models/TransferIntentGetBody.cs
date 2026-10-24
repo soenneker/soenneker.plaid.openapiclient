@@ -21,11 +21,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string AccountId { get; set; }
 #endif
-        /// <summary>&quot;Specifies the use case of the transfer. Required for transfers on an ACH network. For more details, see [ACH SEC codes](https://plaid.com/docs/transfer/creating-transfers/#ach-sec-codes).Codes supported for credits: `ccd`, `ppd`Codes supported for debits: `ccd`, `tel`, `web``\&quot;ccd\&quot;` - Corporate Credit or Debit - fund transfer between two corporate bank accounts`\&quot;ppd\&quot;` - Prearranged Payment or Deposit - The transfer is part of a pre-existing relationship with a consumer. Authorization was obtained in writing either in person or via an electronic document signing, e.g. Docusign, by the consumer. Can be used for credits or debits.`\&quot;web\&quot;` - Internet-Initiated Entry. The transfer debits a consumer’s bank account. Authorization from the consumer is obtained over the Internet (e.g. a web or mobile application). Can be used for single debits or recurring debits.`\&quot;tel\&quot;` - Telephone-Initiated Entry. The transfer debits a consumer. Debit authorization has been received orally over the telephone via a recorded call.&quot;</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ACHClass? AchClass { get; set; }
+        /// <summary>Specifies the use case of the transfer. Required for transfers on an ACH network. For more details, see [ACH SEC codes](https://plaid.com/docs/transfer/creating-transfers/#ach-sec-codes).Codes supported for credits: `ccd`, `ppd`Codes supported for debits: `ccd`, `ppd`, `tel`, `web``&quot;ccd&quot;` - Corporate Credit or Debit - fund transfer between two corporate bank accounts`&quot;ppd&quot;` - Prearranged Payment or Deposit - The transfer is part of a pre-existing relationship with a consumer. Authorization was obtained in writing either in person or via an electronic document signing, e.g. Docusign, by the consumer. Can be used for credits or debits.`&quot;web&quot;` - Internet-Initiated Entry. The transfer debits a consumer&apos;s bank account. Authorization from the consumer is obtained over the Internet (e.g. a web or mobile application). Can be used for single debits or recurring debits.`&quot;tel&quot;` - Telephone-Initiated Entry. The transfer debits a consumer. Debit authorization has been received orally over the telephone via a recorded call.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.AchClass? AchClass { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount of the transfer (decimal string with two digits of precision e.g. &quot;10.00&quot;). When calling `/transfer/authorization/create`, specify the maximum amount to authorize. When calling `/transfer/create`, specify the exact amount of the transfer, up to a maximum of the amount authorized. If this field is left blank when calling `/transfer/create`, the maximum amount authorized in the `authorization_id` will be sent.</summary>
+        /// <summary>The amount of the transfer (decimal string with two digits of precision e.g. &quot;10.00&quot;). When calling `/transfer/authorization/create`, specify the maximum amount to authorize. When calling `/transfer/create`, specify the exact amount of the transfer, up to a maximum of the amount authorized. If this field is left blank when calling `/transfer/create`, the maximum amount authorized in the `authorization_id` will be sent. If the authorization&apos;s `guarantee_details.outcome` is `PARTIAL_INSTANT_ONLY`, this field is required when calling `/transfer/create`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Amount { get; set; }
@@ -33,7 +33,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Amount { get; set; }
 #endif
-        /// <summary>A decision regarding the proposed transfer.`APPROVED` – The proposed transfer has received the end user&apos;s consent and has been approved for processing by Plaid. The `decision_rationale` field is set if Plaid was unable to fetch the account information. You may proceed with the transfer, but further review is recommended (i.e., use Link in update mode to re-authenticate your user when `decision_rationale.code` is `ITEM_LOGIN_REQUIRED`). Refer to the `code` field in the `decision_rationale` object for details.`DECLINED` – Plaid reviewed the proposed transfer and declined processing. Refer to the `code` field in the `decision_rationale` object for details.</summary>
+        /// <summary>A decision regarding the proposed transfer.`APPROVED` - The proposed transfer has received the end user&apos;s consent and has been approved for processing by Plaid. The `decision_rationale` field is set if Plaid was unable to fetch the account information. You may proceed with the transfer, but further review is recommended (i.e., use Link in update mode to re-authenticate your user when `decision_rationale.code` is `ITEM_LOGIN_REQUIRED`). Refer to the `code` field in the `decision_rationale` object for details.`DECLINED` - Plaid reviewed the proposed transfer and declined processing. Refer to the `code` field in the `decision_rationale` object for details.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentAuthorizationDecision? AuthorizationDecision { get; set; }
         /// <summary>The rationale for Plaid&apos;s decision regarding a proposed transfer. It is always set for `declined` decisions, and may or may not be null for `approved` decisions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,7 +45,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>The datetime the transfer was created. This will be of the form `2006-01-02T15:04:05Z`.</summary>
         public DateTimeOffset? Created { get; set; }
-        /// <summary>A description for the underlying transfer. Maximum of 8 characters.</summary>
+        /// <summary>A description for the underlying transfer. Maximum of 15 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -70,8 +70,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public string FundingAccountId { get; set; }
 #endif
         /// <summary>Indicates whether the transfer is guaranteed by Plaid (Guarantee customers only). This field will contain either `GUARANTEED` or `NOT_GUARANTEED` indicating whether Plaid will guarantee the transfer.</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecision? GuaranteeDecision { get; set; }
         /// <summary>The rationale for Plaid&apos;s decision to not guarantee a transfer. Will be `null` unless `guarantee_decision` is `NOT_GUARANTEED`.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale? GuaranteeDecisionRationale { get; set; }
@@ -98,16 +100,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The Metadata object is a mapping of client-provided string fields to any string value. The following limitations apply:The JSON values must be Strings (no nested JSON objects allowed)Only ASCII characters may be usedMaximum of 50 key/value pairsMaximum key length of 40 charactersMaximum value length of 500 characters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferMetadata? Metadata { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentGetBodyMetadata? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferMetadata Metadata { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentGetBodyMetadata Metadata { get; set; }
 #endif
-        /// <summary>&quot;The direction of the flow of transfer funds.`PAYMENT`: Transfers funds from an end user&apos;s account to your business account.`DISBURSEMENT`: Transfers funds from your business account to an end user&apos;s account.&quot;</summary>
+        /// <summary>The direction of the flow of transfer funds.`PAYMENT`: Transfers funds from an end user&apos;s account to your business account.`DISBURSEMENT`: Transfers funds from your business account to an end user&apos;s account.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentCreateMode? Mode { get; set; }
         /// <summary>The network or rails used for the transfer. Defaults to `same-day-ach`.For transfers submitted using `ach`, the Standard ACH cutoff is 8:30 PM Eastern Time.For transfers submitted using `same-day-ach`, the Same Day ACH cutoff is 3:00 PM Eastern Time. It is recommended to send the request 15 minutes prior to the cutoff to ensure that it will be processed in time for submission before the cutoff. If the transfer is processed after this cutoff but before the Standard ACH cutoff, it will be sent over Standard ACH rails and will not incur same-day charges.For transfers submitted using `rtp`, in the case that the account being credited does not support RTP, the transfer will be sent over ACH as long as an `ach_class` is provided in the request. If RTP isn&apos;t supported by the account and no `ach_class` is provided, the transfer will fail to be submitted.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentCreateNetwork? Network { get; set; }
-        /// <summary>Plaid’s unique identifier for the origination account used for the transfer.</summary>
+        /// <summary>Plaid&apos;s unique identifier for the origination account used for the transfer.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -118,7 +120,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>When `true`, the transfer requires a `GUARANTEED` decision by Plaid to proceed (Guarantee customers only).</summary>
         public bool? RequireGuarantee { get; set; }
-        /// <summary>&quot;The status of the transfer intent.`PENDING`: The transfer intent is pending.`SUCCEEDED`: The transfer intent was successfully created.`FAILED`: The transfer intent was unable to be created.&quot;</summary>
+        /// <summary>The status of the transfer intent.`PENDING`: The transfer intent is pending.`SUCCEEDED`: The transfer intent was successfully created.`FAILED`: The transfer intent was unable to be created.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentStatus? Status { get; set; }
         /// <summary>Plaid&apos;s unique identifier for the transfer created through the UI. Returned only if the transfer was successfully created. Null value otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -142,7 +144,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public TransferIntentGetBody()
         {
             AdditionalData = new Dictionary<string, object>();
-            Network = global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentCreateNetwork.SameDayAch;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -163,7 +164,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
-                { "ach_class", n => { AchClass = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ACHClass>(); } },
+                { "ach_class", n => { AchClass = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AchClass>(); } },
                 { "amount", n => { Amount = n.GetStringValue(); } },
                 { "authorization_decision", n => { AuthorizationDecision = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentAuthorizationDecision>(); } },
                 { "authorization_decision_rationale", n => { AuthorizationDecisionRationale = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale>(global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale.CreateFromDiscriminatorValue); } },
@@ -175,7 +176,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "guarantee_decision_rationale", n => { GuaranteeDecisionRationale = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale>(global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "iso_currency_code", n => { IsoCurrencyCode = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferMetadata>(global::Soenneker.Plaid.OpenApiClient.Models.TransferMetadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentGetBodyMetadata>(global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentGetBodyMetadata.CreateFromDiscriminatorValue); } },
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentCreateMode>(); } },
                 { "network", n => { Network = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentCreateNetwork>(); } },
                 { "origination_account_id", n => { OriginationAccountId = n.GetStringValue(); } },
@@ -193,7 +194,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ACHClass>("ach_class", AchClass);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AchClass>("ach_class", AchClass);
             writer.WriteStringValue("amount", Amount);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentAuthorizationDecision>("authorization_decision", AuthorizationDecision);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale>("authorization_decision_rationale", AuthorizationDecisionRationale);
@@ -205,7 +206,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale>("guarantee_decision_rationale", GuaranteeDecisionRationale);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("iso_currency_code", IsoCurrencyCode);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferMetadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentGetBodyMetadata>("metadata", Metadata);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentCreateMode>("mode", Mode);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentCreateNetwork>("network", Network);
             writer.WriteStringValue("origination_account_id", OriginationAccountId);

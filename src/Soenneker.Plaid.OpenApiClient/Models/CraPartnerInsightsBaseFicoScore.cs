@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Details about the base FICO score associated with an UltraFICO scoring request.
+    /// Details about the base FICO score associated with an UltraFICO® scoring request.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraPartnerInsightsBaseFicoScore : IAdditionalDataHolder, IParsable
@@ -19,9 +19,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsBaseFicoScoreVersion? BaseFicoScoreVersion { get; set; }
         /// <summary>The credit bureau that provided the base FICO score.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsBureau? Bureau { get; set; }
-        /// <summary>Whether inquiries adversely affected this score but were not represented in one of the four reason codes. Sometimes referred to as the FACTA Flag.</summary>
+        /// <summary>Whether inquiries adversely affected the score but were not represented in one of the four reason codes. Sometimes referred to as the FACTA Flag.</summary>
         public bool? DidInquiriesAdverselyAffectScore { get; set; }
-        /// <summary>The first reason code associated with the score.</summary>
+        /// <summary>Deprecated. Use `reason_codes` instead. The first reason code associated with the score.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReasonCode1 { get; set; }
@@ -29,7 +30,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ReasonCode1 { get; set; }
 #endif
-        /// <summary>The second reason code associated with the score.</summary>
+        /// <summary>Deprecated. Use `reason_codes` instead. The second reason code associated with the score.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReasonCode2 { get; set; }
@@ -37,7 +39,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ReasonCode2 { get; set; }
 #endif
-        /// <summary>The third reason code associated with the score.</summary>
+        /// <summary>Deprecated. Use `reason_codes` instead. The third reason code associated with the score.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReasonCode3 { get; set; }
@@ -45,13 +48,22 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ReasonCode3 { get; set; }
 #endif
-        /// <summary>The fourth reason code associated with the score.</summary>
+        /// <summary>Deprecated. Use `reason_codes` instead. The fourth reason code associated with the score.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReasonCode4 { get; set; }
 #nullable restore
 #else
         public string ReasonCode4 { get; set; }
+#endif
+        /// <summary>Reason codes associated with the score, in priority order. May contain up to 4 items.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ReasonCodes { get; set; }
+#nullable restore
+#else
+        public List<string> ReasonCodes { get; set; }
 #endif
         /// <summary>Numeric value of the base FICO score.</summary>
         public int? Score { get; set; }
@@ -87,6 +99,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "reason_code_2", n => { ReasonCode2 = n.GetStringValue(); } },
                 { "reason_code_3", n => { ReasonCode3 = n.GetStringValue(); } },
                 { "reason_code_4", n => { ReasonCode4 = n.GetStringValue(); } },
+                { "reason_codes", n => { ReasonCodes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "score", n => { Score = n.GetIntValue(); } },
             };
         }
@@ -104,6 +117,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("reason_code_2", ReasonCode2);
             writer.WriteStringValue("reason_code_3", ReasonCode3);
             writer.WriteStringValue("reason_code_4", ReasonCode4);
+            writer.WriteCollectionOfPrimitiveValues<string>("reason_codes", ReasonCodes);
             writer.WriteIntValue("score", Score);
             writer.WriteAdditionalData(AdditionalData);
         }

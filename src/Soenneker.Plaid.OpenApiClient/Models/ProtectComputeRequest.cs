@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
-        /// <summary>The name of the Trust Index model to use for calculating the Trust Index Score, with a major.minor version suffix. Examples include `ti-link-session-2.0` and `ti-identity-2.0`. The model specified may require certain fields within `model_inputs`. For example, `ti-link-session-2.0` requires the `link` field to be provided in `model_inputs`.</summary>
+        /// <summary>The name of the Trust Index model to use for scoring. Examples: `ti-link-session-3` or `ti-link-session-3.0` (link-session fraud), `ti-identity-2.0` (identity fraud), and `cash-advance-ongoing-&lt;client&gt;-1.0` (cash advances). Cash-advance models are client-scoped; use the model name issued for your client. The model specified may require certain fields within `model_inputs`; for example, `ti-link-session-2` requires the `link` field. Cash-advance models do not use `model_inputs`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Model { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Model { get; set; }
 #endif
-        /// <summary>Inputs for the Trust Index model. The `link` field is required for any link session model type.</summary>
+        /// <summary>Inputs required by certain Trust Index models. The `link` field is required for link-session models. Other model families (including cash-advance) are identified by `user` alone and do not use this object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.ProtectModelInputs? ModelInputs { get; set; }
@@ -47,7 +47,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Secret { get; set; }
 #endif
-        /// <summary>Represents an end user for /protect/compute requests.</summary>
+        /// <summary>Represents an end user for `/protect/compute` requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.ProtectUser? User { get; set; }

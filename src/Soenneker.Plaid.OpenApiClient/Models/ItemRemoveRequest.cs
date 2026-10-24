@@ -13,7 +13,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ItemRemoveRequest : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The access token associated with the Item data is being requested for.</summary>
+        /// <summary>The access token associated with the Item for which data is being requested.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccessToken { get; set; }
@@ -31,9 +31,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
-        /// <summary>&quot;The reason for removing the item`FRAUD_FIRST_PARTY`: The end user who owns the connected bank account committed fraud`FRAUD_FALSE_IDENTITY`: The end user created the connection using false identity information or stolen credentials`FRAUD_ABUSE`: The end user is abusing the client&apos;s service or platform through their connected account`FRAUD_OTHER`: Other fraud-related reasons involving the end user not covered by the specific fraud categories`CONNECTION_IS_NON_FUNCTIONAL`: The connection to the end user&apos;s financial institution is broken and cannot be restored`OTHER`: Any other reason for removing the connection not covered by the above categories&quot;</summary>
+        /// <summary>The reason for removing the Item`FRAUD_FIRST_PARTY`: The end user who owns the connected bank account committed fraud`FRAUD_FALSE_IDENTITY`: The end user created the connection using false identity information or stolen credentials`FRAUD_ABUSE`: The end user is abusing the client&apos;s service or platform through their connected account`FRAUD_OTHER`: Other fraud-related reasons involving the end user not covered by the specific fraud categories`CONNECTION_IS_NON_FUNCTIONAL`: The connection to the end user&apos;s financial institution is broken and cannot be restored`OTHER`: Any other reason for removing the connection not covered by the above categories</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.ItemRemoveReasonCode? ReasonCode { get; set; }
-        /// <summary>Additional context or details about the reason for removing the item. Personally identifiable information, such as an email address or phone number, should not be included in the `reason_note`.</summary>
+        /// <summary>Additional context or details about the reason for removing the Item. Personally identifiable information, such as an email address or phone number, should not be included in the `reason_note`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReasonNote { get; set; }

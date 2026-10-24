@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Indicates whether fraud risk was detected on the field.</summary>
+        /// <summary>Indicates whether fraud risk was detected for this risk signal.</summary>
         public bool? HasFraudRisk { get; set; }
         /// <summary>The relevant page associated with the risk signal. If the risk signal is not associated with a specific page, the value will be 0.</summary>
         public int? PageNumber { get; set; }

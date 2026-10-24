@@ -26,6 +26,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>The counterparty&apos;s birthdate, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) (YYYY-MM-DD) format.</summary>
         public Date? DateOfBirth { get; set; }
+        /// <summary>Whether the counterparty is a personal or a business account holder. Payee verification schemes match a different set of identifiers for a natural person and a legal entity.`personal`: the counterparty is an individual.`business`: the counterparty is a company.If this is omitted, a payee verification check on a GBP payout returns `CHECK_NOT_POSSIBLE`. Accepted on `/wallet/transaction/execute` and not returned on read endpoints.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyHolderCategoryComposed? HolderCategory { get; set; }
+        /// <summary>Set to `true` if you have already verified that this counterparty owns the account, either through your own checks or through Plaid Auth or Identity. Plaid then skips its payee verification check.Whether Plaid runs a check is determined by Plaid configuration, so this field can only suppress a check and never request one. Only applies to GBP payouts.Accepted on `/wallet/transaction/execute` and not returned on read endpoints.</summary>
+        public bool? IsVerified { get; set; }
         /// <summary>The name of the counterparty</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -34,7 +38,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The counterparty&apos;s bank account numbers. Exactly one of IBAN or BACS data is required.</summary>
+        /// <summary>The counterparty&apos;s bank account numbers. Exactly one of IBAN or Bacs data is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyNumbers? Numbers { get; set; }
@@ -69,6 +73,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationAddress>(global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationAddress.CreateFromDiscriminatorValue); } },
                 { "date_of_birth", n => { DateOfBirth = n.GetDateValue(); } },
+                { "holder_category", n => { HolderCategory = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyHolderCategoryComposed>(); } },
+                { "is_verified", n => { IsVerified = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "numbers", n => { Numbers = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyNumbers>(global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyNumbers.CreateFromDiscriminatorValue); } },
             };
@@ -82,6 +88,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationAddress>("address", Address);
             writer.WriteDateValue("date_of_birth", DateOfBirth);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyHolderCategoryComposed>("holder_category", HolderCategory);
+            writer.WriteBoolValue("is_verified", IsVerified);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyNumbers>("numbers", Numbers);
             writer.WriteAdditionalData(AdditionalData);

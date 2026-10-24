@@ -21,7 +21,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "balance_plus")]
         #pragma warning disable CS1591
-        Balance_plus,
+        BalancePlus,
         #pragma warning restore CS1591
         [EnumMember(Value = "beacon")]
         #pragma warning disable CS1591
@@ -33,7 +33,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "identity_match")]
         #pragma warning disable CS1591
-        Identity_match,
+        IdentityMatch,
         #pragma warning restore CS1591
         [EnumMember(Value = "investments")]
         #pragma warning disable CS1591
@@ -41,7 +41,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "investments_auth")]
         #pragma warning disable CS1591
-        Investments_auth,
+        InvestmentsAuth,
         #pragma warning restore CS1591
         [EnumMember(Value = "liabilities")]
         #pragma warning disable CS1591
@@ -49,11 +49,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "payment_initiation")]
         #pragma warning disable CS1591
-        Payment_initiation,
+        PaymentInitiation,
         #pragma warning restore CS1591
         [EnumMember(Value = "identity_verification")]
         #pragma warning disable CS1591
-        Identity_verification,
+        IdentityVerification,
         #pragma warning restore CS1591
         [EnumMember(Value = "transactions")]
         #pragma warning disable CS1591
@@ -61,7 +61,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "credit_details")]
         #pragma warning disable CS1591
-        Credit_details,
+        CreditDetails,
         #pragma warning restore CS1591
         [EnumMember(Value = "income")]
         #pragma warning disable CS1591
@@ -69,11 +69,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "income_verification")]
         #pragma warning disable CS1591
-        Income_verification,
+        IncomeVerification,
         #pragma warning restore CS1591
         [EnumMember(Value = "standing_orders")]
         #pragma warning disable CS1591
-        Standing_orders,
+        StandingOrders,
         #pragma warning restore CS1591
         [EnumMember(Value = "transfer")]
         #pragma warning disable CS1591
@@ -85,11 +85,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "recurring_transactions")]
         #pragma warning disable CS1591
-        Recurring_transactions,
+        RecurringTransactions,
         #pragma warning restore CS1591
         [EnumMember(Value = "transactions_refresh")]
         #pragma warning disable CS1591
-        Transactions_refresh,
+        TransactionsRefresh,
         #pragma warning restore CS1591
         [EnumMember(Value = "signal")]
         #pragma warning disable CS1591
@@ -101,11 +101,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "processor_payments")]
         #pragma warning disable CS1591
-        Processor_payments,
+        ProcessorPayments,
         #pragma warning restore CS1591
         [EnumMember(Value = "processor_identity")]
         #pragma warning disable CS1591
-        Processor_identity,
+        ProcessorIdentity,
         #pragma warning restore CS1591
         [EnumMember(Value = "profile")]
         #pragma warning disable CS1591
@@ -113,35 +113,43 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "cra_base_report")]
         #pragma warning disable CS1591
-        Cra_base_report,
+        CraBaseReport,
         #pragma warning restore CS1591
         [EnumMember(Value = "cra_income_insights")]
         #pragma warning disable CS1591
-        Cra_income_insights,
+        CraIncomeInsights,
         #pragma warning restore CS1591
         [EnumMember(Value = "cra_partner_insights")]
         #pragma warning disable CS1591
-        Cra_partner_insights,
+        CraPartnerInsights,
         #pragma warning restore CS1591
         [EnumMember(Value = "cra_network_insights")]
         #pragma warning disable CS1591
-        Cra_network_insights,
+        CraNetworkInsights,
         #pragma warning restore CS1591
         [EnumMember(Value = "cra_cashflow_insights")]
         #pragma warning disable CS1591
-        Cra_cashflow_insights,
+        CraCashflowInsights,
         #pragma warning restore CS1591
         [EnumMember(Value = "cra_monitoring")]
         #pragma warning disable CS1591
-        Cra_monitoring,
+        CraMonitoring,
         #pragma warning restore CS1591
         [EnumMember(Value = "cra_lend_score")]
         #pragma warning disable CS1591
-        Cra_lend_score,
+        CraLendScore,
         #pragma warning restore CS1591
         [EnumMember(Value = "cra_plaid_credit_score")]
         #pragma warning disable CS1591
-        Cra_plaid_credit_score,
+        CraPlaidCreditScore,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cra_qualify")]
+        #pragma warning disable CS1591
+        CraQualify,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cra_home_lending")]
+        #pragma warning disable CS1591
+        CraHomeLending,
         #pragma warning restore CS1591
         [EnumMember(Value = "layer")]
         #pragma warning disable CS1591
@@ -149,15 +157,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "pay_by_bank")]
         #pragma warning disable CS1591
-        Pay_by_bank,
+        PayByBank,
         #pragma warning restore CS1591
         [EnumMember(Value = "protect_linked_bank")]
         #pragma warning disable CS1591
-        Protect_linked_bank,
+        ProtectLinkedBank,
         #pragma warning restore CS1591
         [EnumMember(Value = "protect_transactions")]
         #pragma warning disable CS1591
-        Protect_transactions,
+        ProtectTransactions,
         #pragma warning restore CS1591
     }
 }

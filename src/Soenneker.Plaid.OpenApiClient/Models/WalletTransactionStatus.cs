@@ -3,33 +3,33 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>&quot;The status of the transaction.`AUTHORISING`: The transaction is being processed for validation and compliance.`INITIATED`: The transaction has been initiated and is currently being processed.`EXECUTED`: The transaction has been successfully executed and is considered complete. This is only applicable for debit transactions.`SETTLED`: The transaction has settled and funds are available for use. This is only applicable for credit transactions. A transaction will typically settle within seconds to several days, depending on which payment rail is used.`FAILED`: The transaction failed to process successfully. This is a terminal status.`BLOCKED`: The transaction has been blocked for violating compliance rules. This is a terminal status.&quot;</summary>
+    /// <summary>The status of the transaction.`AUTHORISING`: The transaction is being processed for validation and compliance.`INITIATED`: The transaction has been initiated and is currently being processed.`EXECUTED`: The transaction has been successfully executed and is considered complete. This is only applicable for debit transactions.`SETTLED`: The transaction has settled and funds are available for use. This is only applicable for credit transactions. A transaction will typically settle within seconds to several days, depending on which payment rail is used.`FAILED`: The transaction failed to process successfully. This is a terminal status.`BLOCKED`: The transaction has been blocked for violating compliance rules. This is a terminal status.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WalletTransactionStatus
     {
         [EnumMember(Value = "AUTHORISING")]
         #pragma warning disable CS1591
-        AUTHORISING,
+        Authorising,
         #pragma warning restore CS1591
         [EnumMember(Value = "INITIATED")]
         #pragma warning disable CS1591
-        INITIATED,
+        Initiated,
         #pragma warning restore CS1591
         [EnumMember(Value = "EXECUTED")]
         #pragma warning disable CS1591
-        EXECUTED,
+        Executed,
         #pragma warning restore CS1591
         [EnumMember(Value = "SETTLED")]
         #pragma warning disable CS1591
-        SETTLED,
+        Settled,
         #pragma warning restore CS1591
         [EnumMember(Value = "BLOCKED")]
         #pragma warning disable CS1591
-        BLOCKED,
+        Blocked,
         #pragma warning restore CS1591
         [EnumMember(Value = "FAILED")]
         #pragma warning disable CS1591
-        FAILED,
+        Failed,
         #pragma warning restore CS1591
     }
 }

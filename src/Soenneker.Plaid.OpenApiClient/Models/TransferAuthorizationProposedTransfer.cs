@@ -21,11 +21,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string AccountId { get; set; }
 #endif
-        /// <summary>&quot;Specifies the use case of the transfer. Required for transfers on an ACH network. For more details, see [ACH SEC codes](https://plaid.com/docs/transfer/creating-transfers/#ach-sec-codes).Codes supported for credits: `ccd`, `ppd`Codes supported for debits: `ccd`, `tel`, `web``\&quot;ccd\&quot;` - Corporate Credit or Debit - fund transfer between two corporate bank accounts`\&quot;ppd\&quot;` - Prearranged Payment or Deposit - The transfer is part of a pre-existing relationship with a consumer. Authorization was obtained in writing either in person or via an electronic document signing, e.g. Docusign, by the consumer. Can be used for credits or debits.`\&quot;web\&quot;` - Internet-Initiated Entry. The transfer debits a consumer’s bank account. Authorization from the consumer is obtained over the Internet (e.g. a web or mobile application). Can be used for single debits or recurring debits.`\&quot;tel\&quot;` - Telephone-Initiated Entry. The transfer debits a consumer. Debit authorization has been received orally over the telephone via a recorded call.&quot;</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ACHClass? AchClass { get; set; }
+        /// <summary>Specifies the use case of the transfer. Required for transfers on an ACH network. For more details, see [ACH SEC codes](https://plaid.com/docs/transfer/creating-transfers/#ach-sec-codes).Codes supported for credits: `ccd`, `ppd`Codes supported for debits: `ccd`, `ppd`, `tel`, `web``&quot;ccd&quot;` - Corporate Credit or Debit - fund transfer between two corporate bank accounts`&quot;ppd&quot;` - Prearranged Payment or Deposit - The transfer is part of a pre-existing relationship with a consumer. Authorization was obtained in writing either in person or via an electronic document signing, e.g. Docusign, by the consumer. Can be used for credits or debits.`&quot;web&quot;` - Internet-Initiated Entry. The transfer debits a consumer&apos;s bank account. Authorization from the consumer is obtained over the Internet (e.g. a web or mobile application). Can be used for single debits or recurring debits.`&quot;tel&quot;` - Telephone-Initiated Entry. The transfer debits a consumer. Debit authorization has been received orally over the telephone via a recorded call.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.AchClass? AchClass { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount of the transfer (decimal string with two digits of precision e.g. &quot;10.00&quot;). When calling `/transfer/authorization/create`, specify the maximum amount to authorize. When calling `/transfer/create`, specify the exact amount of the transfer, up to a maximum of the amount authorized. If this field is left blank when calling `/transfer/create`, the maximum amount authorized in the `authorization_id` will be sent.</summary>
+        /// <summary>The amount of the transfer (decimal string with two digits of precision e.g. &quot;10.00&quot;). When calling `/transfer/authorization/create`, specify the maximum amount to authorize. When calling `/transfer/create`, specify the exact amount of the transfer, up to a maximum of the amount authorized. If this field is left blank when calling `/transfer/create`, the maximum amount authorized in the `authorization_id` will be sent. If the authorization&apos;s `guarantee_details.outcome` is `PARTIAL_INSTANT_ONLY`, this field is required when calling `/transfer/create`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Amount { get; set; }
@@ -33,15 +33,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Amount { get; set; }
 #endif
-        /// <summary>The credit_funds_source property</summary>
+        /// <summary>This field is now deprecated. You may ignore it for transfers created on and after 12/01/2023.Specifies the source of funds for the transfer. Only valid for `credit` transfers, and defaults to `sweep` if not specified. This field is not specified for `debit` transfers.`sweep` - Sweep funds from your funding account`prefunded_rtp_credits` - Use your prefunded RTP credit balance with Plaid`prefunded_ach_credits` - Use your prefunded ACH credit balance with Plaid</summary>
         [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransfer_credit_funds_source? CreditFundsSource { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransfer_credit_funds_source CreditFundsSource { get; set; }
-#endif
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransferCreditFundsSource? CreditFundsSource { get; set; }
         /// <summary>The id of the associated funding account, available in the Plaid Dashboard. If present, this indicates which of your business checking accounts will be credited or debited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,7 +52,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string IsoCurrencyCode { get; set; }
 #endif
-        /// <summary>Plaid’s unique identifier for a Plaid Ledger Balance.</summary>
+        /// <summary>Plaid&apos;s unique identifier for a Plaid Ledger Balance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LedgerId { get; set; }
@@ -90,6 +84,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #nullable restore
 #else
         public string OriginatorClientId { get; set; }
+#endif
+        /// <summary>The amount originally requested by the client when creating the authorization (decimal string with two digits of precision e.g. &quot;800.00&quot;). This may differ from `amount`, the amount Plaid proposes to transfer, when only a partial amount is offered as part of an Adaptive Guarantee.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RequestedAmount { get; set; }
+#nullable restore
+#else
+        public string RequestedAmount { get; set; }
 #endif
         /// <summary>The type of transfer. This will be either `debit` or `credit`.  A `debit` indicates a transfer of money into the origination account; a `credit` indicates a transfer of money out of the origination account.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferType? Type { get; set; }
@@ -135,15 +137,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
-                { "ach_class", n => { AchClass = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ACHClass>(); } },
+                { "ach_class", n => { AchClass = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AchClass>(); } },
                 { "amount", n => { Amount = n.GetStringValue(); } },
-                { "credit_funds_source", n => { CreditFundsSource = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransfer_credit_funds_source>(global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransfer_credit_funds_source.CreateFromDiscriminatorValue); } },
+                { "credit_funds_source", n => { CreditFundsSource = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransferCreditFundsSource>(); } },
                 { "funding_account_id", n => { FundingAccountId = n.GetStringValue(); } },
                 { "iso_currency_code", n => { IsoCurrencyCode = n.GetStringValue(); } },
                 { "ledger_id", n => { LedgerId = n.GetStringValue(); } },
                 { "network", n => { Network = n.GetStringValue(); } },
                 { "origination_account_id", n => { OriginationAccountId = n.GetStringValue(); } },
                 { "originator_client_id", n => { OriginatorClientId = n.GetStringValue(); } },
+                { "requested_amount", n => { RequestedAmount = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferType>(); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferUserInResponse>(global::Soenneker.Plaid.OpenApiClient.Models.TransferUserInResponse.CreateFromDiscriminatorValue); } },
                 { "wire_details", n => { WireDetails = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferWireDetails>(global::Soenneker.Plaid.OpenApiClient.Models.TransferWireDetails.CreateFromDiscriminatorValue); } },
@@ -157,15 +160,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ACHClass>("ach_class", AchClass);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AchClass>("ach_class", AchClass);
             writer.WriteStringValue("amount", Amount);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransfer_credit_funds_source>("credit_funds_source", CreditFundsSource);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransferCreditFundsSource>("credit_funds_source", CreditFundsSource);
             writer.WriteStringValue("funding_account_id", FundingAccountId);
             writer.WriteStringValue("iso_currency_code", IsoCurrencyCode);
             writer.WriteStringValue("ledger_id", LedgerId);
             writer.WriteStringValue("network", Network);
             writer.WriteStringValue("origination_account_id", OriginationAccountId);
             writer.WriteStringValue("originator_client_id", OriginatorClientId);
+            writer.WriteStringValue("requested_amount", RequestedAmount);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferUserInResponse>("user", User);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferWireDetails>("wire_details", WireDetails);

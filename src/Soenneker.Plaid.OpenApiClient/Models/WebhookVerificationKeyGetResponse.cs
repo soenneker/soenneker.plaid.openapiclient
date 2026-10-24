@@ -18,10 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>A JSON Web Key (JWK) that can be used in conjunction with [JWT libraries](https://jwt.io/#libraries-io) to verify Plaid webhooks</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.JWKPublicKey? Key { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.JwkPublicKey? Key { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.JWKPublicKey Key { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.JwkPublicKey Key { get; set; }
 #endif
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "key", n => { Key = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.JWKPublicKey>(global::Soenneker.Plaid.OpenApiClient.Models.JWKPublicKey.CreateFromDiscriminatorValue); } },
+                { "key", n => { Key = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.JwkPublicKey>(global::Soenneker.Plaid.OpenApiClient.Models.JwkPublicKey.CreateFromDiscriminatorValue); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.JWKPublicKey>("key", Key);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.JwkPublicKey>("key", Key);
             writer.WriteStringValue("request_id", RequestId);
             writer.WriteAdditionalData(AdditionalData);
         }

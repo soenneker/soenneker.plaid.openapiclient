@@ -3,13 +3,13 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>The version of Income Insights to use.</summary>
+    /// <summary>The version of Income Insights to use. This value is not shared across API calls for the same resource. If it is omitted from a request, the default version is used, even if a version was set in an earlier call such as `/link/token/create` or `/cra/check_report/create`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum IncomeInsightsVersion
     {
         [EnumMember(Value = "II2")]
         #pragma warning disable CS1591
-        II2,
+        Ii2,
         #pragma warning restore CS1591
     }
 }

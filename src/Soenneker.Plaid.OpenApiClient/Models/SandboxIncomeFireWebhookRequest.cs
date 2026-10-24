@@ -39,7 +39,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Secret { get; set; }
 #endif
-        /// <summary>The Plaid `user_id` of the User associated with this webhook, warning, or error.</summary>
+        /// <summary>The user identifier to include in the test webhook. For `USER_INCOME_VERIFICATION` and `USER_INCOME_VERIFICATION_RISK_SIGNALS`, use the `user_id` returned by `/user/create`, which begins with `usr_`. For `INCOME_VERIFICATION` and `INCOME_VERIFICATION_RISK_SIGNALS`, use the legacy webhook `user_id` associated with the user token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }
@@ -47,8 +47,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string UserId { get; set; }
 #endif
-        /// <summary>&quot;`VERIFICATION_STATUS_PROCESSING_COMPLETE`: The income verification status processing has completed. If the user uploaded multiple documents, this webhook will fire when all documents have finished processing. Call the `/income/verification/paystubs/get` endpoint and check the document metadata to see which documents were successfully parsed.`VERIFICATION_STATUS_PROCESSING_FAILED`: A failure occurred when attempting to process the verification documentation.`VERIFICATION_STATUS_PENDING_APPROVAL`: (deprecated) The income verification has been sent to the user for review.&quot;</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxIncomeFireWebhookRequest_verification_status? VerificationStatus { get; set; }
+        /// <summary>Required when `webhook_code` is `INCOME_VERIFICATION` or `USER_INCOME_VERIFICATION`.`VERIFICATION_STATUS_PROCESSING_COMPLETE`: The income verification status processing has completed. If the user uploaded multiple documents, this webhook will fire when all documents have finished processing. Call the `/income/verification/paystubs/get` endpoint and check the document metadata to see which documents were successfully parsed.`VERIFICATION_STATUS_PROCESSING_FAILED`: A failure occurred when attempting to process the verification documentation.`VERIFICATION_STATUS_DOCUMENT_REJECTED`: The documentation was rejected.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxIncomeFireWebhookRequestVerificationStatus? VerificationStatus { get; set; }
         /// <summary>The URL to which the webhook should be sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,7 +88,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "item_id", n => { ItemId = n.GetStringValue(); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
-                { "verification_status", n => { VerificationStatus = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SandboxIncomeFireWebhookRequest_verification_status>(); } },
+                { "verification_status", n => { VerificationStatus = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SandboxIncomeFireWebhookRequestVerificationStatus>(); } },
                 { "webhook", n => { Webhook = n.GetStringValue(); } },
                 { "webhook_code", n => { WebhookCode = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SandboxIncomeWebhookFireRequestWebhookCode>(); } },
             };
@@ -104,7 +104,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("item_id", ItemId);
             writer.WriteStringValue("secret", Secret);
             writer.WriteStringValue("user_id", UserId);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SandboxIncomeFireWebhookRequest_verification_status>("verification_status", VerificationStatus);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SandboxIncomeFireWebhookRequestVerificationStatus>("verification_status", VerificationStatus);
             writer.WriteStringValue("webhook", Webhook);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SandboxIncomeWebhookFireRequestWebhookCode>("webhook_code", WebhookCode);
             writer.WriteAdditionalData(AdditionalData);

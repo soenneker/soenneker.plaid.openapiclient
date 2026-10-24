@@ -25,7 +25,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string EmailAddress { get; set; }
 #endif
-        /// <summary>ID of the associated user. To retrieve the email address or other details of the person corresponding to this id, use `/dashboard_user/get`.</summary>
+        /// <summary>ID of the associated user. To retrieve the email address or other details of the person corresponding to this ID, use `/dashboard_user/get`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

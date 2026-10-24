@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// A collection of information about a single party to a transaction. Included direct participants like the borrower and seller as well as indirect participants such as the flood certificate provider.
+    /// A collection of information about a single party to a transaction. Includes direct participants like the borrower and seller as well as indirect participants such as the flood certificate provider.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreditFreddieMacParty : IAdditionalDataHolder, IParsable

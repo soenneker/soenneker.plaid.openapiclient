@@ -40,6 +40,7 @@ namespace Soenneker.Plaid.OpenApiClient.Beacon.Report.List
         /// <param name="body">Request input for listing Beacon Reports</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Plaid.OpenApiClient.Models.BeaconReportListResponse?> PostAsync(global::Soenneker.Plaid.OpenApiClient.Models.BeaconReportListRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -59,6 +60,7 @@ namespace Soenneker.Plaid.OpenApiClient.Beacon.Report.List
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request input for listing Beacon Reports</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Soenneker.Plaid.OpenApiClient.Models.BeaconReportListRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -80,6 +82,7 @@ namespace Soenneker.Plaid.OpenApiClient.Beacon.Report.List
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Beacon.Report.List.ListRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Beacon.Report.List.ListRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Plaid.OpenApiClient.Beacon.Report.List.ListRequestBuilder(rawUrl, RequestAdapter);

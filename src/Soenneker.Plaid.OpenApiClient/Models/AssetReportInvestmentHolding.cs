@@ -24,8 +24,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The original total value of the holding. This field is calculated by Plaid as the sum of the purchase price of all of the shares in the holding.</summary>
-        public double? CostBasis { get; set; }
         /// <summary>The last price given by the institution for this security.</summary>
         public double? InstitutionPrice { get; set; }
         /// <summary>The date at which `institution_price` was current.</summary>
@@ -50,6 +48,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string SecurityId { get; set; }
 #endif
+        /// <summary>Per-lot acquisition data for this holding. This field is absent when lot-level data is not available for the holding — either the institution does not provide it, or the report was generated before lot-level data was supported. Refresh the report if you expect lots.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLot>? TaxLots { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLot> TaxLots { get; set; }
+#endif
         /// <summary>The holding&apos;s trading symbol for publicly traded holdings, and otherwise a short identifier if available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,7 +64,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string TickerSymbol { get; set; }
 #endif
-        /// <summary>The unofficial currency code associated with the holding. Always `null` if `iso_currency_code` is non-`null`. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `iso_currency_code`s.</summary>
+        /// <summary>The unofficial currency code associated with the holding. Always `null` if `iso_currency_code` is non-`null`. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `unofficial_currency_code`s.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UnofficialCurrencyCode { get; set; }
@@ -66,6 +72,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string UnofficialCurrencyCode { get; set; }
 #endif
+        /// <summary>The total quantity of vested assets held, as reported by the financial institution. Vested assets are only associated with [equities](https://plaid.com/docs/api/products/investments/#investments-holdings-get-response-securities-type).</summary>
+        public double? VestedQuantity { get; set; }
+        /// <summary>The value of the vested holdings as reported by the institution.</summary>
+        public double? VestedValue { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.AssetReportInvestmentHolding"/> and sets the default values.
         /// </summary>
@@ -92,15 +102,17 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
-                { "cost_basis", n => { CostBasis = n.GetDoubleValue(); } },
                 { "institution_price", n => { InstitutionPrice = n.GetDoubleValue(); } },
                 { "institution_price_as_of", n => { InstitutionPriceAsOf = n.GetDateValue(); } },
                 { "institution_value", n => { InstitutionValue = n.GetDoubleValue(); } },
                 { "iso_currency_code", n => { IsoCurrencyCode = n.GetStringValue(); } },
                 { "quantity", n => { Quantity = n.GetDoubleValue(); } },
                 { "security_id", n => { SecurityId = n.GetStringValue(); } },
+                { "tax_lots", n => { TaxLots = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLot>(global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLot.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ticker_symbol", n => { TickerSymbol = n.GetStringValue(); } },
                 { "unofficial_currency_code", n => { UnofficialCurrencyCode = n.GetStringValue(); } },
+                { "vested_quantity", n => { VestedQuantity = n.GetDoubleValue(); } },
+                { "vested_value", n => { VestedValue = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -111,15 +123,17 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
-            writer.WriteDoubleValue("cost_basis", CostBasis);
             writer.WriteDoubleValue("institution_price", InstitutionPrice);
             writer.WriteDateValue("institution_price_as_of", InstitutionPriceAsOf);
             writer.WriteDoubleValue("institution_value", InstitutionValue);
             writer.WriteStringValue("iso_currency_code", IsoCurrencyCode);
             writer.WriteDoubleValue("quantity", Quantity);
             writer.WriteStringValue("security_id", SecurityId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLot>("tax_lots", TaxLots);
             writer.WriteStringValue("ticker_symbol", TickerSymbol);
             writer.WriteStringValue("unofficial_currency_code", UnofficialCurrencyCode);
+            writer.WriteDoubleValue("vested_quantity", VestedQuantity);
+            writer.WriteDoubleValue("vested_value", VestedValue);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

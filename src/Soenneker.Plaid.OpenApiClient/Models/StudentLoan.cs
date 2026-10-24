@@ -78,9 +78,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.StudentLoanStatus LoanStatus { get; set; }
 #endif
-        /// <summary>&quot;The minimum payment due for the next billing cycle. There are some exceptions:Some institutions require a minimum payment across all loans associated with an account number. Our API presents that same minimum payment amount on each loan. The institutions that do this are: Great Lakes ( `ins_116861`), Firstmark (`ins_116295`), Commonbond Firstmark Services (`ins_116950`), Granite State (`ins_116308`), and Oklahoma Student Loan Authority (`ins_116945`).Firstmark (`ins_116295` ) and Navient (`ins_116248`) will display as $0 if there is an autopay program in effect.&quot;</summary>
+        /// <summary>The minimum payment due for the next billing cycle. There are some exceptions:Some institutions require a minimum payment across all loans associated with an account number. Our API presents that same minimum payment amount on each loan. The institutions that do this are: Great Lakes ( `ins_116861`), Firstmark (`ins_116295`), Commonbond Firstmark Services (`ins_116950`), Granite State (`ins_116308`), and Oklahoma Student Loan Authority (`ins_116945`).Firstmark (`ins_116295` ) and Navient (`ins_116248`) will display as $0 if there is an autopay program in effect.</summary>
         public double? MinimumPaymentAmount { get; set; }
-        /// <summary>The due date for the next payment. The due date is `null` if a payment is not expected. A payment is not expected if `loan_status.type` is `deferment`, `in_school`, `consolidated`, `paid in full`, or `transferred`. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).</summary>
+        /// <summary>The due date for the next payment. The due date is `null` if a payment is not expected. A payment is not expected if `loan_status.type` is `deferment`, `in school`, `consolidated`, `paid in full`, or `transferred`. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).</summary>
         public Date? NextPaymentDueDate { get; set; }
         /// <summary>The date on which the loan was initially lent. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).</summary>
         public Date? OriginationDate { get; set; }
@@ -88,7 +88,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public double? OriginationPrincipalAmount { get; set; }
         /// <summary>The total dollar amount of the accrued interest balance. For Sallie Mae ( `ins_116944`), this amount is included in the current balance of the loan, so this field will return as `null`.</summary>
         public double? OutstandingInterestAmount { get; set; }
-        /// <summary>The relevant account number that should be used to reference this loan for payments. In the majority of cases, `payment_reference_number` will match `account_number,` but in some institutions, such as Great Lakes (`ins_116861`), it will be different.</summary>
+        /// <summary>The relevant account number that should be used to reference this loan for payments. In the majority of cases, `payment_reference_number` will match `account_number`, but in some institutions, such as Great Lakes (`ins_116861`), it will be different.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PaymentReferenceNumber { get; set; }
@@ -96,13 +96,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string PaymentReferenceNumber { get; set; }
 #endif
-        /// <summary>The pslf_status property</summary>
+        /// <summary>Information about the student&apos;s eligibility in the Public Service Loan Forgiveness program. This is only returned if the institution is FedLoan (`ins_116527`). Since FedLoan no longer services student loans, this field is no longer returned. </summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PslfStatus { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PslfStatus? PslfStatus { get; set; }
 #nullable restore
 #else
-        public string PslfStatus { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PslfStatus PslfStatus { get; set; }
 #endif
         /// <summary>An object representing the repayment plan for the student loan</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -176,7 +177,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "origination_principal_amount", n => { OriginationPrincipalAmount = n.GetDoubleValue(); } },
                 { "outstanding_interest_amount", n => { OutstandingInterestAmount = n.GetDoubleValue(); } },
                 { "payment_reference_number", n => { PaymentReferenceNumber = n.GetStringValue(); } },
-                { "pslf_status", n => { PslfStatus = n.GetStringValue(); } },
+                { "pslf_status", n => { PslfStatus = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PslfStatus>(global::Soenneker.Plaid.OpenApiClient.Models.PslfStatus.CreateFromDiscriminatorValue); } },
                 { "repayment_plan", n => { RepaymentPlan = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.StudentRepaymentPlan>(global::Soenneker.Plaid.OpenApiClient.Models.StudentRepaymentPlan.CreateFromDiscriminatorValue); } },
                 { "sequence_number", n => { SequenceNumber = n.GetStringValue(); } },
                 { "servicer_address", n => { ServicerAddress = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ServicerAddressData>(global::Soenneker.Plaid.OpenApiClient.Models.ServicerAddressData.CreateFromDiscriminatorValue); } },
@@ -210,7 +211,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDoubleValue("origination_principal_amount", OriginationPrincipalAmount);
             writer.WriteDoubleValue("outstanding_interest_amount", OutstandingInterestAmount);
             writer.WriteStringValue("payment_reference_number", PaymentReferenceNumber);
-            writer.WriteStringValue("pslf_status", PslfStatus);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PslfStatus>("pslf_status", PslfStatus);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.StudentRepaymentPlan>("repayment_plan", RepaymentPlan);
             writer.WriteStringValue("sequence_number", SequenceNumber);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ServicerAddressData>("servicer_address", ServicerAddress);

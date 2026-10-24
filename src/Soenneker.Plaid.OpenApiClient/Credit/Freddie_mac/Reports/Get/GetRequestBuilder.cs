@@ -34,10 +34,10 @@ namespace Soenneker.Plaid.OpenApiClient.Credit.Freddie_mac.Reports.Get
         {
         }
         /// <summary>
-        /// The `credit/asset_report/freddie_mac/get` endpoint retrieves the Verification of Assets and Verification of Employment reports.
+        /// The `/credit/freddie_mac/reports/get` endpoint retrieves the Verification of Assets and Verification of Employment reports.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacReportsGetResponse"/></returns>
-        /// <param name="body">CreditFreddieMacReportsGetRequest defines the request schema for `credit/asset_report/freddie_mac/get`</param>
+        /// <param name="body">CreditFreddieMacReportsGetRequest defines the request schema for `/credit/freddie_mac/reports/get`</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Plaid.OpenApiClient.Models.PlaidError">When receiving a 4XX or 5XX status code</exception>
@@ -59,10 +59,10 @@ namespace Soenneker.Plaid.OpenApiClient.Credit.Freddie_mac.Reports.Get
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacReportsGetResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacReportsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The `credit/asset_report/freddie_mac/get` endpoint retrieves the Verification of Assets and Verification of Employment reports.
+        /// The `/credit/freddie_mac/reports/get` endpoint retrieves the Verification of Assets and Verification of Employment reports.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">CreditFreddieMacReportsGetRequest defines the request schema for `credit/asset_report/freddie_mac/get`</param>
+        /// <param name="body">CreditFreddieMacReportsGetRequest defines the request schema for `/credit/freddie_mac/reports/get`</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

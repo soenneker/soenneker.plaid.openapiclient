@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The originator’s expected average amount per debit.</summary>
+        /// <summary>The originator&apos;s expected average amount per debit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExpectedAverageAmount { get; set; }
@@ -25,7 +25,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>The originator&apos;s expected transfer frequency.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.OriginatorExpectedTransferFrequency? ExpectedFrequency { get; set; }
-        /// <summary>The originator’s expected highest amount for a single debit transfer.</summary>
+        /// <summary>The originator&apos;s expected highest amount for a single debit transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExpectedHighestAmount { get; set; }
@@ -33,7 +33,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ExpectedHighestAmount { get; set; }
 #endif
-        /// <summary>The originator’s monthly expected ACH debit processing amount for the next 6-12 months.</summary>
+        /// <summary>The originator&apos;s monthly expected ACH debit processing amount for the next 6-12 months.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExpectedMonthlyAmount { get; set; }
@@ -41,13 +41,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ExpectedMonthlyAmount { get; set; }
 #endif
-        /// <summary>Specifies the expected use cases for the originator’s debit transfers. This should be a list that contains one or more of the following codes:`&quot;ccd&quot;` - Corporate Credit or Debit - fund transfer between two corporate bank accounts`&quot;ppd&quot;` - Prearranged Payment or Deposit - The transfer is part of a pre-existing relationship with a consumer. Authorization was obtained in writing either in person or via an electronic document signing, e.g. Docusign, by the consumer. Can be used for credits or debits.`&quot;web&quot;` - Internet-Initiated Entry. The transfer debits a consumer’s bank account. Authorization from the consumer is obtained over the Internet (e.g. a web or mobile application). Can be used for single debits or recurring debits.`&quot;tel&quot;` - Telephone-Initiated Entry. The transfer debits a consumer. Debit authorization has been received orally over the telephone via a recorded call.</summary>
+        /// <summary>Specifies the expected use cases for the originator&apos;s debit transfers. This should be a list that contains one or more of the following codes:`&quot;ccd&quot;` - Corporate Credit or Debit - fund transfer between two corporate bank accounts`&quot;ppd&quot;` - Prearranged Payment or Deposit - The transfer is part of a pre-existing relationship with a consumer. Authorization was obtained in writing either in person or via an electronic document signing, e.g. Docusign, by the consumer. Can be used for credits or debits.`&quot;web&quot;` - Internet-Initiated Entry. The transfer debits a consumer&apos;s bank account. Authorization from the consumer is obtained over the Internet (e.g. a web or mobile application). Can be used for single debits or recurring debits.`&quot;tel&quot;` - Telephone-Initiated Entry. The transfer debits a consumer. Debit authorization has been received orally over the telephone via a recorded call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.ACHClass?>? SecCodes { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.AchClass?>? SecCodes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.ACHClass?> SecCodes { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.AchClass?> SecCodes { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransferDebitUsageConfiguration"/> and sets the default values.
@@ -78,7 +78,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "expected_frequency", n => { ExpectedFrequency = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.OriginatorExpectedTransferFrequency>(); } },
                 { "expected_highest_amount", n => { ExpectedHighestAmount = n.GetStringValue(); } },
                 { "expected_monthly_amount", n => { ExpectedMonthlyAmount = n.GetStringValue(); } },
-                { "sec_codes", n => { SecCodes = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.ACHClass>()?.AsList(); } },
+                { "sec_codes", n => { SecCodes = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.AchClass>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -92,7 +92,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.OriginatorExpectedTransferFrequency>("expected_frequency", ExpectedFrequency);
             writer.WriteStringValue("expected_highest_amount", ExpectedHighestAmount);
             writer.WriteStringValue("expected_monthly_amount", ExpectedMonthlyAmount);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.ACHClass>("sec_codes", SecCodes);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.AchClass>("sec_codes", SecCodes);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

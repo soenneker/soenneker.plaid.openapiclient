@@ -9,7 +9,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "NI1")]
         #pragma warning disable CS1591
-        NI1,
+        Ni1,
         #pragma warning restore CS1591
     }
 }

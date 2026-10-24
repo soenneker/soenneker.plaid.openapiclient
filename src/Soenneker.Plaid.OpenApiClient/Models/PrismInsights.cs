@@ -23,15 +23,24 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ErrorReason { get; set; }
 #endif
-        /// <summary>The Insights Result object is a map of cash flow attributes, where the key is a string, and the value is a float or string. For a full list of attributes, contact your account manager. The attributes may vary depending on the Prism version used.</summary>
+        /// <summary>The version of Prism Data&apos;s insights model used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismInsights_result? Result { get; set; }
+        public string? ModelVersion { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismInsights_result Result { get; set; }
+        public string ModelVersion { get; set; }
 #endif
-        /// <summary>The version of Prism Data&apos;s insights model used.</summary>
+        /// <summary>The Insights Result object is a map of cash flow attributes, where the key is a string, and the value is a float or string. For a full list of all ~2,000 attributes, contact your account manager. The attributes may vary depending on the Prism version used.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsResultProperty? Result { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsResultProperty Result { get; set; }
+#endif
+        /// <summary>The version of Prism Data&apos;s insights model used. This field is deprecated in favor of `model_version`.</summary>
+        [Obsolete("")]
         public int? Version { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PrismInsights"/> and sets the default values.
@@ -59,7 +68,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "error_reason", n => { ErrorReason = n.GetStringValue(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismInsights_result>(global::Soenneker.Plaid.OpenApiClient.Models.PrismInsights_result.CreateFromDiscriminatorValue); } },
+                { "model_version", n => { ModelVersion = n.GetStringValue(); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsResultProperty>(global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsResultProperty.CreateFromDiscriminatorValue); } },
                 { "version", n => { Version = n.GetIntValue(); } },
             };
         }
@@ -71,7 +81,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("error_reason", ErrorReason);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismInsights_result>("result", Result);
+            writer.WriteStringValue("model_version", ModelVersion);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsResultProperty>("result", Result);
             writer.WriteIntValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }

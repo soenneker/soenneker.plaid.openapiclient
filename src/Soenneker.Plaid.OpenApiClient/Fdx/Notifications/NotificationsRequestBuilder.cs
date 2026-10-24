@@ -37,17 +37,17 @@ namespace Soenneker.Plaid.OpenApiClient.Fdx.Notifications
         /// A generic webhook receiver endpoint for FDX Event Notifications
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
-        /// <param name="body">Provides the base fields of a notification. Clients will read the `type` property to determine the expected notification payload</param>
+        /// <param name="body">Provides the base fields of a notification. Clients will read the `type` property to determine the expected notification payload.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Plaid.OpenApiClient.Models.PlaidError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.Plaid.OpenApiClient.Models.FDXNotification body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PostAsync(global::Soenneker.Plaid.OpenApiClient.Models.FdxNotification body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.Plaid.OpenApiClient.Models.FDXNotification body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PostAsync(global::Soenneker.Plaid.OpenApiClient.Models.FdxNotification body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -62,15 +62,15 @@ namespace Soenneker.Plaid.OpenApiClient.Fdx.Notifications
         /// A generic webhook receiver endpoint for FDX Event Notifications
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Provides the base fields of a notification. Clients will read the `type` property to determine the expected notification payload</param>
+        /// <param name="body">Provides the base fields of a notification. Clients will read the `type` property to determine the expected notification payload.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Plaid.OpenApiClient.Models.FDXNotification body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Plaid.OpenApiClient.Models.FdxNotification body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Plaid.OpenApiClient.Models.FDXNotification body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Plaid.OpenApiClient.Models.FdxNotification body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>&quot;Field describing whether the associated address is being used for commercial or residential purposes.Note: This value will be `no_data` when Plaid does not have sufficient data to determine the address&apos;s use.&quot;</summary>
+    /// <summary>Field describing whether the associated address is being used for commercial or residential purposes.Note: This value will be `no_data` when Plaid does not have sufficient data to determine the address&apos;s use.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AddressPurposeLabel
     {
@@ -17,7 +17,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "no_data")]
         #pragma warning disable CS1591
-        No_data,
+        NoData,
         #pragma warning restore CS1591
     }
 }

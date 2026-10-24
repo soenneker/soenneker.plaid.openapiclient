@@ -44,10 +44,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Metadata related to the acceptance of Terms of Service</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformTOSAcceptanceMetadata? TosAcceptanceMetadata { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformTosAcceptanceMetadata? TosAcceptanceMetadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformTOSAcceptanceMetadata TosAcceptanceMetadata { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformTosAcceptanceMetadata TosAcceptanceMetadata { get; set; }
 #endif
         /// <summary>The webhook URL to which a `PLATFORM_ONBOARDING_UPDATE` webhook should be sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,7 +86,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "originator_client_id", n => { OriginatorClientId = n.GetStringValue(); } },
                 { "originator_reviewed_at", n => { OriginatorReviewedAt = n.GetDateTimeOffsetValue(); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
-                { "tos_acceptance_metadata", n => { TosAcceptanceMetadata = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformTOSAcceptanceMetadata>(global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformTOSAcceptanceMetadata.CreateFromDiscriminatorValue); } },
+                { "tos_acceptance_metadata", n => { TosAcceptanceMetadata = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformTosAcceptanceMetadata>(global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformTosAcceptanceMetadata.CreateFromDiscriminatorValue); } },
                 { "webhook", n => { Webhook = n.GetStringValue(); } },
             };
         }
@@ -101,7 +101,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("originator_client_id", OriginatorClientId);
             writer.WriteDateTimeOffsetValue("originator_reviewed_at", OriginatorReviewedAt);
             writer.WriteStringValue("secret", Secret);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformTOSAcceptanceMetadata>("tos_acceptance_metadata", TosAcceptanceMetadata);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformTosAcceptanceMetadata>("tos_acceptance_metadata", TosAcceptanceMetadata);
             writer.WriteStringValue("webhook", Webhook);
             writer.WriteAdditionalData(AdditionalData);
         }

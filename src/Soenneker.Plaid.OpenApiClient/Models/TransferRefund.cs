@@ -25,7 +25,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>The datetime when this refund was created. This will be of the form `2006-01-02T15:04:05Z`</summary>
         public DateTimeOffset? Created { get; set; }
-        /// <summary>The failure reason if the event type for a refund is `&quot;failed&quot;` or `&quot;returned&quot;`. Null value otherwise.</summary>
+        /// <summary>The failure reason if the status for a refund is `&quot;failed&quot;` or `&quot;returned&quot;`. Null value otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferRefundFailure? FailureReason { get; set; }
@@ -33,7 +33,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferRefundFailure FailureReason { get; set; }
 #endif
-        /// <summary>Plaid’s unique identifier for a refund.</summary>
+        /// <summary>Plaid&apos;s unique identifier for a refund.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -41,7 +41,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Plaid’s unique identifier for a Plaid Ledger Balance.</summary>
+        /// <summary>Plaid&apos;s unique identifier for a Plaid Ledger Balance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LedgerId { get; set; }
@@ -57,7 +57,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string NetworkTraceId { get; set; }
 #endif
-        /// <summary>&quot;The status of the refund.`pending`: A new refund was created; it is in the pending state.`posted`: The refund has been successfully submitted to the payment network.`settled`: Credits have been refunded to the Plaid linked account.`cancelled`: The refund was cancelled by the client.`failed`: The refund has failed.`returned`: The refund was returned.&quot;</summary>
+        /// <summary>The status of the refund.`pending`: A new refund was created; it is in the pending state.`posted`: The refund has been successfully submitted to the payment network.`settled`: Credits have been refunded to the Plaid linked account.`cancelled`: The refund was cancelled by the client.`failed`: The refund has failed.`returned`: The refund was returned.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferRefundStatus? Status { get; set; }
         /// <summary>The ID of the transfer to refund.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

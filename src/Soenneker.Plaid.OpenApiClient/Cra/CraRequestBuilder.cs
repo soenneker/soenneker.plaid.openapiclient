@@ -7,6 +7,8 @@ using Soenneker.Plaid.OpenApiClient.Cra.Credit_profile;
 using Soenneker.Plaid.OpenApiClient.Cra.Loans;
 using Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights;
 using Soenneker.Plaid.OpenApiClient.Cra.Partner_insights;
+using Soenneker.Plaid.OpenApiClient.Cra.Report;
+using Soenneker.Plaid.OpenApiClient.Cra.Servicing;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -43,6 +45,16 @@ namespace Soenneker.Plaid.OpenApiClient.Cra
         public global::Soenneker.Plaid.OpenApiClient.Cra.Partner_insights.Partner_insightsRequestBuilder Partner_insights
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Cra.Partner_insights.Partner_insightsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The report property</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Cra.Report.ReportRequestBuilder Report
+        {
+            get => new global::Soenneker.Plaid.OpenApiClient.Cra.Report.ReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The servicing property</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Cra.Servicing.ServicingRequestBuilder Servicing
+        {
+            get => new global::Soenneker.Plaid.OpenApiClient.Cra.Servicing.ServicingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Cra.CraRequestBuilder"/> and sets the default values.

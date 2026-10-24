@@ -19,7 +19,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The date until which the loan will be in its current status. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).</summary>
         public Date? EndDate { get; set; }
         /// <summary>The status type of the student loan</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.StudentLoanStatus_type? Type { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.StudentLoanStatusType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.StudentLoanStatus"/> and sets the default values.
         /// </summary>
@@ -46,7 +46,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "end_date", n => { EndDate = n.GetDateValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.StudentLoanStatus_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.StudentLoanStatusType>(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateValue("end_date", EndDate);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.StudentLoanStatus_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.StudentLoanStatusType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

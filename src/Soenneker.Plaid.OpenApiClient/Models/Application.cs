@@ -16,7 +16,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>This field will map to the application ID that is returned from /item/application/list, or provided to the institution in an oauth redirect.</summary>
+        /// <summary>This field will map to the application ID that is returned from `/item/application/list`, or provided to the institution in an oauth redirect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApplicationId { get; set; }
@@ -32,7 +32,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ApplicationUrl { get; set; }
 #endif
-        /// <summary>A string representing the city of the client’s headquarters.</summary>
+        /// <summary>A string representing the city of the client&apos;s headquarters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? City { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string City { get; set; }
 #endif
-        /// <summary>A string representing the name of client’s legal entity.</summary>
+        /// <summary>A string representing the name of client&apos;s legal entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompanyLegalName { get; set; }
@@ -48,7 +48,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string CompanyLegalName { get; set; }
 #endif
-        /// <summary>A string representing the country code of the client’s headquarters.</summary>
+        /// <summary>A string representing the country code of the client&apos;s headquarters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CountryCode { get; set; }
@@ -82,7 +82,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>A string representing the postal code of the client’s headquarters.</summary>
+        /// <summary>A string representing the postal code of the client&apos;s headquarters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PostalCode { get; set; }
@@ -98,7 +98,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ReasonForAccess { get; set; }
 #endif
-        /// <summary>A string representing the region of the client’s headquarters.</summary>
+        /// <summary>A string representing the region of the client&apos;s headquarters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Region { get; set; }
@@ -106,7 +106,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Region { get; set; }
 #endif
-        /// <summary>A string representing client’s broad use case as assessed by Plaid.</summary>
+        /// <summary>A string representing client&apos;s broad use case as assessed by Plaid.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UseCase { get; set; }

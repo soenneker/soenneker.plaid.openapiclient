@@ -18,10 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>A set of attributes providing context about the factors that contributed to the EWA scores. Each key is the attribute name and the value is its numeric score, or null if the attribute could not be computed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.EwaAttributes? EwaAttributes { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BetaEwaReportV1GetResponseEwaAttributes? EwaAttributes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.EwaAttributes EwaAttributes { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BetaEwaReportV1GetResponseEwaAttributes EwaAttributes { get; set; }
 #endif
         /// <summary>Unique identifier for the generated EWA score group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -31,7 +31,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string EwaReportId { get; set; }
 #endif
-        /// <summary>A list of earned wage access (EWA) scoring entries that map potential advance amounts to repayment likelihood scores. The predefined advance amount ranges are `[0, 25]`, `[25, 50]`, `[50, 100]`, `[100, 200]`, `[200, 300]`, `[300, 400]`, and `[400, 500]`.</summary>
+        /// <summary>A list of earned wage access (EWA) scoring entries that map potential advance amounts to repayment likelihood scores. The predefined advance amount ranges are `[0, 25)`, `[25, 50)`, `[50, 100)`, `[100, 200)`, `[200, 300)`, `[300, 400)`, and `[400, 500)`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Plaid.OpenApiClient.Models.EwaScore>? EwaScores { get; set; }
@@ -74,7 +74,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ewa_attributes", n => { EwaAttributes = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.EwaAttributes>(global::Soenneker.Plaid.OpenApiClient.Models.EwaAttributes.CreateFromDiscriminatorValue); } },
+                { "ewa_attributes", n => { EwaAttributes = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BetaEwaReportV1GetResponseEwaAttributes>(global::Soenneker.Plaid.OpenApiClient.Models.BetaEwaReportV1GetResponseEwaAttributes.CreateFromDiscriminatorValue); } },
                 { "ewa_report_id", n => { EwaReportId = n.GetStringValue(); } },
                 { "ewa_scores", n => { EwaScores = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.EwaScore>(global::Soenneker.Plaid.OpenApiClient.Models.EwaScore.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "generation_time", n => { GenerationTime = n.GetDateTimeOffsetValue(); } },
@@ -88,7 +88,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.EwaAttributes>("ewa_attributes", EwaAttributes);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BetaEwaReportV1GetResponseEwaAttributes>("ewa_attributes", EwaAttributes);
             writer.WriteStringValue("ewa_report_id", EwaReportId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.EwaScore>("ewa_scores", EwaScores);
             writer.WriteDateTimeOffsetValue("generation_time", GenerationTime);

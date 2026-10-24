@@ -36,10 +36,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Metadata about the Item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.Item? Item { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ItemValue? Item { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.Item Item { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ItemValue Item { get; set; }
 #endif
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,7 +87,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "accounts", n => { Accounts = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentAccount>(global::Soenneker.Plaid.OpenApiClient.Models.InvestmentAccount.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "investment_transactions", n => { InvestmentTransactions = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransaction>(global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransaction.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "is_investments_fallback_item", n => { IsInvestmentsFallbackItem = n.GetBoolValue(); } },
-                { "item", n => { Item = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Item>(global::Soenneker.Plaid.OpenApiClient.Models.Item.CreateFromDiscriminatorValue); } },
+                { "item", n => { Item = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ItemValue>(global::Soenneker.Plaid.OpenApiClient.Models.ItemValue.CreateFromDiscriminatorValue); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
                 { "securities", n => { Securities = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.Security>(global::Soenneker.Plaid.OpenApiClient.Models.Security.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "total_investment_transactions", n => { TotalInvestmentTransactions = n.GetIntValue(); } },
@@ -103,7 +103,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentAccount>("accounts", Accounts);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransaction>("investment_transactions", InvestmentTransactions);
             writer.WriteBoolValue("is_investments_fallback_item", IsInvestmentsFallbackItem);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Item>("item", Item);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ItemValue>("item", Item);
             writer.WriteStringValue("request_id", RequestId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.Security>("securities", Securities);
             writer.WriteIntValue("total_investment_transactions", TotalInvestmentTransactions);

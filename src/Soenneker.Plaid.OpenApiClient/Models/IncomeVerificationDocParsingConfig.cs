@@ -13,7 +13,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "risk_signals")]
         #pragma warning disable CS1591
-        Risk_signals,
+        RiskSignals,
         #pragma warning restore CS1591
     }
 }

@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Sandbox.Transfer.Test_clock.List
         {
         }
         /// <summary>
-        /// Use the `/sandbox/transfer/test_clock/list` endpoint to see a list of all your test clocks in the Sandbox environment, by ascending `virtual_time`. Results are paginated; use the `count` and `offset` query parameters to retrieve the desired test clocks.
+        /// Use the `/sandbox/transfer/test_clock/list` endpoint to see a list of all your test clocks in the Sandbox environment, by descending `virtual_time`. Results are paginated; use the `count` and `offset` query parameters to retrieve the desired test clocks.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.SandboxTransferTestClockListResponse"/></returns>
         /// <param name="body">Defines the request schema for `/sandbox/transfer/test_clock/list`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Sandbox.Transfer.Test_clock.List
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.SandboxTransferTestClockListResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.SandboxTransferTestClockListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use the `/sandbox/transfer/test_clock/list` endpoint to see a list of all your test clocks in the Sandbox environment, by ascending `virtual_time`. Results are paginated; use the `count` and `offset` query parameters to retrieve the desired test clocks.
+        /// Use the `/sandbox/transfer/test_clock/list` endpoint to see a list of all your test clocks in the Sandbox environment, by descending `virtual_time`. Results are paginated; use the `count` and `offset` query parameters to retrieve the desired test clocks.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Defines the request schema for `/sandbox/transfer/test_clock/list`</param>

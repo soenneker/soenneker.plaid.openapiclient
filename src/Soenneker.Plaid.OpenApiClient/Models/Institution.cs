@@ -23,6 +23,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.AuthMetadata AuthMetadata { get; set; }
 #endif
+        /// <summary>Whether Plaid supports creating new Items for the institution.`SUPPORTED`: Plaid supports new connections to the institution. Whether a given connection succeeds can still depend on your integration and account: some institutions require completing [OAuth registration](https://plaid.com/docs/link/oauth/#complete-the-registration-requirements-in-the-compliance-center) before they can be used, the institution may not support every product requested in `/link/token/create`, and your Plaid account must be in good standing.`NOT_SUPPORTED`: Plaid does not support new connections to the institution. Existing Items may continue to work. Attempting to create a new Item for the institution returns an `INSTITUTION_NO_LONGER_SUPPORTED` error. Institutions with this value are returned only by `/institutions/get_by_id`.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.InstitutionConnectionAvailability? ConnectionAvailability { get; set; }
         /// <summary>A list of the country codes supported by the institution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,7 +83,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string PrimaryColor { get; set; }
 #endif
-        /// <summary>&quot;A list of the Plaid products supported by the institution. Note that only institutions that support Instant Auth will return `auth` in the product array; institutions that do not list `auth` may still support other Auth methods such as Instant Match or Automated Micro-deposit Verification. To identify institutions that support those methods, use the `auth_metadata` object. For more details, see [Full Auth coverage](https://plaid.com/docs/auth/coverage/). The `income_verification` product here indicates support for Bank Income. Note: For Signal Transaction Scores and Transfer, listed institutions may be incomplete or incorrect. Instead, use the following: `balance` support also indicates coverage of Signal Transaction Scores; `auth` support also indicates coverage of Transfer.&quot;</summary>
+        /// <summary>A list of the Plaid products supported by the institution. Note that only institutions that support Instant Auth will return `auth` in the product array; institutions that do not list `auth` may still support other Auth methods such as Instant Match or Automated Micro-deposit Verification. To identify institutions that support those methods, use the `auth_metadata` object. For more details, see [Full Auth coverage](https://plaid.com/docs/auth/coverage/). The `income_verification` product here indicates support for Bank Income. Note: For Signal Transaction Scores and Transfer, listed institutions may be incomplete or incorrect. Instead, use the following: `balance` support also indicates coverage of Signal Transaction Scores; `auth` support also indicates coverage of Transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? Products { get; set; }
@@ -97,7 +99,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public List<string> RoutingNumbers { get; set; }
 #endif
-        /// <summary>The status of an institution is determined by the health of its Item logins, Transactions updates, Investments updates, Liabilities updates, Auth requests, Balance requests, Identity requests, Investments requests, and Liabilities requests. A login attempt is conducted during the initial Item add in Link. If there is not enough traffic to accurately calculate an institution&apos;s status, Plaid will return null rather than potentially inaccurate data.Institution status is accessible in the Dashboard and via the API using the `/institutions/get_by_id` endpoint with the `options.include_status` option set to true. Note that institution status is not available in the Sandbox environment.</summary>
+        /// <summary>The status of an institution is determined by the health of its Item logins, Transactions updates, Investments updates, Liabilities updates, Auth requests, Balance requests, Identity requests, Investments requests, and Liabilities requests. A login attempt is conducted during the initial Item add in Link. If there is not enough traffic to accurately calculate an institution&apos;s status, Plaid will return null rather than potentially inaccurate data.Institution status is accessible in the Dashboard and via the API using the `/institutions/get_by_id` endpoint with the `options.include_status` option set to true. In the Sandbox environment, institution status is only available for First Platypus Bank (`ins_109508`) and Houndstooth Bank (`ins_109512`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.InstitutionStatus? Status { get; set; }
@@ -139,6 +141,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "auth_metadata", n => { AuthMetadata = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AuthMetadata>(global::Soenneker.Plaid.OpenApiClient.Models.AuthMetadata.CreateFromDiscriminatorValue); } },
+                { "connection_availability", n => { ConnectionAvailability = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.InstitutionConnectionAvailability>(); } },
                 { "country_codes", n => { CountryCodes = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.CountryCode>()?.AsList(); } },
                 { "dtc_numbers", n => { DtcNumbers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "institution_id", n => { InstitutionId = n.GetStringValue(); } },
@@ -161,6 +164,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AuthMetadata>("auth_metadata", AuthMetadata);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.InstitutionConnectionAvailability>("connection_availability", ConnectionAvailability);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.CountryCode>("country_codes", CountryCodes);
             writer.WriteCollectionOfPrimitiveValues<string>("dtc_numbers", DtcNumbers);
             writer.WriteStringValue("institution_id", InstitutionId);

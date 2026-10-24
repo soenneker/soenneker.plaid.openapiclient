@@ -36,6 +36,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Cusip { get; set; }
 #endif
+        /// <summary>12-character FIGI, a unique Financial Instrument Global Identifier assigned to securities that is immutable and stays consistent across most corporate actions. This is an open data standard issued by the Object Management Group and administered by Bloomberg L.P.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Figi { get; set; }
+#nullable restore
+#else
+        public string Figi { get; set; }
+#endif
         /// <summary>Details about the fixed income security.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +110,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Details about the option security.For the Sandbox environment, this data is currently only available if the Item is using a [custom Sandbox user](https://plaid.com/docs/sandbox/user-custom/) and the `ticker` field of the custom security follows the [OCC Option Symbol](https://en.wikipedia.org/wiki/Option_symbol#The_OCC_Option_Symbol) standard with no spaces. For an example of simulating this in Sandbox, see the [custom Sandbox GitHub](https://github.com/plaid/sandbox-custom-users).</summary>
+        /// <summary>Details about the option security.For the Sandbox environment, this data is currently only available if the Item is using a [custom Sandbox user](https://plaid.com/docs/sandbox/user-custom/) and the `ticker_symbol` field of the custom security follows the [OCC Option Symbol](https://en.wikipedia.org/wiki/Option_symbol#The_OCC_Option_Symbol) standard with no spaces. For an example of simulating this in Sandbox, see the [custom Sandbox GitHub](https://github.com/plaid/sandbox-custom-users).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.OptionContract? OptionContract { get; set; }
@@ -143,7 +151,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Sedol { get; set; }
 #endif
-        /// <summary>&quot;The security subtype of the holding.In rare instances, a null value is returned when institutional data is insufficient to determine the security subtype.Possible values: `asset backed security`, `bill`, `bond`, `bond with warrants`, `cash`, `cash management bill`, `common stock`, `convertible bond`, `convertible equity`, `cryptocurrency`, `depositary receipt`, `depositary receipt on debt`, `etf`, `float rating note`, `fund of funds`, `hedge fund`, `limited partnership unit`, `medium term note`, `money market debt`, `mortgage backed security`, `municipal bond`, `mutual fund`, `note`, `option`, `other`, `preferred convertible`, `preferred equity`, `private equity fund`, `real estate investment trust`, `structured equity product`, `treasury inflation protected securities`, `unit`, `warrant`.&quot;</summary>
+        /// <summary>The security subtype of the holding.In rare instances, a null value is returned when institutional data is insufficient to determine the security subtype.Possible values: `asset backed security`, `bill`, `bond`, `bond with warrants`, `cash`, `cash management bill`, `common stock`, `convertible bond`, `convertible equity`, `cryptocurrency`, `depositary receipt`, `depositary receipt on debt`, `etf`, `float rating note`, `fund of funds`, `hedge fund`, `limited partnership unit`, `medium term note`, `money market debt`, `mortgage backed security`, `municipal bond`, `mutual fund`, `note`, `option`, `other`, `preferred convertible`, `preferred equity`, `private equity fund`, `real estate investment trust`, `structured equity product`, `treasury inflation protected securities`, `unit`, `warrant`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Subtype { get; set; }
@@ -151,7 +159,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Subtype { get; set; }
 #endif
-        /// <summary>The security’s trading symbol for publicly traded securities, and otherwise a short identifier if available.</summary>
+        /// <summary>The security&apos;s trading symbol for publicly traded securities, and otherwise a short identifier if available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TickerSymbol { get; set; }
@@ -159,7 +167,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string TickerSymbol { get; set; }
 #endif
-        /// <summary>&quot;The security type of the holding.In rare instances, a null value is returned when institutional data is insufficient to determine the security type.Valid security types are:`cash`: Cash, currency, and money market funds`cryptocurrency`: Digital or virtual currencies`derivative`: Options, warrants, and other derivative instruments`equity`: Domestic and foreign equities`etf`: Multi-asset exchange-traded investment funds`fixed income`: Bonds and certificates of deposit (CDs)`loan`: Loans and loan receivables`mutual fund`: Open- and closed-end vehicles pooling funds of multiple investors`other`: Unknown or other investment types&quot;</summary>
+        /// <summary>The security type of the holding.In rare instances, a null value is returned when institutional data is insufficient to determine the security type.Valid security types are:`cash`: Cash, currency, and money market funds`cryptocurrency`: Digital or virtual currencies`derivative`: Options, warrants, and other derivative instruments`equity`: Domestic and foreign equities`etf`: Multi-asset exchange-traded investment funds`fixed income`: Bonds and certificates of deposit (CDs)`loan`: Loans and loan receivables`mutual fund`: Open- and closed-end vehicles pooling funds of multiple investors`other`: Unknown or other investment types</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }
@@ -167,7 +175,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>The unofficial currency code associated with the security. Always `null` if `iso_currency_code` is non-`null`. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `iso_currency_code`s.</summary>
+        /// <summary>The unofficial currency code associated with the security. Always `null` if `iso_currency_code` is non-`null`. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `unofficial_currency_code`s.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UnofficialCurrencyCode { get; set; }
@@ -206,6 +214,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "close_price", n => { ClosePrice = n.GetDoubleValue(); } },
                 { "close_price_as_of", n => { ClosePriceAsOf = n.GetDateValue(); } },
                 { "cusip", n => { Cusip = n.GetStringValue(); } },
+                { "figi", n => { Figi = n.GetStringValue(); } },
                 { "fixed_income", n => { FixedIncome = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.FixedIncome>(global::Soenneker.Plaid.OpenApiClient.Models.FixedIncome.CreateFromDiscriminatorValue); } },
                 { "industry", n => { Industry = n.GetStringValue(); } },
                 { "institution_id", n => { InstitutionId = n.GetStringValue(); } },
@@ -238,6 +247,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDoubleValue("close_price", ClosePrice);
             writer.WriteDateValue("close_price_as_of", ClosePriceAsOf);
             writer.WriteStringValue("cusip", Cusip);
+            writer.WriteStringValue("figi", Figi);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.FixedIncome>("fixed_income", FixedIncome);
             writer.WriteStringValue("industry", Industry);
             writer.WriteStringValue("institution_id", InstitutionId);

@@ -25,7 +25,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>Timestamp of user creation.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The identity fields associated with a user. For a user to be eligible for a Plaid Check Consumer Report, all fields are required except `id_number`. Providing a partial SSN is strongly recommended, and improves the accuracy of matching user records during compliance processes such as file disclosure, dispute, or security freeze requests. If creating a report that will be shared with GSEs such as Fannie or Freddie, a full Social Security Number must be provided via the `id_number` field.</summary>
+        /// <summary>The identity fields associated with a user. For a user to be eligible for a Plaid Check Consumer Report, all fields are required except `id_numbers`. Providing a partial SSN is strongly recommended, and improves the accuracy of matching user records during compliance processes such as file disclosure, dispute, or security freeze requests. If creating a report that will be shared with GSEs such as Fannie or Freddie, a full Social Security Number must be provided via the `id_numbers` field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.ClientUserIdentity? Identity { get; set; }
@@ -43,7 +43,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>Timestamp of last user update.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>A unique user identifier, created by `/user/create`. Integrations that began using `/user/create` after December 10, 2025 use this field to identify a user instead of the `user_token`. For more details, see [new user APIs](https://plaid.com/docs/api/users/user-apis).</summary>
+        /// <summary>A unique user identifier, created by `/user/create`. Integrations that began using `/user/create` after December 10, 2025 use this field to identify a user instead of the `user_token`. For more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }

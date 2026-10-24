@@ -9,31 +9,35 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "AUTH")]
         #pragma warning disable CS1591
-        AUTH,
+        Auth,
         #pragma warning restore CS1591
         [EnumMember(Value = "HOLDINGS")]
         #pragma warning disable CS1591
-        HOLDINGS,
+        Holdings,
         #pragma warning restore CS1591
         [EnumMember(Value = "INVESTMENTS_TRANSACTIONS")]
         #pragma warning disable CS1591
-        INVESTMENTS_TRANSACTIONS,
+        InvestmentsTransactions,
         #pragma warning restore CS1591
         [EnumMember(Value = "ITEM")]
         #pragma warning disable CS1591
-        ITEM,
+        Item,
         #pragma warning restore CS1591
         [EnumMember(Value = "LIABILITIES")]
         #pragma warning disable CS1591
-        LIABILITIES,
+        Liabilities,
         #pragma warning restore CS1591
         [EnumMember(Value = "TRANSACTIONS")]
         #pragma warning disable CS1591
-        TRANSACTIONS,
+        Transactions,
         #pragma warning restore CS1591
         [EnumMember(Value = "ASSETS")]
         #pragma warning disable CS1591
-        ASSETS,
+        Assets,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "IDENTITY")]
+        #pragma warning disable CS1591
+        Identity,
         #pragma warning restore CS1591
     }
 }

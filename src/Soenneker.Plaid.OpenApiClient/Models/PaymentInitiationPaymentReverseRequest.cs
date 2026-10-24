@@ -42,7 +42,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>The counterparty&apos;s birthdate, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) (YYYY-MM-DD) format.</summary>
         public Date? CounterpartyDateOfBirth { get; set; }
-        /// <summary>A random key provided by the client, per unique wallet transaction. Maximum of 128 characters.The API supports idempotency for safely retrying requests without accidentally performing the same operation twice. If a request to execute a wallet transaction fails due to a network connection error, then after a minimum delay of one minute, you can retry the request with the same idempotency key to guarantee that only a single wallet transaction is created. If the request was successfully processed, it will prevent any transaction that uses the same idempotency key, and was received within 24 hours of the first request, from being processed.</summary>
+        /// <summary>A random key provided by the client, per unique wallet transaction. Maximum of 128 characters.The API supports idempotency for safely retrying requests without accidentally performing the same operation twice. If a request to execute a wallet transaction fails due to a network connection error, then after a minimum delay of one minute, you can retry the request with the same idempotency key to guarantee that only a single wallet transaction is created. If the request was successfully processed, it will prevent any transaction that uses the same idempotency key, and was received within 48 hours of the first request, from being processed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdempotencyKey { get; set; }
@@ -58,7 +58,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string PaymentId { get; set; }
 #endif
-        /// <summary>A reference for the refund. This must be an alphanumeric string with 6 to 18 characters and must not contain any special characters or spaces.</summary>
+        /// <summary>A reference for the refund. This must be a string of 6 to 18 characters containing only letters, numbers, and spaces.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reference { get; set; }

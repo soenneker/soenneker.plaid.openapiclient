@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Beta.Transactions.Rules.V1.List
         {
         }
         /// <summary>
-        /// The `/transactions/rules/v1/list` returns a list of transaction rules created for the Item associated with the access token.
+        /// The `/beta/transactions/rules/v1/list` returns a list of transaction rules created for the end user specified by `client_user_id`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransactionsRulesListResponse"/></returns>
         /// <param name="body">TransactionsRulesListRequest defines the request schema for `/beta/transactions/rules/v1/list`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Beta.Transactions.Rules.V1.List
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.TransactionsRulesListResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.TransactionsRulesListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The `/transactions/rules/v1/list` returns a list of transaction rules created for the Item associated with the access token.
+        /// The `/beta/transactions/rules/v1/list` returns a list of transaction rules created for the end user specified by `client_user_id`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">TransactionsRulesListRequest defines the request schema for `/beta/transactions/rules/v1/list`</param>

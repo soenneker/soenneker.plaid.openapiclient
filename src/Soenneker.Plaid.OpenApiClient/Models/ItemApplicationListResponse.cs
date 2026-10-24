@@ -23,6 +23,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public List<global::Soenneker.Plaid.OpenApiClient.Models.ConnectedApplication> Applications { get; set; }
 #endif
+        /// <summary>A list of applications that the user previously connected and has since disconnected. Disconnected applications carry no `scopes` or `created_at`, since the user has revoked their access.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.DisconnectedApplication>? DisconnectedApplications { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.DisconnectedApplication> DisconnectedApplications { get; set; }
+#endif
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +65,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "applications", n => { Applications = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.ConnectedApplication>(global::Soenneker.Plaid.OpenApiClient.Models.ConnectedApplication.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "disconnected_applications", n => { DisconnectedApplications = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.DisconnectedApplication>(global::Soenneker.Plaid.OpenApiClient.Models.DisconnectedApplication.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
             };
         }
@@ -68,6 +77,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.ConnectedApplication>("applications", Applications);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.DisconnectedApplication>("disconnected_applications", DisconnectedApplications);
             writer.WriteStringValue("request_id", RequestId);
             writer.WriteAdditionalData(AdditionalData);
         }

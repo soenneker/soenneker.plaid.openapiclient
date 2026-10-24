@@ -52,7 +52,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>The date on which the pay period started, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (&quot;yyyy-mm-dd&quot;).</summary>
         public Date? StartDate { get; set; }
-        /// <summary>The unofficial currency code associated with the net pay. Always `null` if `iso_currency_code` is non-`null`. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `iso_currency_code`s.</summary>
+        /// <summary>The unofficial currency code associated with the net pay. Always `null` if `iso_currency_code` is non-`null`. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `unofficial_currency_code`s.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UnofficialCurrencyCode { get; set; }

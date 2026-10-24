@@ -42,7 +42,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The counterparty&apos;s bank account numbers. Exactly one of IBAN or BACS data is required.</summary>
+        /// <summary>The payer&apos;s bank account numbers. Exactly one of IBAN or Bacs data is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentPayerNumbers? Numbers { get; set; }
@@ -50,7 +50,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentPayerNumbers Numbers { get; set; }
 #endif
-        /// <summary>&quot;The payer&apos;s phone numbers in E.164 format: +{countrycode}{number}&quot;</summary>
+        /// <summary>The payer&apos;s phone numbers in E.164 format: +{countrycode}{number}</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PhoneNumbers { get; set; }

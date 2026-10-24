@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// A detailed breakdown of the institution&apos;s performance for a request type. The values for `success`, `error_plaid`, and `error_institution` sum to 1. The time range used for calculating the breakdown may range from the most recent few minutes to the past six hours. In general, smaller institutions will show status that was calculated over a longer period of time. For Investment updates, which are refreshed less frequently, the period assessed may be 24 hours or more. For more details, see [Institution status details](https://plaid.com/docs/account/activity/#institution-status-details).
+    /// A detailed breakdown of the institution&apos;s performance for a request type. The values for `success`, `error_plaid`, and `error_institution` sum to 1. The time range used for calculating the breakdown may range from the most recent few minutes to the past six hours. In general, smaller institutions will show status that was calculated over a longer period of time. For Investment updates, which are refreshed less frequently, the period assessed may be 24 hours or more. For more details, see [Institution status details](https://plaid.com/docs/account/activity/#troubleshooting-institution-insights).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProductStatusBreakdown : IAdditionalDataHolder, IParsable
@@ -19,8 +19,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public double? ErrorInstitution { get; set; }
         /// <summary>The percentage of logins that are failing due to an internal Plaid issue, expressed as a decimal.</summary>
         public double? ErrorPlaid { get; set; }
-        /// <summary>How frequently data for subscription products like Investments, Transactions, and Liabilities, is being refreshed, relative to the institution&apos;s normal scheduling. The `refresh_interval` may be `DELAYED` or `STOPPED` even when the success rate is high.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatusBreakdown_refresh_interval? RefreshInterval { get; set; }
+        /// <summary>How frequently data for subscription products like Investments, Transactions, and Liabilities, is being refreshed. `NORMAL`: data is refreshed at least every 2 days. `DELAYED`: data is refreshed less often than every 2 days. `STOPPED`: data is refreshed less often than every 14 days, or not at all. The `refresh_interval` may be `DELAYED` or `STOPPED` even when the success rate is high.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatusBreakdownRefreshInterval? RefreshInterval { get; set; }
         /// <summary>The percentage of login attempts that are successful, expressed as a decimal.</summary>
         public double? Success { get; set; }
         /// <summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "error_institution", n => { ErrorInstitution = n.GetDoubleValue(); } },
                 { "error_plaid", n => { ErrorPlaid = n.GetDoubleValue(); } },
-                { "refresh_interval", n => { RefreshInterval = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ProductStatusBreakdown_refresh_interval>(); } },
+                { "refresh_interval", n => { RefreshInterval = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ProductStatusBreakdownRefreshInterval>(); } },
                 { "success", n => { Success = n.GetDoubleValue(); } },
             };
         }
@@ -63,7 +63,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("error_institution", ErrorInstitution);
             writer.WriteDoubleValue("error_plaid", ErrorPlaid);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ProductStatusBreakdown_refresh_interval>("refresh_interval", RefreshInterval);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ProductStatusBreakdownRefreshInterval>("refresh_interval", RefreshInterval);
             writer.WriteDoubleValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

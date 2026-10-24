@@ -37,7 +37,7 @@ namespace Soenneker.Plaid.OpenApiClient.Credit.Payroll_income.Parsing_config.Upd
         /// `/credit/payroll_income/parsing_config/update` updates the parsing configuration for a document income verification.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CreditPayrollIncomeParsingConfigUpdateResponse"/></returns>
-        /// <param name="body">CreditPayrollIncomeParsingConfigUpdateRequest defines the request schema for `/credit/payroll_income/documents/update`.</param>
+        /// <param name="body">CreditPayrollIncomeParsingConfigUpdateRequest defines the request schema for `/credit/payroll_income/parsing_config/update`.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Plaid.OpenApiClient.Models.PlaidError">When receiving a 4XX or 5XX status code</exception>
@@ -62,7 +62,7 @@ namespace Soenneker.Plaid.OpenApiClient.Credit.Payroll_income.Parsing_config.Upd
         /// `/credit/payroll_income/parsing_config/update` updates the parsing configuration for a document income verification.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">CreditPayrollIncomeParsingConfigUpdateRequest defines the request schema for `/credit/payroll_income/documents/update`.</param>
+        /// <param name="body">CreditPayrollIncomeParsingConfigUpdateRequest defines the request schema for `/credit/payroll_income/parsing_config/update`.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

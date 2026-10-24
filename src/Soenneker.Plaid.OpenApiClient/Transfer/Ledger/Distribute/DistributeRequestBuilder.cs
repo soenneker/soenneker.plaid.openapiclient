@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Transfer.Ledger.Distribute
         {
         }
         /// <summary>
-        /// Use the `/transfer/ledger/distribute` endpoint to move available balance between ledgers, if you have multiple. If you’re a platform, you can move funds between one of your ledgers and one of your customer’s ledger.
+        /// Use the `/transfer/ledger/distribute` endpoint to move available balance between ledgers, if you have multiple. If you&apos;re a platform, you can move funds between one of your ledgers and one of your customer&apos;s ledgers.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransferLedgerDistributeResponse"/></returns>
         /// <param name="body">Defines the request schema for `/transfer/ledger/distribute`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Transfer.Ledger.Distribute
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.TransferLedgerDistributeResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.TransferLedgerDistributeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use the `/transfer/ledger/distribute` endpoint to move available balance between ledgers, if you have multiple. If you’re a platform, you can move funds between one of your ledgers and one of your customer’s ledger.
+        /// Use the `/transfer/ledger/distribute` endpoint to move available balance between ledgers, if you have multiple. If you&apos;re a platform, you can move funds between one of your ledgers and one of your customer&apos;s ledgers.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Defines the request schema for `/transfer/ledger/distribute`</param>

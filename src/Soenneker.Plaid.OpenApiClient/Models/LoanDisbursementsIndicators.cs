@@ -53,7 +53,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>The percentage of the user&apos;s monthly inflows that was received on transactions that fall into the `LOAN_DISBURSEMENTS` credit category within the given time window, across all the accounts in the report. For example, a value of 100 indicates that 100% of the inflows were spent on transactions that fall into the `LOAN_DISBURSEMENTS` credit category.If there&apos;s no available income for the given time period, this field value will be `-1`.</summary>
         public double? PercentageOfIncome { get; set; }
-        /// <summary>Up to 3 top service providers that the user had the most transactions for in the given time window, in descending order of total spend.If the user has received money from any provider in the given time window, this list will be empty.</summary>
+        /// <summary>Up to 3 top service providers that the user had the most transactions for in the given time window, in descending order of total spend.If the user has not received money from any provider in the given time window, this list will be empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? TopProviders { get; set; }

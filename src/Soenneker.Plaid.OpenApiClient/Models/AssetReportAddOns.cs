@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>&quot;Add-ons that should be included in the Asset Report.`investments`: The Investments add-on`fast_assets`: The Fast Assets add-on&quot;</summary>
+    /// <summary>Add-ons that should be included in the Asset Report.`investments`: The Investments add-on`fast_assets`: The Fast Assets add-on</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AssetReportAddOns
     {
@@ -13,7 +13,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "fast_assets")]
         #pragma warning disable CS1591
-        Fast_assets,
+        FastAssets,
         #pragma warning restore CS1591
     }
 }

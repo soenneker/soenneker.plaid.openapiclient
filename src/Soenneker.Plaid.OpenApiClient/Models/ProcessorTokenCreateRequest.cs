@@ -13,7 +13,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProcessorTokenCreateRequest : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The access token associated with the Item data is being requested for.</summary>
+        /// <summary>The access token associated with the Item for which data is being requested.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccessToken { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public string ClientId { get; set; }
 #endif
         /// <summary>The processor you are integrating with.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProcessorTokenCreateRequest_processor? Processor { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProcessorTokenCreateRequestProcessor? Processor { get; set; }
         /// <summary>Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,7 +77,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "access_token", n => { AccessToken = n.GetStringValue(); } },
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
-                { "processor", n => { Processor = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ProcessorTokenCreateRequest_processor>(); } },
+                { "processor", n => { Processor = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ProcessorTokenCreateRequestProcessor>(); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
             };
         }
@@ -91,7 +91,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("access_token", AccessToken);
             writer.WriteStringValue("account_id", AccountId);
             writer.WriteStringValue("client_id", ClientId);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ProcessorTokenCreateRequest_processor>("processor", Processor);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ProcessorTokenCreateRequestProcessor>("processor", Processor);
             writer.WriteStringValue("secret", Secret);
             writer.WriteAdditionalData(AdditionalData);
         }

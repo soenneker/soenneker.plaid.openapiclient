@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacLoanIdentifiers LOANIDENTIFIERS { get; set; }
 #endif
-        /// <summary>Type of loan. The value can only be &quot;SubjectLoan&quot;</summary>
+        /// <summary>Type of loan. The value can only be &quot;SubjectLoan&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LoanRoleType { get; set; }

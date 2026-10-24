@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Transactions are related when they have a logical connection.For example, a `PAYOUT` transaction can be returned by the sender, creating a `RETURN` transaction. Each `PAYOUT` transaction can have at most one corresponding `RETURN` transaction in case of reversal.These relationships are bi-directional, meaning that both entities have references to each other. For instance, when a transaction of type RETURN occurs, it is linked to the original transaction being returned. Likewise, the original transaction has a reference back to the RETURN transaction that represents the return.This field is only populated for transactions of type `RETURN`, `FUNDS_SWEEP`, `REFUND` and `PAYOUT`.The relationship between a `PIS_PAY_IN` payment and its corresponding `REFUND` transactions is only available through `refund_ids` property in the payment object. See[`/payment_initiation/payment/get`](https://plaid.com/docs/api/products/payment-initiation/#payment_initiation-payment-get-response-refund-ids).
+    /// Transactions are related when they have a logical connection.For example, a `PAYOUT` transaction can be returned by the sender, creating a `RETURN` transaction. Each `PAYOUT` transaction can have at most one corresponding `RETURN` transaction in case of reversal.These relationships are bi-directional, meaning that both entities have references to each other. For instance, when a transaction of type RETURN occurs, it is linked to the original transaction being returned. Likewise, the original transaction has a reference back to the RETURN transaction that represents the return.This field is only populated for transactions of type `RETURN`, `FUNDS_SWEEP`, `REFUND` and `PAYOUT`.The relationship between a `PIS_PAY_IN` payment and its corresponding `REFUND` transactions is only available through the `refund_ids` property in the payment object. See [`/payment_initiation/payment/get`](https://plaid.com/docs/api/products/payment-initiation/#payment_initiation-payment-get-response-refund-ids).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WalletTransactionRelation : IAdditionalDataHolder, IParsable
@@ -24,7 +24,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The type of the transaction.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionRelation_type? Type { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionRelationType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionRelation"/> and sets the default values.
         /// </summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionRelation_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionRelationType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionRelation_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionRelationType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

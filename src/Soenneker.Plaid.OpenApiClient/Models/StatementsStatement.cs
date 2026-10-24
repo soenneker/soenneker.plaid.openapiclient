@@ -18,7 +18,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Date when the statement was posted by the FI, if known</summary>
         public Date? DatePosted { get; set; }
-        /// <summary>&quot;Month of the year. Possible values: 1 through 12 (January through December).&quot;</summary>
+        /// <summary>Month of the year. Possible values: 1 through 12 (January through December).</summary>
         public int? Month { get; set; }
         /// <summary>Plaid&apos;s unique identifier for the statement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,7 +28,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string StatementId { get; set; }
 #endif
-        /// <summary>The year of statement.</summary>
+        /// <summary>The year of the statement, e.g. 2024.</summary>
         public int? Year { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.StatementsStatement"/> and sets the default values.

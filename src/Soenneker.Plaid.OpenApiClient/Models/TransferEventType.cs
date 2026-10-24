@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>&quot;The type of event that this transfer represents. Event types with prefix `sweep` represents events for Plaid Ledger sweeps.`pending`: A new transfer was created; it is in the pending state.`cancelled`: The transfer was cancelled by the client.`failed`: The transfer failed, no funds were moved.`posted`: The transfer has been successfully submitted to the payment network.`settled`: The transfer has been successfully completed by the payment network.`funds_available`: Funds from the transfer have been released from hold and applied to the ledger&apos;s available balance. (Only applicable to ACH debits.)`returned`: A posted transfer was returned.`swept`: The transfer was swept to / from the sweep account.`swept_settled`: Credits are available to be withdrawn or debits have been deducted from the customer’s business checking account.`return_swept`: Due to the transfer being returned, funds were pulled from or pushed back to the sweep account.`sweep.pending`: A new ledger sweep was created; it is in the pending state.`sweep.posted`: The ledger sweep has been successfully submitted to the payment network.`sweep.settled`: The transaction has settled in the funding account. This means that funds withdrawn from Plaid Ledger balance have reached the funding account, or funds to be deposited into the Plaid Ledger Balance have been pulled, and the hold period has begun.`sweep.returned`: A posted ledger sweep was returned.`sweep.failed`: The ledger sweep failed, no funds were moved.`sweep.funds_available`: Funds from the ledger sweep have been released from hold and applied to the ledger&apos;s available balance. This is only applicable to debits.`refund.pending`: A new refund was created; it is in the pending state.`refund.cancelled`: The refund was cancelled.`refund.failed`: The refund failed, no funds were moved.`refund.posted`: The refund has been successfully submitted to the payment network.`refund.settled`: The refund transaction has settled in the Plaid linked account.`refund.returned`: A posted refund was returned.`refund.swept`: The refund was swept from the sweep account.`refund.return_swept`: Due to the refund being returned, funds were pushed back to the sweep account.&quot;</summary>
+    /// <summary>The type of event that this transfer represents. Event types with prefix `sweep` represent events for Plaid Ledger sweeps.`pending`: A new transfer was created; it is in the pending state.`cancelled`: The transfer was cancelled by the client.`failed`: The transfer failed, no funds were moved.`posted`: The transfer has been successfully submitted to the payment network.`settled`: The transfer has been successfully completed by the payment network.`funds_available`: Funds from the transfer have been released from hold and applied to the ledger&apos;s available balance. (Only applicable to ACH debits.)`guaranteed`: The transfer has been fully guaranteed by Plaid.`returned`: A posted transfer was returned.`adjustment`: An adjustment was made to the transfer due to rare activity, such as a dishonor. Refer to `event_amount` for the amount adjusted: a positive amount means funds are credited to the ledger, and a negative amount means funds are debited from the ledger. `failure_reason.description` describes the reason for the adjustment.`guarantee_reimbursed`: Plaid reimbursed the client for the loss on a returned guaranteed transfer. The `event_amount` is the reimbursed amount.`client_return_recovered`: The client reported recovering the loss on a returned transfer, and Plaid debited the recovered amount from the client&apos;s ledger. The `event_amount` is the recovered amount.`plaid_return_recovered`: Plaid recovered the loss on a returned transfer by successfully reinitiating it. The `event_amount` is the recovered amount. Client should stop their return recovery effort.`swept`: The transfer was swept to / from the sweep account.`swept_settled`: Credits are available to be withdrawn or debits have been deducted from the customer&apos;s business checking account.`return_swept`: Due to the transfer being returned, funds were pulled from or pushed back to the sweep account.`sweep.pending`: A new ledger sweep was created; it is in the pending state.`sweep.posted`: The ledger sweep has been successfully submitted to the payment network.`sweep.settled`: The transaction has settled in the funding account. This means that funds withdrawn from Plaid Ledger balance have reached the funding account, or funds to be deposited into the Plaid Ledger Balance have been pulled, and the hold period has begun.`sweep.returned`: A posted ledger sweep was returned.`sweep.failed`: The ledger sweep failed, no funds were moved.`sweep.funds_available`: Funds from the ledger sweep have been released from hold and applied to the ledger&apos;s available balance. This is only applicable to debits.`refund.pending`: A new refund was created; it is in the pending state.`refund.cancelled`: The refund was cancelled.`refund.failed`: The refund failed, no funds were moved.`refund.posted`: The refund has been successfully submitted to the payment network.`refund.settled`: The refund transaction has settled in the Plaid linked account.`refund.returned`: A posted refund was returned.`refund.swept`: The refund was swept from the sweep account.`refund.return_swept`: Due to the refund being returned, funds were pushed back to the sweep account.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransferEventType
     {
@@ -29,11 +29,31 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "funds_available")]
         #pragma warning disable CS1591
-        Funds_available,
+        FundsAvailable,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "guaranteed")]
+        #pragma warning disable CS1591
+        Guaranteed,
         #pragma warning restore CS1591
         [EnumMember(Value = "returned")]
         #pragma warning disable CS1591
         Returned,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "adjustment")]
+        #pragma warning disable CS1591
+        Adjustment,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "guarantee_reimbursed")]
+        #pragma warning disable CS1591
+        GuaranteeReimbursed,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "client_return_recovered")]
+        #pragma warning disable CS1591
+        ClientReturnRecovered,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "plaid_return_recovered")]
+        #pragma warning disable CS1591
+        PlaidReturnRecovered,
         #pragma warning restore CS1591
         [EnumMember(Value = "swept")]
         #pragma warning disable CS1591
@@ -41,11 +61,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "swept_settled")]
         #pragma warning disable CS1591
-        Swept_settled,
+        SweptSettled,
         #pragma warning restore CS1591
         [EnumMember(Value = "return_swept")]
         #pragma warning disable CS1591
-        Return_swept,
+        ReturnSwept,
         #pragma warning restore CS1591
         [EnumMember(Value = "sweep.pending")]
         #pragma warning disable CS1591
@@ -69,7 +89,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "sweep.funds_available")]
         #pragma warning disable CS1591
-        SweepFunds_available,
+        SweepFundsAvailable,
         #pragma warning restore CS1591
         [EnumMember(Value = "refund.pending")]
         #pragma warning disable CS1591
@@ -101,7 +121,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "refund.return_swept")]
         #pragma warning disable CS1591
-        RefundReturn_swept,
+        RefundReturnSwept,
         #pragma warning restore CS1591
     }
 }

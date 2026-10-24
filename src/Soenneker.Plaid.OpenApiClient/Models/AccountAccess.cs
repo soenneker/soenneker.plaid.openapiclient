@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Allow the application to see this account (and associated details, including balance) in the list of accounts  If unset, defaults to `true`.</summary>
+        /// <summary>Allow the application to see this account (and associated details, including balance) in the list of accounts. If unset, defaults to `true`.</summary>
         public bool? Authorized { get; set; }
         /// <summary>The unique account identifier for this account. This value must match that returned by the data access API for this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,6 +39,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public AccountAccess()
         {
             AdditionalData = new Dictionary<string, object>();
+            Authorized = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

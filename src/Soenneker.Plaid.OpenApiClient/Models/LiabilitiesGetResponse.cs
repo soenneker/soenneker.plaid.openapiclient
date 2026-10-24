@@ -26,10 +26,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Metadata about the Item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.Item? Item { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ItemValue? Item { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.Item Item { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ItemValue Item { get; set; }
 #endif
         /// <summary>An object containing liability accounts</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accounts", n => { Accounts = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.AccountBase>(global::Soenneker.Plaid.OpenApiClient.Models.AccountBase.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "item", n => { Item = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Item>(global::Soenneker.Plaid.OpenApiClient.Models.Item.CreateFromDiscriminatorValue); } },
+                { "item", n => { Item = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ItemValue>(global::Soenneker.Plaid.OpenApiClient.Models.ItemValue.CreateFromDiscriminatorValue); } },
                 { "liabilities", n => { Liabilities = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LiabilitiesObject>(global::Soenneker.Plaid.OpenApiClient.Models.LiabilitiesObject.CreateFromDiscriminatorValue); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
             };
@@ -86,7 +86,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.AccountBase>("accounts", Accounts);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Item>("item", Item);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ItemValue>("item", Item);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LiabilitiesObject>("liabilities", Liabilities);
             writer.WriteStringValue("request_id", RequestId);
             writer.WriteAdditionalData(AdditionalData);

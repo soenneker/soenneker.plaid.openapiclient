@@ -31,6 +31,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string RequestId { get; set; }
 #endif
+        /// <summary>A unique user identifier, created by `/user/create`. Integrations that began using `/user/create` after December 10, 2025 use this field to identify a user instead of the `user_token`. For more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserId { get; set; }
+#nullable restore
+#else
+        public string UserId { get; set; }
+#endif
         /// <summary>If the report generation was successful but a subset of data could not be retrieved, this array will contain information about the errors causing information to be missing</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +74,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "report", n => { Report = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileReport>(global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileReport.CreateFromDiscriminatorValue); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
+                { "user_id", n => { UserId = n.GetStringValue(); } },
                 { "warnings", n => { Warnings = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CheckReportWarning>(global::Soenneker.Plaid.OpenApiClient.Models.CheckReportWarning.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -78,6 +87,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileReport>("report", Report);
             writer.WriteStringValue("request_id", RequestId);
+            writer.WriteStringValue("user_id", UserId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CheckReportWarning>("warnings", Warnings);
             writer.WriteAdditionalData(AdditionalData);
         }

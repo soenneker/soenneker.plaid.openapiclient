@@ -65,7 +65,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.Location Location { get; set; }
 #endif
-        /// <summary>The URL of a logo associated with this transaction, if available. The logo will always be 100×100 pixel PNG file.</summary>
+        /// <summary>The URL of a logo associated with this transaction, if available. The logo will always be a 100×100 pixel PNG file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LogoUrl { get; set; }
@@ -91,7 +91,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory PersonalFinanceCategory { get; set; }
 #endif
-        /// <summary>The URL of an icon associated with the primary personal finance category. The icon will always be 100×100 pixel PNG file.</summary>
+        /// <summary>The URL of an icon associated with the primary personal finance category. The icon will always be a 100×100 pixel PNG file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PersonalFinanceCategoryIconUrl { get; set; }
@@ -99,7 +99,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string PersonalFinanceCategoryIconUrl { get; set; }
 #endif
-        /// <summary>The phone number associated with the counterparty in E. 164 format. If there is a location match (i.e. a street address is returned in the location object), the phone number will be location specific.</summary>
+        /// <summary>The phone number associated with the counterparty in E.164 format. If there is a location match (i.e. a street address is returned in the location object), the phone number will be location specific.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PhoneNumber { get; set; }

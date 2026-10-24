@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Conveys information about the errors causing missing or stale bank data used to construct the /signal/evaluate scores and response
+    /// Conveys information about the errors causing missing or stale bank data used to construct the `/signal/evaluate` scores and response
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SignalWarning : IAdditionalDataHolder, IParsable

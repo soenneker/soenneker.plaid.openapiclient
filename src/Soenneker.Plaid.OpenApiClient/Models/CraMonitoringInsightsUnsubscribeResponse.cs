@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// CraMonitoringInsightsUnsubscribeResponse defines the response schema for `cra/monitoring_insights/unsubscribe`
+    /// CraMonitoringInsightsUnsubscribeResponse defines the response schema for `/cra/monitoring_insights/unsubscribe`
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraMonitoringInsightsUnsubscribeResponse : IAdditionalDataHolder, IParsable

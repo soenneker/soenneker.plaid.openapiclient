@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;The attributes object contains data that can be used to assess account risk. Examples of data include:`days_since_first_plaid_connection`: The number of days since the first time the Item was connected to an application via Plaid`plaid_connections_count_7d`: The number of times the Item has been connected to applications via Plaid over the past 7 days`plaid_connections_count_30d`: The number of times the Item has been connected to applications via Plaid over the past 30 days`total_plaid_connections_count`: The number of times the Item has been connected to applications via PlaidFor the full list and detailed documentation of core attributes available, or to request that core attributes not be returned, contact Sales or your Plaid account manager&quot;
+    /// The attributes object contains data that can be used to assess account risk. Examples of data include:`days_since_first_plaid_connection`: The number of days since the first time the Item was connected to an application via Plaid`plaid_connections_count_7d`: The number of times the Item has been connected to applications via Plaid over the past 7 days`plaid_connections_count_30d`: The number of times the Item has been connected to applications via Plaid over the past 30 days`total_plaid_connections_count`: The number of times the Item has been connected to applications via PlaidFor the full list and detailed documentation of core attributes available, or to request that core attributes not be returned, contact sales or your Plaid account manager
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BeaconAccountRiskAttributes : IAdditionalDataHolder, IParsable
@@ -69,7 +69,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public int? PlaidNonOauthAuthenticationAttemptsCount3d { get; set; }
         /// <summary>The number of non-OAuth authentication attempts via Plaid for this bank account over the past 7 days</summary>
         public int? PlaidNonOauthAuthenticationAttemptsCount7d { get; set; }
-        /// <summary>The total number of times the item has been connected to applications via Plaid</summary>
+        /// <summary>The total number of times the Item has been connected to applications via Plaid</summary>
         public int? TotalPlaidConnectionsCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BeaconAccountRiskAttributes"/> and sets the default values.

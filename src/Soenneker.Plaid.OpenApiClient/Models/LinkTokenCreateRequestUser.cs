@@ -16,13 +16,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The address property</summary>
+        /// <summary>The user&apos;s address. Used only for Identity Verification and the Identity Match in Link workflows. If provided for Identity Verification, the user will not be shown fields to enter their address in the Identity Verification flow. If provided for Identity Match, the provided data will be used to match against the user&apos;s address. May be omitted, but if not omitted, all fields marked as required must be provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUser_address? Address { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUserAddress? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUser_address Address { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUserAddress Address { get; set; }
 #endif
         /// <summary>A unique ID representing the end user. Typically this will be a user ID number from your application. Personally identifiable information, such as an email address or phone number, should not be used in the `client_user_id`. It is currently used as a means of searching logs for the given user in the Plaid Dashboard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,16 +42,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string EmailAddress { get; set; }
 #endif
-        /// <summary>&quot;The date and time the email address was verified in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (`YYYY-MM-DDThh:mm:ssZ`). This was previously an optional field used in the [returning user experience](https://plaid.com/docs/link/returning-user). This field is no longer required to enable the returning user experience. Only pass a verification time for an email address that you have verified. If you have performed verification but don’t have the time, you may supply a signal value of the start of the UNIX epoch. Example: `2020-01-01T00:00:00Z`&quot;</summary>
+        /// <summary>The date and time the email address was verified in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (`YYYY-MM-DDThh:mm:ssZ`). This was previously an optional field used in the [returning user experience](https://plaid.com/docs/link/returning-user). This field is no longer required to enable the returning user experience. Only pass a verification time for an email address that you have verified. If you have performed verification but don&apos;t have the time, you may supply a signal value of the start of the UNIX epoch. Example: `2020-01-01T00:00:00Z`</summary>
         [Obsolete("")]
         public DateTimeOffset? EmailAddressVerifiedTime { get; set; }
-        /// <summary>The id_number property</summary>
+        /// <summary>The user&apos;s ID number. Used only for Identity Verification. If provided, the user will not be shown fields to enter their ID number in the Identity Verification flow. May be omitted, but if not omitted, all fields marked as required must be provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUser_id_number? IdNumber { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUserIdNumber? IdNumber { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUser_id_number IdNumber { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUserIdNumber IdNumber { get; set; }
 #endif
         /// <summary>The user&apos;s full legal name, used for [micro-deposit based verification flows](https://plaid.com/docs/auth/coverage/). For a small number of customers on legacy flows, providing this field is required to enable micro-deposit-based flows. For all other customers, this field is optional. Providing the user&apos;s name in this field when using micro-deposit-based verification will streamline the end user experience, as the user will not be prompted to enter their name during the Link flow; Plaid will use the provided legal name instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,13 +61,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string LegalName { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The user&apos;s full name. Optional, and only allowed when using [Identity Verification](https://plaid.com/docs/api/products/identity-verification), Assets, Protect, or Hosted Link. Users will not be asked for their name when this field is provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUser_name? Name { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUserName? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUser_name Name { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUserName Name { get; set; }
 #endif
         /// <summary>The user&apos;s phone number in [E.164](https://en.wikipedia.org/wiki/E.164) format. If supplied, will be used when applicable to prefill phone number fields in Link for the [returning user flow](https://plaid.com/docs/link/returning-user) and the [Identity Verification flow](https://plaid.com/docs/identity-verification). Phone number input is validated against valid number ranges; number strings that do not match a real-world phone numbering scheme may cause the request to fail, even in the Sandbox test environment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,7 +77,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string PhoneNumber { get; set; }
 #endif
-        /// <summary>&quot;The date and time the phone number was verified in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (`YYYY-MM-DDThh:mm:ssZ`). This was previously an optional field used in the [returning user experience](https://plaid.com/docs/link/returning-user). This field is no longer required to enable the returning user experience. Only pass a verification time for a phone number that you have verified. If you have performed verification but don’t have the time, you may supply a signal value of the start of the UNIX epoch. Example: `2020-01-01T00:00:00Z`&quot;</summary>
+        /// <summary>The date and time the phone number was verified in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (`YYYY-MM-DDThh:mm:ssZ`). This was previously an optional field used in the [returning user experience](https://plaid.com/docs/link/returning-user). This field is no longer required to enable the returning user experience. Only pass a verification time for a phone number that you have verified. If you have performed verification but don&apos;t have the time, you may supply a signal value of the start of the UNIX epoch. Example: `2020-01-01T00:00:00Z`</summary>
         [Obsolete("")]
         public DateTimeOffset? PhoneNumberVerifiedTime { get; set; }
         /// <summary>Deprecated and not currently used, use the `id_number` field instead.</summary>
@@ -114,14 +114,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUser_address>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUser_address.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUserAddress>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUserAddress.CreateFromDiscriminatorValue); } },
                 { "client_user_id", n => { ClientUserId = n.GetStringValue(); } },
                 { "date_of_birth", n => { DateOfBirth = n.GetDateValue(); } },
                 { "email_address", n => { EmailAddress = n.GetStringValue(); } },
                 { "email_address_verified_time", n => { EmailAddressVerifiedTime = n.GetDateTimeOffsetValue(); } },
-                { "id_number", n => { IdNumber = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUser_id_number>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUser_id_number.CreateFromDiscriminatorValue); } },
+                { "id_number", n => { IdNumber = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUserIdNumber>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUserIdNumber.CreateFromDiscriminatorValue); } },
                 { "legal_name", n => { LegalName = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUser_name>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUser_name.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUserName>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUserName.CreateFromDiscriminatorValue); } },
                 { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
                 { "phone_number_verified_time", n => { PhoneNumberVerifiedTime = n.GetDateTimeOffsetValue(); } },
                 { "ssn", n => { Ssn = n.GetStringValue(); } },
@@ -134,14 +134,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUser_address>("address", Address);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUserAddress>("address", Address);
             writer.WriteStringValue("client_user_id", ClientUserId);
             writer.WriteDateValue("date_of_birth", DateOfBirth);
             writer.WriteStringValue("email_address", EmailAddress);
             writer.WriteDateTimeOffsetValue("email_address_verified_time", EmailAddressVerifiedTime);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUser_id_number>("id_number", IdNumber);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUserIdNumber>("id_number", IdNumber);
             writer.WriteStringValue("legal_name", LegalName);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUser_name>("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUserName>("name", Name);
             writer.WriteStringValue("phone_number", PhoneNumber);
             writer.WriteDateTimeOffsetValue("phone_number_verified_time", PhoneNumberVerifiedTime);
             writer.WriteStringValue("ssn", Ssn);

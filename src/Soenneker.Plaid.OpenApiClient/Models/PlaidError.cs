@@ -9,20 +9,20 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Errors are identified by `error_code` and categorized by `error_type`. Use these in preference to HTTP status codes to identify and handle specific errors. HTTP status codes are set and provide the broadest categorization of errors: 4xx codes are for developer- or user-related errors, and 5xx codes are for Plaid-related errors, and the status will be 2xx in non-error cases. An Item with a non-`null` error object will only be part of an API response when calling `/item/get` to view Item status. Otherwise, error fields will be `null` if no error has occurred; if an error has occurred, an error code will be returned instead.&quot;
+    /// Errors are identified by `error_code` and categorized by `error_type`. Use these in preference to HTTP status codes to identify and handle specific errors. HTTP status codes are set and provide the broadest categorization of errors: 4xx codes are for developer- or user-related errors, and 5xx codes are for Plaid-related errors, and the status will be 2xx in non-error cases. An Item with a non-`null` error object will only be part of an API response when calling `/item/get` to view Item status. Otherwise, error fields will be `null` if no error has occurred; if an error has occurred, an error code will be returned instead.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PlaidError : ApiException, IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>In this product, a request can pertain to more than one Item. If an error is returned for such a request, `causes` will return an array of errors containing a breakdown of these errors on the individual Item level, if any can be identified.`causes` will be provided for the `error_type` `ASSET_REPORT_ERROR` or `CHECK_REPORT_ERROR`. `causes` will also not be populated inside an error nested within a `warning` object.</summary>
+        /// <summary>In this product, a request can pertain to more than one Item. If an error is returned for such a request, `causes` will return an array of errors containing a breakdown of these errors on the individual Item level, if any can be identified.`causes` will be provided for the `error_type` `ASSET_REPORT_ERROR` or `CHECK_REPORT_ERROR`, and for the `USER_ERROR` codes `USER_ITEM_ASSOCIATION_FAILED` and `USER_ITEM_REMOVAL_FAILED`. `causes` will also not be populated inside an error nested within a `warning` object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.PlaidError_causes>? Causes { get; set; }
+        public UntypedNode? Causes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.PlaidError_causes> Causes { get; set; }
+        public UntypedNode Causes { get; set; }
 #endif
         /// <summary>A user-friendly representation of the error code. `null` if the error is not related to user action.This may change over time and is not safe for programmatic use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,7 +48,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ErrorCode { get; set; }
 #endif
-        /// <summary>&quot;The specific reason for the error code. Currently, reasons are only supported OAuth-based item errors; `null` will be returned otherwise. Safe for programmatic use.Possible values:`OAUTH_INVALID_TOKEN`: The user’s OAuth connection to this institution has been invalidated.`OAUTH_CONSENT_EXPIRED`: The user&apos;s access consent for this OAuth connection to this institution has expired.`OAUTH_USER_REVOKED`: The user’s OAuth connection to this institution is invalid because the user revoked their connection.&quot;</summary>
+        /// <summary>The specific reason for the error code. Currently, reasons are only supported for OAuth-based item errors; the field is omitted otherwise. Safe for programmatic use.Possible values:`OAUTH_INVALID_TOKEN`: The user&apos;s OAuth connection to this institution has been invalidated.`OAUTH_CONSENT_EXPIRED`: The user&apos;s access consent for this OAuth connection to this institution has expired.`OAUTH_USER_REVOKED`: The user&apos;s OAuth connection to this institution is invalid because the user revoked their connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ErrorCodeReason { get; set; }
@@ -127,7 +127,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "causes", n => { Causes = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.PlaidError_causes>(global::Soenneker.Plaid.OpenApiClient.Models.PlaidError_causes.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "causes", n => { Causes = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "display_message", n => { DisplayMessage = n.GetStringValue(); } },
                 { "documentation_url", n => { DocumentationUrl = n.GetStringValue(); } },
                 { "error_code", n => { ErrorCode = n.GetStringValue(); } },
@@ -148,7 +148,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.PlaidError_causes>("causes", Causes);
+            writer.WriteObjectValue<UntypedNode>("causes", Causes);
             writer.WriteStringValue("display_message", DisplayMessage);
             writer.WriteStringValue("documentation_url", DocumentationUrl);
             writer.WriteStringValue("error_code", ErrorCode);

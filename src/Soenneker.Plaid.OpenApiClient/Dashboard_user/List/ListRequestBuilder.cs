@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Dashboard_user.List
         {
         }
         /// <summary>
-        /// The `/dashboard_user/list` endpoint provides details (such as email address) all Dashboard users associated with your account. This can use used to audit or track the list of reviewers for Monitor, Beacon, and Identity Verification products.
+        /// The `/dashboard_user/list` endpoint provides details (such as email address) about all Dashboard users associated with your account. This can be used to audit or track the list of reviewers for Monitor, Beacon, and Identity Verification products.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.DashboardUserListResponse"/></returns>
         /// <param name="body">Request input for listing dashboard users</param>
@@ -54,7 +54,7 @@ namespace Soenneker.Plaid.OpenApiClient.Dashboard_user.List
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.DashboardUserListResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.DashboardUserListResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The `/dashboard_user/list` endpoint provides details (such as email address) all Dashboard users associated with your account. This can use used to audit or track the list of reviewers for Monitor, Beacon, and Identity Verification products.
+        /// The `/dashboard_user/list` endpoint provides details (such as email address) about all Dashboard users associated with your account. This can be used to audit or track the list of reviewers for Monitor, Beacon, and Identity Verification products.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request input for listing dashboard users</param>

@@ -3,41 +3,53 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>A code representing the rationale for approving or declining the proposed transfer.If the `rationale_code` is `null`, the transfer passed the authorization check.Any non-`null` value for an `approved` transfer indicates that the the authorization check could not be run and that you should perform your own risk assessment on the transfer. The code will indicate why the check could not be run. Possible values for an `approved` transfer are:`MANUALLY_VERIFIED_ITEM` – Item created via a manual entry flow (i.e. Same Day Micro-deposit, Instant Micro-deposit, or database-based verification), limited information available.`ITEM_LOGIN_REQUIRED` – Unable to collect the account information due to Item staleness. Can be resolved by using Link and setting [`transfer.authorization_id`](https://plaid.com/docs/api/link/#link-token-create-request-transfer-authorization-id) in the request to `/link/token/create`.`MIGRATED_ACCOUNT_ITEM` - Item created via `/transfer/migrate_account` endpoint, limited information available.`ERROR` – Unable to collect the account information due to an unspecified error.The following codes indicate that the authorization decision was `declined`:`NSF` – Transaction likely to result in a return due to insufficient funds.`RISK` - Transaction is high-risk.`TRANSFER_LIMIT_REACHED` - One or several transfer limits are reached, e.g. monthly transfer limit. Check the accompanying `description` field to understand which limit has been reached.</summary>
+    /// <summary>A code representing the rationale for approving or declining the proposed transfer.If the `rationale_code` is `null`, the transfer passed the authorization check.Any non-`null` value for an `approved` transfer indicates that the authorization check could not be run and that you should perform your own risk assessment on the transfer. The code will indicate why the check could not be run. Possible values for an `approved` transfer are:`MANUALLY_VERIFIED_ITEM` - Item created via a manual entry flow (i.e. Same-Day Micro-deposit, Instant Micro-deposit, or database-based verification), limited information available.`ITEM_LOGIN_REQUIRED` - Unable to collect the account information due to Item staleness. Can be resolved by using Link and setting [`transfer.authorization_id`](https://plaid.com/docs/api/link/#link-token-create-request-transfer-authorization-id) in the request to `/link/token/create`.`PAYMENT_PROFILE_LOGIN_REQUIRED` - The Payment Profile associated with the call to `/transfer/authorization/create` is in a state that requires the end user to re-authenticate. Can be resolved by using Link to refresh the Payment Profile.`MIGRATED_ACCOUNT_ITEM` - Item created via `/transfer/migrate_account` endpoint, limited information available.`ERROR` - Unable to collect the account information due to an unspecified error.These codes can also accompany a `declined` decision, for example when your Signal Rules decline the transfer.The following codes indicate that the authorization decision was `declined`:`NSF` - Transaction has an elevated risk of resulting in a return due to insufficient funds.`RISK` - Transaction is high-risk.`TRANSFER_LIMIT_REACHED` - One or several transfer limits are reached, e.g. monthly transfer limit. Check the accompanying `description` field to understand which limit has been reached.`ADMIN` - Transaction has an elevated risk of resulting in an administrative return (for example a closed, invalid, or unauthorized account).`FRAUD` - Transaction has an elevated risk of being fraudulent.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransferAuthorizationDecisionRationaleCode
     {
         [EnumMember(Value = "NSF")]
         #pragma warning disable CS1591
-        NSF,
+        Nsf,
         #pragma warning restore CS1591
         [EnumMember(Value = "RISK")]
         #pragma warning disable CS1591
-        RISK,
+        Risk,
         #pragma warning restore CS1591
         [EnumMember(Value = "TRANSFER_LIMIT_REACHED")]
         #pragma warning disable CS1591
-        TRANSFER_LIMIT_REACHED,
+        TransferLimitReached,
         #pragma warning restore CS1591
         [EnumMember(Value = "MANUALLY_VERIFIED_ITEM")]
         #pragma warning disable CS1591
-        MANUALLY_VERIFIED_ITEM,
+        ManuallyVerifiedItem,
         #pragma warning restore CS1591
         [EnumMember(Value = "ITEM_LOGIN_REQUIRED")]
         #pragma warning disable CS1591
-        ITEM_LOGIN_REQUIRED,
+        ItemLoginRequired,
         #pragma warning restore CS1591
         [EnumMember(Value = "PAYMENT_PROFILE_LOGIN_REQUIRED")]
         #pragma warning disable CS1591
-        PAYMENT_PROFILE_LOGIN_REQUIRED,
+        PaymentProfileLoginRequired,
         #pragma warning restore CS1591
         [EnumMember(Value = "ERROR")]
         #pragma warning disable CS1591
-        ERROR,
+        Error,
         #pragma warning restore CS1591
         [EnumMember(Value = "MIGRATED_ACCOUNT_ITEM")]
         #pragma warning disable CS1591
-        MIGRATED_ACCOUNT_ITEM,
+        MigratedAccountItem,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ADMIN")]
+        #pragma warning disable CS1591
+        Admin,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "FRAUD")]
+        #pragma warning disable CS1591
+        Fraud,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
+        #pragma warning disable CS1591
+        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
         #pragma warning restore CS1591
     }
 }

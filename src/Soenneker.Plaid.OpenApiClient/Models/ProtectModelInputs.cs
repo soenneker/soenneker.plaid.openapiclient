@@ -8,13 +8,21 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Inputs for the Trust Index model. The `link` field is required for any link session model type.
+    /// Inputs required by certain Trust Index models. The `link` field is required for link-session models. Other model families (including cash-advance) are identified by `user` alone and do not use this object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProtectModelInputs : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Inputs for device Trust Index models.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectDeviceModelInputs? Device { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectDeviceModelInputs Device { get; set; }
+#endif
         /// <summary>Inputs for link session Trust Index models.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,14 +30,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.ProtectLinkModelInputs Link { get; set; }
-#endif
-        /// <summary>Inputs for Protect SDK Trust Index models.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectSDKModelInputs? Sdk { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectSDKModelInputs Sdk { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ProtectModelInputs"/> and sets the default values.
@@ -56,8 +56,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "device", n => { Device = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectDeviceModelInputs>(global::Soenneker.Plaid.OpenApiClient.Models.ProtectDeviceModelInputs.CreateFromDiscriminatorValue); } },
                 { "link", n => { Link = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectLinkModelInputs>(global::Soenneker.Plaid.OpenApiClient.Models.ProtectLinkModelInputs.CreateFromDiscriminatorValue); } },
-                { "sdk", n => { Sdk = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectSDKModelInputs>(global::Soenneker.Plaid.OpenApiClient.Models.ProtectSDKModelInputs.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectDeviceModelInputs>("device", Device);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectLinkModelInputs>("link", Link);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectSDKModelInputs>("sdk", Sdk);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -47,7 +47,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ItemId { get; set; }
 #endif
-        /// <summary>The date and time when this Item’s data was last retrieved from the financial institution, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format.</summary>
+        /// <summary>The date and time when this Item&apos;s data was last retrieved from the financial institution, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format.</summary>
         public DateTimeOffset? LastUpdateTime { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraVoaReportItem"/> and sets the default values.

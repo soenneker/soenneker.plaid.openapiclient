@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// ProcessorStripeBankAccountTokenCreateResponse defines the response schema for `/processor/stripe/bank_account/create`
+    /// ProcessorStripeBankAccountTokenCreateResponse defines the response schema for `/processor/stripe/bank_account_token/create`
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProcessorStripeBankAccountTokenCreateResponse : IAdditionalDataHolder, IParsable

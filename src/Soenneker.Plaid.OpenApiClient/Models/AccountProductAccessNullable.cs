@@ -27,6 +27,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public AccountProductAccessNullable()
         {
             AdditionalData = new Dictionary<string, object>();
+            AccountData = true;
+            Statements = true;
+            TaxDocuments = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

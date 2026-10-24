@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
-        /// <summary>Plaid’s unique identifier for a recurring transfer.</summary>
+        /// <summary>Plaid&apos;s unique identifier for a recurring transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecurringTransferId { get; set; }

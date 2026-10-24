@@ -9,11 +9,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "SOFT_INQUIRY")]
         #pragma warning disable CS1591
-        SOFT_INQUIRY,
+        SoftInquiry,
         #pragma warning restore CS1591
         [EnumMember(Value = "STANDARD_INQUIRY")]
         #pragma warning disable CS1591
-        STANDARD_INQUIRY,
+        StandardInquiry,
         #pragma warning restore CS1591
     }
 }

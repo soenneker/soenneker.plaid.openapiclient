@@ -68,7 +68,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string IsoCurrencyCode { get; set; }
 #endif
-        /// <summary>Plaid’s unique identifier for a Plaid Ledger Balance.</summary>
+        /// <summary>Plaid&apos;s unique identifier for a Plaid Ledger Balance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LedgerId { get; set; }

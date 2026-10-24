@@ -41,9 +41,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public double? AssetCashBalanceAmount { get; set; }
         /// <summary>Total balance of all cryptocurrency held (non-restricted, vested)</summary>
         public double? AssetCryptoBalanceAmount { get; set; }
-        /// <summary>A vendor created unique Identifier</summary>
+        /// <summary>Asset Account Current Balance.</summary>
         public double? AssetCurrentBalanceAmount { get; set; }
-        /// <summary>The Number of days requested made to the Financial Institution. Example When looking for 3 months of data from the FI, pass in 90 days.</summary>
+        /// <summary>The number of days requested from the Financial Institution. Example: When looking for 3 months of data from the FI, pass in 90 days.</summary>
         public int? AssetDaysRequestedCount { get; set; }
         /// <summary>A text description that further defines the Asset. This could be used to describe the shares associated with the stocks, bonds or mutual funds, retirement funds or business owned that the borrower has disclosed (named) as an asset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,8 +54,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public string AssetDescription { get; set; }
 #endif
         /// <summary>Whether the account is employer sponsored retirement account or not (e.g., 401K, 403b, 457, thrift savings plan)</summary>
-        public bool? AssetEmployerSponsoredIndicator { get; set; }
-        /// <summary>&quot;Total market value of holdings (non-restricted, vested, not crypto, not other, not cash) Note: Any employer stock plan balance must be excluded from the total account balance (identification is &apos;stock plan&apos;)&quot;</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetDetailAssetEmployerSponsoredIndicator? AssetEmployerSponsoredIndicator { get; set; }
+        /// <summary>Total market value of holdings (non-restricted, vested, not crypto, not other, not cash) Note: Any employer stock plan balance must be excluded from the total account balance (identification is &apos;stock plan&apos;)</summary>
         public double? AssetHoldingBalanceAmount { get; set; }
         /// <summary>HoldingsBalance net MarginAmount</summary>
         public double? AssetHoldingBalanceNetMarginAmount { get; set; }
@@ -72,12 +72,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public string AssetOwnershipType { get; set; }
 #endif
         /// <summary>Whether or not the account is a retirement account (e.g., 401K, 403b, 457, thrift savings plans, traditional and Roth, IRAs, SEP-IRA, SIMPLE-IRA, KEOGH, state retirement savings plans, other independent and IRS-qualified employer retirement plans)</summary>
-        public bool? AssetRetirementIndicator { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetDetailAssetRetirementIndicator? AssetRetirementIndicator { get; set; }
         /// <summary>Total market value of all stocks held (non-restricted, vested, not employer sponsored stock plan)</summary>
         public double? AssetStocksBalanceAmount { get; set; }
         /// <summary>A value from a MISMO prescribed list that specifies financial assets in a mortgage loan transaction. Assets may be either liquid or fixed and are associated with a corresponding asset amount.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.AssetType? AssetType { get; set; }
-        /// <summary>Additional Asset Decription some examples are Investment Tax-Deferred , Loan, 401K, 403B, Checking, Money Market, Credit Card,ROTH,529,Biller,ROLLOVER,CD,Savings,Investment Taxable, IRA, Mortgage, Line Of Credit.</summary>
+        /// <summary>Additional Asset Description. Some examples are Investment Tax-Deferred, Loan, 401K, 403B, Checking, Money Market, Credit Card, ROTH, 529, Biller, ROLLOVER, CD, Savings, Investment Taxable, IRA, Mortgage, Line Of Credit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssetTypeAdditionalDescription { get; set; }
@@ -128,13 +128,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "AssetCurrentBalanceAmount", n => { AssetCurrentBalanceAmount = n.GetDoubleValue(); } },
                 { "AssetDaysRequestedCount", n => { AssetDaysRequestedCount = n.GetIntValue(); } },
                 { "AssetDescription", n => { AssetDescription = n.GetStringValue(); } },
-                { "AssetEmployerSponsoredIndicator", n => { AssetEmployerSponsoredIndicator = n.GetBoolValue(); } },
+                { "AssetEmployerSponsoredIndicator", n => { AssetEmployerSponsoredIndicator = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetDetailAssetEmployerSponsoredIndicator>(); } },
                 { "AssetHoldingBalanceAmount", n => { AssetHoldingBalanceAmount = n.GetDoubleValue(); } },
                 { "AssetHoldingBalanceNetMarginAmount", n => { AssetHoldingBalanceNetMarginAmount = n.GetDoubleValue(); } },
                 { "AssetMarginAmountBalance", n => { AssetMarginAmountBalance = n.GetDoubleValue(); } },
                 { "AssetOtherBalanceAmount", n => { AssetOtherBalanceAmount = n.GetDoubleValue(); } },
                 { "AssetOwnershipType", n => { AssetOwnershipType = n.GetStringValue(); } },
-                { "AssetRetirementIndicator", n => { AssetRetirementIndicator = n.GetBoolValue(); } },
+                { "AssetRetirementIndicator", n => { AssetRetirementIndicator = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetDetailAssetRetirementIndicator>(); } },
                 { "AssetStocksBalanceAmount", n => { AssetStocksBalanceAmount = n.GetDoubleValue(); } },
                 { "AssetType", n => { AssetType = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetType>(); } },
                 { "AssetTypeAdditionalDescription", n => { AssetTypeAdditionalDescription = n.GetStringValue(); } },
@@ -158,13 +158,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDoubleValue("AssetCurrentBalanceAmount", AssetCurrentBalanceAmount);
             writer.WriteIntValue("AssetDaysRequestedCount", AssetDaysRequestedCount);
             writer.WriteStringValue("AssetDescription", AssetDescription);
-            writer.WriteBoolValue("AssetEmployerSponsoredIndicator", AssetEmployerSponsoredIndicator);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetDetailAssetEmployerSponsoredIndicator>("AssetEmployerSponsoredIndicator", AssetEmployerSponsoredIndicator);
             writer.WriteDoubleValue("AssetHoldingBalanceAmount", AssetHoldingBalanceAmount);
             writer.WriteDoubleValue("AssetHoldingBalanceNetMarginAmount", AssetHoldingBalanceNetMarginAmount);
             writer.WriteDoubleValue("AssetMarginAmountBalance", AssetMarginAmountBalance);
             writer.WriteDoubleValue("AssetOtherBalanceAmount", AssetOtherBalanceAmount);
             writer.WriteStringValue("AssetOwnershipType", AssetOwnershipType);
-            writer.WriteBoolValue("AssetRetirementIndicator", AssetRetirementIndicator);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetDetailAssetRetirementIndicator>("AssetRetirementIndicator", AssetRetirementIndicator);
             writer.WriteDoubleValue("AssetStocksBalanceAmount", AssetStocksBalanceAmount);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetType>("AssetType", AssetType);
             writer.WriteStringValue("AssetTypeAdditionalDescription", AssetTypeAdditionalDescription);

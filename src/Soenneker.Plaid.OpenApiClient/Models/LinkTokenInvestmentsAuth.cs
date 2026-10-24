@@ -29,6 +29,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public LinkTokenInvestmentsAuth()
         {
             AdditionalData = new Dictionary<string, object>();
+            ManualEntryEnabled = false;
+            MaskedNumberMatchEnabled = false;
+            Rollover401kEnabled = false;
+            StatedAccountNumberEnabled = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

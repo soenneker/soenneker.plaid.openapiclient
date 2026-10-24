@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Plaid.OpenApiClient.Sandbox.User.Fire_webhook;
 using Soenneker.Plaid.OpenApiClient.Sandbox.User.Reset_login;
 using System.Collections.Generic;
 using System.IO;
@@ -15,6 +16,11 @@ namespace Soenneker.Plaid.OpenApiClient.Sandbox.User
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The fire_webhook property</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Sandbox.User.Fire_webhook.Fire_webhookRequestBuilder Fire_webhook
+        {
+            get => new global::Soenneker.Plaid.OpenApiClient.Sandbox.User.Fire_webhook.Fire_webhookRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The reset_login property</summary>
         public global::Soenneker.Plaid.OpenApiClient.Sandbox.User.Reset_login.Reset_loginRequestBuilder Reset_login
         {

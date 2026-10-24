@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Statements.List
         {
         }
         /// <summary>
-        /// The `/statements/list` endpoint retrieves a list of all statements associated with an item.
+        /// The `/statements/list` endpoint retrieves a list of all statements associated with an Item.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.StatementsListResponse"/></returns>
         /// <param name="body">StatementsListRequest defines the request schema for `/statements/list`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Statements.List
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.StatementsListResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.StatementsListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The `/statements/list` endpoint retrieves a list of all statements associated with an item.
+        /// The `/statements/list` endpoint retrieves a list of all statements associated with an Item.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">StatementsListRequest defines the request schema for `/statements/list`</param>

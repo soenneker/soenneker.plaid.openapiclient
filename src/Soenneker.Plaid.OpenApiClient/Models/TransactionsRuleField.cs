@@ -9,11 +9,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "TRANSACTION_ID")]
         #pragma warning disable CS1591
-        TRANSACTION_ID,
+        TransactionId,
         #pragma warning restore CS1591
         [EnumMember(Value = "MERCHANT_NAME")]
         #pragma warning disable CS1591
-        MERCHANT_NAME,
+        MerchantName,
         #pragma warning restore CS1591
     }
 }

@@ -9,15 +9,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "CONSENT_GRANTED")]
         #pragma warning disable CS1591
-        CONSENT_GRANTED,
+        ConsentGranted,
         #pragma warning restore CS1591
         [EnumMember(Value = "CONSENT_REVOKED")]
         #pragma warning disable CS1591
-        CONSENT_REVOKED,
+        ConsentRevoked,
         #pragma warning restore CS1591
         [EnumMember(Value = "CONSENT_UPDATED")]
         #pragma warning disable CS1591
-        CONSENT_UPDATED,
+        ConsentUpdated,
         #pragma warning restore CS1591
     }
 }

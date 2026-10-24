@@ -3,13 +3,13 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>&quot;A description of whether the associated document was expired when the verification was performed.Note: In the case where an expiration date is not present on the document or failed to be extracted, this value will be `no_data`.&quot;</summary>
+    /// <summary>A description of whether the associated document was expired when the verification was performed.Note: In the case where an expiration date is not present on the document or failed to be extracted, this value will be `no_data`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ExpirationDate
     {
         [EnumMember(Value = "not_expired")]
         #pragma warning disable CS1591
-        Not_expired,
+        NotExpired,
         #pragma warning restore CS1591
         [EnumMember(Value = "expired")]
         #pragma warning disable CS1591
@@ -17,7 +17,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "no_data")]
         #pragma warning disable CS1591
-        No_data,
+        NoData,
         #pragma warning restore CS1591
     }
 }

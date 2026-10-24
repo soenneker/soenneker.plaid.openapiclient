@@ -13,7 +13,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionsRecurringGetRequest : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The access token associated with the Item data is being requested for.</summary>
+        /// <summary>The access token associated with the Item for which data is being requested.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccessToken { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string AccessToken { get; set; }
 #endif
-        /// <summary>&quot;An optional list of `account_ids` to retrieve for the Item. Retrieves all active accounts on item if no `account_id`s are provided.Note: An error will be returned if a provided `account_id` is not associated with the Item.&quot;</summary>
+        /// <summary>An optional list of `account_ids` to retrieve for the Item. Retrieves all active accounts on item if no `account_id`s are provided.Note: An error will be returned if a provided `account_id` is not associated with the Item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AccountIds { get; set; }

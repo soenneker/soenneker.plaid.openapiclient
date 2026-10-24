@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Institutions.Get
         {
         }
         /// <summary>
-        /// Returns a JSON response containing details on all financial institutions currently supported by Plaid. Because Plaid supports thousands of institutions, results are paginated.If there is no overlap between an institution’s enabled products and a client’s enabled products, then the institution will be filtered out from the response. As a result, the number of institutions returned may not match the count specified in the call.
+        /// Returns a JSON response containing details on all financial institutions currently supported by Plaid. Because Plaid supports thousands of institutions, results are paginated.If there is no overlap between an institution&apos;s enabled products and a client&apos;s enabled products, then the institution will be filtered out from the response. As a result, the number of institutions returned may not match the count specified in the call.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.InstitutionsGetResponse"/></returns>
         /// <param name="body">InstitutionsGetRequest defines the request schema for `/institutions/get`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Institutions.Get
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.InstitutionsGetResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.InstitutionsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a JSON response containing details on all financial institutions currently supported by Plaid. Because Plaid supports thousands of institutions, results are paginated.If there is no overlap between an institution’s enabled products and a client’s enabled products, then the institution will be filtered out from the response. As a result, the number of institutions returned may not match the count specified in the call.
+        /// Returns a JSON response containing details on all financial institutions currently supported by Plaid. Because Plaid supports thousands of institutions, results are paginated.If there is no overlap between an institution&apos;s enabled products and a client&apos;s enabled products, then the institution will be filtered out from the response. As a result, the number of institutions returned may not match the count specified in the call.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">InstitutionsGetRequest defines the request schema for `/institutions/get`</param>

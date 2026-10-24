@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;A description of how confident we are that the provided categories accurately describe the transaction intent.`VERY_HIGH`: We are more than 98% confident that this category reflects the intent of the transaction.`HIGH`: We are more than 90% confident that this category reflects the intent of the transaction.`MEDIUM`: We are moderately confident that this category reflects the intent of the transaction.`LOW`: This category may reflect the intent, but there may be other categories that are more accurate.`UNKNOWN`: We don’t know the confidence level for this category.&quot;</summary>
+        /// <summary>A description of how confident we are that the provided categories accurately describe the transaction intent.`VERY_HIGH`: We are more than 98% confident that this category reflects the intent of the transaction.`HIGH`: We are more than 90% confident that this category reflects the intent of the transaction.`MEDIUM`: We are moderately confident that this category reflects the intent of the transaction.`LOW`: This category may reflect the intent, but there may be other categories that are more accurate.`UNKNOWN`: We don&apos;t know the confidence level for this category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConfidenceLevel { get; set; }
@@ -39,7 +39,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Primary { get; set; }
 #endif
-        /// <summary>Indicates which version of the personal finance category taxonomy is being used. [View PFCv2 and PFCv1 taxonomies](https://plaid.com/documents/pfc-taxonomy-all.csv).If you enabled Transactions or Enrich before December 2025 you will receive the `v1` taxonomy by default and may request `v2` by explicitly setting this field to `v2` in the request.If you enabled Transactions or Enrich on or after December 2025, you may only receive the `v2` taxonomy.</summary>
+        /// <summary>Indicates which version of the personal finance category taxonomy is being used. [View PFCv2 and PFCv1 taxonomies](https://plaid.com/documents/pfc-taxonomy-all.csv).If you enabled Transactions or Enrich before December 3, 2025 you will receive the `v1` taxonomy by default and may request `v2` by explicitly setting this field to `v2` in the request.If you enabled Transactions or Enrich on or after December 3, 2025, you may only receive the `v2` taxonomy.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategoryVersion? Version { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory"/> and sets the default values.

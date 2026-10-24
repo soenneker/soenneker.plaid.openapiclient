@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Details about about the total monthly income
+    /// Details about the total monthly income
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TotalMonthlyIncomeInsights : IAdditionalDataHolder, IParsable
@@ -18,7 +18,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The aggregated income for the 30 days prior to subscription date</summary>
         [Obsolete("")]
         public double? BaselineAmount { get; set; }
-        /// <summary>The aggregated income of the last 30 days</summary>
+        /// <summary>The sum of the historical average monthly income of each income source currently detected.</summary>
         public double? CurrentAmount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TotalMonthlyIncomeInsights"/> and sets the default values.

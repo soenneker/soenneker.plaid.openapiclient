@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Processor.Balance.Get
         {
         }
         /// <summary>
-        /// The `/processor/balance/get` endpoint returns the real-time balance for each of an Item&apos;s accounts. While other endpoints may return a balance object, only `/processor/balance/get` forces the available and current balance fields to be refreshed rather than cached. 
+        /// The `/processor/balance/get` endpoint returns the real-time balance for the account associated with the processor token. While other endpoints may return a balance object, only `/processor/balance/get` forces the available and current balance fields to be refreshed rather than cached. 
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ProcessorBalanceGetResponse"/></returns>
         /// <param name="body">ProcessorBalanceGetRequest defines the request schema for `/processor/balance/get`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Processor.Balance.Get
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.ProcessorBalanceGetResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.ProcessorBalanceGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The `/processor/balance/get` endpoint returns the real-time balance for each of an Item&apos;s accounts. While other endpoints may return a balance object, only `/processor/balance/get` forces the available and current balance fields to be refreshed rather than cached. 
+        /// The `/processor/balance/get` endpoint returns the real-time balance for the account associated with the processor token. While other endpoints may return a balance object, only `/processor/balance/get` forces the available and current balance fields to be refreshed rather than cached. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">ProcessorBalanceGetRequest defines the request schema for `/processor/balance/get`</param>

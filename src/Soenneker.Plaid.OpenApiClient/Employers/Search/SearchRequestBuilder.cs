@@ -34,13 +34,14 @@ namespace Soenneker.Plaid.OpenApiClient.Employers.Search
         {
         }
         /// <summary>
-        /// `/employers/search` allows you the ability to search Plaid’s database of known employers, for use with Deposit Switch. You can use this endpoint to look up a user&apos;s employer in order to confirm that they are supported. Users with non-supported employers can then be routed out of the Deposit Switch flow.The data in the employer database is currently limited. As the Deposit Switch and Income products progress through their respective beta periods, more employers are being regularly added. Because the employer database is frequently updated, we recommend that you do not cache or store data from this endpoint for more than a day.
+        /// `/employers/search` allows you the ability to search Plaid&apos;s database of known employers, for use with Deposit Switch. You can use this endpoint to look up a user&apos;s employer in order to confirm that they are supported. Users with non-supported employers can then be routed out of the Deposit Switch flow.The data in the employer database is currently limited. As the Deposit Switch and Income products progress through their respective beta periods, more employers are being regularly added. Because the employer database is frequently updated, we recommend that you do not cache or store data from this endpoint for more than a day.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.EmployersSearchResponse"/></returns>
         /// <param name="body">EmployersSearchRequest defines the request schema for `/employers/search`.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Plaid.OpenApiClient.Models.PlaidError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Plaid.OpenApiClient.Models.EmployersSearchResponse?> PostAsync(global::Soenneker.Plaid.OpenApiClient.Models.EmployersSearchRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -59,11 +60,12 @@ namespace Soenneker.Plaid.OpenApiClient.Employers.Search
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.EmployersSearchResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.EmployersSearchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// `/employers/search` allows you the ability to search Plaid’s database of known employers, for use with Deposit Switch. You can use this endpoint to look up a user&apos;s employer in order to confirm that they are supported. Users with non-supported employers can then be routed out of the Deposit Switch flow.The data in the employer database is currently limited. As the Deposit Switch and Income products progress through their respective beta periods, more employers are being regularly added. Because the employer database is frequently updated, we recommend that you do not cache or store data from this endpoint for more than a day.
+        /// `/employers/search` allows you the ability to search Plaid&apos;s database of known employers, for use with Deposit Switch. You can use this endpoint to look up a user&apos;s employer in order to confirm that they are supported. Users with non-supported employers can then be routed out of the Deposit Switch flow.The data in the employer database is currently limited. As the Deposit Switch and Income products progress through their respective beta periods, more employers are being regularly added. Because the employer database is frequently updated, we recommend that you do not cache or store data from this endpoint for more than a day.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">EmployersSearchRequest defines the request schema for `/employers/search`.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Soenneker.Plaid.OpenApiClient.Models.EmployersSearchRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -85,6 +87,7 @@ namespace Soenneker.Plaid.OpenApiClient.Employers.Search
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Employers.Search.SearchRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Employers.Search.SearchRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Plaid.OpenApiClient.Employers.Search.SearchRequestBuilder(rawUrl, RequestAdapter);

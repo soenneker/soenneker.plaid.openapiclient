@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
-        /// <summary>&quot;The asynchronous event to be simulated. May be: `posted`, `settled`, `failed`, `funds_available`, or `returned`.An error will be returned if the event type is incompatible with the current transfer status. Compatible status --&gt; event type transitions include:`pending` --&gt; `failed``pending` --&gt; `posted``posted` --&gt; `returned``posted` --&gt; `settled``settled` --&gt; `funds_available` (only applicable to ACH debits.)&quot;</summary>
+        /// <summary>The asynchronous event to be simulated. May be: `posted`, `settled`, `failed`, `funds_available`, or `returned`.An error will be returned if the event type is incompatible with the current transfer status. Compatible status --&gt; event type transitions include:`pending` --&gt; `failed``pending` --&gt; `posted``posted` --&gt; `returned``posted` --&gt; `settled``settled` --&gt; `funds_available` (only applicable to ACH debits.)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventType { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string EventType { get; set; }
 #endif
-        /// <summary>The failure reason if the event type for a transfer is `&quot;failed&quot;` or `&quot;returned&quot;`. Null value otherwise.</summary>
+        /// <summary>The failure reason if the event type for a transfer is `&quot;failed&quot;` or `&quot;returned&quot;`, or the adjustment reason if the event type is `&quot;adjustment&quot;`. Null value otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferFailure? FailureReason { get; set; }
@@ -47,7 +47,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Secret { get; set; }
 #endif
-        /// <summary>Plaid’s unique identifier for a test clock. If provided, the event to be simulated is created at the `virtual_time` on the provided `test_clock`.</summary>
+        /// <summary>Plaid&apos;s unique identifier for a test clock. If provided, the event to be simulated is created at the `virtual_time` on the provided `test_clock`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TestClockId { get; set; }
@@ -55,7 +55,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string TestClockId { get; set; }
 #endif
-        /// <summary>Plaid’s unique identifier for a transfer.</summary>
+        /// <summary>Plaid&apos;s unique identifier for a transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TransferId { get; set; }

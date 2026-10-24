@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Beta.Credit.V1.Bank_employment.Get
         {
         }
         /// <summary>
-        /// `/credit/bank_employment/get` returns the employment report(s) derived from bank transaction data for a specified user.
+        /// `/beta/credit/v1/bank_employment/get` returns the employment report(s) derived from bank transaction data for a specified user.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CreditBankEmploymentGetResponse"/></returns>
         /// <param name="body">CreditBankEmploymentGetRequest defines the request schema for `/beta/credit/v1/bank_employment/get`.</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Beta.Credit.V1.Bank_employment.Get
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankEmploymentGetResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.CreditBankEmploymentGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// `/credit/bank_employment/get` returns the employment report(s) derived from bank transaction data for a specified user.
+        /// `/beta/credit/v1/bank_employment/get` returns the employment report(s) derived from bank transaction data for a specified user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">CreditBankEmploymentGetRequest defines the request schema for `/beta/credit/v1/bank_employment/get`.</param>

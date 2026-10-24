@@ -9,39 +9,39 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "PERSONAL")]
         #pragma warning disable CS1591
-        PERSONAL,
+        Personal,
         #pragma warning restore CS1591
         [EnumMember(Value = "CREDIT_CARD")]
         #pragma warning disable CS1591
-        CREDIT_CARD,
+        CreditCard,
         #pragma warning restore CS1591
         [EnumMember(Value = "BUSINESS")]
         #pragma warning disable CS1591
-        BUSINESS,
+        Business,
         #pragma warning restore CS1591
         [EnumMember(Value = "MORTGAGE")]
         #pragma warning disable CS1591
-        MORTGAGE,
+        Mortgage,
         #pragma warning restore CS1591
         [EnumMember(Value = "AUTO")]
         #pragma warning disable CS1591
-        AUTO,
+        Auto,
         #pragma warning restore CS1591
         [EnumMember(Value = "PAYDAY")]
         #pragma warning disable CS1591
-        PAYDAY,
+        Payday,
         #pragma warning restore CS1591
         [EnumMember(Value = "STUDENT")]
         #pragma warning disable CS1591
-        STUDENT,
+        Student,
         #pragma warning restore CS1591
         [EnumMember(Value = "HOME_EQUITY")]
         #pragma warning disable CS1591
-        HOME_EQUITY,
+        HomeEquity,
         #pragma warning restore CS1591
         [EnumMember(Value = "OTHER")]
         #pragma warning disable CS1591
-        OTHER,
+        Other,
         #pragma warning restore CS1591
     }
 }

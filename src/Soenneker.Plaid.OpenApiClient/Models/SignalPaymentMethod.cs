@@ -3,25 +3,29 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>&quot;The payment method to complete the transaction after the risk assessment. It may be different from the default payment method.`SAME_DAY_ACH`: Same Day ACH by Nacha. The debit transaction is processed and settled on the same day.`STANDARD_ACH`: Standard ACH by Nacha.`MULTIPLE_PAYMENT_METHODS`: if there is no default debit rail or there are multiple payment methods.&quot;</summary>
+    /// <summary>The payment method to complete the transaction after the risk assessment. It may be different from the default payment method.`SAME_DAY_ACH`: Same Day ACH by Nacha. The debit transaction is processed and settled on the same day.`STANDARD_ACH`: Standard ACH by Nacha.`MULTIPLE_PAYMENT_METHODS`: if there is no default debit rail or there are multiple payment methods.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum SignalPaymentMethod
     {
         [EnumMember(Value = "SAME_DAY_ACH")]
         #pragma warning disable CS1591
-        SAME_DAY_ACH,
+        SameDayAch,
         #pragma warning restore CS1591
         [EnumMember(Value = "NEXT_DAY_ACH")]
         #pragma warning disable CS1591
-        NEXT_DAY_ACH,
+        NextDayAch,
         #pragma warning restore CS1591
         [EnumMember(Value = "STANDARD_ACH")]
         #pragma warning disable CS1591
-        STANDARD_ACH,
+        StandardAch,
         #pragma warning restore CS1591
         [EnumMember(Value = "MULTIPLE_PAYMENT_METHODS")]
         #pragma warning disable CS1591
-        MULTIPLE_PAYMENT_METHODS,
+        MultiplePaymentMethods,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
+        #pragma warning disable CS1591
+        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
         #pragma warning restore CS1591
     }
 }

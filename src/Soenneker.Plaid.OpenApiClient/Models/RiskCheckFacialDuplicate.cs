@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Result summary object specifying values for the `facial_duplicate` attributes of risk check.
+    /// Result summary object specifying values for the `facial_duplicates` attributes of risk check.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RiskCheckFacialDuplicate : IAdditionalDataHolder, IParsable

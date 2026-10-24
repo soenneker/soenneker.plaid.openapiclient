@@ -34,13 +34,14 @@ namespace Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights.Unsubscribe
         {
         }
         /// <summary>
-        /// This endpoint allows you to unsubscribe from previously subscribed Monitoring Insights.
+        /// This endpoint allows you to remove a subscription created by `/cra/monitoring_insights/subscribe`. This endpoint is part of the legacy Cash Flow Updates product and is available only to integrations already using it; other integrations should use `/cra/servicing/subscription/delete` instead.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraMonitoringInsightsUnsubscribeResponse"/></returns>
         /// <param name="body">CraMonitoringInsightsUnsubscribeRequest defines the request schema for `/cra/monitoring_insights/unsubscribe`</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Plaid.OpenApiClient.Models.PlaidError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Plaid.OpenApiClient.Models.CraMonitoringInsightsUnsubscribeResponse?> PostAsync(global::Soenneker.Plaid.OpenApiClient.Models.CraMonitoringInsightsUnsubscribeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -59,11 +60,12 @@ namespace Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights.Unsubscribe
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.CraMonitoringInsightsUnsubscribeResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.CraMonitoringInsightsUnsubscribeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint allows you to unsubscribe from previously subscribed Monitoring Insights.
+        /// This endpoint allows you to remove a subscription created by `/cra/monitoring_insights/subscribe`. This endpoint is part of the legacy Cash Flow Updates product and is available only to integrations already using it; other integrations should use `/cra/servicing/subscription/delete` instead.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">CraMonitoringInsightsUnsubscribeRequest defines the request schema for `/cra/monitoring_insights/unsubscribe`</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Soenneker.Plaid.OpenApiClient.Models.CraMonitoringInsightsUnsubscribeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -85,6 +87,7 @@ namespace Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights.Unsubscribe
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights.Unsubscribe.UnsubscribeRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights.Unsubscribe.UnsubscribeRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights.Unsubscribe.UnsubscribeRequestBuilder(rawUrl, RequestAdapter);

@@ -34,13 +34,14 @@ namespace Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights.Subscribe
         {
         }
         /// <summary>
-        /// This endpoint allows you to subscribe to insights for a user&apos;s linked CRA Item, which are updated between one and four times per day (best-effort). In the current Cash Flow Updates beta experience, only one Item per user may be subscribed for monitoring updates.
+        /// This endpoint allows you to subscribe to insights for a user&apos;s linked CRA Item, which are updated between one and four times per day (best-effort). Only one Item per user may be subscribed. This endpoint is part of the legacy Cash Flow Updates product and is available only to integrations already using it; other integrations should use `/cra/servicing/subscription/create` instead.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraMonitoringInsightsSubscribeResponse"/></returns>
         /// <param name="body">CraMonitoringInsightsSubscribeRequest defines the request schema for `/cra/monitoring_insights/subscribe`</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Plaid.OpenApiClient.Models.PlaidError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Plaid.OpenApiClient.Models.CraMonitoringInsightsSubscribeResponse?> PostAsync(global::Soenneker.Plaid.OpenApiClient.Models.CraMonitoringInsightsSubscribeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -59,11 +60,12 @@ namespace Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights.Subscribe
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.CraMonitoringInsightsSubscribeResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.CraMonitoringInsightsSubscribeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint allows you to subscribe to insights for a user&apos;s linked CRA Item, which are updated between one and four times per day (best-effort). In the current Cash Flow Updates beta experience, only one Item per user may be subscribed for monitoring updates.
+        /// This endpoint allows you to subscribe to insights for a user&apos;s linked CRA Item, which are updated between one and four times per day (best-effort). Only one Item per user may be subscribed. This endpoint is part of the legacy Cash Flow Updates product and is available only to integrations already using it; other integrations should use `/cra/servicing/subscription/create` instead.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">CraMonitoringInsightsSubscribeRequest defines the request schema for `/cra/monitoring_insights/subscribe`</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Soenneker.Plaid.OpenApiClient.Models.CraMonitoringInsightsSubscribeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -85,6 +87,7 @@ namespace Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights.Subscribe
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights.Subscribe.SubscribeRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights.Subscribe.SubscribeRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights.Subscribe.SubscribeRequestBuilder(rawUrl, RequestAdapter);

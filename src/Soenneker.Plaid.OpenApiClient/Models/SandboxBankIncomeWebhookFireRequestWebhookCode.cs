@@ -9,11 +9,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "BANK_INCOME_REFRESH_UPDATE")]
         #pragma warning disable CS1591
-        BANK_INCOME_REFRESH_UPDATE,
+        BankIncomeRefreshUpdate,
         #pragma warning restore CS1591
         [EnumMember(Value = "BANK_INCOME_REFRESH_COMPLETE")]
         #pragma warning disable CS1591
-        BANK_INCOME_REFRESH_COMPLETE,
+        BankIncomeRefreshComplete,
         #pragma warning restore CS1591
     }
 }

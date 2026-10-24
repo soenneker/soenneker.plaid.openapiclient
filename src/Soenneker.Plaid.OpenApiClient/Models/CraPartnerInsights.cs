@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientReportId { get; set; }
 #endif
-        /// <summary>The calculated UltraFICO scores returned as part of the Partner Insights report.</summary>
+        /// <summary>The calculated UltraFICO® scores returned as part of the Partner Insights report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsFicoResults? Fico { get; set; }

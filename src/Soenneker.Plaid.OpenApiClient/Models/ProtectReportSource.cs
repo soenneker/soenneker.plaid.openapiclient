@@ -9,31 +9,31 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "INTERNAL_REVIEW")]
         #pragma warning disable CS1591
-        INTERNAL_REVIEW,
+        InternalReview,
         #pragma warning restore CS1591
         [EnumMember(Value = "USER_SELF_REPORTED")]
         #pragma warning disable CS1591
-        USER_SELF_REPORTED,
+        UserSelfReported,
         #pragma warning restore CS1591
         [EnumMember(Value = "BANK_FEEDBACK")]
         #pragma warning disable CS1591
-        BANK_FEEDBACK,
+        BankFeedback,
         #pragma warning restore CS1591
         [EnumMember(Value = "NETWORK_FEEDBACK")]
         #pragma warning disable CS1591
-        NETWORK_FEEDBACK,
+        NetworkFeedback,
         #pragma warning restore CS1591
         [EnumMember(Value = "AUTOMATED_SYSTEM")]
         #pragma warning disable CS1591
-        AUTOMATED_SYSTEM,
+        AutomatedSystem,
         #pragma warning restore CS1591
         [EnumMember(Value = "THIRD_PARTY_ALERT")]
         #pragma warning disable CS1591
-        THIRD_PARTY_ALERT,
+        ThirdPartyAlert,
         #pragma warning restore CS1591
         [EnumMember(Value = "OTHER")]
         #pragma warning disable CS1591
-        OTHER,
+        Other,
         #pragma warning restore CS1591
     }
 }

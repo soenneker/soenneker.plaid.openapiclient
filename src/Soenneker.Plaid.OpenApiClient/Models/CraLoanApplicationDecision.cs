@@ -9,15 +9,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "APPROVED")]
         #pragma warning disable CS1591
-        APPROVED,
+        Approved,
         #pragma warning restore CS1591
         [EnumMember(Value = "DECLINED")]
         #pragma warning disable CS1591
-        DECLINED,
+        Declined,
         #pragma warning restore CS1591
         [EnumMember(Value = "OTHER")]
         #pragma warning disable CS1591
-        OTHER,
+        Other,
         #pragma warning restore CS1591
     }
 }

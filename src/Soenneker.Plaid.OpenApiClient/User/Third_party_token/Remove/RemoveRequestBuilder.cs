@@ -34,10 +34,10 @@ namespace Soenneker.Plaid.OpenApiClient.User.Third_party_token.Remove
         {
         }
         /// <summary>
-        /// This endpoint is used to delete a third-party user token. Once removed, the token can longer be used to access data associated with the user.Any subsequent calls to retrieve information using the same third-party user token will result in an error stating the third-party user token does not exist.
+        /// This endpoint is used to delete a third-party user token. Once removed, the token can no longer be used to access data associated with the user.Any subsequent calls to retrieve information using the same third-party user token will result in an error stating the third-party user token does not exist.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.UserThirdPartyTokenRemoveResponse"/></returns>
-        /// <param name="body">UserThirdPartyTokenCreateRequest defines the request schema for `/user/third_party_token/remove`</param>
+        /// <param name="body">UserThirdPartyTokenRemoveRequest defines the request schema for `/user/third_party_token/remove`</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Plaid.OpenApiClient.Models.PlaidError">When receiving a 4XX or 5XX status code</exception>
@@ -59,10 +59,10 @@ namespace Soenneker.Plaid.OpenApiClient.User.Third_party_token.Remove
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.UserThirdPartyTokenRemoveResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.UserThirdPartyTokenRemoveResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint is used to delete a third-party user token. Once removed, the token can longer be used to access data associated with the user.Any subsequent calls to retrieve information using the same third-party user token will result in an error stating the third-party user token does not exist.
+        /// This endpoint is used to delete a third-party user token. Once removed, the token can no longer be used to access data associated with the user.Any subsequent calls to retrieve information using the same third-party user token will result in an error stating the third-party user token does not exist.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">UserThirdPartyTokenCreateRequest defines the request schema for `/user/third_party_token/remove`</param>
+        /// <param name="body">UserThirdPartyTokenRemoveRequest defines the request schema for `/user/third_party_token/remove`</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

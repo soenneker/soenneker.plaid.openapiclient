@@ -18,10 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The CRA questionnaire for the end customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCRAQuestionnaire? Cra { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraQuestionnaire? Cra { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCRAQuestionnaire Cra { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraQuestionnaire Cra { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerQuestionnaires"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cra", n => { Cra = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCRAQuestionnaire>(global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCRAQuestionnaire.CreateFromDiscriminatorValue); } },
+                { "cra", n => { Cra = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraQuestionnaire>(global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraQuestionnaire.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCRAQuestionnaire>("cra", Cra);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraQuestionnaire>("cra", Cra);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

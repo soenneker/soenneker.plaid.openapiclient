@@ -3,25 +3,29 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>The version of Prism CashScore. If not specified, will default to v3.</summary>
+    /// <summary>The version of Prism CashScore. If `prism_versions` is omitted entirely, your client&apos;s configured default Prism version is used (v3 if none is configured). If other Prism versions are specified but this one is not, this product is not generated.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PrismCashScoreVersion
     {
         [EnumMember(Value = "4.1")]
         #pragma warning disable CS1591
-        FourOne,
+        Value41,
         #pragma warning restore CS1591
         [EnumMember(Value = "4")]
         #pragma warning disable CS1591
-        Four,
+        Value4,
         #pragma warning restore CS1591
         [EnumMember(Value = "3_lite")]
         #pragma warning disable CS1591
-        Three_lite,
+        Value3Lite,
         #pragma warning restore CS1591
         [EnumMember(Value = "3")]
         #pragma warning disable CS1591
-        Three,
+        Value3,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
+        #pragma warning disable CS1591
+        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
         #pragma warning restore CS1591
     }
 }

@@ -9,63 +9,63 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "AC03")]
         #pragma warning disable CS1591
-        AC03,
+        Ac03,
         #pragma warning restore CS1591
         [EnumMember(Value = "AM09")]
         #pragma warning disable CS1591
-        AM09,
+        Am09,
         #pragma warning restore CS1591
         [EnumMember(Value = "CUST")]
         #pragma warning disable CS1591
-        CUST,
+        Cust,
         #pragma warning restore CS1591
         [EnumMember(Value = "DUPL")]
         #pragma warning disable CS1591
-        DUPL,
+        Dupl,
         #pragma warning restore CS1591
         [EnumMember(Value = "FRAD")]
         #pragma warning disable CS1591
-        FRAD,
+        Frad,
         #pragma warning restore CS1591
         [EnumMember(Value = "TECH")]
         #pragma warning disable CS1591
-        TECH,
+        Tech,
         #pragma warning restore CS1591
         [EnumMember(Value = "UPAY")]
         #pragma warning disable CS1591
-        UPAY,
+        Upay,
         #pragma warning restore CS1591
         [EnumMember(Value = "AC14")]
         #pragma warning disable CS1591
-        AC14,
+        Ac14,
         #pragma warning restore CS1591
         [EnumMember(Value = "AM06")]
         #pragma warning disable CS1591
-        AM06,
+        Am06,
         #pragma warning restore CS1591
         [EnumMember(Value = "BE05")]
         #pragma warning disable CS1591
-        BE05,
+        Be05,
         #pragma warning restore CS1591
         [EnumMember(Value = "FOCR")]
         #pragma warning disable CS1591
-        FOCR,
+        Focr,
         #pragma warning restore CS1591
         [EnumMember(Value = "MS02")]
         #pragma warning disable CS1591
-        MS02,
+        Ms02,
         #pragma warning restore CS1591
         [EnumMember(Value = "MS03")]
         #pragma warning disable CS1591
-        MS03,
+        Ms03,
         #pragma warning restore CS1591
         [EnumMember(Value = "RR04")]
         #pragma warning disable CS1591
-        RR04,
+        Rr04,
         #pragma warning restore CS1591
         [EnumMember(Value = "RUTA")]
         #pragma warning disable CS1591
-        RUTA,
+        Ruta,
         #pragma warning restore CS1591
     }
 }

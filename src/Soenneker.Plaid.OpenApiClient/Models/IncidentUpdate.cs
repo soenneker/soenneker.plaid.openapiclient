@@ -24,7 +24,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>The status of the incident.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.IncidentUpdate_status? Status { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IncidentUpdateStatus? Status { get; set; }
         /// <summary>The date when the update was published, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format, e.g. `&quot;2020-10-30T15:26:48Z&quot;`.</summary>
         public DateTimeOffset? UpdatedDate { get; set; }
         /// <summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.IncidentUpdate_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.IncidentUpdateStatus>(); } },
                 { "updated_date", n => { UpdatedDate = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -65,7 +65,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.IncidentUpdate_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.IncidentUpdateStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_date", UpdatedDate);
             writer.WriteAdditionalData(AdditionalData);
         }

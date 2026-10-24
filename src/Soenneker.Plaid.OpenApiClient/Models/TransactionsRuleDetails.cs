@@ -17,7 +17,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Transaction field for which the rule is defined.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.TransactionsRuleField? Field { get; set; }
-        /// <summary>For `TRANSACTION_ID` field, provide `transaction_id`. For `NAME` field, provide a string pattern.</summary>
+        /// <summary>For `TRANSACTION_ID` field, provide `transaction_id`. For `MERCHANT_NAME` field, provide a string pattern.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Query { get; set; }
@@ -25,7 +25,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Query { get; set; }
 #endif
-        /// <summary>Transaction rule&apos;s match type. For `TRANSACTION_ID` field, `EXACT_MATCH` is available.Matches are case sensitive.</summary>
+        /// <summary>Transaction rule&apos;s match type. For `TRANSACTION_ID` field, `EXACT_MATCH` is available.`TRANSACTION_ID` matches are case sensitive; `MERCHANT_NAME` matches are case insensitive.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.TransactionsRuleType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransactionsRuleDetails"/> and sets the default values.

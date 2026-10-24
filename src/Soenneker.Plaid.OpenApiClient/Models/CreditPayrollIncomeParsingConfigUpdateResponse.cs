@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// CreditPayrollIncomeParsingConfigUpdateResponse defines the response schema for `/credit/payroll_income/documents/update`.
+    /// CreditPayrollIncomeParsingConfigUpdateResponse defines the response schema for `/credit/payroll_income/parsing_config/update`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreditPayrollIncomeParsingConfigUpdateResponse : IAdditionalDataHolder, IParsable

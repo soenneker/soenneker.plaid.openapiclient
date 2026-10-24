@@ -9,23 +9,23 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "UNKNOWN")]
         #pragma warning disable CS1591
-        UNKNOWN,
+        Unknown,
         #pragma warning restore CS1591
         [EnumMember(Value = "WEEKLY")]
         #pragma warning disable CS1591
-        WEEKLY,
+        Weekly,
         #pragma warning restore CS1591
         [EnumMember(Value = "BIWEEKLY")]
         #pragma warning disable CS1591
-        BIWEEKLY,
+        Biweekly,
         #pragma warning restore CS1591
         [EnumMember(Value = "SEMI_MONTHLY")]
         #pragma warning disable CS1591
-        SEMI_MONTHLY,
+        SemiMonthly,
         #pragma warning restore CS1591
         [EnumMember(Value = "MONTHLY")]
         #pragma warning disable CS1591
-        MONTHLY,
+        Monthly,
         #pragma warning restore CS1591
     }
 }

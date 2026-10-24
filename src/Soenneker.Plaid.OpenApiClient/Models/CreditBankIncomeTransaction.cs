@@ -16,7 +16,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The settled value of the transaction, denominated in the transactions&apos;s currency as stated in `iso_currency_code` or `unofficial_currency_code`.Positive values when money moves out of the account; negative values when money moves in.For example, credit card purchases are positive; credit card payment, direct deposits, and refunds are negative.</summary>
+        /// <summary>The settled value of the transaction, denominated in the transaction&apos;s currency as stated in `iso_currency_code` or `unofficial_currency_code`.Positive values when money moves out of the account; negative values when money moves in.For example, credit card purchases are positive; credit card payment, direct deposits, and refunds are negative.</summary>
         public double? Amount { get; set; }
         /// <summary>The check number of the transaction. This field is only populated for check transactions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

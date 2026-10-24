@@ -47,7 +47,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Status { get; set; }
 #endif
-        /// <summary>The webhook url to use for any payment events triggered by the simulated status change.</summary>
+        /// <summary>The webhook URL to use for any payment events triggered by the simulated status change. Used only if the payment is not yet associated with an Item; otherwise, events are sent to the Item&apos;s webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Webhook { get; set; }

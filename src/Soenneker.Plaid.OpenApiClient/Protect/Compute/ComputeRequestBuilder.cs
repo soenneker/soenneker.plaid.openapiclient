@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Protect.Compute
         {
         }
         /// <summary>
-        /// Use this endpoint to compute a Protect Trust Index score and retrieve fraud attributes.For link-session models, if the Link session is not yet complete, the endpoint returns HTTP 400 with `error_type` = `INVALID_REQUEST` and `error_code` = `FAILED_PRECONDITION`.
+        /// Compute a Protect Trust Index score for a user. The model selected determines what is scored and what additional fields the response contains. For example, `ti-link-session-3-&lt;client&gt;` scores a completed Link session for fraud risk; `cash-advance-ongoing-&lt;client&gt;-1.0` scores repayment risk for a cash advance, additionally populating per-amount-bucket subscores. Cash-advance models require that the user have a Plaid Item with Transactions enabled, or an Assets Report, before scoring.The endpoint returns HTTP 400 with `error_type` = `INVALID_REQUEST` and `error_code` = `FAILED_PRECONDITION` when a required precondition is not met: for link-session models, when the Link session has not completed; for cash-advance models, when the user has not successfully linked any Item. For device-session models, the endpoint may return retryable `error_code` = `SESSION_NOT_READY` until the Protect SDK has delivered device data for the session.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ProtectComputeResponse"/></returns>
         /// <param name="body">Request object for /protect/compute</param>
@@ -54,7 +54,7 @@ namespace Soenneker.Plaid.OpenApiClient.Protect.Compute
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.ProtectComputeResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.ProtectComputeResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this endpoint to compute a Protect Trust Index score and retrieve fraud attributes.For link-session models, if the Link session is not yet complete, the endpoint returns HTTP 400 with `error_type` = `INVALID_REQUEST` and `error_code` = `FAILED_PRECONDITION`.
+        /// Compute a Protect Trust Index score for a user. The model selected determines what is scored and what additional fields the response contains. For example, `ti-link-session-3-&lt;client&gt;` scores a completed Link session for fraud risk; `cash-advance-ongoing-&lt;client&gt;-1.0` scores repayment risk for a cash advance, additionally populating per-amount-bucket subscores. Cash-advance models require that the user have a Plaid Item with Transactions enabled, or an Assets Report, before scoring.The endpoint returns HTTP 400 with `error_type` = `INVALID_REQUEST` and `error_code` = `FAILED_PRECONDITION` when a required precondition is not met: for link-session models, when the Link session has not completed; for cash-advance models, when the user has not successfully linked any Item. For device-session models, the endpoint may return retryable `error_code` = `SESSION_NOT_READY` until the Protect SDK has delivered device data for the session.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request object for /protect/compute</param>

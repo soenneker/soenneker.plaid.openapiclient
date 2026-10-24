@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Account data corresponding to the item from which Partner Insights were generated from
+    /// Account data corresponding to the Item from which Partner Insights were generated.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraPartnerInsightsItemAccount : IAdditionalDataHolder, IParsable

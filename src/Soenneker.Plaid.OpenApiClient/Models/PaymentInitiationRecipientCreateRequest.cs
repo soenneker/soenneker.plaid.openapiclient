@@ -23,13 +23,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationAddress Address { get; set; }
 #endif
-        /// <summary>An object containing a BACS account number and sort code. If an IBAN is not provided or if this recipient needs to accept domestic GBP-denominated payments, BACS data is required.</summary>
+        /// <summary>An object containing a Bacs account number and sort code. If an IBAN is not provided or if this recipient needs to accept domestic GBP-denominated payments, Bacs data is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.RecipientBACSNullable? Bacs { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RecipientBacsNullable? Bacs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.RecipientBACSNullable Bacs { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RecipientBacsNullable Bacs { get; set; }
 #endif
         /// <summary>Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,7 +39,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
-        /// <summary>The International Bank Account Number (IBAN) for the recipient. If BACS data is not provided, an IBAN is required.</summary>
+        /// <summary>The International Bank Account Number (IBAN) for the recipient. If Bacs data is not provided, an IBAN is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Iban { get; set; }
@@ -89,7 +89,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationAddress>(global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationAddress.CreateFromDiscriminatorValue); } },
-                { "bacs", n => { Bacs = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.RecipientBACSNullable>(global::Soenneker.Plaid.OpenApiClient.Models.RecipientBACSNullable.CreateFromDiscriminatorValue); } },
+                { "bacs", n => { Bacs = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.RecipientBacsNullable>(global::Soenneker.Plaid.OpenApiClient.Models.RecipientBacsNullable.CreateFromDiscriminatorValue); } },
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
                 { "iban", n => { Iban = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -104,7 +104,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationAddress>("address", Address);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.RecipientBACSNullable>("bacs", Bacs);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.RecipientBacsNullable>("bacs", Bacs);
             writer.WriteStringValue("client_id", ClientId);
             writer.WriteStringValue("iban", Iban);
             writer.WriteStringValue("name", Name);

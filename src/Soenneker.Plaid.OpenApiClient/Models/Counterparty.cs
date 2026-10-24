@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;A description of how confident we are that the provided counterparty is involved in the transaction.`VERY_HIGH`: We recognize this counterparty and we are more than 98% confident that it is involved in this transaction.`HIGH`: We recognize this counterparty and we are more than 90% confident that it is involved in this transaction.`MEDIUM`: We are moderately confident that this counterparty was involved in this transaction, but some details may differ from our records.`LOW`: We didn’t find a matching counterparty in our records, so we are returning a cleansed name parsed out of the request description.`UNKNOWN`: We don’t know the confidence level for this counterparty.&quot;</summary>
+        /// <summary>A description of how confident we are that the provided counterparty is involved in the transaction.`VERY_HIGH`: We recognize this counterparty and we are more than 98% confident that it is involved in this transaction.`HIGH`: We recognize this counterparty and we are more than 90% confident that it is involved in this transaction.`MEDIUM`: We are moderately confident that this counterparty was involved in this transaction, but some details may differ from our records.`LOW`: We didn&apos;t find a matching counterparty in our records, so we are returning a cleansed name parsed out of the request description.`UNKNOWN`: We don&apos;t know the confidence level for this counterparty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConfidenceLevel { get; set; }
@@ -39,7 +39,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string EntityId { get; set; }
 #endif
-        /// <summary>The URL of a logo associated with the counterparty, if available. The logo will always be 100×100 pixel PNG file.</summary>
+        /// <summary>The URL of a logo associated with the counterparty, if available. The logo will always be a 100×100 pixel PNG file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LogoUrl { get; set; }
@@ -55,7 +55,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The phone number associated with the counterparty in E. 164 format. If there is a location match (i.e. a street address is returned in the location object), the phone number will be location specific.</summary>
+        /// <summary>The phone number associated with the counterparty in E.164 format. If there is a location match (i.e. a street address is returned in the location object), the phone number will be location specific.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PhoneNumber { get; set; }
@@ -63,7 +63,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string PhoneNumber { get; set; }
 #endif
-        /// <summary>&quot;The counterparty type.`merchant`: a provider of goods or services for purchase`financial_institution`: a financial entity (bank, credit union, BNPL, fintech)`payment_app`: a transfer or P2P app (e.g. Zelle)`marketplace`: a marketplace (e.g DoorDash, Google Play Store)`payment_terminal`: a point-of-sale payment terminal (e.g Square, Toast)`income_source`: the payer in an income transaction (e.g., an employer, client, or government agency)&quot;</summary>
+        /// <summary>The counterparty type.`merchant`: a provider of goods or services for purchase`financial_institution`: a financial entity (bank, credit union, BNPL, fintech)`payment_app`: a transfer or P2P app (e.g. Zelle)`marketplace`: a marketplace (e.g. DoorDash, Google Play Store)`payment_terminal`: a point-of-sale payment terminal (e.g. Square, Toast)`income_source`: the payer in an income transaction (e.g., an employer, client, or government agency)</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.CounterpartyType? Type { get; set; }
         /// <summary>The website associated with the counterparty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

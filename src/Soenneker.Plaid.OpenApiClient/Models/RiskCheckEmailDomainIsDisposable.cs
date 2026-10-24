@@ -17,7 +17,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "no_data")]
         #pragma warning disable CS1591
-        No_data,
+        NoData,
         #pragma warning restore CS1591
     }
 }

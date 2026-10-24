@@ -17,7 +17,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Include `legacy_category` and `legacy_category_id` in the response (in addition to the default `personal_finance_category`).Categories are based on Plaid&apos;s legacy taxonomy. For a full list of legacy categories, see [`/categories/get`](https://plaid.com/docs/api/products/transactions/#categoriesget).</summary>
         public bool? IncludeLegacyCategory { get; set; }
-        /// <summary>Indicates which version of the personal finance category taxonomy is being used. [View PFCv2 and PFCv1 taxonomies](https://plaid.com/documents/pfc-taxonomy-all.csv).If you enabled Transactions or Enrich before December 2025 you will receive the `v1` taxonomy by default and may request `v2` by explicitly setting this field to `v2` in the request.If you enabled Transactions or Enrich on or after December 2025, you may only receive the `v2` taxonomy.</summary>
+        /// <summary>Indicates which version of the personal finance category taxonomy is being used. [View PFCv2 and PFCv1 taxonomies](https://plaid.com/documents/pfc-taxonomy-all.csv).If you enabled Transactions or Enrich before December 3, 2025 you will receive the `v1` taxonomy by default and may request `v2` by explicitly setting this field to `v2` in the request.If you enabled Transactions or Enrich on or after December 3, 2025, you may only receive the `v2` taxonomy.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategoryVersion? PersonalFinanceCategoryVersion { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransactionsEnrichRequestOptions"/> and sets the default values.
@@ -25,6 +25,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public TransactionsEnrichRequestOptions()
         {
             AdditionalData = new Dictionary<string, object>();
+            IncludeLegacyCategory = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

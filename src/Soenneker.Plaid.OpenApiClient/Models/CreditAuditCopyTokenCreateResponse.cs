@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// CreditAuditCopyTokenCreateResponse defines the response schema for `/credit/audit_copy_token/get`
+    /// CreditAuditCopyTokenCreateResponse defines the response schema for `/credit/audit_copy_token/create`
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreditAuditCopyTokenCreateResponse : IAdditionalDataHolder, IParsable

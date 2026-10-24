@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Total amount of debit transactions into the report&apos;s accounts in the time period of the report. This field only takes into account USD transactions from the accounts.</summary>
+        /// <summary>Total amount of money into the report&apos;s accounts in the time period of the report. This field only takes into account USD transactions from the accounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.TotalReportInflowAmount? TotalInflowAmount { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.TotalReportInflowAmount TotalInflowAmount { get; set; }
 #endif
-        /// <summary>Total amount of credit transactions into the report&apos;s accounts in the time period of the report. This field only takes into account USD transactions from the accounts.</summary>
+        /// <summary>Total amount of money out of the report&apos;s accounts in the time period of the report. This field only takes into account USD transactions from the accounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.TotalReportOutflowAmount? TotalOutflowAmount { get; set; }

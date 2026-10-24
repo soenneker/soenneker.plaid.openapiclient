@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Cashflow_report.Insights.Get
         {
         }
         /// <summary>
-        /// The `/cashflow_report/insights/get` endpoint retrieves insights data associated with an item. Insights are only calculated on credit and depository accounts.
+        /// The `/cashflow_report/insights/get` endpoint retrieves insights data associated with an Item. Insights are only calculated on credit and depository accounts.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportInsightsGetResponse"/></returns>
         /// <param name="body">CashflowReportInsightsGetRequest defines the request schema for `/cashflow_report/insights/get`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Cashflow_report.Insights.Get
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportInsightsGetResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportInsightsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The `/cashflow_report/insights/get` endpoint retrieves insights data associated with an item. Insights are only calculated on credit and depository accounts.
+        /// The `/cashflow_report/insights/get` endpoint retrieves insights data associated with an Item. Insights are only calculated on credit and depository accounts.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">CashflowReportInsightsGetRequest defines the request schema for `/cashflow_report/insights/get`</param>

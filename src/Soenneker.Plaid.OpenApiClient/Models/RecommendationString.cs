@@ -9,15 +9,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "RECOMMENDED")]
         #pragma warning disable CS1591
-        RECOMMENDED,
+        Recommended,
         #pragma warning restore CS1591
         [EnumMember(Value = "NOT_RECOMMENDED")]
         #pragma warning disable CS1591
-        NOT_RECOMMENDED,
+        NotRecommended,
         #pragma warning restore CS1591
         [EnumMember(Value = "UNKNOWN")]
         #pragma warning disable CS1591
-        UNKNOWN,
+        Unknown,
         #pragma warning restore CS1591
     }
 }

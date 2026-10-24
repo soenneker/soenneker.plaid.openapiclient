@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// AssetReportFreddieGetResponse defines the response schema for `/asset_report/get`
+    /// AssetReportFreddieGetResponse defines the response schema for `/credit/asset_report/freddie_mac/get`
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AssetReportFreddieGetResponse : IAdditionalDataHolder, IParsable

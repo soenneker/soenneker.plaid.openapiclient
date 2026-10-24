@@ -23,9 +23,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
-        /// <summary>&quot;The asynchronous event to be simulated. May be: `posted`, `settled`, `failed`, or `returned`.An error will be returned if the event type is incompatible with the current ledger sweep status. Compatible status --&gt; event type transitions include:`sweep.pending` --&gt; `sweep.posted``sweep.pending` --&gt; `sweep.failed``sweep.posted` --&gt; `sweep.settled``sweep.posted` --&gt; `sweep.returned``sweep.settled` --&gt; `sweep.returned`&quot;</summary>
+        /// <summary>The asynchronous event to be simulated. May be: `sweep.posted`, `sweep.settled`, `sweep.failed`, `sweep.returned`, or `sweep.funds_available` (deposits only).An error will be returned if the event type is incompatible with the current ledger sweep status. Compatible status --&gt; event type transitions include:`sweep.pending` --&gt; `sweep.posted``sweep.pending` --&gt; `sweep.failed``sweep.posted` --&gt; `sweep.settled``sweep.posted` --&gt; `sweep.returned``sweep.settled` --&gt; `sweep.returned`</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferLedgerSweepSimulateEventType? EventType { get; set; }
-        /// <summary>The failure reason if the event type for a transfer is `&quot;failed&quot;` or `&quot;returned&quot;`. Null value otherwise.</summary>
+        /// <summary>The failure reason if the event type for a transfer is `&quot;failed&quot;` or `&quot;returned&quot;`, or the adjustment reason if the event type is `&quot;adjustment&quot;`. Null value otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferFailure? FailureReason { get; set; }
@@ -41,7 +41,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Secret { get; set; }
 #endif
-        /// <summary>Plaid’s unique identifier for a sweep.</summary>
+        /// <summary>Plaid&apos;s unique identifier for a sweep.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SweepId { get; set; }

@@ -34,12 +34,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Metadata about the Item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.Item? Item { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ItemValue? Item { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.Item Item { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ItemValue Item { get; set; }
 #endif
-        /// <summary>Datetime of last cashflow report generation in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ( `YYYY-MM-DDTHH:mm:ssZ` )</summary>
+        /// <summary>Datetime of last Cashflow Report generation in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ( `YYYY-MM-DDTHH:mm:ssZ` )</summary>
         public DateTimeOffset? LastGeneratedTime { get; set; }
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -76,7 +76,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "account_insights", n => { AccountInsights = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportAccountInsights>(global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportAccountInsights.CreateFromDiscriminatorValue); } },
                 { "accounts", n => { Accounts = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.BusinessAccount>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessAccount.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "item", n => { Item = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Item>(global::Soenneker.Plaid.OpenApiClient.Models.Item.CreateFromDiscriminatorValue); } },
+                { "item", n => { Item = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ItemValue>(global::Soenneker.Plaid.OpenApiClient.Models.ItemValue.CreateFromDiscriminatorValue); } },
                 { "last_generated_time", n => { LastGeneratedTime = n.GetDateTimeOffsetValue(); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
             };
@@ -90,7 +90,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportAccountInsights>("account_insights", AccountInsights);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.BusinessAccount>("accounts", Accounts);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Item>("item", Item);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ItemValue>("item", Item);
             writer.WriteDateTimeOffsetValue("last_generated_time", LastGeneratedTime);
             writer.WriteStringValue("request_id", RequestId);
             writer.WriteAdditionalData(AdditionalData);

@@ -39,6 +39,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public TransferCapabilitiesGetRfP()
         {
             AdditionalData = new Dictionary<string, object>();
+            Debit = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

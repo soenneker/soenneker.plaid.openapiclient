@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Item_Escaped.Application.List
         {
         }
         /// <summary>
-        /// List a user’s connected applications
+        /// List a user&apos;s connected applications
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ItemApplicationListResponse"/></returns>
         /// <param name="body">Request to list connected applications for a user.</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Item_Escaped.Application.List
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.ItemApplicationListResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.ItemApplicationListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List a user’s connected applications
+        /// List a user&apos;s connected applications
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request to list connected applications for a user.</param>

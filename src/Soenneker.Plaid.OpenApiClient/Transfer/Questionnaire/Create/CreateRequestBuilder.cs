@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Transfer.Questionnaire.Create
         {
         }
         /// <summary>
-        /// The `/transfer/questionnaire/create` endpoint generates a Plaid-hosted onboarding UI URL. Redirect the originator to this URL to provide their due diligence information and agree to Plaid’s terms for ACH money movement.
+        /// The `/transfer/questionnaire/create` endpoint generates a Plaid-hosted onboarding UI URL. Redirect the originator to this URL to provide their due diligence information and agree to Plaid&apos;s terms for ACH money movement.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransferQuestionnaireCreateResponse"/></returns>
         /// <param name="body">Defines the request schema for `/transfer/questionnaire/create`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Transfer.Questionnaire.Create
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.TransferQuestionnaireCreateResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.TransferQuestionnaireCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The `/transfer/questionnaire/create` endpoint generates a Plaid-hosted onboarding UI URL. Redirect the originator to this URL to provide their due diligence information and agree to Plaid’s terms for ACH money movement.
+        /// The `/transfer/questionnaire/create` endpoint generates a Plaid-hosted onboarding UI URL. Redirect the originator to this URL to provide their due diligence information and agree to Plaid&apos;s terms for ACH money movement.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Defines the request schema for `/transfer/questionnaire/create`</param>

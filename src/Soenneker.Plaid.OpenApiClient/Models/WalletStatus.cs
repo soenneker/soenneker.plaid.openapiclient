@@ -3,21 +3,25 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>&quot;The status of the wallet.`UNKNOWN`: The wallet status is unknown.`ACTIVE`: The wallet is active and ready to send money to and receive money from.`CLOSED`: The wallet is closed. Any transactions made to or from this wallet will error.&quot;</summary>
+    /// <summary>The status of the wallet.`UNKNOWN`: The wallet status is unknown.`ACTIVE`: The wallet is active and ready to send money to and receive money from.`CLOSED`: The wallet is closed. Transactions to or from this wallet will fail.`BLOCKED`: The wallet is blocked by the payment provider. Transactions to or from this wallet will fail.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WalletStatus
     {
         [EnumMember(Value = "UNKNOWN")]
         #pragma warning disable CS1591
-        UNKNOWN,
+        Unknown,
         #pragma warning restore CS1591
         [EnumMember(Value = "ACTIVE")]
         #pragma warning disable CS1591
-        ACTIVE,
+        Active,
         #pragma warning restore CS1591
         [EnumMember(Value = "CLOSED")]
         #pragma warning disable CS1591
-        CLOSED,
+        Closed,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "BLOCKED")]
+        #pragma warning disable CS1591
+        Blocked,
         #pragma warning restore CS1591
     }
 }

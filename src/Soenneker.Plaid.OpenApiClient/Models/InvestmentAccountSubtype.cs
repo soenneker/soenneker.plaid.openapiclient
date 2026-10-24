@@ -9,23 +9,23 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "529")]
         #pragma warning disable CS1591
-        FiveTwoNine,
+        Value529,
         #pragma warning restore CS1591
         [EnumMember(Value = "401a")]
         #pragma warning disable CS1591
-        FourZeroOnea,
+        Value401A,
         #pragma warning restore CS1591
         [EnumMember(Value = "401k")]
         #pragma warning disable CS1591
-        FourZeroOnek,
+        Value401K,
         #pragma warning restore CS1591
         [EnumMember(Value = "403B")]
         #pragma warning disable CS1591
-        FourZeroThreeB,
+        Value403B,
         #pragma warning restore CS1591
         [EnumMember(Value = "457b")]
         #pragma warning disable CS1591
-        FourFiveSevenb,
+        Value457B,
         #pragma warning restore CS1591
         [EnumMember(Value = "brokerage")]
         #pragma warning disable CS1591
@@ -127,6 +127,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning disable CS1591
         Pension,
         #pragma warning restore CS1591
+        [EnumMember(Value = "prediction market")]
+        #pragma warning disable CS1591
+        PredictionMarket,
+        #pragma warning restore CS1591
         [EnumMember(Value = "prif")]
         #pragma warning disable CS1591
         Prif,
@@ -161,7 +165,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "roth 401k")]
         #pragma warning disable CS1591
-        Roth401k,
+        Roth401K,
         #pragma warning restore CS1591
         [EnumMember(Value = "roth 403B")]
         #pragma warning disable CS1591
@@ -169,7 +173,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "roth 457b")]
         #pragma warning disable CS1591
-        Roth457b,
+        Roth457B,
         #pragma warning restore CS1591
         [EnumMember(Value = "roth pension")]
         #pragma warning disable CS1591

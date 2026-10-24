@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// The failure reason if the event type for a refund is `&quot;failed&quot;` or `&quot;returned&quot;`. Null value otherwise.
+    /// The failure reason if the status for a refund is `&quot;failed&quot;` or `&quot;returned&quot;`. Null value otherwise.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransferRefundFailure : IAdditionalDataHolder, IParsable

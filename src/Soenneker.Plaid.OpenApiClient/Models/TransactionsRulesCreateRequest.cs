@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// TransactionsRulesCreateRequest defines the request schema for `beta/transactions/rules/v1/create`
+    /// TransactionsRulesCreateRequest defines the request schema for `/beta/transactions/rules/v1/create`
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionsRulesCreateRequest : IAdditionalDataHolder, IParsable

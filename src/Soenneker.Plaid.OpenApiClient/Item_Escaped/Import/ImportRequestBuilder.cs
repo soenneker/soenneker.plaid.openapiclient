@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Item_Escaped.Import
         {
         }
         /// <summary>
-        /// `/item/import` creates an Item via your Plaid Exchange Integration and returns an `access_token`. As part of an `/item/import` request, you will include a User ID (`user_auth.user_id`) and Authentication Token (`user_auth.auth_token`) that enable data aggregation through your Plaid Exchange API endpoints. These authentication principals are to be chosen by you.Upon creating an Item via `/item/import`, Plaid will automatically begin an extraction of that Item through the Plaid Exchange infrastructure you have already integrated.
+        /// `/item/import` creates an Item for one of your customers and returns an `access_token`, which the other Permissions Manager endpoints take in place of a customer identifier. You supply your own identifier for the customer as `user_auth.user_id`.The endpoint is idempotent and the `access_token` it returns is long-lived: repeated calls for the same `user_auth.user_id` return the same token.Upon creating an Item via `/item/import`, Plaid will automatically begin an extraction of that Item through the data provider API endpoints you have already integrated.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ItemImportResponse"/></returns>
         /// <param name="body">ItemImportRequest defines the request schema for `/item/import`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Item_Escaped.Import
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.ItemImportResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.ItemImportResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// `/item/import` creates an Item via your Plaid Exchange Integration and returns an `access_token`. As part of an `/item/import` request, you will include a User ID (`user_auth.user_id`) and Authentication Token (`user_auth.auth_token`) that enable data aggregation through your Plaid Exchange API endpoints. These authentication principals are to be chosen by you.Upon creating an Item via `/item/import`, Plaid will automatically begin an extraction of that Item through the Plaid Exchange infrastructure you have already integrated.
+        /// `/item/import` creates an Item for one of your customers and returns an `access_token`, which the other Permissions Manager endpoints take in place of a customer identifier. You supply your own identifier for the customer as `user_auth.user_id`.The endpoint is idempotent and the `access_token` it returns is long-lived: repeated calls for the same `user_auth.user_id` return the same token.Upon creating an Item via `/item/import`, Plaid will automatically begin an extraction of that Item through the data provider API endpoints you have already integrated.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">ItemImportRequest defines the request schema for `/item/import`</param>

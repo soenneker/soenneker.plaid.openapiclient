@@ -9,15 +9,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "EQUIFAX")]
         #pragma warning disable CS1591
-        EQUIFAX,
+        Equifax,
         #pragma warning restore CS1591
         [EnumMember(Value = "EXPERIAN")]
         #pragma warning disable CS1591
-        EXPERIAN,
+        Experian,
         #pragma warning restore CS1591
         [EnumMember(Value = "TRANSUNION")]
         #pragma warning disable CS1591
-        TRANSUNION,
+        Transunion,
         #pragma warning restore CS1591
     }
 }

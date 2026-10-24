@@ -31,13 +31,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentConstraints Constraints { get; set; }
 #endif
-        /// <summary>The options property</summary>
+        /// <summary>(Deprecated) Additional payment consent options. Please use `payer_details` to specify the account.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Options { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentInitiationConsentOptions? Options { get; set; }
 #nullable restore
 #else
-        public string Options { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentInitiationConsentOptions Options { get; set; }
 #endif
         /// <summary>An object representing the payment consent payer details.Payer `name` and account `numbers` are required to lock the account to which the consent can be created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +56,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string RecipientId { get; set; }
 #endif
-        /// <summary>A reference for the payment consent. This must be an alphanumeric string with at most 18 characters and must not contain any special characters.</summary>
+        /// <summary>A reference for the payment consent. This must be a string of at most 18 characters containing only letters, numbers, and spaces.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reference { get; set; }
@@ -80,8 +81,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Secret { get; set; }
 #endif
-        /// <summary>&quot;Payment consent type. Defines possible use case for payments made with the given consent.`SWEEPING`: Allows moving money between accounts owned by the same user.`COMMERCIAL`: Allows initiating payments from the user&apos;s account to third parties.&quot;</summary>
+        /// <summary>Payment consent type. Defines possible use case for payments made with the given consent.`SWEEPING`: Allows moving money between accounts owned by the same user.`COMMERCIAL`: Allows initiating payments from the user&apos;s account to third parties.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentType? Type { get; set; }
+        /// <summary>The `user_id` of the end user the payment consent is for, as returned by [`/user/create`](https://plaid.com/docs/api/users/#usercreate). The user must have a `name` and either an email address or a phone number. Payments created from this consent inherit this `user_id`. Required for new integrations.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserId { get; set; }
+#nullable restore
+#else
+        public string UserId { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentCreateRequest"/> and sets the default values.
         /// </summary>
@@ -109,13 +118,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
                 { "constraints", n => { Constraints = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentConstraints>(global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentConstraints.CreateFromDiscriminatorValue); } },
-                { "options", n => { Options = n.GetStringValue(); } },
+                { "options", n => { Options = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentInitiationConsentOptions>(global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentInitiationConsentOptions.CreateFromDiscriminatorValue); } },
                 { "payer_details", n => { PayerDetails = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentPayerDetails>(global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentPayerDetails.CreateFromDiscriminatorValue); } },
                 { "recipient_id", n => { RecipientId = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentScope>()?.AsList(); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentType>(); } },
+                { "user_id", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -127,13 +137,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("client_id", ClientId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentConstraints>("constraints", Constraints);
-            writer.WriteStringValue("options", Options);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentInitiationConsentOptions>("options", Options);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentPayerDetails>("payer_details", PayerDetails);
             writer.WriteStringValue("recipient_id", RecipientId);
             writer.WriteStringValue("reference", Reference);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentScope>("scopes", Scopes);
             writer.WriteStringValue("secret", Secret);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentType>("type", Type);
+            writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

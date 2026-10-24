@@ -9,14 +9,14 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// User information collected outside of Link, most likely via your own onboarding process.Each of the following identity fields are optional:`email_address``phone_number``date_of_birth``name``address``id_number`Specifically, these fields are optional in that they can either be fully provided (satisfying every required field in their subschema) or omitted from the request entirely by not providing the key or value.Providing these fields via the API will result in Link skipping the data collection process for the associated user. All verification steps enabled in the associated Identity Verification Template will still be run. Verification steps will either be run immediately, or once the user completes the `accept_tos` step, depending on the value provided to the `gave_consent` field.If you are not using the shareable URL feature, you can optionally provide these fields via `/link/token/create` instead; both `/identity_verification/create` and `/link/token/create` are valid ways to provide this information. Note that if you provide a non-`null` user data object via `/identity_verification/create`, any user data fields entered via `/link/token/create` for the same `client_user_id` will be ignored when prefilling Link.
+    /// User information collected outside of Link, most likely via your own onboarding process.Each of the following identity fields are optional:`email_address``phone_number``date_of_birth``name``address``id_number`Specifically, these fields are optional in that they can either be fully provided (satisfying every required field in their subschema) or omitted from the request entirely by not providing the key or value.Providing these fields via the API will result in Link skipping the data collection process for the associated user. All verification steps enabled in the associated Identity Verification Template will still be run. Verification steps will either be run immediately, or once the user completes the `accept_tos` step, depending on the value provided to the `gave_consent` field.If you are not using the shareable URL feature, you can optionally provide these fields via `/link/token/create` instead; both `/identity_verification/create` and `/link/token/create` are valid ways to provide this information. Note that if you provide a non-`null` user data object via `/identity_verification/create`, any user data fields entered via `/link/token/create` for the same `client_user_id` will be ignored when prefilling Link.The `ip_address` field is optional. Provide the end user&apos;s IP address to enable IP-based risk checks for backend-only integrations that do not use the Link SDK; when the Link SDK is used, the IP address is collected automatically. Unlike the identity fields above, `ip_address` cannot be provided via `/link/token/create`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IdentityVerificationCreateRequestUser : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;Home address for the user. Supported values are: not provided, address with only country code or full address.For more context on this field, see [Input Validation by Country](https://plaid.com/docs/identity-verification/hybrid-input-validation/#input-validation-by-country).&quot;</summary>
+        /// <summary>Home address for the user. Supported values are: not provided, address with only country code or full address.For more context on this field, see [Input Validation by Country](https://plaid.com/docs/identity-verification/hybrid-input-validation/#input-validation-by-country).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.UserAddress? Address { get; set; }
@@ -24,7 +24,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.UserAddress Address { get; set; }
 #endif
-        /// <summary>The client_user_id property</summary>
+        /// <summary>Specifying `user.client_user_id` is deprecated. Please provide `client_user_id` at the root level instead.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientUserId { get; set; }
@@ -42,13 +43,21 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string EmailAddress { get; set; }
 #endif
-        /// <summary>ID number submitted by the user, currently used only for the Identity Verification product. If the user has not submitted this data yet, this field will be `null`. Otherwise, both fields are guaranteed to be filled.</summary>
+        /// <summary>ID number submitted by the user. If the user has not submitted this data yet, this field will be `null`. Otherwise, both fields are guaranteed to be filled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserIDNumber? IdNumber { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserIdNumber? IdNumber { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserIDNumber IdNumber { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserIdNumber IdNumber { get; set; }
+#endif
+        /// <summary>An IPv4 or IPv6 address.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IpAddress { get; set; }
+#nullable restore
+#else
+        public string IpAddress { get; set; }
 #endif
         /// <summary>You can use this field to pre-populate the user&apos;s legal name; if it is provided here, they will not be prompted to enter their name in the identity verification attempt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,7 +104,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "client_user_id", n => { ClientUserId = n.GetStringValue(); } },
                 { "date_of_birth", n => { DateOfBirth = n.GetDateValue(); } },
                 { "email_address", n => { EmailAddress = n.GetStringValue(); } },
-                { "id_number", n => { IdNumber = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.UserIDNumber>(global::Soenneker.Plaid.OpenApiClient.Models.UserIDNumber.CreateFromDiscriminatorValue); } },
+                { "id_number", n => { IdNumber = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.UserIdNumber>(global::Soenneker.Plaid.OpenApiClient.Models.UserIdNumber.CreateFromDiscriminatorValue); } },
+                { "ip_address", n => { IpAddress = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationRequestUserName>(global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationRequestUserName.CreateFromDiscriminatorValue); } },
                 { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
             };
@@ -111,7 +121,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("client_user_id", ClientUserId);
             writer.WriteDateValue("date_of_birth", DateOfBirth);
             writer.WriteStringValue("email_address", EmailAddress);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.UserIDNumber>("id_number", IdNumber);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.UserIdNumber>("id_number", IdNumber);
+            writer.WriteStringValue("ip_address", IpAddress);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationRequestUserName>("name", Name);
             writer.WriteStringValue("phone_number", PhoneNumber);
             writer.WriteAdditionalData(AdditionalData);

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// An object containing identifying numbers used for making electronic transfers to and from the `account`. The identifying number type (ACH, EFT, IBAN, or BACS) used will depend on the country of the account. An account may have more than one number type. If a particular identifying number type is not used by the `account` for which auth data has been requested, a null value will be returned.
+    /// An object containing identifying numbers used for making electronic transfers to and from the `account`. The identifying number type (ACH, EFT, IBAN, or Bacs) used will depend on the country of the account. An account may have more than one number type. If a particular identifying number type is not used by the `account` for which auth data has been requested, a null value will be returned.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProcessorNumber : IAdditionalDataHolder, IParsable
@@ -16,28 +16,28 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Identifying information for transferring money to or from a US account via ACH or wire transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersACHNullable? Ach { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersAchNullable? Ach { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersACHNullable Ach { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersAchNullable Ach { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Identifying information for transferring money to or from a UK bank account via BACS.</summary>
+        /// <summary>Identifying information for transferring money to or from a UK bank account via Bacs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersBACSNullable? Bacs { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersBacsNullable? Bacs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersBACSNullable Bacs { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersBacsNullable Bacs { get; set; }
 #endif
         /// <summary>Identifying information for transferring money to or from a Canadian bank account via EFT.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersEFTNullable? Eft { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersEftNullable? Eft { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersEFTNullable Eft { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersEftNullable Eft { get; set; }
 #endif
         /// <summary>Identifying information for transferring money to or from an international bank account via wire transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,9 +72,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ach", n => { Ach = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NumbersACHNullable>(global::Soenneker.Plaid.OpenApiClient.Models.NumbersACHNullable.CreateFromDiscriminatorValue); } },
-                { "bacs", n => { Bacs = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NumbersBACSNullable>(global::Soenneker.Plaid.OpenApiClient.Models.NumbersBACSNullable.CreateFromDiscriminatorValue); } },
-                { "eft", n => { Eft = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NumbersEFTNullable>(global::Soenneker.Plaid.OpenApiClient.Models.NumbersEFTNullable.CreateFromDiscriminatorValue); } },
+                { "ach", n => { Ach = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAchNullable>(global::Soenneker.Plaid.OpenApiClient.Models.NumbersAchNullable.CreateFromDiscriminatorValue); } },
+                { "bacs", n => { Bacs = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NumbersBacsNullable>(global::Soenneker.Plaid.OpenApiClient.Models.NumbersBacsNullable.CreateFromDiscriminatorValue); } },
+                { "eft", n => { Eft = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NumbersEftNullable>(global::Soenneker.Plaid.OpenApiClient.Models.NumbersEftNullable.CreateFromDiscriminatorValue); } },
                 { "international", n => { International = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NumbersInternationalNullable>(global::Soenneker.Plaid.OpenApiClient.Models.NumbersInternationalNullable.CreateFromDiscriminatorValue); } },
             };
         }
@@ -85,9 +85,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NumbersACHNullable>("ach", Ach);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NumbersBACSNullable>("bacs", Bacs);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NumbersEFTNullable>("eft", Eft);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAchNullable>("ach", Ach);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NumbersBacsNullable>("bacs", Bacs);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NumbersEftNullable>("eft", Eft);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NumbersInternationalNullable>("international", International);
             writer.WriteAdditionalData(AdditionalData);
         }

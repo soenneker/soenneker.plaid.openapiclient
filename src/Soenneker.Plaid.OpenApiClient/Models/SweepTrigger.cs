@@ -17,11 +17,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "balance_threshold")]
         #pragma warning disable CS1591
-        Balance_threshold,
+        BalanceThreshold,
         #pragma warning restore CS1591
         [EnumMember(Value = "automatic_aggregate")]
         #pragma warning disable CS1591
-        Automatic_aggregate,
+        AutomaticAggregate,
         #pragma warning restore CS1591
     }
 }

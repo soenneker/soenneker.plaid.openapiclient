@@ -79,7 +79,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEmployer Employer { get; set; }
 #endif
-        /// <summary>An employee identification number or EIN.</summary>
+        /// <summary>An employer identification number or EIN.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EmployerIdNumber { get; set; }
@@ -135,7 +135,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string RetirementPlan { get; set; }
 #endif
-        /// <summary>Social security tax withheld for the tax year.</summary>
+        /// <summary>Social Security tax withheld for the tax year.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SocialSecurityTaxWithheld { get; set; }
@@ -143,7 +143,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string SocialSecurityTaxWithheld { get; set; }
 #endif
-        /// <summary>Tips from social security.</summary>
+        /// <summary>Tips from Social Security.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SocialSecurityTips { get; set; }
@@ -151,7 +151,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string SocialSecurityTips { get; set; }
 #endif
-        /// <summary>Wages from social security.</summary>
+        /// <summary>Wages from Social Security.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SocialSecurityWages { get; set; }

@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionBankIncomeResult> BankIncomeResults { get; set; }
 #endif
-        /// <summary>The details of a document upload CRA session in link</summary>
+        /// <summary>The details of a document upload CRA session in Link</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraDocumentUploadResult? CraDocumentUploadResults { get; set; }
@@ -55,7 +55,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionDocumentIncomeResult DocumentIncomeResults { get; set; }
 #endif
-        /// <summary>The set of Item adds for the Link session. If you are not receiving this field and are instead receiving the deprecated `on_success` field, contact your Account Manager to update your integration.</summary>
+        /// <summary>The set of Item adds for the Link session. If you are not receiving this field and are instead receiving the deprecated `on_success` field, contact your account manager to update your integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionItemAddResult>? ItemAddResults { get; set; }
@@ -70,14 +70,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #nullable restore
 #else
         public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionPayrollIncomeResult> PayrollIncomeResults { get; set; }
-#endif
-        /// <summary>Plaid Protect details from the Link session</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionProtectResult? ProtectResults { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionProtectResult ProtectResults { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionResults"/> and sets the default values.
@@ -111,7 +103,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "document_income_results", n => { DocumentIncomeResults = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionDocumentIncomeResult>(global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionDocumentIncomeResult.CreateFromDiscriminatorValue); } },
                 { "item_add_results", n => { ItemAddResults = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionItemAddResult>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionItemAddResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "payroll_income_results", n => { PayrollIncomeResults = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionPayrollIncomeResult>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionPayrollIncomeResult.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "protect_results", n => { ProtectResults = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionProtectResult>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionProtectResult.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -128,7 +119,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionDocumentIncomeResult>("document_income_results", DocumentIncomeResults);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionItemAddResult>("item_add_results", ItemAddResults);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionPayrollIncomeResult>("payroll_income_results", PayrollIncomeResults);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionProtectResult>("protect_results", ProtectResults);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

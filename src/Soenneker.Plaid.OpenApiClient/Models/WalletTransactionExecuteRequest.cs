@@ -39,7 +39,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterparty Counterparty { get; set; }
 #endif
-        /// <summary>A random key provided by the client, per unique wallet transaction. Maximum of 128 characters.The API supports idempotency for safely retrying requests without accidentally performing the same operation twice. If a request to execute a wallet transaction fails due to a network connection error, then after a minimum delay of one minute, you can retry the request with the same idempotency key to guarantee that only a single wallet transaction is created. If the request was successfully processed, it will prevent any transaction that uses the same idempotency key, and was received within 24 hours of the first request, from being processed.</summary>
+        /// <summary>A random key provided by the client, per unique wallet transaction. Maximum of 128 characters.The API supports idempotency for safely retrying requests without accidentally performing the same operation twice. If a request to execute a wallet transaction fails due to a network connection error, then after a minimum delay of one minute, you can retry the request with the same idempotency key to guarantee that only a single wallet transaction is created. If the request was successfully processed, it will prevent any transaction that uses the same idempotency key, and was received within 48 hours of the first request, from being processed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdempotencyKey { get; set; }
@@ -55,7 +55,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.OriginatingFundSource OriginatingFundSource { get; set; }
 #endif
-        /// <summary>A reference for the transaction. This must be an alphanumeric string with 6 to 18 characters and must not contain any special characters or spaces.Ensure that the `reference` field is unique for each transaction.</summary>
+        /// <summary>A reference for the transaction. This must be a string of 6 to 18 characters containing only letters, numbers, and spaces.Ensure that the `reference` field is unique for each transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reference { get; set; }
@@ -70,6 +70,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #nullable restore
 #else
         public string Secret { get; set; }
+#endif
+        /// <summary>The `user_id` of the end user the transaction is for, as returned by [`/user/create`](https://plaid.com/docs/api/users/#usercreate). The user must have a `name` and either an email address or a phone number. Required for new integrations.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserId { get; set; }
+#nullable restore
+#else
+        public string UserId { get; set; }
 #endif
         /// <summary>The ID of the e-wallet to debit from</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,6 +119,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "originating_fund_source", n => { OriginatingFundSource = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.OriginatingFundSource>(global::Soenneker.Plaid.OpenApiClient.Models.OriginatingFundSource.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
+                { "user_id", n => { UserId = n.GetStringValue(); } },
                 { "wallet_id", n => { WalletId = n.GetStringValue(); } },
             };
         }
@@ -128,6 +137,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.OriginatingFundSource>("originating_fund_source", OriginatingFundSource);
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("secret", Secret);
+            writer.WriteStringValue("user_id", UserId);
             writer.WriteStringValue("wallet_id", WalletId);
             writer.WriteAdditionalData(AdditionalData);
         }

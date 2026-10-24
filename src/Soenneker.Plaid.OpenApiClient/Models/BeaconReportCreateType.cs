@@ -3,13 +3,13 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>&quot;The type of Beacon Report.`first_party`: If this is the same individual as the one who submitted the KYC.`stolen`: If this is a different individual from the one who submitted the KYC.`synthetic`: If this is an individual using fabricated information.`account_takeover`: If this individual&apos;s account was compromised.`unknown`: If you aren&apos;t sure who committed the fraud.&quot;</summary>
+    /// <summary>The type of Beacon Report.`first_party`: If this is the same individual as the one who submitted the KYC.`stolen`: If this is a different individual from the one who submitted the KYC.`synthetic`: If this is an individual using fabricated information.`account_takeover`: If this individual&apos;s account was compromised.`unknown`: If you aren&apos;t sure who committed the fraud.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BeaconReportCreateType
     {
         [EnumMember(Value = "first_party")]
         #pragma warning disable CS1591
-        First_party,
+        FirstParty,
         #pragma warning restore CS1591
         [EnumMember(Value = "stolen")]
         #pragma warning disable CS1591
@@ -21,11 +21,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "account_takeover")]
         #pragma warning disable CS1591
-        Account_takeover,
+        AccountTakeover,
         #pragma warning restore CS1591
         [EnumMember(Value = "data_breach")]
         #pragma warning disable CS1591
-        Data_breach,
+        DataBreach,
         #pragma warning restore CS1591
         [EnumMember(Value = "unknown")]
         #pragma warning disable CS1591

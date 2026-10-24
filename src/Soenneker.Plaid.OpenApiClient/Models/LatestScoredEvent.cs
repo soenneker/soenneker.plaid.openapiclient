@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string EventId { get; set; }
 #endif
-        /// <summary>The type of event.</summary>
+        /// <summary>The external event type, when one is available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventType { get; set; }
@@ -31,13 +31,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string EventType { get; set; }
 #endif
-        /// <summary>Event fraud attributes as an arbitrary set of key-value pairs.</summary>
+        /// <summary>Event fraud attributes as an arbitrary set of key-value pairs. The set of attributes returned varies by model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAttributes? FraudAttributes { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LatestScoredEventFraudAttributes? FraudAttributes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAttributes FraudAttributes { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LatestScoredEventFraudAttributes FraudAttributes { get; set; }
 #endif
         /// <summary>The timestamp of the event, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format, e.g. `&quot;2017-09-14T14:42:19.350Z&quot;`</summary>
         public DateTimeOffset? Timestamp { get; set; }
@@ -76,7 +76,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "event_id", n => { EventId = n.GetStringValue(); } },
                 { "event_type", n => { EventType = n.GetStringValue(); } },
-                { "fraud_attributes", n => { FraudAttributes = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudAttributes>(global::Soenneker.Plaid.OpenApiClient.Models.FraudAttributes.CreateFromDiscriminatorValue); } },
+                { "fraud_attributes", n => { FraudAttributes = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LatestScoredEventFraudAttributes>(global::Soenneker.Plaid.OpenApiClient.Models.LatestScoredEventFraudAttributes.CreateFromDiscriminatorValue); } },
                 { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
                 { "trust_index", n => { TrustIndex = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TrustIndex>(global::Soenneker.Plaid.OpenApiClient.Models.TrustIndex.CreateFromDiscriminatorValue); } },
             };
@@ -90,7 +90,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("event_id", EventId);
             writer.WriteStringValue("event_type", EventType);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudAttributes>("fraud_attributes", FraudAttributes);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LatestScoredEventFraudAttributes>("fraud_attributes", FraudAttributes);
             writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TrustIndex>("trust_index", TrustIndex);
             writer.WriteAdditionalData(AdditionalData);

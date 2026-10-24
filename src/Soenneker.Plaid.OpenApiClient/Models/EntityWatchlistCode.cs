@@ -3,73 +3,73 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>&quot;Shorthand identifier for a specific screening list for entities. `AU_CON`: Australia Department of Foreign Affairs and Trade Consolidated List `CA_CON`: Government of Canada Consolidated List of Sanctions `EU_CON`: European External Action Service Consolidated List `IZ_SOE`: State Owned Enterprise List `IZ_UNC`: United Nations Consolidated Sanctions `IZ_WBK`: World Bank Listing of Ineligible Firms and Individuals `US_CAP`: US OFAC Correspondent Account or Payable-Through Account Sanctions `US_FSE`: US OFAC Foreign Sanctions Evaders `US_MBS`: US Non-SDN Menu-Based Sanctions `US_SDN`: US Specially Designated Nationals List `US_SSI`: US OFAC Sectoral Sanctions Identifications `US_CMC`: US OFAC Non-SDN Chinese Military-Industrial Complex List `US_UVL`: Bureau of Industry and Security Unverified List `US_SAM`: US System for Award Management Exclusion List `US_TEL`: US Terrorist Exclusion List `UK_HMC`: UK HM Treasury Consolidated List&quot;</summary>
+    /// <summary>Shorthand identifier for a specific screening list for entities. `AU_CON`: Australia Department of Foreign Affairs and Trade Consolidated List `CA_CON`: Government of Canada Consolidated List of Sanctions `EU_CON`: European External Action Service Consolidated List `IZ_SOE`: State Owned Enterprise List `IZ_UNC`: United Nations Consolidated Sanctions `IZ_WBK`: World Bank Listing of Ineligible Firms and Individuals `US_CAP`: US OFAC Correspondent Account or Payable-Through Account Sanctions `US_FSE`: US OFAC Foreign Sanctions Evaders `US_MBS`: US Non-SDN Menu-Based Sanctions `US_SDN`: US OFAC Specially Designated Nationals List `US_SSI`: US OFAC Sectoral Sanctions Identifications `US_CMC`: US OFAC Non-SDN Chinese Military-Industrial Complex List `US_UVL`: Bureau of Industry and Security Unverified List `US_SAM`: US System for Award Management Exclusion List `US_TEL`: US Terrorist Exclusion List `UK_HMC`: Foreign, Commonwealth &amp; Development Office UK Sanctions List</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum EntityWatchlistCode
     {
         [EnumMember(Value = "CA_CON")]
         #pragma warning disable CS1591
-        CA_CON,
+        CaCon,
         #pragma warning restore CS1591
         [EnumMember(Value = "EU_CON")]
         #pragma warning disable CS1591
-        EU_CON,
+        EuCon,
         #pragma warning restore CS1591
         [EnumMember(Value = "IZ_SOE")]
         #pragma warning disable CS1591
-        IZ_SOE,
+        IzSoe,
         #pragma warning restore CS1591
         [EnumMember(Value = "IZ_UNC")]
         #pragma warning disable CS1591
-        IZ_UNC,
+        IzUnc,
         #pragma warning restore CS1591
         [EnumMember(Value = "IZ_WBK")]
         #pragma warning disable CS1591
-        IZ_WBK,
+        IzWbk,
         #pragma warning restore CS1591
         [EnumMember(Value = "US_CAP")]
         #pragma warning disable CS1591
-        US_CAP,
+        UsCap,
         #pragma warning restore CS1591
         [EnumMember(Value = "US_FSE")]
         #pragma warning disable CS1591
-        US_FSE,
+        UsFse,
         #pragma warning restore CS1591
         [EnumMember(Value = "US_MBS")]
         #pragma warning disable CS1591
-        US_MBS,
+        UsMbs,
         #pragma warning restore CS1591
         [EnumMember(Value = "US_SDN")]
         #pragma warning disable CS1591
-        US_SDN,
+        UsSdn,
         #pragma warning restore CS1591
         [EnumMember(Value = "US_SSI")]
         #pragma warning disable CS1591
-        US_SSI,
+        UsSsi,
         #pragma warning restore CS1591
         [EnumMember(Value = "US_CMC")]
         #pragma warning disable CS1591
-        US_CMC,
+        UsCmc,
         #pragma warning restore CS1591
         [EnumMember(Value = "US_UVL")]
         #pragma warning disable CS1591
-        US_UVL,
+        UsUvl,
         #pragma warning restore CS1591
         [EnumMember(Value = "US_SAM")]
         #pragma warning disable CS1591
-        US_SAM,
+        UsSam,
         #pragma warning restore CS1591
         [EnumMember(Value = "US_TEL")]
         #pragma warning disable CS1591
-        US_TEL,
+        UsTel,
         #pragma warning restore CS1591
         [EnumMember(Value = "AU_CON")]
         #pragma warning disable CS1591
-        AU_CON,
+        AuCon,
         #pragma warning restore CS1591
         [EnumMember(Value = "UK_HMC")]
         #pragma warning disable CS1591
-        UK_HMC,
+        UkHmc,
         #pragma warning restore CS1591
     }
 }

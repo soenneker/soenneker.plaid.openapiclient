@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Beta.Transactions.Rules.V1.Remove
         {
         }
         /// <summary>
-        /// The `/transactions/rules/v1/remove` endpoint is used to remove a transaction rule.
+        /// The `/beta/transactions/rules/v1/remove` endpoint is used to remove a transaction rule.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransactionsRulesRemoveResponse"/></returns>
         /// <param name="body">TransactionsRulesRemoveRequest defines the request schema for `/beta/transactions/rules/v1/remove`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Beta.Transactions.Rules.V1.Remove
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.TransactionsRulesRemoveResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.TransactionsRulesRemoveResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The `/transactions/rules/v1/remove` endpoint is used to remove a transaction rule.
+        /// The `/beta/transactions/rules/v1/remove` endpoint is used to remove a transaction rule.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">TransactionsRulesRemoveRequest defines the request schema for `/beta/transactions/rules/v1/remove`</param>

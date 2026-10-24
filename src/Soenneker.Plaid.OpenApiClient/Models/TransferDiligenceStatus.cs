@@ -3,13 +3,13 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>Originator’s diligence status.</summary>
+    /// <summary>Originator&apos;s diligence status.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransferDiligenceStatus
     {
         [EnumMember(Value = "not_submitted")]
         #pragma warning disable CS1591
-        Not_submitted,
+        NotSubmitted,
         #pragma warning restore CS1591
         [EnumMember(Value = "submitted")]
         #pragma warning disable CS1591
@@ -17,7 +17,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "under_review")]
         #pragma warning disable CS1591
-        Under_review,
+        UnderReview,
         #pragma warning restore CS1591
         [EnumMember(Value = "approved")]
         #pragma warning disable CS1591
@@ -29,7 +29,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "more_information_required")]
         #pragma warning disable CS1591
-        More_information_required,
+        MoreInformationRequired,
         #pragma warning restore CS1591
     }
 }

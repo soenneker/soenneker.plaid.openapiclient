@@ -3,21 +3,29 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>&quot;Status of the Bank Employment Link session.`APPROVED`: User has approved and verified their employment.`NO_EMPLOYMENTS_FOUND`: We attempted, but were unable to find any employment in the connected account.`EMPLOYER_NOT_LISTED`: The user explicitly indicated that they did not see their current or previous employer in the list of employer names found.`STARTED`: The user began the bank income portion of the link flow.`INTERNAL_ERROR`: The user encountered an internal error.&quot;</summary>
+    /// <summary>Status of the Bank Employment Link session.`APPROVED`: User has approved and verified their employment.`NO_EMPLOYERS_FOUND`: We attempted, but were unable to find any employment in the connected account.`EMPLOYER_NOT_LISTED`: The user explicitly indicated that they did not see their current or previous employer in the list of employer names found.`STARTED`: The user began the bank employment portion of the link flow.`INTERNAL_ERROR`: The user encountered an internal error.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CreditSessionBankEmploymentStatus
     {
         [EnumMember(Value = "APPROVED")]
         #pragma warning disable CS1591
-        APPROVED,
+        Approved,
         #pragma warning restore CS1591
         [EnumMember(Value = "NO_EMPLOYERS_FOUND")]
         #pragma warning disable CS1591
-        NO_EMPLOYERS_FOUND,
+        NoEmployersFound,
         #pragma warning restore CS1591
         [EnumMember(Value = "EMPLOYER_NOT_LISTED")]
         #pragma warning disable CS1591
-        EMPLOYER_NOT_LISTED,
+        EmployerNotListed,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "STARTED")]
+        #pragma warning disable CS1591
+        Started,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INTERNAL_ERROR")]
+        #pragma warning disable CS1591
+        InternalError,
         #pragma warning restore CS1591
     }
 }

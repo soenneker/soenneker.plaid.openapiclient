@@ -21,11 +21,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "waiting_for_prerequisite")]
         #pragma warning disable CS1591
-        Waiting_for_prerequisite,
+        WaitingForPrerequisite,
         #pragma warning restore CS1591
         [EnumMember(Value = "not_applicable")]
         #pragma warning disable CS1591
-        Not_applicable,
+        NotApplicable,
         #pragma warning restore CS1591
         [EnumMember(Value = "skipped")]
         #pragma warning disable CS1591
@@ -41,15 +41,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "pending_review")]
         #pragma warning disable CS1591
-        Pending_review,
+        PendingReview,
         #pragma warning restore CS1591
         [EnumMember(Value = "manually_approved")]
         #pragma warning disable CS1591
-        Manually_approved,
+        ManuallyApproved,
         #pragma warning restore CS1591
         [EnumMember(Value = "manually_rejected")]
         #pragma warning disable CS1591
-        Manually_rejected,
+        ManuallyRejected,
         #pragma warning restore CS1591
     }
 }

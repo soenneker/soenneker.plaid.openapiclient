@@ -9,7 +9,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "DUE_DILIGENCE")]
         #pragma warning disable CS1591
-        DUE_DILIGENCE,
+        DueDiligence,
         #pragma warning restore CS1591
     }
 }

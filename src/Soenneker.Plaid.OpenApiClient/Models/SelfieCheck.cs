@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Additional information for the `selfie_check` step. This field will be `null` unless `steps.selfie_check` has reached a terminal state of either `success` or `failed`.
+    /// Additional information for the `selfie_check` step. This field will be `null` unless `steps.selfie_check` has reached a terminal state of `success`, `failed`, `manually_approved`, or `manually_rejected`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SelfieCheck : IAdditionalDataHolder, IParsable
@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public List<global::Soenneker.Plaid.OpenApiClient.Models.SelfieCheckSelfie> Selfies { get; set; }
 #endif
-        /// <summary>The outcome status for the associated Identity Verification attempt&apos;s `selfie_check` step. This field will always have the same value as `steps.selfie_check`.</summary>
+        /// <summary>The outcome status for the associated Identity Verification attempt&apos;s `selfie_check` step. This field will be `success` if `steps.selfie_check` is `success` or `manually_approved`, and `failed` if `steps.selfie_check` is `failed` or `manually_rejected`.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.SelfieCheckStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.SelfieCheck"/> and sets the default values.

@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Is `true` if the name on either of the names that was matched for the score contained strings indicative of a business name, such as &quot;CORP&quot;, &quot;LLC&quot;, &quot;INC&quot;, or &quot;LTD&quot;. A `true` result generally indicates that an account&apos;s name is a business name. However, a `false` result does not mean the account name is not a business name, as some businesses do not use these strings in the names used for their financial institution accounts.</summary>
+        /// <summary>Is `true` if Plaid determined that one of the names being compared is a business name and scored the pair using its business name matching algorithm. Detection is based on business keywords (such as `LLC`, `INC`, `LTD`, `DBA`, `COMPANY`, or `BUSINESS`) appearing in either name, or on either name matching a known business name.</summary>
         public bool? IsBusinessNameDetected { get; set; }
         /// <summary>first or last name completely matched, likely a family member</summary>
         public bool? IsFirstNameOrLastNameMatch { get; set; }

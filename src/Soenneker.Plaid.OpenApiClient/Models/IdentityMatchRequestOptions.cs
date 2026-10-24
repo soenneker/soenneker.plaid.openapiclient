@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// An optional object to filter /identity/match results
+    /// An optional object to filter `/identity/match` results
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IdentityMatchRequestOptions : IAdditionalDataHolder, IParsable

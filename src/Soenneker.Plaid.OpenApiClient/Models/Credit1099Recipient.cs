@@ -13,7 +13,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Credit1099Recipient : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Account number number of recipient.</summary>
+        /// <summary>Account number of recipient.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountNumber { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubAddress Address { get; set; }
 #endif
-        /// <summary>Checked if FACTA is a filing requirement.</summary>
+        /// <summary>Checked if FATCA is a filing requirement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FactaFilingRequirement { get; set; }

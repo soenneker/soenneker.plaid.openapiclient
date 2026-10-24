@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// The image or video capture of a selfie. Only one of image or video URL will be populated per selfie.
+    /// The image or video capture of a selfie. Only one of `image_url` or `video_url` will be populated per selfie. In the vast majority of sessions Plaid records a short video of the user, so `video_url` is populated and `image_url` is `null`. `image_url` is only populated in the rare passive-liveness fallback case, where the user&apos;s device could not complete the standard video liveness capture (for example, a camera or streaming error) and submitted a single still image instead.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SelfieCapture : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Temporary URL for downloading an image selfie capture.</summary>
+        /// <summary>Temporary URL for downloading a still-image selfie capture. This field is only populated when the session fell back to passive (image-based) liveness. For the majority of selfie checks this field is `null` and `video_url` is populated instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ImageUrl { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ImageUrl { get; set; }
 #endif
-        /// <summary>Temporary URL for downloading a video selfie capture.</summary>
+        /// <summary>Temporary URL for downloading a video selfie capture. This is the standard selfie capture for Identity Verification. Plaid records a short video of the user during the Selfie Check liveness step, so this field is populated for the vast majority of selfie checks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VideoUrl { get; set; }

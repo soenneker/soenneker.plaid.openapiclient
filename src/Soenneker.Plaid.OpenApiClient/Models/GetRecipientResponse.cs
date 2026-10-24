@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The recipient name displayed by the Data Provider during the consent flow</summary>
+        /// <summary>The recipient&apos;s (application&apos;s) name, as displayed to your customers during the consent flow</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientName { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientName { get; set; }
 #endif
-        /// <summary>Data Recipient Logo URL location</summary>
+        /// <summary>URL for the recipient&apos;s (application&apos;s) logo</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LogoUri { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string LogoUri { get; set; }
 #endif
-        /// <summary>The recipient identifier</summary>
+        /// <summary>The recipient&apos;s (application&apos;s) identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecipientId { get; set; }
@@ -39,7 +39,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string RecipientId { get; set; }
 #endif
-        /// <summary>The legal name of the recipient</summary>
+        /// <summary>The recipient&apos;s (application&apos;s) legal entity name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ThirdPartyLegalName { get; set; }

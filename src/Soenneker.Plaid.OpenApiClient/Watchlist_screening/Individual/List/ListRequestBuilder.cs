@@ -37,7 +37,7 @@ namespace Soenneker.Plaid.OpenApiClient.Watchlist_screening.Individual.List
         /// List previously created watchlist screenings for individuals
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningIndividualListResponse"/></returns>
-        /// <param name="body">Request input for listinging watchlist screenings for individuals</param>
+        /// <param name="body">Request input for listing watchlist screenings for individuals</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,7 +57,7 @@ namespace Soenneker.Plaid.OpenApiClient.Watchlist_screening.Individual.List
         /// List previously created watchlist screenings for individuals
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request input for listinging watchlist screenings for individuals</param>
+        /// <param name="body">Request input for listing watchlist screenings for individuals</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

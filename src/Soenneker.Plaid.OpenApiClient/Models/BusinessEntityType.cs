@@ -9,11 +9,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "sole_proprietorship")]
         #pragma warning disable CS1591
-        Sole_proprietorship,
+        SoleProprietorship,
         #pragma warning restore CS1591
         [EnumMember(Value = "general_partnership")]
         #pragma warning disable CS1591
-        General_partnership,
+        GeneralPartnership,
         #pragma warning restore CS1591
         [EnumMember(Value = "llc")]
         #pragma warning disable CS1591
@@ -33,15 +33,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "c_corporation")]
         #pragma warning disable CS1591
-        C_corporation,
+        CCorporation,
         #pragma warning restore CS1591
         [EnumMember(Value = "s_corporation")]
         #pragma warning disable CS1591
-        S_corporation,
+        SCorporation,
         #pragma warning restore CS1591
         [EnumMember(Value = "b_corporation")]
         #pragma warning disable CS1591
-        B_corporation,
+        BCorporation,
         #pragma warning restore CS1591
         [EnumMember(Value = "nonprofit")]
         #pragma warning disable CS1591
@@ -57,15 +57,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "professional_association")]
         #pragma warning disable CS1591
-        Professional_association,
+        ProfessionalAssociation,
         #pragma warning restore CS1591
         [EnumMember(Value = "professional_corporation")]
         #pragma warning disable CS1591
-        Professional_corporation,
+        ProfessionalCorporation,
         #pragma warning restore CS1591
         [EnumMember(Value = "trade_name")]
         #pragma warning disable CS1591
-        Trade_name,
+        TradeName,
         #pragma warning restore CS1591
         [EnumMember(Value = "bank")]
         #pragma warning disable CS1591
@@ -73,7 +73,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "credit_union")]
         #pragma warning disable CS1591
-        Credit_union,
+        CreditUnion,
         #pragma warning restore CS1591
         [EnumMember(Value = "insurance")]
         #pragma warning disable CS1591

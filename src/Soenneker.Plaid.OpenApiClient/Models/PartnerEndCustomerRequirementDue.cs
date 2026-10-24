@@ -9,7 +9,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "legal_entity_name")]
         #pragma warning disable CS1591
-        Legal_entity_name,
+        LegalEntityName,
         #pragma warning restore CS1591
         [EnumMember(Value = "website")]
         #pragma warning disable CS1591
@@ -17,19 +17,19 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "application_name")]
         #pragma warning disable CS1591
-        Application_name,
+        ApplicationName,
         #pragma warning restore CS1591
         [EnumMember(Value = "is_diligence_attested")]
         #pragma warning disable CS1591
-        Is_diligence_attested,
+        IsDiligenceAttested,
         #pragma warning restore CS1591
         [EnumMember(Value = "technical_contact")]
         #pragma warning disable CS1591
-        Technical_contact,
+        TechnicalContact,
         #pragma warning restore CS1591
         [EnumMember(Value = "billing_contact")]
         #pragma warning disable CS1591
-        Billing_contact,
+        BillingContact,
         #pragma warning restore CS1591
         [EnumMember(Value = "address")]
         #pragma warning disable CS1591
@@ -37,7 +37,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "bank_addendum_acceptance")]
         #pragma warning disable CS1591
-        Bank_addendum_acceptance,
+        BankAddendumAcceptance,
         #pragma warning restore CS1591
         [EnumMember(Value = "questionnaires.cra")]
         #pragma warning disable CS1591

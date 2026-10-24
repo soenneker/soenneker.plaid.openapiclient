@@ -40,6 +40,7 @@ namespace Soenneker.Plaid.OpenApiClient.Beacon.User.Account_insights.Get
         /// <param name="body">Request input for fetching the risk insights for a Beacon User&apos;s Bank Accounts</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserAccountInsightsGetResponse?> PostAsync(global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserAccountInsightsGetRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -59,6 +60,7 @@ namespace Soenneker.Plaid.OpenApiClient.Beacon.User.Account_insights.Get
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request input for fetching the risk insights for a Beacon User&apos;s Bank Accounts</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserAccountInsightsGetRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -80,6 +82,7 @@ namespace Soenneker.Plaid.OpenApiClient.Beacon.User.Account_insights.Get
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Beacon.User.Account_insights.Get.GetRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Beacon.User.Account_insights.Get.GetRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Plaid.OpenApiClient.Beacon.User.Account_insights.Get.GetRequestBuilder(rawUrl, RequestAdapter);

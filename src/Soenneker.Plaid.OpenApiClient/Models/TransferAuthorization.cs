@@ -17,7 +17,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The datetime representing when the authorization was created, in the format `2006-01-02T15:04:05Z`.</summary>
         public DateTimeOffset? Created { get; set; }
-        /// <summary>A decision regarding the proposed transfer.`approved` – The proposed transfer has received the end user&apos;s consent and has been approved for processing by Plaid. The `decision_rationale` field is set if Plaid was unable to fetch the account information. You may proceed with the transfer, but further review is recommended. Refer to the `code` field in the `decision_rationale` object for details.`declined` – Plaid reviewed the proposed transfer and declined processing. Refer to the `code` field in the `decision_rationale` object for details.`user_action_required` – An action is required before Plaid can assess the transfer risk and make a decision. The most common scenario is to update authentication for an Item. To complete the required action, initialize Link by setting `transfer.authorization_id` in the request of `/link/token/create`. After Link flow is completed, you may re-attempt the authorization request.For `guarantee` requests, `approved` indicates the transfer is eligible for Plaid&apos;s guarantee, and `declined` indicates Plaid will not provide guarantee coverage for the transfer. `user_action_required` indicates you should follow the above guidance before re-attempting.</summary>
+        /// <summary>A decision regarding the proposed transfer.`approved` - The proposed transfer has received the end user&apos;s consent and has been approved for processing by Plaid. The `decision_rationale` field is set if Plaid was unable to fetch the account information. You may proceed with the transfer, but further review is recommended. Refer to the `code` field in the `decision_rationale` object for details.`declined` - Plaid reviewed the proposed transfer and declined processing. Refer to the `code` field in the `decision_rationale` object for details.`user_action_required` - An action is required before Plaid can assess the transfer risk and make a decision. The most common scenario is to update authentication for an Item. To complete the required action, initialize Link by setting `transfer.authorization_id` in the request of `/link/token/create`. After Link flow is completed, you may re-attempt the authorization request.For `guarantee` requests, `approved` indicates the transfer is eligible for Plaid&apos;s guarantee, and `declined` indicates Plaid will not provide guarantee coverage for the transfer. `user_action_required` indicates you should follow the above guidance before re-attempting.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecision? Decision { get; set; }
         /// <summary>The rationale for Plaid&apos;s decision regarding a proposed transfer. It is always set for `declined` decisions, and may or may not be null for `approved` decisions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,8 +28,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale DecisionRationale { get; set; }
 #endif
         /// <summary>Indicates whether the transfer is guaranteed by Plaid (Guarantee customers only). This field will contain either `GUARANTEED` or `NOT_GUARANTEED` indicating whether Plaid will guarantee the transfer.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecision? GuaranteeDecision { get; set; }
+        [Obsolete("")]
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionComposed? GuaranteeDecision { get; set; }
         /// <summary>The rationale for Plaid&apos;s decision to not guarantee a transfer. Will be `null` unless `guarantee_decision` is `NOT_GUARANTEED`.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale? GuaranteeDecisionRationale { get; set; }
@@ -37,7 +39,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale GuaranteeDecisionRationale { get; set; }
 #endif
-        /// <summary>Plaid’s unique identifier for a transfer authorization.</summary>
+        /// <summary>Adaptive guarantee details for a transfer authorization, including the guarantee outcome and settlement schedule. Omitted when no guarantee was attempted.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.AuthorizationGuaranteeDetails? GuaranteeDetails { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.AuthorizationGuaranteeDetails GuaranteeDetails { get; set; }
+#endif
+        /// <summary>Plaid&apos;s unique identifier for a transfer authorization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -45,13 +55,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The payment_risk property</summary>
+        /// <summary>This object includes the scores and risk level. This response is offered as an add-on to `/transfer/authorization/create`. To request access to these fields, please contact your Plaid account manager.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentRisk { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationPaymentRisk? PaymentRisk { get; set; }
 #nullable restore
 #else
-        public string PaymentRisk { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationPaymentRisk PaymentRisk { get; set; }
 #endif
         /// <summary>Details regarding the proposed transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,10 +100,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
                 { "decision", n => { Decision = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecision>(); } },
                 { "decision_rationale", n => { DecisionRationale = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale>(global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale.CreateFromDiscriminatorValue); } },
-                { "guarantee_decision", n => { GuaranteeDecision = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecision>(); } },
+                { "guarantee_decision", n => { GuaranteeDecision = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionComposed>(); } },
                 { "guarantee_decision_rationale", n => { GuaranteeDecisionRationale = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale>(global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale.CreateFromDiscriminatorValue); } },
+                { "guarantee_details", n => { GuaranteeDetails = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AuthorizationGuaranteeDetails>(global::Soenneker.Plaid.OpenApiClient.Models.AuthorizationGuaranteeDetails.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "payment_risk", n => { PaymentRisk = n.GetStringValue(); } },
+                { "payment_risk", n => { PaymentRisk = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationPaymentRisk>(global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationPaymentRisk.CreateFromDiscriminatorValue); } },
                 { "proposed_transfer", n => { ProposedTransfer = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransfer>(global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransfer.CreateFromDiscriminatorValue); } },
             };
         }
@@ -106,10 +118,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created", Created);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecision>("decision", Decision);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale>("decision_rationale", DecisionRationale);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecision>("guarantee_decision", GuaranteeDecision);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionComposed>("guarantee_decision", GuaranteeDecision);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale>("guarantee_decision_rationale", GuaranteeDecisionRationale);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AuthorizationGuaranteeDetails>("guarantee_details", GuaranteeDetails);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("payment_risk", PaymentRisk);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationPaymentRisk>("payment_risk", PaymentRisk);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransfer>("proposed_transfer", ProposedTransfer);
             writer.WriteAdditionalData(AdditionalData);
         }

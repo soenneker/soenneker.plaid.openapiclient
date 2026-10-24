@@ -31,6 +31,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public List<global::Soenneker.Plaid.OpenApiClient.Models.Credit1099> Form1099s { get; set; }
 #endif
+        /// <summary>Array of Form I-20 US immigration student documents.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditI20>? I20s { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditI20> I20s { get; set; }
+#endif
         /// <summary>Array of pay stubs for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,6 +82,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
                 { "form1099s", n => { Form1099s = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.Credit1099>(global::Soenneker.Plaid.OpenApiClient.Models.Credit1099.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "i20s", n => { I20s = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CreditI20>(global::Soenneker.Plaid.OpenApiClient.Models.CreditI20.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pay_stubs", n => { PayStubs = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStub>(global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStub.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "w2s", n => { W2s = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CreditW2>(global::Soenneker.Plaid.OpenApiClient.Models.CreditW2.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -87,6 +96,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.Credit1099>("form1099s", Form1099s);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CreditI20>("i20s", I20s);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStub>("pay_stubs", PayStubs);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CreditW2>("w2s", W2s);
             writer.WriteAdditionalData(AdditionalData);

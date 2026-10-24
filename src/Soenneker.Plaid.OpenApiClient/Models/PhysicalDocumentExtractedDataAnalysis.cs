@@ -17,11 +17,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A match summary describing the cross comparison between the subject&apos;s date of birth, extracted from the document image, and the date of birth they separately provided to the identity verification attempt.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.DocumentDateOfBirthMatchCode? DateOfBirth { get; set; }
-        /// <summary>&quot;A description of whether the associated document was expired when the verification was performed.Note: In the case where an expiration date is not present on the document or failed to be extracted, this value will be `no_data`.&quot;</summary>
+        /// <summary>A description of whether the associated document was expired when the verification was performed.Note: In the case where an expiration date is not present on the document or failed to be extracted, this value will be `no_data`.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.ExpirationDate? ExpirationDate { get; set; }
-        /// <summary>&quot;A binary match indicator specifying whether the country that issued the provided document matches the country that the user separately provided to Plaid.Note: You can configure whether a `no_match` on `issuing_country` fails the `documentary_verification` by editing your Plaid Template.&quot;</summary>
+        /// <summary>A binary match indicator specifying whether the country that issued the provided document matches the country that the user separately provided to Plaid.Note: You can configure whether a `no_match` on `issuing_country` fails the `documentary_verification` by editing your Plaid Template.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.IssuingCountry? IssuingCountry { get; set; }
-        /// <summary>A match summary describing the cross comparison between the subject&apos;s name, extracted from the document image, and the name they separately provided to identity verification attempt.</summary>
+        /// <summary>A match summary describing the cross comparison between the subject&apos;s name, extracted from the document image, and the name they separately provided to the identity verification attempt.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.DocumentNameMatchCode? Name { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PhysicalDocumentExtractedDataAnalysis"/> and sets the default values.

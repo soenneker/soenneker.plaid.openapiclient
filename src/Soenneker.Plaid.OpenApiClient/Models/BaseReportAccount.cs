@@ -13,7 +13,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BaseReportAccount : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Plaid’s unique identifier for the account. This value will not change unless Plaid can&apos;t reconcile the account with the data returned by the financial institution. This may occur, for example, when the name of the account changes. If this happens a new `account_id` will be assigned to the account.If an account with a specific `account_id` disappears instead of changing, the account is likely closed. Closed accounts are not returned by the Plaid API.Like all Plaid identifiers, the `account_id` is case sensitive.</summary>
+        /// <summary>Plaid&apos;s unique identifier for the account. This value will not change unless Plaid can&apos;t reconcile the account with the data returned by the financial institution. This may occur, for example, when the name of the account changes. If this happens a new `account_id` will be assigned to the account.If an account with a specific `account_id` disappears instead of changing, the account is likely closed. Closed accounts are not returned by the Plaid API.Like all Plaid identifiers, the `account_id` is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountId { get; set; }
@@ -21,13 +21,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string AccountId { get; set; }
 #endif
-        /// <summary>The account_insights property</summary>
+        /// <summary>Calculated insights derived from transaction-level data. This field has been deprecated in favor of [Base Report attributes aggregated across accounts](https://plaid.com/docs/api/products/check-legacy/#cra-check_report-base_report-get-response-report-attributes) and will be removed in a future release.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAccountInsights? AccountInsights { get; set; }
 #nullable restore
 #else
-        public string AccountInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAccountInsights AccountInsights { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -105,11 +106,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public List<global::Soenneker.Plaid.OpenApiClient.Models.Owner> Owners { get; set; }
 #endif
-        /// <summary>&quot;How an asset is owned.`association`: Ownership by a corporation, partnership, or unincorporated association, including for-profit and not-for-profit organizations.`individual`: Ownership by an individual.`joint`: Joint ownership by multiple parties.`trust`: Ownership by a revocable or irrevocable trust.&quot;</summary>
+        /// <summary>How an asset is owned.`association`: Ownership by a corporation, partnership, or unincorporated association, including for-profit and not-for-profit organizations.`individual`: Ownership by an individual.`joint`: Joint ownership by multiple parties.`trust`: Ownership by a revocable or irrevocable trust.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.OwnershipType? OwnershipType { get; set; }
         /// <summary>See the [Account type schema](https://plaid.com/docs/api/accounts/#account-type-schema) for a full listing of account types and corresponding subtypes.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.AccountSubtype? Subtype { get; set; }
-        /// <summary>Transaction history associated with the account. Transaction history returned by endpoints such as `/transactions/get` or `/investments/transactions/get` will be returned in the top-level `transactions` field instead. Some transactions may have their details masked in accordance to the FCRA. These will appear with a `credit_category` of `MASKED_TRANSACTION_CATEGORY`.</summary>
+        /// <summary>Transaction history associated with the account. Transaction history returned by endpoints such as `/transactions/get` or `/investments/transactions/get` will be returned in the top-level `transactions` field instead. Some transactions may have their details masked in accordance with the FCRA. These will appear with a `credit_category` of `MASKED_TRANSACTION_CATEGORY`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransaction>? Transactions { get; set; }
@@ -145,7 +146,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
-                { "account_insights", n => { AccountInsights = n.GetStringValue(); } },
+                { "account_insights", n => { AccountInsights = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAccountInsights>(global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAccountInsights.CreateFromDiscriminatorValue); } },
                 { "attributes", n => { Attributes = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAttributes>(global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAttributes.CreateFromDiscriminatorValue); } },
                 { "balances", n => { Balances = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAccountBalances>(global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAccountBalances.CreateFromDiscriminatorValue); } },
                 { "consumer_disputes", n => { ConsumerDisputes = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDispute>(global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDispute.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -170,7 +171,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
-            writer.WriteStringValue("account_insights", AccountInsights);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAccountInsights>("account_insights", AccountInsights);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAttributes>("attributes", Attributes);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAccountBalances>("balances", Balances);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDispute>("consumer_disputes", ConsumerDisputes);

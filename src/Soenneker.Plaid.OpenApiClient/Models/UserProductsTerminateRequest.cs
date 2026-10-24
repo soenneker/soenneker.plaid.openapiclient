@@ -23,13 +23,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
-        /// <summary>An optional list of user-based products to terminate. If not provided, all user-based products will be terminated.</summary>
+        /// <summary>The reason for terminating products.`FRAUD_FIRST_PARTY`: The end user who owns the connected bank account committed fraud using their real identity`FRAUD_FALSE_IDENTITY`: The connection was created using a false or stolen identity`FRAUD_ABUSE`: The end user is abusing the client&apos;s service or platform (for example, automation or excessive retries) through their connected account`FRAUD_OTHER`: Fraud-related, but not covered by the specific fraud categories above; `reason_note` should clarify`FRAUD_TRANSACTION`: Fraud occurred at the transaction level, such as an unauthorized transaction, card testing, chargeback, ACH return, or dispute`CONSUMER_LOAN_PAID_OFF`: The end user paid off their loan and no longer needs the product`CONSUMER_ACCOUNT_CLOSED`: The end user closed their account with the client and no longer needs the product`CONSUMER_CHARGE_OFF`: The end user&apos;s account has been charged off`CONSUMER_PAYMENT_METHOD_SWITCHED`: The end user switched to a different payment method and no longer needs the product`USER_OFFBOARDING`: The user is offboarding from the client&apos;s service or platform`DUPLICATE_ITEM`: This Item is a duplicate of another active Item for the same user`BILLING_TERMINATION`: The client&apos;s billing or subscription relationship with the end user has ended`OTHER`: None of the above; `reason_note` should clarify</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProductsTerminateReasonCode? ReasonCode { get; set; }
+        /// <summary>Additional context or details about the reason for terminating user-based products. Personally identifiable information, such as an email address or phone number, should not be included in the `reason_note`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.UserBasedProducts?>? Products { get; set; }
+        public string? ReasonNote { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.UserBasedProducts?> Products { get; set; }
+        public string ReasonNote { get; set; }
 #endif
         /// <summary>Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,7 +41,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Secret { get; set; }
 #endif
-        /// <summary>A unique user identifier, created by `/user/create`. Integrations that began using `/user/create` after December 10, 2025 use this field to identify a user instead of the `user_token`. For more details, see [new user APIs](https://plaid.com/docs/api/users/user-apis).</summary>
+        /// <summary>A unique user identifier, created by `/user/create`. Integrations that began using `/user/create` after December 10, 2025 use this field to identify a user instead of the `user_token`. For more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }
@@ -73,7 +75,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
-                { "products", n => { Products = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.UserBasedProducts>()?.AsList(); } },
+                { "reason_code", n => { ReasonCode = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ProductsTerminateReasonCode>(); } },
+                { "reason_note", n => { ReasonNote = n.GetStringValue(); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
@@ -86,7 +89,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("client_id", ClientId);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.UserBasedProducts>("products", Products);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ProductsTerminateReasonCode>("reason_code", ReasonCode);
+            writer.WriteStringValue("reason_note", ReasonNote);
             writer.WriteStringValue("secret", Secret);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);

@@ -26,10 +26,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Defines configuration options to generate Cashflow Insights</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCashflowInsightsGetOptions? CashflowInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateCashflowInsightsOptions? CashflowInsights { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCashflowInsightsGetOptions CashflowInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateCashflowInsightsOptions CashflowInsights { get; set; }
 #endif
         /// <summary>Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,9 +47,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientReportId { get; set; }
 #endif
-        /// <summary>&quot;Describes the reason you are generating a Consumer Report for this user. When calling `/link/token/create`, this field is required when using Plaid Check (CRA) products; invalid if not using Plaid Check (CRA) products.`ACCOUNT_REVIEW_CREDIT`: In connection with a consumer credit transaction for the review or collection of an account pursuant to FCRA Section 604(a)(3)(A).`ACCOUNT_REVIEW_NON_CREDIT`: For a legitimate business need of the information to review a non-credit account provided primarily for personal, family, or household purposes to determine whether the consumer continues to meet the terms of the account pursuant to FCRA Section 604(a)(3)(F)(2).`EXTENSION_OF_CREDIT`: In connection with a credit transaction initiated by and involving the consumer pursuant to FCRA Section 604(a)(3)(A).`LEGITIMATE_BUSINESS_NEED_TENANT_SCREENING`: For a legitimate business need in connection with a business transaction initiated by the consumer primarily for personal, family, or household purposes in connection with a property rental assessment pursuant to FCRA Section 604(a)(3)(F)(i).`LEGITIMATE_BUSINESS_NEED_OTHER`: For a legitimate business need in connection with a business transaction made primarily for personal, family, or household initiated by the consumer pursuant to FCRA Section 604(a)(3)(F)(i).`WRITTEN_INSTRUCTION_PREQUALIFICATION`: In accordance with the written instructions of the consumer pursuant to FCRA Section 604(a)(2), to evaluate an application’s profile to make an offer to the consumer.`WRITTEN_INSTRUCTION_OTHER`: In accordance with the written instructions of the consumer pursuant to FCRA Section 604(a)(2), such as when an individual agrees to act as a guarantor or assumes personal liability for a consumer, business, or commercial loan.`ELIGIBILITY_FOR_GOVT_BENEFITS`:  In connection with an eligibility determination for a government benefit where the entity is required to consider an applicant’s financial status pursuant to FCRA Section 604(a)(3)(D).&quot;</summary>
+        /// <summary>Describes the reason you are generating a Consumer Report for this user. When calling `/link/token/create`, this field is required when using Plaid Check (CRA) products; invalid if not using Plaid Check (CRA) products.`ACCOUNT_REVIEW_CREDIT`: In connection with a consumer credit transaction for the review or collection of an account pursuant to FCRA Section 604(a)(3)(A).`ACCOUNT_REVIEW_NON_CREDIT`: For a legitimate business need of the information to review a non-credit account provided primarily for personal, family, or household purposes to determine whether the consumer continues to meet the terms of the account pursuant to FCRA Section 604(a)(3)(F)(2).`EXTENSION_OF_CREDIT`: In connection with a credit transaction initiated by and involving the consumer pursuant to FCRA Section 604(a)(3)(A).`LEGITIMATE_BUSINESS_NEED_TENANT_SCREENING`: For a legitimate business need in connection with a business transaction initiated by the consumer primarily for personal, family, or household purposes in connection with a property rental assessment pursuant to FCRA Section 604(a)(3)(F)(i).`LEGITIMATE_BUSINESS_NEED_OTHER`: For a legitimate business need in connection with a business transaction made primarily for personal, family, or household initiated by the consumer pursuant to FCRA Section 604(a)(3)(F)(i).`WRITTEN_INSTRUCTION_PREQUALIFICATION`: In accordance with the written instructions of the consumer pursuant to FCRA Section 604(a)(2), to evaluate an application&apos;s profile to make an offer to the consumer.`WRITTEN_INSTRUCTION_OTHER`: In accordance with the written instructions of the consumer pursuant to FCRA Section 604(a)(2), such as when an individual agrees to act as a guarantor or assumes personal liability for a consumer, business, or commercial loan.`ELIGIBILITY_FOR_GOVT_BENEFITS`:  In connection with an eligibility determination for a government benefit where the entity is required to consider an applicant&apos;s financial status pursuant to FCRA Section 604(a)(3)(D).</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.ConsumerReportPermissiblePurpose? ConsumerReportPermissiblePurpose { get; set; }
-        /// <summary>The number of days of data to request for the report. Default value is 365; maximum is 731; minimum is 180. If a value lower than 180 is provided, a minimum of 180 days of history will be requested.</summary>
+        /// <summary>The number of days of data to request for the report. Maximum is 731; minimum is 180. If a value lower than 180 is provided, a minimum of 180 days of history will be requested.</summary>
         public int? DaysRequested { get; set; }
         /// <summary>The minimum number of days of data required for the report to be successfully generated.</summary>
         public int? DaysRequired { get; set; }
@@ -58,26 +58,26 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Defines configuration options to generate Income Insights.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportIncomeInsightsGetOptions? IncomeInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateIncomeInsightsOptions? IncomeInsights { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportIncomeInsightsGetOptions IncomeInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateIncomeInsightsOptions IncomeInsights { get; set; }
 #endif
         /// <summary>Defines configuration options to generate the LendScore</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportLendScoreGetOptions? LendScore { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateLendScoreOptions? LendScore { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportLendScoreGetOptions LendScore { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateLendScoreOptions LendScore { get; set; }
 #endif
         /// <summary>Defines configuration options to generate Network Insights</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportNetworkInsightsGetOptions? NetworkInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateNetworkInsightsOptions? NetworkInsights { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportNetworkInsightsGetOptions NetworkInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateNetworkInsightsOptions NetworkInsights { get; set; }
 #endif
         /// <summary>Defines configuration to generate Partner Insights.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,7 +87,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreatePartnerInsightsOptions PartnerInsights { get; set; }
 #endif
-        /// <summary>Specifies a list of products that will be eagerly generated when creating the report (in addition to the Base Report, which is always eagerly generated). These products will be made available before a success webhook is sent. Use this option to minimize response latency for product `/get` endpoints. Note that specifying `cra_partner_insights` in this field will trigger a billable event. Other products are not billed until the respective reports are fetched via product-specific `/get` endpoints.</summary>
+        /// <summary>Specifies a list of products to generate when creating the report (in addition to the Base Report, which is always generated except for requests for only `cra_network_insights` or for FICO-only Partner Insights). These products will be made available before a success webhook is sent. Note that specifying `cra_partner_insights` in this field will trigger a billable event. Other products are not billed until the respective reports are retrieved via their product-specific `/get` endpoints.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? Products { get; set; }
@@ -103,7 +103,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Secret { get; set; }
 #endif
-        /// <summary>A unique user identifier, created by `/user/create`. Integrations that began using `/user/create` after December 10, 2025 use this field to identify a user instead of the `user_token`. For more details, see [new user APIs](https://plaid.com/docs/api/users/user-apis).</summary>
+        /// <summary>A unique user identifier, created by `/user/create`. Integrations that began using `/user/create` after December 10, 2025 use this field to identify a user instead of the `user_token`. For more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }
@@ -111,7 +111,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string UserId { get; set; }
 #endif
-        /// <summary>The user token associated with the User data is being requested for. This field is used only by customers with pre-existing integrations that already use the `user_token` field. All other customers should use the `user_id` instead. For more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis).</summary>
+        /// <summary>The user token associated with the user for which data is being requested. This field is used only by customers with pre-existing integrations that already use the `user_token` field. All other customers should use the `user_id` instead. For more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserToken { get; set; }
@@ -153,16 +153,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "base_report", n => { BaseReport = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateBaseReportOptions>(global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateBaseReportOptions.CreateFromDiscriminatorValue); } },
-                { "cashflow_insights", n => { CashflowInsights = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCashflowInsightsGetOptions>(global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCashflowInsightsGetOptions.CreateFromDiscriminatorValue); } },
+                { "cashflow_insights", n => { CashflowInsights = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateCashflowInsightsOptions>(global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateCashflowInsightsOptions.CreateFromDiscriminatorValue); } },
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
                 { "client_report_id", n => { ClientReportId = n.GetStringValue(); } },
                 { "consumer_report_permissible_purpose", n => { ConsumerReportPermissiblePurpose = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ConsumerReportPermissiblePurpose>(); } },
                 { "days_requested", n => { DaysRequested = n.GetIntValue(); } },
                 { "days_required", n => { DaysRequired = n.GetIntValue(); } },
                 { "include_investments", n => { IncludeInvestments = n.GetBoolValue(); } },
-                { "income_insights", n => { IncomeInsights = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportIncomeInsightsGetOptions>(global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportIncomeInsightsGetOptions.CreateFromDiscriminatorValue); } },
-                { "lend_score", n => { LendScore = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportLendScoreGetOptions>(global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportLendScoreGetOptions.CreateFromDiscriminatorValue); } },
-                { "network_insights", n => { NetworkInsights = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportNetworkInsightsGetOptions>(global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportNetworkInsightsGetOptions.CreateFromDiscriminatorValue); } },
+                { "income_insights", n => { IncomeInsights = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateIncomeInsightsOptions>(global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateIncomeInsightsOptions.CreateFromDiscriminatorValue); } },
+                { "lend_score", n => { LendScore = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateLendScoreOptions>(global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateLendScoreOptions.CreateFromDiscriminatorValue); } },
+                { "network_insights", n => { NetworkInsights = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateNetworkInsightsOptions>(global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateNetworkInsightsOptions.CreateFromDiscriminatorValue); } },
                 { "partner_insights", n => { PartnerInsights = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreatePartnerInsightsOptions>(global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreatePartnerInsightsOptions.CreateFromDiscriminatorValue); } },
                 { "products", n => { Products = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.Products>()?.AsList(); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
@@ -179,16 +179,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateBaseReportOptions>("base_report", BaseReport);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCashflowInsightsGetOptions>("cashflow_insights", CashflowInsights);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateCashflowInsightsOptions>("cashflow_insights", CashflowInsights);
             writer.WriteStringValue("client_id", ClientId);
             writer.WriteStringValue("client_report_id", ClientReportId);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ConsumerReportPermissiblePurpose>("consumer_report_permissible_purpose", ConsumerReportPermissiblePurpose);
             writer.WriteIntValue("days_requested", DaysRequested);
             writer.WriteIntValue("days_required", DaysRequired);
             writer.WriteBoolValue("include_investments", IncludeInvestments);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportIncomeInsightsGetOptions>("income_insights", IncomeInsights);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportLendScoreGetOptions>("lend_score", LendScore);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportNetworkInsightsGetOptions>("network_insights", NetworkInsights);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateIncomeInsightsOptions>("income_insights", IncomeInsights);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateLendScoreOptions>("lend_score", LendScore);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateNetworkInsightsOptions>("network_insights", NetworkInsights);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreatePartnerInsightsOptions>("partner_insights", PartnerInsights);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.Products>("products", Products);
             writer.WriteStringValue("secret", Secret);

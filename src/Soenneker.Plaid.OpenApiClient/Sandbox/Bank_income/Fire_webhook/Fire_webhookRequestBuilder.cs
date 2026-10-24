@@ -41,6 +41,7 @@ namespace Soenneker.Plaid.OpenApiClient.Sandbox.Bank_income.Fire_webhook
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Plaid.OpenApiClient.Models.PlaidError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Plaid.OpenApiClient.Models.SandboxBankIncomeFireWebhookResponse?> PostAsync(global::Soenneker.Plaid.OpenApiClient.Models.SandboxBankIncomeFireWebhookRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -64,6 +65,7 @@ namespace Soenneker.Plaid.OpenApiClient.Sandbox.Bank_income.Fire_webhook
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">SandboxBankIncomeFireWebhookRequest defines the request schema for `/sandbox/bank_income/fire_webhook`</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Soenneker.Plaid.OpenApiClient.Models.SandboxBankIncomeFireWebhookRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -85,6 +87,7 @@ namespace Soenneker.Plaid.OpenApiClient.Sandbox.Bank_income.Fire_webhook
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Sandbox.Bank_income.Fire_webhook.Fire_webhookRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Sandbox.Bank_income.Fire_webhook.Fire_webhookRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Plaid.OpenApiClient.Sandbox.Bank_income.Fire_webhook.Fire_webhookRequestBuilder(rawUrl, RequestAdapter);

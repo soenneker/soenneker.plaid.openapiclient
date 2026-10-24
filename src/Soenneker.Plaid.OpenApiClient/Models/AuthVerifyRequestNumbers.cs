@@ -16,10 +16,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>ACH numbers for verification via Database Auth</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AuthVerifyNumbersACH? Ach { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AuthVerifyNumbersAch? Ach { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AuthVerifyNumbersACH Ach { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AuthVerifyNumbersAch Ach { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -48,7 +48,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ach", n => { Ach = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AuthVerifyNumbersACH>(global::Soenneker.Plaid.OpenApiClient.Models.AuthVerifyNumbersACH.CreateFromDiscriminatorValue); } },
+                { "ach", n => { Ach = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AuthVerifyNumbersAch>(global::Soenneker.Plaid.OpenApiClient.Models.AuthVerifyNumbersAch.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AuthVerifyNumbersACH>("ach", Ach);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AuthVerifyNumbersAch>("ach", Ach);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -13,7 +13,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ItemActivityListRequest : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The access token associated with the Item data is being requested for.</summary>
+        /// <summary>The access token associated with the Item for which data is being requested.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccessToken { get; set; }
@@ -55,6 +55,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public ItemActivityListRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Count = 50;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

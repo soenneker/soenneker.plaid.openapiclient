@@ -19,6 +19,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public int? Num1099sUploaded { get; set; }
         /// <summary>The number of bank statements uploaded by the user.</summary>
         public int? NumBankStatementsUploaded { get; set; }
+        /// <summary>The number of I-20s uploaded by the user</summary>
+        public int? NumI20sUploaded { get; set; }
         /// <summary>The number of paystubs uploaded by the user.</summary>
         public int? NumPaystubsUploaded { get; set; }
         /// <summary>The number of w2s uploaded by the user.</summary>
@@ -50,6 +52,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "num_1099s_uploaded", n => { Num1099sUploaded = n.GetIntValue(); } },
                 { "num_bank_statements_uploaded", n => { NumBankStatementsUploaded = n.GetIntValue(); } },
+                { "num_i20s_uploaded", n => { NumI20sUploaded = n.GetIntValue(); } },
                 { "num_paystubs_uploaded", n => { NumPaystubsUploaded = n.GetIntValue(); } },
                 { "num_w2s_uploaded", n => { NumW2sUploaded = n.GetIntValue(); } },
             };
@@ -63,6 +66,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("num_1099s_uploaded", Num1099sUploaded);
             writer.WriteIntValue("num_bank_statements_uploaded", NumBankStatementsUploaded);
+            writer.WriteIntValue("num_i20s_uploaded", NumI20sUploaded);
             writer.WriteIntValue("num_paystubs_uploaded", NumPaystubsUploaded);
             writer.WriteIntValue("num_w2s_uploaded", NumW2sUploaded);
             writer.WriteAdditionalData(AdditionalData);

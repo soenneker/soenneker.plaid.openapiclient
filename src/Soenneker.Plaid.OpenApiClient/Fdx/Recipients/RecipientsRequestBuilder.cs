@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Fdx.Recipients
         {
         }
         /// <summary>
-        /// Returns a list of Recipients
+        /// Returns metadata for every recipient (application) your customers have connected to via Plaid&apos;s App Directory.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.GetRecipientsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Plaid.OpenApiClient.Fdx.Recipients
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.GetRecipientsResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.GetRecipientsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a list of Recipients
+        /// Returns metadata for every recipient (application) your customers have connected to via Plaid&apos;s App Directory.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

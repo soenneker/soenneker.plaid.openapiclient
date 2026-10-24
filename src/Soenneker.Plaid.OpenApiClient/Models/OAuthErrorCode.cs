@@ -9,27 +9,27 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "invalid_request")]
         #pragma warning disable CS1591
-        Invalid_request,
+        InvalidRequest,
         #pragma warning restore CS1591
         [EnumMember(Value = "invalid_client")]
         #pragma warning disable CS1591
-        Invalid_client,
+        InvalidClient,
         #pragma warning restore CS1591
         [EnumMember(Value = "invalid_grant")]
         #pragma warning disable CS1591
-        Invalid_grant,
+        InvalidGrant,
         #pragma warning restore CS1591
         [EnumMember(Value = "unauthorized_client")]
         #pragma warning disable CS1591
-        Unauthorized_client,
+        UnauthorizedClient,
         #pragma warning restore CS1591
         [EnumMember(Value = "invalid_scope")]
         #pragma warning disable CS1591
-        Invalid_scope,
+        InvalidScope,
         #pragma warning restore CS1591
         [EnumMember(Value = "unsupported_grant_type")]
         #pragma warning disable CS1591
-        Unsupported_grant_type,
+        UnsupportedGrantType,
         #pragma warning restore CS1591
     }
 }

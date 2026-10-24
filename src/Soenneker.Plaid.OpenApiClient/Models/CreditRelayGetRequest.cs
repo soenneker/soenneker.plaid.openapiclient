@@ -49,6 +49,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public CreditRelayGetRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            IncludeInsights = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -9,27 +9,27 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "REPORTED")]
         #pragma warning disable CS1591
-        REPORTED,
+        Reported,
         #pragma warning restore CS1591
         [EnumMember(Value = "AWAITING_RESOLUTION")]
         #pragma warning disable CS1591
-        AWAITING_RESOLUTION,
+        AwaitingResolution,
         #pragma warning restore CS1591
         [EnumMember(Value = "FIX_IN_PROGRESS")]
         #pragma warning disable CS1591
-        FIX_IN_PROGRESS,
+        FixInProgress,
         #pragma warning restore CS1591
         [EnumMember(Value = "FIX_PENDING_VALIDATION")]
         #pragma warning disable CS1591
-        FIX_PENDING_VALIDATION,
+        FixPendingValidation,
         #pragma warning restore CS1591
         [EnumMember(Value = "CANNOT_FIX")]
         #pragma warning disable CS1591
-        CANNOT_FIX,
+        CannotFix,
         #pragma warning restore CS1591
         [EnumMember(Value = "RESOLVED")]
         #pragma warning disable CS1591
-        RESOLVED,
+        Resolved,
         #pragma warning restore CS1591
     }
 }

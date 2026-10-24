@@ -11,8 +11,60 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// An error object and associated `item_id` used to identify a specific Item and error when a batch operation operating on multiple Items has encountered an error in one of the Items.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Cause : global::Soenneker.Plaid.OpenApiClient.Models.PlaidError, IParsable
+    public partial class Cause : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>In this product, a request can pertain to more than one Item. If an error is returned for such a request, `causes` will return an array of errors containing a breakdown of these errors on the individual Item level, if any can be identified.`causes` will be provided for the `error_type` `ASSET_REPORT_ERROR` or `CHECK_REPORT_ERROR`, and for the `USER_ERROR` codes `USER_ITEM_ASSOCIATION_FAILED` and `USER_ITEM_REMOVAL_FAILED`. `causes` will also not be populated inside an error nested within a `warning` object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Causes { get; set; }
+#nullable restore
+#else
+        public UntypedNode Causes { get; set; }
+#endif
+        /// <summary>A user-friendly representation of the error code. `null` if the error is not related to user action.This may change over time and is not safe for programmatic use.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DisplayMessage { get; set; }
+#nullable restore
+#else
+        public string DisplayMessage { get; set; }
+#endif
+        /// <summary>The URL of a Plaid documentation page with more information about the error</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DocumentationUrl { get; set; }
+#nullable restore
+#else
+        public string DocumentationUrl { get; set; }
+#endif
+        /// <summary>The particular error code. Safe for programmatic use.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ErrorCode { get; set; }
+#nullable restore
+#else
+        public string ErrorCode { get; set; }
+#endif
+        /// <summary>The specific reason for the error code. Currently, reasons are only supported for OAuth-based item errors; the field is omitted otherwise. Safe for programmatic use.Possible values:`OAUTH_INVALID_TOKEN`: The user&apos;s OAuth connection to this institution has been invalidated.`OAUTH_CONSENT_EXPIRED`: The user&apos;s access consent for this OAuth connection to this institution has expired.`OAUTH_USER_REVOKED`: The user&apos;s OAuth connection to this institution is invalid because the user revoked their connection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ErrorCodeReason { get; set; }
+#nullable restore
+#else
+        public string ErrorCodeReason { get; set; }
+#endif
+        /// <summary>A developer-friendly representation of the error code. This may change over time and is not safe for programmatic use.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ErrorMessage { get; set; }
+#nullable restore
+#else
+        public string ErrorMessage { get; set; }
+#endif
+        /// <summary>A broad categorization of the error. Safe for programmatic use.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.PlaidErrorType? ErrorType { get; set; }
         /// <summary>The `item_id` of the Item associated with this webhook, warning, or error</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,12 +73,53 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ItemId { get; set; }
 #endif
+        /// <summary>A list of the account subtypes that were extracted but did not match the requested subtypes via the `account_filters` parameter in `/link/token/create`. Currently only populated for `NO_ACCOUNTS` errors from Items with `investments_auth` as an enabled product.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ProvidedAccountSubtypes { get; set; }
+#nullable restore
+#else
+        public List<string> ProvidedAccountSubtypes { get; set; }
+#endif
+        /// <summary>A unique ID identifying the request, to be used for troubleshooting purposes. This field will be omitted in errors provided by webhooks.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RequestId { get; set; }
+#nullable restore
+#else
+        public string RequestId { get; set; }
+#endif
+        /// <summary>A list of the account subtypes that were requested via the `account_filters` parameter in `/link/token/create`. Currently only populated for `NO_ACCOUNTS` errors from Items with `investments_auth` as an enabled product.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? RequiredAccountSubtypes { get; set; }
+#nullable restore
+#else
+        public List<string> RequiredAccountSubtypes { get; set; }
+#endif
+        /// <summary>The HTTP status code associated with the error. This will only be returned in the response body when the error information is provided via a webhook.</summary>
+        public int? Status { get; set; }
+        /// <summary>Suggested steps for resolving the error</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SuggestedAction { get; set; }
+#nullable restore
+#else
+        public string SuggestedAction { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.Cause"/> and sets the default values.
+        /// </summary>
+        public Cause()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.Cause"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Plaid.OpenApiClient.Models.Cause CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Plaid.OpenApiClient.Models.Cause CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Plaid.OpenApiClient.Models.Cause();
@@ -35,22 +128,46 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            return new Dictionary<string, Action<IParseNode>>
             {
+                { "causes", n => { Causes = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "display_message", n => { DisplayMessage = n.GetStringValue(); } },
+                { "documentation_url", n => { DocumentationUrl = n.GetStringValue(); } },
+                { "error_code", n => { ErrorCode = n.GetStringValue(); } },
+                { "error_code_reason", n => { ErrorCodeReason = n.GetStringValue(); } },
+                { "error_message", n => { ErrorMessage = n.GetStringValue(); } },
+                { "error_type", n => { ErrorType = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PlaidErrorType>(); } },
                 { "item_id", n => { ItemId = n.GetStringValue(); } },
+                { "provided_account_subtypes", n => { ProvidedAccountSubtypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "request_id", n => { RequestId = n.GetStringValue(); } },
+                { "required_account_subtypes", n => { RequiredAccountSubtypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "status", n => { Status = n.GetIntValue(); } },
+                { "suggested_action", n => { SuggestedAction = n.GetStringValue(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer)
+        public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
+            writer.WriteObjectValue<UntypedNode>("causes", Causes);
+            writer.WriteStringValue("display_message", DisplayMessage);
+            writer.WriteStringValue("documentation_url", DocumentationUrl);
+            writer.WriteStringValue("error_code", ErrorCode);
+            writer.WriteStringValue("error_code_reason", ErrorCodeReason);
+            writer.WriteStringValue("error_message", ErrorMessage);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PlaidErrorType>("error_type", ErrorType);
             writer.WriteStringValue("item_id", ItemId);
+            writer.WriteCollectionOfPrimitiveValues<string>("provided_account_subtypes", ProvidedAccountSubtypes);
+            writer.WriteStringValue("request_id", RequestId);
+            writer.WriteCollectionOfPrimitiveValues<string>("required_account_subtypes", RequiredAccountSubtypes);
+            writer.WriteIntValue("status", Status);
+            writer.WriteStringValue("suggested_action", SuggestedAction);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

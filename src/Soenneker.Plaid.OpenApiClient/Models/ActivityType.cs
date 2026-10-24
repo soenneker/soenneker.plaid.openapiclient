@@ -9,43 +9,43 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "UNKNOWN")]
         #pragma warning disable CS1591
-        UNKNOWN,
+        Unknown,
         #pragma warning restore CS1591
         [EnumMember(Value = "ITEM_CREATE")]
         #pragma warning disable CS1591
-        ITEM_CREATE,
+        ItemCreate,
         #pragma warning restore CS1591
         [EnumMember(Value = "ITEM_IMPORT")]
         #pragma warning disable CS1591
-        ITEM_IMPORT,
+        ItemImport,
         #pragma warning restore CS1591
         [EnumMember(Value = "ITEM_UPDATE")]
         #pragma warning disable CS1591
-        ITEM_UPDATE,
+        ItemUpdate,
         #pragma warning restore CS1591
         [EnumMember(Value = "ITEM_UNLINK")]
         #pragma warning disable CS1591
-        ITEM_UNLINK,
+        ItemUnlink,
         #pragma warning restore CS1591
         [EnumMember(Value = "PORTAL_UNLINK")]
         #pragma warning disable CS1591
-        PORTAL_UNLINK,
+        PortalUnlink,
         #pragma warning restore CS1591
         [EnumMember(Value = "PORTAL_ITEMS_DELETE")]
         #pragma warning disable CS1591
-        PORTAL_ITEMS_DELETE,
+        PortalItemsDelete,
         #pragma warning restore CS1591
         [EnumMember(Value = "ITEM_REMOVE")]
         #pragma warning disable CS1591
-        ITEM_REMOVE,
+        ItemRemove,
         #pragma warning restore CS1591
         [EnumMember(Value = "INVARIANT_CHECKER_DELETION")]
         #pragma warning disable CS1591
-        INVARIANT_CHECKER_DELETION,
+        InvariantCheckerDeletion,
         #pragma warning restore CS1591
         [EnumMember(Value = "SCOPES_UPDATE")]
         #pragma warning disable CS1591
-        SCOPES_UPDATE,
+        ScopesUpdate,
         #pragma warning restore CS1591
     }
 }

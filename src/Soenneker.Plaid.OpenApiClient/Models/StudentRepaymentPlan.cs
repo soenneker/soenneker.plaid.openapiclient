@@ -24,7 +24,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>The type of the repayment plan.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.StudentRepaymentPlan_type? Type { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.StudentRepaymentPlanType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.StudentRepaymentPlan"/> and sets the default values.
         /// </summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.StudentRepaymentPlan_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.StudentRepaymentPlanType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.StudentRepaymentPlan_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.StudentRepaymentPlanType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Report characteristics returned by FICO describing the banking data used to generate the UltraFICO score.
+    /// Report characteristics returned by FICO describing the banking data used to generate the UltraFICO® score.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraPartnerInsightsFicoReportCharacteristics : IAdditionalDataHolder, IParsable

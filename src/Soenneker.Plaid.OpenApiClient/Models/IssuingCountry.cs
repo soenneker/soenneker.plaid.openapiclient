@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>&quot;A binary match indicator specifying whether the country that issued the provided document matches the country that the user separately provided to Plaid.Note: You can configure whether a `no_match` on `issuing_country` fails the `documentary_verification` by editing your Plaid Template.&quot;</summary>
+    /// <summary>A binary match indicator specifying whether the country that issued the provided document matches the country that the user separately provided to Plaid.Note: You can configure whether a `no_match` on `issuing_country` fails the `documentary_verification` by editing your Plaid Template.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum IssuingCountry
     {
@@ -13,7 +13,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "no_match")]
         #pragma warning disable CS1591
-        No_match,
+        NoMatch,
         #pragma warning restore CS1591
     }
 }

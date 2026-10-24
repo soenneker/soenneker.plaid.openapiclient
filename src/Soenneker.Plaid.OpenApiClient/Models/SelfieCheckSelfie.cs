@@ -25,7 +25,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>The `attempt` field begins with 1 and increments with each subsequent selfie upload.</summary>
         public int? Attempt { get; set; }
-        /// <summary>The image or video capture of a selfie. Only one of image or video URL will be populated per selfie.</summary>
+        /// <summary>The image or video capture of a selfie. Only one of `image_url` or `video_url` will be populated per selfie. In the vast majority of sessions Plaid records a short video of the user, so `video_url` is populated and `image_url` is `null`. `image_url` is only populated in the rare passive-liveness fallback case, where the user&apos;s device could not complete the standard video liveness capture (for example, a camera or streaming error) and submitted a single still image instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.SelfieCapture? Capture { get; set; }

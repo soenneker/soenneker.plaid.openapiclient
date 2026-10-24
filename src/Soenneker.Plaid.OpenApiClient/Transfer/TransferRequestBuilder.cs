@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Plaid.OpenApiClient.Transfer.Authorization;
+using Soenneker.Plaid.OpenApiClient.Transfer.Balance;
 using Soenneker.Plaid.OpenApiClient.Transfer.Cancel;
 using Soenneker.Plaid.OpenApiClient.Transfer.Capabilities;
 using Soenneker.Plaid.OpenApiClient.Transfer.Configuration;
@@ -21,6 +22,7 @@ using Soenneker.Plaid.OpenApiClient.Transfer.Questionnaire;
 using Soenneker.Plaid.OpenApiClient.Transfer.Recurring;
 using Soenneker.Plaid.OpenApiClient.Transfer.Refund;
 using Soenneker.Plaid.OpenApiClient.Transfer.Repayment;
+using Soenneker.Plaid.OpenApiClient.Transfer.Return;
 using Soenneker.Plaid.OpenApiClient.Transfer.Sweep;
 using System.Collections.Generic;
 using System.IO;
@@ -38,6 +40,11 @@ namespace Soenneker.Plaid.OpenApiClient.Transfer
         public global::Soenneker.Plaid.OpenApiClient.Transfer.Authorization.AuthorizationRequestBuilder Authorization
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Transfer.Authorization.AuthorizationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The balance property</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Transfer.Balance.BalanceRequestBuilder Balance
+        {
+            get => new global::Soenneker.Plaid.OpenApiClient.Transfer.Balance.BalanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The cancel property</summary>
         public global::Soenneker.Plaid.OpenApiClient.Transfer.Cancel.CancelRequestBuilder Cancel
@@ -128,6 +135,11 @@ namespace Soenneker.Plaid.OpenApiClient.Transfer
         public global::Soenneker.Plaid.OpenApiClient.Transfer.Repayment.RepaymentRequestBuilder Repayment
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Transfer.Repayment.RepaymentRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The return property</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Transfer.Return.ReturnRequestBuilder Return
+        {
+            get => new global::Soenneker.Plaid.OpenApiClient.Transfer.Return.ReturnRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sweep property</summary>
         public global::Soenneker.Plaid.OpenApiClient.Transfer.Sweep.SweepRequestBuilder Sweep

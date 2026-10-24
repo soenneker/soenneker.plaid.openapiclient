@@ -17,7 +17,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "manually_approved")]
         #pragma warning disable CS1591
-        Manually_approved,
+        ManuallyApproved,
         #pragma warning restore CS1591
     }
 }

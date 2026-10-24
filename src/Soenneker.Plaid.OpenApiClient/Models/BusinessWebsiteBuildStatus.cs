@@ -9,7 +9,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "coming_soon")]
         #pragma warning disable CS1591
-        Coming_soon,
+        ComingSoon,
         #pragma warning restore CS1591
         [EnumMember(Value = "active")]
         #pragma warning disable CS1591

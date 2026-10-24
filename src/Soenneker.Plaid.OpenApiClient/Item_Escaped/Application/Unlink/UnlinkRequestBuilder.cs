@@ -34,10 +34,10 @@ namespace Soenneker.Plaid.OpenApiClient.Item_Escaped.Application.Unlink
         {
         }
         /// <summary>
-        /// Unlink a user’s connected application. On an unlink request, Plaid will immediately revoke the Application’s access to the User’s data.  The User will have to redo the OAuth authentication process in order to restore functionality.This endpoint only removes ongoing data access permissions, therefore the User will need to reach out to the Application itself in order to disable and delete their account and delete any data that the Application already received (if the Application does not do so by default).This endpoint should be called in real time as the User is unlinking an Application, and should not be batched in order to ensure that the change is reflected as soon as possible.
+        /// Unlink a user&apos;s connected application. On an unlink request, Plaid will immediately revoke the Application&apos;s access to the User&apos;s data.  The User will have to redo the OAuth authentication process in order to restore functionality.This endpoint only removes ongoing data access permissions, therefore the User will need to reach out to the Application itself in order to disable and delete their account and delete any data that the Application already received (if the Application does not do so by default).This endpoint should be called in real time as the User is unlinking an Application, and should not be batched in order to ensure that the change is reflected as soon as possible.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ItemApplicationUnlinkResponse"/></returns>
-        /// <param name="body">ItemApplicationUnlinkRequest defines the request schema for `/item/application/unlink/`</param>
+        /// <param name="body">ItemApplicationUnlinkRequest defines the request schema for `/item/application/unlink`</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Plaid.OpenApiClient.Models.PlaidError">When receiving a 4XX or 5XX status code</exception>
@@ -59,10 +59,10 @@ namespace Soenneker.Plaid.OpenApiClient.Item_Escaped.Application.Unlink
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.ItemApplicationUnlinkResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.ItemApplicationUnlinkResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Unlink a user’s connected application. On an unlink request, Plaid will immediately revoke the Application’s access to the User’s data.  The User will have to redo the OAuth authentication process in order to restore functionality.This endpoint only removes ongoing data access permissions, therefore the User will need to reach out to the Application itself in order to disable and delete their account and delete any data that the Application already received (if the Application does not do so by default).This endpoint should be called in real time as the User is unlinking an Application, and should not be batched in order to ensure that the change is reflected as soon as possible.
+        /// Unlink a user&apos;s connected application. On an unlink request, Plaid will immediately revoke the Application&apos;s access to the User&apos;s data.  The User will have to redo the OAuth authentication process in order to restore functionality.This endpoint only removes ongoing data access permissions, therefore the User will need to reach out to the Application itself in order to disable and delete their account and delete any data that the Application already received (if the Application does not do so by default).This endpoint should be called in real time as the User is unlinking an Application, and should not be batched in order to ensure that the change is reflected as soon as possible.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">ItemApplicationUnlinkRequest defines the request schema for `/item/application/unlink/`</param>
+        /// <param name="body">ItemApplicationUnlinkRequest defines the request schema for `/item/application/unlink`</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

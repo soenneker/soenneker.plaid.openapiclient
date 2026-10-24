@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Plaid.OpenApiClient.Fdx.Consents;
 using Soenneker.Plaid.OpenApiClient.Fdx.Notifications;
 using Soenneker.Plaid.OpenApiClient.Fdx.Recipient;
 using Soenneker.Plaid.OpenApiClient.Fdx.Recipients;
@@ -17,6 +18,11 @@ namespace Soenneker.Plaid.OpenApiClient.Fdx
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FdxRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The consents property</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Fdx.Consents.ConsentsRequestBuilder Consents
+        {
+            get => new global::Soenneker.Plaid.OpenApiClient.Fdx.Consents.ConsentsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The notifications property</summary>
         public global::Soenneker.Plaid.OpenApiClient.Fdx.Notifications.NotificationsRequestBuilder Notifications
         {

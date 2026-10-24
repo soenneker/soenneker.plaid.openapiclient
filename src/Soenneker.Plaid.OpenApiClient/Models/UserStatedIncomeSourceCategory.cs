@@ -9,47 +9,47 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "OTHER")]
         #pragma warning disable CS1591
-        OTHER,
+        Other,
         #pragma warning restore CS1591
         [EnumMember(Value = "SALARY")]
         #pragma warning disable CS1591
-        SALARY,
+        Salary,
         #pragma warning restore CS1591
         [EnumMember(Value = "UNEMPLOYMENT")]
         #pragma warning disable CS1591
-        UNEMPLOYMENT,
+        Unemployment,
         #pragma warning restore CS1591
         [EnumMember(Value = "CASH")]
         #pragma warning disable CS1591
-        CASH,
+        Cash,
         #pragma warning restore CS1591
         [EnumMember(Value = "GIG_ECONOMY")]
         #pragma warning disable CS1591
-        GIG_ECONOMY,
+        GigEconomy,
         #pragma warning restore CS1591
         [EnumMember(Value = "RENTAL")]
         #pragma warning disable CS1591
-        RENTAL,
+        Rental,
         #pragma warning restore CS1591
         [EnumMember(Value = "CHILD_SUPPORT")]
         #pragma warning disable CS1591
-        CHILD_SUPPORT,
+        ChildSupport,
         #pragma warning restore CS1591
         [EnumMember(Value = "MILITARY")]
         #pragma warning disable CS1591
-        MILITARY,
+        Military,
         #pragma warning restore CS1591
         [EnumMember(Value = "RETIREMENT")]
         #pragma warning disable CS1591
-        RETIREMENT,
+        Retirement,
         #pragma warning restore CS1591
         [EnumMember(Value = "LONG_TERM_DISABILITY")]
         #pragma warning disable CS1591
-        LONG_TERM_DISABILITY,
+        LongTermDisability,
         #pragma warning restore CS1591
         [EnumMember(Value = "BANK_INTEREST")]
         #pragma warning disable CS1591
-        BANK_INTEREST,
+        BankInterest,
         #pragma warning restore CS1591
     }
 }

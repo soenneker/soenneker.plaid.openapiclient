@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;The method used to populate Auth data for the Item. This field is only populated for Items that have had Auth numbers data set on at least one of its accounts, and will be `null` otherwise. For info about the various flows, see our [Auth coverage documentation](https://plaid.com/docs/auth/coverage/).`INSTANT_AUTH`: The Item&apos;s Auth data was provided directly by the user&apos;s institution connection.`INSTANT_MATCH`: The Item&apos;s Auth data was provided via the Instant Match fallback flow.`AUTOMATED_MICRODEPOSITS`: The Item&apos;s Auth data was provided via the Automated Micro-deposits flow.`SAME_DAY_MICRODEPOSITS`: The Item&apos;s Auth data was provided via the Same Day Micro-deposits flow.`INSTANT_MICRODEPOSITS`: The Item&apos;s Auth data was provided via the Instant Micro-deposits flow.`DATABASE_MATCH`: The Item&apos;s Auth data was provided via the Database Match flow.`DATABASE_INSIGHTS`: The Item&apos;s Auth data was provided via the Database Insights flow.`TRANSFER_MIGRATED`: The Item&apos;s Auth data was provided via [`/transfer/migrate_account`](https://plaid.com/docs/api/products/transfer/account-linking/#migrate-account-into-transfers).`INVESTMENTS_FALLBACK`: The Item&apos;s Auth data for Investments Move was provided via a [fallback flow](https://plaid.com/docs/investments-move/#fallback-flows).&quot;</summary>
+        /// <summary>The method used to populate Auth data for the Item. This field is only populated for Items that have had Auth numbers data set on at least one of their accounts, and will be omitted otherwise. For info about the various flows, see our [Auth coverage documentation](https://plaid.com/docs/auth/coverage/).`INSTANT_AUTH`: The Item&apos;s Auth data was provided directly by the user&apos;s institution connection.`INSTANT_MATCH`: The Item&apos;s Auth data was provided via the Instant Match fallback flow.`AUTOMATED_MICRODEPOSITS`: The Item&apos;s Auth data was provided via the Automated Micro-deposits flow.`SAME_DAY_MICRODEPOSITS`: The Item&apos;s Auth data was provided via the Same-Day Micro-deposits flow.`INSTANT_MICRODEPOSITS`: The Item&apos;s Auth data was provided via the Instant Micro-deposits flow.`DATABASE_MATCH`: The Item&apos;s Auth data was provided via the Database Match flow.`DATABASE_INSIGHTS`: The Item&apos;s Auth data was provided via the Database Insights flow.`TRANSFER_MIGRATED`: The Item&apos;s Auth data was provided via [`/transfer/migrate_account`](https://plaid.com/docs/api/products/transfer/account-linking/#migrate-account-into-transfers).`INVESTMENTS_FALLBACK`: The Item&apos;s Auth data for Investments Move was provided via a [fallback flow](https://plaid.com/docs/investments-move/#fallback-flows).</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.ItemAuthMethod? AuthMethod { get; set; }
         /// <summary>A list of products available for the Item that have not yet been accessed. The contents of this array will be mutually exclusive with `billed_products`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,7 +41,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public List<global::Soenneker.Plaid.OpenApiClient.Models.ItemConsentedDataScope?> ConsentedDataScopes { get; set; }
 #endif
-        /// <summary>&quot;A list of products that the user has consented to for the Item via [Data Transparency Messaging](https://plaid.com/docs/link/data-transparency-messaging-migration-guide). This will consist of all products where both of the following are true: the user has consented to the required data scopes for that product and you have Production access for that product.&quot;</summary>
+        /// <summary>A list of products that the user has consented to for the Item via [Data Transparency Messaging](https://plaid.com/docs/link/data-transparency-messaging-migration-guide). This will consist of all products where both of the following are true: the user has consented to the required data scopes for that product and you have Production access for that product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? ConsentedProducts { get; set; }
@@ -61,7 +61,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public DateTimeOffset? ConsentExpirationTime { get; set; }
         /// <summary>The date and time when the Item was created, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>&quot;Errors are identified by `error_code` and categorized by `error_type`. Use these in preference to HTTP status codes to identify and handle specific errors. HTTP status codes are set and provide the broadest categorization of errors: 4xx codes are for developer- or user-related errors, and 5xx codes are for Plaid-related errors, and the status will be 2xx in non-error cases. An Item with a non-`null` error object will only be part of an API response when calling `/item/get` to view Item status. Otherwise, error fields will be `null` if no error has occurred; if an error has occurred, an error code will be returned instead.&quot;</summary>
+        /// <summary>Errors are identified by `error_code` and categorized by `error_type`. Use these in preference to HTTP status codes to identify and handle specific errors. HTTP status codes are set and provide the broadest categorization of errors: 4xx codes are for developer- or user-related errors, and 5xx codes are for Plaid-related errors, and the status will be 2xx in non-error cases. An Item with a non-`null` error object will only be part of an API response when calling `/item/get` to view Item status. Otherwise, error fields will be `null` if no error has occurred; if an error has occurred, an error code will be returned instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.PlaidError? Error { get; set; }
@@ -69,7 +69,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.PlaidError Error { get; set; }
 #endif
-        /// <summary>The Plaid Institution ID associated with the Item. Field is `null` for Items created without an institution connection, such as Items created via Same Day Micro-deposits.</summary>
+        /// <summary>The Plaid Institution ID associated with the Item. Field is omitted for Items created without an institution connection, such as Items created via Same-Day Micro-deposits.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InstitutionId { get; set; }
@@ -77,7 +77,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string InstitutionId { get; set; }
 #endif
-        /// <summary>The name of the institution associated with the Item. Field is `null` for Items created without an institution connection, such as Items created via Same Day Micro-deposits.</summary>
+        /// <summary>The name of the institution associated with the Item. Field is omitted for Items created without an institution connection, such as Items created via Same-Day Micro-deposits.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InstitutionName { get; set; }
@@ -93,6 +93,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ItemId { get; set; }
 #endif
+        /// <summary>The `item_id` of the Item that was created alongside this one in a single Link session. Only present for Items created in a hybrid Link flow that produces separate Plaid Inc and Plaid Check items; `null` for every other Item.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PairedItemId { get; set; }
+#nullable restore
+#else
+        public string PairedItemId { get; set; }
+#endif
         /// <summary>A list of products added to the Item. In almost all cases, this will be the same as the `billed_products` field. For some products, it is possible for the product to be added to an Item but not yet billed (e.g. Assets, before `/asset_report/create` has been called, or Auth or Identity when added as Optional Products but before their endpoints have been called), in which case the product may appear in `products` but not in `billed_products`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,8 +110,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> Products { get; set; }
 #endif
         /// <summary>Indicates whether an Item requires user interaction to be updated, which can be the case for Items with some forms of two-factor authentication.`background` - Item can be updated in the background`user_present_required` - Item requires user interaction to be updated</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ItemWithConsentFields_update_type? UpdateType { get; set; }
-        /// <summary>The URL registered to receive webhooks for the Item.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.ItemValueUpdateType? UpdateType { get; set; }
+        /// <summary>The URL registered to receive webhooks for the Item. Empty string if no webhook is set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Webhook { get; set; }
@@ -148,8 +156,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "institution_id", n => { InstitutionId = n.GetStringValue(); } },
                 { "institution_name", n => { InstitutionName = n.GetStringValue(); } },
                 { "item_id", n => { ItemId = n.GetStringValue(); } },
+                { "paired_item_id", n => { PairedItemId = n.GetStringValue(); } },
                 { "products", n => { Products = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.Products>()?.AsList(); } },
-                { "update_type", n => { UpdateType = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ItemWithConsentFields_update_type>(); } },
+                { "update_type", n => { UpdateType = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ItemValueUpdateType>(); } },
                 { "webhook", n => { Webhook = n.GetStringValue(); } },
             };
         }
@@ -172,8 +181,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("institution_id", InstitutionId);
             writer.WriteStringValue("institution_name", InstitutionName);
             writer.WriteStringValue("item_id", ItemId);
+            writer.WriteStringValue("paired_item_id", PairedItemId);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.Products>("products", Products);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ItemWithConsentFields_update_type>("update_type", UpdateType);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ItemValueUpdateType>("update_type", UpdateType);
             writer.WriteStringValue("webhook", Webhook);
             writer.WriteAdditionalData(AdditionalData);
         }

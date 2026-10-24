@@ -9,15 +9,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "refresh_token")]
         #pragma warning disable CS1591
-        Refresh_token,
+        RefreshToken,
         #pragma warning restore CS1591
         [EnumMember(Value = "urn:ietf:params:oauth:grant-type:token-exchange")]
         #pragma warning disable CS1591
-        UrnIetfParamsOauthGrantTypeTokenExchange,
+        UrnColonIetfColonParamsColonOauthColonGrantTypeColonTokenExchange,
         #pragma warning restore CS1591
         [EnumMember(Value = "client_credentials")]
         #pragma warning disable CS1591
-        Client_credentials,
+        ClientCredentials,
         #pragma warning restore CS1591
     }
 }

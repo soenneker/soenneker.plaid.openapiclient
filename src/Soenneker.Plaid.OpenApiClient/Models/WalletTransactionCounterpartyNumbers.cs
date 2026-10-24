@@ -8,20 +8,20 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// The counterparty&apos;s bank account numbers. Exactly one of IBAN or BACS data is required.
+    /// The counterparty&apos;s bank account numbers. Exactly one of IBAN or Bacs data is required.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WalletTransactionCounterpartyNumbers : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The account number and sort code of the counterparty&apos;s account</summary>
+        /// <summary>The account number and sort code of the counterparty&apos;s account. The account number must be exactly 8 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyBACS? Bacs { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyBacs? Bacs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyBACS Bacs { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyBacs Bacs { get; set; }
 #endif
         /// <summary>International Bank Account Number for a Wallet Transaction</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bacs", n => { Bacs = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyBACS>(global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyBACS.CreateFromDiscriminatorValue); } },
+                { "bacs", n => { Bacs = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyBacs>(global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyBacs.CreateFromDiscriminatorValue); } },
                 { "international", n => { International = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyInternational>(global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyInternational.CreateFromDiscriminatorValue); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyBACS>("bacs", Bacs);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyBacs>("bacs", Bacs);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyInternational>("international", International);
             writer.WriteAdditionalData(AdditionalData);
         }

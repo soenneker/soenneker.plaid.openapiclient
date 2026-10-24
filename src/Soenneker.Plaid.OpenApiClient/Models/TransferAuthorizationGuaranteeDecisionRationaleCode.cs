@@ -3,29 +3,29 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>&quot;A code representing the reason Plaid declined to guarantee this transfer:`RETURN_BANK`: The risk of a bank-initiated return (for example, an R01/NSF) is too high to guarantee this transfer.`RETURN_CUSTOMER`: The risk of a customer-initiated return (for example, a R10/Unauthorized) is too high to guarantee this transfer.`GUARANTEE_LIMIT_REACHED`: This transfer is low-risk, but Guarantee has exhausted an internal limit on the number or rate of guarantees that applies to this transfer.`RISK_ESTIMATE_UNAVAILABLE`: A risk estimate is unavailable for this Item.`REQUIRED_PARAM_MISSING`: Required fields are missing.&quot;</summary>
+    /// <summary>A code representing the reason Plaid declined to guarantee this transfer:`RETURN_BANK`: The risk of a bank-initiated return (for example, an R01/NSF) is too high to guarantee this transfer.`RETURN_CUSTOMER`: The risk of a customer-initiated return (for example, a R10/Unauthorized) is too high to guarantee this transfer.`GUARANTEE_LIMIT_REACHED`: This transfer is low-risk, but Guarantee has exhausted an internal limit on the number or rate of guarantees that applies to this transfer.`RISK_ESTIMATE_UNAVAILABLE`: A risk estimate is unavailable for this Item.`REQUIRED_PARAM_MISSING`: Required fields are missing.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransferAuthorizationGuaranteeDecisionRationaleCode
     {
         [EnumMember(Value = "RETURN_BANK")]
         #pragma warning disable CS1591
-        RETURN_BANK,
+        ReturnBank,
         #pragma warning restore CS1591
         [EnumMember(Value = "RETURN_CUSTOMER")]
         #pragma warning disable CS1591
-        RETURN_CUSTOMER,
+        ReturnCustomer,
         #pragma warning restore CS1591
         [EnumMember(Value = "GUARANTEE_LIMIT_REACHED")]
         #pragma warning disable CS1591
-        GUARANTEE_LIMIT_REACHED,
+        GuaranteeLimitReached,
         #pragma warning restore CS1591
         [EnumMember(Value = "RISK_ESTIMATE_UNAVAILABLE")]
         #pragma warning disable CS1591
-        RISK_ESTIMATE_UNAVAILABLE,
+        RiskEstimateUnavailable,
         #pragma warning restore CS1591
         [EnumMember(Value = "REQUIRED_PARAM_MISSING")]
         #pragma warning disable CS1591
-        REQUIRED_PARAM_MISSING,
+        RequiredParamMissing,
         #pragma warning restore CS1591
     }
 }

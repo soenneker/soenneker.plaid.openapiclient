@@ -47,6 +47,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public LinkTokenCreateRequestIncomeVerificationPayrollIncome()
         {
             AdditionalData = new Dictionary<string, object>();
+            IsUpdateMode = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

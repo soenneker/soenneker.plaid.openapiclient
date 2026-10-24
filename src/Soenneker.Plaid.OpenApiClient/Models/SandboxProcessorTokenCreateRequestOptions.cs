@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Test password to use for the creation of the Sandbox Item. Default value is `pass_good`.</summary>
+        /// <summary>Test password to use for the creation of the Sandbox Item. Default value is `pass_good`. You can also use a custom test user — reference one configured in the Dashboard via `override_username`, or set `override_username` to `user_custom` and pass the JSON-stringified custom user configuration object as this field to define one entirely via API. See [Sandbox Custom Users](https://plaid.com/docs/sandbox/user-custom) for more details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OverridePassword { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string OverridePassword { get; set; }
 #endif
-        /// <summary>Test username to use for the creation of the Sandbox Item. Default value is `user_good`.</summary>
+        /// <summary>Test username to use for the creation of the Sandbox Item. Default value is `user_good`. You can also use a custom test user — either set this to the username of a custom user configured in the Dashboard, or set it to `user_custom` and pass the JSON-stringified custom user configuration object as `override_password` to define one entirely via API. See [Sandbox Custom Users](https://plaid.com/docs/sandbox/user-custom) for more details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OverrideUsername { get; set; }

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>An enum indicating the type of a linked service. Note that `adult_sites` refers&apos; to explicit video content, and includes a number of related services.</summary>
+    /// <summary>An enum indicating the type of a linked service. Note that `adult_sites` refers to explicit video content, and includes a number of related services.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum RiskCheckLinkedService
     {
@@ -17,7 +17,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "adult_sites")]
         #pragma warning disable CS1591
-        Adult_sites,
+        AdultSites,
         #pragma warning restore CS1591
         [EnumMember(Value = "airbnb")]
         #pragma warning disable CS1591

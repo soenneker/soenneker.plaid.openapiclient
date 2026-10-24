@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Transfer.Recurring.Cancel
         {
         }
         /// <summary>
-        /// Use the `/transfer/recurring/cancel` endpoint to cancel a recurring transfer.  Scheduled transfer that hasn&apos;t been submitted to bank will be cancelled.
+        /// Use the `/transfer/recurring/cancel` endpoint to cancel a recurring transfer.  A scheduled transfer that hasn&apos;t been submitted to the bank will be cancelled.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransferRecurringCancelResponse"/></returns>
         /// <param name="body">Defines the request schema for `/transfer/recurring/cancel`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Transfer.Recurring.Cancel
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.TransferRecurringCancelResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.TransferRecurringCancelResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use the `/transfer/recurring/cancel` endpoint to cancel a recurring transfer.  Scheduled transfer that hasn&apos;t been submitted to bank will be cancelled.
+        /// Use the `/transfer/recurring/cancel` endpoint to cancel a recurring transfer.  A scheduled transfer that hasn&apos;t been submitted to the bank will be cancelled.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Defines the request schema for `/transfer/recurring/cancel`</param>

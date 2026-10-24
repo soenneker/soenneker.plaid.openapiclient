@@ -15,13 +15,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Identifying information for a UK bank account via BACS.</summary>
+        /// <summary>Identifying information for a UK bank account via Bacs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CounterpartyNumbersBACS? Bacs { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CounterpartyNumbersBacs? Bacs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CounterpartyNumbersBACS Bacs { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CounterpartyNumbersBacs Bacs { get; set; }
 #endif
         /// <summary>Account numbers using the International Bank Account Number and BIC/SWIFT code format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bacs", n => { Bacs = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CounterpartyNumbersBACS>(global::Soenneker.Plaid.OpenApiClient.Models.CounterpartyNumbersBACS.CreateFromDiscriminatorValue); } },
+                { "bacs", n => { Bacs = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CounterpartyNumbersBacs>(global::Soenneker.Plaid.OpenApiClient.Models.CounterpartyNumbersBacs.CreateFromDiscriminatorValue); } },
                 { "international", n => { International = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CounterpartyNumbersInternational>(global::Soenneker.Plaid.OpenApiClient.Models.CounterpartyNumbersInternational.CreateFromDiscriminatorValue); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CounterpartyNumbersBACS>("bacs", Bacs);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CounterpartyNumbersBacs>("bacs", Bacs);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CounterpartyNumbersInternational>("international", International);
             writer.WriteAdditionalData(AdditionalData);
         }

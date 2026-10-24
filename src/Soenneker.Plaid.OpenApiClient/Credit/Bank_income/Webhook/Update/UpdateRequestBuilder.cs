@@ -34,13 +34,14 @@ namespace Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Webhook.Update
         {
         }
         /// <summary>
-        /// `/credit/bank_income/webhook/update` allows you to subscribe or unsubscribe a user for income webhook notifications. By default, all users start out unsubscribed.If a user is subscribed, on significant changes to the user&apos;s income profile, you will receive a `BANK_INCOME_REFRESH_UPDATE` webhook, prompting you to refresh bank income data for the user.
+        /// `/credit/bank_income/webhook/update` is deprecated and no longer available; requests return an `INVALID_REQUEST` error with code `NOT_FOUND`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeWebhookUpdateResponse"/></returns>
         /// <param name="body">CreditBankIncomeWebhookUpdateRequest defines the request schema for `/credit/bank_income/webhook/update`.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Plaid.OpenApiClient.Models.PlaidError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeWebhookUpdateResponse?> PostAsync(global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeWebhookUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -59,11 +60,12 @@ namespace Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Webhook.Update
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeWebhookUpdateResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeWebhookUpdateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// `/credit/bank_income/webhook/update` allows you to subscribe or unsubscribe a user for income webhook notifications. By default, all users start out unsubscribed.If a user is subscribed, on significant changes to the user&apos;s income profile, you will receive a `BANK_INCOME_REFRESH_UPDATE` webhook, prompting you to refresh bank income data for the user.
+        /// `/credit/bank_income/webhook/update` is deprecated and no longer available; requests return an `INVALID_REQUEST` error with code `NOT_FOUND`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">CreditBankIncomeWebhookUpdateRequest defines the request schema for `/credit/bank_income/webhook/update`.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeWebhookUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -85,6 +87,7 @@ namespace Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Webhook.Update
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Webhook.Update.UpdateRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Webhook.Update.UpdateRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Webhook.Update.UpdateRequestBuilder(rawUrl, RequestAdapter);

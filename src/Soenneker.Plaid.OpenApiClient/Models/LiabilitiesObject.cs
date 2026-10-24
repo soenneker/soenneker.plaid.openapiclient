@@ -23,6 +23,22 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditCardLiability> Credit { get; set; }
 #endif
+        /// <summary>The line of credit accounts returned. This field is omitted when using plaid-python earlier than 13.0.0 or plaid-ruby earlier than 50.0.0.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LineOfCreditLiability>? LineOfCredit { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LineOfCreditLiability> LineOfCredit { get; set; }
+#endif
+        /// <summary>The closed-end loan accounts returned. This field is omitted when using plaid-python earlier than 13.0.0 or plaid-ruby earlier than 50.0.0.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LoanLiability>? Loan { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LoanLiability> Loan { get; set; }
+#endif
         /// <summary>The mortgage accounts returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,6 +81,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "credit", n => { Credit = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CreditCardLiability>(global::Soenneker.Plaid.OpenApiClient.Models.CreditCardLiability.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "line_of_credit", n => { LineOfCredit = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LineOfCreditLiability>(global::Soenneker.Plaid.OpenApiClient.Models.LineOfCreditLiability.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "loan", n => { Loan = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LoanLiability>(global::Soenneker.Plaid.OpenApiClient.Models.LoanLiability.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mortgage", n => { Mortgage = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.MortgageLiability>(global::Soenneker.Plaid.OpenApiClient.Models.MortgageLiability.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "student", n => { Student = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.StudentLoan>(global::Soenneker.Plaid.OpenApiClient.Models.StudentLoan.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -77,6 +95,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CreditCardLiability>("credit", Credit);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LineOfCreditLiability>("line_of_credit", LineOfCredit);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LoanLiability>("loan", Loan);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.MortgageLiability>("mortgage", Mortgage);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.StudentLoan>("student", Student);
             writer.WriteAdditionalData(AdditionalData);

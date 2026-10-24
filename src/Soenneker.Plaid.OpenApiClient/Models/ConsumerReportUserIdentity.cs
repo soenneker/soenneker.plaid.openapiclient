@@ -9,7 +9,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// This field is only used by integrations created before December 10, 2025. All other integrations must use the `identity` object instead. For more details, see [new user APIs](https://plaid.com/docs/api/users/user-apis).To create a Plaid Check Consumer Report for a user when using a `user_token`, this field must be present. If this field is not provided during user token creation, you can add it to the user later by calling `/user/update`. Once the field has been added to the user, you will be able to call `/link/token/create` with a non-empty `consumer_report_permissible_purpose` (which will automatically create a Plaid Check Consumer Report), or call `/cra/check_report/create` for that user.
+    /// This field is only used by integrations created before December 10, 2025. All other integrations must use the `identity` object instead. For more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis).To create a Plaid Check Consumer Report for a user when using a `user_token`, this field must be present. If this field is not provided during user token creation, you can add it to the user later by calling `/user/update`. Once the field has been added to the user, you will be able to call `/link/token/create` with a non-empty `consumer_report_permissible_purpose` (which will automatically create a Plaid Check Consumer Report), or call `/cra/check_report/create` for that user.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConsumerReportUserIdentity : IAdditionalDataHolder, IParsable
@@ -42,7 +42,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string LastName { get; set; }
 #endif
-        /// <summary>&quot;The user&apos;s phone number, in E.164 format: +{countrycode}{number}. For example: \&quot;+14157452130\&quot;. Phone numbers provided in other formats will be parsed on a best-effort basis. Phone number input is validated against valid number ranges; number strings that do not match a real-world phone numbering scheme may cause the request to fail, even in the Sandbox test environment.&quot;</summary>
+        /// <summary>The user&apos;s phone number, in E.164 format: +{countrycode}{number}. For example: &quot;+14157452130&quot;. Phone numbers provided in other formats will be parsed on a best-effort basis. Phone number input is validated against valid number ranges; number strings that do not match a real-world phone numbering scheme may cause the request to fail, even in the Sandbox test environment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PhoneNumbers { get; set; }
@@ -58,7 +58,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.AddressData PrimaryAddress { get; set; }
 #endif
-        /// <summary>&quot;The user&apos;s full social security number. This field should only be provided by lenders intending to share the resulting consumer report with a Government-Sponsored Enterprise (GSE), such as Fannie Mae or Freddie Mac.Format: \&quot;ddd-dd-dddd\&quot;&quot;</summary>
+        /// <summary>The user&apos;s full Social Security number. This field should only be provided by lenders intending to share the resulting consumer report with a Government-Sponsored Enterprise (GSE), such as Fannie Mae or Freddie Mac.Format: &quot;ddd-dd-dddd&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SsnFull { get; set; }
@@ -66,7 +66,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string SsnFull { get; set; }
 #endif
-        /// <summary>The last 4 digits of the user&apos;s social security number.</summary>
+        /// <summary>The last 4 digits of the user&apos;s Social Security number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SsnLast4 { get; set; }

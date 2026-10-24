@@ -9,23 +9,23 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "PROCESSING")]
         #pragma warning disable CS1591
-        PROCESSING,
+        Processing,
         #pragma warning restore CS1591
         [EnumMember(Value = "PROCESSING_COMPLETE")]
         #pragma warning disable CS1591
-        PROCESSING_COMPLETE,
+        ProcessingComplete,
         #pragma warning restore CS1591
         [EnumMember(Value = "PROCESSING_ERROR")]
         #pragma warning disable CS1591
-        PROCESSING_ERROR,
+        ProcessingError,
         #pragma warning restore CS1591
         [EnumMember(Value = "PASSWORD_PROTECTED")]
         #pragma warning disable CS1591
-        PASSWORD_PROTECTED,
+        PasswordProtected,
         #pragma warning restore CS1591
         [EnumMember(Value = "VIRUS_DETECTED")]
         #pragma warning disable CS1591
-        VIRUS_DETECTED,
+        VirusDetected,
         #pragma warning restore CS1591
     }
 }

@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Identity_verification.Autofill.Create
         {
         }
         /// <summary>
-        /// Try to autofill an Identity Verification based of the provided phone number, date of birth and country of residence.
+        /// Try to autofill an Identity Verification based on the provided phone number, date of birth and country of residence.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationAutofillCreateResponse"/></returns>
         /// <param name="body">Request input to autofill an Identity Verification</param>
@@ -54,7 +54,7 @@ namespace Soenneker.Plaid.OpenApiClient.Identity_verification.Autofill.Create
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationAutofillCreateResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationAutofillCreateResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Try to autofill an Identity Verification based of the provided phone number, date of birth and country of residence.
+        /// Try to autofill an Identity Verification based on the provided phone number, date of birth and country of residence.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request input to autofill an Identity Verification</param>

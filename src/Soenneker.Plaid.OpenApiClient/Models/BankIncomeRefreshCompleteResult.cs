@@ -3,17 +3,17 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>&quot;The result of the bank income refresh report generation`SUCCESS`: The refreshed report was successfully generated and can be retrieved via `/credit/bank_income/get`.`FAILURE`: The refreshed report failed to be generated&quot;</summary>
+    /// <summary>The result of the bank income refresh report generation`SUCCESS`: The refreshed report was successfully generated and can be retrieved via `/credit/bank_income/get`.`FAILURE`: The refreshed report failed to be generated</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BankIncomeRefreshCompleteResult
     {
         [EnumMember(Value = "SUCCESS")]
         #pragma warning disable CS1591
-        SUCCESS,
+        Success,
         #pragma warning restore CS1591
         [EnumMember(Value = "FAILURE")]
         #pragma warning disable CS1591
-        FAILURE,
+        Failure,
         #pragma warning restore CS1591
     }
 }

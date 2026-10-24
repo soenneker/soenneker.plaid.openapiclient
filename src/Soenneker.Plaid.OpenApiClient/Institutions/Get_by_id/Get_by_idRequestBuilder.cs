@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Institutions.Get_by_id
         {
         }
         /// <summary>
-        /// &quot;Returns a JSON response containing details on a specified financial institution currently supported by Plaid.Versioning note: API versions 2019-05-29 and earlier allow use of the `public_key` parameter instead of the `client_id` and `secret` to authenticate to this endpoint. The `public_key` has been deprecated; all customers are encouraged to use `client_id` and `secret` instead.&quot;
+        /// Returns a JSON response containing details on a specified financial institution.Institutions that Plaid does not support for new connections are still returned by this endpoint, so that an `institution_id` stored on an existing Item can still be looked up. These institutions are not returned by `/institutions/get` or `/institutions/search`, and attempting to create a new Item for one of them returns an `INSTITUTION_NO_LONGER_SUPPORTED` error. Use `connection_availability` to tell the two cases apart.Versioning note: API versions 2019-05-29 and earlier allow use of the `public_key` parameter instead of the `client_id` and `secret` to authenticate to this endpoint. The `public_key` has been deprecated; all customers are encouraged to use `client_id` and `secret` instead.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.InstitutionsGetByIdResponse"/></returns>
         /// <param name="body">InstitutionsGetByIdRequest defines the request schema for `/institutions/get_by_id`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Institutions.Get_by_id
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.InstitutionsGetByIdResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.InstitutionsGetByIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Returns a JSON response containing details on a specified financial institution currently supported by Plaid.Versioning note: API versions 2019-05-29 and earlier allow use of the `public_key` parameter instead of the `client_id` and `secret` to authenticate to this endpoint. The `public_key` has been deprecated; all customers are encouraged to use `client_id` and `secret` instead.&quot;
+        /// Returns a JSON response containing details on a specified financial institution.Institutions that Plaid does not support for new connections are still returned by this endpoint, so that an `institution_id` stored on an existing Item can still be looked up. These institutions are not returned by `/institutions/get` or `/institutions/search`, and attempting to create a new Item for one of them returns an `INSTITUTION_NO_LONGER_SUPPORTED` error. Use `connection_availability` to tell the two cases apart.Versioning note: API versions 2019-05-29 and earlier allow use of the `public_key` parameter instead of the `client_id` and `secret` to authenticate to this endpoint. The `public_key` has been deprecated; all customers are encouraged to use `client_id` and `secret` instead.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">InstitutionsGetByIdRequest defines the request schema for `/institutions/get_by_id`</param>

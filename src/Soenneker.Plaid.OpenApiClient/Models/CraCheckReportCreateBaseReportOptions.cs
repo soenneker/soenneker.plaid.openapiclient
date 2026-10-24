@@ -27,10 +27,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Specifies options for creating reports that can be shared with GSEs for mortgage verification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportGSEOptions? GseOptions { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportGseOptions? GseOptions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportGSEOptions GseOptions { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportGseOptions GseOptions { get; set; }
 #endif
         /// <summary>Options for configuring Home Lending Report (Verification Report) generation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,7 +68,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "client_report_id", n => { ClientReportId = n.GetStringValue(); } },
-                { "gse_options", n => { GseOptions = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportGSEOptions>(global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportGSEOptions.CreateFromDiscriminatorValue); } },
+                { "gse_options", n => { GseOptions = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportGseOptions>(global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportGseOptions.CreateFromDiscriminatorValue); } },
                 { "home_lending_report_options", n => { HomeLendingReportOptions = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportHomeLendingReportOptions>(global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportHomeLendingReportOptions.CreateFromDiscriminatorValue); } },
                 { "require_identity", n => { RequireIdentity = n.GetBoolValue(); } },
             };
@@ -81,7 +81,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("client_report_id", ClientReportId);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportGSEOptions>("gse_options", GseOptions);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportGseOptions>("gse_options", GseOptions);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportHomeLendingReportOptions>("home_lending_report_options", HomeLendingReportOptions);
             writer.WriteBoolValue("require_identity", RequireIdentity);
             writer.WriteAdditionalData(AdditionalData);

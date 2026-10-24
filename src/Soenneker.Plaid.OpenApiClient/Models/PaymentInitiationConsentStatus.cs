@@ -3,29 +3,29 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>&quot;The status of the payment consent.`UNAUTHORISED`: Consent created, but requires user authorisation.`REJECTED`: Consent authorisation was rejected by the bank.`AUTHORISED`: Consent is active and ready to be used.`REVOKED`: Consent has been revoked and can no longer be used.`EXPIRED`: Consent is no longer valid.&quot;</summary>
+    /// <summary>The status of the payment consent.`UNAUTHORISED`: Consent created, but requires user authorisation.`REJECTED`: Consent authorisation was rejected by the bank.`AUTHORISED`: Consent is active and ready to be used.`REVOKED`: Consent has been revoked and can no longer be used.`EXPIRED`: Consent is no longer valid.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PaymentInitiationConsentStatus
     {
         [EnumMember(Value = "UNAUTHORISED")]
         #pragma warning disable CS1591
-        UNAUTHORISED,
+        Unauthorised,
         #pragma warning restore CS1591
         [EnumMember(Value = "AUTHORISED")]
         #pragma warning disable CS1591
-        AUTHORISED,
+        Authorised,
         #pragma warning restore CS1591
         [EnumMember(Value = "REVOKED")]
         #pragma warning disable CS1591
-        REVOKED,
+        Revoked,
         #pragma warning restore CS1591
         [EnumMember(Value = "REJECTED")]
         #pragma warning disable CS1591
-        REJECTED,
+        Rejected,
         #pragma warning restore CS1591
         [EnumMember(Value = "EXPIRED")]
         #pragma warning disable CS1591
-        EXPIRED,
+        Expired,
         #pragma warning restore CS1591
     }
 }

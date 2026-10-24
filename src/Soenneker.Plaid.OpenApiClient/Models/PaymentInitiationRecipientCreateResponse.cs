@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// PaymentInitiationRecipientCreateResponse defines the response schema for `/payment_initation/recipient/create`
+    /// PaymentInitiationRecipientCreateResponse defines the response schema for `/payment_initiation/recipient/create`
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaymentInitiationRecipientCreateResponse : IAdditionalDataHolder, IParsable

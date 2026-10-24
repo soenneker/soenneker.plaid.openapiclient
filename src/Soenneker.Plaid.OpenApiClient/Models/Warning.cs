@@ -23,8 +23,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.Cause Cause { get; set; }
 #endif
-        /// <summary>The warning code identifies a specific kind of warning. `OWNERS_UNAVAILABLE` indicates that account-owner information is not available.`INVESTMENTS_UNAVAILABLE` indicates that Investments specific information is not available. `TRANSACTIONS_UNAVAILABLE` indicates that transactions information associated with Credit and Depository accounts are unavailable.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.Warning_warning_code? WarningCode { get; set; }
+        /// <summary>The warning code identifies a specific kind of warning. `OWNERS_UNAVAILABLE` indicates that account-owner information is not available. `INVESTMENTS_UNAVAILABLE` indicates that Investments specific information is not available. `TRANSACTIONS_UNAVAILABLE` indicates that transactions information associated with Credit and Depository accounts are unavailable. The `BANK_INCOME_INSIGHTS_*` codes apply to the Bank Income add-on: `BANK_INCOME_INSIGHTS_INSUFFICIENT_DATA` indicates there was not enough data to compute Bank Income Insights; `BANK_INCOME_INSIGHTS_INCOMPLETE` indicates the Bank Income Insights flow was not completed; `BANK_INCOME_INSIGHTS_STATUS_IN_PROGRESS` indicates Bank Income Insights are still being computed; `BANK_INCOME_INSIGHTS_INTERNAL_ERROR` indicates an internal error occurred while computing Bank Income Insights; `BANK_INCOME_INSIGHTS_MISMATCHED_DAYS_REQUESTED` indicates the days requested for Bank Income Insights did not match that of the Asset Report.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.WarningWarningCode? WarningCode { get; set; }
         /// <summary>The warning type, which will always be `ASSET_REPORT_WARNING`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cause", n => { Cause = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Cause>(global::Soenneker.Plaid.OpenApiClient.Models.Cause.CreateFromDiscriminatorValue); } },
-                { "warning_code", n => { WarningCode = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.Warning_warning_code>(); } },
+                { "warning_code", n => { WarningCode = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WarningWarningCode>(); } },
                 { "warning_type", n => { WarningType = n.GetStringValue(); } },
             };
         }
@@ -71,7 +71,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Cause>("cause", Cause);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.Warning_warning_code>("warning_code", WarningCode);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WarningWarningCode>("warning_code", WarningCode);
             writer.WriteStringValue("warning_type", WarningType);
             writer.WriteAdditionalData(AdditionalData);
         }

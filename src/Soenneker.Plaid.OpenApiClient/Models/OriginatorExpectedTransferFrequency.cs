@@ -9,15 +9,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "once_per_month")]
         #pragma warning disable CS1591
-        Once_per_month,
+        OncePerMonth,
         #pragma warning restore CS1591
         [EnumMember(Value = "twice_per_month")]
         #pragma warning disable CS1591
-        Twice_per_month,
+        TwicePerMonth,
         #pragma warning restore CS1591
         [EnumMember(Value = "once_per_week")]
         #pragma warning disable CS1591
-        Once_per_week,
+        OncePerWeek,
         #pragma warning restore CS1591
         [EnumMember(Value = "daily")]
         #pragma warning disable CS1591

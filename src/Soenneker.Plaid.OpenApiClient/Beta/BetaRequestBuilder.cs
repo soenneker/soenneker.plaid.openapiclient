@@ -2,10 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Plaid.OpenApiClient.Beta.Cash_advance;
 using Soenneker.Plaid.OpenApiClient.Beta.Credit;
 using Soenneker.Plaid.OpenApiClient.Beta.Ewa_report;
+using Soenneker.Plaid.OpenApiClient.Beta.Issues;
 using Soenneker.Plaid.OpenApiClient.Beta.Partner;
 using Soenneker.Plaid.OpenApiClient.Beta.Transactions;
+using Soenneker.Plaid.OpenApiClient.Beta.Webhook_events;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -18,6 +21,11 @@ namespace Soenneker.Plaid.OpenApiClient.Beta
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BetaRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The cash_advance property</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Beta.Cash_advance.Cash_advanceRequestBuilder Cash_advance
+        {
+            get => new global::Soenneker.Plaid.OpenApiClient.Beta.Cash_advance.Cash_advanceRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The credit property</summary>
         public global::Soenneker.Plaid.OpenApiClient.Beta.Credit.CreditRequestBuilder Credit
         {
@@ -28,6 +36,11 @@ namespace Soenneker.Plaid.OpenApiClient.Beta
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Beta.Ewa_report.Ewa_reportRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The issues property</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Beta.Issues.IssuesRequestBuilder Issues
+        {
+            get => new global::Soenneker.Plaid.OpenApiClient.Beta.Issues.IssuesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The partner property</summary>
         public global::Soenneker.Plaid.OpenApiClient.Beta.Partner.PartnerRequestBuilder Partner
         {
@@ -37,6 +50,11 @@ namespace Soenneker.Plaid.OpenApiClient.Beta
         public global::Soenneker.Plaid.OpenApiClient.Beta.Transactions.TransactionsRequestBuilder Transactions
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Beta.Transactions.TransactionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The webhook_events property</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Beta.Webhook_events.Webhook_eventsRequestBuilder Webhook_events
+        {
+            get => new global::Soenneker.Plaid.OpenApiClient.Beta.Webhook_events.Webhook_eventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Beta.BetaRequestBuilder"/> and sets the default values.

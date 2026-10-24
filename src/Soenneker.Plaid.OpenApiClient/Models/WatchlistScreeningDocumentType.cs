@@ -3,25 +3,25 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>The kind of official document represented by this object.`birth_certificate` - A certificate of birth`drivers_license` - A license to operate a motor vehicle`immigration_number` - Immigration or residence documents`military_id` - Identification issued by a military group`other` - Any document not covered by other categories`passport` - An official passport issue by a government`personal_identification` - Any generic personal identification that is not covered by other categories`ration_card` - Identification that entitles the holder to rations`ssn` - United States Social Security Number`student_id` - Identification issued by an educational institution`tax_id` - Identification issued for the purpose of collecting taxes`travel_document` - Visas, entry permits, refugee documents, etc.`voter_id` - Identification issued for the purpose of voting</summary>
+    /// <summary>The kind of official document represented by this object.`birth_certificate` - A certificate of birth`drivers_license` - A license to operate a motor vehicle`immigration_number` - Immigration or residence documents`military_id` - Identification issued by a military group`other` - Any document not covered by other categories`passport` - An official passport issued by a government`personal_identification` - Any generic personal identification that is not covered by other categories`ration_card` - Identification that entitles the holder to rations`ssn` - United States Social Security Number`student_id` - Identification issued by an educational institution`tax_id` - Identification issued for the purpose of collecting taxes`travel_document` - Visas, entry permits, refugee documents, etc.`voter_id` - Identification issued for the purpose of voting</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WatchlistScreeningDocumentType
     {
         [EnumMember(Value = "birth_certificate")]
         #pragma warning disable CS1591
-        Birth_certificate,
+        BirthCertificate,
         #pragma warning restore CS1591
         [EnumMember(Value = "drivers_license")]
         #pragma warning disable CS1591
-        Drivers_license,
+        DriversLicense,
         #pragma warning restore CS1591
         [EnumMember(Value = "immigration_number")]
         #pragma warning disable CS1591
-        Immigration_number,
+        ImmigrationNumber,
         #pragma warning restore CS1591
         [EnumMember(Value = "military_id")]
         #pragma warning disable CS1591
-        Military_id,
+        MilitaryId,
         #pragma warning restore CS1591
         [EnumMember(Value = "other")]
         #pragma warning disable CS1591
@@ -33,11 +33,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "personal_identification")]
         #pragma warning disable CS1591
-        Personal_identification,
+        PersonalIdentification,
         #pragma warning restore CS1591
         [EnumMember(Value = "ration_card")]
         #pragma warning disable CS1591
-        Ration_card,
+        RationCard,
         #pragma warning restore CS1591
         [EnumMember(Value = "ssn")]
         #pragma warning disable CS1591
@@ -45,19 +45,19 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "student_id")]
         #pragma warning disable CS1591
-        Student_id,
+        StudentId,
         #pragma warning restore CS1591
         [EnumMember(Value = "tax_id")]
         #pragma warning disable CS1591
-        Tax_id,
+        TaxId,
         #pragma warning restore CS1591
         [EnumMember(Value = "travel_document")]
         #pragma warning disable CS1591
-        Travel_document,
+        TravelDocument,
         #pragma warning restore CS1591
         [EnumMember(Value = "voter_id")]
         #pragma warning disable CS1591
-        Voter_id,
+        VoterId,
         #pragma warning restore CS1591
     }
 }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// The calculated UltraFICO score.
+    /// The calculated UltraFICO® score.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraPartnerInsightsUltraFicoScore : IAdditionalDataHolder, IParsable
@@ -17,7 +17,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether inquiries adversely affected the score but were not represented in one of the four reason codes. Sometimes referred to as the FACTA Flag.</summary>
         public bool? DidInquiriesAdverselyAffectScore { get; set; }
-        /// <summary>The first positive reason code associated with the score.</summary>
+        /// <summary>Negative reason codes associated with the score (reasons the score moved downward), in priority order. May contain up to 4 items.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? NegativeReasonCodes { get; set; }
+#nullable restore
+#else
+        public List<string> NegativeReasonCodes { get; set; }
+#endif
+        /// <summary>Deprecated. Use `positive_reason_codes` instead. The first positive reason code associated with the score.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PositiveReasonCode1 { get; set; }
@@ -25,7 +34,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string PositiveReasonCode1 { get; set; }
 #endif
-        /// <summary>The second positive reason code associated with the score.</summary>
+        /// <summary>Deprecated. Use `positive_reason_codes` instead. The second positive reason code associated with the score.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PositiveReasonCode2 { get; set; }
@@ -33,7 +43,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string PositiveReasonCode2 { get; set; }
 #endif
-        /// <summary>The third positive reason code associated with the score.</summary>
+        /// <summary>Deprecated. Use `positive_reason_codes` instead. The third positive reason code associated with the score.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PositiveReasonCode3 { get; set; }
@@ -41,7 +52,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string PositiveReasonCode3 { get; set; }
 #endif
-        /// <summary>The fourth positive reason code associated with the score.</summary>
+        /// <summary>Deprecated. Use `positive_reason_codes` instead. The fourth positive reason code associated with the score.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PositiveReasonCode4 { get; set; }
@@ -49,7 +61,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string PositiveReasonCode4 { get; set; }
 #endif
-        /// <summary>The first reason code associated with the score.</summary>
+        /// <summary>Positive reason codes associated with the score (reasons the score moved upward), in priority order. May contain up to 4 items.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? PositiveReasonCodes { get; set; }
+#nullable restore
+#else
+        public List<string> PositiveReasonCodes { get; set; }
+#endif
+        /// <summary>Deprecated. Use `negative_reason_codes` instead. The first reason code associated with the score.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReasonCode1 { get; set; }
@@ -57,7 +78,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ReasonCode1 { get; set; }
 #endif
-        /// <summary>The second reason code associated with the score.</summary>
+        /// <summary>Deprecated. Use `negative_reason_codes` instead. The second reason code associated with the score.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReasonCode2 { get; set; }
@@ -65,7 +87,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ReasonCode2 { get; set; }
 #endif
-        /// <summary>The third reason code associated with the score.</summary>
+        /// <summary>Deprecated. Use `negative_reason_codes` instead. The third reason code associated with the score.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReasonCode3 { get; set; }
@@ -73,7 +96,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ReasonCode3 { get; set; }
 #endif
-        /// <summary>The fourth reason code associated with the score.</summary>
+        /// <summary>Deprecated. Use `negative_reason_codes` instead. The fourth reason code associated with the score.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReasonCode4 { get; set; }
@@ -81,16 +105,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ReasonCode4 { get; set; }
 #endif
-        /// <summary>Numeric value of the UltraFICO score.</summary>
+        /// <summary>Numeric value of the UltraFICO® score.</summary>
         public int? Score { get; set; }
-        /// <summary>The version of the UltraFICO score.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UltraficoScoreVersion { get; set; }
-#nullable restore
-#else
-        public string UltraficoScoreVersion { get; set; }
-#endif
+        /// <summary>The version of the UltraFICO® score.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreVersion? UltraficoScoreVersion { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScore"/> and sets the default values.
         /// </summary>
@@ -117,16 +135,18 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "did_inquiries_adversely_affect_score", n => { DidInquiriesAdverselyAffectScore = n.GetBoolValue(); } },
+                { "negative_reason_codes", n => { NegativeReasonCodes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "positive_reason_code_1", n => { PositiveReasonCode1 = n.GetStringValue(); } },
                 { "positive_reason_code_2", n => { PositiveReasonCode2 = n.GetStringValue(); } },
                 { "positive_reason_code_3", n => { PositiveReasonCode3 = n.GetStringValue(); } },
                 { "positive_reason_code_4", n => { PositiveReasonCode4 = n.GetStringValue(); } },
+                { "positive_reason_codes", n => { PositiveReasonCodes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "reason_code_1", n => { ReasonCode1 = n.GetStringValue(); } },
                 { "reason_code_2", n => { ReasonCode2 = n.GetStringValue(); } },
                 { "reason_code_3", n => { ReasonCode3 = n.GetStringValue(); } },
                 { "reason_code_4", n => { ReasonCode4 = n.GetStringValue(); } },
                 { "score", n => { Score = n.GetIntValue(); } },
-                { "ultrafico_score_version", n => { UltraficoScoreVersion = n.GetStringValue(); } },
+                { "ultrafico_score_version", n => { UltraficoScoreVersion = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreVersion>(); } },
             };
         }
         /// <summary>
@@ -137,16 +157,18 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("did_inquiries_adversely_affect_score", DidInquiriesAdverselyAffectScore);
+            writer.WriteCollectionOfPrimitiveValues<string>("negative_reason_codes", NegativeReasonCodes);
             writer.WriteStringValue("positive_reason_code_1", PositiveReasonCode1);
             writer.WriteStringValue("positive_reason_code_2", PositiveReasonCode2);
             writer.WriteStringValue("positive_reason_code_3", PositiveReasonCode3);
             writer.WriteStringValue("positive_reason_code_4", PositiveReasonCode4);
+            writer.WriteCollectionOfPrimitiveValues<string>("positive_reason_codes", PositiveReasonCodes);
             writer.WriteStringValue("reason_code_1", ReasonCode1);
             writer.WriteStringValue("reason_code_2", ReasonCode2);
             writer.WriteStringValue("reason_code_3", ReasonCode3);
             writer.WriteStringValue("reason_code_4", ReasonCode4);
             writer.WriteIntValue("score", Score);
-            writer.WriteStringValue("ultrafico_score_version", UltraficoScoreVersion);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreVersion>("ultrafico_score_version", UltraficoScoreVersion);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

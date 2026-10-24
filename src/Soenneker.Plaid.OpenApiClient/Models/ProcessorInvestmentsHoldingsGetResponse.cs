@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// ProcessorInvestmentsHoldingsGetResponse defines the response schema for `/processor/invesments/holdings/get`
+    /// ProcessorInvestmentsHoldingsGetResponse defines the response schema for `/processor/investments/holdings/get`
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProcessorInvestmentsHoldingsGetResponse : IAdditionalDataHolder, IParsable

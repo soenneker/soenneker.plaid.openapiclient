@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string CustomActionKey { get; set; }
 #endif
-        /// <summary>An optional message attached to the triggered rule, defined within the Dashboard, for your internal use. Useful for debugging, such as “Account appears to be closed.”</summary>
+        /// <summary>An optional message attached to the triggered rule, defined within the Dashboard, for your internal use. Useful for debugging, such as &quot;Account appears to be closed.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InternalNote { get; set; }

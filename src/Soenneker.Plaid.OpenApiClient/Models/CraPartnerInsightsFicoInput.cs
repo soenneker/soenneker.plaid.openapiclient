@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Configurations for FICO products used in the Partner Insights flow.
+    /// Configuration for the FICO products used in the Partner Insights product.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraPartnerInsightsFicoInput : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>ID provided by FICO that uniquely identifies the lender. Required for UltraFICO score generation. Sometimes referred to as Lender Org ID.</summary>
+        /// <summary>ID provided by FICO that uniquely identifies the lender. Required for UltraFICO® score generation. Sometimes referred to as Lender Org ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FicoLenderId { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string FicoLenderId { get; set; }
 #endif
-        /// <summary>Client-generated identifier that uniquely identifies the FICO Application ID across FICO systems.</summary>
+        /// <summary>Client-generated identifier that uniquely identifies the FICO Application across FICO systems.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LenderApplicationId { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string LenderApplicationId { get; set; }
 #endif
-        /// <summary>A list of UltraFICO scoring requests. Each request contains all configuration required to generate an UltraFICO score.</summary>
+        /// <summary>A list of UltraFICO® scoring requests. Each request contains all configuration required to generate an UltraFICO score.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreRequest>? UltraficoScoreRequests { get; set; }

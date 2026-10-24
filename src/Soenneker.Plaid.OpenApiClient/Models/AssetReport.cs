@@ -38,10 +38,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>This is a container object for all lending-related insights. This field will be returned only for European customers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountInsights? Insights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetReportInsights? Insights { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountInsights Insights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetReportInsights Insights { get; set; }
 #endif
         /// <summary>Data returned by Plaid about each of the Items included in the Asset Report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,7 +51,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public List<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportItem> Items { get; set; }
 #endif
-        /// <summary>The user object allows you to provide additional information about the user to be appended to the Asset Report. All fields are optional. The `first_name`, `last_name`, and `ssn` fields are required if you would like the Report to be eligible for Fannie Mae’s Day 1 Certainty™ program.</summary>
+        /// <summary>The user object allows you to provide additional information about the user to be appended to the Asset Report. All fields are optional. The `first_name`, `last_name`, and `ssn` fields are required if you would like the Report to be eligible for Fannie Mae&apos;s Day 1 Certainty™ program.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.AssetReportUser? User { get; set; }
@@ -88,7 +88,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "client_report_id", n => { ClientReportId = n.GetStringValue(); } },
                 { "date_generated", n => { DateGenerated = n.GetDateTimeOffsetValue(); } },
                 { "days_requested", n => { DaysRequested = n.GetDoubleValue(); } },
-                { "insights", n => { Insights = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountInsights>(global::Soenneker.Plaid.OpenApiClient.Models.AccountInsights.CreateFromDiscriminatorValue); } },
+                { "insights", n => { Insights = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportInsights>(global::Soenneker.Plaid.OpenApiClient.Models.AssetReportInsights.CreateFromDiscriminatorValue); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportItem>(global::Soenneker.Plaid.OpenApiClient.Models.AssetReportItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportUser>(global::Soenneker.Plaid.OpenApiClient.Models.AssetReportUser.CreateFromDiscriminatorValue); } },
             };
@@ -104,7 +104,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("client_report_id", ClientReportId);
             writer.WriteDateTimeOffsetValue("date_generated", DateGenerated);
             writer.WriteDoubleValue("days_requested", DaysRequested);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountInsights>("insights", Insights);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportInsights>("insights", Insights);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportItem>("items", Items);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportUser>("user", User);
             writer.WriteAdditionalData(AdditionalData);

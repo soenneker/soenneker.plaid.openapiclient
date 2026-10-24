@@ -25,7 +25,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Allow access to newly opened accounts as they are opened. If unset, defaults to `true`.</summary>
         public bool? NewAccounts { get; set; }
-        /// <summary>The product access being requested. Used to or disallow product access across all accounts. If unset, defaults to all products allowed.</summary>
+        /// <summary>The product access being requested. Used to allow or disallow product access across all accounts. If unset, defaults to all products allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.ProductAccess? ProductAccess { get; set; }
@@ -39,6 +39,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public Scopes()
         {
             AdditionalData = new Dictionary<string, object>();
+            NewAccounts = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

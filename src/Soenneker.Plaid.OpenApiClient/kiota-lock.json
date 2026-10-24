@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "163C866EFBACD496607AE8E6F11ABDE7B84049BFC4C0BA8B71080ACFCFD132D818A600675EC5C13A72DE3E4C57669BCC53CF1C66AA83AFEB28CC9C96DC004AB6",
+  "descriptionHash": "1A166DA085B8230F6A7725673D742DFB6EC9523DD2F7BB4F2DAD68BC362306A374A3983EDD5FC3387B6EB2BACB61D81385E42F7C93EBEE4504A226108FD1D0AF",
   "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.31.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "PlaidOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Plaid.OpenApiClient",
@@ -30,5 +30,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

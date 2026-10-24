@@ -34,10 +34,10 @@ namespace Soenneker.Plaid.OpenApiClient.Sandbox.Cra.Cashflow_updates.Update
         {
         }
         /// <summary>
-        /// Use the `/sandbox/cra/cashflow_updates/update` endpoint to manually trigger an update for Cash Flow Updates (Monitoring) in the Sandbox environment.
+        /// Use the `/sandbox/cra/cashflow_updates/update` endpoint to manually trigger an update for the legacy Cash Flow Updates product in the Sandbox environment. To simulate a report generation for a CRA Servicing subscription, use `/sandbox/cra/servicing/simulate`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.SandboxCraCashflowUpdatesUpdateResponse"/></returns>
-        /// <param name="body">SandboxCraCashflowUpdatesUpdateRequest defines the request schema for `/sandbox/cashflow_updates/update`</param>
+        /// <param name="body">SandboxCraCashflowUpdatesUpdateRequest defines the request schema for `/sandbox/cra/cashflow_updates/update`</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Plaid.OpenApiClient.Models.PlaidError">When receiving a 4XX or 5XX status code</exception>
@@ -59,10 +59,10 @@ namespace Soenneker.Plaid.OpenApiClient.Sandbox.Cra.Cashflow_updates.Update
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.SandboxCraCashflowUpdatesUpdateResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.SandboxCraCashflowUpdatesUpdateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use the `/sandbox/cra/cashflow_updates/update` endpoint to manually trigger an update for Cash Flow Updates (Monitoring) in the Sandbox environment.
+        /// Use the `/sandbox/cra/cashflow_updates/update` endpoint to manually trigger an update for the legacy Cash Flow Updates product in the Sandbox environment. To simulate a report generation for a CRA Servicing subscription, use `/sandbox/cra/servicing/simulate`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">SandboxCraCashflowUpdatesUpdateRequest defines the request schema for `/sandbox/cashflow_updates/update`</param>
+        /// <param name="body">SandboxCraCashflowUpdatesUpdateRequest defines the request schema for `/sandbox/cra/cashflow_updates/update`</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

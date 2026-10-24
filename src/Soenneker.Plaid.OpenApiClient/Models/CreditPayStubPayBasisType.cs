@@ -9,15 +9,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "SALARY")]
         #pragma warning disable CS1591
-        SALARY,
+        Salary,
         #pragma warning restore CS1591
         [EnumMember(Value = "HOURLY")]
         #pragma warning disable CS1591
-        HOURLY,
+        Hourly,
         #pragma warning restore CS1591
         [EnumMember(Value = "COMMISSION")]
         #pragma warning disable CS1591
-        COMMISSION,
+        Commission,
         #pragma warning restore CS1591
     }
 }

@@ -9,11 +9,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "ENROLLMENT")]
         #pragma warning disable CS1591
-        ENROLLMENT,
+        Enrollment,
         #pragma warning restore CS1591
         [EnumMember(Value = "PORTAL")]
         #pragma warning disable CS1591
-        PORTAL,
+        Portal,
         #pragma warning restore CS1591
     }
 }

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Plaid.OpenApiClient.Sandbox.Cra.Cashflow_updates;
+using Soenneker.Plaid.OpenApiClient.Sandbox.Cra.Servicing;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace Soenneker.Plaid.OpenApiClient.Sandbox.Cra
         public global::Soenneker.Plaid.OpenApiClient.Sandbox.Cra.Cashflow_updates.Cashflow_updatesRequestBuilder Cashflow_updates
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Sandbox.Cra.Cashflow_updates.Cashflow_updatesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The servicing property</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Sandbox.Cra.Servicing.ServicingRequestBuilder Servicing
+        {
+            get => new global::Soenneker.Plaid.OpenApiClient.Sandbox.Cra.Servicing.ServicingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Sandbox.Cra.CraRequestBuilder"/> and sets the default values.

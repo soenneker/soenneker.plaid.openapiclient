@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.User.Remove
         {
         }
         /// <summary>
-        /// `/user/remove` deletes a `user_id` or `user_token` and and associated information, including any Items associated with the user.
+        /// `/user/remove` deletes a `user_id` or `user_token` and associated information, including any Items associated with the user.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.UserRemoveResponse"/></returns>
         /// <param name="body">UserRemoveRequest defines the request schema for `/user/remove`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.User.Remove
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.UserRemoveResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.UserRemoveResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// `/user/remove` deletes a `user_id` or `user_token` and and associated information, including any Items associated with the user.
+        /// `/user/remove` deletes a `user_id` or `user_token` and associated information, including any Items associated with the user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">UserRemoveRequest defines the request schema for `/user/remove`</param>

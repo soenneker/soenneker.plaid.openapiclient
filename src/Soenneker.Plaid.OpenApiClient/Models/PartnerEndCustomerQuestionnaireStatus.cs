@@ -9,15 +9,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "NOT_STARTED")]
         #pragma warning disable CS1591
-        NOT_STARTED,
+        NotStarted,
         #pragma warning restore CS1591
         [EnumMember(Value = "RECEIVED")]
         #pragma warning disable CS1591
-        RECEIVED,
+        Received,
         #pragma warning restore CS1591
         [EnumMember(Value = "COMPLETE")]
         #pragma warning disable CS1591
-        COMPLETE,
+        Complete,
         #pragma warning restore CS1591
     }
 }

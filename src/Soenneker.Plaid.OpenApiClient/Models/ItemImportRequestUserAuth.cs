@@ -8,14 +8,15 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Object of user ID and auth token pair, permitting Plaid to aggregate a user’s accounts
+    /// Object of user ID and auth token pair, permitting Plaid to aggregate a user&apos;s accounts
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ItemImportRequestUserAuth : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Authorization token Plaid will use to aggregate this user’s accounts</summary>
+        /// <summary>Authorization token used by the legacy Plaid Exchange integration; not required for Permissions Manager callers.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AuthToken { get; set; }
@@ -23,7 +24,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string AuthToken { get; set; }
 #endif
-        /// <summary>Opaque user identifier</summary>
+        /// <summary>Your persistent, unique identifier for the customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }

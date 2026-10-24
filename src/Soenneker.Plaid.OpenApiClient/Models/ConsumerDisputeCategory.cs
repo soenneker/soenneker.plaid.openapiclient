@@ -9,19 +9,19 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "TRANSACTION")]
         #pragma warning disable CS1591
-        TRANSACTION,
+        Transaction,
         #pragma warning restore CS1591
         [EnumMember(Value = "BALANCE")]
         #pragma warning disable CS1591
-        BALANCE,
+        Balance,
         #pragma warning restore CS1591
         [EnumMember(Value = "IDENTITY")]
         #pragma warning disable CS1591
-        IDENTITY,
+        Identity,
         #pragma warning restore CS1591
         [EnumMember(Value = "OTHER")]
         #pragma warning disable CS1591
-        OTHER,
+        Other,
         #pragma warning restore CS1591
     }
 }

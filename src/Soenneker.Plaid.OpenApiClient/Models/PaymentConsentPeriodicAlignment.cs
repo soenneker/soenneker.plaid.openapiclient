@@ -3,17 +3,17 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>&quot;Where the payment consent period should start.If the institution is Monzo, only `CONSENT` alignments are supported.`CALENDAR`: line up with a calendar.`CONSENT`: on the date of consent creation.&quot;</summary>
+    /// <summary>Where the payment consent period should start.If the institution is Monzo, only `CONSENT` alignments are supported.`CALENDAR`: line up with a calendar.`CONSENT`: on the date of consent creation.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PaymentConsentPeriodicAlignment
     {
         [EnumMember(Value = "CALENDAR")]
         #pragma warning disable CS1591
-        CALENDAR,
+        Calendar,
         #pragma warning restore CS1591
         [EnumMember(Value = "CONSENT")]
         #pragma warning disable CS1591
-        CONSENT,
+        Consent,
         #pragma warning restore CS1591
     }
 }

@@ -9,15 +9,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "FORM_1099_TYPE_UNKNOWN")]
         #pragma warning disable CS1591
-        FORM_1099_TYPE_UNKNOWN,
+        Form1099TypeUnknown,
         #pragma warning restore CS1591
         [EnumMember(Value = "FORM_1099_TYPE_MISC")]
         #pragma warning disable CS1591
-        FORM_1099_TYPE_MISC,
+        Form1099TypeMisc,
         #pragma warning restore CS1591
         [EnumMember(Value = "FORM_1099_TYPE_K")]
         #pragma warning disable CS1591
-        FORM_1099_TYPE_K,
+        Form1099TypeK,
         #pragma warning restore CS1591
     }
 }

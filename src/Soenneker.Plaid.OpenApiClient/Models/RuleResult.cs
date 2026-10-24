@@ -3,21 +3,21 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>&quot;The result of the rule that was triggered for this transaction.`ACCEPT`: Accept the transaction for processing.`REROUTE`: Reroute the transaction to a different payment method, as this transaction is too risky.`REVIEW`: Review the transaction before proceeding.&quot;</summary>
+    /// <summary>The result of the rule that was triggered for this transaction.`ACCEPT`: Accept the transaction for processing.`REROUTE`: Reroute the transaction to a different payment method, as this transaction is too risky.`REVIEW`: Review the transaction before proceeding.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum RuleResult
     {
         [EnumMember(Value = "ACCEPT")]
         #pragma warning disable CS1591
-        ACCEPT,
+        Accept,
         #pragma warning restore CS1591
         [EnumMember(Value = "REROUTE")]
         #pragma warning disable CS1591
-        REROUTE,
+        Reroute,
         #pragma warning restore CS1591
         [EnumMember(Value = "REVIEW")]
         #pragma warning disable CS1591
-        REVIEW,
+        Review,
         #pragma warning restore CS1591
     }
 }

@@ -89,7 +89,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string TransferId { get; set; }
 #endif
-        /// <summary>The type of balance that was impacted by this event.</summary>
+        /// <summary>The type of ledger event. One of `transfer`, `refund`, `deposit`, `withdrawal`, `distribution`, or `manual_adjustment`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

@@ -47,7 +47,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.IncomeSourcesCounts IncomeSourcesCounts { get; set; }
 #endif
-        /// <summary>Details about about the total monthly income</summary>
+        /// <summary>Details about the total monthly income</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.TotalMonthlyIncomeInsights? TotalMonthlyIncome { get; set; }

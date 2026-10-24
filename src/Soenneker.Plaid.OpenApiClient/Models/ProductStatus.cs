@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A detailed breakdown of the institution&apos;s performance for a request type. The values for `success`, `error_plaid`, and `error_institution` sum to 1. The time range used for calculating the breakdown may range from the most recent few minutes to the past six hours. In general, smaller institutions will show status that was calculated over a longer period of time. For Investment updates, which are refreshed less frequently, the period assessed may be 24 hours or more. For more details, see [Institution status details](https://plaid.com/docs/account/activity/#institution-status-details).</summary>
+        /// <summary>A detailed breakdown of the institution&apos;s performance for a request type. The values for `success`, `error_plaid`, and `error_institution` sum to 1. The time range used for calculating the breakdown may range from the most recent few minutes to the past six hours. In general, smaller institutions will show status that was calculated over a longer period of time. For Investment updates, which are refreshed less frequently, the period assessed may be 24 hours or more. For more details, see [Institution status details](https://plaid.com/docs/account/activity/#troubleshooting-institution-insights).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatusBreakdown? Breakdown { get; set; }
@@ -25,9 +25,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>[ISO 8601](https://wikipedia.org/wiki/ISO_8601) formatted timestamp of the last status change for the institution.</summary>
         public DateTimeOffset? LastStatusChange { get; set; }
-        /// <summary>&quot;This field is deprecated in favor of the `breakdown` object, which provides more granular institution health data.`HEALTHY`: the majority of requests are successful`DEGRADED`: only some requests are successful`DOWN`: all requests are failing&quot;</summary>
+        /// <summary>This field is deprecated in favor of the `breakdown` object, which provides more granular institution health data.`HEALTHY`: nearly all requests are successful`DEGRADED`: a meaningful share of requests are failing, or data refreshes are delayed`DOWN`: nearly all requests are failing, or data refreshes have stopped</summary>
         [Obsolete("")]
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus_status? Status { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatusStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus"/> and sets the default values.
         /// </summary>
@@ -55,7 +55,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "breakdown", n => { Breakdown = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProductStatusBreakdown>(global::Soenneker.Plaid.OpenApiClient.Models.ProductStatusBreakdown.CreateFromDiscriminatorValue); } },
                 { "last_status_change", n => { LastStatusChange = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ProductStatusStatus>(); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProductStatusBreakdown>("breakdown", Breakdown);
             writer.WriteDateTimeOffsetValue("last_status_change", LastStatusChange);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ProductStatusStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

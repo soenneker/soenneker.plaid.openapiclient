@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// An object containing identifying numbers used for making electronic transfers to and from the `accounts`. The identifying number type (ACH, EFT, IBAN, or BACS) used will depend on the country of the account. An account may have more than one number type. If a particular identifying number type is not used by any `accounts` for which data has been requested, the array for that type will be empty.
+    /// An object containing identifying numbers used for making electronic transfers to and from the `accounts`. The identifying number type (ACH, EFT, IBAN, or Bacs) used will depend on the country of the account. An account may have more than one number type. If a particular identifying number type is not used by any `accounts` for which data has been requested, the array for that type will be empty.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuthGetNumbers : IAdditionalDataHolder, IParsable
@@ -16,28 +16,28 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>An array of ACH numbers identifying accounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersACH>? Ach { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAch>? Ach { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersACH> Ach { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAch> Ach { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>An array of BACS numbers identifying accounts.</summary>
+        /// <summary>An array of Bacs numbers identifying accounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersBACS>? Bacs { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersBacs>? Bacs { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersBACS> Bacs { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersBacs> Bacs { get; set; }
 #endif
         /// <summary>An array of EFT numbers identifying accounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersEFT>? Eft { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersEft>? Eft { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersEFT> Eft { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersEft> Eft { get; set; }
 #endif
         /// <summary>An array of IBAN numbers identifying accounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,9 +72,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ach", n => { Ach = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersACH>(global::Soenneker.Plaid.OpenApiClient.Models.NumbersACH.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "bacs", n => { Bacs = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersBACS>(global::Soenneker.Plaid.OpenApiClient.Models.NumbersBACS.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "eft", n => { Eft = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersEFT>(global::Soenneker.Plaid.OpenApiClient.Models.NumbersEFT.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "ach", n => { Ach = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAch>(global::Soenneker.Plaid.OpenApiClient.Models.NumbersAch.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "bacs", n => { Bacs = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersBacs>(global::Soenneker.Plaid.OpenApiClient.Models.NumbersBacs.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "eft", n => { Eft = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersEft>(global::Soenneker.Plaid.OpenApiClient.Models.NumbersEft.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "international", n => { International = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersInternational>(global::Soenneker.Plaid.OpenApiClient.Models.NumbersInternational.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -85,9 +85,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersACH>("ach", Ach);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersBACS>("bacs", Bacs);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersEFT>("eft", Eft);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAch>("ach", Ach);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersBacs>("bacs", Bacs);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersEft>("eft", Eft);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersInternational>("international", International);
             writer.WriteAdditionalData(AdditionalData);
         }

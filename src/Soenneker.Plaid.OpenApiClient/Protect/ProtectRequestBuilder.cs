@@ -2,7 +2,9 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Plaid.OpenApiClient.Protect.Cash_advance;
 using Soenneker.Plaid.OpenApiClient.Protect.Compute;
+using Soenneker.Plaid.OpenApiClient.Protect.Event;
 using Soenneker.Plaid.OpenApiClient.Protect.Report;
 using Soenneker.Plaid.OpenApiClient.Protect.User;
 using System.Collections.Generic;
@@ -17,10 +19,20 @@ namespace Soenneker.Plaid.OpenApiClient.Protect
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProtectRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The cash_advance property</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Protect.Cash_advance.Cash_advanceRequestBuilder Cash_advance
+        {
+            get => new global::Soenneker.Plaid.OpenApiClient.Protect.Cash_advance.Cash_advanceRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The compute property</summary>
         public global::Soenneker.Plaid.OpenApiClient.Protect.Compute.ComputeRequestBuilder Compute
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Protect.Compute.ComputeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The event property</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Protect.Event.EventRequestBuilder Event
+        {
+            get => new global::Soenneker.Plaid.OpenApiClient.Protect.Event.EventRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The report property</summary>
         public global::Soenneker.Plaid.OpenApiClient.Protect.Report.ReportRequestBuilder Report

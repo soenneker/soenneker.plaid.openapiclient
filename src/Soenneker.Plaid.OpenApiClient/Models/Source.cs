@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>A type indicating whether a dashboard user, an API-based user, or Plaid last touched this object.</summary>
+    /// <summary>A type indicating who or what last touched this object. `dashboard`, `link`, and `api` indicate the originating surface; `system` indicates Plaid. `retro` indicates a screening created retroactively via a bulk screening creation.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Source
     {
@@ -22,6 +22,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         [EnumMember(Value = "system")]
         #pragma warning disable CS1591
         System,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "retro")]
+        #pragma warning disable CS1591
+        Retro,
         #pragma warning restore CS1591
     }
 }

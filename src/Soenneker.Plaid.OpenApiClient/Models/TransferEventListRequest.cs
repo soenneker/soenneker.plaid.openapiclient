@@ -80,7 +80,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>The start `created` datetime of transfers to list. This should be in RFC 3339 format (i.e. `2019-12-06T22:35:49Z`)</summary>
         public DateTimeOffset? StartDate { get; set; }
-        /// <summary>Plaid’s unique identifier for a sweep.</summary>
+        /// <summary>Plaid&apos;s unique identifier for a sweep.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SweepId { get; set; }
@@ -88,7 +88,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string SweepId { get; set; }
 #endif
-        /// <summary>Plaid’s unique identifier for a transfer.</summary>
+        /// <summary>Plaid&apos;s unique identifier for a transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TransferId { get; set; }
@@ -104,6 +104,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public TransferEventListRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Count = 25;
+            Offset = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

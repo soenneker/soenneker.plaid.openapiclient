@@ -24,7 +24,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public string ClientId { get; set; }
 #endif
         /// <summary>An ISO-4217 currency code, used with e-wallets and transactions.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.WalletISOCurrencyCode? IsoCurrencyCode { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletIsoCurrencyCode? IsoCurrencyCode { get; set; }
         /// <summary>Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
-                { "iso_currency_code", n => { IsoCurrencyCode = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletISOCurrencyCode>(); } },
+                { "iso_currency_code", n => { IsoCurrencyCode = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletIsoCurrencyCode>(); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
             };
         }
@@ -71,7 +71,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("client_id", ClientId);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletISOCurrencyCode>("iso_currency_code", IsoCurrencyCode);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletIsoCurrencyCode>("iso_currency_code", IsoCurrencyCode);
             writer.WriteStringValue("secret", Secret);
             writer.WriteAdditionalData(AdditionalData);
         }

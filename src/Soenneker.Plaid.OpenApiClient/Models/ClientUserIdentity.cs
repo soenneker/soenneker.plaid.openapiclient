@@ -9,7 +9,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// The identity fields associated with a user. For a user to be eligible for a Plaid Check Consumer Report, all fields are required except `id_number`. Providing a partial SSN is strongly recommended, and improves the accuracy of matching user records during compliance processes such as file disclosure, dispute, or security freeze requests. If creating a report that will be shared with GSEs such as Fannie or Freddie, a full Social Security Number must be provided via the `id_number` field.
+    /// The identity fields associated with a user. For a user to be eligible for a Plaid Check Consumer Report, all fields are required except `id_numbers`. Providing a partial SSN is strongly recommended, and improves the accuracy of matching user records during compliance processes such as file disclosure, dispute, or security freeze requests. If creating a report that will be shared with GSEs such as Fannie or Freddie, a full Social Security Number must be provided via the `id_numbers` field.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ClientUserIdentity : IAdditionalDataHolder, IParsable
@@ -37,10 +37,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The user&apos;s ID numbers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.UserIDNumber>? IdNumbers { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.UserIdNumber>? IdNumbers { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.UserIDNumber> IdNumbers { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.UserIdNumber> IdNumbers { get; set; }
 #endif
         /// <summary>User name information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,7 +50,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.ClientUserIdentityName Name { get; set; }
 #endif
-        /// <summary>&quot;The user&apos;s phone numbers, in E.164 format: +{countrycode}{number}. For example: \&quot;+14157452130\&quot;. Phone numbers provided in other formats will be parsed on a best-effort basis. Phone number input is validated against valid number ranges; number strings that do not match a real-world phone numbering scheme may cause the request to fail, even in the Sandbox test environment.&quot;</summary>
+        /// <summary>The user&apos;s phone numbers, in E.164 format: +{countrycode}{number}. For example: &quot;+14157452130&quot;. Phone numbers provided in other formats will be parsed on a best-effort basis. Phone number input is validated against valid number ranges; number strings that do not match a real-world phone numbering scheme may cause the request to fail, even in the Sandbox test environment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Plaid.OpenApiClient.Models.ClientUserIdentityPhoneNumber>? PhoneNumbers { get; set; }
@@ -86,7 +86,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "addresses", n => { Addresses = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.ClientUserIdentityAddress>(global::Soenneker.Plaid.OpenApiClient.Models.ClientUserIdentityAddress.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "date_of_birth", n => { DateOfBirth = n.GetDateValue(); } },
                 { "emails", n => { Emails = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.ClientUserIdentityEmail>(global::Soenneker.Plaid.OpenApiClient.Models.ClientUserIdentityEmail.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "id_numbers", n => { IdNumbers = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.UserIDNumber>(global::Soenneker.Plaid.OpenApiClient.Models.UserIDNumber.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "id_numbers", n => { IdNumbers = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.UserIdNumber>(global::Soenneker.Plaid.OpenApiClient.Models.UserIdNumber.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ClientUserIdentityName>(global::Soenneker.Plaid.OpenApiClient.Models.ClientUserIdentityName.CreateFromDiscriminatorValue); } },
                 { "phone_numbers", n => { PhoneNumbers = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.ClientUserIdentityPhoneNumber>(global::Soenneker.Plaid.OpenApiClient.Models.ClientUserIdentityPhoneNumber.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -101,7 +101,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.ClientUserIdentityAddress>("addresses", Addresses);
             writer.WriteDateValue("date_of_birth", DateOfBirth);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.ClientUserIdentityEmail>("emails", Emails);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.UserIDNumber>("id_numbers", IdNumbers);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.UserIdNumber>("id_numbers", IdNumbers);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ClientUserIdentityName>("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.ClientUserIdentityPhoneNumber>("phone_numbers", PhoneNumbers);
             writer.WriteAdditionalData(AdditionalData);

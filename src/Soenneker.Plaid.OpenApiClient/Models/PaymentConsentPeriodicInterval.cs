@@ -9,19 +9,19 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "DAY")]
         #pragma warning disable CS1591
-        DAY,
+        Day,
         #pragma warning restore CS1591
         [EnumMember(Value = "WEEK")]
         #pragma warning disable CS1591
-        WEEK,
+        Week,
         #pragma warning restore CS1591
         [EnumMember(Value = "MONTH")]
         #pragma warning disable CS1591
-        MONTH,
+        Month,
         #pragma warning restore CS1591
         [EnumMember(Value = "YEAR")]
         #pragma warning disable CS1591
-        YEAR,
+        Year,
         #pragma warning restore CS1591
     }
 }

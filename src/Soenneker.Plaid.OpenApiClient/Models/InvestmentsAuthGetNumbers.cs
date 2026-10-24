@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Identifying information for transferring holdings to an investments account.
+    /// Identifying information for transferring holdings to an investment account.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InvestmentsAuthGetNumbers : IAdditionalDataHolder, IParsable
@@ -16,28 +16,28 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The acats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersACATS>? Acats { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAcats>? Acats { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersACATS> Acats { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAcats> Acats { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The aton property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersATON>? Aton { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAton>? Aton { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersATON> Aton { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAton> Aton { get; set; }
 #endif
         /// <summary>The retirement_401k property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersRetirement401k>? Retirement401k { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersRetirement401K>? Retirement401k { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersRetirement401k> Retirement401k { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersRetirement401K> Retirement401k { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthGetNumbers"/> and sets the default values.
@@ -64,9 +64,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "acats", n => { Acats = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersACATS>(global::Soenneker.Plaid.OpenApiClient.Models.NumbersACATS.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "aton", n => { Aton = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersATON>(global::Soenneker.Plaid.OpenApiClient.Models.NumbersATON.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "retirement_401k", n => { Retirement401k = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersRetirement401k>(global::Soenneker.Plaid.OpenApiClient.Models.NumbersRetirement401k.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "acats", n => { Acats = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAcats>(global::Soenneker.Plaid.OpenApiClient.Models.NumbersAcats.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "aton", n => { Aton = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAton>(global::Soenneker.Plaid.OpenApiClient.Models.NumbersAton.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "retirement_401k", n => { Retirement401k = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersRetirement401K>(global::Soenneker.Plaid.OpenApiClient.Models.NumbersRetirement401K.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -76,9 +76,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersACATS>("acats", Acats);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersATON>("aton", Aton);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersRetirement401k>("retirement_401k", Retirement401k);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAcats>("acats", Acats);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAton>("aton", Aton);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersRetirement401K>("retirement_401k", Retirement401k);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

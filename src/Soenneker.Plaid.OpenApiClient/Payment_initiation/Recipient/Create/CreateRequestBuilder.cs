@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Payment_initiation.Recipient.Create
         {
         }
         /// <summary>
-        /// &quot;Create a payment recipient for payment initiation.  The recipient must be in Europe, within a country that is a member of the Single Euro Payment Area (SEPA) or a non-Eurozone country [supported](https://plaid.com/global) by Plaid. For a standing order (recurring) payment, the recipient must be in the UK.It is recommended to use `bacs` in the UK and `iban` in EU.The endpoint is idempotent: if a developer has already made a request with the same payment details, Plaid will return the same `recipient_id`.&quot;
+        /// Create a payment recipient for payment initiation.  The recipient must be in Europe, within a country that is a member of the Single Euro Payments Area (SEPA) or a non-Eurozone country [supported](https://support.plaid.com/hc/en-us/articles/27895826947735-What-Plaid-products-are-supported-in-each-country-and-region) by Plaid. For a standing order (recurring) payment, the recipient must be in the UK.It is recommended to use `bacs` in the UK and `iban` in EU.The endpoint is idempotent: if a developer has already made a request with the same payment details, Plaid will return the same `recipient_id`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationRecipientCreateResponse"/></returns>
         /// <param name="body">PaymentInitiationRecipientCreateRequest defines the request schema for `/payment_initiation/recipient/create`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Payment_initiation.Recipient.Create
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationRecipientCreateResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationRecipientCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Create a payment recipient for payment initiation.  The recipient must be in Europe, within a country that is a member of the Single Euro Payment Area (SEPA) or a non-Eurozone country [supported](https://plaid.com/global) by Plaid. For a standing order (recurring) payment, the recipient must be in the UK.It is recommended to use `bacs` in the UK and `iban` in EU.The endpoint is idempotent: if a developer has already made a request with the same payment details, Plaid will return the same `recipient_id`.&quot;
+        /// Create a payment recipient for payment initiation.  The recipient must be in Europe, within a country that is a member of the Single Euro Payments Area (SEPA) or a non-Eurozone country [supported](https://support.plaid.com/hc/en-us/articles/27895826947735-What-Plaid-products-are-supported-in-each-country-and-region) by Plaid. For a standing order (recurring) payment, the recipient must be in the UK.It is recommended to use `bacs` in the UK and `iban` in EU.The endpoint is idempotent: if a developer has already made a request with the same payment details, Plaid will return the same `recipient_id`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">PaymentInitiationRecipientCreateRequest defines the request schema for `/payment_initiation/recipient/create`</param>

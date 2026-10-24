@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Defines the response schema for `/transfer/repayments/list`
+    /// Defines the response schema for `/transfer/repayment/list`
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransferRepaymentListResponse : IAdditionalDataHolder, IParsable

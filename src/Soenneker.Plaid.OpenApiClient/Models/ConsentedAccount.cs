@@ -13,7 +13,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConsentedAccount : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Plaid’s unique identifier for the account. Like all Plaid identifiers, the `account_id` is case sensitive.</summary>
+        /// <summary>Plaid&apos;s unique identifier for the account. Like all Plaid identifiers, the `account_id` is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountId { get; set; }

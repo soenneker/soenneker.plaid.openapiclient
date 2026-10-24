@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubAddress Address { get; set; }
 #endif
-        /// <summary>Marital status of the employee - either `SINGLE` or `MARRIED` or `NOT LISTED`.</summary>
+        /// <summary>Marital status of the employee - one of `SINGLE`, `MARRIED`, or `NOT LISTED`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MaritalStatus { get; set; }
@@ -42,10 +42,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Taxpayer ID of the individual receiving the paystub.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PayStubTaxpayerID? TaxpayerId { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PayStubTaxpayerId? TaxpayerId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PayStubTaxpayerID TaxpayerId { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PayStubTaxpayerId TaxpayerId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEmployee"/> and sets the default values.
@@ -75,7 +75,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubAddress>(global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubAddress.CreateFromDiscriminatorValue); } },
                 { "marital_status", n => { MaritalStatus = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "taxpayer_id", n => { TaxpayerId = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PayStubTaxpayerID>(global::Soenneker.Plaid.OpenApiClient.Models.PayStubTaxpayerID.CreateFromDiscriminatorValue); } },
+                { "taxpayer_id", n => { TaxpayerId = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PayStubTaxpayerId>(global::Soenneker.Plaid.OpenApiClient.Models.PayStubTaxpayerId.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -88,7 +88,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubAddress>("address", Address);
             writer.WriteStringValue("marital_status", MaritalStatus);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PayStubTaxpayerID>("taxpayer_id", TaxpayerId);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PayStubTaxpayerId>("taxpayer_id", TaxpayerId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

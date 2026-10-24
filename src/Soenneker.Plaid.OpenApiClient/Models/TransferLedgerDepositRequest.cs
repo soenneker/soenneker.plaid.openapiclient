@@ -55,7 +55,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string IdempotencyKey { get; set; }
 #endif
-        /// <summary>Specify which ledger balance to deposit to. Customers can find a list of `ledger_id`s in the Accounts page of your Plaid Dashboard. If this field is left blank, this will default to id of the default ledger balance.</summary>
+        /// <summary>Specify which ledger balance to deposit to. Customers can find a list of `ledger_id`s in the Accounts page of your Plaid Dashboard. If this field is left blank, this will default to the id of the default ledger balance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LedgerId { get; set; }
@@ -64,8 +64,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public string LedgerId { get; set; }
 #endif
         /// <summary>The ACH networks used for the funds flow.For requests submitted as either `ach` or `same-day-ach` the cutoff for Same Day ACH is 3:00 PM Eastern Time and the cutoff for Standard ACH transfers is 8:30 PM Eastern Time. It is recommended to submit a request at least 15 minutes before the cutoff time in order to ensure that it will be processed before the cutoff. Any request that is indicated as `same-day-ach` and that misses the Same Day ACH cutoff, but is submitted in time for the Standard ACH cutoff, will be sent over Standard ACH rails and will not incur same-day charges.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferACHNetwork? Network { get; set; }
-        /// <summary>Client ID of the customer that owns the Ledger balance. This is so Plaid knows which of your customers to payout or collect funds. Only applicable for [Platform customers](https://plaid.com/docs/transfer/application/#originators-vs-platforms). Do not include if you’re paying out to yourself.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAchNetwork? Network { get; set; }
+        /// <summary>Client ID of the customer that owns the Ledger balance. This is so Plaid knows which of your customers to pay out to or collect funds from. Only applicable for [Platform customers](https://plaid.com/docs/transfer/application/#originators-vs-platforms). Do not include if you&apos;re paying out to yourself.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OriginatorClientId { get; set; }
@@ -112,7 +112,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "funding_account_id", n => { FundingAccountId = n.GetStringValue(); } },
                 { "idempotency_key", n => { IdempotencyKey = n.GetStringValue(); } },
                 { "ledger_id", n => { LedgerId = n.GetStringValue(); } },
-                { "network", n => { Network = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferACHNetwork>(); } },
+                { "network", n => { Network = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAchNetwork>(); } },
                 { "originator_client_id", n => { OriginatorClientId = n.GetStringValue(); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
             };
@@ -130,7 +130,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("funding_account_id", FundingAccountId);
             writer.WriteStringValue("idempotency_key", IdempotencyKey);
             writer.WriteStringValue("ledger_id", LedgerId);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferACHNetwork>("network", Network);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAchNetwork>("network", Network);
             writer.WriteStringValue("originator_client_id", OriginatorClientId);
             writer.WriteStringValue("secret", Secret);
             writer.WriteAdditionalData(AdditionalData);

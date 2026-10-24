@@ -45,12 +45,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The ID number associated with a Beacon User.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserIDNumber? IdNumber { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserIdNumber? IdNumber { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserIDNumber IdNumber { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserIdNumber IdNumber { get; set; }
 #endif
-        /// <summary>An IPv4 or IPV6 address.</summary>
+        /// <summary>An IPv4 or IPv6 address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IpAddress { get; set; }
@@ -103,7 +103,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "date_of_birth", n => { DateOfBirth = n.GetDateValue(); } },
                 { "depository_accounts", n => { DepositoryAccounts = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserRequestDepositoryAccount>(global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserRequestDepositoryAccount.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "email_address", n => { EmailAddress = n.GetStringValue(); } },
-                { "id_number", n => { IdNumber = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserIDNumber>(global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserIDNumber.CreateFromDiscriminatorValue); } },
+                { "id_number", n => { IdNumber = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserIdNumber>(global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserIdNumber.CreateFromDiscriminatorValue); } },
                 { "ip_address", n => { IpAddress = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserNameNullable>(global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserNameNullable.CreateFromDiscriminatorValue); } },
                 { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
@@ -120,7 +120,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDateValue("date_of_birth", DateOfBirth);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserRequestDepositoryAccount>("depository_accounts", DepositoryAccounts);
             writer.WriteStringValue("email_address", EmailAddress);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserIDNumber>("id_number", IdNumber);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserIdNumber>("id_number", IdNumber);
             writer.WriteStringValue("ip_address", IpAddress);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserNameNullable>("name", Name);
             writer.WriteStringValue("phone_number", PhoneNumber);

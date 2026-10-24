@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Fdx.Recipient.Item
         {
         }
         /// <summary>
-        /// Get a specific recipient
+        /// Returns metadata for a single recipient (application), identified by `recipientId`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.GetRecipientResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Plaid.OpenApiClient.Fdx.Recipient.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.GetRecipientResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.GetRecipientResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a specific recipient
+        /// Returns metadata for a single recipient (application), identified by `recipientId`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

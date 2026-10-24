@@ -3,29 +3,37 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>&quot;The error code of a failed transaction. Error codes include:`EXTERNAL_SYSTEM`: The transaction was declined by an external system.`EXPIRED`: The transaction request has expired.`CANCELLED`: The transaction request was rescinded.`INVALID`: The transaction did not meet certain criteria, such as an inactive account or no valid counterparty, etc.`UNKNOWN`: The transaction was unsuccessful, but the exact cause is unknown.&quot;</summary>
+    /// <summary>The error code of a failed transaction. Error codes include:`EXTERNAL_SYSTEM`: The transaction was declined by an external system.`EXPIRED`: The transaction request has expired.`CANCELLED`: The transaction request was rescinded.`INVALID`: The transaction did not meet certain criteria, such as an inactive account or no valid counterparty, etc.`ACCOUNT_INVALID`: The transaction could not be processed because the wallet account is invalid or inactive.`AUTHENTICATION_FAILED`: The transaction could not be processed because authentication with the wallet provider failed.`UNKNOWN`: The transaction was unsuccessful, but the exact cause is unknown.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WalletTransactionFailureReason
     {
         [EnumMember(Value = "EXTERNAL_SYSTEM")]
         #pragma warning disable CS1591
-        EXTERNAL_SYSTEM,
+        ExternalSystem,
         #pragma warning restore CS1591
         [EnumMember(Value = "EXPIRED")]
         #pragma warning disable CS1591
-        EXPIRED,
+        Expired,
         #pragma warning restore CS1591
         [EnumMember(Value = "CANCELLED")]
         #pragma warning disable CS1591
-        CANCELLED,
+        Cancelled,
         #pragma warning restore CS1591
         [EnumMember(Value = "INVALID")]
         #pragma warning disable CS1591
-        INVALID,
+        Invalid,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ACCOUNT_INVALID")]
+        #pragma warning disable CS1591
+        AccountInvalid,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "AUTHENTICATION_FAILED")]
+        #pragma warning disable CS1591
+        AuthenticationFailed,
         #pragma warning restore CS1591
         [EnumMember(Value = "UNKNOWN")]
         #pragma warning disable CS1591
-        UNKNOWN,
+        Unknown,
         #pragma warning restore CS1591
     }
 }

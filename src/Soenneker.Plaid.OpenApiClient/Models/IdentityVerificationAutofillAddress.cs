@@ -32,7 +32,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public string Country { get; set; }
 #endif
         /// <summary>Field describing whether the associated address is a post office box. Will be `yes` when a P.O. box is detected, `no` when Plaid confirmed the address is not a P.O. box, and `no_data` when Plaid was not able to determine if the address is a P.O. box.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.POBoxStatus? PoBox { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PoBoxStatus? PoBox { get; set; }
         /// <summary>The postal code for the associated address. Between 2 and 10 alphanumeric characters. For US-based addresses this must be 5 numeric digits.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,7 +65,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Street2 { get; set; }
 #endif
-        /// <summary>&quot;Field describing whether the associated address is being used for commercial or residential purposes.Note: This value will be `no_data` when Plaid does not have sufficient data to determine the address&apos;s use.&quot;</summary>
+        /// <summary>Field describing whether the associated address is being used for commercial or residential purposes.Note: This value will be `no_data` when Plaid does not have sufficient data to determine the address&apos;s use.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.AddressPurposeLabel? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationAutofillAddress"/> and sets the default values.
@@ -94,7 +94,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "city", n => { City = n.GetStringValue(); } },
                 { "country", n => { Country = n.GetStringValue(); } },
-                { "po_box", n => { PoBox = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.POBoxStatus>(); } },
+                { "po_box", n => { PoBox = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PoBoxStatus>(); } },
                 { "postal_code", n => { PostalCode = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "street", n => { Street = n.GetStringValue(); } },
@@ -111,7 +111,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("city", City);
             writer.WriteStringValue("country", Country);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.POBoxStatus>("po_box", PoBox);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PoBoxStatus>("po_box", PoBox);
             writer.WriteStringValue("postal_code", PostalCode);
             writer.WriteStringValue("region", Region);
             writer.WriteStringValue("street", Street);

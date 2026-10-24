@@ -3,17 +3,17 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>Transaction rule&apos;s match type. For `TRANSACTION_ID` field, `EXACT_MATCH` is available.Matches are case sensitive.</summary>
+    /// <summary>Transaction rule&apos;s match type. For `TRANSACTION_ID` field, `EXACT_MATCH` is available.`TRANSACTION_ID` matches are case sensitive; `MERCHANT_NAME` matches are case insensitive.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransactionsRuleType
     {
         [EnumMember(Value = "EXACT_MATCH")]
         #pragma warning disable CS1591
-        EXACT_MATCH,
+        ExactMatch,
         #pragma warning restore CS1591
         [EnumMember(Value = "SUBSTRING_MATCH")]
         #pragma warning disable CS1591
-        SUBSTRING_MATCH,
+        SubstringMatch,
         #pragma warning restore CS1591
     }
 }

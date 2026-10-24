@@ -13,15 +13,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "partial_match")]
         #pragma warning disable CS1591
-        Partial_match,
+        PartialMatch,
         #pragma warning restore CS1591
         [EnumMember(Value = "no_match")]
         #pragma warning disable CS1591
-        No_match,
+        NoMatch,
         #pragma warning restore CS1591
         [EnumMember(Value = "no_data")]
         #pragma warning disable CS1591
-        No_data,
+        NoData,
         #pragma warning restore CS1591
     }
 }

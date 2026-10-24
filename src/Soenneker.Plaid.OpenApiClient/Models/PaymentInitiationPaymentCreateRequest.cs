@@ -47,7 +47,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string RecipientId { get; set; }
 #endif
-        /// <summary>A reference for the payment. This must be an alphanumeric string with at most 18 characters and must not contain any special characters (since not all institutions support them).In order to track settlement via Payment Confirmation, each payment must have a unique reference. If the reference provided through the API is not unique, Plaid will adjust it.Some institutions may limit the reference to less than 18 characters. If necessary, Plaid will adjust the reference by truncating it to fit the institution&apos;s requirements.Both the originally provided and automatically adjusted references (if any) can be found in the `reference` and `adjusted_reference` fields, respectively.</summary>
+        /// <summary>A reference for the payment. This must be a string of at most 18 characters containing only letters, numbers, and spaces (since not all institutions support them).In order to track settlement via Payment Confirmation, each payment must have a unique reference. If the reference provided through the API is not unique, Plaid will adjust it.Some institutions may limit the reference to less than 18 characters. If necessary, Plaid will adjust the reference by truncating it to fit the institution&apos;s requirements.Both the originally provided and automatically adjusted references (if any) can be found in the `reference` and `adjusted_reference` fields, respectively.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reference { get; set; }
@@ -70,6 +70,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #nullable restore
 #else
         public string Secret { get; set; }
+#endif
+        /// <summary>The `user_id` of the end user the payment is initiated for, as returned by [`/user/create`](https://plaid.com/docs/api/users/#usercreate). The user must have a `name` and either an email address or a phone number. Required for new integrations.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserId { get; set; }
+#nullable restore
+#else
+        public string UserId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationPaymentCreateRequest"/> and sets the default values.
@@ -103,6 +111,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "schedule", n => { Schedule = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentScheduleRequest>(global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentScheduleRequest.CreateFromDiscriminatorValue); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
+                { "user_id", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -119,6 +128,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("reference", Reference);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentScheduleRequest>("schedule", Schedule);
             writer.WriteStringValue("secret", Secret);
+            writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

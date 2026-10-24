@@ -45,6 +45,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public InstitutionsGetRequestOptions()
         {
             AdditionalData = new Dictionary<string, object>();
+            IncludeAuthMetadata = false;
+            IncludePaymentInitiationMetadata = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

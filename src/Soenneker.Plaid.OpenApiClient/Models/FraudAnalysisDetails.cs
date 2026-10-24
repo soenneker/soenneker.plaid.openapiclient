@@ -15,20 +15,20 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The outcome of the fraud check.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.FraudCheckOutcome? DetailCheck { get; set; }
-        /// <summary>The outcome of the fraud check.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.FraudCheckOutcome? ImageCompositionCheck { get; set; }
-        /// <summary>The outcome of the fraud check.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.FraudCheckOutcome? IntegrityCheck { get; set; }
-        /// <summary>The outcome of the fraud check, when available.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.FraudCheckOutcomeWithNoData? IssueDateCheck { get; set; }
-        /// <summary>The outcome of the fraud check.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.FraudCheckOutcome? PortraitDetailsCheck { get; set; }
-        /// <summary>The outcome of the fraud check.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.FraudCheckOutcome? PortraitPresenceCheck { get; set; }
-        /// <summary>The outcome of the fraud check.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.FraudCheckOutcome? TypeSupported { get; set; }
+        /// <summary>The outcome of the fraud check.`success` - The check passed.`failed` - The check did not pass.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsDetailCheck? DetailCheck { get; set; }
+        /// <summary>The outcome of the fraud check.`success` - The check passed.`failed` - The check did not pass.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsImageCompositionCheck? ImageCompositionCheck { get; set; }
+        /// <summary>The outcome of the fraud check.`success` - The check passed.`failed` - The check did not pass.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsIntegrityCheck? IntegrityCheck { get; set; }
+        /// <summary>The outcome of the fraud check.`success` - The check passed.`failed` - The check did not pass.`no_data` - The check could not be performed due to insufficient data.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsIssueDateCheck? IssueDateCheck { get; set; }
+        /// <summary>The outcome of the fraud check.`success` - The check passed.`failed` - The check did not pass.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsPortraitDetailsCheck? PortraitDetailsCheck { get; set; }
+        /// <summary>The outcome of the fraud check.`success` - The check passed.`failed` - The check did not pass.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsPortraitPresenceCheck? PortraitPresenceCheck { get; set; }
+        /// <summary>The outcome of the fraud check.`success` - The check passed.`failed` - The check did not pass.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsTypeSupported? TypeSupported { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetails"/> and sets the default values.
         /// </summary>
@@ -54,13 +54,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "detail_check", n => { DetailCheck = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudCheckOutcome>(); } },
-                { "image_composition_check", n => { ImageCompositionCheck = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudCheckOutcome>(); } },
-                { "integrity_check", n => { IntegrityCheck = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudCheckOutcome>(); } },
-                { "issue_date_check", n => { IssueDateCheck = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudCheckOutcomeWithNoData>(); } },
-                { "portrait_details_check", n => { PortraitDetailsCheck = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudCheckOutcome>(); } },
-                { "portrait_presence_check", n => { PortraitPresenceCheck = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudCheckOutcome>(); } },
-                { "type_supported", n => { TypeSupported = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudCheckOutcome>(); } },
+                { "detail_check", n => { DetailCheck = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsDetailCheck>(); } },
+                { "image_composition_check", n => { ImageCompositionCheck = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsImageCompositionCheck>(); } },
+                { "integrity_check", n => { IntegrityCheck = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsIntegrityCheck>(); } },
+                { "issue_date_check", n => { IssueDateCheck = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsIssueDateCheck>(); } },
+                { "portrait_details_check", n => { PortraitDetailsCheck = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsPortraitDetailsCheck>(); } },
+                { "portrait_presence_check", n => { PortraitPresenceCheck = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsPortraitPresenceCheck>(); } },
+                { "type_supported", n => { TypeSupported = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsTypeSupported>(); } },
             };
         }
         /// <summary>
@@ -70,13 +70,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudCheckOutcome>("detail_check", DetailCheck);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudCheckOutcome>("image_composition_check", ImageCompositionCheck);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudCheckOutcome>("integrity_check", IntegrityCheck);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudCheckOutcomeWithNoData>("issue_date_check", IssueDateCheck);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudCheckOutcome>("portrait_details_check", PortraitDetailsCheck);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudCheckOutcome>("portrait_presence_check", PortraitPresenceCheck);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudCheckOutcome>("type_supported", TypeSupported);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsDetailCheck>("detail_check", DetailCheck);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsImageCompositionCheck>("image_composition_check", ImageCompositionCheck);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsIntegrityCheck>("integrity_check", IntegrityCheck);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsIssueDateCheck>("issue_date_check", IssueDateCheck);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsPortraitDetailsCheck>("portrait_details_check", PortraitDetailsCheck);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsPortraitPresenceCheck>("portrait_presence_check", PortraitPresenceCheck);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsTypeSupported>("type_supported", TypeSupported);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

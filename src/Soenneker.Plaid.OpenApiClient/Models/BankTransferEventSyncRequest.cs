@@ -41,6 +41,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public BankTransferEventSyncRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Count = 25;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

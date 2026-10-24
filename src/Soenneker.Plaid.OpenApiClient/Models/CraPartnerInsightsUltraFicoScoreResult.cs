@@ -8,20 +8,28 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// The result of a single UltraFICO score generation request.
+    /// The result of a single UltraFICO® score generation request.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraPartnerInsightsUltraFicoScoreResult : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Human-readable description of why the UltraFICO score could not be computed.</summary>
+        /// <summary>Human-readable description of why the UltraFICO® score could not be computed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ErrorReason { get; set; }
 #nullable restore
 #else
         public string ErrorReason { get; set; }
+#endif
+        /// <summary>FICO exclusion code indicating why an UltraFICO® score could not be computed due to consumer-data conditions (e.g. insufficient account history). `null` when the exclusion code is not set; &quot;0&quot; when a score was produced.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExclusionCode { get; set; }
+#nullable restore
+#else
+        public string ExclusionCode { get; set; }
 #endif
         /// <summary>FICO-provided identifier that uniquely identifies this score generation request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -31,7 +39,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string FicoScoringRequestId { get; set; }
 #endif
-        /// <summary>Client-generated identifier that can be used to correlate between scoring requests and scoring results.</summary>
+        /// <summary>Client-generated identifier that can be used to correlate scoring requests with their scoring results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RequestCorrelationId { get; set; }
@@ -39,7 +47,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string RequestCorrelationId { get; set; }
 #endif
-        /// <summary>The calculated UltraFICO score.</summary>
+        /// <summary>The calculated UltraFICO® score.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScore? UltraficoScore { get; set; }
@@ -73,6 +81,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "error_reason", n => { ErrorReason = n.GetStringValue(); } },
+                { "exclusion_code", n => { ExclusionCode = n.GetStringValue(); } },
                 { "fico_scoring_request_id", n => { FicoScoringRequestId = n.GetStringValue(); } },
                 { "request_correlation_id", n => { RequestCorrelationId = n.GetStringValue(); } },
                 { "ultrafico_score", n => { UltraficoScore = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScore>(global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScore.CreateFromDiscriminatorValue); } },
@@ -86,6 +95,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("error_reason", ErrorReason);
+            writer.WriteStringValue("exclusion_code", ExclusionCode);
             writer.WriteStringValue("fico_scoring_request_id", FicoScoringRequestId);
             writer.WriteStringValue("request_correlation_id", RequestCorrelationId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScore>("ultrafico_score", UltraficoScore);

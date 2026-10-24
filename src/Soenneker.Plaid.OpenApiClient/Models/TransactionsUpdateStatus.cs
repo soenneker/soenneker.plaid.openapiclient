@@ -3,25 +3,25 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>&quot;A description of the update status for transaction pulls of an Item. This field contains the same information provided by transactions webhooks, and may be helpful for webhook troubleshooting or when recovering from missed webhooks.`TRANSACTIONS_UPDATE_STATUS_UNKNOWN`: Unable to fetch transactions update status for Item.`NOT_READY`: The Item is pending transaction pull.`INITIAL_UPDATE_COMPLETE`: Initial pull for the Item is complete, historical pull is pending.`HISTORICAL_UPDATE_COMPLETE`: Both initial and historical pull for Item are complete.&quot;</summary>
+    /// <summary>A description of the update status for transaction pulls of an Item. This field contains the same information provided by transactions webhooks, and may be helpful for webhook troubleshooting or when recovering from missed webhooks.`TRANSACTIONS_UPDATE_STATUS_UNKNOWN`: Unable to fetch transactions update status for Item.`NOT_READY`: The Item is pending transaction pull.`INITIAL_UPDATE_COMPLETE`: Initial pull for the Item is complete, historical pull is pending.`HISTORICAL_UPDATE_COMPLETE`: Both initial and historical pull for Item are complete.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransactionsUpdateStatus
     {
         [EnumMember(Value = "TRANSACTIONS_UPDATE_STATUS_UNKNOWN")]
         #pragma warning disable CS1591
-        TRANSACTIONS_UPDATE_STATUS_UNKNOWN,
+        TransactionsUpdateStatusUnknown,
         #pragma warning restore CS1591
         [EnumMember(Value = "NOT_READY")]
         #pragma warning disable CS1591
-        NOT_READY,
+        NotReady,
         #pragma warning restore CS1591
         [EnumMember(Value = "INITIAL_UPDATE_COMPLETE")]
         #pragma warning disable CS1591
-        INITIAL_UPDATE_COMPLETE,
+        InitialUpdateComplete,
         #pragma warning restore CS1591
         [EnumMember(Value = "HISTORICAL_UPDATE_COMPLETE")]
         #pragma warning disable CS1591
-        HISTORICAL_UPDATE_COMPLETE,
+        HistoricalUpdateComplete,
         #pragma warning restore CS1591
     }
 }

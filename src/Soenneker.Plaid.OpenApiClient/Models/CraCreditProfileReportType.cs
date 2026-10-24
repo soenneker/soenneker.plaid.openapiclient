@@ -9,7 +9,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "QUALIFY")]
         #pragma warning disable CS1591
-        QUALIFY,
+        Qualify,
         #pragma warning restore CS1591
     }
 }

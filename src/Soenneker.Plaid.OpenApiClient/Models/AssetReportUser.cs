@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// The user object allows you to provide additional information about the user to be appended to the Asset Report. All fields are optional. The `first_name`, `last_name`, and `ssn` fields are required if you would like the Report to be eligible for Fannie Mae’s Day 1 Certainty™ program.
+    /// The user object allows you to provide additional information about the user to be appended to the Asset Report. All fields are optional. The `first_name`, `last_name`, and `ssn` fields are required if you would like the Report to be eligible for Fannie Mae&apos;s Day 1 Certainty™ program.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AssetReportUser : IAdditionalDataHolder, IParsable
@@ -55,7 +55,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string MiddleName { get; set; }
 #endif
-        /// <summary>&quot;The user&apos;s phone number, in E.164 format: +{countrycode}{number}. For example: \&quot;+14151234567\&quot;. Phone numbers provided in other formats will be parsed on a best-effort basis.&quot;</summary>
+        /// <summary>The user&apos;s phone number, in E.164 format: +{countrycode}{number}. For example: &quot;+14151234567&quot;. Phone numbers provided in other formats will be parsed on a best-effort basis.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PhoneNumber { get; set; }
@@ -63,7 +63,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string PhoneNumber { get; set; }
 #endif
-        /// <summary>&quot;The user&apos;s Social Security Number. Required for the Fannie Mae Day 1 Certainty™ program.Format: \&quot;ddd-dd-dddd\&quot;&quot;</summary>
+        /// <summary>The user&apos;s Social Security Number. Required for the Fannie Mae Day 1 Certainty™ program.Format: &quot;ddd-dd-dddd&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Ssn { get; set; }

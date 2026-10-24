@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// The counterparty&apos;s bank account numbers. Exactly one of IBAN or BACS data is required.
+    /// The payer&apos;s bank account numbers. Exactly one of IBAN or Bacs data is required.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaymentInitiationConsentPayerNumbers : IAdditionalDataHolder, IParsable

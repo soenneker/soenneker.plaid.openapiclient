@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Processor.Identity.Match
         {
         }
         /// <summary>
-        /// The `/processor/identity/match` endpoint generates a match score, which indicates how well the provided identity data matches the identity information on file with the account holder&apos;s financial institution.Fields within the `balances` object will always be null when retrieved by `/identity/match`. Instead, use the free `/accounts/get` endpoint to request balance cached data, or `/accounts/balance/get` for real-time data.
+        /// The `/processor/identity/match` endpoint generates a match score, which indicates how well the provided identity data matches the identity information on file with the account holder&apos;s financial institution.Fields within the `balances` object will always be null when retrieved by `/processor/identity/match`. Instead, use the `/processor/balance/get` endpoint to retrieve balance data.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ProcessorIdentityMatchResponse"/></returns>
         /// <param name="body">ProcessorIdentityMatchRequest defines the request schema for `/processor/identity/match`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Processor.Identity.Match
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.ProcessorIdentityMatchResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.ProcessorIdentityMatchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The `/processor/identity/match` endpoint generates a match score, which indicates how well the provided identity data matches the identity information on file with the account holder&apos;s financial institution.Fields within the `balances` object will always be null when retrieved by `/identity/match`. Instead, use the free `/accounts/get` endpoint to request balance cached data, or `/accounts/balance/get` for real-time data.
+        /// The `/processor/identity/match` endpoint generates a match score, which indicates how well the provided identity data matches the identity information on file with the account holder&apos;s financial institution.Fields within the `balances` object will always be null when retrieved by `/processor/identity/match`. Instead, use the `/processor/balance/get` endpoint to retrieve balance data.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">ProcessorIdentityMatchRequest defines the request schema for `/processor/identity/match`</param>

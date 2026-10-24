@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.User.Items.Associate
         {
         }
         /// <summary>
-        /// Associates Items to the target user. If an Item is already associated to another user, the Item will be disassociated with the existing user and associated to the target user. This operation supports a max of 100 Items.
+        /// Associates Items with a `user_id`. If an Item is already associated with a different `user_id`, calling this endpoint will disassociate it from that User and reassociate it with the target User instead. A single request can associate up to 100 Items.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.UserItemsAssociateResponse"/></returns>
         /// <param name="body">UserItemsAssociateRequest defines the request schema for `/user/items/associate`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.User.Items.Associate
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.UserItemsAssociateResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.UserItemsAssociateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Associates Items to the target user. If an Item is already associated to another user, the Item will be disassociated with the existing user and associated to the target user. This operation supports a max of 100 Items.
+        /// Associates Items with a `user_id`. If an Item is already associated with a different `user_id`, calling this endpoint will disassociate it from that User and reassociate it with the target User instead. A single request can associate up to 100 Items.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">UserItemsAssociateRequest defines the request schema for `/user/items/associate`</param>

@@ -9,95 +9,163 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "INVALID_REQUEST")]
         #pragma warning disable CS1591
-        INVALID_REQUEST,
+        InvalidRequest,
         #pragma warning restore CS1591
         [EnumMember(Value = "INVALID_RESULT")]
         #pragma warning disable CS1591
-        INVALID_RESULT,
+        InvalidResult,
         #pragma warning restore CS1591
         [EnumMember(Value = "INVALID_INPUT")]
         #pragma warning disable CS1591
-        INVALID_INPUT,
+        InvalidInput,
         #pragma warning restore CS1591
         [EnumMember(Value = "INSTITUTION_ERROR")]
         #pragma warning disable CS1591
-        INSTITUTION_ERROR,
+        InstitutionError,
         #pragma warning restore CS1591
         [EnumMember(Value = "RATE_LIMIT_EXCEEDED")]
         #pragma warning disable CS1591
-        RATE_LIMIT_EXCEEDED,
+        RateLimitExceeded,
         #pragma warning restore CS1591
         [EnumMember(Value = "API_ERROR")]
         #pragma warning disable CS1591
-        API_ERROR,
+        ApiError,
         #pragma warning restore CS1591
         [EnumMember(Value = "ITEM_ERROR")]
         #pragma warning disable CS1591
-        ITEM_ERROR,
+        ItemError,
         #pragma warning restore CS1591
         [EnumMember(Value = "ASSET_REPORT_ERROR")]
         #pragma warning disable CS1591
-        ASSET_REPORT_ERROR,
+        AssetReportError,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "BASE_REPORT_ERROR")]
+        #pragma warning disable CS1591
+        BaseReportError,
         #pragma warning restore CS1591
         [EnumMember(Value = "RECAPTCHA_ERROR")]
         #pragma warning disable CS1591
-        RECAPTCHA_ERROR,
+        RecaptchaError,
         #pragma warning restore CS1591
         [EnumMember(Value = "OAUTH_ERROR")]
         #pragma warning disable CS1591
-        OAUTH_ERROR,
+        OAuthError,
         #pragma warning restore CS1591
         [EnumMember(Value = "PAYMENT_ERROR")]
         #pragma warning disable CS1591
-        PAYMENT_ERROR,
+        PaymentError,
         #pragma warning restore CS1591
         [EnumMember(Value = "BANK_TRANSFER_ERROR")]
         #pragma warning disable CS1591
-        BANK_TRANSFER_ERROR,
+        BankTransferError,
         #pragma warning restore CS1591
         [EnumMember(Value = "INCOME_VERIFICATION_ERROR")]
         #pragma warning disable CS1591
-        INCOME_VERIFICATION_ERROR,
+        IncomeVerificationError,
         #pragma warning restore CS1591
         [EnumMember(Value = "MICRODEPOSITS_ERROR")]
         #pragma warning disable CS1591
-        MICRODEPOSITS_ERROR,
+        MicrodepositsError,
         #pragma warning restore CS1591
         [EnumMember(Value = "SANDBOX_ERROR")]
         #pragma warning disable CS1591
-        SANDBOX_ERROR,
+        SandboxError,
         #pragma warning restore CS1591
         [EnumMember(Value = "PARTNER_ERROR")]
         #pragma warning disable CS1591
-        PARTNER_ERROR,
+        PartnerError,
         #pragma warning restore CS1591
         [EnumMember(Value = "SIGNAL_ERROR")]
         #pragma warning disable CS1591
-        SIGNAL_ERROR,
+        SignalError,
         #pragma warning restore CS1591
         [EnumMember(Value = "TRANSACTIONS_ERROR")]
         #pragma warning disable CS1591
-        TRANSACTIONS_ERROR,
+        TransactionsError,
         #pragma warning restore CS1591
         [EnumMember(Value = "TRANSACTION_ERROR")]
         #pragma warning disable CS1591
-        TRANSACTION_ERROR,
+        TransactionError,
         #pragma warning restore CS1591
         [EnumMember(Value = "TRANSFER_ERROR")]
         #pragma warning disable CS1591
-        TRANSFER_ERROR,
+        TransferError,
         #pragma warning restore CS1591
         [EnumMember(Value = "CHECK_REPORT_ERROR")]
         #pragma warning disable CS1591
-        CHECK_REPORT_ERROR,
+        CheckReportError,
         #pragma warning restore CS1591
         [EnumMember(Value = "CONSUMER_REPORT_ERROR")]
         #pragma warning disable CS1591
-        CONSUMER_REPORT_ERROR,
+        ConsumerReportError,
         #pragma warning restore CS1591
         [EnumMember(Value = "USER_ERROR")]
         #pragma warning disable CS1591
-        USER_ERROR,
+        UserError,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "IDEMPOTENCY_ERROR")]
+        #pragma warning disable CS1591
+        IdempotencyError,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ASSETS_ERROR")]
+        #pragma warning disable CS1591
+        AssetsError,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CRA_MONITORING_ERROR")]
+        #pragma warning disable CS1591
+        CraMonitoringError,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CREDIT_PROFILE_REPORT_ERROR")]
+        #pragma warning disable CS1591
+        CreditProfileReportError,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ENCOMPASS_ERROR")]
+        #pragma warning disable CS1591
+        EncompassError,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ENRICH_ERROR")]
+        #pragma warning disable CS1591
+        EnrichError,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "FRAUD_INSIGHTS_ERROR")]
+        #pragma warning disable CS1591
+        FraudInsightsError,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "FREDDIE_MAC_ERROR")]
+        #pragma warning disable CS1591
+        FreddieMacError,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "LINK_DELIVERY_ERROR")]
+        #pragma warning disable CS1591
+        LinkDeliveryError,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PROFILE_ERROR")]
+        #pragma warning disable CS1591
+        ProfileError,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "RECURRING_TRANSACTIONS_ERROR")]
+        #pragma warning disable CS1591
+        RecurringTransactionsError,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "STATEMENTS_ERROR")]
+        #pragma warning disable CS1591
+        StatementsError,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TRANSFER_RECURRING_ERROR")]
+        #pragma warning disable CS1591
+        TransferRecurringError,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TRANSFER_REFUND_ERROR")]
+        #pragma warning disable CS1591
+        TransferRefundError,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CRA_REPORT_ERROR")]
+        #pragma warning disable CS1591
+        CraReportError,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CRA_PARTNER_INSIGHTS_ERROR")]
+        #pragma warning disable CS1591
+        CraPartnerInsightsError,
         #pragma warning restore CS1591
     }
 }

@@ -27,7 +27,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public int? NsfOverdraftTransactionsCount90d { get; set; }
         /// <summary>Value ranging from 0-1. The higher the score, the more confident we are of the account being the primary account.</summary>
         public double? PrimaryAccountScore { get; set; }
-        /// <summary>Total amount of debit transactions into the account in the time period of the report. This field will be empty for non-depository accounts. This field only takes into account USD transactions from the account.</summary>
+        /// <summary>Total amount of money into the account in the time period of the report. For non-depository accounts, or accounts with no transactions, `amount` is `0` and both currency codes are `null`. This field only takes into account USD transactions from the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount? TotalInflowAmount { get; set; }
@@ -35,31 +35,31 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount TotalInflowAmount { get; set; }
 #endif
-        /// <summary>Total amount of debit transactions into the account in the last 30 days. This field will be empty for non-depository accounts. This field only takes into account USD transactions from the account.</summary>
+        /// <summary>Total amount of money into the account in the last 30 days. For non-depository accounts, or accounts with no transactions, `amount` is `0` and both currency codes are `null`. This field only takes into account USD transactions from the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount30d? TotalInflowAmount30d { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount30D? TotalInflowAmount30d { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount30d TotalInflowAmount30d { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount30D TotalInflowAmount30d { get; set; }
 #endif
-        /// <summary>Total amount of debit transactions into the account in the last 60 days. This field will be empty for non-depository accounts. This field only takes into account USD transactions from the account.</summary>
+        /// <summary>Total amount of money into the account in the last 60 days. For non-depository accounts, or accounts with no transactions, `amount` is `0` and both currency codes are `null`. This field only takes into account USD transactions from the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount60d? TotalInflowAmount60d { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount60D? TotalInflowAmount60d { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount60d TotalInflowAmount60d { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount60D TotalInflowAmount60d { get; set; }
 #endif
-        /// <summary>Total amount of debit transactions into the account in the last 90 days. This field will be empty for non-depository accounts. This field only takes into account USD transactions from the account.</summary>
+        /// <summary>Total amount of money into the account in the last 90 days. For non-depository accounts, or accounts with no transactions, `amount` is `0` and both currency codes are `null`. This field only takes into account USD transactions from the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount90d? TotalInflowAmount90d { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount90D? TotalInflowAmount90d { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount90d TotalInflowAmount90d { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount90D TotalInflowAmount90d { get; set; }
 #endif
-        /// <summary>Total amount of credit transactions into the account in the time period of the report. This field will be empty for non-depository accounts. This field only takes into account USD transactions from the account.</summary>
+        /// <summary>Total amount of money out of the account in the time period of the report. For non-depository accounts, or accounts with no transactions, `amount` is `0` and both currency codes are `null`. This field only takes into account USD transactions from the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount? TotalOutflowAmount { get; set; }
@@ -67,29 +67,29 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount TotalOutflowAmount { get; set; }
 #endif
-        /// <summary>Total amount of credit transactions into the account in the last 30 days. This field will be empty for non-depository accounts. This field only takes into account USD transactions from the account.</summary>
+        /// <summary>Total amount of money out of the account in the last 30 days. For non-depository accounts, or accounts with no transactions, `amount` is `0` and both currency codes are `null`. This field only takes into account USD transactions from the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount30d? TotalOutflowAmount30d { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount30D? TotalOutflowAmount30d { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount30d TotalOutflowAmount30d { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount30D TotalOutflowAmount30d { get; set; }
 #endif
-        /// <summary>Total amount of credit transactions into the account in the last 60 days. This field will be empty for non-depository accounts. This field only takes into account USD transactions from the account.</summary>
+        /// <summary>Total amount of money out of the account in the last 60 days. For non-depository accounts, or accounts with no transactions, `amount` is `0` and both currency codes are `null`. This field only takes into account USD transactions from the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount60d? TotalOutflowAmount60d { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount60D? TotalOutflowAmount60d { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount60d TotalOutflowAmount60d { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount60D TotalOutflowAmount60d { get; set; }
 #endif
-        /// <summary>Total amount of credit transactions into the account in the last 90 days. This field will be empty for non-depository accounts. This field only takes into account USD transactions from the account.</summary>
+        /// <summary>Total amount of money out of the account in the last 90 days. For non-depository accounts, or accounts with no transactions, `amount` is `0` and both currency codes are `null`. This field only takes into account USD transactions from the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount90d? TotalOutflowAmount90d { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount90D? TotalOutflowAmount90d { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount90d TotalOutflowAmount90d { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount90D TotalOutflowAmount90d { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAttributes"/> and sets the default values.
@@ -123,13 +123,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "nsf_overdraft_transactions_count_90d", n => { NsfOverdraftTransactionsCount90d = n.GetIntValue(); } },
                 { "primary_account_score", n => { PrimaryAccountScore = n.GetDoubleValue(); } },
                 { "total_inflow_amount", n => { TotalInflowAmount = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount>(global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount.CreateFromDiscriminatorValue); } },
-                { "total_inflow_amount_30d", n => { TotalInflowAmount30d = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount30d>(global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount30d.CreateFromDiscriminatorValue); } },
-                { "total_inflow_amount_60d", n => { TotalInflowAmount60d = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount60d>(global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount60d.CreateFromDiscriminatorValue); } },
-                { "total_inflow_amount_90d", n => { TotalInflowAmount90d = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount90d>(global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount90d.CreateFromDiscriminatorValue); } },
+                { "total_inflow_amount_30d", n => { TotalInflowAmount30d = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount30D>(global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount30D.CreateFromDiscriminatorValue); } },
+                { "total_inflow_amount_60d", n => { TotalInflowAmount60d = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount60D>(global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount60D.CreateFromDiscriminatorValue); } },
+                { "total_inflow_amount_90d", n => { TotalInflowAmount90d = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount90D>(global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount90D.CreateFromDiscriminatorValue); } },
                 { "total_outflow_amount", n => { TotalOutflowAmount = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount>(global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount.CreateFromDiscriminatorValue); } },
-                { "total_outflow_amount_30d", n => { TotalOutflowAmount30d = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount30d>(global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount30d.CreateFromDiscriminatorValue); } },
-                { "total_outflow_amount_60d", n => { TotalOutflowAmount60d = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount60d>(global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount60d.CreateFromDiscriminatorValue); } },
-                { "total_outflow_amount_90d", n => { TotalOutflowAmount90d = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount90d>(global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount90d.CreateFromDiscriminatorValue); } },
+                { "total_outflow_amount_30d", n => { TotalOutflowAmount30d = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount30D>(global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount30D.CreateFromDiscriminatorValue); } },
+                { "total_outflow_amount_60d", n => { TotalOutflowAmount60d = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount60D>(global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount60D.CreateFromDiscriminatorValue); } },
+                { "total_outflow_amount_90d", n => { TotalOutflowAmount90d = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount90D>(global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount90D.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -146,13 +146,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteIntValue("nsf_overdraft_transactions_count_90d", NsfOverdraftTransactionsCount90d);
             writer.WriteDoubleValue("primary_account_score", PrimaryAccountScore);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount>("total_inflow_amount", TotalInflowAmount);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount30d>("total_inflow_amount_30d", TotalInflowAmount30d);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount60d>("total_inflow_amount_60d", TotalInflowAmount60d);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount90d>("total_inflow_amount_90d", TotalInflowAmount90d);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount30D>("total_inflow_amount_30d", TotalInflowAmount30d);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount60D>("total_inflow_amount_60d", TotalInflowAmount60d);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount90D>("total_inflow_amount_90d", TotalInflowAmount90d);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount>("total_outflow_amount", TotalOutflowAmount);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount30d>("total_outflow_amount_30d", TotalOutflowAmount30d);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount60d>("total_outflow_amount_60d", TotalOutflowAmount60d);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount90d>("total_outflow_amount_90d", TotalOutflowAmount90d);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount30D>("total_outflow_amount_30d", TotalOutflowAmount30d);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount60D>("total_outflow_amount_60d", TotalOutflowAmount60d);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount90D>("total_outflow_amount_90d", TotalOutflowAmount90d);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -13,7 +13,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BeaconUserDepositoryAccount : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The last 2-4 numeric characters of this account’s account number.</summary>
+        /// <summary>The last 2-4 numeric characters of this account&apos;s account number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountMask { get; set; }

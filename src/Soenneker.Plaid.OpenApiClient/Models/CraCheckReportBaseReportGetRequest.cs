@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// BaseReportGetRequest defines the request schema for `/cra/check_report/base_report/get`
+    /// CraCheckReportBaseReportGetRequest defines the request schema for `/cra/check_report/base_report/get`
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraCheckReportBaseReportGetRequest : IAdditionalDataHolder, IParsable
@@ -23,13 +23,23 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
-        /// <summary>The item IDs to include in the Base Report. If not provided, all items associated with the user will be included.</summary>
+        /// <summary>The permissible purpose under the FCRA for retrieving this consumer report. Restricted to permissible purposes related to loan servicing only. Required when `report_id` is provided.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportBaseReportGetRequestConsumerReportPermissiblePurpose? ConsumerReportPermissiblePurpose { get; set; }
+        /// <summary>The Item IDs to include in the Base Report. If not provided, all Items associated with the user will be included.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ItemIds { get; set; }
 #nullable restore
 #else
         public List<string> ItemIds { get; set; }
+#endif
+        /// <summary>The CRA report token (formatted `cra-report-&lt;env&gt;-&lt;uuid&gt;`) identifying a specific consumer report. When provided alongside `consumer_report_permissible_purpose`, pins retrieval to that report and stamps its permissible purpose. If omitted, the most recently generated report for the user is returned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ReportId { get; set; }
+#nullable restore
+#else
+        public string ReportId { get; set; }
 #endif
         /// <summary>Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,7 +57,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ThirdPartyUserToken { get; set; }
 #endif
-        /// <summary>A unique user identifier, created by `/user/create`. Integrations that began using `/user/create` after December 10, 2025 use this field to identify a user instead of the `user_token`. For more details, see [new user APIs](https://plaid.com/docs/api/users/user-apis).</summary>
+        /// <summary>A unique user identifier, created by `/user/create`. Integrations that began using `/user/create` after December 10, 2025 use this field to identify a user instead of the `user_token`. For more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }
@@ -57,7 +67,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>The tier of the user.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.CraUserTier? UserTier { get; set; }
-        /// <summary>The user token associated with the User data is being requested for. This field is used only by customers with pre-existing integrations that already use the `user_token` field. All other customers should use the `user_id` instead. For more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis).</summary>
+        /// <summary>The user token associated with the user for which data is being requested. This field is used only by customers with pre-existing integrations that already use the `user_token` field. All other customers should use the `user_id` instead. For more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserToken { get; set; }
@@ -91,7 +101,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
+                { "consumer_report_permissible_purpose", n => { ConsumerReportPermissiblePurpose = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportBaseReportGetRequestConsumerReportPermissiblePurpose>(); } },
                 { "item_ids", n => { ItemIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "report_id", n => { ReportId = n.GetStringValue(); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
                 { "third_party_user_token", n => { ThirdPartyUserToken = n.GetStringValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
@@ -107,7 +119,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("client_id", ClientId);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportBaseReportGetRequestConsumerReportPermissiblePurpose>("consumer_report_permissible_purpose", ConsumerReportPermissiblePurpose);
             writer.WriteCollectionOfPrimitiveValues<string>("item_ids", ItemIds);
+            writer.WriteStringValue("report_id", ReportId);
             writer.WriteStringValue("secret", Secret);
             writer.WriteStringValue("third_party_user_token", ThirdPartyUserToken);
             writer.WriteStringValue("user_id", UserId);

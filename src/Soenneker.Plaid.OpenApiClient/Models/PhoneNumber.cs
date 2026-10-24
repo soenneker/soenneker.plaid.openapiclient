@@ -26,7 +26,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>When `true`, identifies the phone number as the primary number on an account.</summary>
         public bool? Primary { get; set; }
         /// <summary>The type of phone number.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PhoneNumber_type? Type { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PhoneNumberType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PhoneNumber"/> and sets the default values.
         /// </summary>
@@ -54,7 +54,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "data", n => { Data = n.GetStringValue(); } },
                 { "primary", n => { Primary = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PhoneNumber_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PhoneNumberType>(); } },
             };
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("data", Data);
             writer.WriteBoolValue("primary", Primary);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PhoneNumber_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PhoneNumberType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

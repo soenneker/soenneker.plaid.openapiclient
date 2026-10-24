@@ -9,11 +9,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "INFLOW")]
         #pragma warning disable CS1591
-        INFLOW,
+        Inflow,
         #pragma warning restore CS1591
         [EnumMember(Value = "OUTFLOW")]
         #pragma warning disable CS1591
-        OUTFLOW,
+        Outflow,
         #pragma warning restore CS1591
     }
 }

@@ -9,11 +9,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "payroll_digital_income")]
         #pragma warning disable CS1591
-        Payroll_digital_income,
+        PayrollDigitalIncome,
         #pragma warning restore CS1591
         [EnumMember(Value = "payroll_document_income")]
         #pragma warning disable CS1591
-        Payroll_document_income,
+        PayrollDocumentIncome,
         #pragma warning restore CS1591
     }
 }

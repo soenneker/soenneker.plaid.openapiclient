@@ -22,10 +22,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>SSL status for the business website.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSSL? Ssl { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSsl? Ssl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSSL Ssl { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSsl Ssl { get; set; }
 #endif
         /// <summary>Build status of the business website.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteBuildStatus? WebsiteBuildStatus { get; set; }
@@ -64,7 +64,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "email_is_deliverable", n => { EmailIsDeliverable = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus>(); } },
                 { "is_parked", n => { IsParked = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus>(); } },
-                { "ssl", n => { Ssl = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSSL>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSSL.CreateFromDiscriminatorValue); } },
+                { "ssl", n => { Ssl = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSsl>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSsl.CreateFromDiscriminatorValue); } },
                 { "website_build_status", n => { WebsiteBuildStatus = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteBuildStatus>(); } },
                 { "whois_record", n => { WhoisRecord = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWhoisRecord>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessWhoisRecord.CreateFromDiscriminatorValue); } },
             };
@@ -78,7 +78,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus>("email_is_deliverable", EmailIsDeliverable);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus>("is_parked", IsParked);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSSL>("ssl", Ssl);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSsl>("ssl", Ssl);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteBuildStatus>("website_build_status", WebsiteBuildStatus);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWhoisRecord>("whois_record", WhoisRecord);
             writer.WriteAdditionalData(AdditionalData);

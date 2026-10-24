@@ -9,7 +9,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "BANK_EMPLOYMENT_WARNING")]
         #pragma warning disable CS1591
-        BANK_EMPLOYMENT_WARNING,
+        BankEmploymentWarning,
         #pragma warning restore CS1591
     }
 }

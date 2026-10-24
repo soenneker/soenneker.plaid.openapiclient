@@ -36,6 +36,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public ProcessorTransactionsGetRequestOptions()
         {
             AdditionalData = new Dictionary<string, object>();
+            Count = 100;
+            IncludeLogoAndCounterpartyBeta = false;
+            IncludeOriginalDescription = false;
+            IncludePersonalFinanceCategory = false;
+            IncludePersonalFinanceCategoryBeta = false;
+            Offset = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

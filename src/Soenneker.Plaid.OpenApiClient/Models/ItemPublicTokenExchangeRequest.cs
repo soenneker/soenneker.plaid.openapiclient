@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
-        /// <summary>Your `public_token`, obtained from the Link `onSuccess` callback or `/sandbox/item/public_token/create`.</summary>
+        /// <summary>Your `public_token`, obtained from the Link `onSuccess` callback or `/sandbox/public_token/create`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PublicToken { get; set; }

@@ -23,6 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public LinkTokenCashflowReport()
         {
             AdditionalData = new Dictionary<string, object>();
+            DaysRequested = 365;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

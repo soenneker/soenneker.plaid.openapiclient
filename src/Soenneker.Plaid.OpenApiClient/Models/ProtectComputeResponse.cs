@@ -15,13 +15,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Event fraud attributes as an arbitrary set of key-value pairs.</summary>
+        /// <summary>Event fraud attributes as an arbitrary set of key-value pairs. The set of attributes returned varies by model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAttributes? Attributes { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectComputeResponseAttributes? Attributes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAttributes Attributes { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectComputeResponseAttributes Attributes { get; set; }
 #endif
         /// <summary>The versioned name of the Trust Index model used for scoring.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,8 +39,18 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string RequestId { get; set; }
 #endif
-        /// <summary>The trust index score.</summary>
+        /// <summary>The Trust Index score, on a 0-100 scale where higher values indicate lower risk.</summary>
         public int? Score { get; set; }
+        /// <summary>Per-bucket subscores returned alongside the overall Trust Index score. For cash-advance models, each key maps to an amount-bucket subscore (0-100); higher values indicate lower fraud risk. Only buckets that were scored are included in the response.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectComputeSubscores? Subscores { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectComputeSubscores Subscores { get; set; }
+#endif
+        /// <summary>The timestamp when the Trust Index score and fraud attributes were computed, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format, e.g. `&quot;2017-09-14T14:42:19.350Z&quot;`</summary>
+        public DateTimeOffset? Timestamp { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ProtectComputeResponse"/> and sets the default values.
         /// </summary>
@@ -66,10 +76,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attributes", n => { Attributes = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudAttributes>(global::Soenneker.Plaid.OpenApiClient.Models.FraudAttributes.CreateFromDiscriminatorValue); } },
+                { "attributes", n => { Attributes = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectComputeResponseAttributes>(global::Soenneker.Plaid.OpenApiClient.Models.ProtectComputeResponseAttributes.CreateFromDiscriminatorValue); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
                 { "score", n => { Score = n.GetIntValue(); } },
+                { "subscores", n => { Subscores = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectComputeSubscores>(global::Soenneker.Plaid.OpenApiClient.Models.ProtectComputeSubscores.CreateFromDiscriminatorValue); } },
+                { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -79,10 +91,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudAttributes>("attributes", Attributes);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectComputeResponseAttributes>("attributes", Attributes);
             writer.WriteStringValue("model", Model);
             writer.WriteStringValue("request_id", RequestId);
             writer.WriteIntValue("score", Score);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectComputeSubscores>("subscores", Subscores);
+            writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

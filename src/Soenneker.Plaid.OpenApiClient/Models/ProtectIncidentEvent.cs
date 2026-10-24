@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// details about the incident event.
+    /// Details about the incident event.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProtectIncidentEvent : IAdditionalDataHolder, IParsable
     {
-        /// <summary>An access token associated with the Item related to this incident.</summary>
+        /// <summary>The access token associated with the Item for which data is being requested.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEvent_access_token? AccessToken { get; set; }
+        public string? AccessToken { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEvent_access_token AccessToken { get; set; }
+        public string AccessToken { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -46,6 +46,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #nullable restore
 #else
         public string InternalReference { get; set; }
+#endif
+        /// <summary>An `item_id` associated with the Item related to this incident. To identify an Item when creating a report, provide `access_token`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ItemId { get; set; }
+#nullable restore
+#else
+        public string ItemId { get; set; }
 #endif
         /// <summary>A unique identifier for a Link session that may be associated with this incident.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -98,10 +106,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access_token", n => { AccessToken = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEvent_access_token>(global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEvent_access_token.CreateFromDiscriminatorValue); } },
+                { "access_token", n => { AccessToken = n.GetStringValue(); } },
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentAmount>(global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentAmount.CreateFromDiscriminatorValue); } },
                 { "idv_session_id", n => { IdvSessionId = n.GetStringValue(); } },
                 { "internal_reference", n => { InternalReference = n.GetStringValue(); } },
+                { "item_id", n => { ItemId = n.GetStringValue(); } },
                 { "link_session_id", n => { LinkSessionId = n.GetStringValue(); } },
                 { "protect_event_id", n => { ProtectEventId = n.GetStringValue(); } },
                 { "signal_client_transaction_id", n => { SignalClientTransactionId = n.GetStringValue(); } },
@@ -115,10 +124,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEvent_access_token>("access_token", AccessToken);
+            writer.WriteStringValue("access_token", AccessToken);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentAmount>("amount", Amount);
             writer.WriteStringValue("idv_session_id", IdvSessionId);
             writer.WriteStringValue("internal_reference", InternalReference);
+            writer.WriteStringValue("item_id", ItemId);
             writer.WriteStringValue("link_session_id", LinkSessionId);
             writer.WriteStringValue("protect_event_id", ProtectEventId);
             writer.WriteStringValue("signal_client_transaction_id", SignalClientTransactionId);

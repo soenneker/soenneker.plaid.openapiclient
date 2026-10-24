@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Sandbox.Transactions.Create
         {
         }
         /// <summary>
-        /// Use the `/sandbox/transactions/create` endpoint to create new transactions for an existing Item. This endpoint can be used to add up to 10 transactions to any Item at a time.This endpoint can only be used with Items that were created in the Sandbox environment using the `user_transactions_dynamic` test user. You can use this to add transactions to test the `/transactions/get` and `/transactions/sync` endpoints.
+        /// Use the `/sandbox/transactions/create` endpoint to create new transactions for an existing Item. This endpoint can be used to add up to 10 transactions to any Item at a time.This endpoint can be used with any Item created in the Sandbox environment. Added transactions persist across subsequent calls to `/transactions/get` and `/transactions/sync`.Each transaction is added to the account named by its `account_id`. When `account_id` is omitted, the transaction is added to the Item&apos;s checking account, or, for a custom Sandbox user, to the first depository account listed in its `override_accounts`, or its first account if it has no depository account.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.SandboxTransactionsCreateResponse"/></returns>
         /// <param name="body">SandboxTransactionsCreateRequest defines the request schema for `/sandbox/transactions/create`</param>
@@ -61,7 +61,7 @@ namespace Soenneker.Plaid.OpenApiClient.Sandbox.Transactions.Create
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.SandboxTransactionsCreateResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.SandboxTransactionsCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use the `/sandbox/transactions/create` endpoint to create new transactions for an existing Item. This endpoint can be used to add up to 10 transactions to any Item at a time.This endpoint can only be used with Items that were created in the Sandbox environment using the `user_transactions_dynamic` test user. You can use this to add transactions to test the `/transactions/get` and `/transactions/sync` endpoints.
+        /// Use the `/sandbox/transactions/create` endpoint to create new transactions for an existing Item. This endpoint can be used to add up to 10 transactions to any Item at a time.This endpoint can be used with any Item created in the Sandbox environment. Added transactions persist across subsequent calls to `/transactions/get` and `/transactions/sync`.Each transaction is added to the account named by its `account_id`. When `account_id` is omitted, the transaction is added to the Item&apos;s checking account, or, for a custom Sandbox user, to the first depository account listed in its `override_accounts`, or its first account if it has no depository account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">SandboxTransactionsCreateRequest defines the request schema for `/sandbox/transactions/create`</param>

@@ -25,7 +25,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>The maximum number of bank transfers to return.</summary>
         public int? Count { get; set; }
-        /// <summary>&quot;Indicates the direction of the transfer: `outbound` for API-initiated transfers, or `inbound` for payments received by the FBO account.&quot;</summary>
+        /// <summary>Indicates the direction of the transfer: `outbound` for API-initiated transfers, or `inbound` for payments received by the FBO account.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferDirection? Direction { get; set; }
         /// <summary>The end datetime of bank transfers to list. This should be in RFC 3339 format (i.e. `2019-12-06T22:35:49Z`)</summary>
         public DateTimeOffset? EndDate { get; set; }
@@ -55,6 +55,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public BankTransferListRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Count = 25;
+            Offset = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

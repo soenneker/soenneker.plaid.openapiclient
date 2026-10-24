@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Credit.Audit_copy_token.Update
         {
         }
         /// <summary>
-        /// The `/credit/audit_copy_token/update` endpoint updates an existing  Audit Copy Token by adding the report tokens in the `report_tokens` field to the `audit_copy_token`. If the Audit Copy Token already contains a report of a certain type, it will be replaced with the token provided in the `report_tokens` field.
+        /// The `/credit/audit_copy_token/update` endpoint updates an existing Audit Copy Token by adding the report tokens in the `report_tokens` field to the `audit_copy_token`. If the Audit Copy Token already contains a report of a certain type, it will be replaced with the token provided in the `report_tokens` field.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CreditAuditCopyTokenUpdateResponse"/></returns>
         /// <param name="body">CreditAuditCopyTokenUpdateRequest defines the request schema for `/credit/audit_copy_token/update`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Credit.Audit_copy_token.Update
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.CreditAuditCopyTokenUpdateResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.CreditAuditCopyTokenUpdateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The `/credit/audit_copy_token/update` endpoint updates an existing  Audit Copy Token by adding the report tokens in the `report_tokens` field to the `audit_copy_token`. If the Audit Copy Token already contains a report of a certain type, it will be replaced with the token provided in the `report_tokens` field.
+        /// The `/credit/audit_copy_token/update` endpoint updates an existing Audit Copy Token by adding the report tokens in the `report_tokens` field to the `audit_copy_token`. If the Audit Copy Token already contains a report of a certain type, it will be replaced with the token provided in the `report_tokens` field.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">CreditAuditCopyTokenUpdateRequest defines the request schema for `/credit/audit_copy_token/update`</param>

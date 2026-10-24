@@ -9,51 +9,51 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "UNKNOWN")]
         #pragma warning disable CS1591
-        UNKNOWN,
+        Unknown,
         #pragma warning restore CS1591
         [EnumMember(Value = "BANK_STATEMENT")]
         #pragma warning disable CS1591
-        BANK_STATEMENT,
+        BankStatement,
         #pragma warning restore CS1591
         [EnumMember(Value = "BENEFITS_STATEMENT")]
         #pragma warning disable CS1591
-        BENEFITS_STATEMENT,
+        BenefitsStatement,
         #pragma warning restore CS1591
         [EnumMember(Value = "BUSINESS_FILING")]
         #pragma warning disable CS1591
-        BUSINESS_FILING,
+        BusinessFiling,
         #pragma warning restore CS1591
         [EnumMember(Value = "CHECK")]
         #pragma warning disable CS1591
-        CHECK,
+        Check,
         #pragma warning restore CS1591
         [EnumMember(Value = "DRIVING_LICENSE")]
         #pragma warning disable CS1591
-        DRIVING_LICENSE,
+        DrivingLicense,
         #pragma warning restore CS1591
         [EnumMember(Value = "FINANCIAL_STATEMENT")]
         #pragma warning disable CS1591
-        FINANCIAL_STATEMENT,
+        FinancialStatement,
         #pragma warning restore CS1591
         [EnumMember(Value = "INVOICE")]
         #pragma warning disable CS1591
-        INVOICE,
+        Invoice,
         #pragma warning restore CS1591
         [EnumMember(Value = "PAYSLIP")]
         #pragma warning disable CS1591
-        PAYSLIP,
+        Payslip,
         #pragma warning restore CS1591
         [EnumMember(Value = "SOCIAL_SECURITY_CARD")]
         #pragma warning disable CS1591
-        SOCIAL_SECURITY_CARD,
+        SocialSecurityCard,
         #pragma warning restore CS1591
         [EnumMember(Value = "TAX_FORM")]
         #pragma warning disable CS1591
-        TAX_FORM,
+        TaxForm,
         #pragma warning restore CS1591
         [EnumMember(Value = "UTILITY_BILL")]
         #pragma warning disable CS1591
-        UTILITY_BILL,
+        UtilityBill,
         #pragma warning restore CS1591
     }
 }

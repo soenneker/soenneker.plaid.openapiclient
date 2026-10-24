@@ -9,19 +9,19 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "8")]
         #pragma warning disable CS1591
-        Eight,
+        Value8,
         #pragma warning restore CS1591
         [EnumMember(Value = "9")]
         #pragma warning disable CS1591
-        Nine,
+        Value9,
         #pragma warning restore CS1591
         [EnumMember(Value = "10")]
         #pragma warning disable CS1591
-        OneZero,
+        Value10,
         #pragma warning restore CS1591
         [EnumMember(Value = "10T")]
         #pragma warning disable CS1591
-        OneZeroT,
+        Value10T,
         #pragma warning restore CS1591
     }
 }

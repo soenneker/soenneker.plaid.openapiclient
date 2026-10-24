@@ -9,67 +9,67 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "INTERNAL_SERVER_ERROR")]
         #pragma warning disable CS1591
-        INTERNAL_SERVER_ERROR,
+        InternalServerError,
         #pragma warning restore CS1591
         [EnumMember(Value = "INSUFFICIENT_CREDENTIALS")]
         #pragma warning disable CS1591
-        INSUFFICIENT_CREDENTIALS,
+        InsufficientCredentials,
         #pragma warning restore CS1591
         [EnumMember(Value = "ITEM_LOCKED")]
         #pragma warning disable CS1591
-        ITEM_LOCKED,
+        ItemLocked,
         #pragma warning restore CS1591
         [EnumMember(Value = "USER_SETUP_REQUIRED")]
         #pragma warning disable CS1591
-        USER_SETUP_REQUIRED,
+        UserSetupRequired,
         #pragma warning restore CS1591
         [EnumMember(Value = "COUNTRY_NOT_SUPPORTED")]
         #pragma warning disable CS1591
-        COUNTRY_NOT_SUPPORTED,
+        CountryNotSupported,
         #pragma warning restore CS1591
         [EnumMember(Value = "INSTITUTION_DOWN")]
         #pragma warning disable CS1591
-        INSTITUTION_DOWN,
+        InstitutionDown,
         #pragma warning restore CS1591
         [EnumMember(Value = "INSTITUTION_NO_LONGER_SUPPORTED")]
         #pragma warning disable CS1591
-        INSTITUTION_NO_LONGER_SUPPORTED,
+        InstitutionNoLongerSupported,
         #pragma warning restore CS1591
         [EnumMember(Value = "INSTITUTION_NOT_RESPONDING")]
         #pragma warning disable CS1591
-        INSTITUTION_NOT_RESPONDING,
+        InstitutionNotResponding,
         #pragma warning restore CS1591
         [EnumMember(Value = "INVALID_CREDENTIALS")]
         #pragma warning disable CS1591
-        INVALID_CREDENTIALS,
+        InvalidCredentials,
         #pragma warning restore CS1591
         [EnumMember(Value = "INVALID_MFA")]
         #pragma warning disable CS1591
-        INVALID_MFA,
+        InvalidMfa,
         #pragma warning restore CS1591
         [EnumMember(Value = "INVALID_SEND_METHOD")]
         #pragma warning disable CS1591
-        INVALID_SEND_METHOD,
+        InvalidSendMethod,
         #pragma warning restore CS1591
         [EnumMember(Value = "ITEM_LOGIN_REQUIRED")]
         #pragma warning disable CS1591
-        ITEM_LOGIN_REQUIRED,
+        ItemLoginRequired,
         #pragma warning restore CS1591
         [EnumMember(Value = "MFA_NOT_SUPPORTED")]
         #pragma warning disable CS1591
-        MFA_NOT_SUPPORTED,
+        MfaNotSupported,
         #pragma warning restore CS1591
         [EnumMember(Value = "NO_ACCOUNTS")]
         #pragma warning disable CS1591
-        NO_ACCOUNTS,
+        NoAccounts,
         #pragma warning restore CS1591
         [EnumMember(Value = "ITEM_NOT_SUPPORTED")]
         #pragma warning disable CS1591
-        ITEM_NOT_SUPPORTED,
+        ItemNotSupported,
         #pragma warning restore CS1591
         [EnumMember(Value = "ACCESS_NOT_GRANTED")]
         #pragma warning disable CS1591
-        ACCESS_NOT_GRANTED,
+        AccessNotGranted,
         #pragma warning restore CS1591
     }
 }

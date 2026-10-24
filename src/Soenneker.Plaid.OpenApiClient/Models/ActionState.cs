@@ -9,23 +9,23 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "UNKNOWN")]
         #pragma warning disable CS1591
-        UNKNOWN,
+        Unknown,
         #pragma warning restore CS1591
         [EnumMember(Value = "ATTEMPT")]
         #pragma warning disable CS1591
-        ATTEMPT,
+        Attempt,
         #pragma warning restore CS1591
         [EnumMember(Value = "SUCCESS")]
         #pragma warning disable CS1591
-        SUCCESS,
+        Success,
         #pragma warning restore CS1591
         [EnumMember(Value = "FAILURE")]
         #pragma warning disable CS1591
-        FAILURE,
+        Failure,
         #pragma warning restore CS1591
         [EnumMember(Value = "SKIPPED")]
         #pragma warning disable CS1591
-        SKIPPED,
+        Skipped,
         #pragma warning restore CS1591
     }
 }

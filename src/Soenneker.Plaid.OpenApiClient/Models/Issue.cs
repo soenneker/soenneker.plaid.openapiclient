@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Information on an issue encountered with financial institutions interactions with financial institutions during Linking.
+    /// Information on an issue encountered with financial institution interactions during Linking.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Issue : IAdditionalDataHolder, IParsable

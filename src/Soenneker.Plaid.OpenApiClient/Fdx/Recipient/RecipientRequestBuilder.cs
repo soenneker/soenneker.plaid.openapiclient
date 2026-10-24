@@ -16,7 +16,7 @@ namespace Soenneker.Plaid.OpenApiClient.Fdx.Recipient
     public partial class RecipientRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Plaid.OpenApiClient.fdx.recipient.item collection</summary>
-        /// <param name="position">Recipient Identifier. Uniquely identifies the recipient</param>
+        /// <param name="position">The recipient&apos;s (application&apos;s) identifier (a UUID), as returned by `/fdx/recipients`.</param>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Fdx.Recipient.Item.WithRecipientItemRequestBuilder"/></returns>
         public global::Soenneker.Plaid.OpenApiClient.Fdx.Recipient.Item.WithRecipientItemRequestBuilder this[string position]
         {

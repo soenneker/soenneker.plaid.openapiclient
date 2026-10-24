@@ -23,13 +23,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationAutofillAddress Address { get; set; }
 #endif
-        /// <summary>ID number submitted by the user, currently used only for the Identity Verification product. If the user has not submitted this data yet, this field will be `null`. Otherwise, both fields are guaranteed to be filled.</summary>
+        /// <summary>ID number submitted by the user. If the user has not submitted this data yet, this field will be `null`. Otherwise, both fields are guaranteed to be filled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserIDNumber? IdNumber { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserIdNumber? IdNumber { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserIDNumber IdNumber { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserIdNumber IdNumber { get; set; }
 #endif
         /// <summary>The full name provided by the user. If the user has not submitted their name, this field will be null. Otherwise, both fields are guaranteed to be filled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,7 +65,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationAutofillAddress>(global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationAutofillAddress.CreateFromDiscriminatorValue); } },
-                { "id_number", n => { IdNumber = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.UserIDNumber>(global::Soenneker.Plaid.OpenApiClient.Models.UserIDNumber.CreateFromDiscriminatorValue); } },
+                { "id_number", n => { IdNumber = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.UserIdNumber>(global::Soenneker.Plaid.OpenApiClient.Models.UserIdNumber.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationResponseUserName>(global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationResponseUserName.CreateFromDiscriminatorValue); } },
             };
         }
@@ -77,7 +77,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationAutofillAddress>("address", Address);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.UserIDNumber>("id_number", IdNumber);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.UserIdNumber>("id_number", IdNumber);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationResponseUserName>("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }

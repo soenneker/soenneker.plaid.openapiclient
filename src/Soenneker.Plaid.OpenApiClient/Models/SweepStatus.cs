@@ -21,7 +21,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "funds_available")]
         #pragma warning disable CS1591
-        Funds_available,
+        FundsAvailable,
         #pragma warning restore CS1591
         [EnumMember(Value = "returned")]
         #pragma warning disable CS1591
@@ -30,6 +30,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         [EnumMember(Value = "failed")]
         #pragma warning disable CS1591
         Failed,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
+        #pragma warning disable CS1591
+        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
         #pragma warning restore CS1591
     }
 }

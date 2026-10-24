@@ -45,7 +45,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>An ISO8601 formatted timestamp.</summary>
         public DateTimeOffset? InactiveSince { get; set; }
-        /// <summary>&quot;Shorthand identifier for a specific screening list for individuals. `AU_CON`: Australia Department of Foreign Affairs and Trade Consolidated List `CA_CON`: Government of Canada Consolidated List of Sanctions `EU_CON`: European External Action Service Consolidated List `IZ_CIA`: CIA List of Chiefs of State and Cabinet Members `IZ_IPL`: Interpol Red Notices for Wanted Persons List `IZ_PEP`: Politically Exposed Persons List `IZ_UNC`: United Nations Consolidated Sanctions `IZ_WBK`: World Bank Listing of Ineligible Firms and Individuals `UK_HMC`: UK HM Treasury Consolidated List `US_DPL`: Bureau of Industry and Security Denied Persons List `US_DTC`: US Department of State AECA Debarred `US_FBI`: US Department of Justice FBI Wanted List `US_FSE`: US OFAC Foreign Sanctions Evaders `US_ISN`: US Department of State Nonproliferation Sanctions `US_PLC`: US OFAC Palestinian Legislative Council `US_SAM`: US System for Award Management Exclusion List `US_SDN`: US OFAC Specially Designated Nationals List `US_SSI`: US OFAC Sectoral Sanctions Identifications `SG_SOF`: Government of Singapore Terrorists and Terrorist Entities `TR_TWL`: Government of Turkey Terrorist Wanted List `TR_DFD`: Government of Turkey Domestic Freezing Decisions `TR_FOR`: Government of Turkey Foreign Freezing Requests `TR_WMD`: Government of Turkey Weapons of Mass Destruction `TR_CMB`: Government of Turkey Capital Markets Board&quot;</summary>
+        /// <summary>Shorthand identifier for a specific screening list for individuals. `AU_CON`: Australia Department of Foreign Affairs and Trade Consolidated List `CA_CON`: Government of Canada Consolidated List of Sanctions `EU_CON`: European External Action Service Consolidated List `IZ_CIA`: CIA List of Chiefs of State and Cabinet Members `IZ_IPL`: Interpol Red Notices for Wanted Persons List `IZ_PEP`: Politically Exposed Persons List `IZ_UNC`: United Nations Consolidated Sanctions `IZ_WBK`: World Bank Listing of Ineligible Firms and Individuals `UK_HMC`: Foreign, Commonwealth &amp; Development Office UK Sanctions List `US_DPL`: Bureau of Industry and Security Denied Persons List `US_DTC`: US Department of State AECA Debarred `US_FBI`: US Department of Justice FBI Wanted List `US_FSE`: US OFAC Foreign Sanctions Evaders `US_ISN`: US Department of State Nonproliferation Sanctions `US_MBS`: US Non-SDN Menu-Based Sanctions `US_PLC`: US OFAC Palestinian Legislative Council `US_SAM`: US System for Award Management Exclusion List `US_SDN`: US OFAC Specially Designated Nationals List `US_SSI`: US OFAC Sectoral Sanctions Identifications `SG_SOF`: Government of Singapore Terrorists and Terrorist Entities `TR_TWL`: Government of Turkey Terrorist Wanted List `TR_DFD`: Government of Turkey Domestic Freezing Decisions `TR_FOR`: Government of Turkey Foreign Freezing Requests `TR_WMD`: Government of Turkey Weapons of Mass Destruction `TR_CMB`: Government of Turkey Capital Markets Board</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.IndividualWatchlistCode? ListCode { get; set; }
         /// <summary>A universal identifier for a watchlist individual that is stable across searches and updates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,6 +64,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #nullable restore
 #else
         public string SourceUid { get; set; }
+#endif
+        /// <summary>Sub-program designations that may be attached to the watchlist entry by the issuing authority. For OFAC SDNentries these are the program codes published in the SDN list (for example `SDGT` for SpeciallyDesignated Global Terrorists, `SDNTK` for Specially Designated Narcotics Trafficking Kingpins,`IRAN`, `RUSSIA-EO14024`). New codes are added by sanctioning authorities without prior notice,so callers should treat unknown values as opaque strings rather than enum members.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? SubPrograms { get; set; }
+#nullable restore
+#else
+        public List<string> SubPrograms { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningHit"/> and sets the default values.
@@ -100,6 +108,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "plaid_uid", n => { PlaidUid = n.GetStringValue(); } },
                 { "review_status", n => { ReviewStatus = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningHitStatus>(); } },
                 { "source_uid", n => { SourceUid = n.GetStringValue(); } },
+                { "sub_programs", n => { SubPrograms = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -119,6 +128,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("plaid_uid", PlaidUid);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningHitStatus>("review_status", ReviewStatus);
             writer.WriteStringValue("source_uid", SourceUid);
+            writer.WriteCollectionOfPrimitiveValues<string>("sub_programs", SubPrograms);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

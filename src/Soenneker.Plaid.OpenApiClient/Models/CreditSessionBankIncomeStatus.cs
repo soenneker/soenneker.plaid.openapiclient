@@ -3,21 +3,29 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>&quot;Status of the Bank Income Link session.`APPROVED`: User has approved and verified their income`NO_DEPOSITS_FOUND`: We attempted, but were unable to find any income in the connected account.`USER_REPORTED_NO_INCOME`: The user explicitly indicated that they don&apos;t receive income in the connected account.`STARTED`: The user began the bank income portion of the link flow.`INTERNAL_ERROR`: The user encountered an internal error.&quot;</summary>
+    /// <summary>Status of the Bank Income Link session.`APPROVED`: User has approved and verified their income`NO_DEPOSITS_FOUND`: We attempted, but were unable to find any income in the connected account.`USER_REPORTED_NO_INCOME`: The user explicitly indicated that they don&apos;t receive income in the connected account.`STARTED`: The user began the bank income portion of the link flow.`INTERNAL_ERROR`: The user encountered an internal error.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CreditSessionBankIncomeStatus
     {
         [EnumMember(Value = "APPROVED")]
         #pragma warning disable CS1591
-        APPROVED,
+        Approved,
         #pragma warning restore CS1591
         [EnumMember(Value = "NO_DEPOSITS_FOUND")]
         #pragma warning disable CS1591
-        NO_DEPOSITS_FOUND,
+        NoDepositsFound,
         #pragma warning restore CS1591
         [EnumMember(Value = "USER_REPORTED_NO_INCOME")]
         #pragma warning disable CS1591
-        USER_REPORTED_NO_INCOME,
+        UserReportedNoIncome,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "STARTED")]
+        #pragma warning disable CS1591
+        Started,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INTERNAL_ERROR")]
+        #pragma warning disable CS1591
+        InternalError,
         #pragma warning restore CS1591
     }
 }

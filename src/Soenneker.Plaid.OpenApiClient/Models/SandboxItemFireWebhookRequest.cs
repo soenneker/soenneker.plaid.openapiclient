@@ -13,7 +13,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SandboxItemFireWebhookRequest : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The access token associated with the Item data is being requested for.</summary>
+        /// <summary>The access token associated with the Item for which data is being requested.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccessToken { get; set; }
@@ -31,6 +31,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
+        /// <summary>Values to set on the fired webhook&apos;s payload. Each field is named after the webhook field it sets. If specified, must not be `null`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxItemFireWebhookRequestOptions? Options { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxItemFireWebhookRequestOptions Options { get; set; }
+#endif
         /// <summary>Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,7 +48,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public string Secret { get; set; }
 #endif
         /// <summary>The webhook codes that can be fired by this test endpoint.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxItemFireWebhookRequest_webhook_code? WebhookCode { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxItemFireWebhookRequestWebhookCode? WebhookCode { get; set; }
         /// <summary>The webhook types that can be fired by this test endpoint.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.WebhookType? WebhookType { get; set; }
         /// <summary>
@@ -70,8 +78,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "access_token", n => { AccessToken = n.GetStringValue(); } },
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
+                { "options", n => { Options = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.SandboxItemFireWebhookRequestOptions>(global::Soenneker.Plaid.OpenApiClient.Models.SandboxItemFireWebhookRequestOptions.CreateFromDiscriminatorValue); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
-                { "webhook_code", n => { WebhookCode = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SandboxItemFireWebhookRequest_webhook_code>(); } },
+                { "webhook_code", n => { WebhookCode = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SandboxItemFireWebhookRequestWebhookCode>(); } },
                 { "webhook_type", n => { WebhookType = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WebhookType>(); } },
             };
         }
@@ -84,8 +93,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("access_token", AccessToken);
             writer.WriteStringValue("client_id", ClientId);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.SandboxItemFireWebhookRequestOptions>("options", Options);
             writer.WriteStringValue("secret", Secret);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SandboxItemFireWebhookRequest_webhook_code>("webhook_code", WebhookCode);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SandboxItemFireWebhookRequestWebhookCode>("webhook_code", WebhookCode);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WebhookType>("webhook_type", WebhookType);
             writer.WriteAdditionalData(AdditionalData);
         }

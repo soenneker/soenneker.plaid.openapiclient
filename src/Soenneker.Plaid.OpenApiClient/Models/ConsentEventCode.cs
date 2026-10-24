@@ -9,23 +9,23 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "USER_AGREEMENT")]
         #pragma warning disable CS1591
-        USER_AGREEMENT,
+        UserAgreement,
         #pragma warning restore CS1591
         [EnumMember(Value = "USE_CASES")]
         #pragma warning disable CS1591
-        USE_CASES,
+        UseCases,
         #pragma warning restore CS1591
         [EnumMember(Value = "DATA_SCOPES")]
         #pragma warning disable CS1591
-        DATA_SCOPES,
+        DataScopes,
         #pragma warning restore CS1591
         [EnumMember(Value = "ACCOUNT_SCOPES")]
         #pragma warning disable CS1591
-        ACCOUNT_SCOPES,
+        AccountScopes,
         #pragma warning restore CS1591
         [EnumMember(Value = "REVOCATION")]
         #pragma warning disable CS1591
-        REVOCATION,
+        Revocation,
         #pragma warning restore CS1591
     }
 }

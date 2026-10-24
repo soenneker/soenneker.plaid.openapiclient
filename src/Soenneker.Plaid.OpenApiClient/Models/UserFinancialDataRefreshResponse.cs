@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// UserFinancialDataRefreshResponse defines the response schema for `user/financial_data/refresh`
+    /// UserFinancialDataRefreshResponse defines the response schema for `/user/financial_data/refresh`
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserFinancialDataRefreshResponse : IAdditionalDataHolder, IParsable

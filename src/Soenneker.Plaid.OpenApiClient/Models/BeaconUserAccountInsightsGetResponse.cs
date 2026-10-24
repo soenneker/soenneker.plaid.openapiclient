@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// The response schema for `/beacon/user/account/insights/get`
+    /// The response schema for `/beacon/user/account_insights/get`
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BeaconUserAccountInsightsGetResponse : IAdditionalDataHolder, IParsable

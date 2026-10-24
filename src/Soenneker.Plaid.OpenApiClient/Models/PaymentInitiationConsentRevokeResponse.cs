@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// PaymentInitiationConsentRevokeResponse defines the response schema for `/payment_initation/consent/revoke`
+    /// PaymentInitiationConsentRevokeResponse defines the response schema for `/payment_initiation/consent/revoke`
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaymentInitiationConsentRevokeResponse : IAdditionalDataHolder, IParsable

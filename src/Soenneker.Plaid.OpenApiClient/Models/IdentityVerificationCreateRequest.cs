@@ -33,10 +33,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>A flag specifying whether the end user has already agreed to a privacy policy specifying that their data will be shared with Plaid for verification purposes.If `gave_consent` is set to `true`, the `accept_tos` step will be marked as `skipped` and the end user&apos;s session will start at the next step requirement.</summary>
         public bool? GaveConsent { get; set; }
-        /// <summary>An optional flag specifying how you would like Plaid to handle attempts to create an Identity Verification when an Identity Verification already exists for the provided `client_user_id` and `template_id`.If idempotency is enabled, Plaid will return the existing Identity Verification. If idempotency is disabled, Plaid will reject the request with a `400 Bad Request` status code if an Identity Verification already exists for the supplied `client_user_id` and `template_id`.</summary>
+        /// <summary>An optional flag specifying how you would like Plaid to handle attempts to create an Identity Verification when an Identity Verification already exists for the provided `client_user_id` and/or `user_id`, and `template_id`.If idempotency is enabled, Plaid will return the existing Identity Verification. If idempotency is disabled, Plaid will reject the request with a `400 Bad Request` status code if an Identity Verification already exists for the supplied `client_user_id` and/or `user_id`, and `template_id`.</summary>
         public bool? IsIdempotent { get; set; }
         /// <summary>A flag specifying whether you would like Plaid to expose a shareable URL for the verification being created.</summary>
         public bool? IsShareable { get; set; }
+        /// <summary>The language shown when the user starts this identity verification. If omitted or null, the language is detected from the user&apos;s browser settings, with English as the fallback. The user can select a different language during the session. An idempotent request that returns an existing identity verification does not change its language.Use a supported BCP 47 language tag, such as `fr-CA`. Unlike `/link/token/create`, this field requires a region-specific value rather than a two-letter language code such as `fr`.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationLanguage? Language { get; set; }
         /// <summary>Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,7 +55,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string TemplateId { get; set; }
 #endif
-        /// <summary>User information collected outside of Link, most likely via your own onboarding process.Each of the following identity fields are optional:`email_address``phone_number``date_of_birth``name``address``id_number`Specifically, these fields are optional in that they can either be fully provided (satisfying every required field in their subschema) or omitted from the request entirely by not providing the key or value.Providing these fields via the API will result in Link skipping the data collection process for the associated user. All verification steps enabled in the associated Identity Verification Template will still be run. Verification steps will either be run immediately, or once the user completes the `accept_tos` step, depending on the value provided to the `gave_consent` field.If you are not using the shareable URL feature, you can optionally provide these fields via `/link/token/create` instead; both `/identity_verification/create` and `/link/token/create` are valid ways to provide this information. Note that if you provide a non-`null` user data object via `/identity_verification/create`, any user data fields entered via `/link/token/create` for the same `client_user_id` will be ignored when prefilling Link.</summary>
+        /// <summary>User information collected outside of Link, most likely via your own onboarding process.Each of the following identity fields are optional:`email_address``phone_number``date_of_birth``name``address``id_number`Specifically, these fields are optional in that they can either be fully provided (satisfying every required field in their subschema) or omitted from the request entirely by not providing the key or value.Providing these fields via the API will result in Link skipping the data collection process for the associated user. All verification steps enabled in the associated Identity Verification Template will still be run. Verification steps will either be run immediately, or once the user completes the `accept_tos` step, depending on the value provided to the `gave_consent` field.If you are not using the shareable URL feature, you can optionally provide these fields via `/link/token/create` instead; both `/identity_verification/create` and `/link/token/create` are valid ways to provide this information. Note that if you provide a non-`null` user data object via `/identity_verification/create`, any user data fields entered via `/link/token/create` for the same `client_user_id` will be ignored when prefilling Link.The `ip_address` field is optional. Provide the end user&apos;s IP address to enable IP-based risk checks for backend-only integrations that do not use the Link SDK; when the Link SDK is used, the IP address is collected automatically. Unlike the identity fields above, `ip_address` cannot be provided via `/link/token/create`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationCreateRequestUser? User { get; set; }
@@ -61,7 +63,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationCreateRequestUser User { get; set; }
 #endif
-        /// <summary>Unique user identifier, created by calling `/user/create`. Either a `user_id` or the `client_user_id` must be provided. The `user_id` may only be used instead of the `client_user_id` if you were not a pre-existing user of `/user/create` as of December 10, 2025; for more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis). If both this field and a `client_user_id` are present in a request, the `user_id` must have been created from the provided `client_user_id`.</summary>
+        /// <summary>Unique user identifier, created by calling `/user/create`. Either a `user_id` or the `client_user_id` must be provided. The `user_id` may only be used instead of the `client_user_id` if you were not a pre-existing user of `/user/create` as of December 10, 2025, or if you have since [migrated to the new User APIs](https://plaid.com/docs/api/users/migrate-to-new-user-apis); for more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis). If both this field and a `client_user_id` are present in a request, the `user_id` must have been created from the provided `client_user_id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }
@@ -75,6 +77,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public IdentityVerificationCreateRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            GaveConsent = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -99,6 +102,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "gave_consent", n => { GaveConsent = n.GetBoolValue(); } },
                 { "is_idempotent", n => { IsIdempotent = n.GetBoolValue(); } },
                 { "is_shareable", n => { IsShareable = n.GetBoolValue(); } },
+                { "language", n => { Language = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationLanguage>(); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
                 { "template_id", n => { TemplateId = n.GetStringValue(); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationCreateRequestUser>(global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationCreateRequestUser.CreateFromDiscriminatorValue); } },
@@ -117,6 +121,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteBoolValue("gave_consent", GaveConsent);
             writer.WriteBoolValue("is_idempotent", IsIdempotent);
             writer.WriteBoolValue("is_shareable", IsShareable);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationLanguage>("language", Language);
             writer.WriteStringValue("secret", Secret);
             writer.WriteStringValue("template_id", TemplateId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationCreateRequestUser>("user", User);

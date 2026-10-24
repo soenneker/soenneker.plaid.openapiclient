@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkEvent> Events { get; set; }
 #endif
-        /// <summary>An object representing an [onExit](https://plaid.com/docs/link/web/#onexit) callback from Link. If you are not receiving this field and are instead receiving the deprecated `on_exit` field, contact your Account Manager to update your integration.</summary>
+        /// <summary>An object representing an [onExit](https://plaid.com/docs/link/web/#onexit) callback from Link. If you are not receiving this field and are instead receiving the deprecated `on_exit` field, contact your account manager to update your integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExit? Exit { get; set; }
@@ -41,21 +41,23 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string LinkSessionId { get; set; }
 #endif
-        /// <summary>The on_exit property</summary>
+        /// <summary>An object representing an [onExit](https://plaid.com/docs/link/web/#onexit) callback from Link. This field is returned only for legacy implementations and has been deprecated in favor of [`exit`](https://plaid.com/docs/api/link/#link-token-get-response-link-sessions-exit), for improved naming consistency. If you are receiving this field, contact your account manager to migrate to the newer `exit` field.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OnExit { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitDeprecated? OnExit { get; set; }
 #nullable restore
 #else
-        public string OnExit { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitDeprecated OnExit { get; set; }
 #endif
-        /// <summary>The on_success property</summary>
+        /// <summary>An object representing an [onSuccess](https://plaid.com/docs/link/web/#onsuccess) callback from Link. This field is returned only for legacy integrations and is deprecated in favor of [`results.item_add_results`](https://plaid.com/docs/api/link/#link-token-get-response-link-sessions-results-item-add-results) which can support multiple public tokens in a single Link session, for flows such as multi-Item Link. If you are receiving `on_success`, contact your account manager to migrate to `results.item_add_results` instead.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OnSuccess { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccess? OnSuccess { get; set; }
 #nullable restore
 #else
-        public string OnSuccess { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccess OnSuccess { get; set; }
 #endif
         /// <summary>The set of results for a Link session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,8 +98,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "exit", n => { Exit = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExit>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExit.CreateFromDiscriminatorValue); } },
                 { "finished_at", n => { FinishedAt = n.GetDateTimeOffsetValue(); } },
                 { "link_session_id", n => { LinkSessionId = n.GetStringValue(); } },
-                { "on_exit", n => { OnExit = n.GetStringValue(); } },
-                { "on_success", n => { OnSuccess = n.GetStringValue(); } },
+                { "on_exit", n => { OnExit = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitDeprecated>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitDeprecated.CreateFromDiscriminatorValue); } },
+                { "on_success", n => { OnSuccess = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccess>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccess.CreateFromDiscriminatorValue); } },
                 { "results", n => { Results = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionResults>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionResults.CreateFromDiscriminatorValue); } },
                 { "started_at", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -113,8 +115,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExit>("exit", Exit);
             writer.WriteDateTimeOffsetValue("finished_at", FinishedAt);
             writer.WriteStringValue("link_session_id", LinkSessionId);
-            writer.WriteStringValue("on_exit", OnExit);
-            writer.WriteStringValue("on_success", OnSuccess);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitDeprecated>("on_exit", OnExit);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccess>("on_success", OnSuccess);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionResults>("results", Results);
             writer.WriteDateTimeOffsetValue("started_at", StartedAt);
             writer.WriteAdditionalData(AdditionalData);

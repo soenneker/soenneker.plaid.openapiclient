@@ -43,7 +43,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportItem> Items { get; set; }
 #endif
-        /// <summary>A unique ID identifying an Base Report. Like all Plaid identifiers, this ID is case sensitive.</summary>
+        /// <summary>A unique ID identifying a Base Report. Like all Plaid identifiers, this ID is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReportId { get; set; }

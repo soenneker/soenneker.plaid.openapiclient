@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// AssetReportFreddieGetRequest defines the request schema for `credit/asset_report/freddie_mac/get`
+    /// AssetReportFreddieGetRequest defines the request schema for `/credit/asset_report/freddie_mac/get`
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AssetReportFreddieGetRequest : IAdditionalDataHolder, IParsable

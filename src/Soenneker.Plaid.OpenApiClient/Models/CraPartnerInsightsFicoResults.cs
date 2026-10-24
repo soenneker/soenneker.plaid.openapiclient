@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// The calculated UltraFICO scores returned as part of the Partner Insights report.
+    /// The calculated UltraFICO® scores returned as part of the Partner Insights report.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraPartnerInsightsFicoResults : IAdditionalDataHolder, IParsable
@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string LenderApplicationId { get; set; }
 #endif
-        /// <summary>Report characteristics returned by FICO describing the banking data used to generate the UltraFICO score.</summary>
+        /// <summary>Report characteristics returned by FICO describing the banking data used to generate the UltraFICO® score.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsFicoReportCharacteristics? ReportCharacteristics { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsFicoReportCharacteristics ReportCharacteristics { get; set; }
 #endif
-        /// <summary>UltraFICO scoring results, one per provided base FICO score request.</summary>
+        /// <summary>UltraFICO® scoring results, one per provided UltraFICO scoring request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreResult>? UltraficoScoreResults { get; set; }

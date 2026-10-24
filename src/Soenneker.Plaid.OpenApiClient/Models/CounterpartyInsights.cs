@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Insights related to a user’s transactions with other financial institutions, including detected account types.</summary>
+        /// <summary>Insights related to a user&apos;s transactions with other financial institutions, including detected account types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Plaid.OpenApiClient.Models.FinancialInstitutionInsights>? FinancialInstitutionInsights { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public List<global::Soenneker.Plaid.OpenApiClient.Models.FinancialInstitutionInsights> FinancialInstitutionInsights { get; set; }
 #endif
-        /// <summary>Insights about a user’s top merchants, ranked by spend.</summary>
+        /// <summary>Insights about a user&apos;s top merchants, ranked by spend.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Plaid.OpenApiClient.Models.MerchantInsights>? MerchantInsights { get; set; }

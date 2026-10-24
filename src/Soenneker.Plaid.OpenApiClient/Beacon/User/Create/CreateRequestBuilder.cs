@@ -34,12 +34,13 @@ namespace Soenneker.Plaid.OpenApiClient.Beacon.User.Create
         {
         }
         /// <summary>
-        /// Create and scan a Beacon User against your Beacon Program, according to your program&apos;s settings.When you submit a new user to `/beacon/user/create`, several checks are performed immediately:  - The user&apos;s PII (provided within the `user` object) is searched against all other users within the Beacon Program you specified. If a match is found that violates your program&apos;s &quot;Duplicate Information Filtering&quot; settings, the user will be returned with a status of `pending_review`.  - The user&apos;s PII is also searched against all fraud reports created by your organization across all of your Beacon Programs. If the user&apos;s data matches a fraud report that your team created, the user will be returned with a status of `rejected`.  - Finally, the user&apos;s PII is searched against all fraud report shared with the Beacon Network by other companies. If a matching fraud report is found, the user will be returned with a `pending_review` status if your program has enabled automatic flagging based on network fraud.
+        /// Create and scan a Beacon User against your Beacon Program, according to your program&apos;s settings.When you submit a new user to `/beacon/user/create`, several checks are performed immediately:  - The user&apos;s PII (provided within the `user` object) is searched against all other users within the Beacon Program you specified. If a match is found that violates your program&apos;s &quot;Duplicate Information Filtering&quot; settings, the user will be returned with a status of `pending_review`.  - The user&apos;s PII is also searched against all fraud reports created by your organization across all of your Beacon Programs. If the user&apos;s data matches a fraud report that your team created, the user will be returned with a status of `rejected`.  - Finally, the user&apos;s PII is searched against all fraud reports shared with the Beacon Network by other companies. If a matching fraud report is found, the user will be returned with a `pending_review` status if your program has enabled automatic flagging based on network fraud.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserCreateResponse"/></returns>
         /// <param name="body">Request input for creating a Beacon User.The primary use for this endpoint is to add a new end user to Beacon for fraud and duplicate scanning.Some fields are optional, but it is recommended to provide as much information as possible to improvethe accuracy of the fraud and duplicate scanning.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserCreateResponse?> PostAsync(global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -54,11 +55,12 @@ namespace Soenneker.Plaid.OpenApiClient.Beacon.User.Create
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserCreateResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserCreateResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create and scan a Beacon User against your Beacon Program, according to your program&apos;s settings.When you submit a new user to `/beacon/user/create`, several checks are performed immediately:  - The user&apos;s PII (provided within the `user` object) is searched against all other users within the Beacon Program you specified. If a match is found that violates your program&apos;s &quot;Duplicate Information Filtering&quot; settings, the user will be returned with a status of `pending_review`.  - The user&apos;s PII is also searched against all fraud reports created by your organization across all of your Beacon Programs. If the user&apos;s data matches a fraud report that your team created, the user will be returned with a status of `rejected`.  - Finally, the user&apos;s PII is searched against all fraud report shared with the Beacon Network by other companies. If a matching fraud report is found, the user will be returned with a `pending_review` status if your program has enabled automatic flagging based on network fraud.
+        /// Create and scan a Beacon User against your Beacon Program, according to your program&apos;s settings.When you submit a new user to `/beacon/user/create`, several checks are performed immediately:  - The user&apos;s PII (provided within the `user` object) is searched against all other users within the Beacon Program you specified. If a match is found that violates your program&apos;s &quot;Duplicate Information Filtering&quot; settings, the user will be returned with a status of `pending_review`.  - The user&apos;s PII is also searched against all fraud reports created by your organization across all of your Beacon Programs. If the user&apos;s data matches a fraud report that your team created, the user will be returned with a status of `rejected`.  - Finally, the user&apos;s PII is searched against all fraud reports shared with the Beacon Network by other companies. If a matching fraud report is found, the user will be returned with a `pending_review` status if your program has enabled automatic flagging based on network fraud.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request input for creating a Beacon User.The primary use for this endpoint is to add a new end user to Beacon for fraud and duplicate scanning.Some fields are optional, but it is recommended to provide as much information as possible to improvethe accuracy of the fraud and duplicate scanning.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -80,6 +82,7 @@ namespace Soenneker.Plaid.OpenApiClient.Beacon.User.Create
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Beacon.User.Create.CreateRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Beacon.User.Create.CreateRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Plaid.OpenApiClient.Beacon.User.Create.CreateRequestBuilder(rawUrl, RequestAdapter);

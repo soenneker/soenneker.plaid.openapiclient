@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// CashflowReportRefreshResponse defines the response schema for `/cashflow_report/response`
+    /// CashflowReportRefreshResponse defines the response schema for `/cashflow_report/refresh`
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CashflowReportRefreshResponse : IAdditionalDataHolder, IParsable

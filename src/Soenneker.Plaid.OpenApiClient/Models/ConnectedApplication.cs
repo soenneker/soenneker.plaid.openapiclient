@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>This field will map to the application ID that is returned from /item/application/list, or provided to the institution in an oauth redirect.</summary>
+        /// <summary>This field will map to the application ID that is returned from `/item/application/list`, or provided to the institution in an oauth redirect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApplicationId { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ApplicationUrl { get; set; }
 #endif
-        /// <summary>The date this application was linked in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) (YYYY-MM-DD) format in UTC.</summary>
+        /// <summary>The date and time this application was linked, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format in UTC (e.g. `&quot;2020-01-01T00:00:00Z&quot;`). Note that older, legacy integrations instead receive this value as a date only, in `YYYY-MM-DD` format (e.g. `&quot;2020-01-01&quot;`).</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>A human-readable name of the application for display purposes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

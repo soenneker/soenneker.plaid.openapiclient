@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Sandbox.Item_Escaped.Set_verification_st
         {
         }
         /// <summary>
-        /// The `/sandbox/item/set_verification_status` endpoint can be used to change the verification status of an Item in in the Sandbox in order to simulate the Automated Micro-deposit flow.For more information on testing Automated Micro-deposits in Sandbox, see [Auth full coverage testing](https://plaid.com/docs/auth/coverage/testing#).
+        /// The `/sandbox/item/set_verification_status` endpoint can be used to change the verification status of an Item in the Sandbox in order to simulate the Automated Micro-deposit flow.For more information on testing Automated Micro-deposits in Sandbox, see [Auth full coverage testing](https://plaid.com/docs/auth/coverage/testing#).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.SandboxItemSetVerificationStatusResponse"/></returns>
         /// <param name="body">SandboxItemSetVerificationStatusRequest defines the request schema for `/sandbox/item/set_verification_status`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Sandbox.Item_Escaped.Set_verification_st
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.SandboxItemSetVerificationStatusResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.SandboxItemSetVerificationStatusResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The `/sandbox/item/set_verification_status` endpoint can be used to change the verification status of an Item in in the Sandbox in order to simulate the Automated Micro-deposit flow.For more information on testing Automated Micro-deposits in Sandbox, see [Auth full coverage testing](https://plaid.com/docs/auth/coverage/testing#).
+        /// The `/sandbox/item/set_verification_status` endpoint can be used to change the verification status of an Item in the Sandbox in order to simulate the Automated Micro-deposit flow.For more information on testing Automated Micro-deposits in Sandbox, see [Auth full coverage testing](https://plaid.com/docs/auth/coverage/testing#).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">SandboxItemSetVerificationStatusRequest defines the request schema for `/sandbox/item/set_verification_status`</param>

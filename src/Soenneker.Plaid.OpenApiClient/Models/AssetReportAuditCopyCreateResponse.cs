@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// AssetReportAuditCopyCreateResponse defines the response schema for `/asset_report/audit_copy/get`
+    /// AssetReportAuditCopyCreateResponse defines the response schema for `/asset_report/audit_copy/create`
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AssetReportAuditCopyCreateResponse : IAdditionalDataHolder, IParsable

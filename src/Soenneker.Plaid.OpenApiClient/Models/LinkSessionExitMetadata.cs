@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>An institution object. If the Item was created via Same-Day or Instant micro-deposit verification, will be `null`.</summary>
+        /// <summary>An institution object. If the Item was created via Same-Day or Instant micro-deposit verification, `name` and `institution_id` will be omitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadataInstitution? Institution { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string LinkSessionId { get; set; }
 #endif
-        /// <summary>The request ID for the last request made by Link. This can be shared with Plaid Support to expedite investigation.</summary>
+        /// <summary>The request ID for the last request made by Link. This can be shared with Plaid support to expedite investigation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RequestId { get; set; }
@@ -42,10 +42,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The point at which the user exited the Link flow. One of the following values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status? Status { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadataStatus? Status { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status Status { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadataStatus Status { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata"/> and sets the default values.
@@ -75,7 +75,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "institution", n => { Institution = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadataInstitution>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadataInstitution.CreateFromDiscriminatorValue); } },
                 { "link_session_id", n => { LinkSessionId = n.GetStringValue(); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadataStatus>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadataStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -88,7 +88,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadataInstitution>("institution", Institution);
             writer.WriteStringValue("link_session_id", LinkSessionId);
             writer.WriteStringValue("request_id", RequestId);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadata_status>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitMetadataStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

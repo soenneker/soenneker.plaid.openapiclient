@@ -34,10 +34,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>An array of objects containing timestamps for the last time each data type was accessed per application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.LastDataAccessTimes>? LastDataAccessTimes { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.ApplicationLastDataAccessTimes>? LastDataAccessTimes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.LastDataAccessTimes> LastDataAccessTimes { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.ApplicationLastDataAccessTimes> LastDataAccessTimes { get; set; }
 #endif
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,7 +74,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "activities", n => { Activities = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.Activity>(global::Soenneker.Plaid.OpenApiClient.Models.Activity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cursor", n => { Cursor = n.GetStringValue(); } },
-                { "last_data_access_times", n => { LastDataAccessTimes = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LastDataAccessTimes>(global::Soenneker.Plaid.OpenApiClient.Models.LastDataAccessTimes.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "last_data_access_times", n => { LastDataAccessTimes = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.ApplicationLastDataAccessTimes>(global::Soenneker.Plaid.OpenApiClient.Models.ApplicationLastDataAccessTimes.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
             };
         }
@@ -87,7 +87,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.Activity>("activities", Activities);
             writer.WriteStringValue("cursor", Cursor);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LastDataAccessTimes>("last_data_access_times", LastDataAccessTimes);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.ApplicationLastDataAccessTimes>("last_data_access_times", LastDataAccessTimes);
             writer.WriteStringValue("request_id", RequestId);
             writer.WriteAdditionalData(AdditionalData);
         }

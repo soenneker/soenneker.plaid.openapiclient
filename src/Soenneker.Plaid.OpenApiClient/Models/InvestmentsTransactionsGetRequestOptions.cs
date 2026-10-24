@@ -35,6 +35,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public InvestmentsTransactionsGetRequestOptions()
         {
             AdditionalData = new Dictionary<string, object>();
+            AsyncUpdate = false;
+            Count = 100;
+            Offset = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

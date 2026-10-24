@@ -3,21 +3,21 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>&quot;The status of the transfer intent.`PENDING`: The transfer intent is pending.`SUCCEEDED`: The transfer intent was successfully created.`FAILED`: The transfer intent was unable to be created.&quot;</summary>
+    /// <summary>The status of the transfer intent.`PENDING`: The transfer intent is pending.`SUCCEEDED`: The transfer intent was successfully created.`FAILED`: The transfer intent was unable to be created.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransferIntentStatus
     {
         [EnumMember(Value = "PENDING")]
         #pragma warning disable CS1591
-        PENDING,
+        Pending,
         #pragma warning restore CS1591
         [EnumMember(Value = "SUCCEEDED")]
         #pragma warning disable CS1591
-        SUCCEEDED,
+        Succeeded,
         #pragma warning restore CS1591
         [EnumMember(Value = "FAILED")]
         #pragma warning disable CS1591
-        FAILED,
+        Failed,
         #pragma warning restore CS1591
     }
 }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// UserThirdPartyTokenCreateRequest defines the request schema for `/user/third_party_token/remove`
+    /// UserThirdPartyTokenRemoveRequest defines the request schema for `/user/third_party_token/remove`
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserThirdPartyTokenRemoveRequest : IAdditionalDataHolder, IParsable

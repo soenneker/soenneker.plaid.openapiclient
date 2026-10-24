@@ -13,7 +13,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SandboxItemSetVerificationStatusRequest : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The access token associated with the Item data is being requested for.</summary>
+        /// <summary>The access token associated with the Item for which data is being requested.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccessToken { get; set; }
@@ -48,7 +48,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public string Secret { get; set; }
 #endif
         /// <summary>The verification status to set the account to.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxItemSetVerificationStatusRequest_verification_status? VerificationStatus { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxItemSetVerificationStatusRequestVerificationStatus? VerificationStatus { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.SandboxItemSetVerificationStatusRequest"/> and sets the default values.
         /// </summary>
@@ -78,7 +78,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
-                { "verification_status", n => { VerificationStatus = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SandboxItemSetVerificationStatusRequest_verification_status>(); } },
+                { "verification_status", n => { VerificationStatus = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SandboxItemSetVerificationStatusRequestVerificationStatus>(); } },
             };
         }
         /// <summary>
@@ -92,7 +92,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("account_id", AccountId);
             writer.WriteStringValue("client_id", ClientId);
             writer.WriteStringValue("secret", Secret);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SandboxItemSetVerificationStatusRequest_verification_status>("verification_status", VerificationStatus);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SandboxItemSetVerificationStatusRequestVerificationStatus>("verification_status", VerificationStatus);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

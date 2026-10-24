@@ -9,15 +9,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "TRANSFER")]
         #pragma warning disable CS1591
-        TRANSFER,
+        Transfer,
         #pragma warning restore CS1591
         [EnumMember(Value = "SWEEP")]
         #pragma warning disable CS1591
-        SWEEP,
+        Sweep,
         #pragma warning restore CS1591
         [EnumMember(Value = "REFUND")]
         #pragma warning disable CS1591
-        REFUND,
+        Refund,
         #pragma warning restore CS1591
     }
 }

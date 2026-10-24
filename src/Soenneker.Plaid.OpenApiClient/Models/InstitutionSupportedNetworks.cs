@@ -26,10 +26,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Contains the supported service types in RTP</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferCapabilitiesGetRTP? Rtp { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferCapabilitiesGetRtp? Rtp { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferCapabilitiesGetRTP Rtp { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferCapabilitiesGetRtp Rtp { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.InstitutionSupportedNetworks"/> and sets the default values.
@@ -57,7 +57,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "rfp", n => { Rfp = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferCapabilitiesGetRfP>(global::Soenneker.Plaid.OpenApiClient.Models.TransferCapabilitiesGetRfP.CreateFromDiscriminatorValue); } },
-                { "rtp", n => { Rtp = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferCapabilitiesGetRTP>(global::Soenneker.Plaid.OpenApiClient.Models.TransferCapabilitiesGetRTP.CreateFromDiscriminatorValue); } },
+                { "rtp", n => { Rtp = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferCapabilitiesGetRtp>(global::Soenneker.Plaid.OpenApiClient.Models.TransferCapabilitiesGetRtp.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferCapabilitiesGetRfP>("rfp", Rfp);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferCapabilitiesGetRTP>("rtp", Rtp);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferCapabilitiesGetRtp>("rtp", Rtp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

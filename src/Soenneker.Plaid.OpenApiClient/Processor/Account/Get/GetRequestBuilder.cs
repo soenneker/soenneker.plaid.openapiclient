@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Processor.Account.Get
         {
         }
         /// <summary>
-        /// This endpoint returns the account associated with a given processor token.This endpoint retrieves cached information, rather than extracting fresh information from the institution. As a result, the account balance returned may not be up-to-date; for realtime balance information, use `/processor/balance/get` instead. Note that some information is nullable.
+        /// This endpoint returns the account associated with a given processor token.This endpoint retrieves cached information, rather than extracting fresh information from the institution. As a result, the account balance returned may not be up-to-date; for real-time balance information, use `/processor/balance/get` instead. Note that some information is nullable.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ProcessorAccountGetResponse"/></returns>
         /// <param name="body">ProcessorAccountGetRequest defines the request schema for `/processor/account/get`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Processor.Account.Get
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.ProcessorAccountGetResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.ProcessorAccountGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint returns the account associated with a given processor token.This endpoint retrieves cached information, rather than extracting fresh information from the institution. As a result, the account balance returned may not be up-to-date; for realtime balance information, use `/processor/balance/get` instead. Note that some information is nullable.
+        /// This endpoint returns the account associated with a given processor token.This endpoint retrieves cached information, rather than extracting fresh information from the institution. As a result, the account balance returned may not be up-to-date; for real-time balance information, use `/processor/balance/get` instead. Note that some information is nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">ProcessorAccountGetRequest defines the request schema for `/processor/account/get`</param>

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// PaymentInitiationPaymentGetResponse defines the response schema for `/payment_initation/payment/get`
+    /// PaymentInitiationPaymentGetResponse defines the response schema for `/payment_initiation/payment/get`
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaymentInitiationPaymentGetResponse : IAdditionalDataHolder, IParsable
@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string AdjustedReference { get; set; }
 #endif
-        /// <summary>&quot;Payment scheme. If not specified - the default in the region will be used (e.g. `SEPA_CREDIT_TRANSFER` for EU). In responses, if the scheme is not explicitly specified in the request, this value will be `null`. Using unsupported values will result in a failed payment.`LOCAL_DEFAULT`: The default payment scheme for the selected market and currency will be used.`LOCAL_INSTANT`: The instant payment scheme for the selected market and currency will be used (if applicable). Fees may be applied by the institution.`SEPA_CREDIT_TRANSFER`: The standard payment to a beneficiary within the SEPA area.`SEPA_CREDIT_TRANSFER_INSTANT`: Instant payment within the SEPA area. May involve additional fees and may not be available at some banks.&quot;</summary>
+        /// <summary>Payment scheme. If not specified - the default in the region will be used (e.g. `SEPA_CREDIT_TRANSFER` for EU). In responses, if the scheme is not explicitly specified in the request, this field is omitted. Using unsupported values will result in a failed payment.`LOCAL_DEFAULT`: The default payment scheme for the selected market and currency will be used.`LOCAL_INSTANT`: The instant payment scheme for the selected market and currency will be used (if applicable). Fees may be applied by the institution.`SEPA_CREDIT_TRANSFER`: The standard payment to a beneficiary within the SEPA area.`SEPA_CREDIT_TRANSFER_INSTANT`: Instant payment within the SEPA area. May involve additional fees and may not be available at some banks.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme? AdjustedScheme { get; set; }
         /// <summary>The amount and currency of a payment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,13 +41,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.PaymentAmountRefunded AmountRefunded { get; set; }
 #endif
-        /// <summary>An object containing a BACS account number and sort code. If an IBAN is not provided or if this recipient needs to accept domestic GBP-denominated payments, BACS data is required.</summary>
+        /// <summary>An object containing a Bacs account number and sort code. If an IBAN is not provided or if this recipient needs to accept domestic GBP-denominated payments, Bacs data is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.SenderBACSNullable? Bacs { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SenderBacsNullable? Bacs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.SenderBACSNullable Bacs { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SenderBacsNullable Bacs { get; set; }
 #endif
         /// <summary>The payment consent ID that this payment was initiated with. Is present only when payment was initiated using the payment consent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,7 +57,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ConsentId { get; set; }
 #endif
-        /// <summary>&quot;A unique identifier assigned by Plaid to each payment for tracking and reconciliation purposes.Note: Not all banks handle `end_to_end_id` consistently. To ensure accurate matching, clients should convert both the incoming `end_to_end_id` and the one provided by Plaid to the same case (either lower or upper) before comparison. For virtual account payments, Plaid manages this field automatically.&quot;</summary>
+        /// <summary>A unique identifier assigned by Plaid to each payment for tracking and reconciliation purposes.Note: Not all banks handle `end_to_end_id` consistently. To ensure accurate matching, clients should convert both the incoming `end_to_end_id` and the one provided by Plaid to the same case (either lower or upper) before comparison. For virtual account payments, Plaid manages this field automatically.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EndToEndId { get; set; }
@@ -65,7 +65,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string EndToEndId { get; set; }
 #endif
-        /// <summary>&quot;Errors are identified by `error_code` and categorized by `error_type`. Use these in preference to HTTP status codes to identify and handle specific errors. HTTP status codes are set and provide the broadest categorization of errors: 4xx codes are for developer- or user-related errors, and 5xx codes are for Plaid-related errors, and the status will be 2xx in non-error cases. An Item with a non-`null` error object will only be part of an API response when calling `/item/get` to view Item status. Otherwise, error fields will be `null` if no error has occurred; if an error has occurred, an error code will be returned instead.&quot;</summary>
+        /// <summary>Errors are identified by `error_code` and categorized by `error_type`. Use these in preference to HTTP status codes to identify and handle specific errors. HTTP status codes are set and provide the broadest categorization of errors: 4xx codes are for developer- or user-related errors, and 5xx codes are for Plaid-related errors, and the status will be 2xx in non-error cases. An Item with a non-`null` error object will only be part of an API response when calling `/item/get` to view Item status. Otherwise, error fields will be `null` if no error has occurred; if an error has occurred, an error code will be returned instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.PlaidError? Error { get; set; }
@@ -81,7 +81,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Iban { get; set; }
 #endif
-        /// <summary>The date and time of the last time the `status` was updated, in IS0 8601 format</summary>
+        /// <summary>The date and time of the last time the `status` was updated, in ISO 8601 format</summary>
         public DateTimeOffset? LastStatusUpdate { get; set; }
         /// <summary>The ID of the payment. Like all Plaid identifiers, the `payment_id` is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,9 +139,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentScheduleGet Schedule { get; set; }
 #endif
-        /// <summary>&quot;Payment scheme. If not specified - the default in the region will be used (e.g. `SEPA_CREDIT_TRANSFER` for EU). In responses, if the scheme is not explicitly specified in the request, this value will be `null`. Using unsupported values will result in a failed payment.`LOCAL_DEFAULT`: The default payment scheme for the selected market and currency will be used.`LOCAL_INSTANT`: The instant payment scheme for the selected market and currency will be used (if applicable). Fees may be applied by the institution.`SEPA_CREDIT_TRANSFER`: The standard payment to a beneficiary within the SEPA area.`SEPA_CREDIT_TRANSFER_INSTANT`: Instant payment within the SEPA area. May involve additional fees and may not be available at some banks.&quot;</summary>
+        /// <summary>Payment scheme. If not specified - the default in the region will be used (e.g. `SEPA_CREDIT_TRANSFER` for EU). In responses, if the scheme is not explicitly specified in the request, this field is omitted. Using unsupported values will result in a failed payment.`LOCAL_DEFAULT`: The default payment scheme for the selected market and currency will be used.`LOCAL_INSTANT`: The instant payment scheme for the selected market and currency will be used (if applicable). Fees may be applied by the institution.`SEPA_CREDIT_TRANSFER`: The standard payment to a beneficiary within the SEPA area.`SEPA_CREDIT_TRANSFER_INSTANT`: Instant payment within the SEPA area. May involve additional fees and may not be available at some banks.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme? Scheme { get; set; }
-        /// <summary>&quot;The status of the payment.Core lifecycle statuses:**`PAYMENT_STATUS_INPUT_NEEDED`**: Transitional. The payment is awaiting user input to continue processing. It may re-enter this state if additional input is required.**`PAYMENT_STATUS_AUTHORISING`:** Transitional. The payment is being authorised by the financial institution. It will automatically move on once authorisation completes.**`PAYMENT_STATUS_INITIATED`:** The payment has been authorised and accepted by the financial institution. In many EU markets, `PAYMENT_STATUS_EXECUTED` is not supported, and a payment will remain in `PAYMENT_STATUS_INITIATED` until the funds settle, making this a terminal success state in those cases. A payment in `PAYMENT_STATUS_INITIATED` should be treated as a successfully submitted payment; do not gate downstream processing on reaching `PAYMENT_STATUS_EXECUTED`. For a full explanation of payment statuses and how to handle each, see the [Payment Status guide](https://plaid.com/docs/payment-initiation/payment-status/).**`PAYMENT_STATUS_EXECUTED`: Terminal.** The funds have left the payer’s account and the payment is en route to settlement. Note that this status does not confirm that funds have arrived in the recipient’s account; do not use it as proof of fund receipt. Support is more common in the UK than in the EU; where unsupported, a successful payment remains in `PAYMENT_STATUS_INITIATED` before settling. When using Plaid Virtual Accounts, `PAYMENT_STATUS_EXECUTED` is not terminal—the payment will continue to `PAYMENT_STATUS_SETTLED` once funds are available.**`PAYMENT_STATUS_SETTLED`: Terminal.** The funds are available in the recipient’s account. Only available to customers using [Plaid Virtual Accounts](https://plaid.com/docs/payment-initiation/virtual-accounts/).Failure statuses:**`PAYMENT_STATUS_INSUFFICIENT_FUNDS`: Terminal.** The payment failed due to insufficient funds. No further retries will succeed until the payer’s balance is replenished.**`PAYMENT_STATUS_FAILED`: Terminal (retryable).** The payment could not be initiated due to a system error or outage. Retry once the root cause is resolved.**`PAYMENT_STATUS_BLOCKED`: Terminal (retryable).** The payment was blocked by Plaid (e.g., flagged as risky). Resolve any compliance or risk issues and retry.**`PAYMENT_STATUS_REJECTED`: Terminal.** The payment was rejected by the financial institution. No automatic retry is possible.**`PAYMENT_STATUS_CANCELLED`: Terminal.** The end user cancelled the payment during authorisation.Standing-order statuses:**`PAYMENT_STATUS_ESTABLISHED`: Terminal.** A recurring/standing order has been successfully created.Deprecated (to be removed in a future release):`PAYMENT_STATUS_UNKNOWN`: The payment status is unknown.`PAYMENT_STATUS_PROCESSING`: The payment is currently being processed.`PAYMENT_STATUS_COMPLETED`: Indicates that the standing order has been successfully established.&quot;</summary>
+        /// <summary>The status of the payment.Core lifecycle statuses:**`PAYMENT_STATUS_INPUT_NEEDED`**: Transitional. The payment is awaiting user input to continue processing. It may re-enter this state if additional input is required.**`PAYMENT_STATUS_AUTHORISING`:** Transitional. The payment is being authorised by the financial institution. It will automatically move on once authorisation completes.**`PAYMENT_STATUS_INITIATED`:** The payment has been authorised and accepted by the financial institution. In many EU markets, `PAYMENT_STATUS_EXECUTED` is not supported, and a payment will remain in `PAYMENT_STATUS_INITIATED` until the funds settle, making this a terminal success state in those cases. A payment in `PAYMENT_STATUS_INITIATED` should be treated as a successfully submitted payment; do not gate downstream processing on reaching `PAYMENT_STATUS_EXECUTED`. For a full explanation of payment statuses and how to handle each, see the [Payment Status guide](https://plaid.com/docs/payment-initiation/payment-status/).**`PAYMENT_STATUS_EXECUTED`: Terminal.** The funds have left the payer&apos;s account and the payment is en route to settlement. Note that this status does not confirm that funds have arrived in the recipient&apos;s account; do not use it as proof of fund receipt. Support is more common in the UK than in the EU; where unsupported, a successful payment remains in `PAYMENT_STATUS_INITIATED` before settling. When using Plaid Virtual Accounts, `PAYMENT_STATUS_EXECUTED` is not terminal -- the payment will continue to `PAYMENT_STATUS_SETTLED` once funds are available.**`PAYMENT_STATUS_SETTLED`: Terminal.** The funds are available in the recipient&apos;s account. Only available to customers using [Plaid Virtual Accounts](https://plaid.com/docs/payment-initiation/virtual-accounts/).Failure statuses:**`PAYMENT_STATUS_INSUFFICIENT_FUNDS`: Terminal.** The payment failed due to insufficient funds. No further retries will succeed until the payer&apos;s balance is replenished.**`PAYMENT_STATUS_FAILED`: Terminal (retryable).** The payment could not be initiated due to a system error or outage. Retry once the root cause is resolved.**`PAYMENT_STATUS_BLOCKED`: Terminal (retryable).** The payment was blocked by Plaid (e.g., flagged as risky). Resolve any compliance or risk issues and retry.**`PAYMENT_STATUS_REJECTED`: Terminal.** The payment was rejected by the financial institution. No automatic retry is possible.**`PAYMENT_STATUS_CANCELLED`: Terminal.** The end user cancelled the payment during authorisation.Standing-order statuses:**`PAYMENT_STATUS_ESTABLISHED`: Terminal.** A recurring/standing order has been successfully created.Deprecated (to be removed in a future release):`PAYMENT_STATUS_UNKNOWN`: The payment status is unknown.`PAYMENT_STATUS_PROCESSING`: The payment is currently being processed.`PAYMENT_STATUS_COMPLETED`: Indicates that the standing order has been successfully established.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationPaymentStatus? Status { get; set; }
         /// <summary>The transaction ID that this payment is associated with, if any. This is present only when a payment was initiated using virtual accounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -188,7 +188,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "adjusted_scheme", n => { AdjustedScheme = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme>(); } },
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentAmount>(global::Soenneker.Plaid.OpenApiClient.Models.PaymentAmount.CreateFromDiscriminatorValue); } },
                 { "amount_refunded", n => { AmountRefunded = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentAmountRefunded>(global::Soenneker.Plaid.OpenApiClient.Models.PaymentAmountRefunded.CreateFromDiscriminatorValue); } },
-                { "bacs", n => { Bacs = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.SenderBACSNullable>(global::Soenneker.Plaid.OpenApiClient.Models.SenderBACSNullable.CreateFromDiscriminatorValue); } },
+                { "bacs", n => { Bacs = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.SenderBacsNullable>(global::Soenneker.Plaid.OpenApiClient.Models.SenderBacsNullable.CreateFromDiscriminatorValue); } },
                 { "consent_id", n => { ConsentId = n.GetStringValue(); } },
                 { "end_to_end_id", n => { EndToEndId = n.GetStringValue(); } },
                 { "error", n => { Error = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PlaidError>(global::Soenneker.Plaid.OpenApiClient.Models.PlaidError.CreateFromDiscriminatorValue); } },
@@ -218,7 +218,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme>("adjusted_scheme", AdjustedScheme);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentAmount>("amount", Amount);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentAmountRefunded>("amount_refunded", AmountRefunded);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.SenderBACSNullable>("bacs", Bacs);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.SenderBacsNullable>("bacs", Bacs);
             writer.WriteStringValue("consent_id", ConsentId);
             writer.WriteStringValue("end_to_end_id", EndToEndId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PlaidError>("error", Error);

@@ -52,7 +52,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string SecurityId { get; set; }
 #endif
-        /// <summary>The unofficial currency code associated with the holding. Always `null` if `iso_currency_code` is non-`null`. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `iso_currency_code`s.</summary>
+        /// <summary>Per-lot acquisition data for this holding. An empty array indicates the institution does not provide lot-level data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLot>? TaxLots { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLot> TaxLots { get; set; }
+#endif
+        /// <summary>The unofficial currency code associated with the holding. Always `null` if `iso_currency_code` is non-`null`. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `unofficial_currency_code`s.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UnofficialCurrencyCode { get; set; }
@@ -98,6 +106,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "iso_currency_code", n => { IsoCurrencyCode = n.GetStringValue(); } },
                 { "quantity", n => { Quantity = n.GetDoubleValue(); } },
                 { "security_id", n => { SecurityId = n.GetStringValue(); } },
+                { "tax_lots", n => { TaxLots = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLot>(global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLot.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "unofficial_currency_code", n => { UnofficialCurrencyCode = n.GetStringValue(); } },
                 { "vested_quantity", n => { VestedQuantity = n.GetDoubleValue(); } },
                 { "vested_value", n => { VestedValue = n.GetDoubleValue(); } },
@@ -119,6 +128,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("iso_currency_code", IsoCurrencyCode);
             writer.WriteDoubleValue("quantity", Quantity);
             writer.WriteStringValue("security_id", SecurityId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLot>("tax_lots", TaxLots);
             writer.WriteStringValue("unofficial_currency_code", UnofficialCurrencyCode);
             writer.WriteDoubleValue("vested_quantity", VestedQuantity);
             writer.WriteDoubleValue("vested_value", VestedValue);

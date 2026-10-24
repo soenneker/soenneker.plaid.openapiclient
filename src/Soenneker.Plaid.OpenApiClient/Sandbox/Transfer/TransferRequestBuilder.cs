@@ -5,7 +5,6 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Plaid.OpenApiClient.Sandbox.Transfer.Fire_webhook;
 using Soenneker.Plaid.OpenApiClient.Sandbox.Transfer.Ledger;
 using Soenneker.Plaid.OpenApiClient.Sandbox.Transfer.Refund;
-using Soenneker.Plaid.OpenApiClient.Sandbox.Transfer.Repayment;
 using Soenneker.Plaid.OpenApiClient.Sandbox.Transfer.Simulate;
 using Soenneker.Plaid.OpenApiClient.Sandbox.Transfer.Sweep;
 using Soenneker.Plaid.OpenApiClient.Sandbox.Transfer.Test_clock;
@@ -35,11 +34,6 @@ namespace Soenneker.Plaid.OpenApiClient.Sandbox.Transfer
         public global::Soenneker.Plaid.OpenApiClient.Sandbox.Transfer.Refund.RefundRequestBuilder Refund
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Sandbox.Transfer.Refund.RefundRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The repayment property</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Sandbox.Transfer.Repayment.RepaymentRequestBuilder Repayment
-        {
-            get => new global::Soenneker.Plaid.OpenApiClient.Sandbox.Transfer.Repayment.RepaymentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The simulate property</summary>
         public global::Soenneker.Plaid.OpenApiClient.Sandbox.Transfer.Simulate.SimulateRequestBuilder Simulate

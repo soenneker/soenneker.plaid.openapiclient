@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Payment_initiation.Recipient.List
         {
         }
         /// <summary>
-        /// The `/payment_initiation/recipient/list` endpoint list the payment recipients that you have previously created.
+        /// The `/payment_initiation/recipient/list` endpoint lists the payment recipients that you have previously created.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationRecipientListResponse"/></returns>
         /// <param name="body">PaymentInitiationRecipientListRequest defines the request schema for `/payment_initiation/recipient/list`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Payment_initiation.Recipient.List
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationRecipientListResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationRecipientListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The `/payment_initiation/recipient/list` endpoint list the payment recipients that you have previously created.
+        /// The `/payment_initiation/recipient/list` endpoint lists the payment recipients that you have previously created.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">PaymentInitiationRecipientListRequest defines the request schema for `/payment_initiation/recipient/list`</param>

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>A match summary describing the cross comparison between the subject&apos;s name, extracted from the document image, and the name they separately provided to identity verification attempt.</summary>
+    /// <summary>A match summary describing the cross comparison between the subject&apos;s name, extracted from the document image, and the name they separately provided to the identity verification attempt.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum DocumentNameMatchCode
     {
@@ -13,15 +13,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "partial_match")]
         #pragma warning disable CS1591
-        Partial_match,
+        PartialMatch,
         #pragma warning restore CS1591
         [EnumMember(Value = "no_match")]
         #pragma warning disable CS1591
-        No_match,
+        NoMatch,
         #pragma warning restore CS1591
         [EnumMember(Value = "no_data")]
         #pragma warning disable CS1591
-        No_data,
+        NoData,
         #pragma warning restore CS1591
     }
 }

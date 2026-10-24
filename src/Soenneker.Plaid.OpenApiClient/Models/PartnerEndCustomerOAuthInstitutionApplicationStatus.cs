@@ -9,23 +9,23 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "NOT_STARTED")]
         #pragma warning disable CS1591
-        NOT_STARTED,
+        NotStarted,
         #pragma warning restore CS1591
         [EnumMember(Value = "PROCESSING")]
         #pragma warning disable CS1591
-        PROCESSING,
+        Processing,
         #pragma warning restore CS1591
         [EnumMember(Value = "APPROVED")]
         #pragma warning disable CS1591
-        APPROVED,
+        Approved,
         #pragma warning restore CS1591
         [EnumMember(Value = "ENABLED")]
         #pragma warning disable CS1591
-        ENABLED,
+        Enabled,
         #pragma warning restore CS1591
         [EnumMember(Value = "ATTENTION_REQUIRED")]
         #pragma warning disable CS1591
-        ATTENTION_REQUIRED,
+        AttentionRequired,
         #pragma warning restore CS1591
     }
 }

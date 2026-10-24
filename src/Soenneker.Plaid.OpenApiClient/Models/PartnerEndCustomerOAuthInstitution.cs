@@ -15,7 +15,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The date on which non-OAuth Item adds will no longer be supported for this institution, or an empty string if no such date has been set by the institution.</summary>
+        /// <summary>The date on which non-OAuth Item adds will no longer be supported for this institution, or `null` if no such date has been set by the institution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClassicDisablementDate { get; set; }
@@ -55,7 +55,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The date on which the end customer&apos;s application was approved by the institution, or an empty string if their application has not yet been approved.</summary>
+        /// <summary>The date on which the end customer&apos;s application was approved by the institution, or `null` if their application has not yet been approved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProductionEnablementDate { get; set; }

@@ -68,7 +68,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>For pending transactions, the date that the transaction occurred; for posted transactions, the date that the transaction posted. Both dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ( `YYYY-MM-DD` ).</summary>
         public Date? Date { get; set; }
-        /// <summary>The date on which the transaction took place, in IS0 8601 format.</summary>
+        /// <summary>The date on which the transaction took place, in ISO 8601 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DateTransacted { get; set; }
@@ -100,7 +100,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string MerchantName { get; set; }
 #endif
-        /// <summary>&quot;The merchant name or transaction description.Note: This is a legacy field that is not actively maintained. Use `merchant_name` instead for the merchant name.&quot;</summary>
+        /// <summary>The merchant name or transaction description.Note: This is a legacy field that is not actively maintained. Use `merchant_name` instead for the merchant name.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -119,13 +119,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>When `true`, identifies the transaction as pending or unsettled. Pending transaction details (name, type, amount, category ID) may change before they are settled.</summary>
         public bool? Pending { get; set; }
-        /// <summary>The personal_finance_category property</summary>
+        /// <summary>Information describing the intent of the transaction. Most relevant for personal finance use cases, but not limited to such use cases.See the [taxonomy CSV file](https://plaid.com/documents/pfc-taxonomy-all.csv) for a full list of personal finance categories. If you are migrating to personal finance categories from the legacy categories, also refer to the [migration guide](https://plaid.com/docs/transactions/pfc-migration/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransaction_personal_finance_category? PersonalFinanceCategory { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransactionPersonalFinanceCategory? PersonalFinanceCategory { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransaction_personal_finance_category PersonalFinanceCategory { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransactionPersonalFinanceCategory PersonalFinanceCategory { get; set; }
 #endif
         /// <summary>The unique ID of the transaction. Like all Plaid identifiers, the `transaction_id` is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -185,7 +185,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "original_description", n => { OriginalDescription = n.GetStringValue(); } },
                 { "pending", n => { Pending = n.GetBoolValue(); } },
-                { "personal_finance_category", n => { PersonalFinanceCategory = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransaction_personal_finance_category>(global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransaction_personal_finance_category.CreateFromDiscriminatorValue); } },
+                { "personal_finance_category", n => { PersonalFinanceCategory = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransactionPersonalFinanceCategory>(global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransactionPersonalFinanceCategory.CreateFromDiscriminatorValue); } },
                 { "transaction_id", n => { TransactionId = n.GetStringValue(); } },
                 { "transaction_type", n => { TransactionType = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransactionType>(); } },
                 { "unofficial_currency_code", n => { UnofficialCurrencyCode = n.GetStringValue(); } },
@@ -213,7 +213,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("original_description", OriginalDescription);
             writer.WriteBoolValue("pending", Pending);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransaction_personal_finance_category>("personal_finance_category", PersonalFinanceCategory);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransactionPersonalFinanceCategory>("personal_finance_category", PersonalFinanceCategory);
             writer.WriteStringValue("transaction_id", TransactionId);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransactionType>("transaction_type", TransactionType);
             writer.WriteStringValue("unofficial_currency_code", UnofficialCurrencyCode);

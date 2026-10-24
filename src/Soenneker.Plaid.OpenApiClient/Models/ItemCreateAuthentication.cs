@@ -9,15 +9,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "UNKNOWN")]
         #pragma warning disable CS1591
-        UNKNOWN,
+        Unknown,
         #pragma warning restore CS1591
         [EnumMember(Value = "DATA_PARTNER")]
         #pragma warning disable CS1591
-        DATA_PARTNER,
+        DataPartner,
         #pragma warning restore CS1591
         [EnumMember(Value = "PLAID")]
         #pragma warning disable CS1591
-        PLAID,
+        Plaid,
         #pragma warning restore CS1591
     }
 }

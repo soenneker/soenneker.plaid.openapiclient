@@ -46,10 +46,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Results from the KYB (Know Your Business) identity verification check</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessKYBCheck? KybCheck { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybCheck? KybCheck { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessKYBCheck KybCheck { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybCheck KybCheck { get; set; }
 #endif
         /// <summary>An ISO8601 formatted timestamp.</summary>
         public DateTimeOffset? RedactedAt { get; set; }
@@ -117,7 +117,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "digital_presence_check", n => { DigitalPresenceCheck = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessDigitalPresenceCheck>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessDigitalPresenceCheck.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "kyb_check", n => { KybCheck = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessKYBCheck>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessKYBCheck.CreateFromDiscriminatorValue); } },
+                { "kyb_check", n => { KybCheck = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybCheck>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybCheck.CreateFromDiscriminatorValue); } },
                 { "redacted_at", n => { RedactedAt = n.GetDateTimeOffsetValue(); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
                 { "risk_check", n => { RiskCheck = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessRiskCheck>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessRiskCheck.CreateFromDiscriminatorValue); } },
@@ -138,7 +138,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessDigitalPresenceCheck>("digital_presence_check", DigitalPresenceCheck);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessKYBCheck>("kyb_check", KybCheck);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybCheck>("kyb_check", KybCheck);
             writer.WriteDateTimeOffsetValue("redacted_at", RedactedAt);
             writer.WriteStringValue("request_id", RequestId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessRiskCheck>("risk_check", RiskCheck);

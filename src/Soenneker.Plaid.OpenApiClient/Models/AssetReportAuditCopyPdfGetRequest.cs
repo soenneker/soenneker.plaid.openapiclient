@@ -34,10 +34,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>An optional object to filter or add data to `/asset_report/get` results. If provided, must be non-`null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AssetReportPDFGetRequestOptions? Options { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetReportPdfGetRequestOptions? Options { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AssetReportPDFGetRequestOptions Options { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetReportPdfGetRequestOptions Options { get; set; }
 #endif
         /// <summary>Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,7 +74,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "audit_copy_token", n => { AuditCopyToken = n.GetStringValue(); } },
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
-                { "options", n => { Options = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportPDFGetRequestOptions>(global::Soenneker.Plaid.OpenApiClient.Models.AssetReportPDFGetRequestOptions.CreateFromDiscriminatorValue); } },
+                { "options", n => { Options = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportPdfGetRequestOptions>(global::Soenneker.Plaid.OpenApiClient.Models.AssetReportPdfGetRequestOptions.CreateFromDiscriminatorValue); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
             };
         }
@@ -87,7 +87,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("audit_copy_token", AuditCopyToken);
             writer.WriteStringValue("client_id", ClientId);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportPDFGetRequestOptions>("options", Options);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportPdfGetRequestOptions>("options", Options);
             writer.WriteStringValue("secret", Secret);
             writer.WriteAdditionalData(AdditionalData);
         }

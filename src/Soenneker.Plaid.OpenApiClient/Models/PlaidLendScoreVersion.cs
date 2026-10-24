@@ -17,7 +17,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "LS1")]
         #pragma warning disable CS1591
-        LS1,
+        Ls1,
         #pragma warning restore CS1591
     }
 }

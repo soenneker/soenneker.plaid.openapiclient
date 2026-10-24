@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// The product access being requested. Used to or disallow product access across all accounts. If unset, defaults to all products allowed.
+    /// The product access being requested. Used to allow or disallow product access across all accounts. If unset, defaults to all products allowed.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProductAccess : IAdditionalDataHolder, IParsable
@@ -39,6 +39,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public ProductAccess()
         {
             AdditionalData = new Dictionary<string, object>();
+            AccountsDetailsTransactions = true;
+            AccountsRoutingNumber = true;
+            AccountsStatements = true;
+            AccountsTaxStatements = true;
+            Auth = true;
+            CustomersProfiles = true;
+            Identity = true;
+            Statements = true;
+            Transactions = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

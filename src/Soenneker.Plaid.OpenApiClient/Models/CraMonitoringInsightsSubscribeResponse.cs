@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// CraMonitoringInsightsSubscribeResponse defines the response schema for `cra/monitoring_insights/subscribe`
+    /// CraMonitoringInsightsSubscribeResponse defines the response schema for `/cra/monitoring_insights/subscribe`
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraMonitoringInsightsSubscribeResponse : IAdditionalDataHolder, IParsable

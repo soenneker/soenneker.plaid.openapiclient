@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Total amount of debit transactions into the report&apos;s accounts in the time period of the report. This field only takes into account USD transactions from the accounts.
+    /// Total amount of money into the report&apos;s accounts in the time period of the report. This field only takes into account USD transactions from the accounts.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TotalReportInflowAmount : IAdditionalDataHolder, IParsable

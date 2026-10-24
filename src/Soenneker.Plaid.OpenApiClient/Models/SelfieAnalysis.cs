@@ -15,6 +15,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Age-estimation results from the selfie capture. This field is `null` when an age range could not be estimated from the selfie capture.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAgeCheck? AgeCheck { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAgeCheck AgeCheck { get; set; }
+#endif
         /// <summary>Information about the comparison between the selfie and the document (if documentary verification also ran).</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisDocumentComparison? DocumentComparison { get; set; }
         /// <summary>Analysis of the facial features of the selfie when compared to the face in the uploaded document, if one is present.</summary>
@@ -52,6 +60,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "age_check", n => { AgeCheck = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.SelfieAgeCheck>(global::Soenneker.Plaid.OpenApiClient.Models.SelfieAgeCheck.CreateFromDiscriminatorValue); } },
                 { "document_comparison", n => { DocumentComparison = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisDocumentComparison>(); } },
                 { "facial_analysis", n => { FacialAnalysis = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysis>(global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysis.CreateFromDiscriminatorValue); } },
                 { "liveness_check", n => { LivenessCheck = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisLivenessCheck>(); } },
@@ -64,6 +73,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.SelfieAgeCheck>("age_check", AgeCheck);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisDocumentComparison>("document_comparison", DocumentComparison);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysis>("facial_analysis", FacialAnalysis);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisLivenessCheck>("liveness_check", LivenessCheck);

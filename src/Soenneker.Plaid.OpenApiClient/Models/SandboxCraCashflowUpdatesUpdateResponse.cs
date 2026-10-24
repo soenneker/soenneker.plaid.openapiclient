@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// SandboxCraCashflowUpdatesUpdateResponse defines the response schema for `sandbox/cashflow_updates/update`
+    /// SandboxCraCashflowUpdatesUpdateResponse defines the response schema for `/sandbox/cra/cashflow_updates/update`
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SandboxCraCashflowUpdatesUpdateResponse : IAdditionalDataHolder, IParsable

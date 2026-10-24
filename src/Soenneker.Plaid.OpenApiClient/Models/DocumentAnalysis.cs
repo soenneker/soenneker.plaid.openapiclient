@@ -13,13 +13,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DocumentAnalysis : IAdditionalDataHolder, IParsable
     {
-        /// <summary>&quot;Analyzed AAMVA data for the associated hit.Note: This field is only available for U.S. driver&apos;s licenses issued by participating states.&quot;</summary>
+        /// <summary>Analyzed AAMVA data for the associated hit.Note: This field is only available for U.S. driver&apos;s licenses issued by participating states.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AAMVAAnalysis? AamvaVerification { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaAnalysis? AamvaVerification { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AAMVAAnalysis AamvaVerification { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaAnalysis AamvaVerification { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.HumanReview HumanReview { get; set; }
 #endif
-        /// <summary>&quot;A high level description of the quality of the image the user submitted.For example, an image that is blurry, distorted by glare from a nearby light source, or improperly framed might be marked as low or medium quality. Poor quality images are more likely to fail OCR and/or template conformity checks.Note: By default, Plaid will let a user recapture document images twice before failing the entire session if we attribute the failure to low image quality.&quot;</summary>
+        /// <summary>A high level description of the quality of the image the user submitted.For example, an image that is blurry, distorted by glare from a nearby light source, or improperly framed might be marked as low or medium quality. Poor quality images are more likely to fail OCR and/or template conformity checks.Note: By default, Plaid will let a user recapture document images twice before failing the entire session if we attribute the failure to low image quality.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.ImageQuality? ImageQuality { get; set; }
         /// <summary>Details about the image quality of the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,7 +84,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "aamva_verification", n => { AamvaVerification = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AAMVAAnalysis>(global::Soenneker.Plaid.OpenApiClient.Models.AAMVAAnalysis.CreateFromDiscriminatorValue); } },
+                { "aamva_verification", n => { AamvaVerification = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AamvaAnalysis>(global::Soenneker.Plaid.OpenApiClient.Models.AamvaAnalysis.CreateFromDiscriminatorValue); } },
                 { "authenticity", n => { Authenticity = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.DocumentAuthenticityMatchCode>(); } },
                 { "extracted_data", n => { ExtractedData = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PhysicalDocumentExtractedDataAnalysis>(global::Soenneker.Plaid.OpenApiClient.Models.PhysicalDocumentExtractedDataAnalysis.CreateFromDiscriminatorValue); } },
                 { "fraud_analysis_details", n => { FraudAnalysisDetails = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetails>(global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetails.CreateFromDiscriminatorValue); } },
@@ -100,7 +100,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AAMVAAnalysis>("aamva_verification", AamvaVerification);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AamvaAnalysis>("aamva_verification", AamvaVerification);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.DocumentAuthenticityMatchCode>("authenticity", Authenticity);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PhysicalDocumentExtractedDataAnalysis>("extracted_data", ExtractedData);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetails>("fraud_analysis_details", FraudAnalysisDetails);

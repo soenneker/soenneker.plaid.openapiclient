@@ -19,6 +19,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning disable CS1591
         Commercial,
         #pragma warning restore CS1591
+        [EnumMember(Value = "commercial line of credit")]
+        #pragma warning disable CS1591
+        CommercialLineOfCredit,
+        #pragma warning restore CS1591
         [EnumMember(Value = "construction")]
         #pragma warning disable CS1591
         Construction,
@@ -30,6 +34,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         [EnumMember(Value = "home equity")]
         #pragma warning disable CS1591
         HomeEquity,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "home equity loan")]
+        #pragma warning disable CS1591
+        HomeEquityLoan,
         #pragma warning restore CS1591
         [EnumMember(Value = "loan")]
         #pragma warning disable CS1591

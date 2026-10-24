@@ -18,10 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Defines configuration options for the Employment Refresh Report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportVerificationGetEmploymentRefreshOptions? EmploymentRefreshOptions { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateEmploymentRefreshOptions? EmploymentRefreshOptions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportVerificationGetEmploymentRefreshOptions EmploymentRefreshOptions { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateEmploymentRefreshOptions EmploymentRefreshOptions { get; set; }
 #endif
         /// <summary>Specifies which types of home lending reports to generate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "employment_refresh_options", n => { EmploymentRefreshOptions = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportVerificationGetEmploymentRefreshOptions>(global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportVerificationGetEmploymentRefreshOptions.CreateFromDiscriminatorValue); } },
+                { "employment_refresh_options", n => { EmploymentRefreshOptions = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateEmploymentRefreshOptions>(global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateEmploymentRefreshOptions.CreateFromDiscriminatorValue); } },
                 { "reports_requested", n => { ReportsRequested = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportVerificationGetReportType>()?.AsList(); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportVerificationGetEmploymentRefreshOptions>("employment_refresh_options", EmploymentRefreshOptions);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateEmploymentRefreshOptions>("employment_refresh_options", EmploymentRefreshOptions);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportVerificationGetReportType>("reports_requested", ReportsRequested);
             writer.WriteAdditionalData(AdditionalData);
         }

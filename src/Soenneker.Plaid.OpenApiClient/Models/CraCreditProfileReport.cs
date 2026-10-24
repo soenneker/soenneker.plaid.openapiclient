@@ -15,13 +15,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A map of cash flow attributes, where the key is a string, and the value is a float, int, or boolean. The specific list of attributes will depend on the cash flow attributes version used. For a full list of attributes, contact your account manager.</summary>
+        /// <summary>A map of cash flow attributes, where the key is a string, and the value is a string, float, int, or boolean. The specific list of attributes will depend on the cash flow attributes version used. For a full list of all ~2,000 attributes, contact your account manager.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileCashflowAttributesSchema? CashflowInsightsAttributes { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileReportCashflowInsightsAttributes? CashflowInsightsAttributes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileCashflowAttributesSchema CashflowInsightsAttributes { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileReportCashflowInsightsAttributes CashflowInsightsAttributes { get; set; }
 #endif
         /// <summary>Client-generated identifier, which can be used by lenders to track loan applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,10 +54,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>A map of network attributes, where the key is a string, and the value is a float, int, or boolean. For a full list of attributes, contact your account manager.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileNetworkInsightsSchema? NetworkInsightsAttributes { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileReportNetworkInsightsAttributes? NetworkInsightsAttributes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileNetworkInsightsSchema NetworkInsightsAttributes { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileReportNetworkInsightsAttributes NetworkInsightsAttributes { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileReport"/> and sets the default values.
@@ -84,13 +84,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cashflow_insights_attributes", n => { CashflowInsightsAttributes = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileCashflowAttributesSchema>(global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileCashflowAttributesSchema.CreateFromDiscriminatorValue); } },
+                { "cashflow_insights_attributes", n => { CashflowInsightsAttributes = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileReportCashflowInsightsAttributes>(global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileReportCashflowInsightsAttributes.CreateFromDiscriminatorValue); } },
                 { "client_report_id", n => { ClientReportId = n.GetStringValue(); } },
                 { "date_retrieved", n => { DateRetrieved = n.GetDateTimeOffsetValue(); } },
                 { "inquiry_type", n => { InquiryType = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileInquiryType>(); } },
                 { "lend_scores", n => { LendScores = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileLendScore>(global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileLendScore.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileReportMetadata>(global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileReportMetadata.CreateFromDiscriminatorValue); } },
-                { "network_insights_attributes", n => { NetworkInsightsAttributes = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileNetworkInsightsSchema>(global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileNetworkInsightsSchema.CreateFromDiscriminatorValue); } },
+                { "network_insights_attributes", n => { NetworkInsightsAttributes = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileReportNetworkInsightsAttributes>(global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileReportNetworkInsightsAttributes.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -100,13 +100,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileCashflowAttributesSchema>("cashflow_insights_attributes", CashflowInsightsAttributes);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileReportCashflowInsightsAttributes>("cashflow_insights_attributes", CashflowInsightsAttributes);
             writer.WriteStringValue("client_report_id", ClientReportId);
             writer.WriteDateTimeOffsetValue("date_retrieved", DateRetrieved);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileInquiryType>("inquiry_type", InquiryType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileLendScore>("lend_scores", LendScores);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileReportMetadata>("metadata", Metadata);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileNetworkInsightsSchema>("network_insights_attributes", NetworkInsightsAttributes);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCreditProfileReportNetworkInsightsAttributes>("network_insights_attributes", NetworkInsightsAttributes);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

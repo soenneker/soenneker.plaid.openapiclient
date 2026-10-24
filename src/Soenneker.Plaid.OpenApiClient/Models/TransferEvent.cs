@@ -23,11 +23,19 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Plaid’s unique identifier for this event. IDs are sequential unsigned 64-bit integers.</summary>
+        /// <summary>A signed amount associated with this event (decimal string with two digits of precision e.g. &quot;10.00&quot; or &quot;-10.00&quot;).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EventAmount { get; set; }
+#nullable restore
+#else
+        public string EventAmount { get; set; }
+#endif
+        /// <summary>Plaid&apos;s unique identifier for this event. IDs are sequential unsigned 64-bit integers.</summary>
         public int? EventId { get; set; }
-        /// <summary>&quot;The type of event that this transfer represents. Event types with prefix `sweep` represents events for Plaid Ledger sweeps.`pending`: A new transfer was created; it is in the pending state.`cancelled`: The transfer was cancelled by the client.`failed`: The transfer failed, no funds were moved.`posted`: The transfer has been successfully submitted to the payment network.`settled`: The transfer has been successfully completed by the payment network.`funds_available`: Funds from the transfer have been released from hold and applied to the ledger&apos;s available balance. (Only applicable to ACH debits.)`returned`: A posted transfer was returned.`swept`: The transfer was swept to / from the sweep account.`swept_settled`: Credits are available to be withdrawn or debits have been deducted from the customer’s business checking account.`return_swept`: Due to the transfer being returned, funds were pulled from or pushed back to the sweep account.`sweep.pending`: A new ledger sweep was created; it is in the pending state.`sweep.posted`: The ledger sweep has been successfully submitted to the payment network.`sweep.settled`: The transaction has settled in the funding account. This means that funds withdrawn from Plaid Ledger balance have reached the funding account, or funds to be deposited into the Plaid Ledger Balance have been pulled, and the hold period has begun.`sweep.returned`: A posted ledger sweep was returned.`sweep.failed`: The ledger sweep failed, no funds were moved.`sweep.funds_available`: Funds from the ledger sweep have been released from hold and applied to the ledger&apos;s available balance. This is only applicable to debits.`refund.pending`: A new refund was created; it is in the pending state.`refund.cancelled`: The refund was cancelled.`refund.failed`: The refund failed, no funds were moved.`refund.posted`: The refund has been successfully submitted to the payment network.`refund.settled`: The refund transaction has settled in the Plaid linked account.`refund.returned`: A posted refund was returned.`refund.swept`: The refund was swept from the sweep account.`refund.return_swept`: Due to the refund being returned, funds were pushed back to the sweep account.&quot;</summary>
+        /// <summary>The type of event that this transfer represents. Event types with prefix `sweep` represent events for Plaid Ledger sweeps.`pending`: A new transfer was created; it is in the pending state.`cancelled`: The transfer was cancelled by the client.`failed`: The transfer failed, no funds were moved.`posted`: The transfer has been successfully submitted to the payment network.`settled`: The transfer has been successfully completed by the payment network.`funds_available`: Funds from the transfer have been released from hold and applied to the ledger&apos;s available balance. (Only applicable to ACH debits.)`guaranteed`: The transfer has been fully guaranteed by Plaid.`returned`: A posted transfer was returned.`adjustment`: An adjustment was made to the transfer due to rare activity, such as a dishonor. Refer to `event_amount` for the amount adjusted: a positive amount means funds are credited to the ledger, and a negative amount means funds are debited from the ledger. `failure_reason.description` describes the reason for the adjustment.`guarantee_reimbursed`: Plaid reimbursed the client for the loss on a returned guaranteed transfer. The `event_amount` is the reimbursed amount.`client_return_recovered`: The client reported recovering the loss on a returned transfer, and Plaid debited the recovered amount from the client&apos;s ledger. The `event_amount` is the recovered amount.`plaid_return_recovered`: Plaid recovered the loss on a returned transfer by successfully reinitiating it. The `event_amount` is the recovered amount. Client should stop their return recovery effort.`swept`: The transfer was swept to / from the sweep account.`swept_settled`: Credits are available to be withdrawn or debits have been deducted from the customer&apos;s business checking account.`return_swept`: Due to the transfer being returned, funds were pulled from or pushed back to the sweep account.`sweep.pending`: A new ledger sweep was created; it is in the pending state.`sweep.posted`: The ledger sweep has been successfully submitted to the payment network.`sweep.settled`: The transaction has settled in the funding account. This means that funds withdrawn from Plaid Ledger balance have reached the funding account, or funds to be deposited into the Plaid Ledger Balance have been pulled, and the hold period has begun.`sweep.returned`: A posted ledger sweep was returned.`sweep.failed`: The ledger sweep failed, no funds were moved.`sweep.funds_available`: Funds from the ledger sweep have been released from hold and applied to the ledger&apos;s available balance. This is only applicable to debits.`refund.pending`: A new refund was created; it is in the pending state.`refund.cancelled`: The refund was cancelled.`refund.failed`: The refund failed, no funds were moved.`refund.posted`: The refund has been successfully submitted to the payment network.`refund.settled`: The refund transaction has settled in the Plaid linked account.`refund.returned`: A posted refund was returned.`refund.swept`: The refund was swept from the sweep account.`refund.return_swept`: Due to the refund being returned, funds were pushed back to the sweep account.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferEventType? EventType { get; set; }
-        /// <summary>The failure reason if the event type for a transfer is `&quot;failed&quot;` or `&quot;returned&quot;`. Null value otherwise.</summary>
+        /// <summary>The failure reason if the event type for a transfer is `&quot;failed&quot;` or `&quot;returned&quot;`, or the adjustment reason if the event type is `&quot;adjustment&quot;`. Null value otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferFailure? FailureReason { get; set; }
@@ -43,7 +51,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string FundingAccountId { get; set; }
 #endif
-        /// <summary>The `id` returned by the /transfer/intent/create endpoint, for transfers created via Transfer UI. For transfers not created by Transfer UI, the value is `null`. This will currently only be populated for RfP transfers.</summary>
+        /// <summary>The `id` returned by the `/transfer/intent/create` endpoint, for transfers created via Transfer UI. For transfers not created by Transfer UI, this field is omitted. This will currently only be populated for RfP transfers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IntentId { get; set; }
@@ -51,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string IntentId { get; set; }
 #endif
-        /// <summary>Plaid’s unique identifier for a Plaid Ledger Balance.</summary>
+        /// <summary>Plaid&apos;s unique identifier for a Plaid Ledger Balance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LedgerId { get; set; }
@@ -76,7 +84,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string OriginatorClientId { get; set; }
 #endif
-        /// <summary>Plaid’s unique identifier for a refund. A non-null value indicates the event is for the associated refund of the transfer.</summary>
+        /// <summary>Plaid&apos;s unique identifier for a refund. A non-null value indicates the event is for the associated refund of the transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RefundId { get; set; }
@@ -92,7 +100,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string SweepAmount { get; set; }
 #endif
-        /// <summary>Plaid’s unique identifier for a sweep.</summary>
+        /// <summary>Plaid&apos;s unique identifier for a sweep.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SweepId { get; set; }
@@ -154,6 +162,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
+                { "event_amount", n => { EventAmount = n.GetStringValue(); } },
                 { "event_id", n => { EventId = n.GetIntValue(); } },
                 { "event_type", n => { EventType = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferEventType>(); } },
                 { "failure_reason", n => { FailureReason = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferFailure>(global::Soenneker.Plaid.OpenApiClient.Models.TransferFailure.CreateFromDiscriminatorValue); } },
@@ -180,6 +189,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
+            writer.WriteStringValue("event_amount", EventAmount);
             writer.WriteIntValue("event_id", EventId);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferEventType>("event_type", EventType);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferFailure>("failure_reason", FailureReason);

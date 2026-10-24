@@ -9,7 +9,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "ATMFee")]
         #pragma warning disable CS1591
-        ATMFee,
+        AtmFee,
         #pragma warning restore CS1591
         [EnumMember(Value = "Advertising")]
         #pragma warning disable CS1591
@@ -81,7 +81,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "CashATM")]
         #pragma warning disable CS1591
-        CashATM,
+        CashAtm,
         #pragma warning restore CS1591
         [EnumMember(Value = "Charity")]
         #pragma warning disable CS1591
@@ -289,7 +289,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "MoviesDVDs")]
         #pragma warning disable CS1591
-        MoviesDVDs,
+        MoviesDvDs,
         #pragma warning restore CS1591
         [EnumMember(Value = "Music")]
         #pragma warning disable CS1591

@@ -39,6 +39,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string GseReferenceId { get; set; }
 #endif
+        /// <summary>An object representing an Income Report within the Home Lending Report.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeReport? Income { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeReport Income { get; set; }
+#endif
         /// <summary>The unique identifier associated with the Home Lending Report object. This ID will be the same as the Base Report ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,6 +91,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "client_report_id", n => { ClientReportId = n.GetStringValue(); } },
                 { "employment_refresh", n => { EmploymentRefresh = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraEmploymentRefreshReport>(global::Soenneker.Plaid.OpenApiClient.Models.CraEmploymentRefreshReport.CreateFromDiscriminatorValue); } },
                 { "gse_reference_id", n => { GseReferenceId = n.GetStringValue(); } },
+                { "income", n => { Income = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeReport>(global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeReport.CreateFromDiscriminatorValue); } },
                 { "report_id", n => { ReportId = n.GetStringValue(); } },
                 { "voa", n => { Voa = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraVoaReport>(global::Soenneker.Plaid.OpenApiClient.Models.CraVoaReport.CreateFromDiscriminatorValue); } },
             };
@@ -97,6 +106,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("client_report_id", ClientReportId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraEmploymentRefreshReport>("employment_refresh", EmploymentRefresh);
             writer.WriteStringValue("gse_reference_id", GseReferenceId);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeReport>("income", Income);
             writer.WriteStringValue("report_id", ReportId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraVoaReport>("voa", Voa);
             writer.WriteAdditionalData(AdditionalData);

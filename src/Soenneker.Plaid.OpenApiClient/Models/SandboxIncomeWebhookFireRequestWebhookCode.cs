@@ -9,11 +9,19 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "INCOME_VERIFICATION")]
         #pragma warning disable CS1591
-        INCOME_VERIFICATION,
+        IncomeVerification,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "USER_INCOME_VERIFICATION")]
+        #pragma warning disable CS1591
+        UserIncomeVerification,
         #pragma warning restore CS1591
         [EnumMember(Value = "INCOME_VERIFICATION_RISK_SIGNALS")]
         #pragma warning disable CS1591
-        INCOME_VERIFICATION_RISK_SIGNALS,
+        IncomeVerificationRiskSignals,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "USER_INCOME_VERIFICATION_RISK_SIGNALS")]
+        #pragma warning disable CS1591
+        UserIncomeVerificationRiskSignals,
         #pragma warning restore CS1591
     }
 }

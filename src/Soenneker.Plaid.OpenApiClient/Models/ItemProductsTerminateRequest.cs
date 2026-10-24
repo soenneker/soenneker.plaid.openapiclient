@@ -13,7 +13,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ItemProductsTerminateRequest : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The access token associated with the Item data is being requested for.</summary>
+        /// <summary>The access token associated with the Item for which data is being requested.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccessToken { get; set; }
@@ -31,8 +31,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
-        /// <summary>&quot;The reason for terminating products on the Item.`OTHER`: Any other reason for terminating products not covered by the above categories&quot;</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ItemProductsTerminateReasonCode? ReasonCode { get; set; }
+        /// <summary>The reason for terminating products.`FRAUD_FIRST_PARTY`: The end user who owns the connected bank account committed fraud using their real identity`FRAUD_FALSE_IDENTITY`: The connection was created using a false or stolen identity`FRAUD_ABUSE`: The end user is abusing the client&apos;s service or platform (for example, automation or excessive retries) through their connected account`FRAUD_OTHER`: Fraud-related, but not covered by the specific fraud categories above; `reason_note` should clarify`FRAUD_TRANSACTION`: Fraud occurred at the transaction level, such as an unauthorized transaction, card testing, chargeback, ACH return, or dispute`CONSUMER_LOAN_PAID_OFF`: The end user paid off their loan and no longer needs the product`CONSUMER_ACCOUNT_CLOSED`: The end user closed their account with the client and no longer needs the product`CONSUMER_CHARGE_OFF`: The end user&apos;s account has been charged off`CONSUMER_PAYMENT_METHOD_SWITCHED`: The end user switched to a different payment method and no longer needs the product`USER_OFFBOARDING`: The user is offboarding from the client&apos;s service or platform`DUPLICATE_ITEM`: This Item is a duplicate of another active Item for the same user`BILLING_TERMINATION`: The client&apos;s billing or subscription relationship with the end user has ended`OTHER`: None of the above; `reason_note` should clarify</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProductsTerminateReasonCode? ReasonCode { get; set; }
         /// <summary>Additional context or details about the reason for terminating products on the Item. Personally identifiable information, such as an email address or phone number, should not be included in the `reason_note`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,7 +76,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "access_token", n => { AccessToken = n.GetStringValue(); } },
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
-                { "reason_code", n => { ReasonCode = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ItemProductsTerminateReasonCode>(); } },
+                { "reason_code", n => { ReasonCode = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ProductsTerminateReasonCode>(); } },
                 { "reason_note", n => { ReasonNote = n.GetStringValue(); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
             };
@@ -90,7 +90,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("access_token", AccessToken);
             writer.WriteStringValue("client_id", ClientId);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ItemProductsTerminateReasonCode>("reason_code", ReasonCode);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ProductsTerminateReasonCode>("reason_code", ReasonCode);
             writer.WriteStringValue("reason_note", ReasonNote);
             writer.WriteStringValue("secret", Secret);
             writer.WriteAdditionalData(AdditionalData);

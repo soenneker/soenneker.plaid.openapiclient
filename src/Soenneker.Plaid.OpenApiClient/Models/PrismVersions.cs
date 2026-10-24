@@ -15,40 +15,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The version of Prism CashScore. If not specified, will default to v3.</summary>
+        /// <summary>The version of Prism CashScore. If `prism_versions` is omitted entirely, your client&apos;s configured default Prism version is used (v3 if none is configured). If other Prism versions are specified but this one is not, this product is not generated.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScoreVersion? Cashscore { get; set; }
         /// <summary>The version of Prism Detect</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Detect { get; set; }
-#nullable restore
-#else
-        public string Detect { get; set; }
-#endif
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismDetectVersion? Detect { get; set; }
         /// <summary>The version of Prism Extend</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Extend { get; set; }
-#nullable restore
-#else
-        public string Extend { get; set; }
-#endif
-        /// <summary>The version of Prism FirstDetect. If not specified, will default to v3.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Firstdetect { get; set; }
-#nullable restore
-#else
-        public string Firstdetect { get; set; }
-#endif
-        /// <summary>The version of Prism Insights. If not specified, will default to v3.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Insights { get; set; }
-#nullable restore
-#else
-        public string Insights { get; set; }
-#endif
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismExtendVersion? Extend { get; set; }
+        /// <summary>The version of Prism FirstDetect. If `prism_versions` is omitted entirely, FirstDetect v3 is generated when your client&apos;s configured default Prism version is v3 or no default is configured; it is not generated if the default is v4 or v4.1. If other Prism versions are specified but this one is not, this product is not generated.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismFirstDetectVersion? Firstdetect { get; set; }
+        /// <summary>The version of Prism Insights. If `prism_versions` is omitted entirely, your client&apos;s configured default Prism version is used (v3 if none is configured). If other Prism versions are specified but this one is not, this product is not generated.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsVersion? Insights { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PrismVersions"/> and sets the default values.
         /// </summary>
@@ -75,10 +51,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cashscore", n => { Cashscore = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScoreVersion>(); } },
-                { "detect", n => { Detect = n.GetStringValue(); } },
-                { "extend", n => { Extend = n.GetStringValue(); } },
-                { "firstdetect", n => { Firstdetect = n.GetStringValue(); } },
-                { "insights", n => { Insights = n.GetStringValue(); } },
+                { "detect", n => { Detect = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismDetectVersion>(); } },
+                { "extend", n => { Extend = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismExtendVersion>(); } },
+                { "firstdetect", n => { Firstdetect = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismFirstDetectVersion>(); } },
+                { "insights", n => { Insights = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsVersion>(); } },
             };
         }
         /// <summary>
@@ -89,10 +65,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScoreVersion>("cashscore", Cashscore);
-            writer.WriteStringValue("detect", Detect);
-            writer.WriteStringValue("extend", Extend);
-            writer.WriteStringValue("firstdetect", Firstdetect);
-            writer.WriteStringValue("insights", Insights);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismDetectVersion>("detect", Detect);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismExtendVersion>("extend", Extend);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismFirstDetectVersion>("firstdetect", Firstdetect);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsVersion>("insights", Insights);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

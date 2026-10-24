@@ -9,11 +9,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "UNKNOWN")]
         #pragma warning disable CS1591
-        UNKNOWN,
+        Unknown,
         #pragma warning restore CS1591
         [EnumMember(Value = "RETURNING_USER")]
         #pragma warning disable CS1591
-        RETURNING_USER,
+        ReturningUser,
         #pragma warning restore CS1591
     }
 }

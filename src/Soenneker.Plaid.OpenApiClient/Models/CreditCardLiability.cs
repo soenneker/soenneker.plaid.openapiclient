@@ -27,11 +27,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The various interest rates that apply to the account. APR information is not provided by all card issuers; if APR data is not available, this array will be empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.APR>? Aprs { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Apr>? Aprs { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.APR> Aprs { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Apr> Aprs { get; set; }
 #endif
+        /// <summary>The credit limit for cash advances on the account.</summary>
+        public double? CashAdvanceLimit { get; set; }
         /// <summary>true if a payment is currently overdue. Availability for this field is limited.</summary>
         public bool? IsOverdue { get; set; }
         /// <summary>The amount of the last payment.</summary>
@@ -72,7 +74,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
-                { "aprs", n => { Aprs = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.APR>(global::Soenneker.Plaid.OpenApiClient.Models.APR.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "aprs", n => { Aprs = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.Apr>(global::Soenneker.Plaid.OpenApiClient.Models.Apr.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "cash_advance_limit", n => { CashAdvanceLimit = n.GetDoubleValue(); } },
                 { "is_overdue", n => { IsOverdue = n.GetBoolValue(); } },
                 { "last_payment_amount", n => { LastPaymentAmount = n.GetDoubleValue(); } },
                 { "last_payment_date", n => { LastPaymentDate = n.GetDateValue(); } },
@@ -90,7 +93,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.APR>("aprs", Aprs);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.Apr>("aprs", Aprs);
+            writer.WriteDoubleValue("cash_advance_limit", CashAdvanceLimit);
             writer.WriteBoolValue("is_overdue", IsOverdue);
             writer.WriteDoubleValue("last_payment_amount", LastPaymentAmount);
             writer.WriteDateValue("last_payment_date", LastPaymentDate);

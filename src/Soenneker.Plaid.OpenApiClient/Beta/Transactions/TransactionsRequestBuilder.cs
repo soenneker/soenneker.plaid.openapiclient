@@ -4,7 +4,6 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Plaid.OpenApiClient.Beta.Transactions.Rules;
 using Soenneker.Plaid.OpenApiClient.Beta.Transactions.User_insights;
-using Soenneker.Plaid.OpenApiClient.Beta.Transactions.V1;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -26,11 +25,6 @@ namespace Soenneker.Plaid.OpenApiClient.Beta.Transactions
         public global::Soenneker.Plaid.OpenApiClient.Beta.Transactions.User_insights.User_insightsRequestBuilder User_insights
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Beta.Transactions.User_insights.User_insightsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The v1 property</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Beta.Transactions.V1.V1RequestBuilder V1
-        {
-            get => new global::Soenneker.Plaid.OpenApiClient.Beta.Transactions.V1.V1RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Beta.Transactions.TransactionsRequestBuilder"/> and sets the default values.

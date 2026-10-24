@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// UserTransactionsRefreshRequest defines the request schema for `user/transactions/refresh`
+    /// UserTransactionsRefreshRequest defines the request schema for `/user/transactions/refresh`
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserTransactionsRefreshRequest : IAdditionalDataHolder, IParsable

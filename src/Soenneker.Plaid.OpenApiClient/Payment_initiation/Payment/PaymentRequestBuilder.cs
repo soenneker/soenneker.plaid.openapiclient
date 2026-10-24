@@ -6,6 +6,7 @@ using Soenneker.Plaid.OpenApiClient.Payment_initiation.Payment.Create;
 using Soenneker.Plaid.OpenApiClient.Payment_initiation.Payment.Get;
 using Soenneker.Plaid.OpenApiClient.Payment_initiation.Payment.List;
 using Soenneker.Plaid.OpenApiClient.Payment_initiation.Payment.Reverse;
+using Soenneker.Plaid.OpenApiClient.Payment_initiation.Payment.Token;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -37,6 +38,11 @@ namespace Soenneker.Plaid.OpenApiClient.Payment_initiation.Payment
         public global::Soenneker.Plaid.OpenApiClient.Payment_initiation.Payment.Reverse.ReverseRequestBuilder Reverse
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Payment_initiation.Payment.Reverse.ReverseRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The token property</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Payment_initiation.Payment.Token.TokenRequestBuilder Token
+        {
+            get => new global::Soenneker.Plaid.OpenApiClient.Payment_initiation.Payment.Token.TokenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Payment_initiation.Payment.PaymentRequestBuilder"/> and sets the default values.

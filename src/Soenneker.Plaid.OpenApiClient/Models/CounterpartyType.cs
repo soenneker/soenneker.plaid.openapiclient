@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>&quot;The counterparty type.`merchant`: a provider of goods or services for purchase`financial_institution`: a financial entity (bank, credit union, BNPL, fintech)`payment_app`: a transfer or P2P app (e.g. Zelle)`marketplace`: a marketplace (e.g DoorDash, Google Play Store)`payment_terminal`: a point-of-sale payment terminal (e.g Square, Toast)`income_source`: the payer in an income transaction (e.g., an employer, client, or government agency)&quot;</summary>
+    /// <summary>The counterparty type.`merchant`: a provider of goods or services for purchase`financial_institution`: a financial entity (bank, credit union, BNPL, fintech)`payment_app`: a transfer or P2P app (e.g. Zelle)`marketplace`: a marketplace (e.g. DoorDash, Google Play Store)`payment_terminal`: a point-of-sale payment terminal (e.g. Square, Toast)`income_source`: the payer in an income transaction (e.g., an employer, client, or government agency)</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CounterpartyType
     {
@@ -13,11 +13,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "financial_institution")]
         #pragma warning disable CS1591
-        Financial_institution,
+        FinancialInstitution,
         #pragma warning restore CS1591
         [EnumMember(Value = "payment_app")]
         #pragma warning disable CS1591
-        Payment_app,
+        PaymentApp,
         #pragma warning restore CS1591
         [EnumMember(Value = "marketplace")]
         #pragma warning disable CS1591
@@ -25,11 +25,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "payment_terminal")]
         #pragma warning disable CS1591
-        Payment_terminal,
+        PaymentTerminal,
         #pragma warning restore CS1591
         [EnumMember(Value = "income_source")]
         #pragma warning disable CS1591
-        Income_source,
+        IncomeSource,
         #pragma warning restore CS1591
     }
 }

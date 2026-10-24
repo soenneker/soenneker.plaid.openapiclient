@@ -9,35 +9,35 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "UNKNOWN")]
         #pragma warning disable CS1591
-        UNKNOWN,
+        Unknown,
         #pragma warning restore CS1591
         [EnumMember(Value = "IMAGE_PDF")]
         #pragma warning disable CS1591
-        IMAGE_PDF,
+        ImagePdf,
         #pragma warning restore CS1591
         [EnumMember(Value = "SCAN_OCR")]
         #pragma warning disable CS1591
-        SCAN_OCR,
+        ScanOcr,
         #pragma warning restore CS1591
         [EnumMember(Value = "TRUE_PDF")]
         #pragma warning disable CS1591
-        TRUE_PDF,
+        TruePdf,
         #pragma warning restore CS1591
         [EnumMember(Value = "IMAGE")]
         #pragma warning disable CS1591
-        IMAGE,
+        Image,
         #pragma warning restore CS1591
         [EnumMember(Value = "MIXED_PAGE_PDF")]
         #pragma warning disable CS1591
-        MIXED_PAGE_PDF,
+        MixedPagePdf,
         #pragma warning restore CS1591
         [EnumMember(Value = "EMPTY_PDF")]
         #pragma warning disable CS1591
-        EMPTY_PDF,
+        EmptyPdf,
         #pragma warning restore CS1591
         [EnumMember(Value = "FLATTENED_PDF")]
         #pragma warning disable CS1591
-        FLATTENED_PDF,
+        FlattenedPdf,
         #pragma warning restore CS1591
     }
 }

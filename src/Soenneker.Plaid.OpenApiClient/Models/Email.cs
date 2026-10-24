@@ -26,7 +26,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>When `true`, identifies the email address as the primary email on an account.</summary>
         public bool? Primary { get; set; }
         /// <summary>The type of email account as described by the financial institution.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.Email_type? Type { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.EmailType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.Email"/> and sets the default values.
         /// </summary>
@@ -54,7 +54,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "data", n => { Data = n.GetStringValue(); } },
                 { "primary", n => { Primary = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.Email_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.EmailType>(); } },
             };
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("data", Data);
             writer.WriteBoolValue("primary", Primary);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.Email_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.EmailType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

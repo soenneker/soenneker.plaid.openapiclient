@@ -9,19 +9,19 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "LARGE_DEPOSIT_DETECTED")]
         #pragma warning disable CS1591
-        LARGE_DEPOSIT_DETECTED,
+        LargeDepositDetected,
         #pragma warning restore CS1591
         [EnumMember(Value = "LOW_BALANCE_DETECTED")]
         #pragma warning disable CS1591
-        LOW_BALANCE_DETECTED,
+        LowBalanceDetected,
         #pragma warning restore CS1591
         [EnumMember(Value = "NEW_LOAN_PAYMENT_DETECTED")]
         #pragma warning disable CS1591
-        NEW_LOAN_PAYMENT_DETECTED,
+        NewLoanPaymentDetected,
         #pragma warning restore CS1591
         [EnumMember(Value = "NSF_OVERDRAFT_DETECTED")]
         #pragma warning disable CS1591
-        NSF_OVERDRAFT_DETECTED,
+        NsfOverdraftDetected,
         #pragma warning restore CS1591
     }
 }

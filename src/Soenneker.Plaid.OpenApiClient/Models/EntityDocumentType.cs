@@ -13,7 +13,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "business_number")]
         #pragma warning disable CS1591
-        Business_number,
+        BusinessNumber,
         #pragma warning restore CS1591
         [EnumMember(Value = "imo")]
         #pragma warning disable CS1591
@@ -29,7 +29,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "tax_id")]
         #pragma warning disable CS1591
-        Tax_id,
+        TaxId,
         #pragma warning restore CS1591
     }
 }

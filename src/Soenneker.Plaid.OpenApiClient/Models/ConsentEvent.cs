@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public List<global::Soenneker.Plaid.OpenApiClient.Models.ConsentedAccount> ConsentedAccounts { get; set; }
 #endif
-        /// <summary>A list of strings containing the full list of data scopes the end user has consented to for the Item. These correspond to consented products; see the [full mapping](https://plaid.com/docs/link/data-transparency-messaging-migration-guide/#data-scopes-by-product) of data scopes and products.</summary>
+        /// <summary>A list of strings containing the full list of data scopes the end user has consented to for the Item. Each value is the data scope&apos;s display name, as shown to the end user in Link (for example, `account and balance info`, `contact details`, or `transactions`); these differ from the values returned in `consented_data_scopes` by `/item/get`. The scopes correspond to consented products; see the [full mapping](https://plaid.com/docs/link/data-transparency-messaging-migration-guide/#data-scopes-by-product) of data scopes and products.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ConsentedDataScopes { get; set; }
@@ -47,7 +47,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public global::Soenneker.Plaid.OpenApiClient.Models.ConsentEventType? EventType { get; set; }
         /// <summary>The entity that initiated collection of consent.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.ConsentEventInitiator? Initiator { get; set; }
-        /// <summary>Unique identifier for the institution associated with the Item. Field is `null` for Items created via Same Day Micro-deposits.</summary>
+        /// <summary>Unique identifier for the institution associated with the Item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InstitutionId { get; set; }
@@ -55,7 +55,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string InstitutionId { get; set; }
 #endif
-        /// <summary>The full name of the institution associated with the Item. Field is `null` for Items created via Same Day Micro-deposits.</summary>
+        /// <summary>The full name of the institution associated with the Item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InstitutionName { get; set; }

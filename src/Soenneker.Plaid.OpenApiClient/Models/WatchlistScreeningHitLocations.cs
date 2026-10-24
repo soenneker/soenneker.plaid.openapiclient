@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Location information for the associated individual watchlist hit
+    /// Location information for the associated watchlist hit
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WatchlistScreeningHitLocations : IAdditionalDataHolder, IParsable

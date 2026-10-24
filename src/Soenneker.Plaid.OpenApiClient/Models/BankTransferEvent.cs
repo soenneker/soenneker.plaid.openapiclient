@@ -31,7 +31,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string BankTransferAmount { get; set; }
 #endif
-        /// <summary>Plaid’s unique identifier for a bank transfer.</summary>
+        /// <summary>Plaid&apos;s unique identifier for a bank transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BankTransferId { get; set; }
@@ -49,11 +49,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>The type of bank transfer. This will be either `debit` or `credit`.  A `debit` indicates a transfer of money into the origination account; a `credit` indicates a transfer of money out of the origination account.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferType? BankTransferType { get; set; }
-        /// <summary>&quot;Indicates the direction of the transfer: `outbound` for API-initiated transfers, or `inbound` for payments received by the FBO account.&quot;</summary>
+        /// <summary>Indicates the direction of the transfer: `outbound` for API-initiated transfers, or `inbound` for payments received by the FBO account.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferDirection? Direction { get; set; }
-        /// <summary>Plaid’s unique identifier for this event. IDs are sequential unsigned 64-bit integers.</summary>
+        /// <summary>Plaid&apos;s unique identifier for this event. IDs are sequential unsigned 64-bit integers.</summary>
         public int? EventId { get; set; }
-        /// <summary>&quot;The type of event that this bank transfer represents.`pending`: A new transfer was created; it is in the pending state.`cancelled`: The transfer was cancelled by the client.`failed`: The transfer failed, no funds were moved.`posted`: The transfer has been successfully submitted to the payment network.`reversed`: A posted transfer was reversed.&quot;</summary>
+        /// <summary>The type of event that this bank transfer represents.`pending`: A new transfer was created; it is in the pending state.`cancelled`: The transfer was cancelled by the client.`failed`: The transfer failed, no funds were moved.`posted`: The transfer has been successfully submitted to the payment network.`reversed`: A posted transfer was reversed.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventType? EventType { get; set; }
         /// <summary>The failure reason if the type of this transfer is `&quot;failed&quot;` or `&quot;reversed&quot;`. Null value otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,6 +70,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #nullable restore
 #else
         public string OriginationAccountId { get; set; }
+#endif
+        /// <summary>Additional details for receiver events. Currently always `null`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.ReceiverDetails? ReceiverDetails { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.ReceiverDetails ReceiverDetails { get; set; }
 #endif
         /// <summary>The datetime when this event occurred. This will be of the form `2006-01-02T15:04:05Z`.</summary>
         public DateTimeOffset? Timestamp { get; set; }
@@ -108,6 +116,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "event_type", n => { EventType = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventType>(); } },
                 { "failure_reason", n => { FailureReason = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferFailure>(global::Soenneker.Plaid.OpenApiClient.Models.BankTransferFailure.CreateFromDiscriminatorValue); } },
                 { "origination_account_id", n => { OriginationAccountId = n.GetStringValue(); } },
+                { "receiver_details", n => { ReceiverDetails = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ReceiverDetails>(global::Soenneker.Plaid.OpenApiClient.Models.ReceiverDetails.CreateFromDiscriminatorValue); } },
                 { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -128,6 +137,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventType>("event_type", EventType);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferFailure>("failure_reason", FailureReason);
             writer.WriteStringValue("origination_account_id", OriginationAccountId);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ReceiverDetails>("receiver_details", ReceiverDetails);
             writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);
         }

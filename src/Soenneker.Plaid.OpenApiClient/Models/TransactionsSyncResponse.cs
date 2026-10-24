@@ -31,7 +31,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents if more than requested count of transaction updates exist. If true, the additional updates can be fetched by making an additional request with `cursor` set to `next_cursor`. If `has_more` is true, it’s important to pull all available pages, to make it less likely for underlying data changes to conflict with pagination.</summary>
+        /// <summary>Represents if more than requested count of transaction updates exist. If true, the additional updates can be fetched by making an additional request with `cursor` set to `next_cursor`. If `has_more` is true, it&apos;s important to pull all available pages, to make it less likely for underlying data changes to conflict with pagination.</summary>
         public bool? HasMore { get; set; }
         /// <summary>Transactions that have been modified on the Item since `cursor` ordered by ascending last modified time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,7 +65,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string RequestId { get; set; }
 #endif
-        /// <summary>&quot;A description of the update status for transaction pulls of an Item. This field contains the same information provided by transactions webhooks, and may be helpful for webhook troubleshooting or when recovering from missed webhooks.`TRANSACTIONS_UPDATE_STATUS_UNKNOWN`: Unable to fetch transactions update status for Item.`NOT_READY`: The Item is pending transaction pull.`INITIAL_UPDATE_COMPLETE`: Initial pull for the Item is complete, historical pull is pending.`HISTORICAL_UPDATE_COMPLETE`: Both initial and historical pull for Item are complete.&quot;</summary>
+        /// <summary>A description of the update status for transaction pulls of an Item. This field contains the same information provided by transactions webhooks, and may be helpful for webhook troubleshooting or when recovering from missed webhooks.`TRANSACTIONS_UPDATE_STATUS_UNKNOWN`: Unable to fetch transactions update status for Item.`NOT_READY`: The Item is pending transaction pull.`INITIAL_UPDATE_COMPLETE`: Initial pull for the Item is complete, historical pull is pending.`HISTORICAL_UPDATE_COMPLETE`: Both initial and historical pull for Item are complete.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.TransactionsUpdateStatus? TransactionsUpdateStatus { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransactionsSyncResponse"/> and sets the default values.

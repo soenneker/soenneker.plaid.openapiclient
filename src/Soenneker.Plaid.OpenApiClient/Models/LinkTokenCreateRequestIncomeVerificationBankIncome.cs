@@ -26,6 +26,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public LinkTokenCreateRequestIncomeVerificationBankIncome()
         {
             AdditionalData = new Dictionary<string, object>();
+            EnableMultipleItems = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

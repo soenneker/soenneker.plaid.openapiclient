@@ -6,7 +6,6 @@ using Soenneker.Plaid.OpenApiClient.Item_Escaped.Access_token;
 using Soenneker.Plaid.OpenApiClient.Item_Escaped.Activity;
 using Soenneker.Plaid.OpenApiClient.Item_Escaped.Application;
 using Soenneker.Plaid.OpenApiClient.Item_Escaped.Get;
-using Soenneker.Plaid.OpenApiClient.Item_Escaped.Handle_fraud_report;
 using Soenneker.Plaid.OpenApiClient.Item_Escaped.Import;
 using Soenneker.Plaid.OpenApiClient.Item_Escaped.Products;
 using Soenneker.Plaid.OpenApiClient.Item_Escaped.Public_token;
@@ -43,11 +42,6 @@ namespace Soenneker.Plaid.OpenApiClient.Item_Escaped
         public global::Soenneker.Plaid.OpenApiClient.Item_Escaped.Get.GetRequestBuilder GetPath
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Item_Escaped.Get.GetRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The handle_fraud_report property</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Item_Escaped.Handle_fraud_report.Handle_fraud_reportRequestBuilder Handle_fraud_report
-        {
-            get => new global::Soenneker.Plaid.OpenApiClient.Item_Escaped.Handle_fraud_report.Handle_fraud_reportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The import property</summary>
         public global::Soenneker.Plaid.OpenApiClient.Item_Escaped.Import.ImportRequestBuilder Import

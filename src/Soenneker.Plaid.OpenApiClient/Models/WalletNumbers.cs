@@ -15,21 +15,21 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>An object containing a BACS account number and sort code. If an IBAN is not provided or if you need to accept domestic GBP-denominated payments, BACS data is required.</summary>
+        /// <summary>An object containing a Bacs account number and sort code. If an IBAN is not provided or if you need to accept domestic GBP-denominated payments, Bacs data is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.RecipientBACS? Bacs { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RecipientBacs? Bacs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.RecipientBACS Bacs { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RecipientBacs Bacs { get; set; }
 #endif
         /// <summary>Account numbers using the International Bank Account Number and BIC/SWIFT code format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersInternationalIBAN? International { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersInternationalIban? International { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersInternationalIBAN International { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersInternationalIban International { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.WalletNumbers"/> and sets the default values.
@@ -56,8 +56,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bacs", n => { Bacs = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.RecipientBACS>(global::Soenneker.Plaid.OpenApiClient.Models.RecipientBACS.CreateFromDiscriminatorValue); } },
-                { "international", n => { International = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NumbersInternationalIBAN>(global::Soenneker.Plaid.OpenApiClient.Models.NumbersInternationalIBAN.CreateFromDiscriminatorValue); } },
+                { "bacs", n => { Bacs = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.RecipientBacs>(global::Soenneker.Plaid.OpenApiClient.Models.RecipientBacs.CreateFromDiscriminatorValue); } },
+                { "international", n => { International = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NumbersInternationalIban>(global::Soenneker.Plaid.OpenApiClient.Models.NumbersInternationalIban.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.RecipientBACS>("bacs", Bacs);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NumbersInternationalIBAN>("international", International);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.RecipientBacs>("bacs", Bacs);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NumbersInternationalIban>("international", International);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

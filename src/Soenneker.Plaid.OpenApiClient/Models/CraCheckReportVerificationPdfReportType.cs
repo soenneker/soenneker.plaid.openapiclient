@@ -13,7 +13,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "employment_refresh")]
         #pragma warning disable CS1591
-        Employment_refresh,
+        EmploymentRefresh,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "income")]
+        #pragma warning disable CS1591
+        Income,
         #pragma warning restore CS1591
     }
 }

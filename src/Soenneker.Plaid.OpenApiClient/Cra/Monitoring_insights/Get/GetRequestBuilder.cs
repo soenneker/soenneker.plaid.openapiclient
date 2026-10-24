@@ -34,13 +34,14 @@ namespace Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights.Get
         {
         }
         /// <summary>
-        /// This endpoint allows you to retrieve a Cash Flow Updates report by passing in the `user_id` referred to in the webhook you received.
+        /// This endpoint allows you to retrieve a Cash Flow Updates report by passing in the `user_id` referred to in the webhook you received. This endpoint is part of the legacy Cash Flow Updates product and is available only to integrations already using it. CRA Servicing has no direct equivalent; other integrations should handle the `CRA_REPORT_UPDATED` webhook and pass its `report_id` to the relevant product `/get` endpoint, such as `/cra/check_report/base_report/get`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraMonitoringInsightsGetResponse"/></returns>
         /// <param name="body">CraMonitoringInsightsGetRequest defines the request schema for `/cra/monitoring_insights/get`</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Plaid.OpenApiClient.Models.PlaidError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Plaid.OpenApiClient.Models.CraMonitoringInsightsGetResponse?> PostAsync(global::Soenneker.Plaid.OpenApiClient.Models.CraMonitoringInsightsGetRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -59,11 +60,12 @@ namespace Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights.Get
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.CraMonitoringInsightsGetResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.CraMonitoringInsightsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint allows you to retrieve a Cash Flow Updates report by passing in the `user_id` referred to in the webhook you received.
+        /// This endpoint allows you to retrieve a Cash Flow Updates report by passing in the `user_id` referred to in the webhook you received. This endpoint is part of the legacy Cash Flow Updates product and is available only to integrations already using it. CRA Servicing has no direct equivalent; other integrations should handle the `CRA_REPORT_UPDATED` webhook and pass its `report_id` to the relevant product `/get` endpoint, such as `/cra/check_report/base_report/get`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">CraMonitoringInsightsGetRequest defines the request schema for `/cra/monitoring_insights/get`</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Soenneker.Plaid.OpenApiClient.Models.CraMonitoringInsightsGetRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -85,6 +87,7 @@ namespace Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights.Get
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights.Get.GetRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights.Get.GetRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights.Get.GetRequestBuilder(rawUrl, RequestAdapter);

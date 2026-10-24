@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>&quot;An identifier classifying the transaction type.This field is only populated for European institutions. For institutions in the US and Canada, this field is set to `null`.`adjustment:` Bank adjustment`atm:` Cash deposit or withdrawal via an automated teller machine`bank charge:` Charge or fee levied by the institution`bill payment`: Payment of a bill`cash:` Cash deposit or withdrawal`cashback:` Cash withdrawal while making a debit card purchase`cheque:` Document ordering the payment of money to another person or organization`direct debit:` Automatic withdrawal of funds initiated by a third party at a regular interval`interest:` Interest earned or incurred`purchase:` Purchase made with a debit or credit card`standing order:` Payment instructed by the account holder to a third party at a regular interval`transfer:` Transfer of money between accounts&quot;</summary>
+    /// <summary>An identifier classifying the transaction type.This field is populated for European institutions, as well as certain institutions in the United States. For institutions where this classification is not available, this field is set to `null`.`adjustment:` Bank adjustment`atm:` Cash deposit or withdrawal via an automated teller machine`bank charge:` Charge or fee levied by the institution`bill payment`: Payment of a bill`cash:` Cash deposit or withdrawal`cash advance:` Cash advance drawn against a credit card or line of credit`cashback:` Cash withdrawal while making a debit card purchase`cheque:` Document ordering the payment of money to another person or organization`direct debit:` Automatic withdrawal of funds initiated by a third party at a regular interval`interest:` Interest earned or incurred`late fee:` Fee associated with a late or past-due payment`membership fee:` Annual or recurring membership fee`payment:` One-off outbound payment not classified as a bill payment, direct debit, or standing order`purchase:` Purchase made with a debit or credit card`refund:` Merchant credit or return, such as a refund of a prior purchase`returned item fee:` Fee for a returned item, such as a returned check or stop payment`standing order:` Payment instructed by the account holder to a third party at a regular interval`transfer:` Transfer of money between accounts</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransactionCode
     {
@@ -27,6 +27,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning disable CS1591
         Cash,
         #pragma warning restore CS1591
+        [EnumMember(Value = "cash advance")]
+        #pragma warning disable CS1591
+        CashAdvance,
+        #pragma warning restore CS1591
         [EnumMember(Value = "cashback")]
         #pragma warning disable CS1591
         Cashback,
@@ -43,9 +47,29 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning disable CS1591
         Interest,
         #pragma warning restore CS1591
+        [EnumMember(Value = "late fee")]
+        #pragma warning disable CS1591
+        LateFee,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "membership fee")]
+        #pragma warning disable CS1591
+        MembershipFee,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "payment")]
+        #pragma warning disable CS1591
+        Payment,
+        #pragma warning restore CS1591
         [EnumMember(Value = "purchase")]
         #pragma warning disable CS1591
         Purchase,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "refund")]
+        #pragma warning disable CS1591
+        Refund,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "returned item fee")]
+        #pragma warning disable CS1591
+        ReturnedItemFee,
         #pragma warning restore CS1591
         [EnumMember(Value = "standing order")]
         #pragma warning disable CS1591
@@ -54,6 +78,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         [EnumMember(Value = "transfer")]
         #pragma warning disable CS1591
         Transfer,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
+        #pragma warning disable CS1591
+        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
         #pragma warning restore CS1591
     }
 }

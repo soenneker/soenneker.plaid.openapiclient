@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Affordability insights focus on providing signal on the ability of a borrower to repay their loan without experiencing financial strain. It provides insights on factors such a user&apos;s monthly income and expenses, disposable income, average expenditure, etc., helping lenders gauge the level of affordability of a borrower.
+    /// Affordability insights focus on providing signal on the ability of a borrower to repay their loan without experiencing financial strain. It provides insights on factors such as a user&apos;s monthly income and expenses, disposable income, average expenditure, etc., helping lenders gauge the level of affordability of a borrower.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AffordabilityInsights : IAdditionalDataHolder, IParsable

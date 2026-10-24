@@ -13,7 +13,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccountIdentityMatchScore : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Plaid’s unique identifier for the account. This value will not change unless Plaid can&apos;t reconcile the account with the data returned by the financial institution. This may occur, for example, when the name of the account changes. If this happens a new `account_id` will be assigned to the account.The `account_id` can also change if the `access_token` is deleted and the same credentials that were used to generate that `access_token` are used to generate a new `access_token` on a later date. In that case, the new `account_id` will be different from the old `account_id`.If an account with a specific `account_id` disappears instead of changing, the account is likely closed. Closed accounts are not returned by the Plaid API.When using a CRA endpoint (an endpoint associated with Plaid Check Consumer Report, i.e. any endpoint beginning with `/cra/`), the `account_id` returned will not match the `account_id` returned by a non-CRA endpoint.Like all Plaid identifiers, the `account_id` is case sensitive.</summary>
+        /// <summary>Plaid&apos;s unique identifier for the account. This value will not change unless Plaid can&apos;t reconcile the account with the data returned by the financial institution. This may occur, for example, when the name of the account changes. If this happens a new `account_id` will be assigned to the account.The `account_id` can also change if the `access_token` is deleted and the same credentials that were used to generate that `access_token` are used to generate a new `access_token` on a later date. In that case, the new `account_id` will be different from the old `account_id`.If an account with a specific `account_id` disappears instead of changing, the account is likely closed. Closed accounts are not returned by the Plaid API.When using a CRA endpoint (an endpoint associated with Plaid Check Consumer Report, i.e. any endpoint beginning with `/cra/`), the `account_id` returned will not match the `account_id` returned by a non-CRA endpoint.Like all Plaid identifiers, the `account_id` is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountId { get; set; }
@@ -31,7 +31,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.AddressMatchScore Address { get; set; }
 #endif
-        /// <summary>A set of fields describing the balance for an account. Balance information may be cached unless the balance object was returned by `/accounts/balance/get` or `/signal/evaluate` (using a Balance-only ruleset).</summary>
+        /// <summary>The annual percentage yield (APY) on an interest-bearing deposit account, expressed as a percentage (e.g. `4.25` means 4.25%). In the event that the APY is not provided by the financial institution, Plaid will return a value of `null`.</summary>
+        public double? Apy { get; set; }
+        /// <summary>A set of fields describing the balance for an account. For real-time values, use `/accounts/balance/get` or `/signal/evaluate` (with a Balance-only ruleset), which are fetched live from the institution at request time. Values returned by other endpoints may be cached, or adjusted by Plaid to reflect transaction activity received since the last refresh.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.AccountBalance? Balances { get; set; }
@@ -47,7 +49,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.EmailAddressMatchScore EmailAddress { get; set; }
 #endif
-        /// <summary>Indicates the account&apos;s categorization as either a personal or a business account. This field is currently in beta; to request access, contact your account manager.</summary>
+        /// <summary>Indicates the account&apos;s categorization as either a personal or a business account. This field is currently in beta; to request access, contact your account manager. Coverage varies by institution, with approximately 70% of accounts populated overall.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.AccountHolderCategory? HolderCategory { get; set; }
         /// <summary>Score found by matching name provided by the API with the name on the account at the financial institution. If the account contains multiple owners, the maximum match score is filled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.NameMatchScore LegalName { get; set; }
 #endif
-        /// <summary>The last 2-4 alphanumeric characters of either the account’s displayed mask or the account’s official account number. Note that the mask may be non-unique between an Item’s accounts.</summary>
+        /// <summary>The last 2-4 alphanumeric characters of either the account&apos;s displayed mask or the account&apos;s official account number. Note that the mask may be non-unique between an Item&apos;s accounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Mask { get; set; }
@@ -81,7 +83,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string OfficialName { get; set; }
 #endif
-        /// <summary>A unique and persistent identifier for accounts that can be used to trace multiple instances of the same account across different Items for depository accounts. This field is currently supported only for Items at institutions that use Tokenized Account Numbers (i.e., Chase and PNC, and in May 2025 US Bank). Because these accounts have a different account number each time they are linked, this field may be used instead of the account number to uniquely identify an account across multiple Items for payments use cases, helping to reduce duplicate Items or attempted fraud. In Sandbox, this field is populated for TAN-based institutions (`ins_56`, `ins_13`) as well as the OAuth Sandbox institution (`ins_127287`); in Production, it will only be populated for accounts at applicable institutions.</summary>
+        /// <summary>The `account_id` of the account on the paired Item (see `paired_item_id`) that represents the same bank account as this one. For an account on a Plaid Inc Item, this is the matching account on its paired Plaid Check Item, and the reverse for an account on a Plaid Check Item. Only returned for accounts on an Item that has a paired Item. `null` means the Item has a paired Item but Plaid could not confidently match this account to an account on it. Like `account_id`, this value can change if Plaid re-creates the paired account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PairedAccountId { get; set; }
+#nullable restore
+#else
+        public string PairedAccountId { get; set; }
+#endif
+        /// <summary>A unique and persistent identifier for accounts that can be used to trace multiple instances of the same account across different Items for depository accounts. This field is currently supported only for Items at institutions that use Tokenized Account Numbers (i.e., Chase, PNC, and US Bank). Because these accounts have a different account number each time they are linked, this field may be used instead of the account number to uniquely identify an account across multiple Items for payments use cases, helping to reduce duplicate Items or attempted fraud. In Sandbox, this field is populated for TAN-based institutions (`ins_56`, `ins_13`, `ins_127990`) as well as the OAuth Sandbox institution (`ins_127287`); in Production, it will only be populated for accounts at applicable institutions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PersistentAccountId { get; set; }
@@ -117,8 +127,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string VerificationName { get; set; }
 #endif
-        /// <summary>&quot;Indicates an Item&apos;s micro-deposit-based verification or database verification status. This field is only populated when using Auth and falling back to micro-deposit or database verification. Possible values are:`pending_automatic_verification`: The Item is pending automatic verification.`pending_manual_verification`: The Item is pending manual micro-deposit verification. Items remain in this state until the user successfully verifies the code.`automatically_verified`: The Item has successfully been automatically verified.`manually_verified`: The Item has successfully been manually verified.`verification_expired`: Plaid was unable to automatically verify the deposit within 7 calendar days and will no longer attempt to validate the Item. Users may retry by submitting their information again through Link.`verification_failed`: The Item failed manual micro-deposit verification because the user exhausted all 3 verification attempts. Users may retry by submitting their information again through Link.`unsent`: The Item is pending micro-deposit verification, but Plaid has not yet sent the micro-deposit.`database_insights_pending`: The Database Auth result is pending and will be available upon Auth request.`database_insights_fail`: The Item&apos;s numbers have been verified using Plaid&apos;s data sources and have signal for being invalid and/or have no signal for being valid. Typically this indicates that the routing number is invalid, the account number does not match the account number format associated with the routing number, or the account has been reported as closed or frozen. Only returned for Auth Items created via Database Auth.`database_insights_pass`: The Item&apos;s numbers have been verified using Plaid&apos;s data sources: the routing and account number match a routing and account number of an account recognized on the Plaid network, and the account is not known by Plaid to be frozen or closed. Only returned for Auth Items created via Database Auth.`database_insights_pass_with_caution`: The Item&apos;s numbers have been verified using Plaid&apos;s data sources and have some signal for being valid: the routing and account number were not recognized on the Plaid network, but the routing number is valid and the account number is a potential valid account number for that routing number. Only returned for Auth Items created via Database Auth.`database_matched`: (deprecated) The Item has successfully been verified using Plaid&apos;s data sources. Only returned for Auth Items created via Database Match.`null` or empty string: Neither micro-deposit-based verification nor database verification are being used for the Item.&quot;</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountIdentityMatchScore_verification_status? VerificationStatus { get; set; }
+        /// <summary>Indicates an Item&apos;s micro-deposit-based verification or database verification status. This field is only populated when using Auth and falling back to micro-deposit or database verification. Possible values are:`pending_automatic_verification`: The Item is pending automatic verification.`pending_manual_verification`: The Item is pending manual micro-deposit verification. Items remain in this state until the user successfully verifies the code.`automatically_verified`: The Item has successfully been automatically verified.`manually_verified`: The Item has successfully been manually verified.`verification_expired`: Plaid was unable to automatically verify the deposit within 7 calendar days and will no longer attempt to validate the Item. Users may retry by submitting their information again through Link.`verification_failed`: The Item failed manual micro-deposit verification because the user exhausted all 3 verification attempts. Users may retry by submitting their information again through Link.`unsent`: The Item is pending micro-deposit verification, but Plaid has not yet sent the micro-deposit.`database_insights_fail`: The Item&apos;s numbers have been verified using Plaid&apos;s data sources and have signal for being invalid and/or have no signal for being valid. Typically this indicates that the routing number is invalid, the account number does not match the account number format associated with the routing number, or the account has been reported as closed or frozen. Only returned for Auth Items created via Database Auth.`database_insights_pass`: The Item&apos;s numbers have been verified using Plaid&apos;s data sources: the routing and account number match a routing and account number of an account recognized on the Plaid network, and the account is not known by Plaid to be frozen or closed. Only returned for Auth Items created via Database Auth.`database_insights_pass_with_caution`: The Item&apos;s numbers have been verified using Plaid&apos;s data sources and have some signal for being valid: the routing and account number were not recognized on the Plaid network, but the routing number is valid and the account number is a potential valid account number for that routing number. Only returned for Auth Items created via Database Auth.`database_matched`: (deprecated) The Item has successfully been verified using Plaid&apos;s data sources. Only returned for Auth Items created via Database Match.Omitted or empty string: Neither micro-deposit-based verification nor database verification are being used for the Item.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessAccountVerificationStatus? VerificationStatus { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.AccountIdentityMatchScore"/> and sets the default values.
         /// </summary>
@@ -146,6 +156,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AddressMatchScore>(global::Soenneker.Plaid.OpenApiClient.Models.AddressMatchScore.CreateFromDiscriminatorValue); } },
+                { "apy", n => { Apy = n.GetDoubleValue(); } },
                 { "balances", n => { Balances = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountBalance>(global::Soenneker.Plaid.OpenApiClient.Models.AccountBalance.CreateFromDiscriminatorValue); } },
                 { "email_address", n => { EmailAddress = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.EmailAddressMatchScore>(global::Soenneker.Plaid.OpenApiClient.Models.EmailAddressMatchScore.CreateFromDiscriminatorValue); } },
                 { "holder_category", n => { HolderCategory = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountHolderCategory>(); } },
@@ -153,13 +164,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "mask", n => { Mask = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "official_name", n => { OfficialName = n.GetStringValue(); } },
+                { "paired_account_id", n => { PairedAccountId = n.GetStringValue(); } },
                 { "persistent_account_id", n => { PersistentAccountId = n.GetStringValue(); } },
                 { "phone_number", n => { PhoneNumber = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PhoneNumberMatchScore>(global::Soenneker.Plaid.OpenApiClient.Models.PhoneNumberMatchScore.CreateFromDiscriminatorValue); } },
                 { "subtype", n => { Subtype = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountSubtype>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountType>(); } },
                 { "verification_insights", n => { VerificationInsights = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsights>(global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsights.CreateFromDiscriminatorValue); } },
                 { "verification_name", n => { VerificationName = n.GetStringValue(); } },
-                { "verification_status", n => { VerificationStatus = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountIdentityMatchScore_verification_status>(); } },
+                { "verification_status", n => { VerificationStatus = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessAccountVerificationStatus>(); } },
             };
         }
         /// <summary>
@@ -171,6 +183,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AddressMatchScore>("address", Address);
+            writer.WriteDoubleValue("apy", Apy);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountBalance>("balances", Balances);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.EmailAddressMatchScore>("email_address", EmailAddress);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountHolderCategory>("holder_category", HolderCategory);
@@ -178,13 +191,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("mask", Mask);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("official_name", OfficialName);
+            writer.WriteStringValue("paired_account_id", PairedAccountId);
             writer.WriteStringValue("persistent_account_id", PersistentAccountId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PhoneNumberMatchScore>("phone_number", PhoneNumber);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountSubtype>("subtype", Subtype);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsights>("verification_insights", VerificationInsights);
             writer.WriteStringValue("verification_name", VerificationName);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountIdentityMatchScore_verification_status>("verification_status", VerificationStatus);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessAccountVerificationStatus>("verification_status", VerificationStatus);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

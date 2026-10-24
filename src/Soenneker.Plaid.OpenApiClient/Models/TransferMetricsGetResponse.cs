@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetAuthorizationUsage AuthorizationUsage { get; set; }
 #endif
-        /// <summary>Sum of dollar amount of credit transfers in last 24 hours (decimal string with two digits of precision e.g. &quot;10.00&quot;).</summary>
+        /// <summary>Sum of dollar amount of credit transfers created so far in the current day, Eastern Time (decimal string with two digits of precision e.g. &quot;10.00&quot;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DailyCreditTransferVolume { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string DailyCreditTransferVolume { get; set; }
 #endif
-        /// <summary>Sum of dollar amount of debit transfers in last 24 hours (decimal string with two digits of precision e.g. &quot;10.00&quot;).</summary>
+        /// <summary>Sum of dollar amount of debit transfers created so far in the current day, Eastern Time (decimal string with two digits of precision e.g. &quot;10.00&quot;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DailyDebitTransferVolume { get; set; }

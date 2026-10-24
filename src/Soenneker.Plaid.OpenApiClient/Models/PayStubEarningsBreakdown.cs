@@ -45,7 +45,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>Hourly rate applicable for this earning.</summary>
         public double? Rate { get; set; }
-        /// <summary>The unofficial currency code associated with the line item. Always `null` if `iso_currency_code` is non-`null`. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `iso_currency_code`s.</summary>
+        /// <summary>The unofficial currency code associated with the line item. Always `null` if `iso_currency_code` is non-`null`. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `unofficial_currency_code`s.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UnofficialCurrencyCode { get; set; }
@@ -53,7 +53,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string UnofficialCurrencyCode { get; set; }
 #endif
-        /// <summary>The year-to-date amount of the deduction.</summary>
+        /// <summary>The year-to-date amount of the line item.</summary>
         public double? YtdAmount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PayStubEarningsBreakdown"/> and sets the default values.

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Information about an report identifier and a report name.
+    /// Information about a report identifier and a report name.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreditFreddieMacReportingInformation : IAdditionalDataHolder, IParsable
@@ -23,7 +23,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ReportDateTime { get; set; }
 #endif
-        /// <summary>Documentation not found in the MISMO model viewer and not provided by Freddie Mac. The value can only be &quot;ReportID&quot;</summary>
+        /// <summary>Documentation not found in the MISMO model viewer and not provided by Freddie Mac. The value can only be &quot;ReportID&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReportIdentifierType { get; set; }

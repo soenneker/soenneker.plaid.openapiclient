@@ -9,11 +9,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     {
         [EnumMember(Value = "CONFIRMED")]
         #pragma warning disable CS1591
-        CONFIRMED,
+        Confirmed,
         #pragma warning restore CS1591
         [EnumMember(Value = "SUSPECTED")]
         #pragma warning disable CS1591
-        SUSPECTED,
+        Suspected,
         #pragma warning restore CS1591
     }
 }

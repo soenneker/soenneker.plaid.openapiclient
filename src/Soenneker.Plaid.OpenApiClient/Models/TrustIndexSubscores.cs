@@ -12,24 +12,37 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TrustIndexSubscores : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bank_account_insights") is { } nullNodeBankAccountInsights && nullNodeBankAccountInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankAccountInsights = null;
+            if (parseNode.GetChildNode("device_and_connection") is { } nullNodeDeviceAndConnection && nullNodeDeviceAndConnection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceAndConnection = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents Trust Index Subscore.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TrustIndexSubscore? BankAccountInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TrustIndexSubscore? BankAccountInsights { get => _explicitNullValueBankAccountInsights; set { _explicitNullValueBankAccountInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_account_insights"); else _explicitNullProperties?.Remove("bank_account_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TrustIndexSubscore? _explicitNullValueBankAccountInsights = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TrustIndexSubscore BankAccountInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TrustIndexSubscore BankAccountInsights { get => _explicitNullValueBankAccountInsights; set { _explicitNullValueBankAccountInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_account_insights"); else _explicitNullProperties?.Remove("bank_account_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TrustIndexSubscore _explicitNullValueBankAccountInsights = default!;
 #endif
         /// <summary>Represents Trust Index Subscore.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TrustIndexSubscore? DeviceAndConnection { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TrustIndexSubscore? DeviceAndConnection { get => _explicitNullValueDeviceAndConnection; set { _explicitNullValueDeviceAndConnection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_and_connection"); else _explicitNullProperties?.Remove("device_and_connection"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TrustIndexSubscore? _explicitNullValueDeviceAndConnection = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TrustIndexSubscore DeviceAndConnection { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TrustIndexSubscore DeviceAndConnection { get => _explicitNullValueDeviceAndConnection; set { _explicitNullValueDeviceAndConnection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_and_connection"); else _explicitNullProperties?.Remove("device_and_connection"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TrustIndexSubscore _explicitNullValueDeviceAndConnection = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TrustIndexSubscores"/> and sets the default values.
@@ -46,7 +59,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.TrustIndexSubscores CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.TrustIndexSubscores();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.TrustIndexSubscores(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +84,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TrustIndexSubscore>("bank_account_insights", BankAccountInsights);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TrustIndexSubscore>("device_and_connection", DeviceAndConnection);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,118 +12,175 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BetaIssuesV1GetResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("affected_products") is { } nullNodeAffectedProducts && nullNodeAffectedProducts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AffectedProducts = null;
+            if (parseNode.GetChildNode("attribution") is { } nullNodeAttribution && nullNodeAttribution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attribution = null;
+            if (parseNode.GetChildNode("behaviors") is { } nullNodeBehaviors && nullNodeBehaviors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Behaviors = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("end_time") is { } nullNodeEndTime && nullNodeEndTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndTime = null;
+            if (parseNode.GetChildNode("estimated_resolution_time") is { } nullNodeEstimatedResolutionTime && nullNodeEstimatedResolutionTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EstimatedResolutionTime = null;
+            if (parseNode.GetChildNode("impact") is { } nullNodeImpact && nullNodeImpact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Impact = null;
+            if (parseNode.GetChildNode("institution_id") is { } nullNodeInstitutionId && nullNodeInstitutionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionId = null;
+            if (parseNode.GetChildNode("institution_name") is { } nullNodeInstitutionName && nullNodeInstitutionName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionName = null;
+            if (parseNode.GetChildNode("issue_error_code") is { } nullNodeIssueErrorCode && nullNodeIssueErrorCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssueErrorCode = null;
+            if (parseNode.GetChildNode("issue_error_type") is { } nullNodeIssueErrorType && nullNodeIssueErrorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssueErrorType = null;
+            if (parseNode.GetChildNode("issue_id") is { } nullNodeIssueId && nullNodeIssueId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssueId = null;
+            if (parseNode.GetChildNode("issue_type") is { } nullNodeIssueType && nullNodeIssueType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssueType = null;
+            if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
+            if (parseNode.GetChildNode("resolution_log") is { } nullNodeResolutionLog && nullNodeResolutionLog.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResolutionLog = null;
+            if (parseNode.GetChildNode("severity") is { } nullNodeSeverity && nullNodeSeverity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Severity = null;
+            if (parseNode.GetChildNode("start_time") is { } nullNodeStartTime && nullNodeStartTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartTime = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("user_guidance") is { } nullNodeUserGuidance && nullNodeUserGuidance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserGuidance = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Plaid products affected by the issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? AffectedProducts { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? AffectedProducts { get => _explicitNullValueAffectedProducts; set { _explicitNullValueAffectedProducts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("affected_products"); else _explicitNullProperties?.Remove("affected_products"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? _explicitNullValueAffectedProducts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> AffectedProducts { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> AffectedProducts { get => _explicitNullValueAffectedProducts; set { _explicitNullValueAffectedProducts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("affected_products"); else _explicitNullProperties?.Remove("affected_products"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> _explicitNullValueAffectedProducts = default!;
 #endif
         /// <summary>The party responsible for resolving an issue.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueAttribution? Attribution { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueAttribution? Attribution { get => _explicitNullValueAttribution; set { _explicitNullValueAttribution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attribution"); else _explicitNullProperties?.Remove("attribution"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueAttribution? _explicitNullValueAttribution = default!;
         /// <summary>The customer-visible effects of the issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueBehavior?>? Behaviors { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueBehavior?>? Behaviors { get => _explicitNullValueBehaviors; set { _explicitNullValueBehaviors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("behaviors"); else _explicitNullProperties?.Remove("behaviors"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueBehavior?>? _explicitNullValueBehaviors = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueBehavior?> Behaviors { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueBehavior?> Behaviors { get => _explicitNullValueBehaviors; set { _explicitNullValueBehaviors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("behaviors"); else _explicitNullProperties?.Remove("behaviors"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueBehavior?> _explicitNullValueBehaviors = default!;
 #endif
         /// <summary>A customer-facing explanation of the issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The time the issue ended, or null while it remains active.</summary>
-        public DateTimeOffset? EndTime { get; set; }
+        public DateTimeOffset? EndTime { get => _explicitNullValueEndTime; set { _explicitNullValueEndTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_time"); else _explicitNullProperties?.Remove("end_time"); } }
+        private DateTimeOffset? _explicitNullValueEndTime = default!;
         /// <summary>The estimated resolution time, or null when no estimate is available.</summary>
-        public DateTimeOffset? EstimatedResolutionTime { get; set; }
+        public DateTimeOffset? EstimatedResolutionTime { get => _explicitNullValueEstimatedResolutionTime; set { _explicitNullValueEstimatedResolutionTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("estimated_resolution_time"); else _explicitNullProperties?.Remove("estimated_resolution_time"); } }
+        private DateTimeOffset? _explicitNullValueEstimatedResolutionTime = default!;
         /// <summary>The client-specific impact of an error issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueImpact? Impact { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueImpact? Impact { get => _explicitNullValueImpact; set { _explicitNullValueImpact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("impact"); else _explicitNullProperties?.Remove("impact"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueImpact? _explicitNullValueImpact = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueImpact Impact { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueImpact Impact { get => _explicitNullValueImpact; set { _explicitNullValueImpact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("impact"); else _explicitNullProperties?.Remove("impact"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueImpact _explicitNullValueImpact = default!;
 #endif
         /// <summary>The identifier of the institution affected by the issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstitutionId { get; set; }
+        public string? InstitutionId { get => _explicitNullValueInstitutionId; set { _explicitNullValueInstitutionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_id"); else _explicitNullProperties?.Remove("institution_id"); } }
+        private string? _explicitNullValueInstitutionId = default!;
 #nullable restore
 #else
-        public string InstitutionId { get; set; }
+        public string InstitutionId { get => _explicitNullValueInstitutionId; set { _explicitNullValueInstitutionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_id"); else _explicitNullProperties?.Remove("institution_id"); } }
+        private string _explicitNullValueInstitutionId = default!;
 #endif
         /// <summary>The name of the institution affected by the issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstitutionName { get; set; }
+        public string? InstitutionName { get => _explicitNullValueInstitutionName; set { _explicitNullValueInstitutionName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_name"); else _explicitNullProperties?.Remove("institution_name"); } }
+        private string? _explicitNullValueInstitutionName = default!;
 #nullable restore
 #else
-        public string InstitutionName { get; set; }
+        public string InstitutionName { get => _explicitNullValueInstitutionName; set { _explicitNullValueInstitutionName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_name"); else _explicitNullProperties?.Remove("institution_name"); } }
+        private string _explicitNullValueInstitutionName = default!;
 #endif
         /// <summary>The API error code associated with the issue if available. Always null or non-null together with `issue_error_type`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssueErrorCode { get; set; }
+        public string? IssueErrorCode { get => _explicitNullValueIssueErrorCode; set { _explicitNullValueIssueErrorCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_error_code"); else _explicitNullProperties?.Remove("issue_error_code"); } }
+        private string? _explicitNullValueIssueErrorCode = default!;
 #nullable restore
 #else
-        public string IssueErrorCode { get; set; }
+        public string IssueErrorCode { get => _explicitNullValueIssueErrorCode; set { _explicitNullValueIssueErrorCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_error_code"); else _explicitNullProperties?.Remove("issue_error_code"); } }
+        private string _explicitNullValueIssueErrorCode = default!;
 #endif
         /// <summary>The API error type associated with the issue if available. Mirrors the `error_type` field on `PlaidError` returned on error responses and is safe for programmatic use. Always null or non-null together with `issue_error_code`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssueErrorType { get; set; }
+        public string? IssueErrorType { get => _explicitNullValueIssueErrorType; set { _explicitNullValueIssueErrorType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_error_type"); else _explicitNullProperties?.Remove("issue_error_type"); } }
+        private string? _explicitNullValueIssueErrorType = default!;
 #nullable restore
 #else
-        public string IssueErrorType { get; set; }
+        public string IssueErrorType { get => _explicitNullValueIssueErrorType; set { _explicitNullValueIssueErrorType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_error_type"); else _explicitNullProperties?.Remove("issue_error_type"); } }
+        private string _explicitNullValueIssueErrorType = default!;
 #endif
         /// <summary>The customer-visible identifier of the issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssueId { get; set; }
+        public string? IssueId { get => _explicitNullValueIssueId; set { _explicitNullValueIssueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_id"); else _explicitNullProperties?.Remove("issue_id"); } }
+        private string? _explicitNullValueIssueId = default!;
 #nullable restore
 #else
-        public string IssueId { get; set; }
+        public string IssueId { get => _explicitNullValueIssueId; set { _explicitNullValueIssueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_id"); else _explicitNullProperties?.Remove("issue_id"); } }
+        private string _explicitNullValueIssueId = default!;
 #endif
         /// <summary>The customer-facing category of an issue.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueType? IssueType { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueType? IssueType { get => _explicitNullValueIssueType; set { _explicitNullValueIssueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_type"); else _explicitNullProperties?.Remove("issue_type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueType? _explicitNullValueIssueType = default!;
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId { get; set; }
+        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        private string? _explicitNullValueRequestId = default!;
 #nullable restore
 #else
-        public string RequestId { get; set; }
+        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        private string _explicitNullValueRequestId = default!;
 #endif
         /// <summary>Resolution events recorded for the issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueResolutionEvent>? ResolutionLog { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueResolutionEvent>? ResolutionLog { get => _explicitNullValueResolutionLog; set { _explicitNullValueResolutionLog = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolution_log"); else _explicitNullProperties?.Remove("resolution_log"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueResolutionEvent>? _explicitNullValueResolutionLog = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueResolutionEvent> ResolutionLog { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueResolutionEvent> ResolutionLog { get => _explicitNullValueResolutionLog; set { _explicitNullValueResolutionLog = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolution_log"); else _explicitNullProperties?.Remove("resolution_log"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueResolutionEvent> _explicitNullValueResolutionLog = default!;
 #endif
         /// <summary>The customer-facing severity of an issue.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueSeverity? Severity { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueSeverity? Severity { get => _explicitNullValueSeverity; set { _explicitNullValueSeverity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("severity"); else _explicitNullProperties?.Remove("severity"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueSeverity? _explicitNullValueSeverity = default!;
         /// <summary>The time the issue began, or null when it is unknown. Only populated for incidents.</summary>
-        public DateTimeOffset? StartTime { get; set; }
+        public DateTimeOffset? StartTime { get => _explicitNullValueStartTime; set { _explicitNullValueStartTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_time"); else _explicitNullProperties?.Remove("start_time"); } }
+        private DateTimeOffset? _explicitNullValueStartTime = default!;
         /// <summary>The customer-facing resolution state of an issue.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueStatus? Status { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueStatus? _explicitNullValueStatus = default!;
         /// <summary>Guidance for an end user affected by the issue, or null when no guidance is available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserGuidance { get; set; }
+        public string? UserGuidance { get => _explicitNullValueUserGuidance; set { _explicitNullValueUserGuidance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_guidance"); else _explicitNullProperties?.Remove("user_guidance"); } }
+        private string? _explicitNullValueUserGuidance = default!;
 #nullable restore
 #else
-        public string UserGuidance { get; set; }
+        public string UserGuidance { get => _explicitNullValueUserGuidance; set { _explicitNullValueUserGuidance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_guidance"); else _explicitNullProperties?.Remove("user_guidance"); } }
+        private string _explicitNullValueUserGuidance = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1GetResponse"/> and sets the default values.
@@ -140,7 +197,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1GetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1GetResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1GetResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -197,6 +254,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("start_time", StartTime);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueStatus>("status", Status);
             writer.WriteStringValue("user_guidance", UserGuidance);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

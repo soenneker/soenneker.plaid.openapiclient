@@ -12,18 +12,30 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PayrollIncomeRateOfPay : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("pay_amount") is { } nullNodePayAmount && nullNodePayAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayAmount = null;
+            if (parseNode.GetChildNode("pay_rate") is { } nullNodePayRate && nullNodePayRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayRate = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount at which an employee is paid.</summary>
-        public double? PayAmount { get; set; }
+        public double? PayAmount { get => _explicitNullValuePayAmount; set { _explicitNullValuePayAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_amount"); else _explicitNullProperties?.Remove("pay_amount"); } }
+        private double? _explicitNullValuePayAmount = default!;
         /// <summary>The rate at which an employee is paid.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayRate { get; set; }
+        public string? PayRate { get => _explicitNullValuePayRate; set { _explicitNullValuePayRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_rate"); else _explicitNullProperties?.Remove("pay_rate"); } }
+        private string? _explicitNullValuePayRate = default!;
 #nullable restore
 #else
-        public string PayRate { get; set; }
+        public string PayRate { get => _explicitNullValuePayRate; set { _explicitNullValuePayRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_rate"); else _explicitNullProperties?.Remove("pay_rate"); } }
+        private string _explicitNullValuePayRate = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PayrollIncomeRateOfPay"/> and sets the default values.
@@ -40,7 +52,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.PayrollIncomeRateOfPay CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.PayrollIncomeRateOfPay();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.PayrollIncomeRateOfPay(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("pay_amount", PayAmount);
             writer.WriteStringValue("pay_rate", PayRate);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,75 +12,113 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BankTransferEvent : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_id") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
+            if (parseNode.GetChildNode("bank_transfer_amount") is { } nullNodeBankTransferAmount && nullNodeBankTransferAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankTransferAmount = null;
+            if (parseNode.GetChildNode("bank_transfer_id") is { } nullNodeBankTransferId && nullNodeBankTransferId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankTransferId = null;
+            if (parseNode.GetChildNode("bank_transfer_iso_currency_code") is { } nullNodeBankTransferIsoCurrencyCode && nullNodeBankTransferIsoCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankTransferIsoCurrencyCode = null;
+            if (parseNode.GetChildNode("bank_transfer_type") is { } nullNodeBankTransferType && nullNodeBankTransferType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankTransferType = null;
+            if (parseNode.GetChildNode("direction") is { } nullNodeDirection && nullNodeDirection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Direction = null;
+            if (parseNode.GetChildNode("event_id") is { } nullNodeEventId && nullNodeEventId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventId = null;
+            if (parseNode.GetChildNode("event_type") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
+            if (parseNode.GetChildNode("failure_reason") is { } nullNodeFailureReason && nullNodeFailureReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureReason = null;
+            if (parseNode.GetChildNode("origination_account_id") is { } nullNodeOriginationAccountId && nullNodeOriginationAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginationAccountId = null;
+            if (parseNode.GetChildNode("receiver_details") is { } nullNodeReceiverDetails && nullNodeReceiverDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReceiverDetails = null;
+            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+        }
+
         /// <summary>The account ID associated with the bank transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountId { get; set; }
+        public string? AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        private string? _explicitNullValueAccountId = default!;
 #nullable restore
 #else
-        public string AccountId { get; set; }
+        public string AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        private string _explicitNullValueAccountId = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bank transfer amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BankTransferAmount { get; set; }
+        public string? BankTransferAmount { get => _explicitNullValueBankTransferAmount; set { _explicitNullValueBankTransferAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_transfer_amount"); else _explicitNullProperties?.Remove("bank_transfer_amount"); } }
+        private string? _explicitNullValueBankTransferAmount = default!;
 #nullable restore
 #else
-        public string BankTransferAmount { get; set; }
+        public string BankTransferAmount { get => _explicitNullValueBankTransferAmount; set { _explicitNullValueBankTransferAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_transfer_amount"); else _explicitNullProperties?.Remove("bank_transfer_amount"); } }
+        private string _explicitNullValueBankTransferAmount = default!;
 #endif
         /// <summary>Plaid&apos;s unique identifier for a bank transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BankTransferId { get; set; }
+        public string? BankTransferId { get => _explicitNullValueBankTransferId; set { _explicitNullValueBankTransferId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_transfer_id"); else _explicitNullProperties?.Remove("bank_transfer_id"); } }
+        private string? _explicitNullValueBankTransferId = default!;
 #nullable restore
 #else
-        public string BankTransferId { get; set; }
+        public string BankTransferId { get => _explicitNullValueBankTransferId; set { _explicitNullValueBankTransferId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_transfer_id"); else _explicitNullProperties?.Remove("bank_transfer_id"); } }
+        private string _explicitNullValueBankTransferId = default!;
 #endif
         /// <summary>The currency of the bank transfer amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BankTransferIsoCurrencyCode { get; set; }
+        public string? BankTransferIsoCurrencyCode { get => _explicitNullValueBankTransferIsoCurrencyCode; set { _explicitNullValueBankTransferIsoCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_transfer_iso_currency_code"); else _explicitNullProperties?.Remove("bank_transfer_iso_currency_code"); } }
+        private string? _explicitNullValueBankTransferIsoCurrencyCode = default!;
 #nullable restore
 #else
-        public string BankTransferIsoCurrencyCode { get; set; }
+        public string BankTransferIsoCurrencyCode { get => _explicitNullValueBankTransferIsoCurrencyCode; set { _explicitNullValueBankTransferIsoCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_transfer_iso_currency_code"); else _explicitNullProperties?.Remove("bank_transfer_iso_currency_code"); } }
+        private string _explicitNullValueBankTransferIsoCurrencyCode = default!;
 #endif
         /// <summary>The type of bank transfer. This will be either `debit` or `credit`.  A `debit` indicates a transfer of money into the origination account; a `credit` indicates a transfer of money out of the origination account.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferType? BankTransferType { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferType? BankTransferType { get => _explicitNullValueBankTransferType; set { _explicitNullValueBankTransferType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_transfer_type"); else _explicitNullProperties?.Remove("bank_transfer_type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BankTransferType? _explicitNullValueBankTransferType = default!;
         /// <summary>Indicates the direction of the transfer: `outbound` for API-initiated transfers, or `inbound` for payments received by the FBO account.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferDirection? Direction { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferDirection? Direction { get => _explicitNullValueDirection; set { _explicitNullValueDirection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direction"); else _explicitNullProperties?.Remove("direction"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BankTransferDirection? _explicitNullValueDirection = default!;
         /// <summary>Plaid&apos;s unique identifier for this event. IDs are sequential unsigned 64-bit integers.</summary>
-        public int? EventId { get; set; }
+        public int? EventId { get => _explicitNullValueEventId; set { _explicitNullValueEventId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_id"); else _explicitNullProperties?.Remove("event_id"); } }
+        private int? _explicitNullValueEventId = default!;
         /// <summary>The type of event that this bank transfer represents.`pending`: A new transfer was created; it is in the pending state.`cancelled`: The transfer was cancelled by the client.`failed`: The transfer failed, no funds were moved.`posted`: The transfer has been successfully submitted to the payment network.`reversed`: A posted transfer was reversed.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventType? EventType { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventType? EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type"); else _explicitNullProperties?.Remove("event_type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventType? _explicitNullValueEventType = default!;
         /// <summary>The failure reason if the type of this transfer is `&quot;failed&quot;` or `&quot;reversed&quot;`. Null value otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferFailure? FailureReason { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferFailure? FailureReason { get => _explicitNullValueFailureReason; set { _explicitNullValueFailureReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_reason"); else _explicitNullProperties?.Remove("failure_reason"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BankTransferFailure? _explicitNullValueFailureReason = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferFailure FailureReason { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferFailure FailureReason { get => _explicitNullValueFailureReason; set { _explicitNullValueFailureReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_reason"); else _explicitNullProperties?.Remove("failure_reason"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BankTransferFailure _explicitNullValueFailureReason = default!;
 #endif
         /// <summary>The ID of the origination account that this balance belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginationAccountId { get; set; }
+        public string? OriginationAccountId { get => _explicitNullValueOriginationAccountId; set { _explicitNullValueOriginationAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origination_account_id"); else _explicitNullProperties?.Remove("origination_account_id"); } }
+        private string? _explicitNullValueOriginationAccountId = default!;
 #nullable restore
 #else
-        public string OriginationAccountId { get; set; }
+        public string OriginationAccountId { get => _explicitNullValueOriginationAccountId; set { _explicitNullValueOriginationAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origination_account_id"); else _explicitNullProperties?.Remove("origination_account_id"); } }
+        private string _explicitNullValueOriginationAccountId = default!;
 #endif
         /// <summary>Additional details for receiver events. Currently always `null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ReceiverDetails? ReceiverDetails { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ReceiverDetails? ReceiverDetails { get => _explicitNullValueReceiverDetails; set { _explicitNullValueReceiverDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("receiver_details"); else _explicitNullProperties?.Remove("receiver_details"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ReceiverDetails? _explicitNullValueReceiverDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ReceiverDetails ReceiverDetails { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ReceiverDetails ReceiverDetails { get => _explicitNullValueReceiverDetails; set { _explicitNullValueReceiverDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("receiver_details"); else _explicitNullProperties?.Remove("receiver_details"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ReceiverDetails _explicitNullValueReceiverDetails = default!;
 #endif
         /// <summary>The datetime when this event occurred. This will be of the form `2006-01-02T15:04:05Z`.</summary>
-        public DateTimeOffset? Timestamp { get; set; }
+        public DateTimeOffset? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private DateTimeOffset? _explicitNullValueTimestamp = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEvent"/> and sets the default values.
         /// </summary>
@@ -96,7 +134,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEvent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEvent();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEvent(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -139,6 +177,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("origination_account_id", OriginationAccountId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ReceiverDetails>("receiver_details", ReceiverDetails);
             writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

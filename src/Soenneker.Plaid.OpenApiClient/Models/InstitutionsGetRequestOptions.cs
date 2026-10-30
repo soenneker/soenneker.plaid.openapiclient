@@ -12,32 +12,53 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InstitutionsGetRequestOptions : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("include_auth_metadata") is { } nullNodeIncludeAuthMetadata && nullNodeIncludeAuthMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeAuthMetadata = null;
+            if (parseNode.GetChildNode("include_optional_metadata") is { } nullNodeIncludeOptionalMetadata && nullNodeIncludeOptionalMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeOptionalMetadata = null;
+            if (parseNode.GetChildNode("include_payment_initiation_metadata") is { } nullNodeIncludePaymentInitiationMetadata && nullNodeIncludePaymentInitiationMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludePaymentInitiationMetadata = null;
+            if (parseNode.GetChildNode("oauth") is { } nullNodeOauth && nullNodeOauth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Oauth = null;
+            if (parseNode.GetChildNode("products") is { } nullNodeProducts && nullNodeProducts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Products = null;
+            if (parseNode.GetChildNode("routing_numbers") is { } nullNodeRoutingNumbers && nullNodeRoutingNumbers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoutingNumbers = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When `true`, returns metadata related to the Auth product indicating which auth methods are supported.</summary>
-        public bool? IncludeAuthMetadata { get; set; }
+        public bool? IncludeAuthMetadata { get => _explicitNullValueIncludeAuthMetadata; set { _explicitNullValueIncludeAuthMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_auth_metadata"); else _explicitNullProperties?.Remove("include_auth_metadata"); } }
+        private bool? _explicitNullValueIncludeAuthMetadata = default!;
         /// <summary>When `true`, return the institution&apos;s homepage URL, logo and primary brand color. Not all institutions&apos; logos are available.Note that Plaid does not own any of the logos shared by the API, and that by accessing or using these logos, you agree that you are doing so at your own risk and will, if necessary, obtain all required permissions from the appropriate rights holders and adhere to any applicable usage guidelines. Plaid disclaims all express or implied warranties with respect to the logos.</summary>
-        public bool? IncludeOptionalMetadata { get; set; }
+        public bool? IncludeOptionalMetadata { get => _explicitNullValueIncludeOptionalMetadata; set { _explicitNullValueIncludeOptionalMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_optional_metadata"); else _explicitNullProperties?.Remove("include_optional_metadata"); } }
+        private bool? _explicitNullValueIncludeOptionalMetadata = default!;
         /// <summary>When `true`, returns metadata related to the Payment Initiation product indicating which payment configurations are supported.</summary>
-        public bool? IncludePaymentInitiationMetadata { get; set; }
+        public bool? IncludePaymentInitiationMetadata { get => _explicitNullValueIncludePaymentInitiationMetadata; set { _explicitNullValueIncludePaymentInitiationMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_payment_initiation_metadata"); else _explicitNullProperties?.Remove("include_payment_initiation_metadata"); } }
+        private bool? _explicitNullValueIncludePaymentInitiationMetadata = default!;
         /// <summary>Limit results to institutions with or without OAuth login flows. Note that institutions will have `oauth` set to `true` if some Items associated with that institution are required to use OAuth flows; institutions in a state of migration to OAuth will have the `oauth` attribute set to `true`.</summary>
-        public bool? Oauth { get; set; }
+        public bool? Oauth { get => _explicitNullValueOauth; set { _explicitNullValueOauth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth"); else _explicitNullProperties?.Remove("oauth"); } }
+        private bool? _explicitNullValueOauth = default!;
         /// <summary>Filter the Institutions based on which products they support. Will only return institutions that support all listed products. When filtering based on `auth`, an institution must support Instant Auth to match the criterion. To filter for Signal Transaction Scores support, use `balance`. To filter for Transfer support, use `auth`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? Products { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? Products { get => _explicitNullValueProducts; set { _explicitNullValueProducts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("products"); else _explicitNullProperties?.Remove("products"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? _explicitNullValueProducts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> Products { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> Products { get => _explicitNullValueProducts; set { _explicitNullValueProducts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("products"); else _explicitNullProperties?.Remove("products"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> _explicitNullValueProducts = default!;
 #endif
         /// <summary>Specify an array of routing numbers to filter institutions. The response will only return institutions that match all of the routing numbers in the array. Routing number records used for this matching are generally comprehensive; however, failure to match a given routing number to an institution does not necessarily mean that the institution is unsupported by Plaid. Invalid routing numbers (numbers that are not 9 digits in length or do not have a valid checksum) will be filtered from the array before the response is processed. If all provided routing numbers are invalid, an `INVALID_REQUEST` error with the code of `INVALID_FIELD` will be returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RoutingNumbers { get; set; }
+        public List<string>? RoutingNumbers { get => _explicitNullValueRoutingNumbers; set { _explicitNullValueRoutingNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routing_numbers"); else _explicitNullProperties?.Remove("routing_numbers"); } }
+        private List<string>? _explicitNullValueRoutingNumbers = default!;
 #nullable restore
 #else
-        public List<string> RoutingNumbers { get; set; }
+        public List<string> RoutingNumbers { get => _explicitNullValueRoutingNumbers; set { _explicitNullValueRoutingNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routing_numbers"); else _explicitNullProperties?.Remove("routing_numbers"); } }
+        private List<string> _explicitNullValueRoutingNumbers = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.InstitutionsGetRequestOptions"/> and sets the default values.
@@ -56,7 +77,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.InstitutionsGetRequestOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.InstitutionsGetRequestOptions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.InstitutionsGetRequestOptions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,6 +108,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteBoolValue("oauth", Oauth);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.Products>("products", Products);
             writer.WriteCollectionOfPrimitiveValues<string>("routing_numbers", RoutingNumbers);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -13,28 +13,45 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BaseReportHistoricalBalance : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("current") is { } nullNodeCurrent && nullNodeCurrent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Current = null;
+            if (parseNode.GetChildNode("date") is { } nullNodeDate && nullNodeDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Date = null;
+            if (parseNode.GetChildNode("iso_currency_code") is { } nullNodeIsoCurrencyCode && nullNodeIsoCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsoCurrencyCode = null;
+            if (parseNode.GetChildNode("unofficial_currency_code") is { } nullNodeUnofficialCurrencyCode && nullNodeUnofficialCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnofficialCurrencyCode = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The total amount of funds in the account, calculated from the `current` balance in the `balance` object by subtracting inflows and adding back outflows according to the posted date of each transaction.If the account has any pending transactions, historical balance amounts on or before the date of the earliest pending transaction may differ if retrieved in subsequent reports as a result of those pending transactions posting.</summary>
-        public double? Current { get; set; }
+        public double? Current { get => _explicitNullValueCurrent; set { _explicitNullValueCurrent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current"); else _explicitNullProperties?.Remove("current"); } }
+        private double? _explicitNullValueCurrent = default!;
         /// <summary>The date of the calculated historical balance, in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD)</summary>
-        public Date? Date { get; set; }
+        public Date? Date { get => _explicitNullValueDate; set { _explicitNullValueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date"); else _explicitNullProperties?.Remove("date"); } }
+        private Date? _explicitNullValueDate = default!;
         /// <summary>The ISO-4217 currency code of the balance. Always `null` if `unofficial_currency_code` is non-`null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IsoCurrencyCode { get; set; }
+        public string? IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
+        private string? _explicitNullValueIsoCurrencyCode = default!;
 #nullable restore
 #else
-        public string IsoCurrencyCode { get; set; }
+        public string IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
+        private string _explicitNullValueIsoCurrencyCode = default!;
 #endif
         /// <summary>The unofficial currency code associated with the balance. Always `null` if `iso_currency_code` is non-`null`.See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `unofficial_currency_code`s.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnofficialCurrencyCode { get; set; }
+        public string? UnofficialCurrencyCode { get => _explicitNullValueUnofficialCurrencyCode; set { _explicitNullValueUnofficialCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unofficial_currency_code"); else _explicitNullProperties?.Remove("unofficial_currency_code"); } }
+        private string? _explicitNullValueUnofficialCurrencyCode = default!;
 #nullable restore
 #else
-        public string UnofficialCurrencyCode { get; set; }
+        public string UnofficialCurrencyCode { get => _explicitNullValueUnofficialCurrencyCode; set { _explicitNullValueUnofficialCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unofficial_currency_code"); else _explicitNullProperties?.Remove("unofficial_currency_code"); } }
+        private string _explicitNullValueUnofficialCurrencyCode = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BaseReportHistoricalBalance"/> and sets the default values.
@@ -51,7 +68,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.BaseReportHistoricalBalance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.BaseReportHistoricalBalance();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.BaseReportHistoricalBalance(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +95,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDateValue("date", Date);
             writer.WriteStringValue("iso_currency_code", IsoCurrencyCode);
             writer.WriteStringValue("unofficial_currency_code", UnofficialCurrencyCode);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

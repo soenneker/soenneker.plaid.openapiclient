@@ -12,48 +12,70 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserAccountIdentityEditHistory : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
+            if (parseNode.GetChildNode("date_of_birth") is { } nullNodeDateOfBirth && nullNodeDateOfBirth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOfBirth = null;
+            if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("official_document") is { } nullNodeOfficialDocument && nullNodeOfficialDocument.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OfficialDocument = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Edit counts over various time periods.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts? Address { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts? _explicitNullValueAddress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts Address { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts _explicitNullValueAddress = default!;
 #endif
         /// <summary>Edit counts over various time periods.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts? DateOfBirth { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts? DateOfBirth { get => _explicitNullValueDateOfBirth; set { _explicitNullValueDateOfBirth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_of_birth"); else _explicitNullProperties?.Remove("date_of_birth"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts? _explicitNullValueDateOfBirth = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts DateOfBirth { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts DateOfBirth { get => _explicitNullValueDateOfBirth; set { _explicitNullValueDateOfBirth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_of_birth"); else _explicitNullProperties?.Remove("date_of_birth"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts _explicitNullValueDateOfBirth = default!;
 #endif
         /// <summary>Edit counts over various time periods.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts? Email { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts? _explicitNullValueEmail = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts Email { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts _explicitNullValueEmail = default!;
 #endif
         /// <summary>Edit counts over various time periods.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts? Name { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts Name { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts _explicitNullValueName = default!;
 #endif
         /// <summary>Official identity document edit statistics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityOfficialDocument? OfficialDocument { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityOfficialDocument? OfficialDocument { get => _explicitNullValueOfficialDocument; set { _explicitNullValueOfficialDocument = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("official_document"); else _explicitNullProperties?.Remove("official_document"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityOfficialDocument? _explicitNullValueOfficialDocument = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityOfficialDocument OfficialDocument { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityOfficialDocument OfficialDocument { get => _explicitNullValueOfficialDocument; set { _explicitNullValueOfficialDocument = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("official_document"); else _explicitNullProperties?.Remove("official_document"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityOfficialDocument _explicitNullValueOfficialDocument = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditHistory"/> and sets the default values.
@@ -70,7 +92,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditHistory CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditHistory();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditHistory(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,6 +123,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts>("email", Email);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts>("name", Name);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityOfficialDocument>("official_document", OfficialDocument);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

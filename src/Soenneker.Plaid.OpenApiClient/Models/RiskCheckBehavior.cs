@@ -12,17 +12,32 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RiskCheckBehavior : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bot_detected") is { } nullNodeBotDetected && nullNodeBotDetected.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BotDetected = null;
+            if (parseNode.GetChildNode("fraud_ring_detected") is { } nullNodeFraudRingDetected && nullNodeFraudRingDetected.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FraudRingDetected = null;
+            if (parseNode.GetChildNode("risk_level") is { } nullNodeRiskLevel && nullNodeRiskLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskLevel = null;
+            if (parseNode.GetChildNode("user_interactions") is { } nullNodeUserInteractions && nullNodeUserInteractions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserInteractions = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Field describing the outcome of a bot detection behavior risk check.`yes` indicates that automated activity was detected.`no` indicates that automated activity was not detected.`no_data` indicates there was not enough information available to give an accurate signal.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckBehaviorBotDetectedLabel? BotDetected { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckBehaviorBotDetectedLabel? BotDetected { get => _explicitNullValueBotDetected; set { _explicitNullValueBotDetected = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bot_detected"); else _explicitNullProperties?.Remove("bot_detected"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckBehaviorBotDetectedLabel? _explicitNullValueBotDetected = default!;
         /// <summary>Field describing the outcome of a fraud ring behavior risk check.`yes` indicates that fraud ring activity was detected.`no` indicates that fraud ring activity was not detected.`no_data` indicates there was not enough information available to give an accurate signal.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckBehaviorFraudRingDetectedLabel? FraudRingDetected { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckBehaviorFraudRingDetectedLabel? FraudRingDetected { get => _explicitNullValueFraudRingDetected; set { _explicitNullValueFraudRingDetected = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraud_ring_detected"); else _explicitNullProperties?.Remove("fraud_ring_detected"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckBehaviorFraudRingDetectedLabel? _explicitNullValueFraudRingDetected = default!;
         /// <summary>Risk level for the given risk check type, when available.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskLevelWithNoData? RiskLevel { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskLevelWithNoData? RiskLevel { get => _explicitNullValueRiskLevel; set { _explicitNullValueRiskLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_level"); else _explicitNullProperties?.Remove("risk_level"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskLevelWithNoData? _explicitNullValueRiskLevel = default!;
         /// <summary>Field describing the overall user interaction signals of a behavior risk check. This value represents how familiar the user is with the personal data they provide, based on a number of signals that are collected during their session.`genuine` indicates the user has high familiarity with the data they are providing, and that fraud is unlikely.`neutral` indicates some signals are present in between `risky` and `genuine`, but there are not enough clear signals to determine an outcome.`risky` indicates the user has low familiarity with the data they are providing, and that fraud is likely.`no_data` indicates there is not sufficient information to give an accurate signal.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckBehaviorUserInteractionsLabel? UserInteractions { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckBehaviorUserInteractionsLabel? UserInteractions { get => _explicitNullValueUserInteractions; set { _explicitNullValueUserInteractions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_interactions"); else _explicitNullProperties?.Remove("user_interactions"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckBehaviorUserInteractionsLabel? _explicitNullValueUserInteractions = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckBehavior"/> and sets the default values.
         /// </summary>
@@ -38,7 +53,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckBehavior CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckBehavior();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckBehavior(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,6 +82,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckBehaviorFraudRingDetectedLabel>("fraud_ring_detected", FraudRingDetected);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskLevelWithNoData>("risk_level", RiskLevel);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckBehaviorUserInteractionsLabel>("user_interactions", UserInteractions);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

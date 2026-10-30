@@ -12,27 +12,42 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LendScore : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("error_reason") is { } nullNodeErrorReason && nullNodeErrorReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorReason = null;
+            if (parseNode.GetChildNode("reason_codes") is { } nullNodeReasonCodes && nullNodeReasonCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReasonCodes = null;
+            if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Human-readable description of why the LendScore could not be computed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorReason { get; set; }
+        public string? ErrorReason { get => _explicitNullValueErrorReason; set { _explicitNullValueErrorReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_reason"); else _explicitNullProperties?.Remove("error_reason"); } }
+        private string? _explicitNullValueErrorReason = default!;
 #nullable restore
 #else
-        public string ErrorReason { get; set; }
+        public string ErrorReason { get => _explicitNullValueErrorReason; set { _explicitNullValueErrorReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_reason"); else _explicitNullProperties?.Remove("error_reason"); } }
+        private string _explicitNullValueErrorReason = default!;
 #endif
         /// <summary>The reasons for an individual having risk according to the LendScore. For a full list of possible reason codes and a mapping of reason codes to human-readable reasons, contact your Plaid account manager. Different LendScore versions will use different sets of reason codes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ReasonCodes { get; set; }
+        public List<string>? ReasonCodes { get => _explicitNullValueReasonCodes; set { _explicitNullValueReasonCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason_codes"); else _explicitNullProperties?.Remove("reason_codes"); } }
+        private List<string>? _explicitNullValueReasonCodes = default!;
 #nullable restore
 #else
-        public List<string> ReasonCodes { get; set; }
+        public List<string> ReasonCodes { get => _explicitNullValueReasonCodes; set { _explicitNullValueReasonCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason_codes"); else _explicitNullProperties?.Remove("reason_codes"); } }
+        private List<string> _explicitNullValueReasonCodes = default!;
 #endif
         /// <summary>The score returned by the LendScore model. Will be an integer in the range 1 to 99. Higher scores indicate lower credit risk.</summary>
-        public int? Score { get; set; }
+        public int? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
+        private int? _explicitNullValueScore = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LendScore"/> and sets the default values.
         /// </summary>
@@ -48,7 +63,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.LendScore CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.LendScore();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.LendScore(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +90,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("error_reason", ErrorReason);
             writer.WriteCollectionOfPrimitiveValues<string>("reason_codes", ReasonCodes);
             writer.WriteIntValue("score", Score);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

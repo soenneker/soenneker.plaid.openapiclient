@@ -12,44 +12,67 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BusinessKybCheck : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
+            if (parseNode.GetChildNode("match_details") is { } nullNodeMatchDetails && nullNodeMatchDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchDetails = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("website") is { } nullNodeWebsite && nullNodeWebsite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Website = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Summary of how a specific business field matched against data provider results</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary? Address { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary? _explicitNullValueAddress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary Address { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary _explicitNullValueAddress = default!;
 #endif
         /// <summary>Detailed information about the business from data provider results</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybMatchDetails? MatchDetails { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybMatchDetails? MatchDetails { get => _explicitNullValueMatchDetails; set { _explicitNullValueMatchDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_details"); else _explicitNullProperties?.Remove("match_details"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybMatchDetails? _explicitNullValueMatchDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybMatchDetails MatchDetails { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybMatchDetails MatchDetails { get => _explicitNullValueMatchDetails; set { _explicitNullValueMatchDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_details"); else _explicitNullProperties?.Remove("match_details"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybMatchDetails _explicitNullValueMatchDetails = default!;
 #endif
         /// <summary>Summary of how a specific business field matched against data provider results</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary? Name { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary Name { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary _explicitNullValueName = default!;
 #endif
         /// <summary>A score from 0 to 100 indicating the confidence in KYB (Know Your Business) identity assessment for the business</summary>
-        public int? Score { get; set; }
+        public int? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
+        private int? _explicitNullValueScore = default!;
         /// <summary>Status of the KYB (Know Your Business) identity assessment check</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatusKybCheck? Status { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatusKybCheck? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatusKybCheck? _explicitNullValueStatus = default!;
         /// <summary>Summary of how a specific business field matched against data provider results</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary? Website { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary? Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary? _explicitNullValueWebsite = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary Website { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary _explicitNullValueWebsite = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybCheck"/> and sets the default values.
@@ -66,7 +89,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybCheck CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybCheck();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybCheck(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -97,6 +122,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteIntValue("score", Score);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatusKybCheck>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary>("website", Website);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

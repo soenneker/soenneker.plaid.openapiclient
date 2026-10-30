@@ -14,20 +14,32 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [Obsolete("")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmploymentDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("annual_salary") is { } nullNodeAnnualSalary && nullNodeAnnualSalary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnnualSalary = null;
+            if (parseNode.GetChildNode("hire_date") is { } nullNodeHireDate && nullNodeHireDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HireDate = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An object representing a monetary amount.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.Pay? AnnualSalary { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Pay? AnnualSalary { get => _explicitNullValueAnnualSalary; set { _explicitNullValueAnnualSalary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annual_salary"); else _explicitNullProperties?.Remove("annual_salary"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Pay? _explicitNullValueAnnualSalary = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.Pay AnnualSalary { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Pay AnnualSalary { get => _explicitNullValueAnnualSalary; set { _explicitNullValueAnnualSalary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annual_salary"); else _explicitNullProperties?.Remove("annual_salary"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Pay _explicitNullValueAnnualSalary = default!;
 #endif
         /// <summary>Date on which the employee was hired, in the YYYY-MM-DD format.</summary>
-        public Date? HireDate { get; set; }
+        public Date? HireDate { get => _explicitNullValueHireDate; set { _explicitNullValueHireDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hire_date"); else _explicitNullProperties?.Remove("hire_date"); } }
+        private Date? _explicitNullValueHireDate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.EmploymentDetails"/> and sets the default values.
         /// </summary>
@@ -43,7 +55,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.EmploymentDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.EmploymentDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.EmploymentDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,6 +78,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Pay>("annual_salary", AnnualSalary);
             writer.WriteDateValue("hire_date", HireDate);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

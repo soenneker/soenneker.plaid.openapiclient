@@ -13,51 +13,90 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RiskCheckEmail : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("breach_count") is { } nullNodeBreachCount && nullNodeBreachCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BreachCount = null;
+            if (parseNode.GetChildNode("domain_is_custom") is { } nullNodeDomainIsCustom && nullNodeDomainIsCustom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainIsCustom = null;
+            if (parseNode.GetChildNode("domain_is_disposable") is { } nullNodeDomainIsDisposable && nullNodeDomainIsDisposable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainIsDisposable = null;
+            if (parseNode.GetChildNode("domain_is_free_provider") is { } nullNodeDomainIsFreeProvider && nullNodeDomainIsFreeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainIsFreeProvider = null;
+            if (parseNode.GetChildNode("domain_registered_at") is { } nullNodeDomainRegisteredAt && nullNodeDomainRegisteredAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainRegisteredAt = null;
+            if (parseNode.GetChildNode("factors") is { } nullNodeFactors && nullNodeFactors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Factors = null;
+            if (parseNode.GetChildNode("first_breached_at") is { } nullNodeFirstBreachedAt && nullNodeFirstBreachedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstBreachedAt = null;
+            if (parseNode.GetChildNode("includes_date_of_birth") is { } nullNodeIncludesDateOfBirth && nullNodeIncludesDateOfBirth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludesDateOfBirth = null;
+            if (parseNode.GetChildNode("is_deliverable") is { } nullNodeIsDeliverable && nullNodeIsDeliverable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDeliverable = null;
+            if (parseNode.GetChildNode("is_edu") is { } nullNodeIsEdu && nullNodeIsEdu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsEdu = null;
+            if (parseNode.GetChildNode("last_breached_at") is { } nullNodeLastBreachedAt && nullNodeLastBreachedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastBreachedAt = null;
+            if (parseNode.GetChildNode("linked_services") is { } nullNodeLinkedServices && nullNodeLinkedServices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkedServices = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("risk_level") is { } nullNodeRiskLevel && nullNodeRiskLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskLevel = null;
+            if (parseNode.GetChildNode("top_level_domain_is_suspicious") is { } nullNodeTopLevelDomainIsSuspicious && nullNodeTopLevelDomainIsSuspicious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopLevelDomainIsSuspicious = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Count of all known breaches of this email address if known.</summary>
-        public int? BreachCount { get; set; }
+        public int? BreachCount { get => _explicitNullValueBreachCount; set { _explicitNullValueBreachCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("breach_count"); else _explicitNullProperties?.Remove("breach_count"); } }
+        private int? _explicitNullValueBreachCount = default!;
         /// <summary>Indicates whether the email address domain is custom if known, i.e. a company domain and not free or disposable.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailDomainIsCustom? DomainIsCustom { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailDomainIsCustom? DomainIsCustom { get => _explicitNullValueDomainIsCustom; set { _explicitNullValueDomainIsCustom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_is_custom"); else _explicitNullProperties?.Remove("domain_is_custom"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailDomainIsCustom? _explicitNullValueDomainIsCustom = default!;
         /// <summary>Indicates whether the email domain is listed as disposable if known. Disposable domains are often used to create email addresses that are part of a fake set of user details.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailDomainIsDisposable? DomainIsDisposable { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailDomainIsDisposable? DomainIsDisposable { get => _explicitNullValueDomainIsDisposable; set { _explicitNullValueDomainIsDisposable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_is_disposable"); else _explicitNullProperties?.Remove("domain_is_disposable"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailDomainIsDisposable? _explicitNullValueDomainIsDisposable = default!;
         /// <summary>Indicates whether the email address domain is a free provider such as Gmail or Hotmail if known.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailDomainIsFreeProvider? DomainIsFreeProvider { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailDomainIsFreeProvider? DomainIsFreeProvider { get => _explicitNullValueDomainIsFreeProvider; set { _explicitNullValueDomainIsFreeProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_is_free_provider"); else _explicitNullProperties?.Remove("domain_is_free_provider"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailDomainIsFreeProvider? _explicitNullValueDomainIsFreeProvider = default!;
         /// <summary>A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).</summary>
-        public Date? DomainRegisteredAt { get; set; }
+        public Date? DomainRegisteredAt { get => _explicitNullValueDomainRegisteredAt; set { _explicitNullValueDomainRegisteredAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_registered_at"); else _explicitNullProperties?.Remove("domain_registered_at"); } }
+        private Date? _explicitNullValueDomainRegisteredAt = default!;
         /// <summary>List of factors, when available, that contribute towards the risk level of the given risk check type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Factors { get; set; }
+        public List<string>? Factors { get => _explicitNullValueFactors; set { _explicitNullValueFactors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("factors"); else _explicitNullProperties?.Remove("factors"); } }
+        private List<string>? _explicitNullValueFactors = default!;
 #nullable restore
 #else
-        public List<string> Factors { get; set; }
+        public List<string> Factors { get => _explicitNullValueFactors; set { _explicitNullValueFactors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("factors"); else _explicitNullProperties?.Remove("factors"); } }
+        private List<string> _explicitNullValueFactors = default!;
 #endif
         /// <summary>A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).</summary>
-        public Date? FirstBreachedAt { get; set; }
+        public Date? FirstBreachedAt { get => _explicitNullValueFirstBreachedAt; set { _explicitNullValueFirstBreachedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_breached_at"); else _explicitNullProperties?.Remove("first_breached_at"); } }
+        private Date? _explicitNullValueFirstBreachedAt = default!;
         /// <summary>Indicates whether the email address includes the date of birth or year of birth if known.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailIncludesDateOfBirth? IncludesDateOfBirth { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailIncludesDateOfBirth? IncludesDateOfBirth { get => _explicitNullValueIncludesDateOfBirth; set { _explicitNullValueIncludesDateOfBirth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includes_date_of_birth"); else _explicitNullProperties?.Remove("includes_date_of_birth"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailIncludesDateOfBirth? _explicitNullValueIncludesDateOfBirth = default!;
         /// <summary>SMTP-MX check to confirm the email address exists if known.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailIsDeliverableStatus? IsDeliverable { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailIsDeliverableStatus? IsDeliverable { get => _explicitNullValueIsDeliverable; set { _explicitNullValueIsDeliverable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_deliverable"); else _explicitNullProperties?.Remove("is_deliverable"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailIsDeliverableStatus? _explicitNullValueIsDeliverable = default!;
         /// <summary>Indicates whether the email address domain is an educational institution domain if known.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailIsEdu? IsEdu { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailIsEdu? IsEdu { get => _explicitNullValueIsEdu; set { _explicitNullValueIsEdu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_edu"); else _explicitNullProperties?.Remove("is_edu"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailIsEdu? _explicitNullValueIsEdu = default!;
         /// <summary>A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).</summary>
-        public Date? LastBreachedAt { get; set; }
+        public Date? LastBreachedAt { get => _explicitNullValueLastBreachedAt; set { _explicitNullValueLastBreachedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_breached_at"); else _explicitNullProperties?.Remove("last_breached_at"); } }
+        private Date? _explicitNullValueLastBreachedAt = default!;
         /// <summary>A list of online services where this email address has been detected to have accounts or other activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckLinkedService?>? LinkedServices { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckLinkedService?>? LinkedServices { get => _explicitNullValueLinkedServices; set { _explicitNullValueLinkedServices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_services"); else _explicitNullProperties?.Remove("linked_services"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckLinkedService?>? _explicitNullValueLinkedServices = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckLinkedService?> LinkedServices { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckLinkedService?> LinkedServices { get => _explicitNullValueLinkedServices; set { _explicitNullValueLinkedServices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_services"); else _explicitNullProperties?.Remove("linked_services"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckLinkedService?> _explicitNullValueLinkedServices = default!;
 #endif
         /// <summary>Indicates whether the provided name matches the email address according to the KYC name-matches-email inference result if known.`match` - &quot;The email&apos;s name identifiers match the user&apos;s name.&quot;`partial_match` - &quot;The email&apos;s name identifiers partially match the user&apos;s name.&quot;`no_match` - &quot;The email&apos;s name identifiers do not match the user&apos;s name.&quot;`indeterminate` - &quot;The email does not contain any name identifiers, and a match could not be determined.&quot;`no_input` - &quot;The user&apos;s profile does not contain the required user inputs to determine a match.&quot;`no_data` - &quot;Field could not be verified against available sources.&quot;</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailName? Name { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailName? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailName? _explicitNullValueName = default!;
         /// <summary>Risk level for the given risk check type.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskLevel? RiskLevel { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskLevel? RiskLevel { get => _explicitNullValueRiskLevel; set { _explicitNullValueRiskLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_level"); else _explicitNullProperties?.Remove("risk_level"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskLevel? _explicitNullValueRiskLevel = default!;
         /// <summary>Indicates whether the email address top level domain, which is the last part of the domain, is fraudulent or risky if known. In most cases, a suspicious top level domain is also associated with a disposable or high-risk domain.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailTopLevelDomainIsSuspicious? TopLevelDomainIsSuspicious { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailTopLevelDomainIsSuspicious? TopLevelDomainIsSuspicious { get => _explicitNullValueTopLevelDomainIsSuspicious; set { _explicitNullValueTopLevelDomainIsSuspicious = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_level_domain_is_suspicious"); else _explicitNullProperties?.Remove("top_level_domain_is_suspicious"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailTopLevelDomainIsSuspicious? _explicitNullValueTopLevelDomainIsSuspicious = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmail"/> and sets the default values.
         /// </summary>
@@ -73,7 +112,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmail();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmail(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -122,6 +163,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailName>("name", Name);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskLevel>("risk_level", RiskLevel);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailTopLevelDomainIsSuspicious>("top_level_domain_is_suspicious", TopLevelDomainIsSuspicious);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

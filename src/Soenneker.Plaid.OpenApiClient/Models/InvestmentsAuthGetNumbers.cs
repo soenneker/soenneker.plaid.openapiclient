@@ -12,32 +12,48 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InvestmentsAuthGetNumbers : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("acats") is { } nullNodeAcats && nullNodeAcats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Acats = null;
+            if (parseNode.GetChildNode("aton") is { } nullNodeAton && nullNodeAton.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Aton = null;
+            if (parseNode.GetChildNode("retirement_401k") is { } nullNodeRetirement401k && nullNodeRetirement401k.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Retirement401k = null;
+        }
+
         /// <summary>The acats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAcats>? Acats { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAcats>? Acats { get => _explicitNullValueAcats; set { _explicitNullValueAcats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acats"); else _explicitNullProperties?.Remove("acats"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAcats>? _explicitNullValueAcats = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAcats> Acats { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAcats> Acats { get => _explicitNullValueAcats; set { _explicitNullValueAcats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acats"); else _explicitNullProperties?.Remove("acats"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAcats> _explicitNullValueAcats = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The aton property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAton>? Aton { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAton>? Aton { get => _explicitNullValueAton; set { _explicitNullValueAton = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aton"); else _explicitNullProperties?.Remove("aton"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAton>? _explicitNullValueAton = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAton> Aton { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAton> Aton { get => _explicitNullValueAton; set { _explicitNullValueAton = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aton"); else _explicitNullProperties?.Remove("aton"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAton> _explicitNullValueAton = default!;
 #endif
         /// <summary>The retirement_401k property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersRetirement401K>? Retirement401k { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersRetirement401K>? Retirement401k { get => _explicitNullValueRetirement401k; set { _explicitNullValueRetirement401k = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retirement_401k"); else _explicitNullProperties?.Remove("retirement_401k"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersRetirement401K>? _explicitNullValueRetirement401k = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersRetirement401K> Retirement401k { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersRetirement401K> Retirement401k { get => _explicitNullValueRetirement401k; set { _explicitNullValueRetirement401k = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retirement_401k"); else _explicitNullProperties?.Remove("retirement_401k"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.NumbersRetirement401K> _explicitNullValueRetirement401k = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthGetNumbers"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthGetNumbers CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthGetNumbers();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthGetNumbers(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAcats>("acats", Acats);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersAton>("aton", Aton);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NumbersRetirement401K>("retirement_401k", Retirement401k);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

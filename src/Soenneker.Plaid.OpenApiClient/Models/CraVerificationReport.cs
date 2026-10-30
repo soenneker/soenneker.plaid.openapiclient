@@ -12,56 +12,81 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraVerificationReport : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("client_report_id") is { } nullNodeClientReportId && nullNodeClientReportId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientReportId = null;
+            if (parseNode.GetChildNode("employment_refresh") is { } nullNodeEmploymentRefresh && nullNodeEmploymentRefresh.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmploymentRefresh = null;
+            if (parseNode.GetChildNode("gse_reference_id") is { } nullNodeGseReferenceId && nullNodeGseReferenceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GseReferenceId = null;
+            if (parseNode.GetChildNode("income") is { } nullNodeIncome && nullNodeIncome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Income = null;
+            if (parseNode.GetChildNode("report_id") is { } nullNodeReportId && nullNodeReportId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportId = null;
+            if (parseNode.GetChildNode("voa") is { } nullNodeVoa && nullNodeVoa.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Voa = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Client-generated identifier, which can be used by lenders to track loan applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientReportId { get; set; }
+        public string? ClientReportId { get => _explicitNullValueClientReportId; set { _explicitNullValueClientReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_report_id"); else _explicitNullProperties?.Remove("client_report_id"); } }
+        private string? _explicitNullValueClientReportId = default!;
 #nullable restore
 #else
-        public string ClientReportId { get; set; }
+        public string ClientReportId { get => _explicitNullValueClientReportId; set { _explicitNullValueClientReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_report_id"); else _explicitNullProperties?.Remove("client_report_id"); } }
+        private string _explicitNullValueClientReportId = default!;
 #endif
         /// <summary>An object representing an Employment Refresh Report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraEmploymentRefreshReport? EmploymentRefresh { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraEmploymentRefreshReport? EmploymentRefresh { get => _explicitNullValueEmploymentRefresh; set { _explicitNullValueEmploymentRefresh = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employment_refresh"); else _explicitNullProperties?.Remove("employment_refresh"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraEmploymentRefreshReport? _explicitNullValueEmploymentRefresh = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraEmploymentRefreshReport EmploymentRefresh { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraEmploymentRefreshReport EmploymentRefresh { get => _explicitNullValueEmploymentRefresh; set { _explicitNullValueEmploymentRefresh = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employment_refresh"); else _explicitNullProperties?.Remove("employment_refresh"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraEmploymentRefreshReport _explicitNullValueEmploymentRefresh = default!;
 #endif
         /// <summary>A unique token that can be shared with GSEs in order to provide them access to the report. This is automatically created during report generation when GSE options are specified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GseReferenceId { get; set; }
+        public string? GseReferenceId { get => _explicitNullValueGseReferenceId; set { _explicitNullValueGseReferenceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gse_reference_id"); else _explicitNullProperties?.Remove("gse_reference_id"); } }
+        private string? _explicitNullValueGseReferenceId = default!;
 #nullable restore
 #else
-        public string GseReferenceId { get; set; }
+        public string GseReferenceId { get => _explicitNullValueGseReferenceId; set { _explicitNullValueGseReferenceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gse_reference_id"); else _explicitNullProperties?.Remove("gse_reference_id"); } }
+        private string _explicitNullValueGseReferenceId = default!;
 #endif
         /// <summary>An object representing an Income Report within the Home Lending Report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeReport? Income { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeReport? Income { get => _explicitNullValueIncome; set { _explicitNullValueIncome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income"); else _explicitNullProperties?.Remove("income"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeReport? _explicitNullValueIncome = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeReport Income { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeReport Income { get => _explicitNullValueIncome; set { _explicitNullValueIncome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income"); else _explicitNullProperties?.Remove("income"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeReport _explicitNullValueIncome = default!;
 #endif
         /// <summary>The unique identifier associated with the Home Lending Report object. This ID will be the same as the Base Report ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReportId { get; set; }
+        public string? ReportId { get => _explicitNullValueReportId; set { _explicitNullValueReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_id"); else _explicitNullProperties?.Remove("report_id"); } }
+        private string? _explicitNullValueReportId = default!;
 #nullable restore
 #else
-        public string ReportId { get; set; }
+        public string ReportId { get => _explicitNullValueReportId; set { _explicitNullValueReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_id"); else _explicitNullProperties?.Remove("report_id"); } }
+        private string _explicitNullValueReportId = default!;
 #endif
         /// <summary>An object representing a VOA report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraVoaReport? Voa { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraVoaReport? Voa { get => _explicitNullValueVoa; set { _explicitNullValueVoa = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voa"); else _explicitNullProperties?.Remove("voa"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraVoaReport? _explicitNullValueVoa = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraVoaReport Voa { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraVoaReport Voa { get => _explicitNullValueVoa; set { _explicitNullValueVoa = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voa"); else _explicitNullProperties?.Remove("voa"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraVoaReport _explicitNullValueVoa = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationReport"/> and sets the default values.
@@ -78,7 +103,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationReport CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationReport();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationReport(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,6 +134,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeReport>("income", Income);
             writer.WriteStringValue("report_id", ReportId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraVoaReport>("voa", Voa);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

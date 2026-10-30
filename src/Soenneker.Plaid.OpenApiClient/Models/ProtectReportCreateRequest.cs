@@ -8,74 +8,119 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Request object for `/protect/report/create`.You must provide either `user_id`, or an `incident_event` with at least one supported identifier: `link_session_id`, `idv_session_id`, `protect_event_id`, `signal_client_transaction_id`, or `access_token`. Context fields such as `internal_reference`, `time`, `amount`, and `bank_account` do not satisfy this identifier requirement.
+    /// Request object for `/protect/report/create`.You must provide either `user_id`, `client_user_id`, or an `incident_event` with at least one supported identifier: `link_session_id`, `idv_session_id`, `protect_event_id`, `signal_client_transaction_id`, or `access_token`. Context fields such as `internal_reference`, `time`, `amount`, and `bank_account` do not satisfy this identifier requirement.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProtectReportCreateRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ach_return_code") is { } nullNodeAchReturnCode && nullNodeAchReturnCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AchReturnCode = null;
+            if (parseNode.GetChildNode("bank_account") is { } nullNodeBankAccount && nullNodeBankAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankAccount = null;
+            if (parseNode.GetChildNode("client_id") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
+            if (parseNode.GetChildNode("client_user_id") is { } nullNodeClientUserId && nullNodeClientUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientUserId = null;
+            if (parseNode.GetChildNode("incident_event") is { } nullNodeIncidentEvent && nullNodeIncidentEvent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncidentEvent = null;
+            if (parseNode.GetChildNode("notes") is { } nullNodeNotes && nullNodeNotes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notes = null;
+            if (parseNode.GetChildNode("report_confidence") is { } nullNodeReportConfidence && nullNodeReportConfidence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportConfidence = null;
+            if (parseNode.GetChildNode("report_source") is { } nullNodeReportSource && nullNodeReportSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportSource = null;
+            if (parseNode.GetChildNode("report_type") is { } nullNodeReportType && nullNodeReportType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportType = null;
+            if (parseNode.GetChildNode("secret") is { } nullNodeSecret && nullNodeSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Secret = null;
+            if (parseNode.GetChildNode("user_id") is { } nullNodeUserId && nullNodeUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserId = null;
+        }
+
         /// <summary>Must be a valid ACH return code (e.g. `R01`), required if `report_type` is `ACH_RETURN`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AchReturnCode { get; set; }
+        public string? AchReturnCode { get => _explicitNullValueAchReturnCode; set { _explicitNullValueAchReturnCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ach_return_code"); else _explicitNullProperties?.Remove("ach_return_code"); } }
+        private string? _explicitNullValueAchReturnCode = default!;
 #nullable restore
 #else
-        public string AchReturnCode { get; set; }
+        public string AchReturnCode { get => _explicitNullValueAchReturnCode; set { _explicitNullValueAchReturnCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ach_return_code"); else _explicitNullProperties?.Remove("ach_return_code"); } }
+        private string _explicitNullValueAchReturnCode = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Bank account information associated with the incident.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectBankAccount? BankAccount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectBankAccount? BankAccount { get => _explicitNullValueBankAccount; set { _explicitNullValueBankAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_account"); else _explicitNullProperties?.Remove("bank_account"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ProtectBankAccount? _explicitNullValueBankAccount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectBankAccount BankAccount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectBankAccount BankAccount { get => _explicitNullValueBankAccount; set { _explicitNullValueBankAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_account"); else _explicitNullProperties?.Remove("bank_account"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ProtectBankAccount _explicitNullValueBankAccount = default!;
 #endif
         /// <summary>Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get; set; }
+        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        private string? _explicitNullValueClientId = default!;
 #nullable restore
 #else
-        public string ClientId { get; set; }
+        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        private string _explicitNullValueClientId = default!;
+#endif
+        /// <summary>A unique ID representing the end user. Maximum of 128 characters. Typically this will be a user ID number from your application. Personally identifiable information, such as an email address or phone number, should not be used in the `client_user_id`. This or `user_id` can be provided, not both. If a Plaid User does not already exist for this `client_user_id` within your client account, one will be created.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientUserId { get => _explicitNullValueClientUserId; set { _explicitNullValueClientUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_user_id"); else _explicitNullProperties?.Remove("client_user_id"); } }
+        private string? _explicitNullValueClientUserId = default!;
+#nullable restore
+#else
+        public string ClientUserId { get => _explicitNullValueClientUserId; set { _explicitNullValueClientUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_user_id"); else _explicitNullProperties?.Remove("client_user_id"); } }
+        private string _explicitNullValueClientUserId = default!;
 #endif
         /// <summary>Details about the incident event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEvent? IncidentEvent { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEvent? IncidentEvent { get => _explicitNullValueIncidentEvent; set { _explicitNullValueIncidentEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("incident_event"); else _explicitNullProperties?.Remove("incident_event"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEvent? _explicitNullValueIncidentEvent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEvent IncidentEvent { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEvent IncidentEvent { get => _explicitNullValueIncidentEvent; set { _explicitNullValueIncidentEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("incident_event"); else _explicitNullProperties?.Remove("incident_event"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEvent _explicitNullValueIncidentEvent = default!;
 #endif
         /// <summary>Additional context or details about the report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get => _explicitNullValueNotes; set { _explicitNullValueNotes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes"); else _explicitNullProperties?.Remove("notes"); } }
+        private string? _explicitNullValueNotes = default!;
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get => _explicitNullValueNotes; set { _explicitNullValueNotes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes"); else _explicitNullProperties?.Remove("notes"); } }
+        private string _explicitNullValueNotes = default!;
 #endif
         /// <summary>The confidence level of the incident report.`CONFIRMED` indicates the incident has been verified and definitively occurred.`SUSPECTED` indicates the incident is believed to have occurred but has not been fully verified.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportConfidence? ReportConfidence { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportConfidence? ReportConfidence { get => _explicitNullValueReportConfidence; set { _explicitNullValueReportConfidence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_confidence"); else _explicitNullProperties?.Remove("report_confidence"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportConfidence? _explicitNullValueReportConfidence = default!;
         /// <summary>The source that identified or reported the incident.`INTERNAL_REVIEW` - Incident was identified through internal fraud investigations or review processes.`USER_SELF_REPORTED` - Incident was reported directly by the affected user.`BANK_FEEDBACK` - Incident was identified through bank feedback, including ACH returns and connection revocations.`NETWORK_FEEDBACK` - Incident was identified through card network alerts or chargebacks.`AUTOMATED_SYSTEM` - Incident was detected by automated systems such as fraud models or rule engines.`THIRD_PARTY_ALERT` - Incident was identified through external vendor or consortium alerts.`OTHER` - Incident was identified through a source not covered by other categories.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportSource? ReportSource { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportSource? ReportSource { get => _explicitNullValueReportSource; set { _explicitNullValueReportSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_source"); else _explicitNullProperties?.Remove("report_source"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportSource? _explicitNullValueReportSource = default!;
         /// <summary>The type of incident being reported.`USER_ACCOUNT_TAKEOVER` - Indicates that a legitimate user&apos;s account was accessed or controlled by an unauthorized party.`FALSE_IDENTITY` - Indicates that a user created an account using stolen or fabricated identity information.`STOLEN_IDENTITY` - Indicates that a user created an account using identity information belonging to a real individual without their consent.`SYNTHETIC_IDENTITY` - Indicates that a user created an account using a fake or partially fabricated identity (e.g., combining real and fake information to form a new persona).`MULTIPLE_USER_ACCOUNTS` - Indicates that the same individual is operating multiple accounts in violation of policy.`SCAM_VICTIM` - Indicates that the user was tricked into authorizing or sending funds as part of a scam.`BANK_ACCOUNT_TAKEOVER` - Indicates that a user&apos;s linked bank account was accessed or misused by an unauthorized party.`BANK_CONNECTION_REVOKED` - Indicates that a linked bank account connection was revoked by the financial institution, often due to suspected misuse, fraud, or security concerns.`CARD_TESTING` - Indicates that a card was used in small or repeated transactions to test its validity.`UNAUTHORIZED_TRANSACTION` - Indicates that a transaction was made without the user&apos;s consent or authorization.`CARD_CHARGEBACK` - Indicates that a card transaction was reversed via a chargeback claim.`ACH_RETURN` - Indicates that an ACH transaction was returned or reversed by the bank.`DISPUTE` - Indicates that a user filed a dispute regarding a transaction or account activity.`FIRST_PARTY_FRAUD` - Indicates that a user intentionally misrepresented themselves or their actions for financial gain.`MISSED_PAYMENT` - Indicates that a user failed to make a required payment on time.`LOAN_STACKING` - Indicates that a user applied for or took out multiple loans simultaneously beyond their ability to repay.`MONEY_LAUNDERING` - Indicates that funds are being moved through accounts to obscure their illicit origin.`NO_FRAUD` - Indicates that an investigation determined no fraudulent activity occurred on user/event (positive label).`OTHER` - Indicates that the case involves fraud or financial risk not covered by other report types.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportType? ReportType { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportType? ReportType { get => _explicitNullValueReportType; set { _explicitNullValueReportType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_type"); else _explicitNullProperties?.Remove("report_type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportType? _explicitNullValueReportType = default!;
         /// <summary>Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Secret { get; set; }
+        public string? Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
+        private string? _explicitNullValueSecret = default!;
 #nullable restore
 #else
-        public string Secret { get; set; }
+        public string Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
+        private string _explicitNullValueSecret = default!;
 #endif
-        /// <summary>The Plaid User ID associated with the report.</summary>
+        /// <summary>The Plaid User ID associated with the report. This or `client_user_id` can be provided, not both.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId { get; set; }
+        public string? UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
+        private string? _explicitNullValueUserId = default!;
 #nullable restore
 #else
-        public string UserId { get; set; }
+        public string UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
+        private string _explicitNullValueUserId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportCreateRequest"/> and sets the default values.
@@ -92,7 +137,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportCreateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportCreateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportCreateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -105,6 +150,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "ach_return_code", n => { AchReturnCode = n.GetStringValue(); } },
                 { "bank_account", n => { BankAccount = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectBankAccount>(global::Soenneker.Plaid.OpenApiClient.Models.ProtectBankAccount.CreateFromDiscriminatorValue); } },
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
+                { "client_user_id", n => { ClientUserId = n.GetStringValue(); } },
                 { "incident_event", n => { IncidentEvent = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEvent>(global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEvent.CreateFromDiscriminatorValue); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "report_confidence", n => { ReportConfidence = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportConfidence>(); } },
@@ -124,6 +170,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("ach_return_code", AchReturnCode);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectBankAccount>("bank_account", BankAccount);
             writer.WriteStringValue("client_id", ClientId);
+            writer.WriteStringValue("client_user_id", ClientUserId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEvent>("incident_event", IncidentEvent);
             writer.WriteStringValue("notes", Notes);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportConfidence>("report_confidence", ReportConfidence);
@@ -131,6 +178,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportType>("report_type", ReportType);
             writer.WriteStringValue("secret", Secret);
             writer.WriteStringValue("user_id", UserId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,50 +12,74 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WalletGetResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("balance") is { } nullNodeBalance && nullNodeBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Balance = null;
+            if (parseNode.GetChildNode("numbers") is { } nullNodeNumbers && nullNodeNumbers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Numbers = null;
+            if (parseNode.GetChildNode("recipient_id") is { } nullNodeRecipientId && nullNodeRecipientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecipientId = null;
+            if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("wallet_id") is { } nullNodeWalletId && nullNodeWalletId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WalletId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An object representing the e-wallet balance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.WalletBalance? Balance { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletBalance? Balance { get => _explicitNullValueBalance; set { _explicitNullValueBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balance"); else _explicitNullProperties?.Remove("balance"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.WalletBalance? _explicitNullValueBalance = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.WalletBalance Balance { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletBalance Balance { get => _explicitNullValueBalance; set { _explicitNullValueBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balance"); else _explicitNullProperties?.Remove("balance"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.WalletBalance _explicitNullValueBalance = default!;
 #endif
         /// <summary>An object representing the e-wallet account numbers</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.WalletNumbers? Numbers { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletNumbers? Numbers { get => _explicitNullValueNumbers; set { _explicitNullValueNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("numbers"); else _explicitNullProperties?.Remove("numbers"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.WalletNumbers? _explicitNullValueNumbers = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.WalletNumbers Numbers { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletNumbers Numbers { get => _explicitNullValueNumbers; set { _explicitNullValueNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("numbers"); else _explicitNullProperties?.Remove("numbers"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.WalletNumbers _explicitNullValueNumbers = default!;
 #endif
         /// <summary>The ID of the recipient that corresponds to the e-wallet account numbers</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecipientId { get; set; }
+        public string? RecipientId { get => _explicitNullValueRecipientId; set { _explicitNullValueRecipientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipient_id"); else _explicitNullProperties?.Remove("recipient_id"); } }
+        private string? _explicitNullValueRecipientId = default!;
 #nullable restore
 #else
-        public string RecipientId { get; set; }
+        public string RecipientId { get => _explicitNullValueRecipientId; set { _explicitNullValueRecipientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipient_id"); else _explicitNullProperties?.Remove("recipient_id"); } }
+        private string _explicitNullValueRecipientId = default!;
 #endif
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId { get; set; }
+        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        private string? _explicitNullValueRequestId = default!;
 #nullable restore
 #else
-        public string RequestId { get; set; }
+        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        private string _explicitNullValueRequestId = default!;
 #endif
         /// <summary>The status of the wallet.`UNKNOWN`: The wallet status is unknown.`ACTIVE`: The wallet is active and ready to send money to and receive money from.`CLOSED`: The wallet is closed. Transactions to or from this wallet will fail.`BLOCKED`: The wallet is blocked by the payment provider. Transactions to or from this wallet will fail.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.WalletStatus? Status { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.WalletStatus? _explicitNullValueStatus = default!;
         /// <summary>A unique ID identifying the e-wallet</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WalletId { get; set; }
+        public string? WalletId { get => _explicitNullValueWalletId; set { _explicitNullValueWalletId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wallet_id"); else _explicitNullProperties?.Remove("wallet_id"); } }
+        private string? _explicitNullValueWalletId = default!;
 #nullable restore
 #else
-        public string WalletId { get; set; }
+        public string WalletId { get => _explicitNullValueWalletId; set { _explicitNullValueWalletId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wallet_id"); else _explicitNullProperties?.Remove("wallet_id"); } }
+        private string _explicitNullValueWalletId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.WalletGetResponse"/> and sets the default values.
@@ -72,7 +96,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.WalletGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.WalletGetResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.WalletGetResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,6 +127,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("request_id", RequestId);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletStatus>("status", Status);
             writer.WriteStringValue("wallet_id", WalletId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

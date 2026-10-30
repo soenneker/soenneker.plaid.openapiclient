@@ -12,24 +12,42 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InstitutionsSearchRequestOptions : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("include_auth_metadata") is { } nullNodeIncludeAuthMetadata && nullNodeIncludeAuthMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeAuthMetadata = null;
+            if (parseNode.GetChildNode("include_optional_metadata") is { } nullNodeIncludeOptionalMetadata && nullNodeIncludeOptionalMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeOptionalMetadata = null;
+            if (parseNode.GetChildNode("include_payment_initiation_metadata") is { } nullNodeIncludePaymentInitiationMetadata && nullNodeIncludePaymentInitiationMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludePaymentInitiationMetadata = null;
+            if (parseNode.GetChildNode("oauth") is { } nullNodeOauth && nullNodeOauth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Oauth = null;
+            if (parseNode.GetChildNode("payment_initiation") is { } nullNodePaymentInitiation && nullNodePaymentInitiation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentInitiation = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When `true`, returns metadata related to the Auth product indicating which auth methods are supported.</summary>
-        public bool? IncludeAuthMetadata { get; set; }
+        public bool? IncludeAuthMetadata { get => _explicitNullValueIncludeAuthMetadata; set { _explicitNullValueIncludeAuthMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_auth_metadata"); else _explicitNullProperties?.Remove("include_auth_metadata"); } }
+        private bool? _explicitNullValueIncludeAuthMetadata = default!;
         /// <summary>When true, return the institution&apos;s homepage URL, logo and primary brand color.</summary>
-        public bool? IncludeOptionalMetadata { get; set; }
+        public bool? IncludeOptionalMetadata { get => _explicitNullValueIncludeOptionalMetadata; set { _explicitNullValueIncludeOptionalMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_optional_metadata"); else _explicitNullProperties?.Remove("include_optional_metadata"); } }
+        private bool? _explicitNullValueIncludeOptionalMetadata = default!;
         /// <summary>When `true`, returns metadata related to the Payment Initiation product indicating which payment configurations are supported.</summary>
-        public bool? IncludePaymentInitiationMetadata { get; set; }
+        public bool? IncludePaymentInitiationMetadata { get => _explicitNullValueIncludePaymentInitiationMetadata; set { _explicitNullValueIncludePaymentInitiationMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_payment_initiation_metadata"); else _explicitNullProperties?.Remove("include_payment_initiation_metadata"); } }
+        private bool? _explicitNullValueIncludePaymentInitiationMetadata = default!;
         /// <summary>Limit results to institutions with or without OAuth login flows. Note that institutions will have `oauth` set to `true` if some Items associated with that institution are required to use OAuth flows; institutions in a state of migration to OAuth will have the `oauth` attribute set to `true`.</summary>
-        public bool? Oauth { get; set; }
+        public bool? Oauth { get => _explicitNullValueOauth; set { _explicitNullValueOauth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth"); else _explicitNullProperties?.Remove("oauth"); } }
+        private bool? _explicitNullValueOauth = default!;
         /// <summary>Additional options that will be used to filter institutions by various Payment Initiation configurations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.InstitutionsSearchPaymentInitiationOptions? PaymentInitiation { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.InstitutionsSearchPaymentInitiationOptions? PaymentInitiation { get => _explicitNullValuePaymentInitiation; set { _explicitNullValuePaymentInitiation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_initiation"); else _explicitNullProperties?.Remove("payment_initiation"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.InstitutionsSearchPaymentInitiationOptions? _explicitNullValuePaymentInitiation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.InstitutionsSearchPaymentInitiationOptions PaymentInitiation { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.InstitutionsSearchPaymentInitiationOptions PaymentInitiation { get => _explicitNullValuePaymentInitiation; set { _explicitNullValuePaymentInitiation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_initiation"); else _explicitNullProperties?.Remove("payment_initiation"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.InstitutionsSearchPaymentInitiationOptions _explicitNullValuePaymentInitiation = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.InstitutionsSearchRequestOptions"/> and sets the default values.
@@ -48,7 +66,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.InstitutionsSearchRequestOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.InstitutionsSearchRequestOptions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.InstitutionsSearchRequestOptions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +95,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteBoolValue("include_payment_initiation_metadata", IncludePaymentInitiationMetadata);
             writer.WriteBoolValue("oauth", Oauth);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.InstitutionsSearchPaymentInitiationOptions>("payment_initiation", PaymentInitiation);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -20,6 +20,7 @@ namespace Soenneker.Plaid.OpenApiClient.Income.Verification
     public partial class VerificationRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The create property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Income.Verification.Create.CreateRequestBuilder Create
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Income.Verification.Create.CreateRequestBuilder(PathParameters, RequestAdapter);
@@ -35,6 +36,7 @@ namespace Soenneker.Plaid.OpenApiClient.Income.Verification
             get => new global::Soenneker.Plaid.OpenApiClient.Income.Verification.Paystubs.PaystubsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The precheck property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Income.Verification.Precheck.PrecheckRequestBuilder Precheck
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Income.Verification.Precheck.PrecheckRequestBuilder(PathParameters, RequestAdapter);

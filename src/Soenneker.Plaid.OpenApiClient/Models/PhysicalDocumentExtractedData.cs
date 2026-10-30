@@ -13,56 +13,86 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhysicalDocumentExtractedData : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
+            if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
+            if (parseNode.GetChildNode("date_of_birth") is { } nullNodeDateOfBirth && nullNodeDateOfBirth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOfBirth = null;
+            if (parseNode.GetChildNode("expiration_date") is { } nullNodeExpirationDate && nullNodeExpirationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationDate = null;
+            if (parseNode.GetChildNode("id_number") is { } nullNodeIdNumber && nullNodeIdNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdNumber = null;
+            if (parseNode.GetChildNode("issue_date") is { } nullNodeIssueDate && nullNodeIssueDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssueDate = null;
+            if (parseNode.GetChildNode("issuing_country") is { } nullNodeIssuingCountry && nullNodeIssuingCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuingCountry = null;
+            if (parseNode.GetChildNode("issuing_region") is { } nullNodeIssuingRegion && nullNodeIssuingRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuingRegion = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The address extracted from the document. The address must at least contain the following fields to be a valid address: `street`, `city`, `country`. If any are missing or unable to be extracted, the address will be null.`region`, and `postal_code` may be null based on the addressing system. For example:Addresses from the United Kingdom will not include a regionAddresses from Hong Kong will not include postal codeNote: Optical Character Recognition (OCR) technology may sometimes extract incorrect data from a document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationDocumentAddressResponse? Address { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationDocumentAddressResponse? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationDocumentAddressResponse? _explicitNullValueAddress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationDocumentAddressResponse Address { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationDocumentAddressResponse Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationDocumentAddressResponse _explicitNullValueAddress = default!;
 #endif
         /// <summary>The type of identity document detected in the images provided. Will always be one of the following values:  `drivers_license` - A driver&apos;s license issued by the associated country, establishing identity without any guarantee as to citizenship, and granting driving privileges  `id_card` - A general national identification card, distinct from driver&apos;s licenses as it only establishes identity  `passport` - A travel passport issued by the associated country for one of its citizens  `residence_permit_card` - An identity document issued by the associated country permitting a foreign citizen to &lt;em&gt;temporarily&lt;/em&gt; reside there  `resident_card` - An identity document issued by the associated country permitting a foreign citizen to &lt;em&gt;permanently&lt;/em&gt; reside there  `visa` - An identity document issued by the associated country permitting a foreign citizen entry for a short duration and for a specific purpose, typically no longer than 6 monthsNote: This value may be different from the ID type that the user selects within Link. For example, if they select &quot;Driver&apos;s License&quot; but then submit a picture of a passport, this field will say `passport`</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PhysicalDocumentCategory? Category { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PhysicalDocumentCategory? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PhysicalDocumentCategory? _explicitNullValueCategory = default!;
         /// <summary>A date extracted from the document in the format YYYY-MM-DD (RFC 3339 Section 5.6).</summary>
-        public Date? DateOfBirth { get; set; }
+        public Date? DateOfBirth { get => _explicitNullValueDateOfBirth; set { _explicitNullValueDateOfBirth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_of_birth"); else _explicitNullProperties?.Remove("date_of_birth"); } }
+        private Date? _explicitNullValueDateOfBirth = default!;
         /// <summary>The expiration date of the document in the format YYYY-MM-DD (RFC 3339 Section 5.6).</summary>
-        public Date? ExpirationDate { get; set; }
+        public Date? ExpirationDate { get => _explicitNullValueExpirationDate; set { _explicitNullValueExpirationDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration_date"); else _explicitNullProperties?.Remove("expiration_date"); } }
+        private Date? _explicitNullValueExpirationDate = default!;
         /// <summary>Alpha-numeric ID number extracted via OCR from the user&apos;s document image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdNumber { get; set; }
+        public string? IdNumber { get => _explicitNullValueIdNumber; set { _explicitNullValueIdNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id_number"); else _explicitNullProperties?.Remove("id_number"); } }
+        private string? _explicitNullValueIdNumber = default!;
 #nullable restore
 #else
-        public string IdNumber { get; set; }
+        public string IdNumber { get => _explicitNullValueIdNumber; set { _explicitNullValueIdNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id_number"); else _explicitNullProperties?.Remove("id_number"); } }
+        private string _explicitNullValueIdNumber = default!;
 #endif
         /// <summary>The issue date of the document in the format YYYY-MM-DD (RFC 3339 Section 5.6).</summary>
-        public Date? IssueDate { get; set; }
+        public Date? IssueDate { get => _explicitNullValueIssueDate; set { _explicitNullValueIssueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_date"); else _explicitNullProperties?.Remove("issue_date"); } }
+        private Date? _explicitNullValueIssueDate = default!;
         /// <summary>Valid, capitalized, two-letter ISO code representing the country of this object. Must be in ISO 3166-1 alpha-2 form.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuingCountry { get; set; }
+        public string? IssuingCountry { get => _explicitNullValueIssuingCountry; set { _explicitNullValueIssuingCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuing_country"); else _explicitNullProperties?.Remove("issuing_country"); } }
+        private string? _explicitNullValueIssuingCountry = default!;
 #nullable restore
 #else
-        public string IssuingCountry { get; set; }
+        public string IssuingCountry { get => _explicitNullValueIssuingCountry; set { _explicitNullValueIssuingCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuing_country"); else _explicitNullProperties?.Remove("issuing_country"); } }
+        private string _explicitNullValueIssuingCountry = default!;
 #endif
         /// <summary>A subdivision code. &quot;Subdivision&quot; is a generic term for &quot;state&quot;, &quot;province&quot;, &quot;prefecture&quot;, &quot;zone&quot;, etc. For the list of valid codes, see [country subdivision codes](https://plaid.com/documents/country_subdivision_codes.json). Country prefixes are omitted, since they are inferred from the `country` field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuingRegion { get; set; }
+        public string? IssuingRegion { get => _explicitNullValueIssuingRegion; set { _explicitNullValueIssuingRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuing_region"); else _explicitNullProperties?.Remove("issuing_region"); } }
+        private string? _explicitNullValueIssuingRegion = default!;
 #nullable restore
 #else
-        public string IssuingRegion { get; set; }
+        public string IssuingRegion { get => _explicitNullValueIssuingRegion; set { _explicitNullValueIssuingRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuing_region"); else _explicitNullProperties?.Remove("issuing_region"); } }
+        private string _explicitNullValueIssuingRegion = default!;
 #endif
         /// <summary>The individual&apos;s name extracted from the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationDocumentNameResponse? Name { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationDocumentNameResponse? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationDocumentNameResponse? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationDocumentNameResponse Name { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationDocumentNameResponse Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationDocumentNameResponse _explicitNullValueName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PhysicalDocumentExtractedData"/> and sets the default values.
@@ -79,7 +109,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.PhysicalDocumentExtractedData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.PhysicalDocumentExtractedData();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.PhysicalDocumentExtractedData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -116,6 +148,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("issuing_country", IssuingCountry);
             writer.WriteStringValue("issuing_region", IssuingRegion);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationDocumentNameResponse>("name", Name);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

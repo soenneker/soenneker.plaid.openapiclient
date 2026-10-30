@@ -13,126 +13,194 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StudentLoan : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_id") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
+            if (parseNode.GetChildNode("account_number") is { } nullNodeAccountNumber && nullNodeAccountNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountNumber = null;
+            if (parseNode.GetChildNode("disbursement_dates") is { } nullNodeDisbursementDates && nullNodeDisbursementDates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisbursementDates = null;
+            if (parseNode.GetChildNode("expected_payoff_date") is { } nullNodeExpectedPayoffDate && nullNodeExpectedPayoffDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedPayoffDate = null;
+            if (parseNode.GetChildNode("guarantor") is { } nullNodeGuarantor && nullNodeGuarantor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Guarantor = null;
+            if (parseNode.GetChildNode("interest_rate_percentage") is { } nullNodeInterestRatePercentage && nullNodeInterestRatePercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterestRatePercentage = null;
+            if (parseNode.GetChildNode("is_overdue") is { } nullNodeIsOverdue && nullNodeIsOverdue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsOverdue = null;
+            if (parseNode.GetChildNode("last_payment_amount") is { } nullNodeLastPaymentAmount && nullNodeLastPaymentAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastPaymentAmount = null;
+            if (parseNode.GetChildNode("last_payment_date") is { } nullNodeLastPaymentDate && nullNodeLastPaymentDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastPaymentDate = null;
+            if (parseNode.GetChildNode("last_statement_balance") is { } nullNodeLastStatementBalance && nullNodeLastStatementBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastStatementBalance = null;
+            if (parseNode.GetChildNode("last_statement_issue_date") is { } nullNodeLastStatementIssueDate && nullNodeLastStatementIssueDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastStatementIssueDate = null;
+            if (parseNode.GetChildNode("loan_name") is { } nullNodeLoanName && nullNodeLoanName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoanName = null;
+            if (parseNode.GetChildNode("loan_status") is { } nullNodeLoanStatus && nullNodeLoanStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoanStatus = null;
+            if (parseNode.GetChildNode("minimum_payment_amount") is { } nullNodeMinimumPaymentAmount && nullNodeMinimumPaymentAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumPaymentAmount = null;
+            if (parseNode.GetChildNode("next_payment_due_date") is { } nullNodeNextPaymentDueDate && nullNodeNextPaymentDueDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextPaymentDueDate = null;
+            if (parseNode.GetChildNode("origination_date") is { } nullNodeOriginationDate && nullNodeOriginationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginationDate = null;
+            if (parseNode.GetChildNode("origination_principal_amount") is { } nullNodeOriginationPrincipalAmount && nullNodeOriginationPrincipalAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginationPrincipalAmount = null;
+            if (parseNode.GetChildNode("outstanding_interest_amount") is { } nullNodeOutstandingInterestAmount && nullNodeOutstandingInterestAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutstandingInterestAmount = null;
+            if (parseNode.GetChildNode("payment_reference_number") is { } nullNodePaymentReferenceNumber && nullNodePaymentReferenceNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentReferenceNumber = null;
+            if (parseNode.GetChildNode("pslf_status") is { } nullNodePslfStatus && nullNodePslfStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PslfStatus = null;
+            if (parseNode.GetChildNode("repayment_plan") is { } nullNodeRepaymentPlan && nullNodeRepaymentPlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepaymentPlan = null;
+            if (parseNode.GetChildNode("sequence_number") is { } nullNodeSequenceNumber && nullNodeSequenceNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SequenceNumber = null;
+            if (parseNode.GetChildNode("servicer_address") is { } nullNodeServicerAddress && nullNodeServicerAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServicerAddress = null;
+            if (parseNode.GetChildNode("ytd_interest_paid") is { } nullNodeYtdInterestPaid && nullNodeYtdInterestPaid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) YtdInterestPaid = null;
+            if (parseNode.GetChildNode("ytd_principal_paid") is { } nullNodeYtdPrincipalPaid && nullNodeYtdPrincipalPaid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) YtdPrincipalPaid = null;
+        }
+
         /// <summary>The ID of the account that this liability belongs to. Each account can only contain one liability.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountId { get; set; }
+        public string? AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        private string? _explicitNullValueAccountId = default!;
 #nullable restore
 #else
-        public string AccountId { get; set; }
+        public string AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        private string _explicitNullValueAccountId = default!;
 #endif
         /// <summary>The account number of the loan. For some institutions, this may be a masked version of the number (e.g., the last 4 digits instead of the entire number).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountNumber { get; set; }
+        public string? AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_number"); else _explicitNullProperties?.Remove("account_number"); } }
+        private string? _explicitNullValueAccountNumber = default!;
 #nullable restore
 #else
-        public string AccountNumber { get; set; }
+        public string AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_number"); else _explicitNullProperties?.Remove("account_number"); } }
+        private string _explicitNullValueAccountNumber = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dates on which loaned funds were disbursed or will be disbursed. These are often in the past. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Date?>? DisbursementDates { get; set; }
+        public List<Date?>? DisbursementDates { get => _explicitNullValueDisbursementDates; set { _explicitNullValueDisbursementDates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disbursement_dates"); else _explicitNullProperties?.Remove("disbursement_dates"); } }
+        private List<Date?>? _explicitNullValueDisbursementDates = default!;
 #nullable restore
 #else
-        public List<Date?> DisbursementDates { get; set; }
+        public List<Date?> DisbursementDates { get => _explicitNullValueDisbursementDates; set { _explicitNullValueDisbursementDates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disbursement_dates"); else _explicitNullProperties?.Remove("disbursement_dates"); } }
+        private List<Date?> _explicitNullValueDisbursementDates = default!;
 #endif
         /// <summary>The date when the student loan is expected to be paid off. Availability for this field is limited. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).</summary>
-        public Date? ExpectedPayoffDate { get; set; }
+        public Date? ExpectedPayoffDate { get => _explicitNullValueExpectedPayoffDate; set { _explicitNullValueExpectedPayoffDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_payoff_date"); else _explicitNullProperties?.Remove("expected_payoff_date"); } }
+        private Date? _explicitNullValueExpectedPayoffDate = default!;
         /// <summary>The guarantor of the student loan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Guarantor { get; set; }
+        public string? Guarantor { get => _explicitNullValueGuarantor; set { _explicitNullValueGuarantor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guarantor"); else _explicitNullProperties?.Remove("guarantor"); } }
+        private string? _explicitNullValueGuarantor = default!;
 #nullable restore
 #else
-        public string Guarantor { get; set; }
+        public string Guarantor { get => _explicitNullValueGuarantor; set { _explicitNullValueGuarantor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guarantor"); else _explicitNullProperties?.Remove("guarantor"); } }
+        private string _explicitNullValueGuarantor = default!;
 #endif
         /// <summary>The interest rate on the loan as a percentage.</summary>
-        public double? InterestRatePercentage { get; set; }
+        public double? InterestRatePercentage { get => _explicitNullValueInterestRatePercentage; set { _explicitNullValueInterestRatePercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interest_rate_percentage"); else _explicitNullProperties?.Remove("interest_rate_percentage"); } }
+        private double? _explicitNullValueInterestRatePercentage = default!;
         /// <summary>`true` if a payment is currently overdue. Availability for this field is limited.</summary>
-        public bool? IsOverdue { get; set; }
+        public bool? IsOverdue { get => _explicitNullValueIsOverdue; set { _explicitNullValueIsOverdue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_overdue"); else _explicitNullProperties?.Remove("is_overdue"); } }
+        private bool? _explicitNullValueIsOverdue = default!;
         /// <summary>The amount of the last payment.</summary>
-        public double? LastPaymentAmount { get; set; }
+        public double? LastPaymentAmount { get => _explicitNullValueLastPaymentAmount; set { _explicitNullValueLastPaymentAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_payment_amount"); else _explicitNullProperties?.Remove("last_payment_amount"); } }
+        private double? _explicitNullValueLastPaymentAmount = default!;
         /// <summary>The date of the last payment. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).</summary>
-        public Date? LastPaymentDate { get; set; }
+        public Date? LastPaymentDate { get => _explicitNullValueLastPaymentDate; set { _explicitNullValueLastPaymentDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_payment_date"); else _explicitNullProperties?.Remove("last_payment_date"); } }
+        private Date? _explicitNullValueLastPaymentDate = default!;
         /// <summary>The total amount owed as of the last statement issued</summary>
-        public double? LastStatementBalance { get; set; }
+        public double? LastStatementBalance { get => _explicitNullValueLastStatementBalance; set { _explicitNullValueLastStatementBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_statement_balance"); else _explicitNullProperties?.Remove("last_statement_balance"); } }
+        private double? _explicitNullValueLastStatementBalance = default!;
         /// <summary>The date of the last statement. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).</summary>
-        public Date? LastStatementIssueDate { get; set; }
+        public Date? LastStatementIssueDate { get => _explicitNullValueLastStatementIssueDate; set { _explicitNullValueLastStatementIssueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_statement_issue_date"); else _explicitNullProperties?.Remove("last_statement_issue_date"); } }
+        private Date? _explicitNullValueLastStatementIssueDate = default!;
         /// <summary>The type of loan, e.g., &quot;Consolidation Loans&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LoanName { get; set; }
+        public string? LoanName { get => _explicitNullValueLoanName; set { _explicitNullValueLoanName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_name"); else _explicitNullProperties?.Remove("loan_name"); } }
+        private string? _explicitNullValueLoanName = default!;
 #nullable restore
 #else
-        public string LoanName { get; set; }
+        public string LoanName { get => _explicitNullValueLoanName; set { _explicitNullValueLoanName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_name"); else _explicitNullProperties?.Remove("loan_name"); } }
+        private string _explicitNullValueLoanName = default!;
 #endif
         /// <summary>An object representing the status of the student loan</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.StudentLoanStatus? LoanStatus { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.StudentLoanStatus? LoanStatus { get => _explicitNullValueLoanStatus; set { _explicitNullValueLoanStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_status"); else _explicitNullProperties?.Remove("loan_status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.StudentLoanStatus? _explicitNullValueLoanStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.StudentLoanStatus LoanStatus { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.StudentLoanStatus LoanStatus { get => _explicitNullValueLoanStatus; set { _explicitNullValueLoanStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_status"); else _explicitNullProperties?.Remove("loan_status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.StudentLoanStatus _explicitNullValueLoanStatus = default!;
 #endif
         /// <summary>The minimum payment due for the next billing cycle. There are some exceptions:Some institutions require a minimum payment across all loans associated with an account number. Our API presents that same minimum payment amount on each loan. The institutions that do this are: Great Lakes ( `ins_116861`), Firstmark (`ins_116295`), Commonbond Firstmark Services (`ins_116950`), Granite State (`ins_116308`), and Oklahoma Student Loan Authority (`ins_116945`).Firstmark (`ins_116295` ) and Navient (`ins_116248`) will display as $0 if there is an autopay program in effect.</summary>
-        public double? MinimumPaymentAmount { get; set; }
+        public double? MinimumPaymentAmount { get => _explicitNullValueMinimumPaymentAmount; set { _explicitNullValueMinimumPaymentAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimum_payment_amount"); else _explicitNullProperties?.Remove("minimum_payment_amount"); } }
+        private double? _explicitNullValueMinimumPaymentAmount = default!;
         /// <summary>The due date for the next payment. The due date is `null` if a payment is not expected. A payment is not expected if `loan_status.type` is `deferment`, `in school`, `consolidated`, `paid in full`, or `transferred`. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).</summary>
-        public Date? NextPaymentDueDate { get; set; }
+        public Date? NextPaymentDueDate { get => _explicitNullValueNextPaymentDueDate; set { _explicitNullValueNextPaymentDueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_payment_due_date"); else _explicitNullProperties?.Remove("next_payment_due_date"); } }
+        private Date? _explicitNullValueNextPaymentDueDate = default!;
         /// <summary>The date on which the loan was initially lent. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).</summary>
-        public Date? OriginationDate { get; set; }
+        public Date? OriginationDate { get => _explicitNullValueOriginationDate; set { _explicitNullValueOriginationDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origination_date"); else _explicitNullProperties?.Remove("origination_date"); } }
+        private Date? _explicitNullValueOriginationDate = default!;
         /// <summary>The original principal balance of the loan.</summary>
-        public double? OriginationPrincipalAmount { get; set; }
+        public double? OriginationPrincipalAmount { get => _explicitNullValueOriginationPrincipalAmount; set { _explicitNullValueOriginationPrincipalAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origination_principal_amount"); else _explicitNullProperties?.Remove("origination_principal_amount"); } }
+        private double? _explicitNullValueOriginationPrincipalAmount = default!;
         /// <summary>The total dollar amount of the accrued interest balance. For Sallie Mae ( `ins_116944`), this amount is included in the current balance of the loan, so this field will return as `null`.</summary>
-        public double? OutstandingInterestAmount { get; set; }
+        public double? OutstandingInterestAmount { get => _explicitNullValueOutstandingInterestAmount; set { _explicitNullValueOutstandingInterestAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outstanding_interest_amount"); else _explicitNullProperties?.Remove("outstanding_interest_amount"); } }
+        private double? _explicitNullValueOutstandingInterestAmount = default!;
         /// <summary>The relevant account number that should be used to reference this loan for payments. In the majority of cases, `payment_reference_number` will match `account_number`, but in some institutions, such as Great Lakes (`ins_116861`), it will be different.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentReferenceNumber { get; set; }
+        public string? PaymentReferenceNumber { get => _explicitNullValuePaymentReferenceNumber; set { _explicitNullValuePaymentReferenceNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_reference_number"); else _explicitNullProperties?.Remove("payment_reference_number"); } }
+        private string? _explicitNullValuePaymentReferenceNumber = default!;
 #nullable restore
 #else
-        public string PaymentReferenceNumber { get; set; }
+        public string PaymentReferenceNumber { get => _explicitNullValuePaymentReferenceNumber; set { _explicitNullValuePaymentReferenceNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_reference_number"); else _explicitNullProperties?.Remove("payment_reference_number"); } }
+        private string _explicitNullValuePaymentReferenceNumber = default!;
 #endif
         /// <summary>Information about the student&apos;s eligibility in the Public Service Loan Forgiveness program. This is only returned if the institution is FedLoan (`ins_116527`). Since FedLoan no longer services student loans, this field is no longer returned. </summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PslfStatus? PslfStatus { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PslfStatus? PslfStatus { get => _explicitNullValuePslfStatus; set { _explicitNullValuePslfStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pslf_status"); else _explicitNullProperties?.Remove("pslf_status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PslfStatus? _explicitNullValuePslfStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PslfStatus PslfStatus { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PslfStatus PslfStatus { get => _explicitNullValuePslfStatus; set { _explicitNullValuePslfStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pslf_status"); else _explicitNullProperties?.Remove("pslf_status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PslfStatus _explicitNullValuePslfStatus = default!;
 #endif
         /// <summary>An object representing the repayment plan for the student loan</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.StudentRepaymentPlan? RepaymentPlan { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.StudentRepaymentPlan? RepaymentPlan { get => _explicitNullValueRepaymentPlan; set { _explicitNullValueRepaymentPlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repayment_plan"); else _explicitNullProperties?.Remove("repayment_plan"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.StudentRepaymentPlan? _explicitNullValueRepaymentPlan = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.StudentRepaymentPlan RepaymentPlan { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.StudentRepaymentPlan RepaymentPlan { get => _explicitNullValueRepaymentPlan; set { _explicitNullValueRepaymentPlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repayment_plan"); else _explicitNullProperties?.Remove("repayment_plan"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.StudentRepaymentPlan _explicitNullValueRepaymentPlan = default!;
 #endif
         /// <summary>The sequence number of the student loan. Heartland ECSI (`ins_116948`) does not make this field available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SequenceNumber { get; set; }
+        public string? SequenceNumber { get => _explicitNullValueSequenceNumber; set { _explicitNullValueSequenceNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequence_number"); else _explicitNullProperties?.Remove("sequence_number"); } }
+        private string? _explicitNullValueSequenceNumber = default!;
 #nullable restore
 #else
-        public string SequenceNumber { get; set; }
+        public string SequenceNumber { get => _explicitNullValueSequenceNumber; set { _explicitNullValueSequenceNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequence_number"); else _explicitNullProperties?.Remove("sequence_number"); } }
+        private string _explicitNullValueSequenceNumber = default!;
 #endif
         /// <summary>The address of the student loan servicer. This is generally the remittance address to which payments should be sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ServicerAddressData? ServicerAddress { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ServicerAddressData? ServicerAddress { get => _explicitNullValueServicerAddress; set { _explicitNullValueServicerAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("servicer_address"); else _explicitNullProperties?.Remove("servicer_address"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ServicerAddressData? _explicitNullValueServicerAddress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ServicerAddressData ServicerAddress { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ServicerAddressData ServicerAddress { get => _explicitNullValueServicerAddress; set { _explicitNullValueServicerAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("servicer_address"); else _explicitNullProperties?.Remove("servicer_address"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ServicerAddressData _explicitNullValueServicerAddress = default!;
 #endif
         /// <summary>The year to date (YTD) interest paid. Availability for this field is limited.</summary>
-        public double? YtdInterestPaid { get; set; }
+        public double? YtdInterestPaid { get => _explicitNullValueYtdInterestPaid; set { _explicitNullValueYtdInterestPaid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ytd_interest_paid"); else _explicitNullProperties?.Remove("ytd_interest_paid"); } }
+        private double? _explicitNullValueYtdInterestPaid = default!;
         /// <summary>The year to date (YTD) principal paid. Availability for this field is limited.</summary>
-        public double? YtdPrincipalPaid { get; set; }
+        public double? YtdPrincipalPaid { get => _explicitNullValueYtdPrincipalPaid; set { _explicitNullValueYtdPrincipalPaid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ytd_principal_paid"); else _explicitNullProperties?.Remove("ytd_principal_paid"); } }
+        private double? _explicitNullValueYtdPrincipalPaid = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.StudentLoan"/> and sets the default values.
         /// </summary>
@@ -148,7 +216,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.StudentLoan CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.StudentLoan();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.StudentLoan(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -217,6 +285,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ServicerAddressData>("servicer_address", ServicerAddress);
             writer.WriteDoubleValue("ytd_interest_paid", YtdInterestPaid);
             writer.WriteDoubleValue("ytd_principal_paid", YtdPrincipalPaid);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

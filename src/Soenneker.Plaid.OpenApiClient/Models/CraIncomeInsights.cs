@@ -12,68 +12,100 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraIncomeInsights : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bank_income_summary") is { } nullNodeBankIncomeSummary && nullNodeBankIncomeSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankIncomeSummary = null;
+            if (parseNode.GetChildNode("client_report_id") is { } nullNodeClientReportId && nullNodeClientReportId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientReportId = null;
+            if (parseNode.GetChildNode("days_requested") is { } nullNodeDaysRequested && nullNodeDaysRequested.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DaysRequested = null;
+            if (parseNode.GetChildNode("generated_time") is { } nullNodeGeneratedTime && nullNodeGeneratedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeneratedTime = null;
+            if (parseNode.GetChildNode("income_streams") is { } nullNodeIncomeStreams && nullNodeIncomeStreams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeStreams = null;
+            if (parseNode.GetChildNode("items") is { } nullNodeItems && nullNodeItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Items = null;
+            if (parseNode.GetChildNode("report_id") is { } nullNodeReportId && nullNodeReportId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportId = null;
+            if (parseNode.GetChildNode("user_summary") is { } nullNodeUserSummary && nullNodeUserSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserSummary = null;
+            if (parseNode.GetChildNode("warnings") is { } nullNodeWarnings && nullNodeWarnings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Warnings = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This is a V1 (II1) schema. For the V2 (II2) equivalent, use `CraIncomeInsightsUserSummary`. Summary for income across all income sources and items (max history of 730 days).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeSummary? BankIncomeSummary { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeSummary? BankIncomeSummary { get => _explicitNullValueBankIncomeSummary; set { _explicitNullValueBankIncomeSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_income_summary"); else _explicitNullProperties?.Remove("bank_income_summary"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeSummary? _explicitNullValueBankIncomeSummary = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeSummary BankIncomeSummary { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeSummary BankIncomeSummary { get => _explicitNullValueBankIncomeSummary; set { _explicitNullValueBankIncomeSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_income_summary"); else _explicitNullProperties?.Remove("bank_income_summary"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeSummary _explicitNullValueBankIncomeSummary = default!;
 #endif
         /// <summary>Client-generated identifier, which can be used by lenders to track loan applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientReportId { get; set; }
+        public string? ClientReportId { get => _explicitNullValueClientReportId; set { _explicitNullValueClientReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_report_id"); else _explicitNullProperties?.Remove("client_report_id"); } }
+        private string? _explicitNullValueClientReportId = default!;
 #nullable restore
 #else
-        public string ClientReportId { get; set; }
+        public string ClientReportId { get => _explicitNullValueClientReportId; set { _explicitNullValueClientReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_report_id"); else _explicitNullProperties?.Remove("client_report_id"); } }
+        private string _explicitNullValueClientReportId = default!;
 #endif
         /// <summary>The number of days requested by the customer for the Check Income Insights Report.</summary>
-        public int? DaysRequested { get; set; }
+        public int? DaysRequested { get => _explicitNullValueDaysRequested; set { _explicitNullValueDaysRequested = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days_requested"); else _explicitNullProperties?.Remove("days_requested"); } }
+        private int? _explicitNullValueDaysRequested = default!;
         /// <summary>The time when the Check Income Insights Report was generated.</summary>
-        public DateTimeOffset? GeneratedTime { get; set; }
+        public DateTimeOffset? GeneratedTime { get => _explicitNullValueGeneratedTime; set { _explicitNullValueGeneratedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generated_time"); else _explicitNullProperties?.Remove("generated_time"); } }
+        private DateTimeOffset? _explicitNullValueGeneratedTime = default!;
         /// <summary>The list of income streams for this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeStream>? IncomeStreams { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeStream>? IncomeStreams { get => _explicitNullValueIncomeStreams; set { _explicitNullValueIncomeStreams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_streams"); else _explicitNullProperties?.Remove("income_streams"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeStream>? _explicitNullValueIncomeStreams = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeStream> IncomeStreams { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeStream> IncomeStreams { get => _explicitNullValueIncomeStreams; set { _explicitNullValueIncomeStreams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_streams"); else _explicitNullProperties?.Remove("income_streams"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeStream> _explicitNullValueIncomeStreams = default!;
 #endif
         /// <summary>The list of Items in the report along with the associated metadata about the Item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeItem>? Items { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeItem>? Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeItem>? _explicitNullValueItems = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeItem> Items { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeItem> Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeItem> _explicitNullValueItems = default!;
 #endif
         /// <summary>The unique identifier associated with the Check Income Insights Report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReportId { get; set; }
+        public string? ReportId { get => _explicitNullValueReportId; set { _explicitNullValueReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_id"); else _explicitNullProperties?.Remove("report_id"); } }
+        private string? _explicitNullValueReportId = default!;
 #nullable restore
 #else
-        public string ReportId { get; set; }
+        public string ReportId { get => _explicitNullValueReportId; set { _explicitNullValueReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_id"); else _explicitNullProperties?.Remove("report_id"); } }
+        private string _explicitNullValueReportId = default!;
 #endif
         /// <summary>Aggregated summary of all income streams for this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeInsightsUserSummary? UserSummary { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeInsightsUserSummary? UserSummary { get => _explicitNullValueUserSummary; set { _explicitNullValueUserSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_summary"); else _explicitNullProperties?.Remove("user_summary"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeInsightsUserSummary? _explicitNullValueUserSummary = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeInsightsUserSummary UserSummary { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeInsightsUserSummary UserSummary { get => _explicitNullValueUserSummary; set { _explicitNullValueUserSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_summary"); else _explicitNullProperties?.Remove("user_summary"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeInsightsUserSummary _explicitNullValueUserSummary = default!;
 #endif
         /// <summary>If data from the report was unable to be retrieved, the warnings object will contain information about the error that caused the data to be incomplete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeWarning>? Warnings { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeWarning>? Warnings { get => _explicitNullValueWarnings; set { _explicitNullValueWarnings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warnings"); else _explicitNullProperties?.Remove("warnings"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeWarning>? _explicitNullValueWarnings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeWarning> Warnings { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeWarning> Warnings { get => _explicitNullValueWarnings; set { _explicitNullValueWarnings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warnings"); else _explicitNullProperties?.Remove("warnings"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeWarning> _explicitNullValueWarnings = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeInsights"/> and sets the default values.
@@ -90,7 +122,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeInsights CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeInsights();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeInsights(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -127,6 +159,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("report_id", ReportId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeInsightsUserSummary>("user_summary", UserSummary);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeWarning>("warnings", Warnings);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

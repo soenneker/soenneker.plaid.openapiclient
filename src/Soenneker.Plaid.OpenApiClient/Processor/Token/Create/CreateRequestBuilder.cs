@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Processor.Token.Create
         {
         }
         /// <summary>
-        /// Used to create a token suitable for sending to one of Plaid&apos;s partners to enable integrations. Note that Stripe partnerships use bank account tokens instead; see `/processor/stripe/bank_account_token/create` for creating tokens for use with Stripe integrations. If using multiple processors, multiple different processor tokens can be created for a single access token. Once created, a processor token for a given Item can be modified by calling `/processor/token/permissions/set`. To revoke the processor&apos;s access, the entire Item must be deleted by calling `/item/remove`.
+        /// Used to create a token suitable for sending to one of Plaid&apos;s partners to enable integrations. To create a Stripe bank account token (`btok_...`), use `/processor/stripe/bank_account_token/create`. If using multiple processors, multiple different processor tokens can be created for a single access token. Once created, a processor token for a given Item can be modified by calling `/processor/token/permissions/set`. To revoke the processor&apos;s access, the entire Item must be deleted by calling `/item/remove`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ProcessorTokenCreateResponse"/></returns>
         /// <param name="body">ProcessorTokenCreateRequest defines the request schema for `/processor/token/create`</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Processor.Token.Create
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.ProcessorTokenCreateResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.ProcessorTokenCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Used to create a token suitable for sending to one of Plaid&apos;s partners to enable integrations. Note that Stripe partnerships use bank account tokens instead; see `/processor/stripe/bank_account_token/create` for creating tokens for use with Stripe integrations. If using multiple processors, multiple different processor tokens can be created for a single access token. Once created, a processor token for a given Item can be modified by calling `/processor/token/permissions/set`. To revoke the processor&apos;s access, the entire Item must be deleted by calling `/item/remove`.
+        /// Used to create a token suitable for sending to one of Plaid&apos;s partners to enable integrations. To create a Stripe bank account token (`btok_...`), use `/processor/stripe/bank_account_token/create`. If using multiple processors, multiple different processor tokens can be created for a single access token. Once created, a processor token for a given Item can be modified by calling `/processor/token/permissions/set`. To revoke the processor&apos;s access, the entire Item must be deleted by calling `/item/remove`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">ProcessorTokenCreateRequest defines the request schema for `/processor/token/create`</param>

@@ -12,19 +12,36 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreditSessionDocumentIncomeResult : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("num_1099s_uploaded") is { } nullNodeNum1099sUploaded && nullNodeNum1099sUploaded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Num1099sUploaded = null;
+            if (parseNode.GetChildNode("num_bank_statements_uploaded") is { } nullNodeNumBankStatementsUploaded && nullNodeNumBankStatementsUploaded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumBankStatementsUploaded = null;
+            if (parseNode.GetChildNode("num_i20s_uploaded") is { } nullNodeNumI20sUploaded && nullNodeNumI20sUploaded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumI20sUploaded = null;
+            if (parseNode.GetChildNode("num_paystubs_uploaded") is { } nullNodeNumPaystubsUploaded && nullNodeNumPaystubsUploaded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumPaystubsUploaded = null;
+            if (parseNode.GetChildNode("num_w2s_uploaded") is { } nullNodeNumW2sUploaded && nullNodeNumW2sUploaded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumW2sUploaded = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of 1099s uploaded by the user</summary>
-        public int? Num1099sUploaded { get; set; }
+        public int? Num1099sUploaded { get => _explicitNullValueNum1099sUploaded; set { _explicitNullValueNum1099sUploaded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("num_1099s_uploaded"); else _explicitNullProperties?.Remove("num_1099s_uploaded"); } }
+        private int? _explicitNullValueNum1099sUploaded = default!;
         /// <summary>The number of bank statements uploaded by the user.</summary>
-        public int? NumBankStatementsUploaded { get; set; }
+        public int? NumBankStatementsUploaded { get => _explicitNullValueNumBankStatementsUploaded; set { _explicitNullValueNumBankStatementsUploaded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("num_bank_statements_uploaded"); else _explicitNullProperties?.Remove("num_bank_statements_uploaded"); } }
+        private int? _explicitNullValueNumBankStatementsUploaded = default!;
         /// <summary>The number of I-20s uploaded by the user</summary>
-        public int? NumI20sUploaded { get; set; }
+        public int? NumI20sUploaded { get => _explicitNullValueNumI20sUploaded; set { _explicitNullValueNumI20sUploaded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("num_i20s_uploaded"); else _explicitNullProperties?.Remove("num_i20s_uploaded"); } }
+        private int? _explicitNullValueNumI20sUploaded = default!;
         /// <summary>The number of paystubs uploaded by the user.</summary>
-        public int? NumPaystubsUploaded { get; set; }
+        public int? NumPaystubsUploaded { get => _explicitNullValueNumPaystubsUploaded; set { _explicitNullValueNumPaystubsUploaded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("num_paystubs_uploaded"); else _explicitNullProperties?.Remove("num_paystubs_uploaded"); } }
+        private int? _explicitNullValueNumPaystubsUploaded = default!;
         /// <summary>The number of w2s uploaded by the user.</summary>
-        public int? NumW2sUploaded { get; set; }
+        public int? NumW2sUploaded { get => _explicitNullValueNumW2sUploaded; set { _explicitNullValueNumW2sUploaded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("num_w2s_uploaded"); else _explicitNullProperties?.Remove("num_w2s_uploaded"); } }
+        private int? _explicitNullValueNumW2sUploaded = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionDocumentIncomeResult"/> and sets the default values.
         /// </summary>
@@ -40,7 +57,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionDocumentIncomeResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionDocumentIncomeResult();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionDocumentIncomeResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +88,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteIntValue("num_i20s_uploaded", NumI20sUploaded);
             writer.WriteIntValue("num_paystubs_uploaded", NumPaystubsUploaded);
             writer.WriteIntValue("num_w2s_uploaded", NumW2sUploaded);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

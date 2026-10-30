@@ -16,6 +16,7 @@ namespace Soenneker.Plaid.OpenApiClient.Beacon.Duplicate
     public partial class DuplicateRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The getPath property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Beacon.Duplicate.Get.GetRequestBuilder GetPath
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Beacon.Duplicate.Get.GetRequestBuilder(PathParameters, RequestAdapter);

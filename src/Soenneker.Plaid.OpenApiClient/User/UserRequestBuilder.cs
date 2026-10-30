@@ -11,6 +11,7 @@ using Soenneker.Plaid.OpenApiClient.User.Products;
 using Soenneker.Plaid.OpenApiClient.User.Remove;
 using Soenneker.Plaid.OpenApiClient.User.Third_party_token;
 using Soenneker.Plaid.OpenApiClient.User.Transactions;
+using Soenneker.Plaid.OpenApiClient.User.Transfer;
 using Soenneker.Plaid.OpenApiClient.User.Update;
 using System.Collections.Generic;
 using System.IO;
@@ -68,6 +69,11 @@ namespace Soenneker.Plaid.OpenApiClient.User
         public global::Soenneker.Plaid.OpenApiClient.User.Transactions.TransactionsRequestBuilder Transactions
         {
             get => new global::Soenneker.Plaid.OpenApiClient.User.Transactions.TransactionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The transfer property</summary>
+        public global::Soenneker.Plaid.OpenApiClient.User.Transfer.TransferRequestBuilder Transfer
+        {
+            get => new global::Soenneker.Plaid.OpenApiClient.User.Transfer.TransferRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The update property</summary>
         public global::Soenneker.Plaid.OpenApiClient.User.Update.UpdateRequestBuilder Update

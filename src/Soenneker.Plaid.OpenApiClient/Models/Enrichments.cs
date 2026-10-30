@@ -12,108 +12,153 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Enrichments : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("check_number") is { } nullNodeCheckNumber && nullNodeCheckNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckNumber = null;
+            if (parseNode.GetChildNode("counterparties") is { } nullNodeCounterparties && nullNodeCounterparties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Counterparties = null;
+            if (parseNode.GetChildNode("entity_id") is { } nullNodeEntityId && nullNodeEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityId = null;
+            if (parseNode.GetChildNode("legacy_category") is { } nullNodeLegacyCategory && nullNodeLegacyCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegacyCategory = null;
+            if (parseNode.GetChildNode("legacy_category_id") is { } nullNodeLegacyCategoryId && nullNodeLegacyCategoryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegacyCategoryId = null;
+            if (parseNode.GetChildNode("location") is { } nullNodeLocation && nullNodeLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Location = null;
+            if (parseNode.GetChildNode("logo_url") is { } nullNodeLogoUrl && nullNodeLogoUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogoUrl = null;
+            if (parseNode.GetChildNode("merchant_name") is { } nullNodeMerchantName && nullNodeMerchantName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantName = null;
+            if (parseNode.GetChildNode("payment_channel") is { } nullNodePaymentChannel && nullNodePaymentChannel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentChannel = null;
+            if (parseNode.GetChildNode("personal_finance_category") is { } nullNodePersonalFinanceCategory && nullNodePersonalFinanceCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalFinanceCategory = null;
+            if (parseNode.GetChildNode("personal_finance_category_icon_url") is { } nullNodePersonalFinanceCategoryIconUrl && nullNodePersonalFinanceCategoryIconUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalFinanceCategoryIconUrl = null;
+            if (parseNode.GetChildNode("phone_number") is { } nullNodePhoneNumber && nullNodePhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumber = null;
+            if (parseNode.GetChildNode("website") is { } nullNodeWebsite && nullNodeWebsite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Website = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The check number of the transaction. This field is only populated for check transactions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CheckNumber { get; set; }
+        public string? CheckNumber { get => _explicitNullValueCheckNumber; set { _explicitNullValueCheckNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_number"); else _explicitNullProperties?.Remove("check_number"); } }
+        private string? _explicitNullValueCheckNumber = default!;
 #nullable restore
 #else
-        public string CheckNumber { get; set; }
+        public string CheckNumber { get => _explicitNullValueCheckNumber; set { _explicitNullValueCheckNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_number"); else _explicitNullProperties?.Remove("check_number"); } }
+        private string _explicitNullValueCheckNumber = default!;
 #endif
         /// <summary>The counterparties present in the transaction. Counterparties, such as the merchant or the financial institution, are extracted by Plaid from the raw description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Counterparty>? Counterparties { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Counterparty>? Counterparties { get => _explicitNullValueCounterparties; set { _explicitNullValueCounterparties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparties"); else _explicitNullProperties?.Remove("counterparties"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.Counterparty>? _explicitNullValueCounterparties = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Counterparty> Counterparties { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Counterparty> Counterparties { get => _explicitNullValueCounterparties; set { _explicitNullValueCounterparties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparties"); else _explicitNullProperties?.Remove("counterparties"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.Counterparty> _explicitNullValueCounterparties = default!;
 #endif
         /// <summary>A unique, stable, Plaid-generated ID that maps to the primary counterparty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EntityId { get; set; }
+        public string? EntityId { get => _explicitNullValueEntityId; set { _explicitNullValueEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_id"); else _explicitNullProperties?.Remove("entity_id"); } }
+        private string? _explicitNullValueEntityId = default!;
 #nullable restore
 #else
-        public string EntityId { get; set; }
+        public string EntityId { get => _explicitNullValueEntityId; set { _explicitNullValueEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_id"); else _explicitNullProperties?.Remove("entity_id"); } }
+        private string _explicitNullValueEntityId = default!;
 #endif
         /// <summary>A hierarchical array of the legacy categories to which this transaction belongs. For a full list of legacy categories, see [`/categories/get`](https://plaid.com/docs/api/products/transactions/#categoriesget).We recommend using the `personal_finance_category` for transaction categorization to obtain the best results.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? LegacyCategory { get; set; }
+        public List<string>? LegacyCategory { get => _explicitNullValueLegacyCategory; set { _explicitNullValueLegacyCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legacy_category"); else _explicitNullProperties?.Remove("legacy_category"); } }
+        private List<string>? _explicitNullValueLegacyCategory = default!;
 #nullable restore
 #else
-        public List<string> LegacyCategory { get; set; }
+        public List<string> LegacyCategory { get => _explicitNullValueLegacyCategory; set { _explicitNullValueLegacyCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legacy_category"); else _explicitNullProperties?.Remove("legacy_category"); } }
+        private List<string> _explicitNullValueLegacyCategory = default!;
 #endif
         /// <summary>The ID of the legacy category to which this transaction belongs. For a full list of legacy categories, see [`/categories/get`](https://plaid.com/docs/api/products/transactions/#categoriesget).We recommend using the `personal_finance_category` for transaction categorization to obtain the best results.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LegacyCategoryId { get; set; }
+        public string? LegacyCategoryId { get => _explicitNullValueLegacyCategoryId; set { _explicitNullValueLegacyCategoryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legacy_category_id"); else _explicitNullProperties?.Remove("legacy_category_id"); } }
+        private string? _explicitNullValueLegacyCategoryId = default!;
 #nullable restore
 #else
-        public string LegacyCategoryId { get; set; }
+        public string LegacyCategoryId { get => _explicitNullValueLegacyCategoryId; set { _explicitNullValueLegacyCategoryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legacy_category_id"); else _explicitNullProperties?.Remove("legacy_category_id"); } }
+        private string _explicitNullValueLegacyCategoryId = default!;
 #endif
         /// <summary>A representation of where a transaction took place. Location data is provided only for transactions at physical locations, not for online transactions. Location data availability depends primarily on the merchant and is most likely to be populated for transactions at large retail chains; small, local businesses are less likely to have location data available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.Location? Location { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Location? Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Location? _explicitNullValueLocation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.Location Location { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Location Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Location _explicitNullValueLocation = default!;
 #endif
         /// <summary>The URL of a logo associated with this transaction, if available. The logo will always be a 100×100 pixel PNG file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LogoUrl { get; set; }
+        public string? LogoUrl { get => _explicitNullValueLogoUrl; set { _explicitNullValueLogoUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo_url"); else _explicitNullProperties?.Remove("logo_url"); } }
+        private string? _explicitNullValueLogoUrl = default!;
 #nullable restore
 #else
-        public string LogoUrl { get; set; }
+        public string LogoUrl { get => _explicitNullValueLogoUrl; set { _explicitNullValueLogoUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo_url"); else _explicitNullProperties?.Remove("logo_url"); } }
+        private string _explicitNullValueLogoUrl = default!;
 #endif
         /// <summary>The name of the primary counterparty, such as the merchant or the financial institution, as extracted by Plaid from the raw description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantName { get; set; }
+        public string? MerchantName { get => _explicitNullValueMerchantName; set { _explicitNullValueMerchantName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant_name"); else _explicitNullProperties?.Remove("merchant_name"); } }
+        private string? _explicitNullValueMerchantName = default!;
 #nullable restore
 #else
-        public string MerchantName { get; set; }
+        public string MerchantName { get => _explicitNullValueMerchantName; set { _explicitNullValueMerchantName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant_name"); else _explicitNullProperties?.Remove("merchant_name"); } }
+        private string _explicitNullValueMerchantName = default!;
 #endif
         /// <summary>The channel used to make a payment.`online:` transactions that took place online.`in store:` transactions that were made at a physical location.`other:` transactions that relate to banks, e.g. fees or deposits.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentChannel? PaymentChannel { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentChannel? PaymentChannel { get => _explicitNullValuePaymentChannel; set { _explicitNullValuePaymentChannel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_channel"); else _explicitNullProperties?.Remove("payment_channel"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PaymentChannel? _explicitNullValuePaymentChannel = default!;
         /// <summary>Information describing the intent of the transaction. Most relevant for personal finance use cases, but not limited to such use cases.See the [taxonomy CSV file](https://plaid.com/documents/pfc-taxonomy-all.csv) for a full list of personal finance categories. If you are migrating to personal finance categories from the legacy categories, also refer to the [migration guide](https://plaid.com/docs/transactions/pfc-migration/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory? PersonalFinanceCategory { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory? PersonalFinanceCategory { get => _explicitNullValuePersonalFinanceCategory; set { _explicitNullValuePersonalFinanceCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category"); else _explicitNullProperties?.Remove("personal_finance_category"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory? _explicitNullValuePersonalFinanceCategory = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory PersonalFinanceCategory { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory PersonalFinanceCategory { get => _explicitNullValuePersonalFinanceCategory; set { _explicitNullValuePersonalFinanceCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category"); else _explicitNullProperties?.Remove("personal_finance_category"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory _explicitNullValuePersonalFinanceCategory = default!;
 #endif
         /// <summary>The URL of an icon associated with the primary personal finance category. The icon will always be a 100×100 pixel PNG file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PersonalFinanceCategoryIconUrl { get; set; }
+        public string? PersonalFinanceCategoryIconUrl { get => _explicitNullValuePersonalFinanceCategoryIconUrl; set { _explicitNullValuePersonalFinanceCategoryIconUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category_icon_url"); else _explicitNullProperties?.Remove("personal_finance_category_icon_url"); } }
+        private string? _explicitNullValuePersonalFinanceCategoryIconUrl = default!;
 #nullable restore
 #else
-        public string PersonalFinanceCategoryIconUrl { get; set; }
+        public string PersonalFinanceCategoryIconUrl { get => _explicitNullValuePersonalFinanceCategoryIconUrl; set { _explicitNullValuePersonalFinanceCategoryIconUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category_icon_url"); else _explicitNullProperties?.Remove("personal_finance_category_icon_url"); } }
+        private string _explicitNullValuePersonalFinanceCategoryIconUrl = default!;
 #endif
         /// <summary>The phone number associated with the counterparty in E.164 format. If there is a location match (i.e. a street address is returned in the location object), the phone number will be location specific.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhoneNumber { get; set; }
+        public string? PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number"); else _explicitNullProperties?.Remove("phone_number"); } }
+        private string? _explicitNullValuePhoneNumber = default!;
 #nullable restore
 #else
-        public string PhoneNumber { get; set; }
+        public string PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number"); else _explicitNullProperties?.Remove("phone_number"); } }
+        private string _explicitNullValuePhoneNumber = default!;
 #endif
         /// <summary>The website associated with this transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Website { get; set; }
+        public string? Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
+        private string? _explicitNullValueWebsite = default!;
 #nullable restore
 #else
-        public string Website { get; set; }
+        public string Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
+        private string _explicitNullValueWebsite = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.Enrichments"/> and sets the default values.
@@ -130,7 +175,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.Enrichments CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.Enrichments();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.Enrichments(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -175,6 +220,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("personal_finance_category_icon_url", PersonalFinanceCategoryIconUrl);
             writer.WriteStringValue("phone_number", PhoneNumber);
             writer.WriteStringValue("website", Website);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

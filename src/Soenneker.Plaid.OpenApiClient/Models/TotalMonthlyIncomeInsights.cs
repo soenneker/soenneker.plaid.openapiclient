@@ -12,14 +12,25 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TotalMonthlyIncomeInsights : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("baseline_amount") is { } nullNodeBaselineAmount && nullNodeBaselineAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaselineAmount = null;
+            if (parseNode.GetChildNode("current_amount") is { } nullNodeCurrentAmount && nullNodeCurrentAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentAmount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The aggregated income for the 30 days prior to subscription date</summary>
         [Obsolete("")]
-        public double? BaselineAmount { get; set; }
+        public double? BaselineAmount { get => _explicitNullValueBaselineAmount; set { _explicitNullValueBaselineAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseline_amount"); else _explicitNullProperties?.Remove("baseline_amount"); } }
+        private double? _explicitNullValueBaselineAmount = default!;
         /// <summary>The sum of the historical average monthly income of each income source currently detected.</summary>
-        public double? CurrentAmount { get; set; }
+        public double? CurrentAmount { get => _explicitNullValueCurrentAmount; set { _explicitNullValueCurrentAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_amount"); else _explicitNullProperties?.Remove("current_amount"); } }
+        private double? _explicitNullValueCurrentAmount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TotalMonthlyIncomeInsights"/> and sets the default values.
         /// </summary>
@@ -35,7 +46,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.TotalMonthlyIncomeInsights CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.TotalMonthlyIncomeInsights();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.TotalMonthlyIncomeInsights(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,6 +69,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("baseline_amount", BaselineAmount);
             writer.WriteDoubleValue("current_amount", CurrentAmount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

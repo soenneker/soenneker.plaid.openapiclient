@@ -12,61 +12,91 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraPartnerInsightsBaseFicoScore : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("base_fico_score_version") is { } nullNodeBaseFicoScoreVersion && nullNodeBaseFicoScoreVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseFicoScoreVersion = null;
+            if (parseNode.GetChildNode("bureau") is { } nullNodeBureau && nullNodeBureau.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bureau = null;
+            if (parseNode.GetChildNode("did_inquiries_adversely_affect_score") is { } nullNodeDidInquiriesAdverselyAffectScore && nullNodeDidInquiriesAdverselyAffectScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DidInquiriesAdverselyAffectScore = null;
+            if (parseNode.GetChildNode("reason_code_1") is { } nullNodeReasonCode1 && nullNodeReasonCode1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReasonCode1 = null;
+            if (parseNode.GetChildNode("reason_code_2") is { } nullNodeReasonCode2 && nullNodeReasonCode2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReasonCode2 = null;
+            if (parseNode.GetChildNode("reason_code_3") is { } nullNodeReasonCode3 && nullNodeReasonCode3.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReasonCode3 = null;
+            if (parseNode.GetChildNode("reason_code_4") is { } nullNodeReasonCode4 && nullNodeReasonCode4.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReasonCode4 = null;
+            if (parseNode.GetChildNode("reason_codes") is { } nullNodeReasonCodes && nullNodeReasonCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReasonCodes = null;
+            if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The version of the base FICO score model.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsBaseFicoScoreVersion? BaseFicoScoreVersion { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsBaseFicoScoreVersion? BaseFicoScoreVersion { get => _explicitNullValueBaseFicoScoreVersion; set { _explicitNullValueBaseFicoScoreVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_fico_score_version"); else _explicitNullProperties?.Remove("base_fico_score_version"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsBaseFicoScoreVersion? _explicitNullValueBaseFicoScoreVersion = default!;
         /// <summary>The credit bureau that provided the base FICO score.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsBureau? Bureau { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsBureau? Bureau { get => _explicitNullValueBureau; set { _explicitNullValueBureau = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bureau"); else _explicitNullProperties?.Remove("bureau"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsBureau? _explicitNullValueBureau = default!;
         /// <summary>Whether inquiries adversely affected the score but were not represented in one of the four reason codes. Sometimes referred to as the FACTA Flag.</summary>
-        public bool? DidInquiriesAdverselyAffectScore { get; set; }
+        public bool? DidInquiriesAdverselyAffectScore { get => _explicitNullValueDidInquiriesAdverselyAffectScore; set { _explicitNullValueDidInquiriesAdverselyAffectScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("did_inquiries_adversely_affect_score"); else _explicitNullProperties?.Remove("did_inquiries_adversely_affect_score"); } }
+        private bool? _explicitNullValueDidInquiriesAdverselyAffectScore = default!;
         /// <summary>Deprecated. Use `reason_codes` instead. The first reason code associated with the score.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReasonCode1 { get; set; }
+        public string? ReasonCode1 { get => _explicitNullValueReasonCode1; set { _explicitNullValueReasonCode1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason_code_1"); else _explicitNullProperties?.Remove("reason_code_1"); } }
+        private string? _explicitNullValueReasonCode1 = default!;
 #nullable restore
 #else
-        public string ReasonCode1 { get; set; }
+        public string ReasonCode1 { get => _explicitNullValueReasonCode1; set { _explicitNullValueReasonCode1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason_code_1"); else _explicitNullProperties?.Remove("reason_code_1"); } }
+        private string _explicitNullValueReasonCode1 = default!;
 #endif
         /// <summary>Deprecated. Use `reason_codes` instead. The second reason code associated with the score.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReasonCode2 { get; set; }
+        public string? ReasonCode2 { get => _explicitNullValueReasonCode2; set { _explicitNullValueReasonCode2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason_code_2"); else _explicitNullProperties?.Remove("reason_code_2"); } }
+        private string? _explicitNullValueReasonCode2 = default!;
 #nullable restore
 #else
-        public string ReasonCode2 { get; set; }
+        public string ReasonCode2 { get => _explicitNullValueReasonCode2; set { _explicitNullValueReasonCode2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason_code_2"); else _explicitNullProperties?.Remove("reason_code_2"); } }
+        private string _explicitNullValueReasonCode2 = default!;
 #endif
         /// <summary>Deprecated. Use `reason_codes` instead. The third reason code associated with the score.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReasonCode3 { get; set; }
+        public string? ReasonCode3 { get => _explicitNullValueReasonCode3; set { _explicitNullValueReasonCode3 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason_code_3"); else _explicitNullProperties?.Remove("reason_code_3"); } }
+        private string? _explicitNullValueReasonCode3 = default!;
 #nullable restore
 #else
-        public string ReasonCode3 { get; set; }
+        public string ReasonCode3 { get => _explicitNullValueReasonCode3; set { _explicitNullValueReasonCode3 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason_code_3"); else _explicitNullProperties?.Remove("reason_code_3"); } }
+        private string _explicitNullValueReasonCode3 = default!;
 #endif
         /// <summary>Deprecated. Use `reason_codes` instead. The fourth reason code associated with the score.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReasonCode4 { get; set; }
+        public string? ReasonCode4 { get => _explicitNullValueReasonCode4; set { _explicitNullValueReasonCode4 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason_code_4"); else _explicitNullProperties?.Remove("reason_code_4"); } }
+        private string? _explicitNullValueReasonCode4 = default!;
 #nullable restore
 #else
-        public string ReasonCode4 { get; set; }
+        public string ReasonCode4 { get => _explicitNullValueReasonCode4; set { _explicitNullValueReasonCode4 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason_code_4"); else _explicitNullProperties?.Remove("reason_code_4"); } }
+        private string _explicitNullValueReasonCode4 = default!;
 #endif
         /// <summary>Reason codes associated with the score, in priority order. May contain up to 4 items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ReasonCodes { get; set; }
+        public List<string>? ReasonCodes { get => _explicitNullValueReasonCodes; set { _explicitNullValueReasonCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason_codes"); else _explicitNullProperties?.Remove("reason_codes"); } }
+        private List<string>? _explicitNullValueReasonCodes = default!;
 #nullable restore
 #else
-        public List<string> ReasonCodes { get; set; }
+        public List<string> ReasonCodes { get => _explicitNullValueReasonCodes; set { _explicitNullValueReasonCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason_codes"); else _explicitNullProperties?.Remove("reason_codes"); } }
+        private List<string> _explicitNullValueReasonCodes = default!;
 #endif
         /// <summary>Numeric value of the base FICO score.</summary>
-        public int? Score { get; set; }
+        public int? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
+        private int? _explicitNullValueScore = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsBaseFicoScore"/> and sets the default values.
         /// </summary>
@@ -82,7 +112,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsBaseFicoScore CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsBaseFicoScore();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsBaseFicoScore(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -119,6 +149,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("reason_code_4", ReasonCode4);
             writer.WriteCollectionOfPrimitiveValues<string>("reason_codes", ReasonCodes);
             writer.WriteIntValue("score", Score);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

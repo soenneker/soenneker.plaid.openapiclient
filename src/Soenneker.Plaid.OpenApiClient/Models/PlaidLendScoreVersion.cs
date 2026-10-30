@@ -7,10 +7,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PlaidLendScoreVersion
     {
-        [EnumMember(Value = "v1.0")]
-        #pragma warning disable CS1591
-        V10,
-        #pragma warning restore CS1591
         [EnumMember(Value = "v2.0")]
         #pragma warning disable CS1591
         V20,

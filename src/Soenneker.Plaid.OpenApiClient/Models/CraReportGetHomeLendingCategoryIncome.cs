@@ -12,24 +12,37 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraReportGetHomeLendingCategoryIncome : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("current") is { } nullNodeCurrent && nullNodeCurrent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Current = null;
+            if (parseNode.GetChildNode("income_category") is { } nullNodeIncomeCategory && nullNodeIncomeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeCategory = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Modeled estimate of current income based on recently observed income transactions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCurrentModeledIncome? Current { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCurrentModeledIncome? Current { get => _explicitNullValueCurrent; set { _explicitNullValueCurrent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current"); else _explicitNullProperties?.Remove("current"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraCurrentModeledIncome? _explicitNullValueCurrent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCurrentModeledIncome Current { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCurrentModeledIncome Current { get => _explicitNullValueCurrent; set { _explicitNullValueCurrent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current"); else _explicitNullProperties?.Remove("current"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraCurrentModeledIncome _explicitNullValueCurrent = default!;
 #endif
         /// <summary>The income category for a given stream. The streams returned in the response will be filtered based on these primary and secondary income categories.See the [Income V2 Category Taxonomy](https://plaid.com/documents/income-v2-category-taxonomy.csv) for a full list of income categories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeCategory? IncomeCategory { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeCategory? IncomeCategory { get => _explicitNullValueIncomeCategory; set { _explicitNullValueIncomeCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_category"); else _explicitNullProperties?.Remove("income_category"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeCategory? _explicitNullValueIncomeCategory = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeCategory IncomeCategory { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeCategory IncomeCategory { get => _explicitNullValueIncomeCategory; set { _explicitNullValueIncomeCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_category"); else _explicitNullProperties?.Remove("income_category"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeCategory _explicitNullValueIncomeCategory = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingCategoryIncome"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingCategoryIncome CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingCategoryIncome();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingCategoryIncome(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCurrentModeledIncome>("current", Current);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeCategory>("income_category", IncomeCategory);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,72 +12,103 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PartnerEndCustomerCraPurposes : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("BUSINESS_NEED_ACCOUNT_REVIEW") is { } nullNodeBUSINESSNEEDACCOUNTREVIEW && nullNodeBUSINESSNEEDACCOUNTREVIEW.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BUSINESSNEEDACCOUNTREVIEW = null;
+            if (parseNode.GetChildNode("BUSINESS_NEED_TRANSACTION") is { } nullNodeBUSINESSNEEDTRANSACTION && nullNodeBUSINESSNEEDTRANSACTION.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BUSINESSNEEDTRANSACTION = null;
+            if (parseNode.GetChildNode("EMPLOYMENT") is { } nullNodeEMPLOYMENT && nullNodeEMPLOYMENT.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EMPLOYMENT = null;
+            if (parseNode.GetChildNode("EXTENSION_OF_CREDIT_OR_ACCOUNT_REVIEW") is { } nullNodeEXTENSIONOFCREDITORACCOUNTREVIEW && nullNodeEXTENSIONOFCREDITORACCOUNTREVIEW.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EXTENSIONOFCREDITORACCOUNTREVIEW = null;
+            if (parseNode.GetChildNode("INSURANCE_UNDERWRITING") is { } nullNodeINSURANCEUNDERWRITING && nullNodeINSURANCEUNDERWRITING.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) INSURANCEUNDERWRITING = null;
+            if (parseNode.GetChildNode("LICENSE_ELIGIBILITY") is { } nullNodeLICENSEELIGIBILITY && nullNodeLICENSEELIGIBILITY.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LICENSEELIGIBILITY = null;
+            if (parseNode.GetChildNode("RISK_ASSESSMENT") is { } nullNodeRISKASSESSMENT && nullNodeRISKASSESSMENT.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RISKASSESSMENT = null;
+            if (parseNode.GetChildNode("WRITTEN_INSTRUCTION") is { } nullNodeWRITTENINSTRUCTION && nullNodeWRITTENINSTRUCTION.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WRITTENINSTRUCTION = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The list of use cases associated with a given permissible purpose.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases? BUSINESSNEEDACCOUNTREVIEW { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases? BUSINESSNEEDACCOUNTREVIEW { get => _explicitNullValueBUSINESSNEEDACCOUNTREVIEW; set { _explicitNullValueBUSINESSNEEDACCOUNTREVIEW = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("BUSINESS_NEED_ACCOUNT_REVIEW"); else _explicitNullProperties?.Remove("BUSINESS_NEED_ACCOUNT_REVIEW"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases? _explicitNullValueBUSINESSNEEDACCOUNTREVIEW = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases BUSINESSNEEDACCOUNTREVIEW { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases BUSINESSNEEDACCOUNTREVIEW { get => _explicitNullValueBUSINESSNEEDACCOUNTREVIEW; set { _explicitNullValueBUSINESSNEEDACCOUNTREVIEW = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("BUSINESS_NEED_ACCOUNT_REVIEW"); else _explicitNullProperties?.Remove("BUSINESS_NEED_ACCOUNT_REVIEW"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases _explicitNullValueBUSINESSNEEDACCOUNTREVIEW = default!;
 #endif
         /// <summary>The list of use cases associated with a given permissible purpose.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases? BUSINESSNEEDTRANSACTION { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases? BUSINESSNEEDTRANSACTION { get => _explicitNullValueBUSINESSNEEDTRANSACTION; set { _explicitNullValueBUSINESSNEEDTRANSACTION = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("BUSINESS_NEED_TRANSACTION"); else _explicitNullProperties?.Remove("BUSINESS_NEED_TRANSACTION"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases? _explicitNullValueBUSINESSNEEDTRANSACTION = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases BUSINESSNEEDTRANSACTION { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases BUSINESSNEEDTRANSACTION { get => _explicitNullValueBUSINESSNEEDTRANSACTION; set { _explicitNullValueBUSINESSNEEDTRANSACTION = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("BUSINESS_NEED_TRANSACTION"); else _explicitNullProperties?.Remove("BUSINESS_NEED_TRANSACTION"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases _explicitNullValueBUSINESSNEEDTRANSACTION = default!;
 #endif
         /// <summary>The list of use cases associated with a given permissible purpose.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases? EMPLOYMENT { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases? EMPLOYMENT { get => _explicitNullValueEMPLOYMENT; set { _explicitNullValueEMPLOYMENT = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("EMPLOYMENT"); else _explicitNullProperties?.Remove("EMPLOYMENT"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases? _explicitNullValueEMPLOYMENT = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases EMPLOYMENT { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases EMPLOYMENT { get => _explicitNullValueEMPLOYMENT; set { _explicitNullValueEMPLOYMENT = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("EMPLOYMENT"); else _explicitNullProperties?.Remove("EMPLOYMENT"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases _explicitNullValueEMPLOYMENT = default!;
 #endif
         /// <summary>The list of use cases associated with a given permissible purpose.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases? EXTENSIONOFCREDITORACCOUNTREVIEW { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases? EXTENSIONOFCREDITORACCOUNTREVIEW { get => _explicitNullValueEXTENSIONOFCREDITORACCOUNTREVIEW; set { _explicitNullValueEXTENSIONOFCREDITORACCOUNTREVIEW = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("EXTENSION_OF_CREDIT_OR_ACCOUNT_REVIEW"); else _explicitNullProperties?.Remove("EXTENSION_OF_CREDIT_OR_ACCOUNT_REVIEW"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases? _explicitNullValueEXTENSIONOFCREDITORACCOUNTREVIEW = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases EXTENSIONOFCREDITORACCOUNTREVIEW { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases EXTENSIONOFCREDITORACCOUNTREVIEW { get => _explicitNullValueEXTENSIONOFCREDITORACCOUNTREVIEW; set { _explicitNullValueEXTENSIONOFCREDITORACCOUNTREVIEW = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("EXTENSION_OF_CREDIT_OR_ACCOUNT_REVIEW"); else _explicitNullProperties?.Remove("EXTENSION_OF_CREDIT_OR_ACCOUNT_REVIEW"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases _explicitNullValueEXTENSIONOFCREDITORACCOUNTREVIEW = default!;
 #endif
         /// <summary>The list of use cases associated with a given permissible purpose.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases? INSURANCEUNDERWRITING { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases? INSURANCEUNDERWRITING { get => _explicitNullValueINSURANCEUNDERWRITING; set { _explicitNullValueINSURANCEUNDERWRITING = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("INSURANCE_UNDERWRITING"); else _explicitNullProperties?.Remove("INSURANCE_UNDERWRITING"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases? _explicitNullValueINSURANCEUNDERWRITING = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases INSURANCEUNDERWRITING { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases INSURANCEUNDERWRITING { get => _explicitNullValueINSURANCEUNDERWRITING; set { _explicitNullValueINSURANCEUNDERWRITING = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("INSURANCE_UNDERWRITING"); else _explicitNullProperties?.Remove("INSURANCE_UNDERWRITING"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases _explicitNullValueINSURANCEUNDERWRITING = default!;
 #endif
         /// <summary>The list of use cases associated with a given permissible purpose.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases? LICENSEELIGIBILITY { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases? LICENSEELIGIBILITY { get => _explicitNullValueLICENSEELIGIBILITY; set { _explicitNullValueLICENSEELIGIBILITY = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LICENSE_ELIGIBILITY"); else _explicitNullProperties?.Remove("LICENSE_ELIGIBILITY"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases? _explicitNullValueLICENSEELIGIBILITY = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases LICENSEELIGIBILITY { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases LICENSEELIGIBILITY { get => _explicitNullValueLICENSEELIGIBILITY; set { _explicitNullValueLICENSEELIGIBILITY = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LICENSE_ELIGIBILITY"); else _explicitNullProperties?.Remove("LICENSE_ELIGIBILITY"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases _explicitNullValueLICENSEELIGIBILITY = default!;
 #endif
         /// <summary>The list of use cases associated with a given permissible purpose.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases? RISKASSESSMENT { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases? RISKASSESSMENT { get => _explicitNullValueRISKASSESSMENT; set { _explicitNullValueRISKASSESSMENT = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("RISK_ASSESSMENT"); else _explicitNullProperties?.Remove("RISK_ASSESSMENT"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases? _explicitNullValueRISKASSESSMENT = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases RISKASSESSMENT { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases RISKASSESSMENT { get => _explicitNullValueRISKASSESSMENT; set { _explicitNullValueRISKASSESSMENT = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("RISK_ASSESSMENT"); else _explicitNullProperties?.Remove("RISK_ASSESSMENT"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases _explicitNullValueRISKASSESSMENT = default!;
 #endif
         /// <summary>The list of use cases associated with a given permissible purpose.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases? WRITTENINSTRUCTION { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases? WRITTENINSTRUCTION { get => _explicitNullValueWRITTENINSTRUCTION; set { _explicitNullValueWRITTENINSTRUCTION = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("WRITTEN_INSTRUCTION"); else _explicitNullProperties?.Remove("WRITTEN_INSTRUCTION"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases? _explicitNullValueWRITTENINSTRUCTION = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases WRITTENINSTRUCTION { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases WRITTENINSTRUCTION { get => _explicitNullValueWRITTENINSTRUCTION; set { _explicitNullValueWRITTENINSTRUCTION = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("WRITTEN_INSTRUCTION"); else _explicitNullProperties?.Remove("WRITTEN_INSTRUCTION"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases _explicitNullValueWRITTENINSTRUCTION = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraPurposes"/> and sets the default values.
@@ -94,7 +125,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraPurposes CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraPurposes();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraPurposes(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -129,6 +160,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases>("LICENSE_ELIGIBILITY", LICENSEELIGIBILITY);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases>("RISK_ASSESSMENT", RISKASSESSMENT);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases>("WRITTEN_INSTRUCTION", WRITTENINSTRUCTION);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

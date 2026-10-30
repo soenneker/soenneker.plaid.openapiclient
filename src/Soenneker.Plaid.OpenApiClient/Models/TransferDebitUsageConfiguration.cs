@@ -12,42 +12,63 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransferDebitUsageConfiguration : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("expected_average_amount") is { } nullNodeExpectedAverageAmount && nullNodeExpectedAverageAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedAverageAmount = null;
+            if (parseNode.GetChildNode("expected_frequency") is { } nullNodeExpectedFrequency && nullNodeExpectedFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedFrequency = null;
+            if (parseNode.GetChildNode("expected_highest_amount") is { } nullNodeExpectedHighestAmount && nullNodeExpectedHighestAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedHighestAmount = null;
+            if (parseNode.GetChildNode("expected_monthly_amount") is { } nullNodeExpectedMonthlyAmount && nullNodeExpectedMonthlyAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedMonthlyAmount = null;
+            if (parseNode.GetChildNode("sec_codes") is { } nullNodeSecCodes && nullNodeSecCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecCodes = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The originator&apos;s expected average amount per debit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpectedAverageAmount { get; set; }
+        public string? ExpectedAverageAmount { get => _explicitNullValueExpectedAverageAmount; set { _explicitNullValueExpectedAverageAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_average_amount"); else _explicitNullProperties?.Remove("expected_average_amount"); } }
+        private string? _explicitNullValueExpectedAverageAmount = default!;
 #nullable restore
 #else
-        public string ExpectedAverageAmount { get; set; }
+        public string ExpectedAverageAmount { get => _explicitNullValueExpectedAverageAmount; set { _explicitNullValueExpectedAverageAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_average_amount"); else _explicitNullProperties?.Remove("expected_average_amount"); } }
+        private string _explicitNullValueExpectedAverageAmount = default!;
 #endif
         /// <summary>The originator&apos;s expected transfer frequency.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.OriginatorExpectedTransferFrequency? ExpectedFrequency { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.OriginatorExpectedTransferFrequency? ExpectedFrequency { get => _explicitNullValueExpectedFrequency; set { _explicitNullValueExpectedFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_frequency"); else _explicitNullProperties?.Remove("expected_frequency"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.OriginatorExpectedTransferFrequency? _explicitNullValueExpectedFrequency = default!;
         /// <summary>The originator&apos;s expected highest amount for a single debit transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpectedHighestAmount { get; set; }
+        public string? ExpectedHighestAmount { get => _explicitNullValueExpectedHighestAmount; set { _explicitNullValueExpectedHighestAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_highest_amount"); else _explicitNullProperties?.Remove("expected_highest_amount"); } }
+        private string? _explicitNullValueExpectedHighestAmount = default!;
 #nullable restore
 #else
-        public string ExpectedHighestAmount { get; set; }
+        public string ExpectedHighestAmount { get => _explicitNullValueExpectedHighestAmount; set { _explicitNullValueExpectedHighestAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_highest_amount"); else _explicitNullProperties?.Remove("expected_highest_amount"); } }
+        private string _explicitNullValueExpectedHighestAmount = default!;
 #endif
         /// <summary>The originator&apos;s monthly expected ACH debit processing amount for the next 6-12 months.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpectedMonthlyAmount { get; set; }
+        public string? ExpectedMonthlyAmount { get => _explicitNullValueExpectedMonthlyAmount; set { _explicitNullValueExpectedMonthlyAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_monthly_amount"); else _explicitNullProperties?.Remove("expected_monthly_amount"); } }
+        private string? _explicitNullValueExpectedMonthlyAmount = default!;
 #nullable restore
 #else
-        public string ExpectedMonthlyAmount { get; set; }
+        public string ExpectedMonthlyAmount { get => _explicitNullValueExpectedMonthlyAmount; set { _explicitNullValueExpectedMonthlyAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_monthly_amount"); else _explicitNullProperties?.Remove("expected_monthly_amount"); } }
+        private string _explicitNullValueExpectedMonthlyAmount = default!;
 #endif
         /// <summary>Specifies the expected use cases for the originator&apos;s debit transfers. This should be a list that contains one or more of the following codes:`&quot;ccd&quot;` - Corporate Credit or Debit - fund transfer between two corporate bank accounts`&quot;ppd&quot;` - Prearranged Payment or Deposit - The transfer is part of a pre-existing relationship with a consumer. Authorization was obtained in writing either in person or via an electronic document signing, e.g. Docusign, by the consumer. Can be used for credits or debits.`&quot;web&quot;` - Internet-Initiated Entry. The transfer debits a consumer&apos;s bank account. Authorization from the consumer is obtained over the Internet (e.g. a web or mobile application). Can be used for single debits or recurring debits.`&quot;tel&quot;` - Telephone-Initiated Entry. The transfer debits a consumer. Debit authorization has been received orally over the telephone via a recorded call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.AchClass?>? SecCodes { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.AchClass?>? SecCodes { get => _explicitNullValueSecCodes; set { _explicitNullValueSecCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sec_codes"); else _explicitNullProperties?.Remove("sec_codes"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.AchClass?>? _explicitNullValueSecCodes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.AchClass?> SecCodes { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.AchClass?> SecCodes { get => _explicitNullValueSecCodes; set { _explicitNullValueSecCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sec_codes"); else _explicitNullProperties?.Remove("sec_codes"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.AchClass?> _explicitNullValueSecCodes = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransferDebitUsageConfiguration"/> and sets the default values.
@@ -64,7 +85,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.TransferDebitUsageConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.TransferDebitUsageConfiguration();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.TransferDebitUsageConfiguration(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,6 +116,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("expected_highest_amount", ExpectedHighestAmount);
             writer.WriteStringValue("expected_monthly_amount", ExpectedMonthlyAmount);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.AchClass>("sec_codes", SecCodes);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

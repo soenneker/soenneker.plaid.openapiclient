@@ -12,50 +12,74 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserAccountSessionGetResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("identity") is { } nullNodeIdentity && nullNodeIdentity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Identity = null;
+            if (parseNode.GetChildNode("identity_edit_history") is { } nullNodeIdentityEditHistory && nullNodeIdentityEditHistory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdentityEditHistory = null;
+            if (parseNode.GetChildNode("idv_session_status") is { } nullNodeIdvSessionStatus && nullNodeIdvSessionStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdvSessionStatus = null;
+            if (parseNode.GetChildNode("items") is { } nullNodeItems && nullNodeItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Items = null;
+            if (parseNode.GetChildNode("link_session_id") is { } nullNodeLinkSessionId && nullNodeLinkSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkSessionId = null;
+            if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The identity data permissioned by the end user during the authorization flow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentity? Identity { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentity? Identity { get => _explicitNullValueIdentity; set { _explicitNullValueIdentity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity"); else _explicitNullProperties?.Remove("identity"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentity? _explicitNullValueIdentity = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentity Identity { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentity Identity { get => _explicitNullValueIdentity; set { _explicitNullValueIdentity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity"); else _explicitNullProperties?.Remove("identity"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentity _explicitNullValueIdentity = default!;
 #endif
         /// <summary>Statistics tracking the number of edits made to identity fields over various time periods.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditHistory? IdentityEditHistory { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditHistory? IdentityEditHistory { get => _explicitNullValueIdentityEditHistory; set { _explicitNullValueIdentityEditHistory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_edit_history"); else _explicitNullProperties?.Remove("identity_edit_history"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditHistory? _explicitNullValueIdentityEditHistory = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditHistory IdentityEditHistory { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditHistory IdentityEditHistory { get => _explicitNullValueIdentityEditHistory; set { _explicitNullValueIdentityEditHistory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_edit_history"); else _explicitNullProperties?.Remove("identity_edit_history"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditHistory _explicitNullValueIdentityEditHistory = default!;
 #endif
         /// <summary>The status of this Identity Verification attempt.`active` - The Identity Verification attempt is incomplete. The user may have completed part of the session, but has neither failed nor passed.`success` - The Identity Verification attempt has completed, passing all steps defined to the associated Identity Verification template.`failed` - The user failed one or more steps in the session and was told to contact support.`expired` - The Identity Verification attempt was active for a long period of time without being completed and was automatically marked as expired. Note that sessions currently do not expire. Automatic expiration is expected to be enabled in the future.`canceled` - The Identity Verification attempt was canceled, either via the dashboard by a user, or via API. The user may have completed part of the session, but has neither failed nor passed.`pending_review` - The Identity Verification attempt template was configured to perform a screening that had one or more hits needing review.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountSessionGetResponseIdvSessionStatus? IdvSessionStatus { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserAccountSessionGetResponseIdvSessionStatus? IdvSessionStatus { get => _explicitNullValueIdvSessionStatus; set { _explicitNullValueIdvSessionStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idv_session_status"); else _explicitNullProperties?.Remove("idv_session_status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.UserAccountSessionGetResponseIdvSessionStatus? _explicitNullValueIdvSessionStatus = default!;
         /// <summary>The items property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.UserAccountItem>? Items { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.UserAccountItem>? Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.UserAccountItem>? _explicitNullValueItems = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.UserAccountItem> Items { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.UserAccountItem> Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.UserAccountItem> _explicitNullValueItems = default!;
 #endif
         /// <summary>The Link session identifier associated with this session. Null for sessions without a valid Link session identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LinkSessionId { get; set; }
+        public string? LinkSessionId { get => _explicitNullValueLinkSessionId; set { _explicitNullValueLinkSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_session_id"); else _explicitNullProperties?.Remove("link_session_id"); } }
+        private string? _explicitNullValueLinkSessionId = default!;
 #nullable restore
 #else
-        public string LinkSessionId { get; set; }
+        public string LinkSessionId { get => _explicitNullValueLinkSessionId; set { _explicitNullValueLinkSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_session_id"); else _explicitNullProperties?.Remove("link_session_id"); } }
+        private string _explicitNullValueLinkSessionId = default!;
 #endif
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId { get; set; }
+        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        private string? _explicitNullValueRequestId = default!;
 #nullable restore
 #else
-        public string RequestId { get; set; }
+        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        private string _explicitNullValueRequestId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.UserAccountSessionGetResponse"/> and sets the default values.
@@ -72,7 +96,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.UserAccountSessionGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.UserAccountSessionGetResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.UserAccountSessionGetResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,6 +127,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.UserAccountItem>("items", Items);
             writer.WriteStringValue("link_session_id", LinkSessionId);
             writer.WriteStringValue("request_id", RequestId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

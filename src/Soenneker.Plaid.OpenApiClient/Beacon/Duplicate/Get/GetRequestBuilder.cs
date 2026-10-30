@@ -52,7 +52,7 @@ namespace Soenneker.Plaid.OpenApiClient.Beacon.Duplicate.Get
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.BeaconDuplicateGetResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.BeaconDuplicateGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.BeaconDuplicateGetResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.BeaconDuplicateGetResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a Beacon Duplicate for a given Beacon Duplicate id.A Beacon Duplicate represents a pair of similar Beacon Users within your organization.Two Beacon User revisions are returned for each Duplicate record in either the `beacon_user1` or `beacon_user2` response fields.The `analysis` field in the response indicates which fields matched between `beacon_user1` and `beacon_user2`.

@@ -12,18 +12,30 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuthorizationGuaranteeDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("outcome") is { } nullNodeOutcome && nullNodeOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Outcome = null;
+            if (parseNode.GetChildNode("schedule") is { } nullNodeSchedule && nullNodeSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schedule = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The adaptive guarantee outcome for a transfer.`FULL_INSTANT`: The full transfer amount is guaranteed and funds are available instantly.`PARTIAL_INSTANT_ONLY`: A partial amount is guaranteed and available instantly; the remainder is not guaranteed.`PARTIAL_INSTANT_WITH_OBSERVATION_WINDOW`: A partial amount is guaranteed instantly; an additional amount is conditionally guaranteed subject to an observation window.`NOT_GUARANTEED`: Plaid did not provide a guarantee for this transfer.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeOutcome? Outcome { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeOutcome? Outcome { get => _explicitNullValueOutcome; set { _explicitNullValueOutcome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome"); else _explicitNullProperties?.Remove("outcome"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeOutcome? _explicitNullValueOutcome = default!;
         /// <summary>The adaptive guarantee settlement schedule for this authorization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.AuthorizationGuaranteeScheduleItem>? Schedule { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.AuthorizationGuaranteeScheduleItem>? Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.AuthorizationGuaranteeScheduleItem>? _explicitNullValueSchedule = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.AuthorizationGuaranteeScheduleItem> Schedule { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.AuthorizationGuaranteeScheduleItem> Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.AuthorizationGuaranteeScheduleItem> _explicitNullValueSchedule = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.AuthorizationGuaranteeDetails"/> and sets the default values.
@@ -40,7 +52,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.AuthorizationGuaranteeDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.AuthorizationGuaranteeDetails();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.AuthorizationGuaranteeDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +77,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeOutcome>("outcome", Outcome);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.AuthorizationGuaranteeScheduleItem>("schedule", Schedule);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

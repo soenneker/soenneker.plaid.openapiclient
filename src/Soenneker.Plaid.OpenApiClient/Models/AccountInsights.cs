@@ -12,24 +12,37 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccountInsights : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("affordability") is { } nullNodeAffordability && nullNodeAffordability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Affordability = null;
+            if (parseNode.GetChildNode("risk") is { } nullNodeRisk && nullNodeRisk.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Risk = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Affordability insights focus on providing signal on the ability of a borrower to repay their loan without experiencing financial strain. It provides insights on factors such as a user&apos;s monthly income and expenses, disposable income, average expenditure, etc., helping lenders gauge the level of affordability of a borrower.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AffordabilityInsights? Affordability { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AffordabilityInsights? Affordability { get => _explicitNullValueAffordability; set { _explicitNullValueAffordability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("affordability"); else _explicitNullProperties?.Remove("affordability"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AffordabilityInsights? _explicitNullValueAffordability = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AffordabilityInsights Affordability { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AffordabilityInsights Affordability { get => _explicitNullValueAffordability; set { _explicitNullValueAffordability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("affordability"); else _explicitNullProperties?.Remove("affordability"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AffordabilityInsights _explicitNullValueAffordability = default!;
 #endif
         /// <summary>Risk indicators focus on providing signal on the possibility of a borrower defaulting on their loan repayments by providing data points related to its payment behavior, debt, and other relevant financial information, helping lenders gauge the level of risk involved in a certain operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskIndicators? Risk { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskIndicators? Risk { get => _explicitNullValueRisk; set { _explicitNullValueRisk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk"); else _explicitNullProperties?.Remove("risk"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskIndicators? _explicitNullValueRisk = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskIndicators Risk { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskIndicators Risk { get => _explicitNullValueRisk; set { _explicitNullValueRisk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk"); else _explicitNullProperties?.Remove("risk"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskIndicators _explicitNullValueRisk = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.AccountInsights"/> and sets the default values.
@@ -46,7 +59,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.AccountInsights CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.AccountInsights();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.AccountInsights(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +84,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AffordabilityInsights>("affordability", Affordability);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskIndicators>("risk", Risk);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

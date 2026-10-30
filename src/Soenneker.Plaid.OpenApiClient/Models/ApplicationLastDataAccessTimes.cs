@@ -12,29 +12,51 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ApplicationLastDataAccessTimes : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_balance_info") is { } nullNodeAccountBalanceInfo && nullNodeAccountBalanceInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountBalanceInfo = null;
+            if (parseNode.GetChildNode("account_routing_number") is { } nullNodeAccountRoutingNumber && nullNodeAccountRoutingNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountRoutingNumber = null;
+            if (parseNode.GetChildNode("application_id") is { } nullNodeApplicationId && nullNodeApplicationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApplicationId = null;
+            if (parseNode.GetChildNode("contact_info") is { } nullNodeContactInfo && nullNodeContactInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContactInfo = null;
+            if (parseNode.GetChildNode("credit_loan_info") is { } nullNodeCreditLoanInfo && nullNodeCreditLoanInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreditLoanInfo = null;
+            if (parseNode.GetChildNode("investments") is { } nullNodeInvestments && nullNodeInvestments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Investments = null;
+            if (parseNode.GetChildNode("transactions") is { } nullNodeTransactions && nullNodeTransactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transactions = null;
+        }
+
         /// <summary>The last time `account_balance_info` was accessed by this application in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format in UTC. null if never accessed.</summary>
-        public DateTimeOffset? AccountBalanceInfo { get; set; }
+        public DateTimeOffset? AccountBalanceInfo { get => _explicitNullValueAccountBalanceInfo; set { _explicitNullValueAccountBalanceInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_balance_info"); else _explicitNullProperties?.Remove("account_balance_info"); } }
+        private DateTimeOffset? _explicitNullValueAccountBalanceInfo = default!;
         /// <summary>The last time `account_routing_number` was accessed by this application in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format in UTC. null if never accessed.</summary>
-        public DateTimeOffset? AccountRoutingNumber { get; set; }
+        public DateTimeOffset? AccountRoutingNumber { get => _explicitNullValueAccountRoutingNumber; set { _explicitNullValueAccountRoutingNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_routing_number"); else _explicitNullProperties?.Remove("account_routing_number"); } }
+        private DateTimeOffset? _explicitNullValueAccountRoutingNumber = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>ID of the application accessing data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApplicationId { get; set; }
+        public string? ApplicationId { get => _explicitNullValueApplicationId; set { _explicitNullValueApplicationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application_id"); else _explicitNullProperties?.Remove("application_id"); } }
+        private string? _explicitNullValueApplicationId = default!;
 #nullable restore
 #else
-        public string ApplicationId { get; set; }
+        public string ApplicationId { get => _explicitNullValueApplicationId; set { _explicitNullValueApplicationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application_id"); else _explicitNullProperties?.Remove("application_id"); } }
+        private string _explicitNullValueApplicationId = default!;
 #endif
         /// <summary>The last time `contact_info` was accessed by this application in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format in UTC. null if never accessed.</summary>
-        public DateTimeOffset? ContactInfo { get; set; }
+        public DateTimeOffset? ContactInfo { get => _explicitNullValueContactInfo; set { _explicitNullValueContactInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contact_info"); else _explicitNullProperties?.Remove("contact_info"); } }
+        private DateTimeOffset? _explicitNullValueContactInfo = default!;
         /// <summary>The last time `credit_loan_info` was accessed by this application in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format in UTC. null if never accessed.</summary>
-        public DateTimeOffset? CreditLoanInfo { get; set; }
+        public DateTimeOffset? CreditLoanInfo { get => _explicitNullValueCreditLoanInfo; set { _explicitNullValueCreditLoanInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit_loan_info"); else _explicitNullProperties?.Remove("credit_loan_info"); } }
+        private DateTimeOffset? _explicitNullValueCreditLoanInfo = default!;
         /// <summary>The last time `investments` was accessed by this application in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format in UTC. null if never accessed.</summary>
-        public DateTimeOffset? Investments { get; set; }
+        public DateTimeOffset? Investments { get => _explicitNullValueInvestments; set { _explicitNullValueInvestments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investments"); else _explicitNullProperties?.Remove("investments"); } }
+        private DateTimeOffset? _explicitNullValueInvestments = default!;
         /// <summary>The last time `transactions` was accessed by this application in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format in UTC. null if never accessed.</summary>
-        public DateTimeOffset? Transactions { get; set; }
+        public DateTimeOffset? Transactions { get => _explicitNullValueTransactions; set { _explicitNullValueTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactions"); else _explicitNullProperties?.Remove("transactions"); } }
+        private DateTimeOffset? _explicitNullValueTransactions = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ApplicationLastDataAccessTimes"/> and sets the default values.
         /// </summary>
@@ -50,7 +72,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.ApplicationLastDataAccessTimes CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.ApplicationLastDataAccessTimes();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.ApplicationLastDataAccessTimes(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,6 +105,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("credit_loan_info", CreditLoanInfo);
             writer.WriteDateTimeOffsetValue("investments", Investments);
             writer.WriteDateTimeOffsetValue("transactions", Transactions);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

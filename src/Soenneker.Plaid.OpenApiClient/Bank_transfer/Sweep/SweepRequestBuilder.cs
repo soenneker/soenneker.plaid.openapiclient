@@ -17,11 +17,13 @@ namespace Soenneker.Plaid.OpenApiClient.Bank_transfer.Sweep
     public partial class SweepRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The getPath property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Bank_transfer.Sweep.Get.GetRequestBuilder GetPath
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Bank_transfer.Sweep.Get.GetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The list property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Bank_transfer.Sweep.List.ListRequestBuilder List
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Bank_transfer.Sweep.List.ListRequestBuilder(PathParameters, RequestAdapter);

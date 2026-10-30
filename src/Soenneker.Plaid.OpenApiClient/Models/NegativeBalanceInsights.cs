@@ -12,28 +12,45 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NegativeBalanceInsights : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("days_since_last_occurrence") is { } nullNodeDaysSinceLastOccurrence && nullNodeDaysSinceLastOccurrence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DaysSinceLastOccurrence = null;
+            if (parseNode.GetChildNode("days_with_negative_balance") is { } nullNodeDaysWithNegativeBalance && nullNodeDaysWithNegativeBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DaysWithNegativeBalance = null;
+            if (parseNode.GetChildNode("minimum_balance") is { } nullNodeMinimumBalance && nullNodeMinimumBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumBalance = null;
+            if (parseNode.GetChildNode("occurrences") is { } nullNodeOccurrences && nullNodeOccurrences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Occurrences = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of days since the last transaction that caused any account in the report to have a negative balance.This value is inclusive of the date of the last negative balance, meaning that if the last negative balance occurred today, this value will be `0`.</summary>
-        public int? DaysSinceLastOccurrence { get; set; }
+        public int? DaysSinceLastOccurrence { get => _explicitNullValueDaysSinceLastOccurrence; set { _explicitNullValueDaysSinceLastOccurrence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days_since_last_occurrence"); else _explicitNullProperties?.Remove("days_since_last_occurrence"); } }
+        private int? _explicitNullValueDaysSinceLastOccurrence = default!;
         /// <summary>The number of aggregated days that the accounts in the report has had a negative balance within the given time window.</summary>
-        public int? DaysWithNegativeBalance { get; set; }
+        public int? DaysWithNegativeBalance { get => _explicitNullValueDaysWithNegativeBalance; set { _explicitNullValueDaysWithNegativeBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days_with_negative_balance"); else _explicitNullProperties?.Remove("days_with_negative_balance"); } }
+        private int? _explicitNullValueDaysWithNegativeBalance = default!;
         /// <summary>A monetary amount with its associated currency information, supporting both official and unofficial currency codes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrency? MinimumBalance { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrency? MinimumBalance { get => _explicitNullValueMinimumBalance; set { _explicitNullValueMinimumBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimum_balance"); else _explicitNullProperties?.Remove("minimum_balance"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrency? _explicitNullValueMinimumBalance = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrency MinimumBalance { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrency MinimumBalance { get => _explicitNullValueMinimumBalance; set { _explicitNullValueMinimumBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimum_balance"); else _explicitNullProperties?.Remove("minimum_balance"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrency _explicitNullValueMinimumBalance = default!;
 #endif
         /// <summary>The summary of the negative balance occurrences for this account.If the user has not had a negative balance in the account in the given time window, this list will be empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.NegativeBalanceOccurrence>? Occurrences { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.NegativeBalanceOccurrence>? Occurrences { get => _explicitNullValueOccurrences; set { _explicitNullValueOccurrences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("occurrences"); else _explicitNullProperties?.Remove("occurrences"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.NegativeBalanceOccurrence>? _explicitNullValueOccurrences = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.NegativeBalanceOccurrence> Occurrences { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.NegativeBalanceOccurrence> Occurrences { get => _explicitNullValueOccurrences; set { _explicitNullValueOccurrences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("occurrences"); else _explicitNullProperties?.Remove("occurrences"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.NegativeBalanceOccurrence> _explicitNullValueOccurrences = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.NegativeBalanceInsights"/> and sets the default values.
@@ -50,7 +67,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.NegativeBalanceInsights CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.NegativeBalanceInsights();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.NegativeBalanceInsights(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +96,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteIntValue("days_with_negative_balance", DaysWithNegativeBalance);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrency>("minimum_balance", MinimumBalance);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.NegativeBalanceOccurrence>("occurrences", Occurrences);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

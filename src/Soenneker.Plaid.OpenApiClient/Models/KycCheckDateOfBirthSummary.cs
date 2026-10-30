@@ -12,17 +12,32 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class KycCheckDateOfBirthSummary : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("day") is { } nullNodeDay && nullNodeDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Day = null;
+            if (parseNode.GetChildNode("month") is { } nullNodeMonth && nullNodeMonth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Month = null;
+            if (parseNode.GetChildNode("summary") is { } nullNodeSummary && nullNodeSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Summary = null;
+            if (parseNode.GetChildNode("year") is { } nullNodeYear && nullNodeYear.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Year = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An enum indicating the match type between data provided by user and data checked against an external data source.`match` indicates that the provided input data was a strong match against external data.`partial_match` indicates the data approximately matched against external data. For example, &quot;Knope&quot; vs. &quot;Knope-Wyatt&quot; for last name.`no_match` indicates that Plaid was able to perform a check against an external data source and it did not match the provided input data.`no_data` indicates that Plaid was unable to find external data to compare against the provided input data.`no_input` indicates that Plaid was unable to perform a check because no information was provided for this field by the end user.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.HiddenMatchSummaryCode? Day { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.HiddenMatchSummaryCode? Day { get => _explicitNullValueDay; set { _explicitNullValueDay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("day"); else _explicitNullProperties?.Remove("day"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.HiddenMatchSummaryCode? _explicitNullValueDay = default!;
         /// <summary>An enum indicating the match type between data provided by user and data checked against an external data source.`match` indicates that the provided input data was a strong match against external data.`partial_match` indicates the data approximately matched against external data. For example, &quot;Knope&quot; vs. &quot;Knope-Wyatt&quot; for last name.`no_match` indicates that Plaid was able to perform a check against an external data source and it did not match the provided input data.`no_data` indicates that Plaid was unable to find external data to compare against the provided input data.`no_input` indicates that Plaid was unable to perform a check because no information was provided for this field by the end user.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.HiddenMatchSummaryCode? Month { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.HiddenMatchSummaryCode? Month { get => _explicitNullValueMonth; set { _explicitNullValueMonth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("month"); else _explicitNullProperties?.Remove("month"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.HiddenMatchSummaryCode? _explicitNullValueMonth = default!;
         /// <summary>An enum indicating the match type between data provided by user and data checked against an external data source.`match` indicates that the provided input data was a strong match against external data.`partial_match` indicates the data approximately matched against external data. For example, &quot;Knope&quot; vs. &quot;Knope-Wyatt&quot; for last name.`no_match` indicates that Plaid was able to perform a check against an external data source and it did not match the provided input data.`no_data` indicates that Plaid was unable to find external data to compare against the provided input data.`no_input` indicates that Plaid was unable to perform a check because no information was provided for this field by the end user.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode? Summary { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode? Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode? _explicitNullValueSummary = default!;
         /// <summary>An enum indicating the match type between data provided by user and data checked against an external data source.`match` indicates that the provided input data was a strong match against external data.`partial_match` indicates the data approximately matched against external data. For example, &quot;Knope&quot; vs. &quot;Knope-Wyatt&quot; for last name.`no_match` indicates that Plaid was able to perform a check against an external data source and it did not match the provided input data.`no_data` indicates that Plaid was unable to find external data to compare against the provided input data.`no_input` indicates that Plaid was unable to perform a check because no information was provided for this field by the end user.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.HiddenMatchSummaryCode? Year { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.HiddenMatchSummaryCode? Year { get => _explicitNullValueYear; set { _explicitNullValueYear = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("year"); else _explicitNullProperties?.Remove("year"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.HiddenMatchSummaryCode? _explicitNullValueYear = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.KycCheckDateOfBirthSummary"/> and sets the default values.
         /// </summary>
@@ -38,7 +53,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.KycCheckDateOfBirthSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.KycCheckDateOfBirthSummary();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.KycCheckDateOfBirthSummary(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,6 +80,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.HiddenMatchSummaryCode>("month", Month);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode>("summary", Summary);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.HiddenMatchSummaryCode>("year", Year);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

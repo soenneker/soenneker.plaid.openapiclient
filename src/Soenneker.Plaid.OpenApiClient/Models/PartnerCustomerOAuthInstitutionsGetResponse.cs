@@ -12,28 +12,45 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PartnerCustomerOAuthInstitutionsGetResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("flowdown_status") is { } nullNodeFlowdownStatus && nullNodeFlowdownStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlowdownStatus = null;
+            if (parseNode.GetChildNode("institutions") is { } nullNodeInstitutions && nullNodeInstitutions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Institutions = null;
+            if (parseNode.GetChildNode("questionnaire_status") is { } nullNodeQuestionnaireStatus && nullNodeQuestionnaireStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuestionnaireStatus = null;
+            if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The status of the addendum to the Plaid MSA (&quot;flowdown&quot;) for the end customer.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerFlowdownStatus? FlowdownStatus { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerFlowdownStatus? FlowdownStatus { get => _explicitNullValueFlowdownStatus; set { _explicitNullValueFlowdownStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flowdown_status"); else _explicitNullProperties?.Remove("flowdown_status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerFlowdownStatus? _explicitNullValueFlowdownStatus = default!;
         /// <summary>The OAuth institutions with which the end customer&apos;s application is being registered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitution>? Institutions { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitution>? Institutions { get => _explicitNullValueInstitutions; set { _explicitNullValueInstitutions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institutions"); else _explicitNullProperties?.Remove("institutions"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitution>? _explicitNullValueInstitutions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitution> Institutions { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitution> Institutions { get => _explicitNullValueInstitutions; set { _explicitNullValueInstitutions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institutions"); else _explicitNullProperties?.Remove("institutions"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitution> _explicitNullValueInstitutions = default!;
 #endif
         /// <summary>The status of the end customer&apos;s security questionnaire.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerQuestionnaireStatus? QuestionnaireStatus { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerQuestionnaireStatus? QuestionnaireStatus { get => _explicitNullValueQuestionnaireStatus; set { _explicitNullValueQuestionnaireStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("questionnaire_status"); else _explicitNullProperties?.Remove("questionnaire_status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerQuestionnaireStatus? _explicitNullValueQuestionnaireStatus = default!;
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId { get; set; }
+        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        private string? _explicitNullValueRequestId = default!;
 #nullable restore
 #else
-        public string RequestId { get; set; }
+        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        private string _explicitNullValueRequestId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PartnerCustomerOAuthInstitutionsGetResponse"/> and sets the default values.
@@ -50,7 +67,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.PartnerCustomerOAuthInstitutionsGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.PartnerCustomerOAuthInstitutionsGetResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.PartnerCustomerOAuthInstitutionsGetResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +94,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitution>("institutions", Institutions);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerQuestionnaireStatus>("questionnaire_status", QuestionnaireStatus);
             writer.WriteStringValue("request_id", RequestId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

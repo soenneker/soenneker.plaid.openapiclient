@@ -12,40 +12,59 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScreeningHitData : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dates_of_birth") is { } nullNodeDatesOfBirth && nullNodeDatesOfBirth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatesOfBirth = null;
+            if (parseNode.GetChildNode("documents") is { } nullNodeDocuments && nullNodeDocuments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Documents = null;
+            if (parseNode.GetChildNode("locations") is { } nullNodeLocations && nullNodeLocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Locations = null;
+            if (parseNode.GetChildNode("names") is { } nullNodeNames && nullNodeNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Names = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Dates of birth associated with the watchlist hit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitDateOfBirthItem>? DatesOfBirth { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitDateOfBirthItem>? DatesOfBirth { get => _explicitNullValueDatesOfBirth; set { _explicitNullValueDatesOfBirth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dates_of_birth"); else _explicitNullProperties?.Remove("dates_of_birth"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitDateOfBirthItem>? _explicitNullValueDatesOfBirth = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitDateOfBirthItem> DatesOfBirth { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitDateOfBirthItem> DatesOfBirth { get => _explicitNullValueDatesOfBirth; set { _explicitNullValueDatesOfBirth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dates_of_birth"); else _explicitNullProperties?.Remove("dates_of_birth"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitDateOfBirthItem> _explicitNullValueDatesOfBirth = default!;
 #endif
         /// <summary>Documents associated with the watchlist hit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitDocumentsItems>? Documents { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitDocumentsItems>? Documents { get => _explicitNullValueDocuments; set { _explicitNullValueDocuments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documents"); else _explicitNullProperties?.Remove("documents"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitDocumentsItems>? _explicitNullValueDocuments = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitDocumentsItems> Documents { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitDocumentsItems> Documents { get => _explicitNullValueDocuments; set { _explicitNullValueDocuments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documents"); else _explicitNullProperties?.Remove("documents"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitDocumentsItems> _explicitNullValueDocuments = default!;
 #endif
         /// <summary>Locations associated with the watchlist hit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.GenericScreeningHitLocationItems>? Locations { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.GenericScreeningHitLocationItems>? Locations { get => _explicitNullValueLocations; set { _explicitNullValueLocations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locations"); else _explicitNullProperties?.Remove("locations"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.GenericScreeningHitLocationItems>? _explicitNullValueLocations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.GenericScreeningHitLocationItems> Locations { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.GenericScreeningHitLocationItems> Locations { get => _explicitNullValueLocations; set { _explicitNullValueLocations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locations"); else _explicitNullProperties?.Remove("locations"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.GenericScreeningHitLocationItems> _explicitNullValueLocations = default!;
 #endif
         /// <summary>Names associated with the watchlist hit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitNamesItems>? Names { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitNamesItems>? Names { get => _explicitNullValueNames; set { _explicitNullValueNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("names"); else _explicitNullProperties?.Remove("names"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitNamesItems>? _explicitNullValueNames = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitNamesItems> Names { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitNamesItems> Names { get => _explicitNullValueNames; set { _explicitNullValueNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("names"); else _explicitNullProperties?.Remove("names"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitNamesItems> _explicitNullValueNames = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitData"/> and sets the default values.
@@ -62,7 +81,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +108,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitDocumentsItems>("documents", Documents);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.GenericScreeningHitLocationItems>("locations", Locations);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitNamesItems>("names", Names);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -16,6 +16,7 @@ namespace Soenneker.Plaid.OpenApiClient.Processor.Bank_transfer
     public partial class Bank_transferRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The create property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Processor.Bank_transfer.Create.CreateRequestBuilder Create
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Processor.Bank_transfer.Create.CreateRequestBuilder(PathParameters, RequestAdapter);

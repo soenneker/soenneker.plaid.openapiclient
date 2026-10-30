@@ -12,43 +12,69 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EarningsBreakdown : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("canonical_description") is { } nullNodeCanonicalDescription && nullNodeCanonicalDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanonicalDescription = null;
+            if (parseNode.GetChildNode("current_amount") is { } nullNodeCurrentAmount && nullNodeCurrentAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentAmount = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("hours") is { } nullNodeHours && nullNodeHours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hours = null;
+            if (parseNode.GetChildNode("iso_currency_code") is { } nullNodeIsoCurrencyCode && nullNodeIsoCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsoCurrencyCode = null;
+            if (parseNode.GetChildNode("rate") is { } nullNodeRate && nullNodeRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rate = null;
+            if (parseNode.GetChildNode("unofficial_currency_code") is { } nullNodeUnofficialCurrencyCode && nullNodeUnofficialCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnofficialCurrencyCode = null;
+            if (parseNode.GetChildNode("ytd_amount") is { } nullNodeYtdAmount && nullNodeYtdAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) YtdAmount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Commonly used term to describe the earning line item.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.EarningsBreakdownCanonicalDescription? CanonicalDescription { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.EarningsBreakdownCanonicalDescription? CanonicalDescription { get => _explicitNullValueCanonicalDescription; set { _explicitNullValueCanonicalDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canonical_description"); else _explicitNullProperties?.Remove("canonical_description"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.EarningsBreakdownCanonicalDescription? _explicitNullValueCanonicalDescription = default!;
         /// <summary>Raw amount of the earning line item.</summary>
-        public double? CurrentAmount { get; set; }
+        public double? CurrentAmount { get => _explicitNullValueCurrentAmount; set { _explicitNullValueCurrentAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_amount"); else _explicitNullProperties?.Remove("current_amount"); } }
+        private double? _explicitNullValueCurrentAmount = default!;
         /// <summary>Description of the earning line item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Number of hours applicable for this earning.</summary>
-        public double? Hours { get; set; }
+        public double? Hours { get => _explicitNullValueHours; set { _explicitNullValueHours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hours"); else _explicitNullProperties?.Remove("hours"); } }
+        private double? _explicitNullValueHours = default!;
         /// <summary>The ISO-4217 currency code of the line item. Always `null` if `unofficial_currency_code` is non-null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IsoCurrencyCode { get; set; }
+        public string? IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
+        private string? _explicitNullValueIsoCurrencyCode = default!;
 #nullable restore
 #else
-        public string IsoCurrencyCode { get; set; }
+        public string IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
+        private string _explicitNullValueIsoCurrencyCode = default!;
 #endif
         /// <summary>Hourly rate applicable for this earning.</summary>
-        public double? Rate { get; set; }
+        public double? Rate { get => _explicitNullValueRate; set { _explicitNullValueRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate"); else _explicitNullProperties?.Remove("rate"); } }
+        private double? _explicitNullValueRate = default!;
         /// <summary>The unofficial currency code associated with the line item. Always `null` if `iso_currency_code` is non-`null`. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `unofficial_currency_code`s.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnofficialCurrencyCode { get; set; }
+        public string? UnofficialCurrencyCode { get => _explicitNullValueUnofficialCurrencyCode; set { _explicitNullValueUnofficialCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unofficial_currency_code"); else _explicitNullProperties?.Remove("unofficial_currency_code"); } }
+        private string? _explicitNullValueUnofficialCurrencyCode = default!;
 #nullable restore
 #else
-        public string UnofficialCurrencyCode { get; set; }
+        public string UnofficialCurrencyCode { get => _explicitNullValueUnofficialCurrencyCode; set { _explicitNullValueUnofficialCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unofficial_currency_code"); else _explicitNullProperties?.Remove("unofficial_currency_code"); } }
+        private string _explicitNullValueUnofficialCurrencyCode = default!;
 #endif
         /// <summary>The year-to-date amount of the line item.</summary>
-        public double? YtdAmount { get; set; }
+        public double? YtdAmount { get => _explicitNullValueYtdAmount; set { _explicitNullValueYtdAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ytd_amount"); else _explicitNullProperties?.Remove("ytd_amount"); } }
+        private double? _explicitNullValueYtdAmount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.EarningsBreakdown"/> and sets the default values.
         /// </summary>
@@ -64,7 +90,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.EarningsBreakdown CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.EarningsBreakdown();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.EarningsBreakdown(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,6 +125,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDoubleValue("rate", Rate);
             writer.WriteStringValue("unofficial_currency_code", UnofficialCurrencyCode);
             writer.WriteDoubleValue("ytd_amount", YtdAmount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

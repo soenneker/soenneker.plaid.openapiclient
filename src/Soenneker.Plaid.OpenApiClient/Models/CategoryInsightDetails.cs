@@ -12,31 +12,50 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CategoryInsightDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("top_counterparties") is { } nullNodeTopCounterparties && nullNodeTopCounterparties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopCounterparties = null;
+            if (parseNode.GetChildNode("total_inflows") is { } nullNodeTotalInflows && nullNodeTotalInflows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalInflows = null;
+            if (parseNode.GetChildNode("total_outflows") is { } nullNodeTotalOutflows && nullNodeTotalOutflows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalOutflows = null;
+            if (parseNode.GetChildNode("transaction_count") is { } nullNodeTransactionCount && nullNodeTransactionCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Category name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The most common counterparties associated with this category sorted by outflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TopCounterparties { get; set; }
+        public List<string>? TopCounterparties { get => _explicitNullValueTopCounterparties; set { _explicitNullValueTopCounterparties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_counterparties"); else _explicitNullProperties?.Remove("top_counterparties"); } }
+        private List<string>? _explicitNullValueTopCounterparties = default!;
 #nullable restore
 #else
-        public List<string> TopCounterparties { get; set; }
+        public List<string> TopCounterparties { get => _explicitNullValueTopCounterparties; set { _explicitNullValueTopCounterparties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_counterparties"); else _explicitNullProperties?.Remove("top_counterparties"); } }
+        private List<string> _explicitNullValueTopCounterparties = default!;
 #endif
         /// <summary>Sum of inflow amounts.</summary>
-        public double? TotalInflows { get; set; }
+        public double? TotalInflows { get => _explicitNullValueTotalInflows; set { _explicitNullValueTotalInflows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_inflows"); else _explicitNullProperties?.Remove("total_inflows"); } }
+        private double? _explicitNullValueTotalInflows = default!;
         /// <summary>Sum of outflow amounts.</summary>
-        public double? TotalOutflows { get; set; }
+        public double? TotalOutflows { get => _explicitNullValueTotalOutflows; set { _explicitNullValueTotalOutflows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_outflows"); else _explicitNullProperties?.Remove("total_outflows"); } }
+        private double? _explicitNullValueTotalOutflows = default!;
         /// <summary>The number of transactions associated with this category.</summary>
-        public int? TransactionCount { get; set; }
+        public int? TransactionCount { get => _explicitNullValueTransactionCount; set { _explicitNullValueTransactionCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_count"); else _explicitNullProperties?.Remove("transaction_count"); } }
+        private int? _explicitNullValueTransactionCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CategoryInsightDetails"/> and sets the default values.
         /// </summary>
@@ -52,7 +71,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CategoryInsightDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CategoryInsightDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CategoryInsightDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,6 +100,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDoubleValue("total_inflows", TotalInflows);
             writer.WriteDoubleValue("total_outflows", TotalOutflows);
             writer.WriteIntValue("transaction_count", TransactionCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

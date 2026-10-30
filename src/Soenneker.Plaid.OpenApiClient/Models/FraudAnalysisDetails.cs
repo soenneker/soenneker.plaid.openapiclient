@@ -12,23 +12,44 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FraudAnalysisDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("detail_check") is { } nullNodeDetailCheck && nullNodeDetailCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DetailCheck = null;
+            if (parseNode.GetChildNode("image_composition_check") is { } nullNodeImageCompositionCheck && nullNodeImageCompositionCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageCompositionCheck = null;
+            if (parseNode.GetChildNode("integrity_check") is { } nullNodeIntegrityCheck && nullNodeIntegrityCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrityCheck = null;
+            if (parseNode.GetChildNode("issue_date_check") is { } nullNodeIssueDateCheck && nullNodeIssueDateCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssueDateCheck = null;
+            if (parseNode.GetChildNode("portrait_details_check") is { } nullNodePortraitDetailsCheck && nullNodePortraitDetailsCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PortraitDetailsCheck = null;
+            if (parseNode.GetChildNode("portrait_presence_check") is { } nullNodePortraitPresenceCheck && nullNodePortraitPresenceCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PortraitPresenceCheck = null;
+            if (parseNode.GetChildNode("type_supported") is { } nullNodeTypeSupported && nullNodeTypeSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TypeSupported = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The outcome of the fraud check.`success` - The check passed.`failed` - The check did not pass.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsDetailCheck? DetailCheck { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsDetailCheck? DetailCheck { get => _explicitNullValueDetailCheck; set { _explicitNullValueDetailCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detail_check"); else _explicitNullProperties?.Remove("detail_check"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsDetailCheck? _explicitNullValueDetailCheck = default!;
         /// <summary>The outcome of the fraud check.`success` - The check passed.`failed` - The check did not pass.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsImageCompositionCheck? ImageCompositionCheck { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsImageCompositionCheck? ImageCompositionCheck { get => _explicitNullValueImageCompositionCheck; set { _explicitNullValueImageCompositionCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_composition_check"); else _explicitNullProperties?.Remove("image_composition_check"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsImageCompositionCheck? _explicitNullValueImageCompositionCheck = default!;
         /// <summary>The outcome of the fraud check.`success` - The check passed.`failed` - The check did not pass.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsIntegrityCheck? IntegrityCheck { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsIntegrityCheck? IntegrityCheck { get => _explicitNullValueIntegrityCheck; set { _explicitNullValueIntegrityCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrity_check"); else _explicitNullProperties?.Remove("integrity_check"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsIntegrityCheck? _explicitNullValueIntegrityCheck = default!;
         /// <summary>The outcome of the fraud check.`success` - The check passed.`failed` - The check did not pass.`no_data` - The check could not be performed due to insufficient data.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsIssueDateCheck? IssueDateCheck { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsIssueDateCheck? IssueDateCheck { get => _explicitNullValueIssueDateCheck; set { _explicitNullValueIssueDateCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_date_check"); else _explicitNullProperties?.Remove("issue_date_check"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsIssueDateCheck? _explicitNullValueIssueDateCheck = default!;
         /// <summary>The outcome of the fraud check.`success` - The check passed.`failed` - The check did not pass.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsPortraitDetailsCheck? PortraitDetailsCheck { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsPortraitDetailsCheck? PortraitDetailsCheck { get => _explicitNullValuePortraitDetailsCheck; set { _explicitNullValuePortraitDetailsCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("portrait_details_check"); else _explicitNullProperties?.Remove("portrait_details_check"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsPortraitDetailsCheck? _explicitNullValuePortraitDetailsCheck = default!;
         /// <summary>The outcome of the fraud check.`success` - The check passed.`failed` - The check did not pass.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsPortraitPresenceCheck? PortraitPresenceCheck { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsPortraitPresenceCheck? PortraitPresenceCheck { get => _explicitNullValuePortraitPresenceCheck; set { _explicitNullValuePortraitPresenceCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("portrait_presence_check"); else _explicitNullProperties?.Remove("portrait_presence_check"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsPortraitPresenceCheck? _explicitNullValuePortraitPresenceCheck = default!;
         /// <summary>The outcome of the fraud check.`success` - The check passed.`failed` - The check did not pass.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsTypeSupported? TypeSupported { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsTypeSupported? TypeSupported { get => _explicitNullValueTypeSupported; set { _explicitNullValueTypeSupported = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type_supported"); else _explicitNullProperties?.Remove("type_supported"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsTypeSupported? _explicitNullValueTypeSupported = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetails"/> and sets the default values.
         /// </summary>
@@ -44,7 +65,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetails();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +100,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsPortraitDetailsCheck>("portrait_details_check", PortraitDetailsCheck);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsPortraitPresenceCheck>("portrait_presence_check", PortraitPresenceCheck);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsTypeSupported>("type_supported", TypeSupported);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

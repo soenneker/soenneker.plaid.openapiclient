@@ -12,57 +12,87 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProtectReport : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ach_return_code") is { } nullNodeAchReturnCode && nullNodeAchReturnCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AchReturnCode = null;
+            if (parseNode.GetChildNode("bank_account") is { } nullNodeBankAccount && nullNodeBankAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankAccount = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("incident_event") is { } nullNodeIncidentEvent && nullNodeIncidentEvent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncidentEvent = null;
+            if (parseNode.GetChildNode("notes") is { } nullNodeNotes && nullNodeNotes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notes = null;
+            if (parseNode.GetChildNode("report_confidence") is { } nullNodeReportConfidence && nullNodeReportConfidence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportConfidence = null;
+            if (parseNode.GetChildNode("report_id") is { } nullNodeReportId && nullNodeReportId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportId = null;
+            if (parseNode.GetChildNode("report_source") is { } nullNodeReportSource && nullNodeReportSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportSource = null;
+            if (parseNode.GetChildNode("report_type") is { } nullNodeReportType && nullNodeReportType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportType = null;
+        }
+
         /// <summary>ACH return code if the report type is `ACH_RETURN` (e.g. `R01`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AchReturnCode { get; set; }
+        public string? AchReturnCode { get => _explicitNullValueAchReturnCode; set { _explicitNullValueAchReturnCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ach_return_code"); else _explicitNullProperties?.Remove("ach_return_code"); } }
+        private string? _explicitNullValueAchReturnCode = default!;
 #nullable restore
 #else
-        public string AchReturnCode { get; set; }
+        public string AchReturnCode { get => _explicitNullValueAchReturnCode; set { _explicitNullValueAchReturnCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ach_return_code"); else _explicitNullProperties?.Remove("ach_return_code"); } }
+        private string _explicitNullValueAchReturnCode = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Bank account information associated with the incident.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectBankAccount? BankAccount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectBankAccount? BankAccount { get => _explicitNullValueBankAccount; set { _explicitNullValueBankAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_account"); else _explicitNullProperties?.Remove("bank_account"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ProtectBankAccount? _explicitNullValueBankAccount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectBankAccount BankAccount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectBankAccount BankAccount { get => _explicitNullValueBankAccount; set { _explicitNullValueBankAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_account"); else _explicitNullProperties?.Remove("bank_account"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ProtectBankAccount _explicitNullValueBankAccount = default!;
 #endif
         /// <summary>The timestamp when the report was created, in ISO 8601 format (e.g., &apos;2020-07-24T03:26:02Z&apos;).</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>Details about the incident event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEventResponse? IncidentEvent { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEventResponse? IncidentEvent { get => _explicitNullValueIncidentEvent; set { _explicitNullValueIncidentEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("incident_event"); else _explicitNullProperties?.Remove("incident_event"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEventResponse? _explicitNullValueIncidentEvent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEventResponse IncidentEvent { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEventResponse IncidentEvent { get => _explicitNullValueIncidentEvent; set { _explicitNullValueIncidentEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("incident_event"); else _explicitNullProperties?.Remove("incident_event"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEventResponse _explicitNullValueIncidentEvent = default!;
 #endif
         /// <summary>Additional context or details about the report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public string? Notes { get => _explicitNullValueNotes; set { _explicitNullValueNotes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes"); else _explicitNullProperties?.Remove("notes"); } }
+        private string? _explicitNullValueNotes = default!;
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public string Notes { get => _explicitNullValueNotes; set { _explicitNullValueNotes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes"); else _explicitNullProperties?.Remove("notes"); } }
+        private string _explicitNullValueNotes = default!;
 #endif
         /// <summary>The confidence level of the incident report.`CONFIRMED` indicates the incident has been verified and definitively occurred.`SUSPECTED` indicates the incident is believed to have occurred but has not been fully verified.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportConfidence? ReportConfidence { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportConfidence? ReportConfidence { get => _explicitNullValueReportConfidence; set { _explicitNullValueReportConfidence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_confidence"); else _explicitNullProperties?.Remove("report_confidence"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportConfidence? _explicitNullValueReportConfidence = default!;
         /// <summary>A unique identifier representing the submitted report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReportId { get; set; }
+        public string? ReportId { get => _explicitNullValueReportId; set { _explicitNullValueReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_id"); else _explicitNullProperties?.Remove("report_id"); } }
+        private string? _explicitNullValueReportId = default!;
 #nullable restore
 #else
-        public string ReportId { get; set; }
+        public string ReportId { get => _explicitNullValueReportId; set { _explicitNullValueReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_id"); else _explicitNullProperties?.Remove("report_id"); } }
+        private string _explicitNullValueReportId = default!;
 #endif
         /// <summary>The source that identified or reported the incident.`INTERNAL_REVIEW` - Incident was identified through internal fraud investigations or review processes.`USER_SELF_REPORTED` - Incident was reported directly by the affected user.`BANK_FEEDBACK` - Incident was identified through bank feedback, including ACH returns and connection revocations.`NETWORK_FEEDBACK` - Incident was identified through card network alerts or chargebacks.`AUTOMATED_SYSTEM` - Incident was detected by automated systems such as fraud models or rule engines.`THIRD_PARTY_ALERT` - Incident was identified through external vendor or consortium alerts.`OTHER` - Incident was identified through a source not covered by other categories.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportSource? ReportSource { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportSource? ReportSource { get => _explicitNullValueReportSource; set { _explicitNullValueReportSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_source"); else _explicitNullProperties?.Remove("report_source"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportSource? _explicitNullValueReportSource = default!;
         /// <summary>The type of incident being reported.`USER_ACCOUNT_TAKEOVER` - Indicates that a legitimate user&apos;s account was accessed or controlled by an unauthorized party.`FALSE_IDENTITY` - Indicates that a user created an account using stolen or fabricated identity information.`STOLEN_IDENTITY` - Indicates that a user created an account using identity information belonging to a real individual without their consent.`SYNTHETIC_IDENTITY` - Indicates that a user created an account using a fake or partially fabricated identity (e.g., combining real and fake information to form a new persona).`MULTIPLE_USER_ACCOUNTS` - Indicates that the same individual is operating multiple accounts in violation of policy.`SCAM_VICTIM` - Indicates that the user was tricked into authorizing or sending funds as part of a scam.`BANK_ACCOUNT_TAKEOVER` - Indicates that a user&apos;s linked bank account was accessed or misused by an unauthorized party.`BANK_CONNECTION_REVOKED` - Indicates that a linked bank account connection was revoked by the financial institution, often due to suspected misuse, fraud, or security concerns.`CARD_TESTING` - Indicates that a card was used in small or repeated transactions to test its validity.`UNAUTHORIZED_TRANSACTION` - Indicates that a transaction was made without the user&apos;s consent or authorization.`CARD_CHARGEBACK` - Indicates that a card transaction was reversed via a chargeback claim.`ACH_RETURN` - Indicates that an ACH transaction was returned or reversed by the bank.`DISPUTE` - Indicates that a user filed a dispute regarding a transaction or account activity.`FIRST_PARTY_FRAUD` - Indicates that a user intentionally misrepresented themselves or their actions for financial gain.`MISSED_PAYMENT` - Indicates that a user failed to make a required payment on time.`LOAN_STACKING` - Indicates that a user applied for or took out multiple loans simultaneously beyond their ability to repay.`MONEY_LAUNDERING` - Indicates that funds are being moved through accounts to obscure their illicit origin.`NO_FRAUD` - Indicates that an investigation determined no fraudulent activity occurred on user/event (positive label).`OTHER` - Indicates that the case involves fraud or financial risk not covered by other report types.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportType? ReportType { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportType? ReportType { get => _explicitNullValueReportType; set { _explicitNullValueReportType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_type"); else _explicitNullProperties?.Remove("report_type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportType? _explicitNullValueReportType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ProtectReport"/> and sets the default values.
         /// </summary>
@@ -78,7 +108,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.ProtectReport CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.ProtectReport();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.ProtectReport(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -115,6 +145,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("report_id", ReportId);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportSource>("report_source", ReportSource);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectReportType>("report_type", ReportType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

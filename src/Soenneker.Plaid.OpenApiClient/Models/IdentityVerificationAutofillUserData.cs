@@ -12,32 +12,48 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IdentityVerificationAutofillUserData : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
+            if (parseNode.GetChildNode("id_number") is { } nullNodeIdNumber && nullNodeIdNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdNumber = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Even if an address has been autofilled, some fields may be null depending on the region&apos;s addressing system. For example:Addresses from the United Kingdom will not include a regionAddresses from Hong Kong will not include postal code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationAutofillAddress? Address { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationAutofillAddress? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationAutofillAddress? _explicitNullValueAddress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationAutofillAddress Address { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationAutofillAddress Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationAutofillAddress _explicitNullValueAddress = default!;
 #endif
         /// <summary>ID number submitted by the user. If the user has not submitted this data yet, this field will be `null`. Otherwise, both fields are guaranteed to be filled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserIdNumber? IdNumber { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserIdNumber? IdNumber { get => _explicitNullValueIdNumber; set { _explicitNullValueIdNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id_number"); else _explicitNullProperties?.Remove("id_number"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.UserIdNumber? _explicitNullValueIdNumber = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserIdNumber IdNumber { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserIdNumber IdNumber { get => _explicitNullValueIdNumber; set { _explicitNullValueIdNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id_number"); else _explicitNullProperties?.Remove("id_number"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.UserIdNumber _explicitNullValueIdNumber = default!;
 #endif
         /// <summary>The full name provided by the user. If the user has not submitted their name, this field will be null. Otherwise, both fields are guaranteed to be filled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationResponseUserName? Name { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationResponseUserName? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationResponseUserName? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationResponseUserName Name { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationResponseUserName Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationResponseUserName _explicitNullValueName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationAutofillUserData"/> and sets the default values.
@@ -54,7 +70,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationAutofillUserData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationAutofillUserData();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationAutofillUserData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +97,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationAutofillAddress>("address", Address);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.UserIdNumber>("id_number", IdNumber);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationResponseUserName>("name", Name);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

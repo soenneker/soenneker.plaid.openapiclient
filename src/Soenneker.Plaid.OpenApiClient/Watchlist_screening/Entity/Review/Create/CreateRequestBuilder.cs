@@ -51,7 +51,7 @@ namespace Soenneker.Plaid.OpenApiClient.Watchlist_screening.Entity.Review.Create
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningEntityReviewCreateResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningEntityReviewCreateResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningEntityReviewCreateResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningEntityReviewCreateResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a review for an entity watchlist screening. Reviews are compliance reports created by users in your organization regarding the relevance of potential hits found by Plaid.

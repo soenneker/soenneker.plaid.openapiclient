@@ -13,21 +13,35 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NegativeBalanceOccurrence : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("end_date") is { } nullNodeEndDate && nullNodeEndDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndDate = null;
+            if (parseNode.GetChildNode("minimum_balance") is { } nullNodeMinimumBalance && nullNodeMinimumBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumBalance = null;
+            if (parseNode.GetChildNode("start_date") is { } nullNodeStartDate && nullNodeStartDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartDate = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date of the last transaction that caused the account to have a negative balance.The date will be returned in an ISO 8601 format (YYYY-MM-DD).This date is inclusive, meaning that this was the last date that the account had a negative balance.</summary>
-        public Date? EndDate { get; set; }
+        public Date? EndDate { get => _explicitNullValueEndDate; set { _explicitNullValueEndDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_date"); else _explicitNullProperties?.Remove("end_date"); } }
+        private Date? _explicitNullValueEndDate = default!;
         /// <summary>A monetary amount with its associated currency information, supporting both official and unofficial currency codes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrency? MinimumBalance { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrency? MinimumBalance { get => _explicitNullValueMinimumBalance; set { _explicitNullValueMinimumBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimum_balance"); else _explicitNullProperties?.Remove("minimum_balance"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrency? _explicitNullValueMinimumBalance = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrency MinimumBalance { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrency MinimumBalance { get => _explicitNullValueMinimumBalance; set { _explicitNullValueMinimumBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimum_balance"); else _explicitNullProperties?.Remove("minimum_balance"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrency _explicitNullValueMinimumBalance = default!;
 #endif
         /// <summary>The date of the first transaction that caused the account to have a negative balance.The date will be returned in an ISO 8601 format (YYYY-MM-DD).</summary>
-        public Date? StartDate { get; set; }
+        public Date? StartDate { get => _explicitNullValueStartDate; set { _explicitNullValueStartDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_date"); else _explicitNullProperties?.Remove("start_date"); } }
+        private Date? _explicitNullValueStartDate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.NegativeBalanceOccurrence"/> and sets the default values.
         /// </summary>
@@ -43,7 +57,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.NegativeBalanceOccurrence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.NegativeBalanceOccurrence();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.NegativeBalanceOccurrence(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +84,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDateValue("end_date", EndDate);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AmountWithCurrency>("minimum_balance", MinimumBalance);
             writer.WriteDateValue("start_date", StartDate);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -23,6 +23,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning disable CS1591
         Ocrolus,
         #pragma warning restore CS1591
+        [EnumMember(Value = "stripe")]
+        #pragma warning disable CS1591
+        Stripe,
+        #pragma warning restore CS1591
         [EnumMember(Value = "vesta")]
         #pragma warning disable CS1591
         Vesta,

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>Describes the reason you are generating a Consumer Report for this user.`ACCOUNT_REVIEW_CREDIT`: In connection with a consumer credit transaction for the review or collection of an account pursuant to FCRA Section 604(a)(3)(A).`WRITTEN_INSTRUCTION_OTHER`: In accordance with the written instructions of the consumer pursuant to FCRA Section 604(a)(2), such as when an individual agrees to act as a guarantor or assumes personal liability for a consumer, business, or commercial loan.</summary>
+    /// <summary>Describes the reason you are generating a Consumer Report for this user.`ACCOUNT_REVIEW_CREDIT`: In connection with a consumer credit transaction for the review or collection of an account pursuant to FCRA Section 604(a)(3)(A).`ACCOUNT_REVIEW_NON_CREDIT`: For a legitimate business need of the information to review a non-credit account provided primarily for personal, family, or household purposes to determine whether the consumer continues to meet the terms of the account pursuant to FCRA Section 604(a)(3)(F)(2).`WRITTEN_INSTRUCTION_OTHER`: In accordance with the written instructions of the consumer pursuant to FCRA Section 604(a)(2), such as when an individual agrees to act as a guarantor or assumes personal liability for a consumer, business, or commercial loan.`SECONDARY_INVESTOR`: As a potential investor or servicer, or current insurer, in connection with a valuation of, or an assessment of the credit or prepayment risks associated with, an existing credit obligation pursuant to FCRA Section 604(a)(3)(E).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum MonitoringConsumerReportPermissiblePurpose
     {
@@ -11,9 +11,17 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning disable CS1591
         AccountReviewCredit,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ACCOUNT_REVIEW_NON_CREDIT")]
+        #pragma warning disable CS1591
+        AccountReviewNonCredit,
+        #pragma warning restore CS1591
         [EnumMember(Value = "WRITTEN_INSTRUCTION_OTHER")]
         #pragma warning disable CS1591
         WrittenInstructionOther,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SECONDARY_INVESTOR")]
+        #pragma warning disable CS1591
+        SecondaryInvestor,
         #pragma warning restore CS1591
     }
 }

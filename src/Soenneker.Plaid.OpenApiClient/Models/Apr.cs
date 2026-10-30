@@ -12,17 +12,32 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Apr : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("apr_percentage") is { } nullNodeAprPercentage && nullNodeAprPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AprPercentage = null;
+            if (parseNode.GetChildNode("apr_type") is { } nullNodeAprType && nullNodeAprType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AprType = null;
+            if (parseNode.GetChildNode("balance_subject_to_apr") is { } nullNodeBalanceSubjectToApr && nullNodeBalanceSubjectToApr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceSubjectToApr = null;
+            if (parseNode.GetChildNode("interest_charge_amount") is { } nullNodeInterestChargeAmount && nullNodeInterestChargeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterestChargeAmount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Annual Percentage Rate applied.</summary>
-        public double? AprPercentage { get; set; }
+        public double? AprPercentage { get => _explicitNullValueAprPercentage; set { _explicitNullValueAprPercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apr_percentage"); else _explicitNullProperties?.Remove("apr_percentage"); } }
+        private double? _explicitNullValueAprPercentage = default!;
         /// <summary>The type of balance to which the APR applies.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AprAprType? AprType { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AprAprType? AprType { get => _explicitNullValueAprType; set { _explicitNullValueAprType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apr_type"); else _explicitNullProperties?.Remove("apr_type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AprAprType? _explicitNullValueAprType = default!;
         /// <summary>Amount of money that is subjected to the APR if a balance was carried beyond payment due date. How it is calculated can vary by card issuer. It is often calculated as an average daily balance.</summary>
-        public double? BalanceSubjectToApr { get; set; }
+        public double? BalanceSubjectToApr { get => _explicitNullValueBalanceSubjectToApr; set { _explicitNullValueBalanceSubjectToApr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balance_subject_to_apr"); else _explicitNullProperties?.Remove("balance_subject_to_apr"); } }
+        private double? _explicitNullValueBalanceSubjectToApr = default!;
         /// <summary>Amount of money charged due to interest from last statement.</summary>
-        public double? InterestChargeAmount { get; set; }
+        public double? InterestChargeAmount { get => _explicitNullValueInterestChargeAmount; set { _explicitNullValueInterestChargeAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interest_charge_amount"); else _explicitNullProperties?.Remove("interest_charge_amount"); } }
+        private double? _explicitNullValueInterestChargeAmount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.Apr"/> and sets the default values.
         /// </summary>
@@ -38,7 +53,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.Apr CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.Apr();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.Apr(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,6 +80,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AprAprType>("apr_type", AprType);
             writer.WriteDoubleValue("balance_subject_to_apr", BalanceSubjectToApr);
             writer.WriteDoubleValue("interest_charge_amount", InterestChargeAmount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

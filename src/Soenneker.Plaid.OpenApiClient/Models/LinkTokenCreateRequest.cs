@@ -12,364 +12,510 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LinkTokenCreateRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("access_token") is { } nullNodeAccessToken && nullNodeAccessToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessToken = null;
+            if (parseNode.GetChildNode("access_tokens") is { } nullNodeAccessTokens && nullNodeAccessTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessTokens = null;
+            if (parseNode.GetChildNode("account_filters") is { } nullNodeAccountFilters && nullNodeAccountFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountFilters = null;
+            if (parseNode.GetChildNode("additional_consented_products") is { } nullNodeAdditionalConsentedProducts && nullNodeAdditionalConsentedProducts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdditionalConsentedProducts = null;
+            if (parseNode.GetChildNode("android_package_name") is { } nullNodeAndroidPackageName && nullNodeAndroidPackageName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AndroidPackageName = null;
+            if (parseNode.GetChildNode("appearance_mode") is { } nullNodeAppearanceMode && nullNodeAppearanceMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppearanceMode = null;
+            if (parseNode.GetChildNode("auth") is { } nullNodeAuth && nullNodeAuth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Auth = null;
+            if (parseNode.GetChildNode("base_report") is { } nullNodeBaseReport && nullNodeBaseReport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseReport = null;
+            if (parseNode.GetChildNode("card_switch") is { } nullNodeCardSwitch && nullNodeCardSwitch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardSwitch = null;
+            if (parseNode.GetChildNode("cashflow_report") is { } nullNodeCashflowReport && nullNodeCashflowReport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CashflowReport = null;
+            if (parseNode.GetChildNode("client_id") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
+            if (parseNode.GetChildNode("client_name") is { } nullNodeClientName && nullNodeClientName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientName = null;
+            if (parseNode.GetChildNode("consumer_report_permissible_purpose") is { } nullNodeConsumerReportPermissiblePurpose && nullNodeConsumerReportPermissiblePurpose.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsumerReportPermissiblePurpose = null;
+            if (parseNode.GetChildNode("country_codes") is { } nullNodeCountryCodes && nullNodeCountryCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountryCodes = null;
+            if (parseNode.GetChildNode("cra_enabled") is { } nullNodeCraEnabled && nullNodeCraEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CraEnabled = null;
+            if (parseNode.GetChildNode("cra_options") is { } nullNodeCraOptions && nullNodeCraOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CraOptions = null;
+            if (parseNode.GetChildNode("cra_report_parameter") is { } nullNodeCraReportParameter && nullNodeCraReportParameter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CraReportParameter = null;
+            if (parseNode.GetChildNode("credit_partner_insights") is { } nullNodeCreditPartnerInsights && nullNodeCreditPartnerInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreditPartnerInsights = null;
+            if (parseNode.GetChildNode("employment") is { } nullNodeEmployment && nullNodeEmployment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Employment = null;
+            if (parseNode.GetChildNode("enable_multi_item_link") is { } nullNodeEnableMultiItemLink && nullNodeEnableMultiItemLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableMultiItemLink = null;
+            if (parseNode.GetChildNode("eu_config") is { } nullNodeEuConfig && nullNodeEuConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EuConfig = null;
+            if (parseNode.GetChildNode("financekit_supported") is { } nullNodeFinancekitSupported && nullNodeFinancekitSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FinancekitSupported = null;
+            if (parseNode.GetChildNode("hosted_link") is { } nullNodeHostedLink && nullNodeHostedLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostedLink = null;
+            if (parseNode.GetChildNode("identity") is { } nullNodeIdentity && nullNodeIdentity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Identity = null;
+            if (parseNode.GetChildNode("identity_verification") is { } nullNodeIdentityVerification && nullNodeIdentityVerification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdentityVerification = null;
+            if (parseNode.GetChildNode("income_verification") is { } nullNodeIncomeVerification && nullNodeIncomeVerification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeVerification = null;
+            if (parseNode.GetChildNode("institution_data") is { } nullNodeInstitutionData && nullNodeInstitutionData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionData = null;
+            if (parseNode.GetChildNode("institution_id") is { } nullNodeInstitutionId && nullNodeInstitutionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionId = null;
+            if (parseNode.GetChildNode("investments") is { } nullNodeInvestments && nullNodeInvestments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Investments = null;
+            if (parseNode.GetChildNode("investments_auth") is { } nullNodeInvestmentsAuth && nullNodeInvestmentsAuth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvestmentsAuth = null;
+            if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("link_customization_name") is { } nullNodeLinkCustomizationName && nullNodeLinkCustomizationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkCustomizationName = null;
+            if (parseNode.GetChildNode("optional_products") is { } nullNodeOptionalProducts && nullNodeOptionalProducts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptionalProducts = null;
+            if (parseNode.GetChildNode("payment_configuration") is { } nullNodePaymentConfiguration && nullNodePaymentConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentConfiguration = null;
+            if (parseNode.GetChildNode("payment_initiation") is { } nullNodePaymentInitiation && nullNodePaymentInitiation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentInitiation = null;
+            if (parseNode.GetChildNode("products") is { } nullNodeProducts && nullNodeProducts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Products = null;
+            if (parseNode.GetChildNode("redirect_uri") is { } nullNodeRedirectUri && nullNodeRedirectUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedirectUri = null;
+            if (parseNode.GetChildNode("required_if_supported_products") is { } nullNodeRequiredIfSupportedProducts && nullNodeRequiredIfSupportedProducts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiredIfSupportedProducts = null;
+            if (parseNode.GetChildNode("secret") is { } nullNodeSecret && nullNodeSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Secret = null;
+            if (parseNode.GetChildNode("statements") is { } nullNodeStatements && nullNodeStatements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Statements = null;
+            if (parseNode.GetChildNode("third_party_user_token") is { } nullNodeThirdPartyUserToken && nullNodeThirdPartyUserToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThirdPartyUserToken = null;
+            if (parseNode.GetChildNode("transactions") is { } nullNodeTransactions && nullNodeTransactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transactions = null;
+            if (parseNode.GetChildNode("transfer") is { } nullNodeTransfer && nullNodeTransfer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transfer = null;
+            if (parseNode.GetChildNode("update") is { } nullNodeUpdate && nullNodeUpdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Update = null;
+            if (parseNode.GetChildNode("user") is { } nullNodeUser && nullNodeUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) User = null;
+            if (parseNode.GetChildNode("user_id") is { } nullNodeUserId && nullNodeUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserId = null;
+            if (parseNode.GetChildNode("user_token") is { } nullNodeUserToken && nullNodeUserToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserToken = null;
+            if (parseNode.GetChildNode("webhook") is { } nullNodeWebhook && nullNodeWebhook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webhook = null;
+        }
+
         /// <summary>The `access_token` associated with the Item to update or reference, used when updating, modifying, or accessing an existing `access_token`. Used when launching Link in update mode, when completing the Same-Day Micro-deposit (manual) flow, or (optionally) when initializing Link for a returning user as part of the Transfer UI flow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccessToken { get; set; }
+        public string? AccessToken { get => _explicitNullValueAccessToken; set { _explicitNullValueAccessToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_token"); else _explicitNullProperties?.Remove("access_token"); } }
+        private string? _explicitNullValueAccessToken = default!;
 #nullable restore
 #else
-        public string AccessToken { get; set; }
+        public string AccessToken { get => _explicitNullValueAccessToken; set { _explicitNullValueAccessToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_token"); else _explicitNullProperties?.Remove("access_token"); } }
+        private string _explicitNullValueAccessToken = default!;
 #endif
         /// <summary>A list of access tokens associated with the items to update in Link update mode for the Assets product. Using this instead of the `access_token` field allows the updating of multiple items at once. This feature is in closed beta, please contact your account manager for more info.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AccessTokens { get; set; }
+        public List<string>? AccessTokens { get => _explicitNullValueAccessTokens; set { _explicitNullValueAccessTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_tokens"); else _explicitNullProperties?.Remove("access_tokens"); } }
+        private List<string>? _explicitNullValueAccessTokens = default!;
 #nullable restore
 #else
-        public List<string> AccessTokens { get; set; }
+        public List<string> AccessTokens { get => _explicitNullValueAccessTokens; set { _explicitNullValueAccessTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_tokens"); else _explicitNullProperties?.Remove("access_tokens"); } }
+        private List<string> _explicitNullValueAccessTokens = default!;
 #endif
         /// <summary>By default, Link will provide limited account filtering: it will only display Institutions that are compatible with all products supplied in the `products` parameter of `/link/token/create`, and, if `auth` is specified in the `products` array, will also filter out accounts other than `checking`, `savings`, and `cash management` accounts on the Account Select pane. You can further limit the accounts shown in Link by using `account_filters` to specify the account subtypes to be shown in Link. Only the specified subtypes will be shown. This filtering applies to both the Account Select view (if enabled) and the Institution Select view. Institutions that do not support the selected subtypes will be omitted from Link. To indicate that all subtypes should be shown, use the value `&quot;all&quot;`. If the `account_filters` filter is used, any account type for which a filter is not specified will be entirely omitted from Link. For a full list of valid types and subtypes, see the [Account schema](https://plaid.com/docs/api/accounts#account-type-schema).The filter may or may not impact the list of accounts shown by the institution in the OAuth account selection flow, depending on the specific institution. If the user selects excluded account subtypes in the OAuth flow, these accounts will not be added to the Item. If the user selects only excluded account subtypes, the link attempt will fail and the user will be prompted to try again.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenAccountFilters? AccountFilters { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenAccountFilters? AccountFilters { get => _explicitNullValueAccountFilters; set { _explicitNullValueAccountFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_filters"); else _explicitNullProperties?.Remove("account_filters"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenAccountFilters? _explicitNullValueAccountFilters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenAccountFilters AccountFilters { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenAccountFilters AccountFilters { get => _explicitNullValueAccountFilters; set { _explicitNullValueAccountFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_filters"); else _explicitNullProperties?.Remove("account_filters"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenAccountFilters _explicitNullValueAccountFilters = default!;
 #endif
         /// <summary>List of additional Plaid product(s) you wish to collect consent for to support your use case. These products will not be billed until you start using them by calling the relevant endpoints.`balance` is *not* a valid value, the Balance product does not require explicit initialization and will automatically have consent collected.Institutions that do not support these products will still be shown in Link.There should be no overlap between this array and the `products`, `required_if_supported_products`, or `optional_products` arrays.If you include `signal` in `additional_consented_products`, you will need to call [`/signal/prepare`](https://plaid.com/docs/api/products/signal/#signalprepare) before calling `/signal/evaluate` for the first time on an Item in order to get the most accurate results. For more details, see [`/signal/prepare`](https://plaid.com/docs/api/products/signal/#signalprepare).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? AdditionalConsentedProducts { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? AdditionalConsentedProducts { get => _explicitNullValueAdditionalConsentedProducts; set { _explicitNullValueAdditionalConsentedProducts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional_consented_products"); else _explicitNullProperties?.Remove("additional_consented_products"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? _explicitNullValueAdditionalConsentedProducts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> AdditionalConsentedProducts { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> AdditionalConsentedProducts { get => _explicitNullValueAdditionalConsentedProducts; set { _explicitNullValueAdditionalConsentedProducts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional_consented_products"); else _explicitNullProperties?.Remove("additional_consented_products"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> _explicitNullValueAdditionalConsentedProducts = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name of your app&apos;s Android package. Required if using the `link_token` to initialize Link on Android. Any package name specified here must also be added to the Allowed Android package names setting on the [developer dashboard](https://dashboard.plaid.com/team/api). When creating a `link_token` for initializing Link on other platforms, `android_package_name` must be left blank and `redirect_uri` should be used instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AndroidPackageName { get; set; }
+        public string? AndroidPackageName { get => _explicitNullValueAndroidPackageName; set { _explicitNullValueAndroidPackageName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("android_package_name"); else _explicitNullProperties?.Remove("android_package_name"); } }
+        private string? _explicitNullValueAndroidPackageName = default!;
 #nullable restore
 #else
-        public string AndroidPackageName { get; set; }
+        public string AndroidPackageName { get => _explicitNullValueAndroidPackageName; set { _explicitNullValueAndroidPackageName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("android_package_name"); else _explicitNullProperties?.Remove("android_package_name"); } }
+        private string _explicitNullValueAndroidPackageName = default!;
 #endif
         /// <summary>Enum representing the desired appearance mode for Link, used to force light or dark modes or set Link to change depending on user system settings. Currently in closed beta.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAppearanceMode? AppearanceMode { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAppearanceMode? AppearanceMode { get => _explicitNullValueAppearanceMode; set { _explicitNullValueAppearanceMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appearance_mode"); else _explicitNullProperties?.Remove("appearance_mode"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAppearanceMode? _explicitNullValueAppearanceMode = default!;
         /// <summary>Specifies options for initializing Link for use with the Auth product. This field can be used to enable or disable extended Auth flows for the resulting Link session. Omitting any field will result in a default that can be configured by your account manager. The default behavior described in the documentation is the default behavior that will apply if you have not requested your account manager to apply a different default. If you have enabled the [Dashboard Account Verification pane](https://dashboard.plaid.com/account-verification), the settings enabled there will override any settings in this object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuth? Auth { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuth? Auth { get => _explicitNullValueAuth; set { _explicitNullValueAuth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth"); else _explicitNullProperties?.Remove("auth"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuth? _explicitNullValueAuth = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuth Auth { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuth Auth { get => _explicitNullValueAuth; set { _explicitNullValueAuth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth"); else _explicitNullProperties?.Remove("auth"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuth _explicitNullValueAuth = default!;
 #endif
         /// <summary>Specifies options for initializing Link for use with the Base Report product. This field is required if `assets` is included in the `products` array and the client is CRA-enabled.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestBaseReport? BaseReport { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestBaseReport? BaseReport { get => _explicitNullValueBaseReport; set { _explicitNullValueBaseReport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_report"); else _explicitNullProperties?.Remove("base_report"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestBaseReport? _explicitNullValueBaseReport = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestBaseReport BaseReport { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestBaseReport BaseReport { get => _explicitNullValueBaseReport; set { _explicitNullValueBaseReport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_report"); else _explicitNullProperties?.Remove("base_report"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestBaseReport _explicitNullValueBaseReport = default!;
 #endif
         /// <summary>A map containing data to pass in for the Card Switch flow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateCardSwitch? CardSwitch { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateCardSwitch? CardSwitch { get => _explicitNullValueCardSwitch; set { _explicitNullValueCardSwitch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card_switch"); else _explicitNullProperties?.Remove("card_switch"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateCardSwitch? _explicitNullValueCardSwitch = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateCardSwitch CardSwitch { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateCardSwitch CardSwitch { get => _explicitNullValueCardSwitch; set { _explicitNullValueCardSwitch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card_switch"); else _explicitNullProperties?.Remove("card_switch"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateCardSwitch _explicitNullValueCardSwitch = default!;
 #endif
         /// <summary>Configuration parameters for the Cashflow Report product. Currently in closed beta.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCashflowReport? CashflowReport { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCashflowReport? CashflowReport { get => _explicitNullValueCashflowReport; set { _explicitNullValueCashflowReport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cashflow_report"); else _explicitNullProperties?.Remove("cashflow_report"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCashflowReport? _explicitNullValueCashflowReport = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCashflowReport CashflowReport { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCashflowReport CashflowReport { get => _explicitNullValueCashflowReport; set { _explicitNullValueCashflowReport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cashflow_report"); else _explicitNullProperties?.Remove("cashflow_report"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCashflowReport _explicitNullValueCashflowReport = default!;
 #endif
         /// <summary>Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get; set; }
+        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        private string? _explicitNullValueClientId = default!;
 #nullable restore
 #else
-        public string ClientId { get; set; }
+        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        private string _explicitNullValueClientId = default!;
 #endif
         /// <summary>The name of your application, as it should be displayed in Link. Maximum length of 30 characters. If a value longer than 30 characters is provided, Link will display &quot;This Application&quot; instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientName { get; set; }
+        public string? ClientName { get => _explicitNullValueClientName; set { _explicitNullValueClientName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_name"); else _explicitNullProperties?.Remove("client_name"); } }
+        private string? _explicitNullValueClientName = default!;
 #nullable restore
 #else
-        public string ClientName { get; set; }
+        public string ClientName { get => _explicitNullValueClientName; set { _explicitNullValueClientName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_name"); else _explicitNullProperties?.Remove("client_name"); } }
+        private string _explicitNullValueClientName = default!;
 #endif
-        /// <summary>Describes the reason you are generating a Consumer Report for this user. When calling `/link/token/create`, this field is required when using Plaid Check (CRA) products; invalid if not using Plaid Check (CRA) products.`ACCOUNT_REVIEW_CREDIT`: In connection with a consumer credit transaction for the review or collection of an account pursuant to FCRA Section 604(a)(3)(A).`ACCOUNT_REVIEW_NON_CREDIT`: For a legitimate business need of the information to review a non-credit account provided primarily for personal, family, or household purposes to determine whether the consumer continues to meet the terms of the account pursuant to FCRA Section 604(a)(3)(F)(2).`EXTENSION_OF_CREDIT`: In connection with a credit transaction initiated by and involving the consumer pursuant to FCRA Section 604(a)(3)(A).`LEGITIMATE_BUSINESS_NEED_TENANT_SCREENING`: For a legitimate business need in connection with a business transaction initiated by the consumer primarily for personal, family, or household purposes in connection with a property rental assessment pursuant to FCRA Section 604(a)(3)(F)(i).`LEGITIMATE_BUSINESS_NEED_OTHER`: For a legitimate business need in connection with a business transaction made primarily for personal, family, or household initiated by the consumer pursuant to FCRA Section 604(a)(3)(F)(i).`WRITTEN_INSTRUCTION_PREQUALIFICATION`: In accordance with the written instructions of the consumer pursuant to FCRA Section 604(a)(2), to evaluate an application&apos;s profile to make an offer to the consumer.`WRITTEN_INSTRUCTION_OTHER`: In accordance with the written instructions of the consumer pursuant to FCRA Section 604(a)(2), such as when an individual agrees to act as a guarantor or assumes personal liability for a consumer, business, or commercial loan.`ELIGIBILITY_FOR_GOVT_BENEFITS`:  In connection with an eligibility determination for a government benefit where the entity is required to consider an applicant&apos;s financial status pursuant to FCRA Section 604(a)(3)(D).</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ConsumerReportPermissiblePurpose? ConsumerReportPermissiblePurpose { get; set; }
-        /// <summary>Specify an array of Plaid-supported country codes using the ISO-3166-1 alpha-2 country code standard. Institutions from all listed countries will be shown. For a complete mapping of supported products by country, see [What Plaid products are supported in each country and region?](https://support.plaid.com/hc/en-us/articles/27895826947735-What-Plaid-products-are-supported-in-each-country-and-region). For access to additional countries beyond what you have been approved for, [contact sales](https://plaid.com/contact/), your account manager, or support.If using Identity Verification, `country_codes` should be set to the country where your company is based, not the country where your user is located. For all other products, `country_codes` represents the location of your user&apos;s financial institution.If Link is launched with multiple country codes, only products that you are enabled for in all countries will be used by Link. While all countries are enabled by default in Sandbox, in Production only the countries you have requested access for are shown. To request access to additional countries, [file a product access Support ticket](https://dashboard.plaid.com/support/new/product-and-development/product-troubleshooting/request-product-access) via the Plaid dashboard.If using a Link customization, make sure the country codes in the customization match those specified in `country_codes`, or the customization may not be applied.If using the Auth features Instant Match, Instant Micro-deposits, Same-Day Micro-deposits, or Automated Micro-deposits, `country_codes` must be set to `[&apos;US&apos;]`. If using Database Auth, `country_codes` must be set to `[&apos;US&apos;]` or `[&apos;CA&apos;]`.</summary>
+        /// <summary>Describes the reason you are generating a Consumer Report for this user. When calling `/link/token/create`, this field is required when using Plaid Check (CRA) products; invalid if not using Plaid Check (CRA) products.`ACCOUNT_REVIEW_CREDIT`: In connection with a consumer credit transaction for the review or collection of an account pursuant to FCRA Section 604(a)(3)(A).`ACCOUNT_REVIEW_NON_CREDIT`: For a legitimate business need of the information to review a non-credit account provided primarily for personal, family, or household purposes to determine whether the consumer continues to meet the terms of the account pursuant to FCRA Section 604(a)(3)(F)(2).`EXTENSION_OF_CREDIT`: In connection with a credit transaction initiated by and involving the consumer pursuant to FCRA Section 604(a)(3)(A).`LEGITIMATE_BUSINESS_NEED_TENANT_SCREENING`: For a legitimate business need in connection with a business transaction initiated by the consumer primarily for personal, family, or household purposes in connection with a property rental assessment pursuant to FCRA Section 604(a)(3)(F)(i).`LEGITIMATE_BUSINESS_NEED_OTHER`: For a legitimate business need in connection with a business transaction made primarily for personal, family, or household initiated by the consumer pursuant to FCRA Section 604(a)(3)(F)(i).`WRITTEN_INSTRUCTION_PREQUALIFICATION`: In accordance with the written instructions of the consumer pursuant to FCRA Section 604(a)(2), to evaluate an application&apos;s profile to make an offer to the consumer.`WRITTEN_INSTRUCTION_OTHER`: In accordance with the written instructions of the consumer pursuant to FCRA Section 604(a)(2), such as when an individual agrees to act as a guarantor or assumes personal liability for a consumer, business, or commercial loan.`ELIGIBILITY_FOR_GOVT_BENEFITS`:  In connection with an eligibility determination for a government benefit where the entity is required to consider an applicant&apos;s financial status pursuant to FCRA Section 604(a)(3)(D).`INSURANCE_UNDERWRITING`: In connection with the underwriting of insurance involving the consumer pursuant to FCRA Section 604(a)(3)(C).`SECONDARY_INVESTOR`: As a potential investor or servicer, or current insurer, in connection with a valuation of, or an assessment of the credit or prepayment risks associated with, an existing credit obligation pursuant to FCRA Section 604(a)(3)(E).</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.ConsumerReportPermissiblePurpose? ConsumerReportPermissiblePurpose { get => _explicitNullValueConsumerReportPermissiblePurpose; set { _explicitNullValueConsumerReportPermissiblePurpose = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumer_report_permissible_purpose"); else _explicitNullProperties?.Remove("consumer_report_permissible_purpose"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ConsumerReportPermissiblePurpose? _explicitNullValueConsumerReportPermissiblePurpose = default!;
+        /// <summary>Specify an array of Plaid-supported country codes using the ISO-3166-1 alpha-2 country code standard. Institutions from all listed countries will be shown. For a complete mapping of supported products by country, see [What Plaid products are supported in each country and region?](https://support.plaid.com/hc/en-us/articles/27895826947735-What-Plaid-products-are-supported-in-each-country-and-region). For access to additional countries beyond what you have been approved for, [contact sales](https://plaid.com/contact/), your account manager, or support.If using Identity Verification, `country_codes` should be set to the country where your company is based, not the country where your user is located. For all other products, `country_codes` represents the location of your user&apos;s financial institution.If Link is launched with multiple country codes, every product you specify, in any product array, must be enabled for your account in all of the listed countries; otherwise, the request fails with an `INVALID_PRODUCT` error. While all countries are enabled by default in Sandbox, in Production only the countries you have requested access for are shown. To request access to additional countries, [file a product access Support ticket](https://dashboard.plaid.com/support/new/product-and-development/product-troubleshooting/request-product-access) via the Plaid dashboard.If using a Link customization, make sure the country codes in the customization match those specified in `country_codes`, or the customization may not be applied.If using the Auth features Instant Match, Instant Micro-deposits, Same-Day Micro-deposits, or Automated Micro-deposits, `country_codes` must be set to `[&apos;US&apos;]`. If using Database Auth, `country_codes` must be set to `[&apos;US&apos;]` or `[&apos;CA&apos;]`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CountryCode?>? CountryCodes { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CountryCode?>? CountryCodes { get => _explicitNullValueCountryCodes; set { _explicitNullValueCountryCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country_codes"); else _explicitNullProperties?.Remove("country_codes"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CountryCode?>? _explicitNullValueCountryCodes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CountryCode?> CountryCodes { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CountryCode?> CountryCodes { get => _explicitNullValueCountryCodes; set { _explicitNullValueCountryCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country_codes"); else _explicitNullProperties?.Remove("country_codes"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CountryCode?> _explicitNullValueCountryCodes = default!;
 #endif
         /// <summary>If `true`, request a CRA connection. Defaults to `false`.</summary>
-        public bool? CraEnabled { get; set; }
+        public bool? CraEnabled { get => _explicitNullValueCraEnabled; set { _explicitNullValueCraEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cra_enabled"); else _explicitNullProperties?.Remove("cra_enabled"); } }
+        private bool? _explicitNullValueCraEnabled = default!;
         /// <summary>Specifies options for initializing Link for use with Plaid Check products</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptions? CraOptions { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptions? CraOptions { get => _explicitNullValueCraOptions; set { _explicitNullValueCraOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cra_options"); else _explicitNullProperties?.Remove("cra_options"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptions? _explicitNullValueCraOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptions CraOptions { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptions CraOptions { get => _explicitNullValueCraOptions; set { _explicitNullValueCraOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cra_options"); else _explicitNullProperties?.Remove("cra_options"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptions _explicitNullValueCraOptions = default!;
 #endif
         /// <summary>Specifies the report parameters for Plaid Check products, mirroring the parameters accepted on `/cra/report/create`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraReportParameter? CraReportParameter { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraReportParameter? CraReportParameter { get => _explicitNullValueCraReportParameter; set { _explicitNullValueCraReportParameter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cra_report_parameter"); else _explicitNullProperties?.Remove("cra_report_parameter"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraReportParameter? _explicitNullValueCraReportParameter = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraReportParameter CraReportParameter { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraReportParameter CraReportParameter { get => _explicitNullValueCraReportParameter; set { _explicitNullValueCraReportParameter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cra_report_parameter"); else _explicitNullProperties?.Remove("cra_report_parameter"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraReportParameter _explicitNullValueCraReportParameter = default!;
 #endif
         /// <summary>Specifies options for initializing Link for use with the Credit Partner Insights product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCreditPartnerInsights? CreditPartnerInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCreditPartnerInsights? CreditPartnerInsights { get => _explicitNullValueCreditPartnerInsights; set { _explicitNullValueCreditPartnerInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit_partner_insights"); else _explicitNullProperties?.Remove("credit_partner_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCreditPartnerInsights? _explicitNullValueCreditPartnerInsights = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCreditPartnerInsights CreditPartnerInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCreditPartnerInsights CreditPartnerInsights { get => _explicitNullValueCreditPartnerInsights; set { _explicitNullValueCreditPartnerInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit_partner_insights"); else _explicitNullProperties?.Remove("credit_partner_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCreditPartnerInsights _explicitNullValueCreditPartnerInsights = default!;
 #endif
         /// <summary>Specifies options for initializing Link for use with the Employment product. This field is required if `employment` is included in the `products` array.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestEmployment? Employment { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestEmployment? Employment { get => _explicitNullValueEmployment; set { _explicitNullValueEmployment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employment"); else _explicitNullProperties?.Remove("employment"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestEmployment? _explicitNullValueEmployment = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestEmployment Employment { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestEmployment Employment { get => _explicitNullValueEmployment; set { _explicitNullValueEmployment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employment"); else _explicitNullProperties?.Remove("employment"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestEmployment _explicitNullValueEmployment = default!;
 #endif
         /// <summary>If `true`, enable linking multiple items in the same Link session. Defaults to `false`.</summary>
-        public bool? EnableMultiItemLink { get; set; }
+        public bool? EnableMultiItemLink { get => _explicitNullValueEnableMultiItemLink; set { _explicitNullValueEnableMultiItemLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_multi_item_link"); else _explicitNullProperties?.Remove("enable_multi_item_link"); } }
+        private bool? _explicitNullValueEnableMultiItemLink = default!;
         /// <summary>Configuration parameters for EU flows</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenEuConfig? EuConfig { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenEuConfig? EuConfig { get => _explicitNullValueEuConfig; set { _explicitNullValueEuConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eu_config"); else _explicitNullProperties?.Remove("eu_config"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenEuConfig? _explicitNullValueEuConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenEuConfig EuConfig { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenEuConfig EuConfig { get => _explicitNullValueEuConfig; set { _explicitNullValueEuConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eu_config"); else _explicitNullProperties?.Remove("eu_config"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenEuConfig _explicitNullValueEuConfig = default!;
 #endif
         /// <summary>If `true`, indicates that client supports linking FinanceKit / AppleCard items. Defaults to `false`.</summary>
-        public bool? FinancekitSupported { get; set; }
+        public bool? FinancekitSupported { get => _explicitNullValueFinancekitSupported; set { _explicitNullValueFinancekitSupported = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("financekit_supported"); else _explicitNullProperties?.Remove("financekit_supported"); } }
+        private bool? _explicitNullValueFinancekitSupported = default!;
         /// <summary>Configuration parameters for Hosted Link. To enable the session for Hosted Link, send this object in the request. It can be empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateHostedLink? HostedLink { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateHostedLink? HostedLink { get => _explicitNullValueHostedLink; set { _explicitNullValueHostedLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hosted_link"); else _explicitNullProperties?.Remove("hosted_link"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateHostedLink? _explicitNullValueHostedLink = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateHostedLink HostedLink { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateHostedLink HostedLink { get => _explicitNullValueHostedLink; set { _explicitNullValueHostedLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hosted_link"); else _explicitNullProperties?.Remove("hosted_link"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateHostedLink _explicitNullValueHostedLink = default!;
 #endif
         /// <summary>Identity object used to specify document upload</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateIdentity? Identity { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateIdentity? Identity { get => _explicitNullValueIdentity; set { _explicitNullValueIdentity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity"); else _explicitNullProperties?.Remove("identity"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateIdentity? _explicitNullValueIdentity = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateIdentity Identity { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateIdentity Identity { get => _explicitNullValueIdentity; set { _explicitNullValueIdentity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity"); else _explicitNullProperties?.Remove("identity"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateIdentity _explicitNullValueIdentity = default!;
 #endif
         /// <summary>Specifies option for initializing Link for use with the Identity Verification product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIdentityVerification? IdentityVerification { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIdentityVerification? IdentityVerification { get => _explicitNullValueIdentityVerification; set { _explicitNullValueIdentityVerification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_verification"); else _explicitNullProperties?.Remove("identity_verification"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIdentityVerification? _explicitNullValueIdentityVerification = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIdentityVerification IdentityVerification { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIdentityVerification IdentityVerification { get => _explicitNullValueIdentityVerification; set { _explicitNullValueIdentityVerification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_verification"); else _explicitNullProperties?.Remove("identity_verification"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIdentityVerification _explicitNullValueIdentityVerification = default!;
 #endif
         /// <summary>Specifies options for initializing Link for use with the Income product. This field is required if `income_verification` is included in the `products` array.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIncomeVerification? IncomeVerification { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIncomeVerification? IncomeVerification { get => _explicitNullValueIncomeVerification; set { _explicitNullValueIncomeVerification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_verification"); else _explicitNullProperties?.Remove("income_verification"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIncomeVerification? _explicitNullValueIncomeVerification = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIncomeVerification IncomeVerification { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIncomeVerification IncomeVerification { get => _explicitNullValueIncomeVerification; set { _explicitNullValueIncomeVerification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_verification"); else _explicitNullProperties?.Remove("income_verification"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIncomeVerification _explicitNullValueIncomeVerification = default!;
 #endif
         /// <summary>A map containing data used to highlight institutions in Link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateInstitutionData? InstitutionData { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateInstitutionData? InstitutionData { get => _explicitNullValueInstitutionData; set { _explicitNullValueInstitutionData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_data"); else _explicitNullProperties?.Remove("institution_data"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateInstitutionData? _explicitNullValueInstitutionData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateInstitutionData InstitutionData { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateInstitutionData InstitutionData { get => _explicitNullValueInstitutionData; set { _explicitNullValueInstitutionData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_data"); else _explicitNullProperties?.Remove("institution_data"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateInstitutionData _explicitNullValueInstitutionData = default!;
 #endif
         /// <summary>Used for certain legacy use cases</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstitutionId { get; set; }
+        public string? InstitutionId { get => _explicitNullValueInstitutionId; set { _explicitNullValueInstitutionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_id"); else _explicitNullProperties?.Remove("institution_id"); } }
+        private string? _explicitNullValueInstitutionId = default!;
 #nullable restore
 #else
-        public string InstitutionId { get; set; }
+        public string InstitutionId { get => _explicitNullValueInstitutionId; set { _explicitNullValueInstitutionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_id"); else _explicitNullProperties?.Remove("institution_id"); } }
+        private string _explicitNullValueInstitutionId = default!;
 #endif
         /// <summary>Configuration parameters for the Investments product</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenInvestments? Investments { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenInvestments? Investments { get => _explicitNullValueInvestments; set { _explicitNullValueInvestments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investments"); else _explicitNullProperties?.Remove("investments"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenInvestments? _explicitNullValueInvestments = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenInvestments Investments { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenInvestments Investments { get => _explicitNullValueInvestments; set { _explicitNullValueInvestments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investments"); else _explicitNullProperties?.Remove("investments"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenInvestments _explicitNullValueInvestments = default!;
 #endif
-        /// <summary>Configuration parameters for the Investments Move product</summary>
+        /// <summary>Configuration parameters for the Investments Move product. Masked Number Match and Stated Account Number default to `true` when omitted. Manual Entry defaults to `false`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenInvestmentsAuth? InvestmentsAuth { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenInvestmentsAuth? InvestmentsAuth { get => _explicitNullValueInvestmentsAuth; set { _explicitNullValueInvestmentsAuth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investments_auth"); else _explicitNullProperties?.Remove("investments_auth"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenInvestmentsAuth? _explicitNullValueInvestmentsAuth = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenInvestmentsAuth InvestmentsAuth { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenInvestmentsAuth InvestmentsAuth { get => _explicitNullValueInvestmentsAuth; set { _explicitNullValueInvestmentsAuth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investments_auth"); else _explicitNullProperties?.Remove("investments_auth"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenInvestmentsAuth _explicitNullValueInvestmentsAuth = default!;
 #endif
         /// <summary>The language that Link should be displayed in. When initializing with Identity Verification, this field is not used; for more details, see [Identity Verification supported languages](https://plaid.com/docs/identity-verification/#supported-languages).Supported languages are:- Danish (`&apos;da&apos;`)- Dutch (`&apos;nl&apos;`)- English (`&apos;en&apos;`)- Estonian (`&apos;et&apos;`)- French (`&apos;fr&apos;`)- German (`&apos;de&apos;`)- Haitian Creole (`&apos;ht&apos;`)- Hindi (`&apos;hi&apos;`)- Italian (`&apos;it&apos;`)- Latvian (`&apos;lv&apos;`)- Lithuanian (`&apos;lt&apos;`)- Norwegian Bokmål (`&apos;nb&apos;`)- Polish (`&apos;pl&apos;`)- Portuguese (`&apos;pt&apos;`)- Romanian (`&apos;ro&apos;`)- Spanish (`&apos;es&apos;`)- Swedish (`&apos;sv&apos;`)- Vietnamese (`&apos;vi&apos;`)When using a Link customization, the language configured here must match the setting in the customization, or the customization will not be applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language { get; set; }
+        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private string? _explicitNullValueLanguage = default!;
 #nullable restore
 #else
-        public string Language { get; set; }
+        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private string _explicitNullValueLanguage = default!;
 #endif
         /// <summary>The name of the Link customization from the Plaid Dashboard to be applied to Link. If not specified, the `default` customization will be used. When using a Link customization, the language in the customization must match the language selected via the `language` parameter, and the countries in the customization should match the country codes selected via `country_codes`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LinkCustomizationName { get; set; }
+        public string? LinkCustomizationName { get => _explicitNullValueLinkCustomizationName; set { _explicitNullValueLinkCustomizationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_customization_name"); else _explicitNullProperties?.Remove("link_customization_name"); } }
+        private string? _explicitNullValueLinkCustomizationName = default!;
 #nullable restore
 #else
-        public string LinkCustomizationName { get; set; }
+        public string LinkCustomizationName { get => _explicitNullValueLinkCustomizationName; set { _explicitNullValueLinkCustomizationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_customization_name"); else _explicitNullProperties?.Remove("link_customization_name"); } }
+        private string _explicitNullValueLinkCustomizationName = default!;
 #endif
         /// <summary>List of Plaid product(s) that will enhance the consumer&apos;s use case, but that your app can function without. Plaid will attempt to fetch data for these products on a best-effort basis, and failure to support these products will not affect Item creation.There should be no overlap between this array and the `products`, `required_if_supported_products`, or `additional_consented_products` arrays. The `products` array must have at least one product.For more details on using this feature, see [Optional Products](https://plaid.com/docs/link/initializing-products/#optional-products).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? OptionalProducts { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? OptionalProducts { get => _explicitNullValueOptionalProducts; set { _explicitNullValueOptionalProducts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optional_products"); else _explicitNullProperties?.Remove("optional_products"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? _explicitNullValueOptionalProducts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> OptionalProducts { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> OptionalProducts { get => _explicitNullValueOptionalProducts; set { _explicitNullValueOptionalProducts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optional_products"); else _explicitNullProperties?.Remove("optional_products"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> _explicitNullValueOptionalProducts = default!;
 #endif
         /// <summary>Specifies options for initializing Link for use with the Pay By Bank flow. This is an optional field to configure the user experience, and currently requires the amount field to be set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestPaymentConfiguration? PaymentConfiguration { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestPaymentConfiguration? PaymentConfiguration { get => _explicitNullValuePaymentConfiguration; set { _explicitNullValuePaymentConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_configuration"); else _explicitNullProperties?.Remove("payment_configuration"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestPaymentConfiguration? _explicitNullValuePaymentConfiguration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestPaymentConfiguration PaymentConfiguration { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestPaymentConfiguration PaymentConfiguration { get => _explicitNullValuePaymentConfiguration; set { _explicitNullValuePaymentConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_configuration"); else _explicitNullProperties?.Remove("payment_configuration"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestPaymentConfiguration _explicitNullValuePaymentConfiguration = default!;
 #endif
         /// <summary>Specifies options for initializing Link for use with the Payment Initiation (Europe) product. This field is required if `payment_initiation` is included in the `products` array. Either `payment_id` or `consent_id` must be provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestPaymentInitiation? PaymentInitiation { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestPaymentInitiation? PaymentInitiation { get => _explicitNullValuePaymentInitiation; set { _explicitNullValuePaymentInitiation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_initiation"); else _explicitNullProperties?.Remove("payment_initiation"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestPaymentInitiation? _explicitNullValuePaymentInitiation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestPaymentInitiation PaymentInitiation { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestPaymentInitiation PaymentInitiation { get => _explicitNullValuePaymentInitiation; set { _explicitNullValuePaymentInitiation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_initiation"); else _explicitNullProperties?.Remove("payment_initiation"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestPaymentInitiation _explicitNullValuePaymentInitiation = default!;
 #endif
-        /// <summary>List of Plaid product(s) that the linked Item must support. If launching Link in update mode, should be omitted (unless you are using update mode to add a credit product, such as Assets, Statements, Income, or Plaid Check Consumer Report, to an existing Item); at least one `product` is required otherwise.To maximize the number of institutions and accounts available, initialize Link with the minimal product set required for your use case, as the products specified will limit which institutions and account types will be available to your users in Link. Only institutions that support *all* requested products can be selected; if a user attempts to select an institution that does not support a listed product, a &quot;Connectivity not supported&quot; error message will appear in Link. For each specified product, the Item connected by the user must contain at least one compatible account. For details on compatible product / account type combinations, see [the account type/product support matrix](https://plaid.com/docs/api/accounts/#account-type--product-support-matrix).To add products without limiting the institution list or account types, use the [`optional_products`](https://plaid.com/docs/api/link/#link-token-create-request-optional-products) or  [`required_if_supported_products`](https://plaid.com/docs/api/link/#link-token-create-request-required-if-supported-products) fields. Products can also be added to an Item by calling the product endpoint after obtaining an access token; this may require the product to be listed in the [`additional_consented_products`](https://plaid.com/docs/api/link/#link-token-create-request-additional-consented-products) array. For details, see [Choosing when to initialize products](https://plaid.com/docs/link/initializing-products/).`balance` is *not* a valid value, the Balance product does not require explicit initialization and will automatically be initialized when any other product is initialized.If launching Link with CRA products, `cra_base_report` is required and must be included in the `products` array.Note that, unless you have opted to disable Instant Match support, institutions that support Instant Match will also be shown in Link if `auth` is specified as a product, even though these institutions do not contain `auth` in their product array.In Production, you will be billed for each product that you specify when initializing Link. Note that a product cannot be removed from an Item once the Item has been initialized with that product. To stop billing on an Item for subscription-based products, such as Liabilities, Investments, and Transactions, remove the Item via `/item/remove`.</summary>
+        /// <summary>List of Plaid product(s) that the linked Item must support. If launching Link in update mode, should be omitted (unless you are using update mode to add a credit product, such as Assets, Statements, Income, or Plaid Check Consumer Report, to an existing Item); at least one `product` is required otherwise.To maximize the number of institutions and accounts available, initialize Link with the minimal product set required for your use case, as the products specified will limit which institutions and account types will be available to your users in Link. Only institutions that support *all* requested products can be selected; if a user attempts to select an institution that does not support a listed product, a &quot;Connectivity not supported&quot; error message will appear in Link. For each specified product, the Item connected by the user must contain at least one compatible account. For details on compatible product / account type combinations, see [the account type/product support matrix](https://plaid.com/docs/api/accounts/#account-type--product-support-matrix).To add products without limiting the institution list or account types, use the [`optional_products`](https://plaid.com/docs/api/link/#link-token-create-request-optional-products) or  [`required_if_supported_products`](https://plaid.com/docs/api/link/#link-token-create-request-required-if-supported-products) fields. Products can also be added to an Item by calling the product endpoint after obtaining an access token; this may require the product to be listed in the [`additional_consented_products`](https://plaid.com/docs/api/link/#link-token-create-request-additional-consented-products) array. For details, see [Choosing when to initialize products](https://plaid.com/docs/link/initializing-products/).`balance` is *not* a valid value, the Balance product does not require explicit initialization and will automatically be initialized when any other product is initialized.Note that, unless you have opted to disable Instant Match support, institutions that support Instant Match will also be shown in Link if `auth` is specified as a product, even though these institutions do not contain `auth` in their product array.In Production, you will be billed for each product that you specify when initializing Link. Note that a product cannot be removed from an Item once the Item has been initialized with that product. To stop billing on an Item for subscription-based products, such as Liabilities, Investments, and Transactions, remove the Item via `/item/remove`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? Products { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? Products { get => _explicitNullValueProducts; set { _explicitNullValueProducts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("products"); else _explicitNullProperties?.Remove("products"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? _explicitNullValueProducts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> Products { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> Products { get => _explicitNullValueProducts; set { _explicitNullValueProducts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("products"); else _explicitNullProperties?.Remove("products"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> _explicitNullValueProducts = default!;
 #endif
         /// <summary>A URI indicating the destination where a user should be forwarded after completing the Link flow; used to support OAuth authentication flows when launching Link in the browser or another app. The `redirect_uri` should not contain any query parameters. When used in Production, must be an https URI. Note that any redirect URI must also be added to the Allowed redirect URIs list in the [developer dashboard](https://dashboard.plaid.com/team/api). If initializing on Android, `android_package_name` must be specified instead and `redirect_uri` should be left blank.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RedirectUri { get; set; }
+        public string? RedirectUri { get => _explicitNullValueRedirectUri; set { _explicitNullValueRedirectUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect_uri"); else _explicitNullProperties?.Remove("redirect_uri"); } }
+        private string? _explicitNullValueRedirectUri = default!;
 #nullable restore
 #else
-        public string RedirectUri { get; set; }
+        public string RedirectUri { get => _explicitNullValueRedirectUri; set { _explicitNullValueRedirectUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect_uri"); else _explicitNullProperties?.Remove("redirect_uri"); } }
+        private string _explicitNullValueRedirectUri = default!;
 #endif
         /// <summary>List of Plaid product(s) you wish to use only if the institution and account(s) selected by the user support the product. Institutions that do not support these products will still be shown in Link. The products will only be extracted and billed if the user selects an institution and account type that supports them.There should be no overlap between this array and the `products`, `optional_products`, or `additional_consented_products` arrays. The `products` array must have at least one product.For more details on using this feature, see [Required if Supported Products](https://plaid.com/docs/link/initializing-products/#required-if-supported-products).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? RequiredIfSupportedProducts { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? RequiredIfSupportedProducts { get => _explicitNullValueRequiredIfSupportedProducts; set { _explicitNullValueRequiredIfSupportedProducts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("required_if_supported_products"); else _explicitNullProperties?.Remove("required_if_supported_products"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? _explicitNullValueRequiredIfSupportedProducts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> RequiredIfSupportedProducts { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> RequiredIfSupportedProducts { get => _explicitNullValueRequiredIfSupportedProducts; set { _explicitNullValueRequiredIfSupportedProducts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("required_if_supported_products"); else _explicitNullProperties?.Remove("required_if_supported_products"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> _explicitNullValueRequiredIfSupportedProducts = default!;
 #endif
         /// <summary>Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Secret { get; set; }
+        public string? Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
+        private string? _explicitNullValueSecret = default!;
 #nullable restore
 #else
-        public string Secret { get; set; }
+        public string Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
+        private string _explicitNullValueSecret = default!;
 #endif
         /// <summary>Specifies options for initializing Link for use with the Statements product. This field is required for the statements product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestStatements? Statements { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestStatements? Statements { get => _explicitNullValueStatements; set { _explicitNullValueStatements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statements"); else _explicitNullProperties?.Remove("statements"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestStatements? _explicitNullValueStatements = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestStatements Statements { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestStatements Statements { get => _explicitNullValueStatements; set { _explicitNullValueStatements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statements"); else _explicitNullProperties?.Remove("statements"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestStatements _explicitNullValueStatements = default!;
 #endif
         /// <summary>A third party user token associated with the current user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThirdPartyUserToken { get; set; }
+        public string? ThirdPartyUserToken { get => _explicitNullValueThirdPartyUserToken; set { _explicitNullValueThirdPartyUserToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("third_party_user_token"); else _explicitNullProperties?.Remove("third_party_user_token"); } }
+        private string? _explicitNullValueThirdPartyUserToken = default!;
 #nullable restore
 #else
-        public string ThirdPartyUserToken { get; set; }
+        public string ThirdPartyUserToken { get => _explicitNullValueThirdPartyUserToken; set { _explicitNullValueThirdPartyUserToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("third_party_user_token"); else _explicitNullProperties?.Remove("third_party_user_token"); } }
+        private string _explicitNullValueThirdPartyUserToken = default!;
 #endif
         /// <summary>Configuration parameters for the Transactions product</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenTransactions? Transactions { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenTransactions? Transactions { get => _explicitNullValueTransactions; set { _explicitNullValueTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactions"); else _explicitNullProperties?.Remove("transactions"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenTransactions? _explicitNullValueTransactions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenTransactions Transactions { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenTransactions Transactions { get => _explicitNullValueTransactions; set { _explicitNullValueTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactions"); else _explicitNullProperties?.Remove("transactions"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenTransactions _explicitNullValueTransactions = default!;
 #endif
         /// <summary>Specifies options for initializing Link for use with the Transfer product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestTransfer? Transfer { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestTransfer? Transfer { get => _explicitNullValueTransfer; set { _explicitNullValueTransfer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer"); else _explicitNullProperties?.Remove("transfer"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestTransfer? _explicitNullValueTransfer = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestTransfer Transfer { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestTransfer Transfer { get => _explicitNullValueTransfer; set { _explicitNullValueTransfer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer"); else _explicitNullProperties?.Remove("transfer"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestTransfer _explicitNullValueTransfer = default!;
 #endif
         /// <summary>Specifies options for initializing Link for [update mode](https://plaid.com/docs/link/update-mode).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUpdate? Update { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUpdate? Update { get => _explicitNullValueUpdate; set { _explicitNullValueUpdate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("update"); else _explicitNullProperties?.Remove("update"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUpdate? _explicitNullValueUpdate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUpdate Update { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUpdate Update { get => _explicitNullValueUpdate; set { _explicitNullValueUpdate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("update"); else _explicitNullProperties?.Remove("update"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUpdate _explicitNullValueUpdate = default!;
 #endif
         /// <summary>An object specifying information about the end user who will be linking their account. **Required** if `user_id` isn&apos;t included.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUser? User { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUser? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUser? _explicitNullValueUser = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUser User { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUser User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUser _explicitNullValueUser = default!;
 #endif
         /// <summary>A `user_id` generated using `/user/create`. Required for integrations that began using Plaid Protect, Multi-Item Link, or Plaid Check Consumer Report after December 10, 2025. Required for new integrations that use Payment Initiation, Variable Recurring Payments, or Virtual Accounts. For more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis). One of either the `user_id` or the `user` field is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId { get; set; }
+        public string? UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
+        private string? _explicitNullValueUserId = default!;
 #nullable restore
 #else
-        public string UserId { get; set; }
+        public string UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
+        private string _explicitNullValueUserId = default!;
 #endif
         /// <summary>A user token generated using `/user/create`. Any Item created during the Link session will be associated with the user. Integrations that began using Plaid Protect, Multi-Item Link, or Plaid Check Consumer Report before December 10, 2025 use this field instead of the `user_id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserToken { get; set; }
+        public string? UserToken { get => _explicitNullValueUserToken; set { _explicitNullValueUserToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_token"); else _explicitNullProperties?.Remove("user_token"); } }
+        private string? _explicitNullValueUserToken = default!;
 #nullable restore
 #else
-        public string UserToken { get; set; }
+        public string UserToken { get => _explicitNullValueUserToken; set { _explicitNullValueUserToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_token"); else _explicitNullProperties?.Remove("user_token"); } }
+        private string _explicitNullValueUserToken = default!;
 #endif
         /// <summary>The destination URL to which any webhooks should be sent. Note that webhooks for Payment Initiation (e-wallet transactions only), Transfer, Bank Transfer (including Auth micro-deposit notification webhooks), Monitor, and Identity Verification are configured via the Dashboard instead. In update mode, this field will not have an effect; to update the webhook receiver endpoint for an existing Item, use `/item/webhook/update` instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Webhook { get; set; }
+        public string? Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        private string? _explicitNullValueWebhook = default!;
 #nullable restore
 #else
-        public string Webhook { get; set; }
+        public string Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        private string _explicitNullValueWebhook = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequest"/> and sets the default values.
@@ -386,7 +532,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -501,6 +647,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("user_id", UserId);
             writer.WriteStringValue("user_token", UserToken);
             writer.WriteStringValue("webhook", Webhook);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

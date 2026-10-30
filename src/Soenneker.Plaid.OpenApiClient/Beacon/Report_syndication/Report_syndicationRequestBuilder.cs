@@ -17,11 +17,13 @@ namespace Soenneker.Plaid.OpenApiClient.Beacon.Report_syndication
     public partial class Report_syndicationRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The getPath property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Beacon.Report_syndication.Get.GetRequestBuilder GetPath
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Beacon.Report_syndication.Get.GetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The list property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Beacon.Report_syndication.List.ListRequestBuilder List
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Beacon.Report_syndication.List.ListRequestBuilder(PathParameters, RequestAdapter);

@@ -12,32 +12,48 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IdentityDocumentUpload : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("document_id") is { } nullNodeDocumentId && nullNodeDocumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentId = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("risk_insights") is { } nullNodeRiskInsights && nullNodeRiskInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskInsights = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A UUID identifying the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentId { get; set; }
+        public string? DocumentId { get => _explicitNullValueDocumentId; set { _explicitNullValueDocumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_id"); else _explicitNullProperties?.Remove("document_id"); } }
+        private string? _explicitNullValueDocumentId = default!;
 #nullable restore
 #else
-        public string DocumentId { get; set; }
+        public string DocumentId { get => _explicitNullValueDocumentId; set { _explicitNullValueDocumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_id"); else _explicitNullProperties?.Remove("document_id"); } }
+        private string _explicitNullValueDocumentId = default!;
 #endif
         /// <summary>Metadata pertaining to the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUploadMetadata? Metadata { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUploadMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUploadMetadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUploadMetadata Metadata { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUploadMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUploadMetadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>Object representing fraud risk data of the uploaded document. Only provided when using Identity Document Upload with Fraud Risk enabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUploadRiskInsights? RiskInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUploadRiskInsights? RiskInsights { get => _explicitNullValueRiskInsights; set { _explicitNullValueRiskInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_insights"); else _explicitNullProperties?.Remove("risk_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUploadRiskInsights? _explicitNullValueRiskInsights = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUploadRiskInsights RiskInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUploadRiskInsights RiskInsights { get => _explicitNullValueRiskInsights; set { _explicitNullValueRiskInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_insights"); else _explicitNullProperties?.Remove("risk_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUploadRiskInsights _explicitNullValueRiskInsights = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUpload"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUpload CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUpload();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUpload(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("document_id", DocumentId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUploadMetadata>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUploadRiskInsights>("risk_insights", RiskInsights);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

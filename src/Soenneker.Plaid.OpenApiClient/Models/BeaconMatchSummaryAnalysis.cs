@@ -12,23 +12,44 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BeaconMatchSummaryAnalysis : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
+            if (parseNode.GetChildNode("date_of_birth") is { } nullNodeDateOfBirth && nullNodeDateOfBirth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOfBirth = null;
+            if (parseNode.GetChildNode("email_address") is { } nullNodeEmailAddress && nullNodeEmailAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailAddress = null;
+            if (parseNode.GetChildNode("id_number") is { } nullNodeIdNumber && nullNodeIdNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdNumber = null;
+            if (parseNode.GetChildNode("ip_address") is { } nullNodeIpAddress && nullNodeIpAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpAddress = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("phone_number") is { } nullNodePhoneNumber && nullNodePhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumber = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An enum indicating the match type between two Beacon Users.`match` indicates that the provided input data was a strong match against the other Beacon User.`partial_match` indicates the data approximately matched the other Beacon User. For example, &quot;Knope&quot; vs. &quot;Knope-Wyatt&quot; for last name.`no_match` indicates that Plaid was able to compare this field against the other Beacon User and it did not match the provided input data.`no_data` indicates that Plaid was unable to compare this field against the original Beacon User because the field was not present in one of the Beacon Users.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode? Address { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode? _explicitNullValueAddress = default!;
         /// <summary>An enum indicating the match type between two Beacon Users.`match` indicates that the provided input data was a strong match against the other Beacon User.`partial_match` indicates the data approximately matched the other Beacon User. For example, &quot;Knope&quot; vs. &quot;Knope-Wyatt&quot; for last name.`no_match` indicates that Plaid was able to compare this field against the other Beacon User and it did not match the provided input data.`no_data` indicates that Plaid was unable to compare this field against the original Beacon User because the field was not present in one of the Beacon Users.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode? DateOfBirth { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode? DateOfBirth { get => _explicitNullValueDateOfBirth; set { _explicitNullValueDateOfBirth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_of_birth"); else _explicitNullProperties?.Remove("date_of_birth"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode? _explicitNullValueDateOfBirth = default!;
         /// <summary>An enum indicating the match type between two Beacon Users.`match` indicates that the provided input data was a strong match against the other Beacon User.`partial_match` indicates the data approximately matched the other Beacon User. For example, &quot;Knope&quot; vs. &quot;Knope-Wyatt&quot; for last name.`no_match` indicates that Plaid was able to compare this field against the other Beacon User and it did not match the provided input data.`no_data` indicates that Plaid was unable to compare this field against the original Beacon User because the field was not present in one of the Beacon Users.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode? EmailAddress { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode? EmailAddress { get => _explicitNullValueEmailAddress; set { _explicitNullValueEmailAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_address"); else _explicitNullProperties?.Remove("email_address"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode? _explicitNullValueEmailAddress = default!;
         /// <summary>An enum indicating the match type between two Beacon Users.`match` indicates that the provided input data was a strong match against the other Beacon User.`partial_match` indicates the data approximately matched the other Beacon User. For example, &quot;Knope&quot; vs. &quot;Knope-Wyatt&quot; for last name.`no_match` indicates that Plaid was able to compare this field against the other Beacon User and it did not match the provided input data.`no_data` indicates that Plaid was unable to compare this field against the original Beacon User because the field was not present in one of the Beacon Users.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode? IdNumber { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode? IdNumber { get => _explicitNullValueIdNumber; set { _explicitNullValueIdNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id_number"); else _explicitNullProperties?.Remove("id_number"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode? _explicitNullValueIdNumber = default!;
         /// <summary>An enum indicating the match type between two Beacon Users.`match` indicates that the provided input data was a strong match against the other Beacon User.`partial_match` indicates the data approximately matched the other Beacon User. For example, &quot;Knope&quot; vs. &quot;Knope-Wyatt&quot; for last name.`no_match` indicates that Plaid was able to compare this field against the other Beacon User and it did not match the provided input data.`no_data` indicates that Plaid was unable to compare this field against the original Beacon User because the field was not present in one of the Beacon Users.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode? IpAddress { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode? IpAddress { get => _explicitNullValueIpAddress; set { _explicitNullValueIpAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_address"); else _explicitNullProperties?.Remove("ip_address"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode? _explicitNullValueIpAddress = default!;
         /// <summary>An enum indicating the match type between two Beacon Users.`match` indicates that the provided input data was a strong match against the other Beacon User.`partial_match` indicates the data approximately matched the other Beacon User. For example, &quot;Knope&quot; vs. &quot;Knope-Wyatt&quot; for last name.`no_match` indicates that Plaid was able to compare this field against the other Beacon User and it did not match the provided input data.`no_data` indicates that Plaid was unable to compare this field against the original Beacon User because the field was not present in one of the Beacon Users.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode? Name { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode? _explicitNullValueName = default!;
         /// <summary>An enum indicating the match type between two Beacon Users.`match` indicates that the provided input data was a strong match against the other Beacon User.`partial_match` indicates the data approximately matched the other Beacon User. For example, &quot;Knope&quot; vs. &quot;Knope-Wyatt&quot; for last name.`no_match` indicates that Plaid was able to compare this field against the other Beacon User and it did not match the provided input data.`no_data` indicates that Plaid was unable to compare this field against the original Beacon User because the field was not present in one of the Beacon Users.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode? PhoneNumber { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode? PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number"); else _explicitNullProperties?.Remove("phone_number"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode? _explicitNullValuePhoneNumber = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryAnalysis"/> and sets the default values.
         /// </summary>
@@ -44,7 +65,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryAnalysis CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryAnalysis();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryAnalysis(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +98,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode>("ip_address", IpAddress);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode>("name", Name);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode>("phone_number", PhoneNumber);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

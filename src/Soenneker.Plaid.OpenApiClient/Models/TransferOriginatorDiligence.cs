@@ -12,72 +12,103 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransferOriginatorDiligence : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
+            if (parseNode.GetChildNode("credit_usage_configuration") is { } nullNodeCreditUsageConfiguration && nullNodeCreditUsageConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreditUsageConfiguration = null;
+            if (parseNode.GetChildNode("dba") is { } nullNodeDba && nullNodeDba.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dba = null;
+            if (parseNode.GetChildNode("debit_usage_configuration") is { } nullNodeDebitUsageConfiguration && nullNodeDebitUsageConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DebitUsageConfiguration = null;
+            if (parseNode.GetChildNode("funding_account") is { } nullNodeFundingAccount && nullNodeFundingAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FundingAccount = null;
+            if (parseNode.GetChildNode("naics_code") is { } nullNodeNaicsCode && nullNodeNaicsCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NaicsCode = null;
+            if (parseNode.GetChildNode("tax_id") is { } nullNodeTaxId && nullNodeTaxId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxId = null;
+            if (parseNode.GetChildNode("website") is { } nullNodeWebsite && nullNodeWebsite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Website = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The originator&apos;s address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferOriginatorAddress? Address { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferOriginatorAddress? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferOriginatorAddress? _explicitNullValueAddress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferOriginatorAddress Address { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferOriginatorAddress Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferOriginatorAddress _explicitNullValueAddress = default!;
 #endif
         /// <summary>Specifies the originator&apos;s expected usage of credits. For all dollar amounts, use a decimal string with two digits of precision e.g. &quot;10.00&quot;. This field is required if the originator is expected to process credit transfers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferCreditUsageConfiguration? CreditUsageConfiguration { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferCreditUsageConfiguration? CreditUsageConfiguration { get => _explicitNullValueCreditUsageConfiguration; set { _explicitNullValueCreditUsageConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit_usage_configuration"); else _explicitNullProperties?.Remove("credit_usage_configuration"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferCreditUsageConfiguration? _explicitNullValueCreditUsageConfiguration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferCreditUsageConfiguration CreditUsageConfiguration { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferCreditUsageConfiguration CreditUsageConfiguration { get => _explicitNullValueCreditUsageConfiguration; set { _explicitNullValueCreditUsageConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit_usage_configuration"); else _explicitNullProperties?.Remove("credit_usage_configuration"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferCreditUsageConfiguration _explicitNullValueCreditUsageConfiguration = default!;
 #endif
         /// <summary>The business name of the originator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Dba { get; set; }
+        public string? Dba { get => _explicitNullValueDba; set { _explicitNullValueDba = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dba"); else _explicitNullProperties?.Remove("dba"); } }
+        private string? _explicitNullValueDba = default!;
 #nullable restore
 #else
-        public string Dba { get; set; }
+        public string Dba { get => _explicitNullValueDba; set { _explicitNullValueDba = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dba"); else _explicitNullProperties?.Remove("dba"); } }
+        private string _explicitNullValueDba = default!;
 #endif
         /// <summary>Specifies the originator&apos;s expected usage of debits. For all dollar amounts, use a decimal string with two digits of precision e.g. &quot;10.00&quot;. This field is required if the originator is expected to process debit transfers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferDebitUsageConfiguration? DebitUsageConfiguration { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferDebitUsageConfiguration? DebitUsageConfiguration { get => _explicitNullValueDebitUsageConfiguration; set { _explicitNullValueDebitUsageConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debit_usage_configuration"); else _explicitNullProperties?.Remove("debit_usage_configuration"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferDebitUsageConfiguration? _explicitNullValueDebitUsageConfiguration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferDebitUsageConfiguration DebitUsageConfiguration { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferDebitUsageConfiguration DebitUsageConfiguration { get => _explicitNullValueDebitUsageConfiguration; set { _explicitNullValueDebitUsageConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debit_usage_configuration"); else _explicitNullProperties?.Remove("debit_usage_configuration"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferDebitUsageConfiguration _explicitNullValueDebitUsageConfiguration = default!;
 #endif
         /// <summary>The originator&apos;s funding account, linked with Plaid Link or `/transfer/migrate_account`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferFundingAccount? FundingAccount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferFundingAccount? FundingAccount { get => _explicitNullValueFundingAccount; set { _explicitNullValueFundingAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("funding_account"); else _explicitNullProperties?.Remove("funding_account"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferFundingAccount? _explicitNullValueFundingAccount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferFundingAccount FundingAccount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferFundingAccount FundingAccount { get => _explicitNullValueFundingAccount; set { _explicitNullValueFundingAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("funding_account"); else _explicitNullProperties?.Remove("funding_account"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferFundingAccount _explicitNullValueFundingAccount = default!;
 #endif
         /// <summary>The NAICS code of the originator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NaicsCode { get; set; }
+        public string? NaicsCode { get => _explicitNullValueNaicsCode; set { _explicitNullValueNaicsCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("naics_code"); else _explicitNullProperties?.Remove("naics_code"); } }
+        private string? _explicitNullValueNaicsCode = default!;
 #nullable restore
 #else
-        public string NaicsCode { get; set; }
+        public string NaicsCode { get => _explicitNullValueNaicsCode; set { _explicitNullValueNaicsCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("naics_code"); else _explicitNullProperties?.Remove("naics_code"); } }
+        private string _explicitNullValueNaicsCode = default!;
 #endif
         /// <summary>The tax ID of the originator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxId { get; set; }
+        public string? TaxId { get => _explicitNullValueTaxId; set { _explicitNullValueTaxId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax_id"); else _explicitNullProperties?.Remove("tax_id"); } }
+        private string? _explicitNullValueTaxId = default!;
 #nullable restore
 #else
-        public string TaxId { get; set; }
+        public string TaxId { get => _explicitNullValueTaxId; set { _explicitNullValueTaxId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax_id"); else _explicitNullProperties?.Remove("tax_id"); } }
+        private string _explicitNullValueTaxId = default!;
 #endif
         /// <summary>The website of the originator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Website { get; set; }
+        public string? Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
+        private string? _explicitNullValueWebsite = default!;
 #nullable restore
 #else
-        public string Website { get; set; }
+        public string Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
+        private string _explicitNullValueWebsite = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransferOriginatorDiligence"/> and sets the default values.
@@ -94,7 +125,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.TransferOriginatorDiligence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.TransferOriginatorDiligence();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.TransferOriginatorDiligence(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -129,6 +160,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("naics_code", NaicsCode);
             writer.WriteStringValue("tax_id", TaxId);
             writer.WriteStringValue("website", Website);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

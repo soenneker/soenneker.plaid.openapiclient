@@ -11,9 +11,17 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning disable CS1591
         AccountReviewCredit,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ACCOUNT_REVIEW_NON_CREDIT")]
+        #pragma warning disable CS1591
+        AccountReviewNonCredit,
+        #pragma warning restore CS1591
         [EnumMember(Value = "WRITTEN_INSTRUCTION_OTHER")]
         #pragma warning disable CS1591
         WrittenInstructionOther,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SECONDARY_INVESTOR")]
+        #pragma warning disable CS1591
+        SecondaryInvestor,
         #pragma warning restore CS1591
     }
 }

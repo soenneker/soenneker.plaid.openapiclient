@@ -12,30 +12,49 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BusinessWebsiteAnalysis : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("email_is_deliverable") is { } nullNodeEmailIsDeliverable && nullNodeEmailIsDeliverable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailIsDeliverable = null;
+            if (parseNode.GetChildNode("is_parked") is { } nullNodeIsParked && nullNodeIsParked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsParked = null;
+            if (parseNode.GetChildNode("ssl") is { } nullNodeSsl && nullNodeSsl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ssl = null;
+            if (parseNode.GetChildNode("website_build_status") is { } nullNodeWebsiteBuildStatus && nullNodeWebsiteBuildStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebsiteBuildStatus = null;
+            if (parseNode.GetChildNode("whois_record") is { } nullNodeWhoisRecord && nullNodeWhoisRecord.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhoisRecord = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Tri-state boolean status, where `no_data` indicates the check could not determine a value.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus? EmailIsDeliverable { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus? EmailIsDeliverable { get => _explicitNullValueEmailIsDeliverable; set { _explicitNullValueEmailIsDeliverable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_is_deliverable"); else _explicitNullProperties?.Remove("email_is_deliverable"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus? _explicitNullValueEmailIsDeliverable = default!;
         /// <summary>Tri-state boolean status, where `no_data` indicates the check could not determine a value.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus? IsParked { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus? IsParked { get => _explicitNullValueIsParked; set { _explicitNullValueIsParked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_parked"); else _explicitNullProperties?.Remove("is_parked"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus? _explicitNullValueIsParked = default!;
         /// <summary>SSL status for the business website.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSsl? Ssl { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSsl? Ssl { get => _explicitNullValueSsl; set { _explicitNullValueSsl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssl"); else _explicitNullProperties?.Remove("ssl"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSsl? _explicitNullValueSsl = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSsl Ssl { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSsl Ssl { get => _explicitNullValueSsl; set { _explicitNullValueSsl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssl"); else _explicitNullProperties?.Remove("ssl"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSsl _explicitNullValueSsl = default!;
 #endif
         /// <summary>Build status of the business website.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteBuildStatus? WebsiteBuildStatus { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteBuildStatus? WebsiteBuildStatus { get => _explicitNullValueWebsiteBuildStatus; set { _explicitNullValueWebsiteBuildStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website_build_status"); else _explicitNullProperties?.Remove("website_build_status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteBuildStatus? _explicitNullValueWebsiteBuildStatus = default!;
         /// <summary>WHOIS metadata for the business website domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWhoisRecord? WhoisRecord { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWhoisRecord? WhoisRecord { get => _explicitNullValueWhoisRecord; set { _explicitNullValueWhoisRecord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whois_record"); else _explicitNullProperties?.Remove("whois_record"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessWhoisRecord? _explicitNullValueWhoisRecord = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWhoisRecord WhoisRecord { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWhoisRecord WhoisRecord { get => _explicitNullValueWhoisRecord; set { _explicitNullValueWhoisRecord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whois_record"); else _explicitNullProperties?.Remove("whois_record"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessWhoisRecord _explicitNullValueWhoisRecord = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteAnalysis"/> and sets the default values.
@@ -52,7 +71,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteAnalysis CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteAnalysis();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteAnalysis(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,6 +102,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSsl>("ssl", Ssl);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteBuildStatus>("website_build_status", WebsiteBuildStatus);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWhoisRecord>("whois_record", WhoisRecord);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

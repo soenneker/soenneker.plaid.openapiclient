@@ -12,18 +12,30 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SandboxBankIncomeWebhookFireRequestWebhookFields : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bank_income_refresh_complete_result") is { } nullNodeBankIncomeRefreshCompleteResult && nullNodeBankIncomeRefreshCompleteResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankIncomeRefreshCompleteResult = null;
+            if (parseNode.GetChildNode("user_id") is { } nullNodeUserId && nullNodeUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The result of the bank income refresh report generation`SUCCESS`: The refreshed report was successfully generated and can be retrieved via `/credit/bank_income/get`.`FAILURE`: The refreshed report failed to be generated</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BankIncomeRefreshCompleteResult? BankIncomeRefreshCompleteResult { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BankIncomeRefreshCompleteResult? BankIncomeRefreshCompleteResult { get => _explicitNullValueBankIncomeRefreshCompleteResult; set { _explicitNullValueBankIncomeRefreshCompleteResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_income_refresh_complete_result"); else _explicitNullProperties?.Remove("bank_income_refresh_complete_result"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BankIncomeRefreshCompleteResult? _explicitNullValueBankIncomeRefreshCompleteResult = default!;
         /// <summary>The user id to be returned in INCOME webhooks</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId { get; set; }
+        public string? UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
+        private string? _explicitNullValueUserId = default!;
 #nullable restore
 #else
-        public string UserId { get; set; }
+        public string UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
+        private string _explicitNullValueUserId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.SandboxBankIncomeWebhookFireRequestWebhookFields"/> and sets the default values.
@@ -40,7 +52,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.SandboxBankIncomeWebhookFireRequestWebhookFields CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.SandboxBankIncomeWebhookFireRequestWebhookFields();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.SandboxBankIncomeWebhookFireRequestWebhookFields(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BankIncomeRefreshCompleteResult>("bank_income_refresh_complete_result", BankIncomeRefreshCompleteResult);
             writer.WriteStringValue("user_id", UserId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

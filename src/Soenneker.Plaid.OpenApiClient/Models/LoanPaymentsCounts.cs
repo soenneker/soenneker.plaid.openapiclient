@@ -12,14 +12,25 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LoanPaymentsCounts : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("baseline_count") is { } nullNodeBaselineCount && nullNodeBaselineCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaselineCount = null;
+            if (parseNode.GetChildNode("current_count") is { } nullNodeCurrentCount && nullNodeCurrentCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of loan payments made in the 30 days before the subscription date</summary>
         [Obsolete("")]
-        public double? BaselineCount { get; set; }
+        public double? BaselineCount { get => _explicitNullValueBaselineCount; set { _explicitNullValueBaselineCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseline_count"); else _explicitNullProperties?.Remove("baseline_count"); } }
+        private double? _explicitNullValueBaselineCount = default!;
         /// <summary>The current number of loan payments made in the last 30 days</summary>
-        public double? CurrentCount { get; set; }
+        public double? CurrentCount { get => _explicitNullValueCurrentCount; set { _explicitNullValueCurrentCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_count"); else _explicitNullProperties?.Remove("current_count"); } }
+        private double? _explicitNullValueCurrentCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentsCounts"/> and sets the default values.
         /// </summary>
@@ -35,7 +46,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentsCounts CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentsCounts();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentsCounts(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,6 +69,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("baseline_count", BaselineCount);
             writer.WriteDoubleValue("current_count", CurrentCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

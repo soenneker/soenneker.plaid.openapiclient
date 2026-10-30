@@ -13,52 +13,78 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BusinessKybMatchDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("addresses") is { } nullNodeAddresses && nullNodeAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Addresses = null;
+            if (parseNode.GetChildNode("email_addresses") is { } nullNodeEmailAddresses && nullNodeEmailAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailAddresses = null;
+            if (parseNode.GetChildNode("entity_type") is { } nullNodeEntityType && nullNodeEntityType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityType = null;
+            if (parseNode.GetChildNode("formation_date") is { } nullNodeFormationDate && nullNodeFormationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FormationDate = null;
+            if (parseNode.GetChildNode("names") is { } nullNodeNames && nullNodeNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Names = null;
+            if (parseNode.GetChildNode("phone_numbers") is { } nullNodePhoneNumbers && nullNodePhoneNumbers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumbers = null;
+            if (parseNode.GetChildNode("websites") is { } nullNodeWebsites && nullNodeWebsites.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Websites = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Addresses associated with the business</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.ProviderBusinessAddress>? Addresses { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.ProviderBusinessAddress>? Addresses { get => _explicitNullValueAddresses; set { _explicitNullValueAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addresses"); else _explicitNullProperties?.Remove("addresses"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.ProviderBusinessAddress>? _explicitNullValueAddresses = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.ProviderBusinessAddress> Addresses { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.ProviderBusinessAddress> Addresses { get => _explicitNullValueAddresses; set { _explicitNullValueAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addresses"); else _explicitNullProperties?.Remove("addresses"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.ProviderBusinessAddress> _explicitNullValueAddresses = default!;
 #endif
         /// <summary>Email addresses associated with the business</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.BusinessEmailAddress>? EmailAddresses { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.BusinessEmailAddress>? EmailAddresses { get => _explicitNullValueEmailAddresses; set { _explicitNullValueEmailAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_addresses"); else _explicitNullProperties?.Remove("email_addresses"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.BusinessEmailAddress>? _explicitNullValueEmailAddresses = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.BusinessEmailAddress> EmailAddresses { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.BusinessEmailAddress> EmailAddresses { get => _explicitNullValueEmailAddresses; set { _explicitNullValueEmailAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_addresses"); else _explicitNullProperties?.Remove("email_addresses"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.BusinessEmailAddress> _explicitNullValueEmailAddresses = default!;
 #endif
         /// <summary>The legal structure or type of business entity</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessEntityType? EntityType { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessEntityType? EntityType { get => _explicitNullValueEntityType; set { _explicitNullValueEntityType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_type"); else _explicitNullProperties?.Remove("entity_type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessEntityType? _explicitNullValueEntityType = default!;
         /// <summary>A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).</summary>
-        public Date? FormationDate { get; set; }
+        public Date? FormationDate { get => _explicitNullValueFormationDate; set { _explicitNullValueFormationDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formation_date"); else _explicitNullProperties?.Remove("formation_date"); } }
+        private Date? _explicitNullValueFormationDate = default!;
         /// <summary>Names associated with the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.ProviderBusinessName>? Names { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.ProviderBusinessName>? Names { get => _explicitNullValueNames; set { _explicitNullValueNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("names"); else _explicitNullProperties?.Remove("names"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.ProviderBusinessName>? _explicitNullValueNames = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.ProviderBusinessName> Names { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.ProviderBusinessName> Names { get => _explicitNullValueNames; set { _explicitNullValueNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("names"); else _explicitNullProperties?.Remove("names"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.ProviderBusinessName> _explicitNullValueNames = default!;
 #endif
         /// <summary>Phone numbers associated with the business</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.BusinessPhoneNumber>? PhoneNumbers { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.BusinessPhoneNumber>? PhoneNumbers { get => _explicitNullValuePhoneNumbers; set { _explicitNullValuePhoneNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_numbers"); else _explicitNullProperties?.Remove("phone_numbers"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.BusinessPhoneNumber>? _explicitNullValuePhoneNumbers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.BusinessPhoneNumber> PhoneNumbers { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.BusinessPhoneNumber> PhoneNumbers { get => _explicitNullValuePhoneNumbers; set { _explicitNullValuePhoneNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_numbers"); else _explicitNullProperties?.Remove("phone_numbers"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.BusinessPhoneNumber> _explicitNullValuePhoneNumbers = default!;
 #endif
         /// <summary>Websites associated with the business</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsite>? Websites { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsite>? Websites { get => _explicitNullValueWebsites; set { _explicitNullValueWebsites = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("websites"); else _explicitNullProperties?.Remove("websites"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsite>? _explicitNullValueWebsites = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsite> Websites { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsite> Websites { get => _explicitNullValueWebsites; set { _explicitNullValueWebsites = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("websites"); else _explicitNullProperties?.Remove("websites"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsite> _explicitNullValueWebsites = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybMatchDetails"/> and sets the default values.
@@ -75,7 +101,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybMatchDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybMatchDetails();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybMatchDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +136,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.ProviderBusinessName>("names", Names);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.BusinessPhoneNumber>("phone_numbers", PhoneNumbers);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsite>("websites", Websites);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

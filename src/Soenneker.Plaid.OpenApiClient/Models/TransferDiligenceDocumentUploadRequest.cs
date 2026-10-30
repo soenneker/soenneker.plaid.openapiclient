@@ -12,27 +12,42 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransferDiligenceDocumentUploadRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("file") is { } nullNodeFile && nullNodeFile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) File = null;
+            if (parseNode.GetChildNode("originator_client_id") is { } nullNodeOriginatorClientId && nullNodeOriginatorClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginatorClientId = null;
+            if (parseNode.GetChildNode("purpose") is { } nullNodePurpose && nullNodePurpose.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Purpose = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A file to upload. The file size must be less than 20MB. Supported file extensions: .pdf.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? File { get; set; }
+        public byte[]? File { get => _explicitNullValueFile; set { _explicitNullValueFile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file"); else _explicitNullProperties?.Remove("file"); } }
+        private byte[]? _explicitNullValueFile = default!;
 #nullable restore
 #else
-        public byte[] File { get; set; }
+        public byte[] File { get => _explicitNullValueFile; set { _explicitNullValueFile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file"); else _explicitNullProperties?.Remove("file"); } }
+        private byte[] _explicitNullValueFile = default!;
 #endif
         /// <summary>The Client ID of the originator whose document that you want to upload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginatorClientId { get; set; }
+        public string? OriginatorClientId { get => _explicitNullValueOriginatorClientId; set { _explicitNullValueOriginatorClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originator_client_id"); else _explicitNullProperties?.Remove("originator_client_id"); } }
+        private string? _explicitNullValueOriginatorClientId = default!;
 #nullable restore
 #else
-        public string OriginatorClientId { get; set; }
+        public string OriginatorClientId { get => _explicitNullValueOriginatorClientId; set { _explicitNullValueOriginatorClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originator_client_id"); else _explicitNullProperties?.Remove("originator_client_id"); } }
+        private string _explicitNullValueOriginatorClientId = default!;
 #endif
         /// <summary>Specifies the purpose of the uploaded file.`&quot;DUE_DILIGENCE&quot;` - The transfer due diligence document of the originator.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferDocumentPurpose? Purpose { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferDocumentPurpose? Purpose { get => _explicitNullValuePurpose; set { _explicitNullValuePurpose = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purpose"); else _explicitNullProperties?.Remove("purpose"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferDocumentPurpose? _explicitNullValuePurpose = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransferDiligenceDocumentUploadRequest"/> and sets the default values.
         /// </summary>
@@ -48,7 +63,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.TransferDiligenceDocumentUploadRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.TransferDiligenceDocumentUploadRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.TransferDiligenceDocumentUploadRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +88,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteByteArrayValue("file", File);
             writer.WriteStringValue("originator_client_id", OriginatorClientId);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferDocumentPurpose>("purpose", Purpose);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

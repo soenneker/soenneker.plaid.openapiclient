@@ -12,20 +12,34 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaymentInitiationStandingOrderMetadata : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("supports_standing_order_end_date") is { } nullNodeSupportsStandingOrderEndDate && nullNodeSupportsStandingOrderEndDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportsStandingOrderEndDate = null;
+            if (parseNode.GetChildNode("supports_standing_order_negative_execution_days") is { } nullNodeSupportsStandingOrderNegativeExecutionDays && nullNodeSupportsStandingOrderNegativeExecutionDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportsStandingOrderNegativeExecutionDays = null;
+            if (parseNode.GetChildNode("valid_standing_order_intervals") is { } nullNodeValidStandingOrderIntervals && nullNodeValidStandingOrderIntervals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidStandingOrderIntervals = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the institution supports closed-ended standing orders by providing an end date.</summary>
-        public bool? SupportsStandingOrderEndDate { get; set; }
+        public bool? SupportsStandingOrderEndDate { get => _explicitNullValueSupportsStandingOrderEndDate; set { _explicitNullValueSupportsStandingOrderEndDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supports_standing_order_end_date"); else _explicitNullProperties?.Remove("supports_standing_order_end_date"); } }
+        private bool? _explicitNullValueSupportsStandingOrderEndDate = default!;
         /// <summary>This is only applicable to `MONTHLY` standing orders. Indicates whether the institution supports negative integers (-1 to -5) for setting up a `MONTHLY` standing order relative to the end of the month.</summary>
-        public bool? SupportsStandingOrderNegativeExecutionDays { get; set; }
+        public bool? SupportsStandingOrderNegativeExecutionDays { get => _explicitNullValueSupportsStandingOrderNegativeExecutionDays; set { _explicitNullValueSupportsStandingOrderNegativeExecutionDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supports_standing_order_negative_execution_days"); else _explicitNullProperties?.Remove("supports_standing_order_negative_execution_days"); } }
+        private bool? _explicitNullValueSupportsStandingOrderNegativeExecutionDays = default!;
         /// <summary>A list of the valid standing order intervals supported by the institution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheduleInterval?>? ValidStandingOrderIntervals { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheduleInterval?>? ValidStandingOrderIntervals { get => _explicitNullValueValidStandingOrderIntervals; set { _explicitNullValueValidStandingOrderIntervals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valid_standing_order_intervals"); else _explicitNullProperties?.Remove("valid_standing_order_intervals"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheduleInterval?>? _explicitNullValueValidStandingOrderIntervals = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheduleInterval?> ValidStandingOrderIntervals { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheduleInterval?> ValidStandingOrderIntervals { get => _explicitNullValueValidStandingOrderIntervals; set { _explicitNullValueValidStandingOrderIntervals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valid_standing_order_intervals"); else _explicitNullProperties?.Remove("valid_standing_order_intervals"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheduleInterval?> _explicitNullValueValidStandingOrderIntervals = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationStandingOrderMetadata"/> and sets the default values.
@@ -42,7 +56,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationStandingOrderMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationStandingOrderMetadata();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationStandingOrderMetadata(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,6 +83,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteBoolValue("supports_standing_order_end_date", SupportsStandingOrderEndDate);
             writer.WriteBoolValue("supports_standing_order_negative_execution_days", SupportsStandingOrderNegativeExecutionDays);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheduleInterval>("valid_standing_order_intervals", ValidStandingOrderIntervals);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

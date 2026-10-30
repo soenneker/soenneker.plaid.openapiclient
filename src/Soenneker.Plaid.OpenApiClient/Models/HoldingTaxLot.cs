@@ -12,29 +12,51 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class HoldingTaxLot : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cost_basis") is { } nullNodeCostBasis && nullNodeCostBasis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CostBasis = null;
+            if (parseNode.GetChildNode("current_value") is { } nullNodeCurrentValue && nullNodeCurrentValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentValue = null;
+            if (parseNode.GetChildNode("institution_lot_id") is { } nullNodeInstitutionLotId && nullNodeInstitutionLotId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionLotId = null;
+            if (parseNode.GetChildNode("original_purchase_datetime") is { } nullNodeOriginalPurchaseDatetime && nullNodeOriginalPurchaseDatetime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalPurchaseDatetime = null;
+            if (parseNode.GetChildNode("position_type") is { } nullNodePositionType && nullNodePositionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PositionType = null;
+            if (parseNode.GetChildNode("purchase_price") is { } nullNodePurchasePrice && nullNodePurchasePrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurchasePrice = null;
+            if (parseNode.GetChildNode("quantity") is { } nullNodeQuantity && nullNodeQuantity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quantity = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The total cost basis of this lot, inclusive of any fees.</summary>
-        public double? CostBasis { get; set; }
+        public double? CostBasis { get => _explicitNullValueCostBasis; set { _explicitNullValueCostBasis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cost_basis"); else _explicitNullProperties?.Remove("cost_basis"); } }
+        private double? _explicitNullValueCostBasis = default!;
         /// <summary>The current market value of this lot.</summary>
-        public double? CurrentValue { get; set; }
+        public double? CurrentValue { get => _explicitNullValueCurrentValue; set { _explicitNullValueCurrentValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_value"); else _explicitNullProperties?.Remove("current_value"); } }
+        private double? _explicitNullValueCurrentValue = default!;
         /// <summary>The financial institution&apos;s identifier for this lot. Null if the institution does not provide a lot identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstitutionLotId { get; set; }
+        public string? InstitutionLotId { get => _explicitNullValueInstitutionLotId; set { _explicitNullValueInstitutionLotId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_lot_id"); else _explicitNullProperties?.Remove("institution_lot_id"); } }
+        private string? _explicitNullValueInstitutionLotId = default!;
 #nullable restore
 #else
-        public string InstitutionLotId { get; set; }
+        public string InstitutionLotId { get => _explicitNullValueInstitutionLotId; set { _explicitNullValueInstitutionLotId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_lot_id"); else _explicitNullProperties?.Remove("institution_lot_id"); } }
+        private string _explicitNullValueInstitutionLotId = default!;
 #endif
         /// <summary>The date and time this lot was acquired, in ISO 8601 format. Null if the institution does not provide acquisition datetime data.</summary>
-        public DateTimeOffset? OriginalPurchaseDatetime { get; set; }
+        public DateTimeOffset? OriginalPurchaseDatetime { get => _explicitNullValueOriginalPurchaseDatetime; set { _explicitNullValueOriginalPurchaseDatetime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_purchase_datetime"); else _explicitNullProperties?.Remove("original_purchase_datetime"); } }
+        private DateTimeOffset? _explicitNullValueOriginalPurchaseDatetime = default!;
         /// <summary>Indicates whether a holding lot position is long or short. Possible values are `LONG` and `SHORT`.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLotPositionType? PositionType { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLotPositionType? PositionType { get => _explicitNullValuePositionType; set { _explicitNullValuePositionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("position_type"); else _explicitNullProperties?.Remove("position_type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLotPositionType? _explicitNullValuePositionType = default!;
         /// <summary>The price per unit of the security at the time this lot was acquired.</summary>
-        public double? PurchasePrice { get; set; }
+        public double? PurchasePrice { get => _explicitNullValuePurchasePrice; set { _explicitNullValuePurchasePrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchase_price"); else _explicitNullProperties?.Remove("purchase_price"); } }
+        private double? _explicitNullValuePurchasePrice = default!;
         /// <summary>The number of units of the security in this lot.</summary>
-        public double? Quantity { get; set; }
+        public double? Quantity { get => _explicitNullValueQuantity; set { _explicitNullValueQuantity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quantity"); else _explicitNullProperties?.Remove("quantity"); } }
+        private double? _explicitNullValueQuantity = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLot"/> and sets the default values.
         /// </summary>
@@ -50,7 +72,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLot();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLot(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,6 +105,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLotPositionType>("position_type", PositionType);
             writer.WriteDoubleValue("purchase_price", PurchasePrice);
             writer.WriteDoubleValue("quantity", Quantity);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

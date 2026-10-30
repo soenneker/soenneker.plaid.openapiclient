@@ -12,24 +12,37 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RuleDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("custom_action_key") is { } nullNodeCustomActionKey && nullNodeCustomActionKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomActionKey = null;
+            if (parseNode.GetChildNode("internal_note") is { } nullNodeInternalNote && nullNodeInternalNote.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InternalNote = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A string key, defined within the Dashboard, used to trigger programmatic behavior for a certain result. For instance, you could optionally choose to define a &quot;3-day-hold&quot; `custom_action_key` for an ACCEPT result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomActionKey { get; set; }
+        public string? CustomActionKey { get => _explicitNullValueCustomActionKey; set { _explicitNullValueCustomActionKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_action_key"); else _explicitNullProperties?.Remove("custom_action_key"); } }
+        private string? _explicitNullValueCustomActionKey = default!;
 #nullable restore
 #else
-        public string CustomActionKey { get; set; }
+        public string CustomActionKey { get => _explicitNullValueCustomActionKey; set { _explicitNullValueCustomActionKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_action_key"); else _explicitNullProperties?.Remove("custom_action_key"); } }
+        private string _explicitNullValueCustomActionKey = default!;
 #endif
         /// <summary>An optional message attached to the triggered rule, defined within the Dashboard, for your internal use. Useful for debugging, such as &quot;Account appears to be closed.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InternalNote { get; set; }
+        public string? InternalNote { get => _explicitNullValueInternalNote; set { _explicitNullValueInternalNote = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internal_note"); else _explicitNullProperties?.Remove("internal_note"); } }
+        private string? _explicitNullValueInternalNote = default!;
 #nullable restore
 #else
-        public string InternalNote { get; set; }
+        public string InternalNote { get => _explicitNullValueInternalNote; set { _explicitNullValueInternalNote = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internal_note"); else _explicitNullProperties?.Remove("internal_note"); } }
+        private string _explicitNullValueInternalNote = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.RuleDetails"/> and sets the default values.
@@ -46,7 +59,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.RuleDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.RuleDetails();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.RuleDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +84,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("custom_action_key", CustomActionKey);
             writer.WriteStringValue("internal_note", InternalNote);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

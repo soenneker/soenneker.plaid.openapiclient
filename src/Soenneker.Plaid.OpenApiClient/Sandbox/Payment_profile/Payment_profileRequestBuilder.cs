@@ -16,6 +16,7 @@ namespace Soenneker.Plaid.OpenApiClient.Sandbox.Payment_profile
     public partial class Payment_profileRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The reset_login property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Sandbox.Payment_profile.Reset_login.Reset_loginRequestBuilder Reset_login
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Sandbox.Payment_profile.Reset_login.Reset_loginRequestBuilder(PathParameters, RequestAdapter);

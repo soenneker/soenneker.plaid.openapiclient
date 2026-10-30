@@ -13,13 +13,24 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SandboxCraServicingSimulateRequestOptions : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("error_webhook_code") is { } nullNodeErrorWebhookCode && nullNodeErrorWebhookCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorWebhookCode = null;
+            if (parseNode.GetChildNode("transactions_end_date") is { } nullNodeTransactionsEndDate && nullNodeTransactionsEndDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionsEndDate = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If set, skip report generation and instead fire a `CRA_REPORT_UPDATED` error webhook carrying this code. The accepted values depend on the `scope` of the subscription being simulated, since a simulation can only fire a webhook that scope would send in Production. A `CLIENT_USER` subscription accepts `USER_NOT_FOUND` and `PRODUCT_GENERATION_FAILED`; a `PLAID_NETWORK` subscription accepts `UNMATCH`, `DATA_UNAVAILABLE`, `NO_ELIGIBLE_ITEMS_ON_PROFILE`, and `PRODUCT_GENERATION_FAILED`. Supplying a code that does not match the subscription&apos;s scope returns an `INVALID_FIELD` error.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxCraServicingSimulateErrorWebhookCode? ErrorWebhookCode { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxCraServicingSimulateErrorWebhookCode? ErrorWebhookCode { get => _explicitNullValueErrorWebhookCode; set { _explicitNullValueErrorWebhookCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_webhook_code"); else _explicitNullProperties?.Remove("error_webhook_code"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SandboxCraServicingSimulateErrorWebhookCode? _explicitNullValueErrorWebhookCode = default!;
         /// <summary>The end of the synthesized transaction window (&quot;the present&quot;), as a YYYY-MM-DD date. Accepts past or future dates up to 180 days ahead; defaults to today. A later value appends newer transactions without churning earlier ones.</summary>
-        public Date? TransactionsEndDate { get; set; }
+        public Date? TransactionsEndDate { get => _explicitNullValueTransactionsEndDate; set { _explicitNullValueTransactionsEndDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactions_end_date"); else _explicitNullProperties?.Remove("transactions_end_date"); } }
+        private Date? _explicitNullValueTransactionsEndDate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.SandboxCraServicingSimulateRequestOptions"/> and sets the default values.
         /// </summary>
@@ -35,7 +46,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.SandboxCraServicingSimulateRequestOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.SandboxCraServicingSimulateRequestOptions();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.SandboxCraServicingSimulateRequestOptions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,6 +71,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SandboxCraServicingSimulateErrorWebhookCode>("error_webhook_code", ErrorWebhookCode);
             writer.WriteDateValue("transactions_end_date", TransactionsEndDate);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

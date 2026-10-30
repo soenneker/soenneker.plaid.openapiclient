@@ -13,39 +13,71 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraReportGetLendScoreMetadata : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_count") is { } nullNodeAccountCount && nullNodeAccountCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountCount = null;
+            if (parseNode.GetChildNode("credit_account_type_count") is { } nullNodeCreditAccountTypeCount && nullNodeCreditAccountTypeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreditAccountTypeCount = null;
+            if (parseNode.GetChildNode("depository_account_type_count") is { } nullNodeDepositoryAccountTypeCount && nullNodeDepositoryAccountTypeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DepositoryAccountTypeCount = null;
+            if (parseNode.GetChildNode("generated_time") is { } nullNodeGeneratedTime && nullNodeGeneratedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeneratedTime = null;
+            if (parseNode.GetChildNode("institution_ids") is { } nullNodeInstitutionIds && nullNodeInstitutionIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionIds = null;
+            if (parseNode.GetChildNode("investment_account_type_count") is { } nullNodeInvestmentAccountTypeCount && nullNodeInvestmentAccountTypeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvestmentAccountTypeCount = null;
+            if (parseNode.GetChildNode("item_count") is { } nullNodeItemCount && nullNodeItemCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemCount = null;
+            if (parseNode.GetChildNode("most_recent_transaction_date") is { } nullNodeMostRecentTransactionDate && nullNodeMostRecentTransactionDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MostRecentTransactionDate = null;
+            if (parseNode.GetChildNode("multiple_owner_account_count") is { } nullNodeMultipleOwnerAccountCount && nullNodeMultipleOwnerAccountCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MultipleOwnerAccountCount = null;
+            if (parseNode.GetChildNode("oldest_transaction_date") is { } nullNodeOldestTransactionDate && nullNodeOldestTransactionDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldestTransactionDate = null;
+            if (parseNode.GetChildNode("other_account_type_count") is { } nullNodeOtherAccountTypeCount && nullNodeOtherAccountTypeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OtherAccountTypeCount = null;
+            if (parseNode.GetChildNode("primary_account_count") is { } nullNodePrimaryAccountCount && nullNodePrimaryAccountCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryAccountCount = null;
+        }
+
         /// <summary>The number of accounts used to generate the report.</summary>
-        public int? AccountCount { get; set; }
+        public int? AccountCount { get => _explicitNullValueAccountCount; set { _explicitNullValueAccountCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_count"); else _explicitNullProperties?.Remove("account_count"); } }
+        private int? _explicitNullValueAccountCount = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of credit accounts used to generate the report.</summary>
-        public int? CreditAccountTypeCount { get; set; }
+        public int? CreditAccountTypeCount { get => _explicitNullValueCreditAccountTypeCount; set { _explicitNullValueCreditAccountTypeCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit_account_type_count"); else _explicitNullProperties?.Remove("credit_account_type_count"); } }
+        private int? _explicitNullValueCreditAccountTypeCount = default!;
         /// <summary>The number of depository accounts used to generate the report.</summary>
-        public int? DepositoryAccountTypeCount { get; set; }
+        public int? DepositoryAccountTypeCount { get => _explicitNullValueDepositoryAccountTypeCount; set { _explicitNullValueDepositoryAccountTypeCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("depository_account_type_count"); else _explicitNullProperties?.Remove("depository_account_type_count"); } }
+        private int? _explicitNullValueDepositoryAccountTypeCount = default!;
         /// <summary>The time the report was generated. May be `null` if unavailable.</summary>
-        public DateTimeOffset? GeneratedTime { get; set; }
+        public DateTimeOffset? GeneratedTime { get => _explicitNullValueGeneratedTime; set { _explicitNullValueGeneratedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generated_time"); else _explicitNullProperties?.Remove("generated_time"); } }
+        private DateTimeOffset? _explicitNullValueGeneratedTime = default!;
         /// <summary>The institution IDs of the Items used to generate the report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? InstitutionIds { get; set; }
+        public List<string>? InstitutionIds { get => _explicitNullValueInstitutionIds; set { _explicitNullValueInstitutionIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_ids"); else _explicitNullProperties?.Remove("institution_ids"); } }
+        private List<string>? _explicitNullValueInstitutionIds = default!;
 #nullable restore
 #else
-        public List<string> InstitutionIds { get; set; }
+        public List<string> InstitutionIds { get => _explicitNullValueInstitutionIds; set { _explicitNullValueInstitutionIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_ids"); else _explicitNullProperties?.Remove("institution_ids"); } }
+        private List<string> _explicitNullValueInstitutionIds = default!;
 #endif
         /// <summary>The number of investment accounts used to generate the report.</summary>
-        public int? InvestmentAccountTypeCount { get; set; }
+        public int? InvestmentAccountTypeCount { get => _explicitNullValueInvestmentAccountTypeCount; set { _explicitNullValueInvestmentAccountTypeCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investment_account_type_count"); else _explicitNullProperties?.Remove("investment_account_type_count"); } }
+        private int? _explicitNullValueInvestmentAccountTypeCount = default!;
         /// <summary>The number of Items used to generate the report.</summary>
-        public int? ItemCount { get; set; }
+        public int? ItemCount { get => _explicitNullValueItemCount; set { _explicitNullValueItemCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_count"); else _explicitNullProperties?.Remove("item_count"); } }
+        private int? _explicitNullValueItemCount = default!;
         /// <summary>The latest transaction date across the accounts the report was generated from. `null` if none of those accounts have posted transactions.</summary>
-        public Date? MostRecentTransactionDate { get; set; }
+        public Date? MostRecentTransactionDate { get => _explicitNullValueMostRecentTransactionDate; set { _explicitNullValueMostRecentTransactionDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("most_recent_transaction_date"); else _explicitNullProperties?.Remove("most_recent_transaction_date"); } }
+        private Date? _explicitNullValueMostRecentTransactionDate = default!;
         /// <summary>The number of accounts with multiple owners.</summary>
-        public int? MultipleOwnerAccountCount { get; set; }
+        public int? MultipleOwnerAccountCount { get => _explicitNullValueMultipleOwnerAccountCount; set { _explicitNullValueMultipleOwnerAccountCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multiple_owner_account_count"); else _explicitNullProperties?.Remove("multiple_owner_account_count"); } }
+        private int? _explicitNullValueMultipleOwnerAccountCount = default!;
         /// <summary>The earliest transaction date across the accounts the report was generated from. `null` if none of those accounts have posted transactions.</summary>
-        public Date? OldestTransactionDate { get; set; }
+        public Date? OldestTransactionDate { get => _explicitNullValueOldestTransactionDate; set { _explicitNullValueOldestTransactionDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldest_transaction_date"); else _explicitNullProperties?.Remove("oldest_transaction_date"); } }
+        private Date? _explicitNullValueOldestTransactionDate = default!;
         /// <summary>The number of accounts that are neither depository, credit, nor investment.</summary>
-        public int? OtherAccountTypeCount { get; set; }
-        /// <summary>The number of accounts carrying Plaid&apos;s primary account indicator.</summary>
-        public int? PrimaryAccountCount { get; set; }
+        public int? OtherAccountTypeCount { get => _explicitNullValueOtherAccountTypeCount; set { _explicitNullValueOtherAccountTypeCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other_account_type_count"); else _explicitNullProperties?.Remove("other_account_type_count"); } }
+        private int? _explicitNullValueOtherAccountTypeCount = default!;
+        /// <summary>The number of accounts carrying Plaid&apos;s primary account indicator, based on a report-level view of the user&apos;s transaction history.</summary>
+        public int? PrimaryAccountCount { get => _explicitNullValuePrimaryAccountCount; set { _explicitNullValuePrimaryAccountCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_account_count"); else _explicitNullProperties?.Remove("primary_account_count"); } }
+        private int? _explicitNullValuePrimaryAccountCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreMetadata"/> and sets the default values.
         /// </summary>
@@ -61,7 +93,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreMetadata();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreMetadata(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -104,6 +136,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDateValue("oldest_transaction_date", OldestTransactionDate);
             writer.WriteIntValue("other_account_type_count", OtherAccountTypeCount);
             writer.WriteIntValue("primary_account_count", PrimaryAccountCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -16,6 +16,7 @@ namespace Soenneker.Plaid.OpenApiClient.Sandbox.Bank_income
     public partial class Bank_incomeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The fire_webhook property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Sandbox.Bank_income.Fire_webhook.Fire_webhookRequestBuilder Fire_webhook
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Sandbox.Bank_income.Fire_webhook.Fire_webhookRequestBuilder(PathParameters, RequestAdapter);

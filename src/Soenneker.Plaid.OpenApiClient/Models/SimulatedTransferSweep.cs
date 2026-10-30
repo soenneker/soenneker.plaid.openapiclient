@@ -13,83 +13,124 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SimulatedTransferSweep : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("created") is { } nullNodeCreated && nullNodeCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Created = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("expected_funds_available_date") is { } nullNodeExpectedFundsAvailableDate && nullNodeExpectedFundsAvailableDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedFundsAvailableDate = null;
+            if (parseNode.GetChildNode("failure_reason") is { } nullNodeFailureReason && nullNodeFailureReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureReason = null;
+            if (parseNode.GetChildNode("funding_account_id") is { } nullNodeFundingAccountId && nullNodeFundingAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FundingAccountId = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("iso_currency_code") is { } nullNodeIsoCurrencyCode && nullNodeIsoCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsoCurrencyCode = null;
+            if (parseNode.GetChildNode("ledger_id") is { } nullNodeLedgerId && nullNodeLedgerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LedgerId = null;
+            if (parseNode.GetChildNode("network_trace_id") is { } nullNodeNetworkTraceId && nullNodeNetworkTraceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkTraceId = null;
+            if (parseNode.GetChildNode("settled") is { } nullNodeSettled && nullNodeSettled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Settled = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("trigger") is { } nullNodeTrigger && nullNodeTrigger.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Trigger = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Signed decimal amount of the sweep as it appears on your sweep account ledger (e.g. &quot;-10.00&quot;)If amount is not present, the sweep was net-settled to zero and outstanding debits and credits between the sweep account and Plaid are balanced.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Amount { get; set; }
+        public string? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private string? _explicitNullValueAmount = default!;
 #nullable restore
 #else
-        public string Amount { get; set; }
+        public string Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private string _explicitNullValueAmount = default!;
 #endif
         /// <summary>The datetime when the sweep occurred, in RFC 3339 format.</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
+        private DateTimeOffset? _explicitNullValueCreated = default!;
         /// <summary>The description of the deposit that will be passed to the receiving bank (up to 10 characters). Note that banks utilize this field differently, and may or may not show it on the bank statement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The expected date when funds from a ledger deposit will be made available and can be withdrawn from the associated ledger balance. Only applies to deposits. This will be of the form YYYY-MM-DD.</summary>
-        public Date? ExpectedFundsAvailableDate { get; set; }
+        public Date? ExpectedFundsAvailableDate { get => _explicitNullValueExpectedFundsAvailableDate; set { _explicitNullValueExpectedFundsAvailableDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_funds_available_date"); else _explicitNullProperties?.Remove("expected_funds_available_date"); } }
+        private Date? _explicitNullValueExpectedFundsAvailableDate = default!;
         /// <summary>The failure reason if the status for a sweep is `&quot;failed&quot;` or `&quot;returned&quot;`. Null value otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.SweepFailure? FailureReason { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SweepFailure? FailureReason { get => _explicitNullValueFailureReason; set { _explicitNullValueFailureReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_reason"); else _explicitNullProperties?.Remove("failure_reason"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SweepFailure? _explicitNullValueFailureReason = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.SweepFailure FailureReason { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SweepFailure FailureReason { get => _explicitNullValueFailureReason; set { _explicitNullValueFailureReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_reason"); else _explicitNullProperties?.Remove("failure_reason"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SweepFailure _explicitNullValueFailureReason = default!;
 #endif
         /// <summary>The id of the funding account to use, available in the Plaid Dashboard. This determines which of your business checking accounts will be credited or debited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FundingAccountId { get; set; }
+        public string? FundingAccountId { get => _explicitNullValueFundingAccountId; set { _explicitNullValueFundingAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("funding_account_id"); else _explicitNullProperties?.Remove("funding_account_id"); } }
+        private string? _explicitNullValueFundingAccountId = default!;
 #nullable restore
 #else
-        public string FundingAccountId { get; set; }
+        public string FundingAccountId { get => _explicitNullValueFundingAccountId; set { _explicitNullValueFundingAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("funding_account_id"); else _explicitNullProperties?.Remove("funding_account_id"); } }
+        private string _explicitNullValueFundingAccountId = default!;
 #endif
         /// <summary>Identifier of the sweep.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The currency of the sweep, e.g. &quot;USD&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IsoCurrencyCode { get; set; }
+        public string? IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
+        private string? _explicitNullValueIsoCurrencyCode = default!;
 #nullable restore
 #else
-        public string IsoCurrencyCode { get; set; }
+        public string IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
+        private string _explicitNullValueIsoCurrencyCode = default!;
 #endif
         /// <summary>Plaid&apos;s unique identifier for a Plaid Ledger Balance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LedgerId { get; set; }
+        public string? LedgerId { get => _explicitNullValueLedgerId; set { _explicitNullValueLedgerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ledger_id"); else _explicitNullProperties?.Remove("ledger_id"); } }
+        private string? _explicitNullValueLedgerId = default!;
 #nullable restore
 #else
-        public string LedgerId { get; set; }
+        public string LedgerId { get => _explicitNullValueLedgerId; set { _explicitNullValueLedgerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ledger_id"); else _explicitNullProperties?.Remove("ledger_id"); } }
+        private string _explicitNullValueLedgerId = default!;
 #endif
         /// <summary>The trace identifier for the transfer based on its network. This will only be set after the transfer has posted.For `ach` or `same-day-ach` transfers, this is the ACH trace number.For `rtp` transfers, this is the Transaction Identification number.For `wire` transfers, this is the IMAD (Input Message Accountability Data) number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NetworkTraceId { get; set; }
+        public string? NetworkTraceId { get => _explicitNullValueNetworkTraceId; set { _explicitNullValueNetworkTraceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_trace_id"); else _explicitNullProperties?.Remove("network_trace_id"); } }
+        private string? _explicitNullValueNetworkTraceId = default!;
 #nullable restore
 #else
-        public string NetworkTraceId { get; set; }
+        public string NetworkTraceId { get => _explicitNullValueNetworkTraceId; set { _explicitNullValueNetworkTraceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_trace_id"); else _explicitNullProperties?.Remove("network_trace_id"); } }
+        private string _explicitNullValueNetworkTraceId = default!;
 #endif
         /// <summary>The date when the sweep settled, in the YYYY-MM-DD format.</summary>
-        public Date? Settled { get; set; }
+        public Date? Settled { get => _explicitNullValueSettled; set { _explicitNullValueSettled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settled"); else _explicitNullProperties?.Remove("settled"); } }
+        private Date? _explicitNullValueSettled = default!;
         /// <summary>The status of a sweep transfer`&quot;pending&quot;` - The sweep is currently pending`&quot;posted&quot;` - The sweep has been posted`&quot;settled&quot;` - The sweep has settled. This is the terminal state of a successful credit sweep.`&quot;returned&quot;` - The sweep has been returned. This is the terminal state of a returned sweep. Returns of a sweep are extremely rare, since sweeps are money movement between your own bank account and your own Ledger.`&quot;funds_available&quot;` - Funds from the sweep have been released from hold and applied to the ledger&apos;s available balance. (Only applicable to deposits.) This is the terminal state of a successful deposit sweep.`&quot;failed&quot;` - The sweep has failed. This is the terminal state of a failed sweep.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.SweepStatus? Status { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SweepStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SweepStatus? _explicitNullValueStatus = default!;
         /// <summary>The trigger of the sweep`&quot;manual&quot;` - The sweep is created manually by the customer`&quot;incoming&quot;` - The sweep is created by incoming funds flow (e.g. Incoming Wire)`&quot;balance_threshold&quot;` - The sweep is created by balance threshold setting`&quot;automatic_aggregate&quot;` - The sweep is created by the Plaid automatic aggregation process. These funds did not pass through the Plaid Ledger balance.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.SweepTrigger? Trigger { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SweepTrigger? Trigger { get => _explicitNullValueTrigger; set { _explicitNullValueTrigger = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger"); else _explicitNullProperties?.Remove("trigger"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SweepTrigger? _explicitNullValueTrigger = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.SimulatedTransferSweep"/> and sets the default values.
         /// </summary>
@@ -105,7 +146,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.SimulatedTransferSweep CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.SimulatedTransferSweep();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.SimulatedTransferSweep(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -150,6 +191,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDateValue("settled", Settled);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SweepStatus>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SweepTrigger>("trigger", Trigger);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

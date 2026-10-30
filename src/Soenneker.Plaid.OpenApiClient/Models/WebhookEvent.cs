@@ -12,66 +12,101 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WebhookEvent : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("attempt_count") is { } nullNodeAttemptCount && nullNodeAttemptCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttemptCount = null;
+            if (parseNode.GetChildNode("delivery_status") is { } nullNodeDeliveryStatus && nullNodeDeliveryStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryStatus = null;
+            if (parseNode.GetChildNode("destination_url") is { } nullNodeDestinationUrl && nullNodeDestinationUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationUrl = null;
+            if (parseNode.GetChildNode("item_id") is { } nullNodeItemId && nullNodeItemId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemId = null;
+            if (parseNode.GetChildNode("last_attempt_time") is { } nullNodeLastAttemptTime && nullNodeLastAttemptTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastAttemptTime = null;
+            if (parseNode.GetChildNode("last_http_status_code") is { } nullNodeLastHttpStatusCode && nullNodeLastHttpStatusCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastHttpStatusCode = null;
+            if (parseNode.GetChildNode("payload") is { } nullNodePayload && nullNodePayload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Payload = null;
+            if (parseNode.GetChildNode("sent_time") is { } nullNodeSentTime && nullNodeSentTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentTime = null;
+            if (parseNode.GetChildNode("webhook_code") is { } nullNodeWebhookCode && nullNodeWebhookCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookCode = null;
+            if (parseNode.GetChildNode("webhook_message_id") is { } nullNodeWebhookMessageId && nullNodeWebhookMessageId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookMessageId = null;
+            if (parseNode.GetChildNode("webhook_type") is { } nullNodeWebhookType && nullNodeWebhookType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of delivery attempts Plaid has made for this webhook.</summary>
-        public int? AttemptCount { get; set; }
+        public int? AttemptCount { get => _explicitNullValueAttemptCount; set { _explicitNullValueAttemptCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attempt_count"); else _explicitNullProperties?.Remove("attempt_count"); } }
+        private int? _explicitNullValueAttemptCount = default!;
         /// <summary>The current delivery status of the webhook.`PENDING`: Plaid hasn&apos;t recorded a successful delivery and may retry. The webhook may have been delivered even if its status is `PENDING`.`DELIVERED`: Your endpoint returned a 2xx response.`FAILED`: Plaid stopped retrying without receiving a 2xx response.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.WebhookEventDeliveryStatus? DeliveryStatus { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WebhookEventDeliveryStatus? DeliveryStatus { get => _explicitNullValueDeliveryStatus; set { _explicitNullValueDeliveryStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_status"); else _explicitNullProperties?.Remove("delivery_status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.WebhookEventDeliveryStatus? _explicitNullValueDeliveryStatus = default!;
         /// <summary>The destination URL Plaid sent the webhook to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationUrl { get; set; }
+        public string? DestinationUrl { get => _explicitNullValueDestinationUrl; set { _explicitNullValueDestinationUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_url"); else _explicitNullProperties?.Remove("destination_url"); } }
+        private string? _explicitNullValueDestinationUrl = default!;
 #nullable restore
 #else
-        public string DestinationUrl { get; set; }
+        public string DestinationUrl { get => _explicitNullValueDestinationUrl; set { _explicitNullValueDestinationUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_url"); else _explicitNullProperties?.Remove("destination_url"); } }
+        private string _explicitNullValueDestinationUrl = default!;
 #endif
         /// <summary>The Item ID associated with the webhook, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemId { get; set; }
+        public string? ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
+        private string? _explicitNullValueItemId = default!;
 #nullable restore
 #else
-        public string ItemId { get; set; }
+        public string ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
+        private string _explicitNullValueItemId = default!;
 #endif
         /// <summary>The time of the most recent delivery attempt. Null if Plaid hasn&apos;t attempted delivery yet.</summary>
-        public DateTimeOffset? LastAttemptTime { get; set; }
+        public DateTimeOffset? LastAttemptTime { get => _explicitNullValueLastAttemptTime; set { _explicitNullValueLastAttemptTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_attempt_time"); else _explicitNullProperties?.Remove("last_attempt_time"); } }
+        private DateTimeOffset? _explicitNullValueLastAttemptTime = default!;
         /// <summary>The most recent HTTP status code returned by the destination, if any.</summary>
-        public int? LastHttpStatusCode { get; set; }
+        public int? LastHttpStatusCode { get => _explicitNullValueLastHttpStatusCode; set { _explicitNullValueLastHttpStatusCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_http_status_code"); else _explicitNullProperties?.Remove("last_http_status_code"); } }
+        private int? _explicitNullValueLastHttpStatusCode = default!;
         /// <summary>The JSON body Plaid sent to the webhook destination.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.WebhookEventPayloadProperty? Payload { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WebhookEventPayloadProperty? Payload { get => _explicitNullValuePayload; set { _explicitNullValuePayload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload"); else _explicitNullProperties?.Remove("payload"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.WebhookEventPayloadProperty? _explicitNullValuePayload = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.WebhookEventPayloadProperty Payload { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WebhookEventPayloadProperty Payload { get => _explicitNullValuePayload; set { _explicitNullValuePayload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload"); else _explicitNullProperties?.Remove("payload"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.WebhookEventPayloadProperty _explicitNullValuePayload = default!;
 #endif
         /// <summary>The time Plaid sent the webhook.</summary>
-        public DateTimeOffset? SentTime { get; set; }
+        public DateTimeOffset? SentTime { get => _explicitNullValueSentTime; set { _explicitNullValueSentTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sent_time"); else _explicitNullProperties?.Remove("sent_time"); } }
+        private DateTimeOffset? _explicitNullValueSentTime = default!;
         /// <summary>The webhook code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebhookCode { get; set; }
+        public string? WebhookCode { get => _explicitNullValueWebhookCode; set { _explicitNullValueWebhookCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_code"); else _explicitNullProperties?.Remove("webhook_code"); } }
+        private string? _explicitNullValueWebhookCode = default!;
 #nullable restore
 #else
-        public string WebhookCode { get; set; }
+        public string WebhookCode { get => _explicitNullValueWebhookCode; set { _explicitNullValueWebhookCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_code"); else _explicitNullProperties?.Remove("webhook_code"); } }
+        private string _explicitNullValueWebhookCode = default!;
 #endif
         /// <summary>The ID of this webhook event. It stays the same across requests, so you can use it to skip events you&apos;ve already handled. Include it when contacting Support.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebhookMessageId { get; set; }
+        public string? WebhookMessageId { get => _explicitNullValueWebhookMessageId; set { _explicitNullValueWebhookMessageId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_message_id"); else _explicitNullProperties?.Remove("webhook_message_id"); } }
+        private string? _explicitNullValueWebhookMessageId = default!;
 #nullable restore
 #else
-        public string WebhookMessageId { get; set; }
+        public string WebhookMessageId { get => _explicitNullValueWebhookMessageId; set { _explicitNullValueWebhookMessageId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_message_id"); else _explicitNullProperties?.Remove("webhook_message_id"); } }
+        private string _explicitNullValueWebhookMessageId = default!;
 #endif
         /// <summary>The webhook type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebhookType { get; set; }
+        public string? WebhookType { get => _explicitNullValueWebhookType; set { _explicitNullValueWebhookType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_type"); else _explicitNullProperties?.Remove("webhook_type"); } }
+        private string? _explicitNullValueWebhookType = default!;
 #nullable restore
 #else
-        public string WebhookType { get; set; }
+        public string WebhookType { get => _explicitNullValueWebhookType; set { _explicitNullValueWebhookType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_type"); else _explicitNullProperties?.Remove("webhook_type"); } }
+        private string _explicitNullValueWebhookType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.WebhookEvent"/> and sets the default values.
@@ -88,7 +123,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.WebhookEvent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.WebhookEvent();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.WebhookEvent(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -129,6 +164,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("webhook_code", WebhookCode);
             writer.WriteStringValue("webhook_message_id", WebhookMessageId);
             writer.WriteStringValue("webhook_type", WebhookType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

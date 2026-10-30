@@ -13,34 +13,52 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SignalScheduleResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("optimal_date") is { } nullNodeOptimalDate && nullNodeOptimalDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptimalDate = null;
+            if (parseNode.GetChildNode("recommendations") is { } nullNodeRecommendations && nullNodeRecommendations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Recommendations = null;
+            if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
+            if (parseNode.GetChildNode("warnings") is { } nullNodeWarnings && nullNodeWarnings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Warnings = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The recommended optimal date to submit the debit entry, formatted in ISO 8601 &quot;YYYY-MM-DD&quot; (e.g., &quot;2024-03-30&quot;). The `optimal_date` is derived from the date with rank = 1 in the following recommendations array.NOTE: The `default_payment_method` field specified in the request will affect the recommendation, since we&apos;re accounting for debit settlement time.The debit scheduling evaluation covers the banking days within the seven calendar days after the /signal/schedule request is submitted; the day of the request is never recommended. If no date within this period is considered likely to result in a successful debit attempt, `null` will be returned for the `optimal_date`.</summary>
-        public Date? OptimalDate { get; set; }
+        public Date? OptimalDate { get => _explicitNullValueOptimalDate; set { _explicitNullValueOptimalDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optimal_date"); else _explicitNullProperties?.Remove("optimal_date"); } }
+        private Date? _explicitNullValueOptimalDate = default!;
         /// <summary>This array provides a date-by-date evaluation of debit submission recommendations within the evaluation period. Each object in the array represents a retry recommendation for a specific date.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.SignalScheduleRecommendation>? Recommendations { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.SignalScheduleRecommendation>? Recommendations { get => _explicitNullValueRecommendations; set { _explicitNullValueRecommendations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recommendations"); else _explicitNullProperties?.Remove("recommendations"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.SignalScheduleRecommendation>? _explicitNullValueRecommendations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.SignalScheduleRecommendation> Recommendations { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.SignalScheduleRecommendation> Recommendations { get => _explicitNullValueRecommendations; set { _explicitNullValueRecommendations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recommendations"); else _explicitNullProperties?.Remove("recommendations"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.SignalScheduleRecommendation> _explicitNullValueRecommendations = default!;
 #endif
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId { get; set; }
+        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        private string? _explicitNullValueRequestId = default!;
 #nullable restore
 #else
-        public string RequestId { get; set; }
+        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        private string _explicitNullValueRequestId = default!;
 #endif
         /// <summary>If bank information was not available to be used in the Signal Transaction Scores model, this array contains warnings describing why bank data is missing. If you want to receive an API error instead of scores in the case of missing bank data, file a support ticket or contact your Plaid account manager.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning>? Warnings { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning>? Warnings { get => _explicitNullValueWarnings; set { _explicitNullValueWarnings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warnings"); else _explicitNullProperties?.Remove("warnings"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning>? _explicitNullValueWarnings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning> Warnings { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning> Warnings { get => _explicitNullValueWarnings; set { _explicitNullValueWarnings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warnings"); else _explicitNullProperties?.Remove("warnings"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning> _explicitNullValueWarnings = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.SignalScheduleResponse"/> and sets the default values.
@@ -57,7 +75,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.SignalScheduleResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.SignalScheduleResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.SignalScheduleResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,6 +102,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.SignalScheduleRecommendation>("recommendations", Recommendations);
             writer.WriteStringValue("request_id", RequestId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning>("warnings", Warnings);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

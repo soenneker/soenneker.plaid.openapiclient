@@ -12,63 +12,92 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LinkTokenGetSessionsResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("events") is { } nullNodeEvents && nullNodeEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Events = null;
+            if (parseNode.GetChildNode("exit") is { } nullNodeExit && nullNodeExit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exit = null;
+            if (parseNode.GetChildNode("finished_at") is { } nullNodeFinishedAt && nullNodeFinishedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FinishedAt = null;
+            if (parseNode.GetChildNode("link_session_id") is { } nullNodeLinkSessionId && nullNodeLinkSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkSessionId = null;
+            if (parseNode.GetChildNode("on_exit") is { } nullNodeOnExit && nullNodeOnExit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnExit = null;
+            if (parseNode.GetChildNode("on_success") is { } nullNodeOnSuccess && nullNodeOnSuccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnSuccess = null;
+            if (parseNode.GetChildNode("results") is { } nullNodeResults && nullNodeResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Results = null;
+            if (parseNode.GetChildNode("started_at") is { } nullNodeStartedAt && nullNodeStartedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartedAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of customer-related Link events</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkEvent>? Events { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkEvent>? Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.LinkEvent>? _explicitNullValueEvents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkEvent> Events { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkEvent> Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.LinkEvent> _explicitNullValueEvents = default!;
 #endif
         /// <summary>An object representing an [onExit](https://plaid.com/docs/link/web/#onexit) callback from Link. If you are not receiving this field and are instead receiving the deprecated `on_exit` field, contact your account manager to update your integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExit? Exit { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExit? Exit { get => _explicitNullValueExit; set { _explicitNullValueExit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exit"); else _explicitNullProperties?.Remove("exit"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExit? _explicitNullValueExit = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExit Exit { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExit Exit { get => _explicitNullValueExit; set { _explicitNullValueExit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exit"); else _explicitNullProperties?.Remove("exit"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExit _explicitNullValueExit = default!;
 #endif
         /// <summary>The timestamp at which the link session was finished, if available, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format.</summary>
-        public DateTimeOffset? FinishedAt { get; set; }
+        public DateTimeOffset? FinishedAt { get => _explicitNullValueFinishedAt; set { _explicitNullValueFinishedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finished_at"); else _explicitNullProperties?.Remove("finished_at"); } }
+        private DateTimeOffset? _explicitNullValueFinishedAt = default!;
         /// <summary>The unique ID for the link session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LinkSessionId { get; set; }
+        public string? LinkSessionId { get => _explicitNullValueLinkSessionId; set { _explicitNullValueLinkSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_session_id"); else _explicitNullProperties?.Remove("link_session_id"); } }
+        private string? _explicitNullValueLinkSessionId = default!;
 #nullable restore
 #else
-        public string LinkSessionId { get; set; }
+        public string LinkSessionId { get => _explicitNullValueLinkSessionId; set { _explicitNullValueLinkSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_session_id"); else _explicitNullProperties?.Remove("link_session_id"); } }
+        private string _explicitNullValueLinkSessionId = default!;
 #endif
         /// <summary>An object representing an [onExit](https://plaid.com/docs/link/web/#onexit) callback from Link. This field is returned only for legacy implementations and has been deprecated in favor of [`exit`](https://plaid.com/docs/api/link/#link-token-get-response-link-sessions-exit), for improved naming consistency. If you are receiving this field, contact your account manager to migrate to the newer `exit` field.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitDeprecated? OnExit { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitDeprecated? OnExit { get => _explicitNullValueOnExit; set { _explicitNullValueOnExit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("on_exit"); else _explicitNullProperties?.Remove("on_exit"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitDeprecated? _explicitNullValueOnExit = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitDeprecated OnExit { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitDeprecated OnExit { get => _explicitNullValueOnExit; set { _explicitNullValueOnExit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("on_exit"); else _explicitNullProperties?.Remove("on_exit"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionExitDeprecated _explicitNullValueOnExit = default!;
 #endif
         /// <summary>An object representing an [onSuccess](https://plaid.com/docs/link/web/#onsuccess) callback from Link. This field is returned only for legacy integrations and is deprecated in favor of [`results.item_add_results`](https://plaid.com/docs/api/link/#link-token-get-response-link-sessions-results-item-add-results) which can support multiple public tokens in a single Link session, for flows such as multi-Item Link. If you are receiving `on_success`, contact your account manager to migrate to `results.item_add_results` instead.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccess? OnSuccess { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccess? OnSuccess { get => _explicitNullValueOnSuccess; set { _explicitNullValueOnSuccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("on_success"); else _explicitNullProperties?.Remove("on_success"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccess? _explicitNullValueOnSuccess = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccess OnSuccess { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccess OnSuccess { get => _explicitNullValueOnSuccess; set { _explicitNullValueOnSuccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("on_success"); else _explicitNullProperties?.Remove("on_success"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccess _explicitNullValueOnSuccess = default!;
 #endif
         /// <summary>The set of results for a Link session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionResults? Results { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionResults? Results { get => _explicitNullValueResults; set { _explicitNullValueResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("results"); else _explicitNullProperties?.Remove("results"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionResults? _explicitNullValueResults = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionResults Results { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionResults Results { get => _explicitNullValueResults; set { _explicitNullValueResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("results"); else _explicitNullProperties?.Remove("results"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionResults _explicitNullValueResults = default!;
 #endif
         /// <summary>The timestamp at which the link session was first started, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format.</summary>
-        public DateTimeOffset? StartedAt { get; set; }
+        public DateTimeOffset? StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started_at"); else _explicitNullProperties?.Remove("started_at"); } }
+        private DateTimeOffset? _explicitNullValueStartedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenGetSessionsResponse"/> and sets the default values.
         /// </summary>
@@ -84,7 +113,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenGetSessionsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenGetSessionsResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenGetSessionsResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -119,6 +148,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccess>("on_success", OnSuccess);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionResults>("results", Results);
             writer.WriteDateTimeOffsetValue("started_at", StartedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

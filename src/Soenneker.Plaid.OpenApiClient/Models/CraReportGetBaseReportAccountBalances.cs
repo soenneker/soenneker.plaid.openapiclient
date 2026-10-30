@@ -12,42 +12,68 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraReportGetBaseReportAccountBalances : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("available") is { } nullNodeAvailable && nullNodeAvailable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Available = null;
+            if (parseNode.GetChildNode("average_balance") is { } nullNodeAverageBalance && nullNodeAverageBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageBalance = null;
+            if (parseNode.GetChildNode("average_monthly_balances") is { } nullNodeAverageMonthlyBalances && nullNodeAverageMonthlyBalances.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageMonthlyBalances = null;
+            if (parseNode.GetChildNode("current") is { } nullNodeCurrent && nullNodeCurrent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Current = null;
+            if (parseNode.GetChildNode("iso_currency_code") is { } nullNodeIsoCurrencyCode && nullNodeIsoCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsoCurrencyCode = null;
+            if (parseNode.GetChildNode("limit") is { } nullNodeLimit && nullNodeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limit = null;
+            if (parseNode.GetChildNode("most_recent_thirty_day_average_balance") is { } nullNodeMostRecentThirtyDayAverageBalance && nullNodeMostRecentThirtyDayAverageBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MostRecentThirtyDayAverageBalance = null;
+            if (parseNode.GetChildNode("unofficial_currency_code") is { } nullNodeUnofficialCurrencyCode && nullNodeUnofficialCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnofficialCurrencyCode = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount of funds available to be withdrawn from the account, as determined by the financial institution.For `credit`-type accounts, the `available` balance typically equals the `limit` less the `current` balance, less any pending outflows plus any pending inflows.For `depository`-type accounts, the `available` balance typically equals the `current` balance less any pending outflows plus any pending inflows, and does not include the overdraft limit.For `investment`-type accounts, the `available` balance is the total cash available to withdraw as presented by the institution.`null` if the institution does not provide an `available` balance. If `current` is `null`, this field is guaranteed not to be `null`.</summary>
-        public double? Available { get; set; }
+        public double? Available { get => _explicitNullValueAvailable; set { _explicitNullValueAvailable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available"); else _explicitNullProperties?.Remove("available"); } }
+        private double? _explicitNullValueAvailable = default!;
         /// <summary>The average historical balance over the time range of the report. `null` if it could not be computed.</summary>
-        public double? AverageBalance { get; set; }
+        public double? AverageBalance { get => _explicitNullValueAverageBalance; set { _explicitNullValueAverageBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_balance"); else _explicitNullProperties?.Remove("average_balance"); } }
+        private double? _explicitNullValueAverageBalance = default!;
         /// <summary>The average historical balance for each calendar month. Empty if it could not be computed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAverageMonthlyBalance>? AverageMonthlyBalances { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAverageMonthlyBalance>? AverageMonthlyBalances { get => _explicitNullValueAverageMonthlyBalances; set { _explicitNullValueAverageMonthlyBalances = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_monthly_balances"); else _explicitNullProperties?.Remove("average_monthly_balances"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAverageMonthlyBalance>? _explicitNullValueAverageMonthlyBalances = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAverageMonthlyBalance> AverageMonthlyBalances { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAverageMonthlyBalance> AverageMonthlyBalances { get => _explicitNullValueAverageMonthlyBalances; set { _explicitNullValueAverageMonthlyBalances = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_monthly_balances"); else _explicitNullProperties?.Remove("average_monthly_balances"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAverageMonthlyBalance> _explicitNullValueAverageMonthlyBalances = default!;
 #endif
         /// <summary>The total amount of funds in or owed by the account.For `credit`-type accounts, a positive balance indicates the amount owed; a negative amount indicates the lender owing the account holder.For `loan`-type accounts, the current balance is the principal remaining on the loan.For `investment`-type accounts, the current balance is the total value of assets as presented by the institution.If `available` is `null`, this field is guaranteed not to be `null`.</summary>
-        public double? Current { get; set; }
+        public double? Current { get => _explicitNullValueCurrent; set { _explicitNullValueCurrent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current"); else _explicitNullProperties?.Remove("current"); } }
+        private double? _explicitNullValueCurrent = default!;
         /// <summary>The ISO 4217 currency code of the amount or balance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IsoCurrencyCode { get; set; }
+        public string? IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
+        private string? _explicitNullValueIsoCurrencyCode = default!;
 #nullable restore
 #else
-        public string IsoCurrencyCode { get; set; }
+        public string IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
+        private string _explicitNullValueIsoCurrencyCode = default!;
 #endif
         /// <summary>For `credit`-type accounts, the credit limit.For `depository`-type accounts, the pre-arranged overdraft limit.This field is typically only available for `credit`-type accounts.</summary>
-        public double? Limit { get; set; }
+        public double? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
+        private double? _explicitNullValueLimit = default!;
         /// <summary>The average historical balance over the most recent 30 days. `null` if it could not be computed.</summary>
-        public double? MostRecentThirtyDayAverageBalance { get; set; }
+        public double? MostRecentThirtyDayAverageBalance { get => _explicitNullValueMostRecentThirtyDayAverageBalance; set { _explicitNullValueMostRecentThirtyDayAverageBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("most_recent_thirty_day_average_balance"); else _explicitNullProperties?.Remove("most_recent_thirty_day_average_balance"); } }
+        private double? _explicitNullValueMostRecentThirtyDayAverageBalance = default!;
         /// <summary>The unofficial currency code associated with the amount or balance. Always `null` if `iso_currency_code` is non-null.Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnofficialCurrencyCode { get; set; }
+        public string? UnofficialCurrencyCode { get => _explicitNullValueUnofficialCurrencyCode; set { _explicitNullValueUnofficialCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unofficial_currency_code"); else _explicitNullProperties?.Remove("unofficial_currency_code"); } }
+        private string? _explicitNullValueUnofficialCurrencyCode = default!;
 #nullable restore
 #else
-        public string UnofficialCurrencyCode { get; set; }
+        public string UnofficialCurrencyCode { get => _explicitNullValueUnofficialCurrencyCode; set { _explicitNullValueUnofficialCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unofficial_currency_code"); else _explicitNullProperties?.Remove("unofficial_currency_code"); } }
+        private string _explicitNullValueUnofficialCurrencyCode = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAccountBalances"/> and sets the default values.
@@ -64,7 +90,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAccountBalances CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAccountBalances();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAccountBalances(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,6 +125,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDoubleValue("limit", Limit);
             writer.WriteDoubleValue("most_recent_thirty_day_average_balance", MostRecentThirtyDayAverageBalance);
             writer.WriteStringValue("unofficial_currency_code", UnofficialCurrencyCode);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

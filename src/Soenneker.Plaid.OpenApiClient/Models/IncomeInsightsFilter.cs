@@ -12,24 +12,37 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IncomeInsightsFilter : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("excluded_categories") is { } nullNodeExcludedCategories && nullNodeExcludedCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedCategories = null;
+            if (parseNode.GetChildNode("included_categories") is { } nullNodeIncludedCategories && nullNodeIncludedCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludedCategories = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Excludes income streams matching the specified categories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludedCategories { get; set; }
+        public List<string>? ExcludedCategories { get => _explicitNullValueExcludedCategories; set { _explicitNullValueExcludedCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_categories"); else _explicitNullProperties?.Remove("excluded_categories"); } }
+        private List<string>? _explicitNullValueExcludedCategories = default!;
 #nullable restore
 #else
-        public List<string> ExcludedCategories { get; set; }
+        public List<string> ExcludedCategories { get => _explicitNullValueExcludedCategories; set { _explicitNullValueExcludedCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_categories"); else _explicitNullProperties?.Remove("excluded_categories"); } }
+        private List<string> _explicitNullValueExcludedCategories = default!;
 #endif
         /// <summary>Includes income streams matching the specified categories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IncludedCategories { get; set; }
+        public List<string>? IncludedCategories { get => _explicitNullValueIncludedCategories; set { _explicitNullValueIncludedCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("included_categories"); else _explicitNullProperties?.Remove("included_categories"); } }
+        private List<string>? _explicitNullValueIncludedCategories = default!;
 #nullable restore
 #else
-        public List<string> IncludedCategories { get; set; }
+        public List<string> IncludedCategories { get => _explicitNullValueIncludedCategories; set { _explicitNullValueIncludedCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("included_categories"); else _explicitNullProperties?.Remove("included_categories"); } }
+        private List<string> _explicitNullValueIncludedCategories = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsightsFilter"/> and sets the default values.
@@ -46,7 +59,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsightsFilter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsightsFilter();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsightsFilter(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +84,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("excluded_categories", ExcludedCategories);
             writer.WriteCollectionOfPrimitiveValues<string>("included_categories", IncludedCategories);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

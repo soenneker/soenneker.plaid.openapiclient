@@ -12,24 +12,37 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SignalScores : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bank_initiated_return_risk") is { } nullNodeBankInitiatedReturnRisk && nullNodeBankInitiatedReturnRisk.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankInitiatedReturnRisk = null;
+            if (parseNode.GetChildNode("customer_initiated_return_risk") is { } nullNodeCustomerInitiatedReturnRisk && nullNodeCustomerInitiatedReturnRisk.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerInitiatedReturnRisk = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The object contains a risk score and a risk tier that evaluate the transaction return risk because an account is overdrawn or because an ineligible account is used. Common return codes in this category include: &quot;R01&quot;, &quot;R02&quot;, &quot;R03&quot;, &quot;R04&quot;, &quot;R06&quot;, &quot;R08&quot;, &quot;R09&quot;, &quot;R13&quot;, &quot;R16&quot;, &quot;R17&quot;, &quot;R20&quot;, &quot;R23&quot;. These returns have a turnaround time of 2 banking days.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BankInitiatedReturnRisk? BankInitiatedReturnRisk { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BankInitiatedReturnRisk? BankInitiatedReturnRisk { get => _explicitNullValueBankInitiatedReturnRisk; set { _explicitNullValueBankInitiatedReturnRisk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_initiated_return_risk"); else _explicitNullProperties?.Remove("bank_initiated_return_risk"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BankInitiatedReturnRisk? _explicitNullValueBankInitiatedReturnRisk = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BankInitiatedReturnRisk BankInitiatedReturnRisk { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BankInitiatedReturnRisk BankInitiatedReturnRisk { get => _explicitNullValueBankInitiatedReturnRisk; set { _explicitNullValueBankInitiatedReturnRisk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_initiated_return_risk"); else _explicitNullProperties?.Remove("bank_initiated_return_risk"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BankInitiatedReturnRisk _explicitNullValueBankInitiatedReturnRisk = default!;
 #endif
         /// <summary>The object contains a risk score and a risk tier that evaluate the transaction return risk of an unauthorized debit. Common return codes in this category include: &quot;R05&quot;, &quot;R07&quot;, &quot;R10&quot;, &quot;R11&quot;, &quot;R29&quot;. These returns typically have a return time frame of up to 60 calendar days. During this period, customers of financial institutions can dispute a transaction as unauthorized.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CustomerInitiatedReturnRisk? CustomerInitiatedReturnRisk { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CustomerInitiatedReturnRisk? CustomerInitiatedReturnRisk { get => _explicitNullValueCustomerInitiatedReturnRisk; set { _explicitNullValueCustomerInitiatedReturnRisk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_initiated_return_risk"); else _explicitNullProperties?.Remove("customer_initiated_return_risk"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CustomerInitiatedReturnRisk? _explicitNullValueCustomerInitiatedReturnRisk = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CustomerInitiatedReturnRisk CustomerInitiatedReturnRisk { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CustomerInitiatedReturnRisk CustomerInitiatedReturnRisk { get => _explicitNullValueCustomerInitiatedReturnRisk; set { _explicitNullValueCustomerInitiatedReturnRisk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_initiated_return_risk"); else _explicitNullProperties?.Remove("customer_initiated_return_risk"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CustomerInitiatedReturnRisk _explicitNullValueCustomerInitiatedReturnRisk = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.SignalScores"/> and sets the default values.
@@ -46,7 +59,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.SignalScores CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.SignalScores();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.SignalScores(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +84,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BankInitiatedReturnRisk>("bank_initiated_return_risk", BankInitiatedReturnRisk);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CustomerInitiatedReturnRisk>("customer_initiated_return_risk", CustomerInitiatedReturnRisk);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

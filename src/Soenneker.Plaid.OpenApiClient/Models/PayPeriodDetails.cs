@@ -13,32 +13,56 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PayPeriodDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("check_amount") is { } nullNodeCheckAmount && nullNodeCheckAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckAmount = null;
+            if (parseNode.GetChildNode("distribution_breakdown") is { } nullNodeDistributionBreakdown && nullNodeDistributionBreakdown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DistributionBreakdown = null;
+            if (parseNode.GetChildNode("end_date") is { } nullNodeEndDate && nullNodeEndDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndDate = null;
+            if (parseNode.GetChildNode("gross_earnings") is { } nullNodeGrossEarnings && nullNodeGrossEarnings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrossEarnings = null;
+            if (parseNode.GetChildNode("pay_date") is { } nullNodePayDate && nullNodePayDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayDate = null;
+            if (parseNode.GetChildNode("pay_day") is { } nullNodePayDay && nullNodePayDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayDay = null;
+            if (parseNode.GetChildNode("pay_frequency") is { } nullNodePayFrequency && nullNodePayFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayFrequency = null;
+            if (parseNode.GetChildNode("start_date") is { } nullNodeStartDate && nullNodeStartDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartDate = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount of the paycheck.</summary>
-        public double? CheckAmount { get; set; }
+        public double? CheckAmount { get => _explicitNullValueCheckAmount; set { _explicitNullValueCheckAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_amount"); else _explicitNullProperties?.Remove("check_amount"); } }
+        private double? _explicitNullValueCheckAmount = default!;
         /// <summary>The distribution_breakdown property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.DistributionBreakdown>? DistributionBreakdown { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.DistributionBreakdown>? DistributionBreakdown { get => _explicitNullValueDistributionBreakdown; set { _explicitNullValueDistributionBreakdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distribution_breakdown"); else _explicitNullProperties?.Remove("distribution_breakdown"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.DistributionBreakdown>? _explicitNullValueDistributionBreakdown = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.DistributionBreakdown> DistributionBreakdown { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.DistributionBreakdown> DistributionBreakdown { get => _explicitNullValueDistributionBreakdown; set { _explicitNullValueDistributionBreakdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distribution_breakdown"); else _explicitNullProperties?.Remove("distribution_breakdown"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.DistributionBreakdown> _explicitNullValueDistributionBreakdown = default!;
 #endif
         /// <summary>The pay period end date, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format: &quot;yyyy-mm-dd&quot;.</summary>
-        public Date? EndDate { get; set; }
+        public Date? EndDate { get => _explicitNullValueEndDate; set { _explicitNullValueEndDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_date"); else _explicitNullProperties?.Remove("end_date"); } }
+        private Date? _explicitNullValueEndDate = default!;
         /// <summary>Total earnings before tax/deductions.</summary>
-        public double? GrossEarnings { get; set; }
+        public double? GrossEarnings { get => _explicitNullValueGrossEarnings; set { _explicitNullValueGrossEarnings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gross_earnings"); else _explicitNullProperties?.Remove("gross_earnings"); } }
+        private double? _explicitNullValueGrossEarnings = default!;
         /// <summary>The date on which the paystub was issued, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (&quot;yyyy-mm-dd&quot;).</summary>
-        public Date? PayDate { get; set; }
+        public Date? PayDate { get => _explicitNullValuePayDate; set { _explicitNullValuePayDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_date"); else _explicitNullProperties?.Remove("pay_date"); } }
+        private Date? _explicitNullValuePayDate = default!;
         /// <summary>The date on which the paystub was issued, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (&quot;yyyy-mm-dd&quot;).</summary>
         [Obsolete("")]
-        public Date? PayDay { get; set; }
+        public Date? PayDay { get => _explicitNullValuePayDay; set { _explicitNullValuePayDay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_day"); else _explicitNullProperties?.Remove("pay_day"); } }
+        private Date? _explicitNullValuePayDay = default!;
         /// <summary>The frequency at which an individual is paid.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PayPeriodDetailsPayFrequency? PayFrequency { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PayPeriodDetailsPayFrequency? PayFrequency { get => _explicitNullValuePayFrequency; set { _explicitNullValuePayFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_frequency"); else _explicitNullProperties?.Remove("pay_frequency"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PayPeriodDetailsPayFrequency? _explicitNullValuePayFrequency = default!;
         /// <summary>The pay period start date, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format: &quot;yyyy-mm-dd&quot;.</summary>
-        public Date? StartDate { get; set; }
+        public Date? StartDate { get => _explicitNullValueStartDate; set { _explicitNullValueStartDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_date"); else _explicitNullProperties?.Remove("start_date"); } }
+        private Date? _explicitNullValueStartDate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PayPeriodDetails"/> and sets the default values.
         /// </summary>
@@ -54,7 +78,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.PayPeriodDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.PayPeriodDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.PayPeriodDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +113,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDateValue("pay_day", PayDay);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PayPeriodDetailsPayFrequency>("pay_frequency", PayFrequency);
             writer.WriteDateValue("start_date", StartDate);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

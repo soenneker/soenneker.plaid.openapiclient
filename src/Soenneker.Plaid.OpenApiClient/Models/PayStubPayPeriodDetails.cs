@@ -13,52 +13,83 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PayStubPayPeriodDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("distribution_breakdown") is { } nullNodeDistributionBreakdown && nullNodeDistributionBreakdown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DistributionBreakdown = null;
+            if (parseNode.GetChildNode("end_date") is { } nullNodeEndDate && nullNodeEndDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndDate = null;
+            if (parseNode.GetChildNode("gross_earnings") is { } nullNodeGrossEarnings && nullNodeGrossEarnings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrossEarnings = null;
+            if (parseNode.GetChildNode("iso_currency_code") is { } nullNodeIsoCurrencyCode && nullNodeIsoCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsoCurrencyCode = null;
+            if (parseNode.GetChildNode("pay_amount") is { } nullNodePayAmount && nullNodePayAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayAmount = null;
+            if (parseNode.GetChildNode("pay_basis") is { } nullNodePayBasis && nullNodePayBasis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayBasis = null;
+            if (parseNode.GetChildNode("pay_date") is { } nullNodePayDate && nullNodePayDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayDate = null;
+            if (parseNode.GetChildNode("pay_frequency") is { } nullNodePayFrequency && nullNodePayFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayFrequency = null;
+            if (parseNode.GetChildNode("start_date") is { } nullNodeStartDate && nullNodeStartDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartDate = null;
+            if (parseNode.GetChildNode("unofficial_currency_code") is { } nullNodeUnofficialCurrencyCode && nullNodeUnofficialCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnofficialCurrencyCode = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The distribution_breakdown property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.PayStubDistributionBreakdown>? DistributionBreakdown { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.PayStubDistributionBreakdown>? DistributionBreakdown { get => _explicitNullValueDistributionBreakdown; set { _explicitNullValueDistributionBreakdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distribution_breakdown"); else _explicitNullProperties?.Remove("distribution_breakdown"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.PayStubDistributionBreakdown>? _explicitNullValueDistributionBreakdown = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.PayStubDistributionBreakdown> DistributionBreakdown { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.PayStubDistributionBreakdown> DistributionBreakdown { get => _explicitNullValueDistributionBreakdown; set { _explicitNullValueDistributionBreakdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distribution_breakdown"); else _explicitNullProperties?.Remove("distribution_breakdown"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.PayStubDistributionBreakdown> _explicitNullValueDistributionBreakdown = default!;
 #endif
         /// <summary>The date on which the pay period ended, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (&quot;yyyy-mm-dd&quot;).</summary>
-        public Date? EndDate { get; set; }
+        public Date? EndDate { get => _explicitNullValueEndDate; set { _explicitNullValueEndDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_date"); else _explicitNullProperties?.Remove("end_date"); } }
+        private Date? _explicitNullValueEndDate = default!;
         /// <summary>Total earnings before tax/deductions.</summary>
-        public double? GrossEarnings { get; set; }
+        public double? GrossEarnings { get => _explicitNullValueGrossEarnings; set { _explicitNullValueGrossEarnings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gross_earnings"); else _explicitNullProperties?.Remove("gross_earnings"); } }
+        private double? _explicitNullValueGrossEarnings = default!;
         /// <summary>The ISO-4217 currency code of the net pay. Always `null` if `unofficial_currency_code` is non-null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IsoCurrencyCode { get; set; }
+        public string? IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
+        private string? _explicitNullValueIsoCurrencyCode = default!;
 #nullable restore
 #else
-        public string IsoCurrencyCode { get; set; }
+        public string IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
+        private string _explicitNullValueIsoCurrencyCode = default!;
 #endif
         /// <summary>The amount of the paycheck.</summary>
-        public double? PayAmount { get; set; }
+        public double? PayAmount { get => _explicitNullValuePayAmount; set { _explicitNullValuePayAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_amount"); else _explicitNullProperties?.Remove("pay_amount"); } }
+        private double? _explicitNullValuePayAmount = default!;
         /// <summary>The explicit pay basis on the paystub (if present).</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubPayBasisType? PayBasis { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubPayBasisType? PayBasis { get => _explicitNullValuePayBasis; set { _explicitNullValuePayBasis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_basis"); else _explicitNullProperties?.Remove("pay_basis"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubPayBasisType? _explicitNullValuePayBasis = default!;
         /// <summary>The date on which the pay stub was issued, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (&quot;yyyy-mm-dd&quot;).</summary>
-        public Date? PayDate { get; set; }
+        public Date? PayDate { get => _explicitNullValuePayDate; set { _explicitNullValuePayDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_date"); else _explicitNullProperties?.Remove("pay_date"); } }
+        private Date? _explicitNullValuePayDate = default!;
         /// <summary>The frequency at which an individual is paid.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayFrequency { get; set; }
+        public string? PayFrequency { get => _explicitNullValuePayFrequency; set { _explicitNullValuePayFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_frequency"); else _explicitNullProperties?.Remove("pay_frequency"); } }
+        private string? _explicitNullValuePayFrequency = default!;
 #nullable restore
 #else
-        public string PayFrequency { get; set; }
+        public string PayFrequency { get => _explicitNullValuePayFrequency; set { _explicitNullValuePayFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_frequency"); else _explicitNullProperties?.Remove("pay_frequency"); } }
+        private string _explicitNullValuePayFrequency = default!;
 #endif
         /// <summary>The date on which the pay period started, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (&quot;yyyy-mm-dd&quot;).</summary>
-        public Date? StartDate { get; set; }
+        public Date? StartDate { get => _explicitNullValueStartDate; set { _explicitNullValueStartDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_date"); else _explicitNullProperties?.Remove("start_date"); } }
+        private Date? _explicitNullValueStartDate = default!;
         /// <summary>The unofficial currency code associated with the net pay. Always `null` if `iso_currency_code` is non-`null`. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `unofficial_currency_code`s.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnofficialCurrencyCode { get; set; }
+        public string? UnofficialCurrencyCode { get => _explicitNullValueUnofficialCurrencyCode; set { _explicitNullValueUnofficialCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unofficial_currency_code"); else _explicitNullProperties?.Remove("unofficial_currency_code"); } }
+        private string? _explicitNullValueUnofficialCurrencyCode = default!;
 #nullable restore
 #else
-        public string UnofficialCurrencyCode { get; set; }
+        public string UnofficialCurrencyCode { get => _explicitNullValueUnofficialCurrencyCode; set { _explicitNullValueUnofficialCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unofficial_currency_code"); else _explicitNullProperties?.Remove("unofficial_currency_code"); } }
+        private string _explicitNullValueUnofficialCurrencyCode = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PayStubPayPeriodDetails"/> and sets the default values.
@@ -75,7 +106,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.PayStubPayPeriodDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.PayStubPayPeriodDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.PayStubPayPeriodDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -114,6 +145,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("pay_frequency", PayFrequency);
             writer.WriteDateValue("start_date", StartDate);
             writer.WriteStringValue("unofficial_currency_code", UnofficialCurrencyCode);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,15 +12,28 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccountProductAccessNullable : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_data") is { } nullNodeAccountData && nullNodeAccountData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountData = null;
+            if (parseNode.GetChildNode("statements") is { } nullNodeStatements && nullNodeStatements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Statements = null;
+            if (parseNode.GetChildNode("tax_documents") is { } nullNodeTaxDocuments && nullNodeTaxDocuments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxDocuments = null;
+        }
+
         /// <summary>Allow the application to access account data. Only used by certain partners. If relevant to the partner and unset, defaults to `true`.</summary>
-        public bool? AccountData { get; set; }
+        public bool? AccountData { get => _explicitNullValueAccountData; set { _explicitNullValueAccountData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_data"); else _explicitNullProperties?.Remove("account_data"); } }
+        private bool? _explicitNullValueAccountData = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Allow the application to access bank statements. Only used by certain partners. If relevant to the partner and unset, defaults to `true`.</summary>
-        public bool? Statements { get; set; }
+        public bool? Statements { get => _explicitNullValueStatements; set { _explicitNullValueStatements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statements"); else _explicitNullProperties?.Remove("statements"); } }
+        private bool? _explicitNullValueStatements = default!;
         /// <summary>Allow the application to access tax documents. Only used by certain partners. If relevant to the partner and unset, defaults to `true`.</summary>
-        public bool? TaxDocuments { get; set; }
+        public bool? TaxDocuments { get => _explicitNullValueTaxDocuments; set { _explicitNullValueTaxDocuments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax_documents"); else _explicitNullProperties?.Remove("tax_documents"); } }
+        private bool? _explicitNullValueTaxDocuments = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.AccountProductAccessNullable"/> and sets the default values.
         /// </summary>
@@ -39,7 +52,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.AccountProductAccessNullable CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.AccountProductAccessNullable();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.AccountProductAccessNullable(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,6 +77,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteBoolValue("account_data", AccountData);
             writer.WriteBoolValue("statements", Statements);
             writer.WriteBoolValue("tax_documents", TaxDocuments);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

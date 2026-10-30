@@ -12,42 +12,61 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Earnings : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("breakdown") is { } nullNodeBreakdown && nullNodeBreakdown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Breakdown = null;
+            if (parseNode.GetChildNode("subtotals") is { } nullNodeSubtotals && nullNodeSubtotals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subtotals = null;
+            if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
+            if (parseNode.GetChildNode("totals") is { } nullNodeTotals && nullNodeTotals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Totals = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The breakdown property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.EarningsBreakdown>? Breakdown { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.EarningsBreakdown>? Breakdown { get => _explicitNullValueBreakdown; set { _explicitNullValueBreakdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("breakdown"); else _explicitNullProperties?.Remove("breakdown"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.EarningsBreakdown>? _explicitNullValueBreakdown = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.EarningsBreakdown> Breakdown { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.EarningsBreakdown> Breakdown { get => _explicitNullValueBreakdown; set { _explicitNullValueBreakdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("breakdown"); else _explicitNullProperties?.Remove("breakdown"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.EarningsBreakdown> _explicitNullValueBreakdown = default!;
 #endif
         /// <summary>The subtotals property</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.EarningsTotal>? Subtotals { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.EarningsTotal>? Subtotals { get => _explicitNullValueSubtotals; set { _explicitNullValueSubtotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtotals"); else _explicitNullProperties?.Remove("subtotals"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.EarningsTotal>? _explicitNullValueSubtotals = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.EarningsTotal> Subtotals { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.EarningsTotal> Subtotals { get => _explicitNullValueSubtotals; set { _explicitNullValueSubtotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtotals"); else _explicitNullProperties?.Remove("subtotals"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.EarningsTotal> _explicitNullValueSubtotals = default!;
 #endif
         /// <summary>An object representing both the current pay period and year to date amount for an earning category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.EarningsTotal? Total { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.EarningsTotal? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.EarningsTotal? _explicitNullValueTotal = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.EarningsTotal Total { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.EarningsTotal Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.EarningsTotal _explicitNullValueTotal = default!;
 #endif
         /// <summary>The totals property</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.EarningsTotal>? Totals { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.EarningsTotal>? Totals { get => _explicitNullValueTotals; set { _explicitNullValueTotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totals"); else _explicitNullProperties?.Remove("totals"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.EarningsTotal>? _explicitNullValueTotals = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.EarningsTotal> Totals { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.EarningsTotal> Totals { get => _explicitNullValueTotals; set { _explicitNullValueTotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totals"); else _explicitNullProperties?.Remove("totals"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.EarningsTotal> _explicitNullValueTotals = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.Earnings"/> and sets the default values.
@@ -64,7 +83,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.Earnings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.Earnings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.Earnings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -91,6 +110,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.EarningsTotal>("subtotals", Subtotals);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.EarningsTotal>("total", Total);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.EarningsTotal>("totals", Totals);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

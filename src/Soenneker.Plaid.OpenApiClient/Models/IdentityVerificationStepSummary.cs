@@ -12,23 +12,44 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IdentityVerificationStepSummary : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accept_tos") is { } nullNodeAcceptTos && nullNodeAcceptTos.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptTos = null;
+            if (parseNode.GetChildNode("documentary_verification") is { } nullNodeDocumentaryVerification && nullNodeDocumentaryVerification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentaryVerification = null;
+            if (parseNode.GetChildNode("kyc_check") is { } nullNodeKycCheck && nullNodeKycCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KycCheck = null;
+            if (parseNode.GetChildNode("risk_check") is { } nullNodeRiskCheck && nullNodeRiskCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskCheck = null;
+            if (parseNode.GetChildNode("selfie_check") is { } nullNodeSelfieCheck && nullNodeSelfieCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SelfieCheck = null;
+            if (parseNode.GetChildNode("verify_sms") is { } nullNodeVerifySms && nullNodeVerifySms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerifySms = null;
+            if (parseNode.GetChildNode("watchlist_screening") is { } nullNodeWatchlistScreening && nullNodeWatchlistScreening.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WatchlistScreening = null;
+        }
+
         /// <summary>The status of a step in the Identity Verification process.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus? AcceptTos { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus? AcceptTos { get => _explicitNullValueAcceptTos; set { _explicitNullValueAcceptTos = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accept_tos"); else _explicitNullProperties?.Remove("accept_tos"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus? _explicitNullValueAcceptTos = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The status of a step in the Identity Verification process.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus? DocumentaryVerification { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus? DocumentaryVerification { get => _explicitNullValueDocumentaryVerification; set { _explicitNullValueDocumentaryVerification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentary_verification"); else _explicitNullProperties?.Remove("documentary_verification"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus? _explicitNullValueDocumentaryVerification = default!;
         /// <summary>The status of a step in the Identity Verification process.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus? KycCheck { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus? KycCheck { get => _explicitNullValueKycCheck; set { _explicitNullValueKycCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kyc_check"); else _explicitNullProperties?.Remove("kyc_check"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus? _explicitNullValueKycCheck = default!;
         /// <summary>The status of a step in the Identity Verification process.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus? RiskCheck { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus? RiskCheck { get => _explicitNullValueRiskCheck; set { _explicitNullValueRiskCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_check"); else _explicitNullProperties?.Remove("risk_check"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus? _explicitNullValueRiskCheck = default!;
         /// <summary>The status of a step in the Identity Verification process.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus? SelfieCheck { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus? SelfieCheck { get => _explicitNullValueSelfieCheck; set { _explicitNullValueSelfieCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selfie_check"); else _explicitNullProperties?.Remove("selfie_check"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus? _explicitNullValueSelfieCheck = default!;
         /// <summary>The status of a step in the Identity Verification process.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus? VerifySms { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus? VerifySms { get => _explicitNullValueVerifySms; set { _explicitNullValueVerifySms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verify_sms"); else _explicitNullProperties?.Remove("verify_sms"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus? _explicitNullValueVerifySms = default!;
         /// <summary>The status of a step in the Identity Verification process.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus? WatchlistScreening { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus? WatchlistScreening { get => _explicitNullValueWatchlistScreening; set { _explicitNullValueWatchlistScreening = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("watchlist_screening"); else _explicitNullProperties?.Remove("watchlist_screening"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus? _explicitNullValueWatchlistScreening = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepSummary"/> and sets the default values.
         /// </summary>
@@ -44,7 +65,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepSummary();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepSummary(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +98,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus>("selfie_check", SelfieCheck);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus>("verify_sms", VerifySms);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus>("watchlist_screening", WatchlistScreening);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,32 +12,48 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InvestmentsAuthAccountDetails401K : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_id") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
+            if (parseNode.GetChildNode("contribution_details") is { } nullNodeContributionDetails && nullNodeContributionDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContributionDetails = null;
+            if (parseNode.GetChildNode("fee_details") is { } nullNodeFeeDetails && nullNodeFeeDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeeDetails = null;
+        }
+
         /// <summary>The ID of the 401k account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountId { get; set; }
+        public string? AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        private string? _explicitNullValueAccountId = default!;
 #nullable restore
 #else
-        public string AccountId { get; set; }
+        public string AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        private string _explicitNullValueAccountId = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Object containing information on contribution transactions for the 401k account. Note that the sum fields in this object represent the total of absolute contribution values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuth401KContributionDetails? ContributionDetails { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuth401KContributionDetails? ContributionDetails { get => _explicitNullValueContributionDetails; set { _explicitNullValueContributionDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contribution_details"); else _explicitNullProperties?.Remove("contribution_details"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuth401KContributionDetails? _explicitNullValueContributionDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuth401KContributionDetails ContributionDetails { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuth401KContributionDetails ContributionDetails { get => _explicitNullValueContributionDetails; set { _explicitNullValueContributionDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contribution_details"); else _explicitNullProperties?.Remove("contribution_details"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuth401KContributionDetails _explicitNullValueContributionDetails = default!;
 #endif
         /// <summary>Object containing information on account fee transactions for the 401k account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuth401KFeeDetails? FeeDetails { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuth401KFeeDetails? FeeDetails { get => _explicitNullValueFeeDetails; set { _explicitNullValueFeeDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fee_details"); else _explicitNullProperties?.Remove("fee_details"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuth401KFeeDetails? _explicitNullValueFeeDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuth401KFeeDetails FeeDetails { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuth401KFeeDetails FeeDetails { get => _explicitNullValueFeeDetails; set { _explicitNullValueFeeDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fee_details"); else _explicitNullProperties?.Remove("fee_details"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuth401KFeeDetails _explicitNullValueFeeDetails = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthAccountDetails401K"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthAccountDetails401K CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthAccountDetails401K();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthAccountDetails401K(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("account_id", AccountId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuth401KContributionDetails>("contribution_details", ContributionDetails);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuth401KFeeDetails>("fee_details", FeeDetails);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

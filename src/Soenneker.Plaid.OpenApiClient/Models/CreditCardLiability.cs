@@ -13,41 +13,70 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreditCardLiability : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_id") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
+            if (parseNode.GetChildNode("aprs") is { } nullNodeAprs && nullNodeAprs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Aprs = null;
+            if (parseNode.GetChildNode("cash_advance_limit") is { } nullNodeCashAdvanceLimit && nullNodeCashAdvanceLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CashAdvanceLimit = null;
+            if (parseNode.GetChildNode("is_overdue") is { } nullNodeIsOverdue && nullNodeIsOverdue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsOverdue = null;
+            if (parseNode.GetChildNode("last_payment_amount") is { } nullNodeLastPaymentAmount && nullNodeLastPaymentAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastPaymentAmount = null;
+            if (parseNode.GetChildNode("last_payment_date") is { } nullNodeLastPaymentDate && nullNodeLastPaymentDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastPaymentDate = null;
+            if (parseNode.GetChildNode("last_statement_balance") is { } nullNodeLastStatementBalance && nullNodeLastStatementBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastStatementBalance = null;
+            if (parseNode.GetChildNode("last_statement_issue_date") is { } nullNodeLastStatementIssueDate && nullNodeLastStatementIssueDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastStatementIssueDate = null;
+            if (parseNode.GetChildNode("minimum_payment_amount") is { } nullNodeMinimumPaymentAmount && nullNodeMinimumPaymentAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumPaymentAmount = null;
+            if (parseNode.GetChildNode("next_payment_due_date") is { } nullNodeNextPaymentDueDate && nullNodeNextPaymentDueDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextPaymentDueDate = null;
+        }
+
         /// <summary>The ID of the account that this liability belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountId { get; set; }
+        public string? AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        private string? _explicitNullValueAccountId = default!;
 #nullable restore
 #else
-        public string AccountId { get; set; }
+        public string AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        private string _explicitNullValueAccountId = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The various interest rates that apply to the account. APR information is not provided by all card issuers; if APR data is not available, this array will be empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Apr>? Aprs { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Apr>? Aprs { get => _explicitNullValueAprs; set { _explicitNullValueAprs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aprs"); else _explicitNullProperties?.Remove("aprs"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.Apr>? _explicitNullValueAprs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Apr> Aprs { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Apr> Aprs { get => _explicitNullValueAprs; set { _explicitNullValueAprs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aprs"); else _explicitNullProperties?.Remove("aprs"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.Apr> _explicitNullValueAprs = default!;
 #endif
         /// <summary>The credit limit for cash advances on the account.</summary>
-        public double? CashAdvanceLimit { get; set; }
+        public double? CashAdvanceLimit { get => _explicitNullValueCashAdvanceLimit; set { _explicitNullValueCashAdvanceLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cash_advance_limit"); else _explicitNullProperties?.Remove("cash_advance_limit"); } }
+        private double? _explicitNullValueCashAdvanceLimit = default!;
         /// <summary>true if a payment is currently overdue. Availability for this field is limited.</summary>
-        public bool? IsOverdue { get; set; }
+        public bool? IsOverdue { get => _explicitNullValueIsOverdue; set { _explicitNullValueIsOverdue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_overdue"); else _explicitNullProperties?.Remove("is_overdue"); } }
+        private bool? _explicitNullValueIsOverdue = default!;
         /// <summary>The amount of the last payment.</summary>
-        public double? LastPaymentAmount { get; set; }
+        public double? LastPaymentAmount { get => _explicitNullValueLastPaymentAmount; set { _explicitNullValueLastPaymentAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_payment_amount"); else _explicitNullProperties?.Remove("last_payment_amount"); } }
+        private double? _explicitNullValueLastPaymentAmount = default!;
         /// <summary>The date of the last payment. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD). Availability for this field is limited.</summary>
-        public Date? LastPaymentDate { get; set; }
+        public Date? LastPaymentDate { get => _explicitNullValueLastPaymentDate; set { _explicitNullValueLastPaymentDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_payment_date"); else _explicitNullProperties?.Remove("last_payment_date"); } }
+        private Date? _explicitNullValueLastPaymentDate = default!;
         /// <summary>The total amount owed as of the last statement issued</summary>
-        public double? LastStatementBalance { get; set; }
+        public double? LastStatementBalance { get => _explicitNullValueLastStatementBalance; set { _explicitNullValueLastStatementBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_statement_balance"); else _explicitNullProperties?.Remove("last_statement_balance"); } }
+        private double? _explicitNullValueLastStatementBalance = default!;
         /// <summary>The date of the last statement. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).</summary>
-        public Date? LastStatementIssueDate { get; set; }
+        public Date? LastStatementIssueDate { get => _explicitNullValueLastStatementIssueDate; set { _explicitNullValueLastStatementIssueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_statement_issue_date"); else _explicitNullProperties?.Remove("last_statement_issue_date"); } }
+        private Date? _explicitNullValueLastStatementIssueDate = default!;
         /// <summary>The minimum payment due for the next billing cycle.</summary>
-        public double? MinimumPaymentAmount { get; set; }
+        public double? MinimumPaymentAmount { get => _explicitNullValueMinimumPaymentAmount; set { _explicitNullValueMinimumPaymentAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimum_payment_amount"); else _explicitNullProperties?.Remove("minimum_payment_amount"); } }
+        private double? _explicitNullValueMinimumPaymentAmount = default!;
         /// <summary>The due date for the next payment. The due date is `null` if a payment is not expected. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).</summary>
-        public Date? NextPaymentDueDate { get; set; }
+        public Date? NextPaymentDueDate { get => _explicitNullValueNextPaymentDueDate; set { _explicitNullValueNextPaymentDueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_payment_due_date"); else _explicitNullProperties?.Remove("next_payment_due_date"); } }
+        private Date? _explicitNullValueNextPaymentDueDate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CreditCardLiability"/> and sets the default values.
         /// </summary>
@@ -63,7 +92,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CreditCardLiability CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CreditCardLiability();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CreditCardLiability(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,6 +131,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDateValue("last_statement_issue_date", LastStatementIssueDate);
             writer.WriteDoubleValue("minimum_payment_amount", MinimumPaymentAmount);
             writer.WriteDateValue("next_payment_due_date", NextPaymentDueDate);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

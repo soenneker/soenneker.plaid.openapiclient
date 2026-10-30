@@ -12,91 +12,135 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccountBase : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_id") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
+            if (parseNode.GetChildNode("apy") is { } nullNodeApy && nullNodeApy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Apy = null;
+            if (parseNode.GetChildNode("balances") is { } nullNodeBalances && nullNodeBalances.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Balances = null;
+            if (parseNode.GetChildNode("holder_category") is { } nullNodeHolderCategory && nullNodeHolderCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HolderCategory = null;
+            if (parseNode.GetChildNode("mask") is { } nullNodeMask && nullNodeMask.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mask = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("official_name") is { } nullNodeOfficialName && nullNodeOfficialName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OfficialName = null;
+            if (parseNode.GetChildNode("paired_account_id") is { } nullNodePairedAccountId && nullNodePairedAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PairedAccountId = null;
+            if (parseNode.GetChildNode("persistent_account_id") is { } nullNodePersistentAccountId && nullNodePersistentAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersistentAccountId = null;
+            if (parseNode.GetChildNode("subtype") is { } nullNodeSubtype && nullNodeSubtype.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subtype = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("verification_insights") is { } nullNodeVerificationInsights && nullNodeVerificationInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerificationInsights = null;
+            if (parseNode.GetChildNode("verification_name") is { } nullNodeVerificationName && nullNodeVerificationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerificationName = null;
+            if (parseNode.GetChildNode("verification_status") is { } nullNodeVerificationStatus && nullNodeVerificationStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerificationStatus = null;
+        }
+
         /// <summary>Plaid&apos;s unique identifier for the account. This value will not change unless Plaid can&apos;t reconcile the account with the data returned by the financial institution. This may occur, for example, when the name of the account changes. If this happens a new `account_id` will be assigned to the account.The `account_id` can also change if the `access_token` is deleted and the same credentials that were used to generate that `access_token` are used to generate a new `access_token` on a later date. In that case, the new `account_id` will be different from the old `account_id`.If an account with a specific `account_id` disappears instead of changing, the account is likely closed. Closed accounts are not returned by the Plaid API.When using a CRA endpoint (an endpoint associated with Plaid Check Consumer Report, i.e. any endpoint beginning with `/cra/`), the `account_id` returned will not match the `account_id` returned by a non-CRA endpoint.Like all Plaid identifiers, the `account_id` is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountId { get; set; }
+        public string? AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        private string? _explicitNullValueAccountId = default!;
 #nullable restore
 #else
-        public string AccountId { get; set; }
+        public string AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        private string _explicitNullValueAccountId = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The annual percentage yield (APY) on an interest-bearing deposit account, expressed as a percentage (e.g. `4.25` means 4.25%). In the event that the APY is not provided by the financial institution, Plaid will return a value of `null`.</summary>
-        public double? Apy { get; set; }
+        public double? Apy { get => _explicitNullValueApy; set { _explicitNullValueApy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apy"); else _explicitNullProperties?.Remove("apy"); } }
+        private double? _explicitNullValueApy = default!;
         /// <summary>A set of fields describing the balance for an account. For real-time values, use `/accounts/balance/get` or `/signal/evaluate` (with a Balance-only ruleset), which are fetched live from the institution at request time. Values returned by other endpoints may be cached, or adjusted by Plaid to reflect transaction activity received since the last refresh.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountBalance? Balances { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AccountBalance? Balances { get => _explicitNullValueBalances; set { _explicitNullValueBalances = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balances"); else _explicitNullProperties?.Remove("balances"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AccountBalance? _explicitNullValueBalances = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountBalance Balances { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AccountBalance Balances { get => _explicitNullValueBalances; set { _explicitNullValueBalances = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balances"); else _explicitNullProperties?.Remove("balances"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AccountBalance _explicitNullValueBalances = default!;
 #endif
         /// <summary>Indicates the account&apos;s categorization as either a personal or a business account. This field is currently in beta; to request access, contact your account manager. Coverage varies by institution, with approximately 70% of accounts populated overall.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountHolderCategory? HolderCategory { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AccountHolderCategory? HolderCategory { get => _explicitNullValueHolderCategory; set { _explicitNullValueHolderCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("holder_category"); else _explicitNullProperties?.Remove("holder_category"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AccountHolderCategory? _explicitNullValueHolderCategory = default!;
         /// <summary>The last 2-4 alphanumeric characters of either the account&apos;s displayed mask or the account&apos;s official account number. Note that the mask may be non-unique between an Item&apos;s accounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Mask { get; set; }
+        public string? Mask { get => _explicitNullValueMask; set { _explicitNullValueMask = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mask"); else _explicitNullProperties?.Remove("mask"); } }
+        private string? _explicitNullValueMask = default!;
 #nullable restore
 #else
-        public string Mask { get; set; }
+        public string Mask { get => _explicitNullValueMask; set { _explicitNullValueMask = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mask"); else _explicitNullProperties?.Remove("mask"); } }
+        private string _explicitNullValueMask = default!;
 #endif
         /// <summary>The name of the account, either assigned by the user or by the financial institution itself</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The official name of the account as given by the financial institution</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OfficialName { get; set; }
+        public string? OfficialName { get => _explicitNullValueOfficialName; set { _explicitNullValueOfficialName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("official_name"); else _explicitNullProperties?.Remove("official_name"); } }
+        private string? _explicitNullValueOfficialName = default!;
 #nullable restore
 #else
-        public string OfficialName { get; set; }
+        public string OfficialName { get => _explicitNullValueOfficialName; set { _explicitNullValueOfficialName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("official_name"); else _explicitNullProperties?.Remove("official_name"); } }
+        private string _explicitNullValueOfficialName = default!;
 #endif
         /// <summary>The `account_id` of the account on the paired Item (see `paired_item_id`) that represents the same bank account as this one. For an account on a Plaid Inc Item, this is the matching account on its paired Plaid Check Item, and the reverse for an account on a Plaid Check Item. Only returned for accounts on an Item that has a paired Item. `null` means the Item has a paired Item but Plaid could not confidently match this account to an account on it. Like `account_id`, this value can change if Plaid re-creates the paired account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PairedAccountId { get; set; }
+        public string? PairedAccountId { get => _explicitNullValuePairedAccountId; set { _explicitNullValuePairedAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paired_account_id"); else _explicitNullProperties?.Remove("paired_account_id"); } }
+        private string? _explicitNullValuePairedAccountId = default!;
 #nullable restore
 #else
-        public string PairedAccountId { get; set; }
+        public string PairedAccountId { get => _explicitNullValuePairedAccountId; set { _explicitNullValuePairedAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paired_account_id"); else _explicitNullProperties?.Remove("paired_account_id"); } }
+        private string _explicitNullValuePairedAccountId = default!;
 #endif
         /// <summary>A unique and persistent identifier for accounts that can be used to trace multiple instances of the same account across different Items for depository accounts. This field is currently supported only for Items at institutions that use Tokenized Account Numbers (i.e., Chase, PNC, and US Bank). Because these accounts have a different account number each time they are linked, this field may be used instead of the account number to uniquely identify an account across multiple Items for payments use cases, helping to reduce duplicate Items or attempted fraud. In Sandbox, this field is populated for TAN-based institutions (`ins_56`, `ins_13`, `ins_127990`) as well as the OAuth Sandbox institution (`ins_127287`); in Production, it will only be populated for accounts at applicable institutions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PersistentAccountId { get; set; }
+        public string? PersistentAccountId { get => _explicitNullValuePersistentAccountId; set { _explicitNullValuePersistentAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("persistent_account_id"); else _explicitNullProperties?.Remove("persistent_account_id"); } }
+        private string? _explicitNullValuePersistentAccountId = default!;
 #nullable restore
 #else
-        public string PersistentAccountId { get; set; }
+        public string PersistentAccountId { get => _explicitNullValuePersistentAccountId; set { _explicitNullValuePersistentAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("persistent_account_id"); else _explicitNullProperties?.Remove("persistent_account_id"); } }
+        private string _explicitNullValuePersistentAccountId = default!;
 #endif
         /// <summary>See the [Account type schema](https://plaid.com/docs/api/accounts/#account-type-schema) for a full listing of account types and corresponding subtypes.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountSubtype? Subtype { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AccountSubtype? Subtype { get => _explicitNullValueSubtype; set { _explicitNullValueSubtype = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtype"); else _explicitNullProperties?.Remove("subtype"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AccountSubtype? _explicitNullValueSubtype = default!;
         /// <summary>`investment:` Investment account. In API versions 2018-05-22 and earlier, this type is called `brokerage` instead.`credit:` Credit card`depository:` Depository account`loan:` Loan account`other:` Non-specified account typeSee the [Account type schema](https://plaid.com/docs/api/accounts#account-type-schema) for a full listing of account types and corresponding subtypes.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountType? Type { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AccountType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AccountType? _explicitNullValueType = default!;
         /// <summary>Insights from performing database verification for the account. Only returned for Auth Items using Database Auth.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsights? VerificationInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsights? VerificationInsights { get => _explicitNullValueVerificationInsights; set { _explicitNullValueVerificationInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verification_insights"); else _explicitNullProperties?.Remove("verification_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsights? _explicitNullValueVerificationInsights = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsights VerificationInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsights VerificationInsights { get => _explicitNullValueVerificationInsights; set { _explicitNullValueVerificationInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verification_insights"); else _explicitNullProperties?.Remove("verification_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsights _explicitNullValueVerificationInsights = default!;
 #endif
         /// <summary>The account holder name that was used for micro-deposit and/or database verification. Only returned for Auth Items created via micro-deposit or database verification. This name was manually-entered by the user during Link, unless it was otherwise provided via the `user.legal_name` request field in `/link/token/create` for the Link session that created the Item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VerificationName { get; set; }
+        public string? VerificationName { get => _explicitNullValueVerificationName; set { _explicitNullValueVerificationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verification_name"); else _explicitNullProperties?.Remove("verification_name"); } }
+        private string? _explicitNullValueVerificationName = default!;
 #nullable restore
 #else
-        public string VerificationName { get; set; }
+        public string VerificationName { get => _explicitNullValueVerificationName; set { _explicitNullValueVerificationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verification_name"); else _explicitNullProperties?.Remove("verification_name"); } }
+        private string _explicitNullValueVerificationName = default!;
 #endif
         /// <summary>Indicates an Item&apos;s micro-deposit-based verification or database verification status. This field is only populated when using Auth and falling back to micro-deposit or database verification. Possible values are:`pending_automatic_verification`: The Item is pending automatic verification.`pending_manual_verification`: The Item is pending manual micro-deposit verification. Items remain in this state until the user successfully verifies the code.`automatically_verified`: The Item has successfully been automatically verified.`manually_verified`: The Item has successfully been manually verified.`verification_expired`: Plaid was unable to automatically verify the deposit within 7 calendar days and will no longer attempt to validate the Item. Users may retry by submitting their information again through Link.`verification_failed`: The Item failed manual micro-deposit verification because the user exhausted all 3 verification attempts. Users may retry by submitting their information again through Link.`unsent`: The Item is pending micro-deposit verification, but Plaid has not yet sent the micro-deposit.`database_insights_fail`: The Item&apos;s numbers have been verified using Plaid&apos;s data sources and have signal for being invalid and/or have no signal for being valid. Typically this indicates that the routing number is invalid, the account number does not match the account number format associated with the routing number, or the account has been reported as closed or frozen. Only returned for Auth Items created via Database Auth.`database_insights_pass`: The Item&apos;s numbers have been verified using Plaid&apos;s data sources: the routing and account number match a routing and account number of an account recognized on the Plaid network, and the account is not known by Plaid to be frozen or closed. Only returned for Auth Items created via Database Auth.`database_insights_pass_with_caution`: The Item&apos;s numbers have been verified using Plaid&apos;s data sources and have some signal for being valid: the routing and account number were not recognized on the Plaid network, but the routing number is valid and the account number is a potential valid account number for that routing number. Only returned for Auth Items created via Database Auth.`database_matched`: (deprecated) The Item has successfully been verified using Plaid&apos;s data sources. Only returned for Auth Items created via Database Match.Omitted or empty string: Neither micro-deposit-based verification nor database verification are being used for the Item.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessAccountVerificationStatus? VerificationStatus { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessAccountVerificationStatus? VerificationStatus { get => _explicitNullValueVerificationStatus; set { _explicitNullValueVerificationStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verification_status"); else _explicitNullProperties?.Remove("verification_status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessAccountVerificationStatus? _explicitNullValueVerificationStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.AccountBase"/> and sets the default values.
         /// </summary>
@@ -112,7 +156,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.AccountBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.AccountBase();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.AccountBase(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -159,6 +203,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsights>("verification_insights", VerificationInsights);
             writer.WriteStringValue("verification_name", VerificationName);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessAccountVerificationStatus>("verification_status", VerificationStatus);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

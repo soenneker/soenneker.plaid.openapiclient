@@ -12,28 +12,45 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccountVerificationInsights : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_number_format") is { } nullNodeAccountNumberFormat && nullNodeAccountNumberFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountNumberFormat = null;
+            if (parseNode.GetChildNode("name_match_score") is { } nullNodeNameMatchScore && nullNodeNameMatchScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NameMatchScore = null;
+            if (parseNode.GetChildNode("network_status") is { } nullNodeNetworkStatus && nullNodeNetworkStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkStatus = null;
+            if (parseNode.GetChildNode("previous_returns") is { } nullNodePreviousReturns && nullNodePreviousReturns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousReturns = null;
+        }
+
         /// <summary>Indicator of account number format validity for institution.`valid`: indicates that the account number has a correct format for the institution.`invalid`: indicates that the account number has an incorrect format for the institution.`unknown`: indicates that there was not enough information to determine whether the format is correct for the institution.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsAccountNumberFormat? AccountNumberFormat { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsAccountNumberFormat? AccountNumberFormat { get => _explicitNullValueAccountNumberFormat; set { _explicitNullValueAccountNumberFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_number_format"); else _explicitNullProperties?.Remove("account_number_format"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsAccountNumberFormat? _explicitNullValueAccountNumberFormat = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates the score of the name match between the given name provided during database verification (available in the [`verification_name`](https://plaid.com/docs/api/products/auth/#auth-get-response-accounts-verification-name) field if using standard Database Auth, or provided in the request if using `/auth/verify`) and matched Plaid network accounts. If defined, will be a value between 0 and 100. Will be undefined if name matching was not enabled for the database verification session or if there were no eligible Plaid network matches to compare the given name with. For Items at Canadian institutions, name matching is not currently supported, so this field will always be omitted.</summary>
-        public int? NameMatchScore { get; set; }
+        public int? NameMatchScore { get => _explicitNullValueNameMatchScore; set { _explicitNullValueNameMatchScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name_match_score"); else _explicitNullProperties?.Remove("name_match_score"); } }
+        private int? _explicitNullValueNameMatchScore = default!;
         /// <summary>Status information about the account and routing number in the Plaid network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsNetworkStatus? NetworkStatus { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsNetworkStatus? NetworkStatus { get => _explicitNullValueNetworkStatus; set { _explicitNullValueNetworkStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_status"); else _explicitNullProperties?.Remove("network_status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsNetworkStatus? _explicitNullValueNetworkStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsNetworkStatus NetworkStatus { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsNetworkStatus NetworkStatus { get => _explicitNullValueNetworkStatus; set { _explicitNullValueNetworkStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_status"); else _explicitNullProperties?.Remove("network_status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsNetworkStatus _explicitNullValueNetworkStatus = default!;
 #endif
         /// <summary>Information about known ACH returns for the account and routing number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsPreviousReturns? PreviousReturns { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsPreviousReturns? PreviousReturns { get => _explicitNullValuePreviousReturns; set { _explicitNullValuePreviousReturns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_returns"); else _explicitNullProperties?.Remove("previous_returns"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsPreviousReturns? _explicitNullValuePreviousReturns = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsPreviousReturns PreviousReturns { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsPreviousReturns PreviousReturns { get => _explicitNullValuePreviousReturns; set { _explicitNullValuePreviousReturns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_returns"); else _explicitNullProperties?.Remove("previous_returns"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsPreviousReturns _explicitNullValuePreviousReturns = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsights"/> and sets the default values.
@@ -50,7 +67,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsights CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsights();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsights(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +94,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteIntValue("name_match_score", NameMatchScore);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsNetworkStatus>("network_status", NetworkStatus);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsPreviousReturns>("previous_returns", PreviousReturns);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

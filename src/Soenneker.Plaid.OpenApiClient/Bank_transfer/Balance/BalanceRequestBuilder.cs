@@ -16,6 +16,7 @@ namespace Soenneker.Plaid.OpenApiClient.Bank_transfer.Balance
     public partial class BalanceRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The getPath property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Bank_transfer.Balance.Get.GetRequestBuilder GetPath
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Bank_transfer.Balance.Get.GetRequestBuilder(PathParameters, RequestAdapter);

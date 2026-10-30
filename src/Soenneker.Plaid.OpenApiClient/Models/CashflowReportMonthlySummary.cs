@@ -13,102 +13,153 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CashflowReportMonthlySummary : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("average_daily_ending_balance") is { } nullNodeAverageDailyEndingBalance && nullNodeAverageDailyEndingBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageDailyEndingBalance = null;
+            if (parseNode.GetChildNode("average_daily_inflow_amount") is { } nullNodeAverageDailyInflowAmount && nullNodeAverageDailyInflowAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageDailyInflowAmount = null;
+            if (parseNode.GetChildNode("average_daily_inflow_transaction_count") is { } nullNodeAverageDailyInflowTransactionCount && nullNodeAverageDailyInflowTransactionCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageDailyInflowTransactionCount = null;
+            if (parseNode.GetChildNode("average_daily_net_cashflow_amount") is { } nullNodeAverageDailyNetCashflowAmount && nullNodeAverageDailyNetCashflowAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageDailyNetCashflowAmount = null;
+            if (parseNode.GetChildNode("average_daily_outflow_amount") is { } nullNodeAverageDailyOutflowAmount && nullNodeAverageDailyOutflowAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageDailyOutflowAmount = null;
+            if (parseNode.GetChildNode("average_daily_outflow_transaction_count") is { } nullNodeAverageDailyOutflowTransactionCount && nullNodeAverageDailyOutflowTransactionCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageDailyOutflowTransactionCount = null;
+            if (parseNode.GetChildNode("end_date") is { } nullNodeEndDate && nullNodeEndDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndDate = null;
+            if (parseNode.GetChildNode("ending_balance") is { } nullNodeEndingBalance && nullNodeEndingBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndingBalance = null;
+            if (parseNode.GetChildNode("negative_ending_balance_day_count") is { } nullNodeNegativeEndingBalanceDayCount && nullNodeNegativeEndingBalanceDayCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NegativeEndingBalanceDayCount = null;
+            if (parseNode.GetChildNode("nsf_transaction_count") is { } nullNodeNsfTransactionCount && nullNodeNsfTransactionCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NsfTransactionCount = null;
+            if (parseNode.GetChildNode("overdraft_transaction_count") is { } nullNodeOverdraftTransactionCount && nullNodeOverdraftTransactionCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverdraftTransactionCount = null;
+            if (parseNode.GetChildNode("start_date") is { } nullNodeStartDate && nullNodeStartDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartDate = null;
+            if (parseNode.GetChildNode("starting_balance") is { } nullNodeStartingBalance && nullNodeStartingBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartingBalance = null;
+            if (parseNode.GetChildNode("total_loan_payment") is { } nullNodeTotalLoanPayment && nullNodeTotalLoanPayment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalLoanPayment = null;
+            if (parseNode.GetChildNode("total_payroll") is { } nullNodeTotalPayroll && nullNodeTotalPayroll.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalPayroll = null;
+            if (parseNode.GetChildNode("total_revenue") is { } nullNodeTotalRevenue && nullNodeTotalRevenue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalRevenue = null;
+            if (parseNode.GetChildNode("total_variable_expense") is { } nullNodeTotalVariableExpense && nullNodeTotalVariableExpense.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalVariableExpense = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Calendar-day average of the ending balance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyEndingBalance? AverageDailyEndingBalance { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyEndingBalance? AverageDailyEndingBalance { get => _explicitNullValueAverageDailyEndingBalance; set { _explicitNullValueAverageDailyEndingBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_daily_ending_balance"); else _explicitNullProperties?.Remove("average_daily_ending_balance"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyEndingBalance? _explicitNullValueAverageDailyEndingBalance = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyEndingBalance AverageDailyEndingBalance { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyEndingBalance AverageDailyEndingBalance { get => _explicitNullValueAverageDailyEndingBalance; set { _explicitNullValueAverageDailyEndingBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_daily_ending_balance"); else _explicitNullProperties?.Remove("average_daily_ending_balance"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyEndingBalance _explicitNullValueAverageDailyEndingBalance = default!;
 #endif
         /// <summary>The average daily sum of inflow transactions, calculated over the month. Always represented as a positive monetary amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyInflowAmount? AverageDailyInflowAmount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyInflowAmount? AverageDailyInflowAmount { get => _explicitNullValueAverageDailyInflowAmount; set { _explicitNullValueAverageDailyInflowAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_daily_inflow_amount"); else _explicitNullProperties?.Remove("average_daily_inflow_amount"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyInflowAmount? _explicitNullValueAverageDailyInflowAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyInflowAmount AverageDailyInflowAmount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyInflowAmount AverageDailyInflowAmount { get => _explicitNullValueAverageDailyInflowAmount; set { _explicitNullValueAverageDailyInflowAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_daily_inflow_amount"); else _explicitNullProperties?.Remove("average_daily_inflow_amount"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyInflowAmount _explicitNullValueAverageDailyInflowAmount = default!;
 #endif
         /// <summary>The average count of the number of daily inflow transactions. Rounded to 2 decimal places.</summary>
-        public double? AverageDailyInflowTransactionCount { get; set; }
+        public double? AverageDailyInflowTransactionCount { get => _explicitNullValueAverageDailyInflowTransactionCount; set { _explicitNullValueAverageDailyInflowTransactionCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_daily_inflow_transaction_count"); else _explicitNullProperties?.Remove("average_daily_inflow_transaction_count"); } }
+        private double? _explicitNullValueAverageDailyInflowTransactionCount = default!;
         /// <summary>The average daily net cash flow amount, calculated as total daily inflows less total daily outflows.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyNetCashflowAmount? AverageDailyNetCashflowAmount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyNetCashflowAmount? AverageDailyNetCashflowAmount { get => _explicitNullValueAverageDailyNetCashflowAmount; set { _explicitNullValueAverageDailyNetCashflowAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_daily_net_cashflow_amount"); else _explicitNullProperties?.Remove("average_daily_net_cashflow_amount"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyNetCashflowAmount? _explicitNullValueAverageDailyNetCashflowAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyNetCashflowAmount AverageDailyNetCashflowAmount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyNetCashflowAmount AverageDailyNetCashflowAmount { get => _explicitNullValueAverageDailyNetCashflowAmount; set { _explicitNullValueAverageDailyNetCashflowAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_daily_net_cashflow_amount"); else _explicitNullProperties?.Remove("average_daily_net_cashflow_amount"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyNetCashflowAmount _explicitNullValueAverageDailyNetCashflowAmount = default!;
 #endif
         /// <summary>The average daily sum of outflow transactions, calculated over the month. Always represented as a positive monetary amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyOutflowAmount? AverageDailyOutflowAmount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyOutflowAmount? AverageDailyOutflowAmount { get => _explicitNullValueAverageDailyOutflowAmount; set { _explicitNullValueAverageDailyOutflowAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_daily_outflow_amount"); else _explicitNullProperties?.Remove("average_daily_outflow_amount"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyOutflowAmount? _explicitNullValueAverageDailyOutflowAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyOutflowAmount AverageDailyOutflowAmount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyOutflowAmount AverageDailyOutflowAmount { get => _explicitNullValueAverageDailyOutflowAmount; set { _explicitNullValueAverageDailyOutflowAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_daily_outflow_amount"); else _explicitNullProperties?.Remove("average_daily_outflow_amount"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyOutflowAmount _explicitNullValueAverageDailyOutflowAmount = default!;
 #endif
         /// <summary>The average count of the number of daily outflow transactions. Rounded to 2 decimal places.</summary>
-        public double? AverageDailyOutflowTransactionCount { get; set; }
+        public double? AverageDailyOutflowTransactionCount { get => _explicitNullValueAverageDailyOutflowTransactionCount; set { _explicitNullValueAverageDailyOutflowTransactionCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_daily_outflow_transaction_count"); else _explicitNullProperties?.Remove("average_daily_outflow_transaction_count"); } }
+        private double? _explicitNullValueAverageDailyOutflowTransactionCount = default!;
         /// <summary>The end date of the period included in this monthly summary.This date will be the last day of the month, unless the month being covered is a partial month because it is the last month included in the summary and the date range being requested does not end with the last day of the month.The date will be returned in an ISO 8601 format (YYYY-MM-DD).</summary>
-        public Date? EndDate { get; set; }
+        public Date? EndDate { get => _explicitNullValueEndDate; set { _explicitNullValueEndDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_date"); else _explicitNullProperties?.Remove("end_date"); } }
+        private Date? _explicitNullValueEndDate = default!;
         /// <summary>The ending balance of the month. This will be the same as the starting balance of the next month. This field will not be available for the last monthly summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryEndingBalance? EndingBalance { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryEndingBalance? EndingBalance { get => _explicitNullValueEndingBalance; set { _explicitNullValueEndingBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ending_balance"); else _explicitNullProperties?.Remove("ending_balance"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryEndingBalance? _explicitNullValueEndingBalance = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryEndingBalance EndingBalance { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryEndingBalance EndingBalance { get => _explicitNullValueEndingBalance; set { _explicitNullValueEndingBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ending_balance"); else _explicitNullProperties?.Remove("ending_balance"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryEndingBalance _explicitNullValueEndingBalance = default!;
 #endif
         /// <summary>The number of days with a negative daily average ending balance. The daily average is calculated across all valid accounts. Values will be in the range [0, 31].</summary>
-        public int? NegativeEndingBalanceDayCount { get; set; }
+        public int? NegativeEndingBalanceDayCount { get => _explicitNullValueNegativeEndingBalanceDayCount; set { _explicitNullValueNegativeEndingBalanceDayCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_ending_balance_day_count"); else _explicitNullProperties?.Remove("negative_ending_balance_day_count"); } }
+        private int? _explicitNullValueNegativeEndingBalanceDayCount = default!;
         /// <summary>The total number of all NSF transactions during this month.</summary>
-        public int? NsfTransactionCount { get; set; }
+        public int? NsfTransactionCount { get => _explicitNullValueNsfTransactionCount; set { _explicitNullValueNsfTransactionCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nsf_transaction_count"); else _explicitNullProperties?.Remove("nsf_transaction_count"); } }
+        private int? _explicitNullValueNsfTransactionCount = default!;
         /// <summary>The total number of all overdraft transactions during this month.</summary>
-        public int? OverdraftTransactionCount { get; set; }
+        public int? OverdraftTransactionCount { get => _explicitNullValueOverdraftTransactionCount; set { _explicitNullValueOverdraftTransactionCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overdraft_transaction_count"); else _explicitNullProperties?.Remove("overdraft_transaction_count"); } }
+        private int? _explicitNullValueOverdraftTransactionCount = default!;
         /// <summary>The start date of the period covered in this monthly summary.This date will be the first day of the month, unless the month being covered is a partial month because it is the first month included in the summary and the date range being requested does not begin with the first day of the month.The date will be returned in an ISO 8601 format (YYYY-MM-DD).</summary>
-        public Date? StartDate { get; set; }
+        public Date? StartDate { get => _explicitNullValueStartDate; set { _explicitNullValueStartDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_date"); else _explicitNullProperties?.Remove("start_date"); } }
+        private Date? _explicitNullValueStartDate = default!;
         /// <summary>The starting balance of the month. This will be the same as the ending balance of the previous month. This field will not be available for the first monthly summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryStartingBalance? StartingBalance { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryStartingBalance? StartingBalance { get => _explicitNullValueStartingBalance; set { _explicitNullValueStartingBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("starting_balance"); else _explicitNullProperties?.Remove("starting_balance"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryStartingBalance? _explicitNullValueStartingBalance = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryStartingBalance StartingBalance { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryStartingBalance StartingBalance { get => _explicitNullValueStartingBalance; set { _explicitNullValueStartingBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("starting_balance"); else _explicitNullProperties?.Remove("starting_balance"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryStartingBalance _explicitNullValueStartingBalance = default!;
 #endif
         /// <summary>The total amount of all loan payment transactions during this month.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalLoanPayment? TotalLoanPayment { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalLoanPayment? TotalLoanPayment { get => _explicitNullValueTotalLoanPayment; set { _explicitNullValueTotalLoanPayment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_loan_payment"); else _explicitNullProperties?.Remove("total_loan_payment"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalLoanPayment? _explicitNullValueTotalLoanPayment = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalLoanPayment TotalLoanPayment { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalLoanPayment TotalLoanPayment { get => _explicitNullValueTotalLoanPayment; set { _explicitNullValueTotalLoanPayment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_loan_payment"); else _explicitNullProperties?.Remove("total_loan_payment"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalLoanPayment _explicitNullValueTotalLoanPayment = default!;
 #endif
         /// <summary>The total amount of all payroll transactions during this month.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalPayroll? TotalPayroll { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalPayroll? TotalPayroll { get => _explicitNullValueTotalPayroll; set { _explicitNullValueTotalPayroll = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_payroll"); else _explicitNullProperties?.Remove("total_payroll"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalPayroll? _explicitNullValueTotalPayroll = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalPayroll TotalPayroll { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalPayroll TotalPayroll { get => _explicitNullValueTotalPayroll; set { _explicitNullValueTotalPayroll = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_payroll"); else _explicitNullProperties?.Remove("total_payroll"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalPayroll _explicitNullValueTotalPayroll = default!;
 #endif
         /// <summary>The total amount of all revenue transactions during this month.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalRevenue? TotalRevenue { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalRevenue? TotalRevenue { get => _explicitNullValueTotalRevenue; set { _explicitNullValueTotalRevenue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_revenue"); else _explicitNullProperties?.Remove("total_revenue"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalRevenue? _explicitNullValueTotalRevenue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalRevenue TotalRevenue { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalRevenue TotalRevenue { get => _explicitNullValueTotalRevenue; set { _explicitNullValueTotalRevenue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_revenue"); else _explicitNullProperties?.Remove("total_revenue"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalRevenue _explicitNullValueTotalRevenue = default!;
 #endif
         /// <summary>The total amount of all variable expense transactions during this month.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalVariableExpense? TotalVariableExpense { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalVariableExpense? TotalVariableExpense { get => _explicitNullValueTotalVariableExpense; set { _explicitNullValueTotalVariableExpense = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_variable_expense"); else _explicitNullProperties?.Remove("total_variable_expense"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalVariableExpense? _explicitNullValueTotalVariableExpense = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalVariableExpense TotalVariableExpense { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalVariableExpense TotalVariableExpense { get => _explicitNullValueTotalVariableExpense; set { _explicitNullValueTotalVariableExpense = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_variable_expense"); else _explicitNullProperties?.Remove("total_variable_expense"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalVariableExpense _explicitNullValueTotalVariableExpense = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummary"/> and sets the default values.
@@ -125,7 +176,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummary();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummary(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -178,6 +229,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalPayroll>("total_payroll", TotalPayroll);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalRevenue>("total_revenue", TotalRevenue);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryTotalVariableExpense>("total_variable_expense", TotalVariableExpense);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

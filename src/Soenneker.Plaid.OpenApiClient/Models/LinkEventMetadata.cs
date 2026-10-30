@@ -12,128 +12,180 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LinkEventMetadata : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_number_mask") is { } nullNodeAccountNumberMask && nullNodeAccountNumberMask.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountNumberMask = null;
+            if (parseNode.GetChildNode("brand_name") is { } nullNodeBrandName && nullNodeBrandName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrandName = null;
+            if (parseNode.GetChildNode("error_code") is { } nullNodeErrorCode && nullNodeErrorCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorCode = null;
+            if (parseNode.GetChildNode("error_message") is { } nullNodeErrorMessage && nullNodeErrorMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorMessage = null;
+            if (parseNode.GetChildNode("error_type") is { } nullNodeErrorType && nullNodeErrorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorType = null;
+            if (parseNode.GetChildNode("exit_status") is { } nullNodeExitStatus && nullNodeExitStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExitStatus = null;
+            if (parseNode.GetChildNode("institution_id") is { } nullNodeInstitutionId && nullNodeInstitutionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionId = null;
+            if (parseNode.GetChildNode("institution_name") is { } nullNodeInstitutionName && nullNodeInstitutionName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionName = null;
+            if (parseNode.GetChildNode("institution_search_query") is { } nullNodeInstitutionSearchQuery && nullNodeInstitutionSearchQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionSearchQuery = null;
+            if (parseNode.GetChildNode("match_reason") is { } nullNodeMatchReason && nullNodeMatchReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchReason = null;
+            if (parseNode.GetChildNode("mfa_type") is { } nullNodeMfaType && nullNodeMfaType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MfaType = null;
+            if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
+            if (parseNode.GetChildNode("routing_number") is { } nullNodeRoutingNumber && nullNodeRoutingNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoutingNumber = null;
+            if (parseNode.GetChildNode("selection") is { } nullNodeSelection && nullNodeSelection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Selection = null;
+            if (parseNode.GetChildNode("view_name") is { } nullNodeViewName && nullNodeViewName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewName = null;
+        }
+
         /// <summary>The account number mask extracted from the user-provided account number. If the user-inputted account number is four digits long, `account_number_mask` is empty. Emitted by `SUBMIT_ACCOUNT_NUMBER`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountNumberMask { get; set; }
+        public string? AccountNumberMask { get => _explicitNullValueAccountNumberMask; set { _explicitNullValueAccountNumberMask = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_number_mask"); else _explicitNullProperties?.Remove("account_number_mask"); } }
+        private string? _explicitNullValueAccountNumberMask = default!;
 #nullable restore
 #else
-        public string AccountNumberMask { get; set; }
+        public string AccountNumberMask { get => _explicitNullValueAccountNumberMask; set { _explicitNullValueAccountNumberMask = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_number_mask"); else _explicitNullProperties?.Remove("account_number_mask"); } }
+        private string _explicitNullValueAccountNumberMask = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name of the selected brand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BrandName { get; set; }
+        public string? BrandName { get => _explicitNullValueBrandName; set { _explicitNullValueBrandName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brand_name"); else _explicitNullProperties?.Remove("brand_name"); } }
+        private string? _explicitNullValueBrandName = default!;
 #nullable restore
 #else
-        public string BrandName { get; set; }
+        public string BrandName { get => _explicitNullValueBrandName; set { _explicitNullValueBrandName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brand_name"); else _explicitNullProperties?.Remove("brand_name"); } }
+        private string _explicitNullValueBrandName = default!;
 #endif
         /// <summary>The error code that the user encountered. Emitted by `ERROR`, `EXIT`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorCode { get; set; }
+        public string? ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_code"); else _explicitNullProperties?.Remove("error_code"); } }
+        private string? _explicitNullValueErrorCode = default!;
 #nullable restore
 #else
-        public string ErrorCode { get; set; }
+        public string ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_code"); else _explicitNullProperties?.Remove("error_code"); } }
+        private string _explicitNullValueErrorCode = default!;
 #endif
         /// <summary>The error message that the user encountered. Emitted by: `ERROR`, `EXIT`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorMessage { get; set; }
+        public string? ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_message"); else _explicitNullProperties?.Remove("error_message"); } }
+        private string? _explicitNullValueErrorMessage = default!;
 #nullable restore
 #else
-        public string ErrorMessage { get; set; }
+        public string ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_message"); else _explicitNullProperties?.Remove("error_message"); } }
+        private string _explicitNullValueErrorMessage = default!;
 #endif
         /// <summary>The error type that the user encountered. Emitted by: `ERROR`, `EXIT`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorType { get; set; }
+        public string? ErrorType { get => _explicitNullValueErrorType; set { _explicitNullValueErrorType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_type"); else _explicitNullProperties?.Remove("error_type"); } }
+        private string? _explicitNullValueErrorType = default!;
 #nullable restore
 #else
-        public string ErrorType { get; set; }
+        public string ErrorType { get => _explicitNullValueErrorType; set { _explicitNullValueErrorType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_type"); else _explicitNullProperties?.Remove("error_type"); } }
+        private string _explicitNullValueErrorType = default!;
 #endif
         /// <summary>The status key indicates the point at which the user exited the Link flow. Emitted by: `EXIT`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExitStatus { get; set; }
+        public string? ExitStatus { get => _explicitNullValueExitStatus; set { _explicitNullValueExitStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exit_status"); else _explicitNullProperties?.Remove("exit_status"); } }
+        private string? _explicitNullValueExitStatus = default!;
 #nullable restore
 #else
-        public string ExitStatus { get; set; }
+        public string ExitStatus { get => _explicitNullValueExitStatus; set { _explicitNullValueExitStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exit_status"); else _explicitNullProperties?.Remove("exit_status"); } }
+        private string _explicitNullValueExitStatus = default!;
 #endif
         /// <summary>The ID of the selected institution. Emitted by: all events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstitutionId { get; set; }
+        public string? InstitutionId { get => _explicitNullValueInstitutionId; set { _explicitNullValueInstitutionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_id"); else _explicitNullProperties?.Remove("institution_id"); } }
+        private string? _explicitNullValueInstitutionId = default!;
 #nullable restore
 #else
-        public string InstitutionId { get; set; }
+        public string InstitutionId { get => _explicitNullValueInstitutionId; set { _explicitNullValueInstitutionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_id"); else _explicitNullProperties?.Remove("institution_id"); } }
+        private string _explicitNullValueInstitutionId = default!;
 #endif
         /// <summary>The name of the selected institution. Emitted by: all events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstitutionName { get; set; }
+        public string? InstitutionName { get => _explicitNullValueInstitutionName; set { _explicitNullValueInstitutionName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_name"); else _explicitNullProperties?.Remove("institution_name"); } }
+        private string? _explicitNullValueInstitutionName = default!;
 #nullable restore
 #else
-        public string InstitutionName { get; set; }
+        public string InstitutionName { get => _explicitNullValueInstitutionName; set { _explicitNullValueInstitutionName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_name"); else _explicitNullProperties?.Remove("institution_name"); } }
+        private string _explicitNullValueInstitutionName = default!;
 #endif
         /// <summary>The query used to search for institutions. Emitted by: `SEARCH_INSTITUTION`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstitutionSearchQuery { get; set; }
+        public string? InstitutionSearchQuery { get => _explicitNullValueInstitutionSearchQuery; set { _explicitNullValueInstitutionSearchQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_search_query"); else _explicitNullProperties?.Remove("institution_search_query"); } }
+        private string? _explicitNullValueInstitutionSearchQuery = default!;
 #nullable restore
 #else
-        public string InstitutionSearchQuery { get; set; }
+        public string InstitutionSearchQuery { get => _explicitNullValueInstitutionSearchQuery; set { _explicitNullValueInstitutionSearchQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_search_query"); else _explicitNullProperties?.Remove("institution_search_query"); } }
+        private string _explicitNullValueInstitutionSearchQuery = default!;
 #endif
         /// <summary>The reason this institution was matched. This will be either `returning_user` or `routing_number` if emitted by `MATCHED_SELECT_INSTITUTION`. Otherwise, this will be `SAVED_INSTITUTION` or `AUTO_SELECT_SAVED_INSTITUTION` if emitted by `SELECT_INSTITUTION`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MatchReason { get; set; }
+        public string? MatchReason { get => _explicitNullValueMatchReason; set { _explicitNullValueMatchReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_reason"); else _explicitNullProperties?.Remove("match_reason"); } }
+        private string? _explicitNullValueMatchReason = default!;
 #nullable restore
 #else
-        public string MatchReason { get; set; }
+        public string MatchReason { get => _explicitNullValueMatchReason; set { _explicitNullValueMatchReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_reason"); else _explicitNullProperties?.Remove("match_reason"); } }
+        private string _explicitNullValueMatchReason = default!;
 #endif
         /// <summary>If set, the user has encountered one of the following MFA types: code, device, questions, selections. Emitted by: `SUBMIT_MFA` and `TRANSITION_VIEW` when `view_name` is `MFA`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MfaType { get; set; }
+        public string? MfaType { get => _explicitNullValueMfaType; set { _explicitNullValueMfaType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfa_type"); else _explicitNullProperties?.Remove("mfa_type"); } }
+        private string? _explicitNullValueMfaType = default!;
 #nullable restore
 #else
-        public string MfaType { get; set; }
+        public string MfaType { get => _explicitNullValueMfaType; set { _explicitNullValueMfaType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfa_type"); else _explicitNullProperties?.Remove("mfa_type"); } }
+        private string _explicitNullValueMfaType = default!;
 #endif
         /// <summary>The request ID for the last request made by Link. This can be shared with Plaid support to expedite investigation. Emitted by: all events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId { get; set; }
+        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        private string? _explicitNullValueRequestId = default!;
 #nullable restore
 #else
-        public string RequestId { get; set; }
+        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        private string _explicitNullValueRequestId = default!;
 #endif
         /// <summary>The routing number submitted by the user at the micro-deposits routing number pane. Emitted by `SUBMIT_ROUTING_NUMBER`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoutingNumber { get; set; }
+        public string? RoutingNumber { get => _explicitNullValueRoutingNumber; set { _explicitNullValueRoutingNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routing_number"); else _explicitNullProperties?.Remove("routing_number"); } }
+        private string? _explicitNullValueRoutingNumber = default!;
 #nullable restore
 #else
-        public string RoutingNumber { get; set; }
+        public string RoutingNumber { get => _explicitNullValueRoutingNumber; set { _explicitNullValueRoutingNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routing_number"); else _explicitNullProperties?.Remove("routing_number"); } }
+        private string _explicitNullValueRoutingNumber = default!;
 #endif
         /// <summary>Either the verification method for a matched institution selected by the user or the Auth Type Select flow type selected by the user. If selection is used to describe selected verification method, then possible values are `phoneotp` or `password`;  if selection is used to describe the selected Auth Type Select flow, then possible values are `flow_type_manual` or `flow_type_instant`. Emitted by: `MATCHED_SELECT_VERIFY_METHOD` and `SELECT_AUTH_TYPE`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Selection { get; set; }
+        public string? Selection { get => _explicitNullValueSelection; set { _explicitNullValueSelection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selection"); else _explicitNullProperties?.Remove("selection"); } }
+        private string? _explicitNullValueSelection = default!;
 #nullable restore
 #else
-        public string Selection { get; set; }
+        public string Selection { get => _explicitNullValueSelection; set { _explicitNullValueSelection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selection"); else _explicitNullProperties?.Remove("selection"); } }
+        private string _explicitNullValueSelection = default!;
 #endif
         /// <summary>The name of the view that is being transitioned to. Emitted by: `TRANSITION_VIEW`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ViewName { get; set; }
+        public string? ViewName { get => _explicitNullValueViewName; set { _explicitNullValueViewName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view_name"); else _explicitNullProperties?.Remove("view_name"); } }
+        private string? _explicitNullValueViewName = default!;
 #nullable restore
 #else
-        public string ViewName { get; set; }
+        public string ViewName { get => _explicitNullValueViewName; set { _explicitNullValueViewName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view_name"); else _explicitNullProperties?.Remove("view_name"); } }
+        private string _explicitNullValueViewName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkEventMetadata"/> and sets the default values.
@@ -150,7 +202,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.LinkEventMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.LinkEventMetadata();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.LinkEventMetadata(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -199,6 +251,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("routing_number", RoutingNumber);
             writer.WriteStringValue("selection", Selection);
             writer.WriteStringValue("view_name", ViewName);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

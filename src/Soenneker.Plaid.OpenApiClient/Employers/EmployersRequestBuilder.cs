@@ -16,6 +16,7 @@ namespace Soenneker.Plaid.OpenApiClient.Employers
     public partial class EmployersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The search property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Employers.Search.SearchRequestBuilder Search
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Employers.Search.SearchRequestBuilder(PathParameters, RequestAdapter);

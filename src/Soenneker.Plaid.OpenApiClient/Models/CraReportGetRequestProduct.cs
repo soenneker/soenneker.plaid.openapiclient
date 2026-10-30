@@ -12,7 +12,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraReportGetRequestProduct : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraBaseReportProduct"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,45 +98,66 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetRequestProduct CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("product")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetRequestProduct();
-            if("cra_base_report".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("CraBaseReportProduct".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CraBaseReportProduct = new global::Soenneker.Plaid.OpenApiClient.Models.CraBaseReportProduct();
+                
             }
-            else if("cra_cashflow_insights".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CraCashflowInsightsProduct".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CraCashflowInsightsProduct = new global::Soenneker.Plaid.OpenApiClient.Models.CraCashflowInsightsProduct();
+                
             }
-            else if("cra_home_lending".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CraHomeLendingProduct".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CraHomeLendingProduct = new global::Soenneker.Plaid.OpenApiClient.Models.CraHomeLendingProduct();
+                
             }
-            else if("cra_income_complete".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CraIncomeCompleteBundleProduct".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CraIncomeCompleteBundleProduct = new global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeCompleteBundleProduct();
+                
             }
-            else if("cra_income_insights".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CraIncomeInsightsProduct".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CraIncomeInsightsProduct = new global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeInsightsProduct();
+                
             }
-            else if("cra_lend_score_complete".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CraLendScoreCompleteBundleProduct".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CraLendScoreCompleteBundleProduct = new global::Soenneker.Plaid.OpenApiClient.Models.CraLendScoreCompleteBundleProduct();
+                
             }
-            else if("cra_lend_score".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CraLendScoreProduct".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CraLendScoreProduct = new global::Soenneker.Plaid.OpenApiClient.Models.CraLendScoreProduct();
+                
             }
-            else if("cra_network_insights".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CraNetworkInsightsProduct".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CraNetworkInsightsProduct = new global::Soenneker.Plaid.OpenApiClient.Models.CraNetworkInsightsProduct();
+                
             }
-            else if("cra_qualify".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CraQualifyProduct".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CraQualifyProduct = new global::Soenneker.Plaid.OpenApiClient.Models.CraQualifyProduct();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("product") != null && (parseNode.GetChildNode("product")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("cra_qualify".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("version") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("product") != null && (parseNode.GetChildNode("product")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("cra_income_insights".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("version") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("product") != null && (parseNode.GetChildNode("product")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("cra_home_lending".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("version") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("product") != null && (parseNode.GetChildNode("product")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("cra_base_report".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("version") != null))();
+            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("product") != null && (parseNode.GetChildNode("product")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("cra_lend_score".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("version") != null))();
+            bool matchesUnionBranch5 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("product") != null && (parseNode.GetChildNode("product")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("cra_cashflow_insights".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("version") != null))();
+            bool matchesUnionBranch6 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("product") != null && (parseNode.GetChildNode("product")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("cra_network_insights".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("version") != null))();
+            bool matchesUnionBranch7 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("product") != null && (parseNode.GetChildNode("product")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("cra_lend_score_complete".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("version") != null))();
+            bool matchesUnionBranch8 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("product") != null && (parseNode.GetChildNode("product")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("cra_income_complete".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("version") != null))();
+            if (result.CraBaseReportProduct == null && result.CraCashflowInsightsProduct == null && result.CraHomeLendingProduct == null && result.CraIncomeCompleteBundleProduct == null && result.CraIncomeInsightsProduct == null && result.CraLendScoreCompleteBundleProduct == null && result.CraLendScoreProduct == null && result.CraNetworkInsightsProduct == null && result.CraQualifyProduct == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.CraQualifyProduct = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraQualifyProduct(), parseNode);
+            if (result.CraBaseReportProduct == null && result.CraCashflowInsightsProduct == null && result.CraHomeLendingProduct == null && result.CraIncomeCompleteBundleProduct == null && result.CraIncomeInsightsProduct == null && result.CraLendScoreCompleteBundleProduct == null && result.CraLendScoreProduct == null && result.CraNetworkInsightsProduct == null && result.CraQualifyProduct == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.CraIncomeInsightsProduct = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeInsightsProduct(), parseNode);
+            if (result.CraBaseReportProduct == null && result.CraCashflowInsightsProduct == null && result.CraHomeLendingProduct == null && result.CraIncomeCompleteBundleProduct == null && result.CraIncomeInsightsProduct == null && result.CraLendScoreCompleteBundleProduct == null && result.CraLendScoreProduct == null && result.CraNetworkInsightsProduct == null && result.CraQualifyProduct == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.CraHomeLendingProduct = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraHomeLendingProduct(), parseNode);
+            if (result.CraBaseReportProduct == null && result.CraCashflowInsightsProduct == null && result.CraHomeLendingProduct == null && result.CraIncomeCompleteBundleProduct == null && result.CraIncomeInsightsProduct == null && result.CraLendScoreCompleteBundleProduct == null && result.CraLendScoreProduct == null && result.CraNetworkInsightsProduct == null && result.CraQualifyProduct == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.CraBaseReportProduct = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraBaseReportProduct(), parseNode);
+            if (result.CraBaseReportProduct == null && result.CraCashflowInsightsProduct == null && result.CraHomeLendingProduct == null && result.CraIncomeCompleteBundleProduct == null && result.CraIncomeInsightsProduct == null && result.CraLendScoreCompleteBundleProduct == null && result.CraLendScoreProduct == null && result.CraNetworkInsightsProduct == null && result.CraQualifyProduct == null && matchesUnionBranch4 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.CraLendScoreProduct = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraLendScoreProduct(), parseNode);
+            if (result.CraBaseReportProduct == null && result.CraCashflowInsightsProduct == null && result.CraHomeLendingProduct == null && result.CraIncomeCompleteBundleProduct == null && result.CraIncomeInsightsProduct == null && result.CraLendScoreCompleteBundleProduct == null && result.CraLendScoreProduct == null && result.CraNetworkInsightsProduct == null && result.CraQualifyProduct == null && matchesUnionBranch5 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.CraCashflowInsightsProduct = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraCashflowInsightsProduct(), parseNode);
+            if (result.CraBaseReportProduct == null && result.CraCashflowInsightsProduct == null && result.CraHomeLendingProduct == null && result.CraIncomeCompleteBundleProduct == null && result.CraIncomeInsightsProduct == null && result.CraLendScoreCompleteBundleProduct == null && result.CraLendScoreProduct == null && result.CraNetworkInsightsProduct == null && result.CraQualifyProduct == null && matchesUnionBranch6 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch7 && !matchesUnionBranch8) result.CraNetworkInsightsProduct = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraNetworkInsightsProduct(), parseNode);
+            if (result.CraBaseReportProduct == null && result.CraCashflowInsightsProduct == null && result.CraHomeLendingProduct == null && result.CraIncomeCompleteBundleProduct == null && result.CraIncomeInsightsProduct == null && result.CraLendScoreCompleteBundleProduct == null && result.CraLendScoreProduct == null && result.CraNetworkInsightsProduct == null && result.CraQualifyProduct == null && matchesUnionBranch7 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch8) result.CraLendScoreCompleteBundleProduct = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraLendScoreCompleteBundleProduct(), parseNode);
+            if (result.CraBaseReportProduct == null && result.CraCashflowInsightsProduct == null && result.CraHomeLendingProduct == null && result.CraIncomeCompleteBundleProduct == null && result.CraIncomeInsightsProduct == null && result.CraLendScoreCompleteBundleProduct == null && result.CraLendScoreProduct == null && result.CraNetworkInsightsProduct == null && result.CraQualifyProduct == null && matchesUnionBranch8 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7) result.CraIncomeCompleteBundleProduct = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeCompleteBundleProduct(), parseNode);
+            if (result.CraBaseReportProduct == null && result.CraCashflowInsightsProduct == null && result.CraHomeLendingProduct == null && result.CraIncomeCompleteBundleProduct == null && result.CraIncomeInsightsProduct == null && result.CraLendScoreCompleteBundleProduct == null && result.CraLendScoreProduct == null && result.CraNetworkInsightsProduct == null && result.CraQualifyProduct == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -183,41 +209,62 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (CraBaseReportProduct == null && CraCashflowInsightsProduct == null && CraHomeLendingProduct == null && CraIncomeCompleteBundleProduct == null && CraIncomeInsightsProduct == null && CraLendScoreCompleteBundleProduct == null && CraLendScoreProduct == null && CraNetworkInsightsProduct == null && CraQualifyProduct == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (CraBaseReportProduct != null && CraCashflowInsightsProduct == null && CraHomeLendingProduct == null && CraIncomeCompleteBundleProduct == null && CraIncomeInsightsProduct == null && CraLendScoreCompleteBundleProduct == null && CraLendScoreProduct == null && CraNetworkInsightsProduct == null && CraQualifyProduct == null) { if (CraBaseReportProduct is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CraBaseReportProduct); return; }
+            if (CraCashflowInsightsProduct != null && CraBaseReportProduct == null && CraHomeLendingProduct == null && CraIncomeCompleteBundleProduct == null && CraIncomeInsightsProduct == null && CraLendScoreCompleteBundleProduct == null && CraLendScoreProduct == null && CraNetworkInsightsProduct == null && CraQualifyProduct == null) { if (CraCashflowInsightsProduct is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CraCashflowInsightsProduct); return; }
+            if (CraHomeLendingProduct != null && CraBaseReportProduct == null && CraCashflowInsightsProduct == null && CraIncomeCompleteBundleProduct == null && CraIncomeInsightsProduct == null && CraLendScoreCompleteBundleProduct == null && CraLendScoreProduct == null && CraNetworkInsightsProduct == null && CraQualifyProduct == null) { if (CraHomeLendingProduct is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CraHomeLendingProduct); return; }
+            if (CraIncomeCompleteBundleProduct != null && CraBaseReportProduct == null && CraCashflowInsightsProduct == null && CraHomeLendingProduct == null && CraIncomeInsightsProduct == null && CraLendScoreCompleteBundleProduct == null && CraLendScoreProduct == null && CraNetworkInsightsProduct == null && CraQualifyProduct == null) { if (CraIncomeCompleteBundleProduct is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CraIncomeCompleteBundleProduct); return; }
+            if (CraIncomeInsightsProduct != null && CraBaseReportProduct == null && CraCashflowInsightsProduct == null && CraHomeLendingProduct == null && CraIncomeCompleteBundleProduct == null && CraLendScoreCompleteBundleProduct == null && CraLendScoreProduct == null && CraNetworkInsightsProduct == null && CraQualifyProduct == null) { if (CraIncomeInsightsProduct is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CraIncomeInsightsProduct); return; }
+            if (CraLendScoreCompleteBundleProduct != null && CraBaseReportProduct == null && CraCashflowInsightsProduct == null && CraHomeLendingProduct == null && CraIncomeCompleteBundleProduct == null && CraIncomeInsightsProduct == null && CraLendScoreProduct == null && CraNetworkInsightsProduct == null && CraQualifyProduct == null) { if (CraLendScoreCompleteBundleProduct is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CraLendScoreCompleteBundleProduct); return; }
+            if (CraLendScoreProduct != null && CraBaseReportProduct == null && CraCashflowInsightsProduct == null && CraHomeLendingProduct == null && CraIncomeCompleteBundleProduct == null && CraIncomeInsightsProduct == null && CraLendScoreCompleteBundleProduct == null && CraNetworkInsightsProduct == null && CraQualifyProduct == null) { if (CraLendScoreProduct is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CraLendScoreProduct); return; }
+            if (CraNetworkInsightsProduct != null && CraBaseReportProduct == null && CraCashflowInsightsProduct == null && CraHomeLendingProduct == null && CraIncomeCompleteBundleProduct == null && CraIncomeInsightsProduct == null && CraLendScoreCompleteBundleProduct == null && CraLendScoreProduct == null && CraQualifyProduct == null) { if (CraNetworkInsightsProduct is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CraNetworkInsightsProduct); return; }
+            if (CraQualifyProduct != null && CraBaseReportProduct == null && CraCashflowInsightsProduct == null && CraHomeLendingProduct == null && CraIncomeCompleteBundleProduct == null && CraIncomeInsightsProduct == null && CraLendScoreCompleteBundleProduct == null && CraLendScoreProduct == null && CraNetworkInsightsProduct == null) { if (CraQualifyProduct is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CraQualifyProduct); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(CraBaseReportProduct != null)
             {
+                if (CraBaseReportProduct is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraBaseReportProduct>(null, CraBaseReportProduct);
             }
             else if(CraCashflowInsightsProduct != null)
             {
+                if (CraCashflowInsightsProduct is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCashflowInsightsProduct>(null, CraCashflowInsightsProduct);
             }
             else if(CraHomeLendingProduct != null)
             {
+                if (CraHomeLendingProduct is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraHomeLendingProduct>(null, CraHomeLendingProduct);
             }
             else if(CraIncomeCompleteBundleProduct != null)
             {
+                if (CraIncomeCompleteBundleProduct is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeCompleteBundleProduct>(null, CraIncomeCompleteBundleProduct);
             }
             else if(CraIncomeInsightsProduct != null)
             {
+                if (CraIncomeInsightsProduct is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeInsightsProduct>(null, CraIncomeInsightsProduct);
             }
             else if(CraLendScoreCompleteBundleProduct != null)
             {
+                if (CraLendScoreCompleteBundleProduct is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraLendScoreCompleteBundleProduct>(null, CraLendScoreCompleteBundleProduct);
             }
             else if(CraLendScoreProduct != null)
             {
+                if (CraLendScoreProduct is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraLendScoreProduct>(null, CraLendScoreProduct);
             }
             else if(CraNetworkInsightsProduct != null)
             {
+                if (CraNetworkInsightsProduct is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraNetworkInsightsProduct>(null, CraNetworkInsightsProduct);
             }
             else if(CraQualifyProduct != null)
             {
+                if (CraQualifyProduct is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraQualifyProduct>(null, CraQualifyProduct);
             }
         }

@@ -16,6 +16,7 @@ namespace Soenneker.Plaid.OpenApiClient.Categories
     public partial class CategoriesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The getPath property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Categories.Get.GetRequestBuilder GetPath
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Categories.Get.GetRequestBuilder(PathParameters, RequestAdapter);

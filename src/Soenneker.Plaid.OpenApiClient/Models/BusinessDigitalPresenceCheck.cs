@@ -12,52 +12,78 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BusinessDigitalPresenceCheck : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
+            if (parseNode.GetChildNode("email_address") is { } nullNodeEmailAddress && nullNodeEmailAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailAddress = null;
+            if (parseNode.GetChildNode("phone_number") is { } nullNodePhoneNumber && nullNodePhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumber = null;
+            if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("website") is { } nullNodeWebsite && nullNodeWebsite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Website = null;
+            if (parseNode.GetChildNode("website_analysis") is { } nullNodeWebsiteAnalysis && nullNodeWebsiteAnalysis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebsiteAnalysis = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Summary of how a specific business field matched against data provider results</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary? Address { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary? _explicitNullValueAddress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary Address { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary _explicitNullValueAddress = default!;
 #endif
         /// <summary>Summary of how a specific business field matched against data provider results</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary? EmailAddress { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary? EmailAddress { get => _explicitNullValueEmailAddress; set { _explicitNullValueEmailAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_address"); else _explicitNullProperties?.Remove("email_address"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary? _explicitNullValueEmailAddress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary EmailAddress { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary EmailAddress { get => _explicitNullValueEmailAddress; set { _explicitNullValueEmailAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_address"); else _explicitNullProperties?.Remove("email_address"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary _explicitNullValueEmailAddress = default!;
 #endif
         /// <summary>Summary of how a specific business field matched against data provider results</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary? PhoneNumber { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary? PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number"); else _explicitNullProperties?.Remove("phone_number"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary? _explicitNullValuePhoneNumber = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary PhoneNumber { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number"); else _explicitNullProperties?.Remove("phone_number"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary _explicitNullValuePhoneNumber = default!;
 #endif
-        /// <summary>A score from 0 to 100 indicating digital presence confidence.</summary>
-        public int? Score { get; set; }
+        /// <summary>A score from 0 to 100 indicating digital presence confidence. `null` if no digital presence score is available for this verification. A completed check can have `status: failed` and a `null` score when website analysis could not produce a score; this does not represent a score of zero. Read `status` separately to determine the check outcome; `null` does not mean the check is still running. When website analysis was not requested, the entire `digital_presence_check` object is `null`.</summary>
+        public int? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
+        private int? _explicitNullValueScore = default!;
         /// <summary>Status of the digital presence check</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatusWebPresenceCheck? Status { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatusWebPresenceCheck? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatusWebPresenceCheck? _explicitNullValueStatus = default!;
         /// <summary>Summary of how a specific business field matched against data provider results</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary? Website { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary? Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary? _explicitNullValueWebsite = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary Website { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary _explicitNullValueWebsite = default!;
 #endif
         /// <summary>Website analysis details if a website is found for the provided website in the search terms.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteAnalysis? WebsiteAnalysis { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteAnalysis? WebsiteAnalysis { get => _explicitNullValueWebsiteAnalysis; set { _explicitNullValueWebsiteAnalysis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website_analysis"); else _explicitNullProperties?.Remove("website_analysis"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteAnalysis? _explicitNullValueWebsiteAnalysis = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteAnalysis WebsiteAnalysis { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteAnalysis WebsiteAnalysis { get => _explicitNullValueWebsiteAnalysis; set { _explicitNullValueWebsiteAnalysis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website_analysis"); else _explicitNullProperties?.Remove("website_analysis"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteAnalysis _explicitNullValueWebsiteAnalysis = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BusinessDigitalPresenceCheck"/> and sets the default values.
@@ -74,7 +100,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.BusinessDigitalPresenceCheck CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.BusinessDigitalPresenceCheck();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.BusinessDigitalPresenceCheck(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -107,6 +135,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatusWebPresenceCheck>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary>("website", Website);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteAnalysis>("website_analysis", WebsiteAnalysis);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

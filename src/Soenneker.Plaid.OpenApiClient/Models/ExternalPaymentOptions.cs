@@ -12,29 +12,46 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExternalPaymentOptions : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bacs") is { } nullNodeBacs && nullNodeBacs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bacs = null;
+            if (parseNode.GetChildNode("iban") is { } nullNodeIban && nullNodeIban.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Iban = null;
+            if (parseNode.GetChildNode("request_refund_details") is { } nullNodeRequestRefundDetails && nullNodeRequestRefundDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestRefundDetails = null;
+            if (parseNode.GetChildNode("scheme") is { } nullNodeScheme && nullNodeScheme.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scheme = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An optional object used to restrict the accounts used for payments. If provided, the end user will be able to send payments only from the specified bank account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationOptionalRestrictionBacs? Bacs { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationOptionalRestrictionBacs? Bacs { get => _explicitNullValueBacs; set { _explicitNullValueBacs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bacs"); else _explicitNullProperties?.Remove("bacs"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationOptionalRestrictionBacs? _explicitNullValueBacs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationOptionalRestrictionBacs Bacs { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationOptionalRestrictionBacs Bacs { get => _explicitNullValueBacs; set { _explicitNullValueBacs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bacs"); else _explicitNullProperties?.Remove("bacs"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationOptionalRestrictionBacs _explicitNullValueBacs = default!;
 #endif
         /// <summary>The International Bank Account Number (IBAN) for the payer&apos;s account. Where possible, the end user will be able to send payments only from the specified bank account if provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Iban { get; set; }
+        public string? Iban { get => _explicitNullValueIban; set { _explicitNullValueIban = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iban"); else _explicitNullProperties?.Remove("iban"); } }
+        private string? _explicitNullValueIban = default!;
 #nullable restore
 #else
-        public string Iban { get; set; }
+        public string Iban { get => _explicitNullValueIban; set { _explicitNullValueIban = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iban"); else _explicitNullProperties?.Remove("iban"); } }
+        private string _explicitNullValueIban = default!;
 #endif
         /// <summary>When `true`, Plaid will attempt to request refund details from the payee&apos;s financial institution.  Support varies between financial institutions and will not always be available.  If refund details could be retrieved, they will be available in the `/payment_initiation/payment/get` response.</summary>
-        public bool? RequestRefundDetails { get; set; }
+        public bool? RequestRefundDetails { get => _explicitNullValueRequestRefundDetails; set { _explicitNullValueRequestRefundDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_refund_details"); else _explicitNullProperties?.Remove("request_refund_details"); } }
+        private bool? _explicitNullValueRequestRefundDetails = default!;
         /// <summary>Payment scheme. If not specified - the default in the region will be used (e.g. `SEPA_CREDIT_TRANSFER` for EU). In responses, if the scheme is not explicitly specified in the request, this field is omitted. Using unsupported values will result in a failed payment.`LOCAL_DEFAULT`: The default payment scheme for the selected market and currency will be used.`LOCAL_INSTANT`: The instant payment scheme for the selected market and currency will be used (if applicable). Fees may be applied by the institution.`SEPA_CREDIT_TRANSFER`: The standard payment to a beneficiary within the SEPA area.`SEPA_CREDIT_TRANSFER_INSTANT`: Instant payment within the SEPA area. May involve additional fees and may not be available at some banks.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme? Scheme { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme? Scheme { get => _explicitNullValueScheme; set { _explicitNullValueScheme = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheme"); else _explicitNullProperties?.Remove("scheme"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme? _explicitNullValueScheme = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentOptions"/> and sets the default values.
         /// </summary>
@@ -50,7 +67,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentOptions();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentOptions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +96,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("iban", Iban);
             writer.WriteBoolValue("request_refund_details", RequestRefundDetails);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme>("scheme", Scheme);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

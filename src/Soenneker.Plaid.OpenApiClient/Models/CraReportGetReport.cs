@@ -12,41 +12,65 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraReportGetReport : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("client_report_id") is { } nullNodeClientReportId && nullNodeClientReportId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientReportId = null;
+            if (parseNode.GetChildNode("consumer_report_permissible_purpose") is { } nullNodeConsumerReportPermissiblePurpose && nullNodeConsumerReportPermissiblePurpose.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsumerReportPermissiblePurpose = null;
+            if (parseNode.GetChildNode("decision_stage") is { } nullNodeDecisionStage && nullNodeDecisionStage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DecisionStage = null;
+            if (parseNode.GetChildNode("products") is { } nullNodeProducts && nullNodeProducts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Products = null;
+            if (parseNode.GetChildNode("report_id") is { } nullNodeReportId && nullNodeReportId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportId = null;
+            if (parseNode.GetChildNode("retrieved_time") is { } nullNodeRetrievedTime && nullNodeRetrievedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetrievedTime = null;
+            if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Client-generated identifier, which can be used by lenders to track loan applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientReportId { get; set; }
+        public string? ClientReportId { get => _explicitNullValueClientReportId; set { _explicitNullValueClientReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_report_id"); else _explicitNullProperties?.Remove("client_report_id"); } }
+        private string? _explicitNullValueClientReportId = default!;
 #nullable restore
 #else
-        public string ClientReportId { get; set; }
+        public string ClientReportId { get => _explicitNullValueClientReportId; set { _explicitNullValueClientReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_report_id"); else _explicitNullProperties?.Remove("client_report_id"); } }
+        private string _explicitNullValueClientReportId = default!;
 #endif
-        /// <summary>Describes the reason you are generating a Consumer Report for this user. When calling `/link/token/create`, this field is required when using Plaid Check (CRA) products; invalid if not using Plaid Check (CRA) products.`ACCOUNT_REVIEW_CREDIT`: In connection with a consumer credit transaction for the review or collection of an account pursuant to FCRA Section 604(a)(3)(A).`ACCOUNT_REVIEW_NON_CREDIT`: For a legitimate business need of the information to review a non-credit account provided primarily for personal, family, or household purposes to determine whether the consumer continues to meet the terms of the account pursuant to FCRA Section 604(a)(3)(F)(2).`EXTENSION_OF_CREDIT`: In connection with a credit transaction initiated by and involving the consumer pursuant to FCRA Section 604(a)(3)(A).`LEGITIMATE_BUSINESS_NEED_TENANT_SCREENING`: For a legitimate business need in connection with a business transaction initiated by the consumer primarily for personal, family, or household purposes in connection with a property rental assessment pursuant to FCRA Section 604(a)(3)(F)(i).`LEGITIMATE_BUSINESS_NEED_OTHER`: For a legitimate business need in connection with a business transaction made primarily for personal, family, or household initiated by the consumer pursuant to FCRA Section 604(a)(3)(F)(i).`WRITTEN_INSTRUCTION_PREQUALIFICATION`: In accordance with the written instructions of the consumer pursuant to FCRA Section 604(a)(2), to evaluate an application&apos;s profile to make an offer to the consumer.`WRITTEN_INSTRUCTION_OTHER`: In accordance with the written instructions of the consumer pursuant to FCRA Section 604(a)(2), such as when an individual agrees to act as a guarantor or assumes personal liability for a consumer, business, or commercial loan.`ELIGIBILITY_FOR_GOVT_BENEFITS`:  In connection with an eligibility determination for a government benefit where the entity is required to consider an applicant&apos;s financial status pursuant to FCRA Section 604(a)(3)(D).</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetReportConsumerReportPermissiblePurpose? ConsumerReportPermissiblePurpose { get; set; }
-        /// <summary>The stage in the credit or other eligibility decisioning lifecycle for which a given report will be utilized.Allowable permissible purposes for `PREQUALIFICATION`:- `WRITTEN_INSTRUCTION_PREQUALIFICATION`Allowable permissible purposes for `DECISIONING`:- `ELIGIBILITY_FOR_GOVT_BENEFITS`- `EXTENSION_OF_CREDIT`- `LEGITIMATE_BUSINESS_NEED_OTHER`- `LEGITIMATE_BUSINESS_NEED_TENANT_SCREENING`- `WRITTEN_INSTRUCTION_OTHER`If an incompatible `decision_stage` and `consumer_report_permissible_purpose` pairing is requested, an `INVALID_FIELD` error is returned. If your client isn&apos;t yet enabled for a given `decision_stage` on a product, a `DECISION_STAGE_NOT_ENABLED` error is returned instead (contact your Plaid account manager to enable it).</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportDecisionStage? DecisionStage { get; set; }
+        /// <summary>Describes the reason you are generating a Consumer Report for this user. When calling `/link/token/create`, this field is required when using Plaid Check (CRA) products; invalid if not using Plaid Check (CRA) products.`ACCOUNT_REVIEW_CREDIT`: In connection with a consumer credit transaction for the review or collection of an account pursuant to FCRA Section 604(a)(3)(A).`ACCOUNT_REVIEW_NON_CREDIT`: For a legitimate business need of the information to review a non-credit account provided primarily for personal, family, or household purposes to determine whether the consumer continues to meet the terms of the account pursuant to FCRA Section 604(a)(3)(F)(2).`EXTENSION_OF_CREDIT`: In connection with a credit transaction initiated by and involving the consumer pursuant to FCRA Section 604(a)(3)(A).`LEGITIMATE_BUSINESS_NEED_TENANT_SCREENING`: For a legitimate business need in connection with a business transaction initiated by the consumer primarily for personal, family, or household purposes in connection with a property rental assessment pursuant to FCRA Section 604(a)(3)(F)(i).`LEGITIMATE_BUSINESS_NEED_OTHER`: For a legitimate business need in connection with a business transaction made primarily for personal, family, or household initiated by the consumer pursuant to FCRA Section 604(a)(3)(F)(i).`WRITTEN_INSTRUCTION_PREQUALIFICATION`: In accordance with the written instructions of the consumer pursuant to FCRA Section 604(a)(2), to evaluate an application&apos;s profile to make an offer to the consumer.`WRITTEN_INSTRUCTION_OTHER`: In accordance with the written instructions of the consumer pursuant to FCRA Section 604(a)(2), such as when an individual agrees to act as a guarantor or assumes personal liability for a consumer, business, or commercial loan.`ELIGIBILITY_FOR_GOVT_BENEFITS`:  In connection with an eligibility determination for a government benefit where the entity is required to consider an applicant&apos;s financial status pursuant to FCRA Section 604(a)(3)(D).`INSURANCE_UNDERWRITING`: In connection with the underwriting of insurance involving the consumer pursuant to FCRA Section 604(a)(3)(C).`SECONDARY_INVESTOR`: As a potential investor or servicer, or current insurer, in connection with a valuation of, or an assessment of the credit or prepayment risks associated with, an existing credit obligation pursuant to FCRA Section 604(a)(3)(E).</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetReportConsumerReportPermissiblePurpose? ConsumerReportPermissiblePurpose { get => _explicitNullValueConsumerReportPermissiblePurpose; set { _explicitNullValueConsumerReportPermissiblePurpose = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumer_report_permissible_purpose"); else _explicitNullProperties?.Remove("consumer_report_permissible_purpose"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetReportConsumerReportPermissiblePurpose? _explicitNullValueConsumerReportPermissiblePurpose = default!;
+        /// <summary>The stage in the credit or other eligibility decisioning lifecycle for which a given report will be utilized.Allowable permissible purposes for `PREQUALIFICATION`:- `WRITTEN_INSTRUCTION_PREQUALIFICATION`Allowable permissible purposes for `DECISIONING`:- `ELIGIBILITY_FOR_GOVT_BENEFITS`- `EXTENSION_OF_CREDIT`- `INSURANCE_UNDERWRITING`- `LEGITIMATE_BUSINESS_NEED_OTHER`- `LEGITIMATE_BUSINESS_NEED_TENANT_SCREENING`- `WRITTEN_INSTRUCTION_OTHER`If an incompatible `decision_stage` and `consumer_report_permissible_purpose` pairing is requested, an `INVALID_FIELD` error is returned. If your client isn&apos;t yet enabled for a given `decision_stage` on a product, a `DECISION_STAGE_NOT_ENABLED` error is returned instead (contact your Plaid account manager to enable it).</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportDecisionStage? DecisionStage { get => _explicitNullValueDecisionStage; set { _explicitNullValueDecisionStage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decision_stage"); else _explicitNullProperties?.Remove("decision_stage"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraReportDecisionStage? _explicitNullValueDecisionStage = default!;
         /// <summary>Per-product report data. Each entry corresponds to one requested product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetResponseProduct>? Products { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetResponseProduct>? Products { get => _explicitNullValueProducts; set { _explicitNullValueProducts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("products"); else _explicitNullProperties?.Remove("products"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetResponseProduct>? _explicitNullValueProducts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetResponseProduct> Products { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetResponseProduct> Products { get => _explicitNullValueProducts; set { _explicitNullValueProducts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("products"); else _explicitNullProperties?.Remove("products"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetResponseProduct> _explicitNullValueProducts = default!;
 #endif
         /// <summary>A unique ID identifying a Consumer Report. Like all Plaid identifiers, this ID is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReportId { get; set; }
+        public string? ReportId { get => _explicitNullValueReportId; set { _explicitNullValueReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_id"); else _explicitNullProperties?.Remove("report_id"); } }
+        private string? _explicitNullValueReportId = default!;
 #nullable restore
 #else
-        public string ReportId { get; set; }
+        public string ReportId { get => _explicitNullValueReportId; set { _explicitNullValueReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_id"); else _explicitNullProperties?.Remove("report_id"); } }
+        private string _explicitNullValueReportId = default!;
 #endif
         /// <summary>The date and time the report was retrieved.</summary>
-        public DateTimeOffset? RetrievedTime { get; set; }
+        public DateTimeOffset? RetrievedTime { get => _explicitNullValueRetrievedTime; set { _explicitNullValueRetrievedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retrieved_time"); else _explicitNullProperties?.Remove("retrieved_time"); } }
+        private DateTimeOffset? _explicitNullValueRetrievedTime = default!;
         /// <summary>Determines whose items are used. `PLAID_NETWORK` (default) uses the Plaid Network view of the user&apos;s profile. `CLIENT_USER` uses only the items linked by this client.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportScope? Scope { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportScope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraReportScope? _explicitNullValueScope = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetReport"/> and sets the default values.
         /// </summary>
@@ -62,7 +86,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetReport CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetReport();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetReport(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,6 +119,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("report_id", ReportId);
             writer.WriteDateTimeOffsetValue("retrieved_time", RetrievedTime);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraReportScope>("scope", Scope);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

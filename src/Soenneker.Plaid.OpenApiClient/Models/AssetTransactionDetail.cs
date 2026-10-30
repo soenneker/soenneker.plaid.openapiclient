@@ -13,68 +13,105 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AssetTransactionDetail : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("AssetInvestmentTransactionType") is { } nullNodeAssetInvestmentTransactionType && nullNodeAssetInvestmentTransactionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetInvestmentTransactionType = null;
+            if (parseNode.GetChildNode("AssetInvestmentTransactionTypeDescription") is { } nullNodeAssetInvestmentTransactionTypeDescription && nullNodeAssetInvestmentTransactionTypeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetInvestmentTransactionTypeDescription = null;
+            if (parseNode.GetChildNode("AssetTransactionAmount") is { } nullNodeAssetTransactionAmount && nullNodeAssetTransactionAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetTransactionAmount = null;
+            if (parseNode.GetChildNode("AssetTransactionCategoryType") is { } nullNodeAssetTransactionCategoryType && nullNodeAssetTransactionCategoryType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetTransactionCategoryType = null;
+            if (parseNode.GetChildNode("AssetTransactionDate") is { } nullNodeAssetTransactionDate && nullNodeAssetTransactionDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetTransactionDate = null;
+            if (parseNode.GetChildNode("AssetTransactionPaidByName") is { } nullNodeAssetTransactionPaidByName && nullNodeAssetTransactionPaidByName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetTransactionPaidByName = null;
+            if (parseNode.GetChildNode("AssetTransactionPaidToName") is { } nullNodeAssetTransactionPaidToName && nullNodeAssetTransactionPaidToName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetTransactionPaidToName = null;
+            if (parseNode.GetChildNode("AssetTransactionPostDate") is { } nullNodeAssetTransactionPostDate && nullNodeAssetTransactionPostDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetTransactionPostDate = null;
+            if (parseNode.GetChildNode("AssetTransactionType") is { } nullNodeAssetTransactionType && nullNodeAssetTransactionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetTransactionType = null;
+            if (parseNode.GetChildNode("AssetTransactionTypeAdditionalDescription") is { } nullNodeAssetTransactionTypeAdditionalDescription && nullNodeAssetTransactionTypeAdditionalDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetTransactionTypeAdditionalDescription = null;
+            if (parseNode.GetChildNode("AssetTransactionUniqueIdentifier") is { } nullNodeAssetTransactionUniqueIdentifier && nullNodeAssetTransactionUniqueIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetTransactionUniqueIdentifier = null;
+            if (parseNode.GetChildNode("FinancialInstitutionTransactionIdentifier") is { } nullNodeFinancialInstitutionTransactionIdentifier && nullNodeFinancialInstitutionTransactionIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FinancialInstitutionTransactionIdentifier = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Asset Investment Transaction Type Enumerated derived by Vendor.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AssetInvestmentTransactionType? AssetInvestmentTransactionType { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetInvestmentTransactionType? AssetInvestmentTransactionType { get => _explicitNullValueAssetInvestmentTransactionType; set { _explicitNullValueAssetInvestmentTransactionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetInvestmentTransactionType"); else _explicitNullProperties?.Remove("AssetInvestmentTransactionType"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AssetInvestmentTransactionType? _explicitNullValueAssetInvestmentTransactionType = default!;
         /// <summary>Asset Investment Transaction Type Description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetInvestmentTransactionTypeDescription { get; set; }
+        public string? AssetInvestmentTransactionTypeDescription { get => _explicitNullValueAssetInvestmentTransactionTypeDescription; set { _explicitNullValueAssetInvestmentTransactionTypeDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetInvestmentTransactionTypeDescription"); else _explicitNullProperties?.Remove("AssetInvestmentTransactionTypeDescription"); } }
+        private string? _explicitNullValueAssetInvestmentTransactionTypeDescription = default!;
 #nullable restore
 #else
-        public string AssetInvestmentTransactionTypeDescription { get; set; }
+        public string AssetInvestmentTransactionTypeDescription { get => _explicitNullValueAssetInvestmentTransactionTypeDescription; set { _explicitNullValueAssetInvestmentTransactionTypeDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetInvestmentTransactionTypeDescription"); else _explicitNullProperties?.Remove("AssetInvestmentTransactionTypeDescription"); } }
+        private string _explicitNullValueAssetInvestmentTransactionTypeDescription = default!;
 #endif
         /// <summary>Asset Transaction Amount.</summary>
-        public double? AssetTransactionAmount { get; set; }
+        public double? AssetTransactionAmount { get => _explicitNullValueAssetTransactionAmount; set { _explicitNullValueAssetTransactionAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetTransactionAmount"); else _explicitNullProperties?.Remove("AssetTransactionAmount"); } }
+        private double? _explicitNullValueAssetTransactionAmount = default!;
         /// <summary>Asset Transaction Category Type Enumerated derived by Vendor.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactionCategoryType? AssetTransactionCategoryType { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactionCategoryType? AssetTransactionCategoryType { get => _explicitNullValueAssetTransactionCategoryType; set { _explicitNullValueAssetTransactionCategoryType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetTransactionCategoryType"); else _explicitNullProperties?.Remove("AssetTransactionCategoryType"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactionCategoryType? _explicitNullValueAssetTransactionCategoryType = default!;
         /// <summary>Asset Transaction Date.</summary>
-        public Date? AssetTransactionDate { get; set; }
+        public Date? AssetTransactionDate { get => _explicitNullValueAssetTransactionDate; set { _explicitNullValueAssetTransactionDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetTransactionDate"); else _explicitNullProperties?.Remove("AssetTransactionDate"); } }
+        private Date? _explicitNullValueAssetTransactionDate = default!;
         /// <summary>Populate with who did the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetTransactionPaidByName { get; set; }
+        public string? AssetTransactionPaidByName { get => _explicitNullValueAssetTransactionPaidByName; set { _explicitNullValueAssetTransactionPaidByName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetTransactionPaidByName"); else _explicitNullProperties?.Remove("AssetTransactionPaidByName"); } }
+        private string? _explicitNullValueAssetTransactionPaidByName = default!;
 #nullable restore
 #else
-        public string AssetTransactionPaidByName { get; set; }
+        public string AssetTransactionPaidByName { get => _explicitNullValueAssetTransactionPaidByName; set { _explicitNullValueAssetTransactionPaidByName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetTransactionPaidByName"); else _explicitNullProperties?.Remove("AssetTransactionPaidByName"); } }
+        private string _explicitNullValueAssetTransactionPaidByName = default!;
 #endif
         /// <summary>Populate with for whom the transaction is done</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetTransactionPaidToName { get; set; }
+        public string? AssetTransactionPaidToName { get => _explicitNullValueAssetTransactionPaidToName; set { _explicitNullValueAssetTransactionPaidToName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetTransactionPaidToName"); else _explicitNullProperties?.Remove("AssetTransactionPaidToName"); } }
+        private string? _explicitNullValueAssetTransactionPaidToName = default!;
 #nullable restore
 #else
-        public string AssetTransactionPaidToName { get; set; }
+        public string AssetTransactionPaidToName { get => _explicitNullValueAssetTransactionPaidToName; set { _explicitNullValueAssetTransactionPaidToName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetTransactionPaidToName"); else _explicitNullProperties?.Remove("AssetTransactionPaidToName"); } }
+        private string _explicitNullValueAssetTransactionPaidToName = default!;
 #endif
         /// <summary>Asset Transaction Post Date.</summary>
-        public Date? AssetTransactionPostDate { get; set; }
+        public Date? AssetTransactionPostDate { get => _explicitNullValueAssetTransactionPostDate; set { _explicitNullValueAssetTransactionPostDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetTransactionPostDate"); else _explicitNullProperties?.Remove("AssetTransactionPostDate"); } }
+        private Date? _explicitNullValueAssetTransactionPostDate = default!;
         /// <summary>Asset Transaction Type.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactionType? AssetTransactionType { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactionType? AssetTransactionType { get => _explicitNullValueAssetTransactionType; set { _explicitNullValueAssetTransactionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetTransactionType"); else _explicitNullProperties?.Remove("AssetTransactionType"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactionType? _explicitNullValueAssetTransactionType = default!;
         /// <summary>FI Provided - examples are atm, cash, check, credit, debit, deposit, directDebit, directDeposit, dividend, fee, interest, other, payment, pointOfSale, repeatPayment, serviceCharge, transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetTransactionTypeAdditionalDescription { get; set; }
+        public string? AssetTransactionTypeAdditionalDescription { get => _explicitNullValueAssetTransactionTypeAdditionalDescription; set { _explicitNullValueAssetTransactionTypeAdditionalDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetTransactionTypeAdditionalDescription"); else _explicitNullProperties?.Remove("AssetTransactionTypeAdditionalDescription"); } }
+        private string? _explicitNullValueAssetTransactionTypeAdditionalDescription = default!;
 #nullable restore
 #else
-        public string AssetTransactionTypeAdditionalDescription { get; set; }
+        public string AssetTransactionTypeAdditionalDescription { get => _explicitNullValueAssetTransactionTypeAdditionalDescription; set { _explicitNullValueAssetTransactionTypeAdditionalDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetTransactionTypeAdditionalDescription"); else _explicitNullProperties?.Remove("AssetTransactionTypeAdditionalDescription"); } }
+        private string _explicitNullValueAssetTransactionTypeAdditionalDescription = default!;
 #endif
         /// <summary>A vendor created unique Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetTransactionUniqueIdentifier { get; set; }
+        public string? AssetTransactionUniqueIdentifier { get => _explicitNullValueAssetTransactionUniqueIdentifier; set { _explicitNullValueAssetTransactionUniqueIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetTransactionUniqueIdentifier"); else _explicitNullProperties?.Remove("AssetTransactionUniqueIdentifier"); } }
+        private string? _explicitNullValueAssetTransactionUniqueIdentifier = default!;
 #nullable restore
 #else
-        public string AssetTransactionUniqueIdentifier { get; set; }
+        public string AssetTransactionUniqueIdentifier { get => _explicitNullValueAssetTransactionUniqueIdentifier; set { _explicitNullValueAssetTransactionUniqueIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetTransactionUniqueIdentifier"); else _explicitNullProperties?.Remove("AssetTransactionUniqueIdentifier"); } }
+        private string _explicitNullValueAssetTransactionUniqueIdentifier = default!;
 #endif
         /// <summary>FI provided Transaction Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FinancialInstitutionTransactionIdentifier { get; set; }
+        public string? FinancialInstitutionTransactionIdentifier { get => _explicitNullValueFinancialInstitutionTransactionIdentifier; set { _explicitNullValueFinancialInstitutionTransactionIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("FinancialInstitutionTransactionIdentifier"); else _explicitNullProperties?.Remove("FinancialInstitutionTransactionIdentifier"); } }
+        private string? _explicitNullValueFinancialInstitutionTransactionIdentifier = default!;
 #nullable restore
 #else
-        public string FinancialInstitutionTransactionIdentifier { get; set; }
+        public string FinancialInstitutionTransactionIdentifier { get => _explicitNullValueFinancialInstitutionTransactionIdentifier; set { _explicitNullValueFinancialInstitutionTransactionIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("FinancialInstitutionTransactionIdentifier"); else _explicitNullProperties?.Remove("FinancialInstitutionTransactionIdentifier"); } }
+        private string _explicitNullValueFinancialInstitutionTransactionIdentifier = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactionDetail"/> and sets the default values.
@@ -91,7 +128,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactionDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactionDetail();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactionDetail(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -134,6 +171,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("AssetTransactionTypeAdditionalDescription", AssetTransactionTypeAdditionalDescription);
             writer.WriteStringValue("AssetTransactionUniqueIdentifier", AssetTransactionUniqueIdentifier);
             writer.WriteStringValue("FinancialInstitutionTransactionIdentifier", FinancialInstitutionTransactionIdentifier);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,19 +12,31 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class KycCheckIdNumberSummary : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ssa_verification") is { } nullNodeSsaVerification && nullNodeSsaVerification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SsaVerification = null;
+            if (parseNode.GetChildNode("summary") is { } nullNodeSummary && nullNodeSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Summary = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Results from a Social Security Administration (SSA) electronic Consent Based Social Security Number Verification (eCBSV) check.Null for non-US verifications or when no SSA check ran.SSA `match` and `no_match` override the proprietary result in `kyc_check.id_number.summary`.`is_deceased: true` sets that summary to `no_match`, regardless of the SSA match result.If SSA returns `no_data` without a deceased result, the summary keeps the proprietary result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysis? SsaVerification { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysis? SsaVerification { get => _explicitNullValueSsaVerification; set { _explicitNullValueSsaVerification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssa_verification"); else _explicitNullProperties?.Remove("ssa_verification"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysis? _explicitNullValueSsaVerification = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysis SsaVerification { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysis SsaVerification { get => _explicitNullValueSsaVerification; set { _explicitNullValueSsaVerification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssa_verification"); else _explicitNullProperties?.Remove("ssa_verification"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysis _explicitNullValueSsaVerification = default!;
 #endif
         /// <summary>An enum indicating the match type between data provided by user and data checked against an external data source.`match` indicates that the provided input data was a strong match against external data.`partial_match` indicates the data approximately matched against external data. For example, &quot;Knope&quot; vs. &quot;Knope-Wyatt&quot; for last name.`no_match` indicates that Plaid was able to perform a check against an external data source and it did not match the provided input data.`no_data` indicates that Plaid was unable to find external data to compare against the provided input data.`no_input` indicates that Plaid was unable to perform a check because no information was provided for this field by the end user.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode? Summary { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode? Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode? _explicitNullValueSummary = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.KycCheckIdNumberSummary"/> and sets the default values.
         /// </summary>
@@ -40,7 +52,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.KycCheckIdNumberSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.KycCheckIdNumberSummary();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.KycCheckIdNumberSummary(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysis>("ssa_verification", SsaVerification);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode>("summary", Summary);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

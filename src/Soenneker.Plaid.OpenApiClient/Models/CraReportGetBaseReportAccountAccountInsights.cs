@@ -13,57 +13,87 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraReportGetBaseReportAccountAccountInsights : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("average_days_between_transactions") is { } nullNodeAverageDaysBetweenTransactions && nullNodeAverageDaysBetweenTransactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageDaysBetweenTransactions = null;
+            if (parseNode.GetChildNode("average_inflow_amounts") is { } nullNodeAverageInflowAmounts && nullNodeAverageInflowAmounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageInflowAmounts = null;
+            if (parseNode.GetChildNode("average_outflow_amounts") is { } nullNodeAverageOutflowAmounts && nullNodeAverageOutflowAmounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageOutflowAmounts = null;
+            if (parseNode.GetChildNode("longest_gaps_between_transactions") is { } nullNodeLongestGapsBetweenTransactions && nullNodeLongestGapsBetweenTransactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LongestGapsBetweenTransactions = null;
+            if (parseNode.GetChildNode("most_recent_transaction_date") is { } nullNodeMostRecentTransactionDate && nullNodeMostRecentTransactionDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MostRecentTransactionDate = null;
+            if (parseNode.GetChildNode("number_of_days_no_transactions") is { } nullNodeNumberOfDaysNoTransactions && nullNodeNumberOfDaysNoTransactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumberOfDaysNoTransactions = null;
+            if (parseNode.GetChildNode("number_of_inflows") is { } nullNodeNumberOfInflows && nullNodeNumberOfInflows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumberOfInflows = null;
+            if (parseNode.GetChildNode("number_of_outflows") is { } nullNodeNumberOfOutflows && nullNodeNumberOfOutflows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumberOfOutflows = null;
+            if (parseNode.GetChildNode("oldest_transaction_date") is { } nullNodeOldestTransactionDate && nullNodeOldestTransactionDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldestTransactionDate = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The average number of days between sequential transactions. `null` if it could not be computed.</summary>
-        public double? AverageDaysBetweenTransactions { get; set; }
+        public double? AverageDaysBetweenTransactions { get => _explicitNullValueAverageDaysBetweenTransactions; set { _explicitNullValueAverageDaysBetweenTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_days_between_transactions"); else _explicitNullProperties?.Remove("average_days_between_transactions"); } }
+        private double? _explicitNullValueAverageDaysBetweenTransactions = default!;
         /// <summary>The average amount of transactions that moved money into the account in each calendar month. Only USD transactions are counted. Empty for non-depository accounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAverageFlowInsights>? AverageInflowAmounts { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAverageFlowInsights>? AverageInflowAmounts { get => _explicitNullValueAverageInflowAmounts; set { _explicitNullValueAverageInflowAmounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_inflow_amounts"); else _explicitNullProperties?.Remove("average_inflow_amounts"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAverageFlowInsights>? _explicitNullValueAverageInflowAmounts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAverageFlowInsights> AverageInflowAmounts { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAverageFlowInsights> AverageInflowAmounts { get => _explicitNullValueAverageInflowAmounts; set { _explicitNullValueAverageInflowAmounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_inflow_amounts"); else _explicitNullProperties?.Remove("average_inflow_amounts"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAverageFlowInsights> _explicitNullValueAverageInflowAmounts = default!;
 #endif
         /// <summary>The average amount of transactions that moved money out of the account in each calendar month. Only USD transactions are counted. Empty for non-depository accounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAverageFlowInsights>? AverageOutflowAmounts { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAverageFlowInsights>? AverageOutflowAmounts { get => _explicitNullValueAverageOutflowAmounts; set { _explicitNullValueAverageOutflowAmounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_outflow_amounts"); else _explicitNullProperties?.Remove("average_outflow_amounts"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAverageFlowInsights>? _explicitNullValueAverageOutflowAmounts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAverageFlowInsights> AverageOutflowAmounts { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAverageFlowInsights> AverageOutflowAmounts { get => _explicitNullValueAverageOutflowAmounts; set { _explicitNullValueAverageOutflowAmounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_outflow_amounts"); else _explicitNullProperties?.Remove("average_outflow_amounts"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAverageFlowInsights> _explicitNullValueAverageOutflowAmounts = default!;
 #endif
         /// <summary>The longest gap between sequential transactions in each calendar month.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportLongestGapInsight>? LongestGapsBetweenTransactions { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportLongestGapInsight>? LongestGapsBetweenTransactions { get => _explicitNullValueLongestGapsBetweenTransactions; set { _explicitNullValueLongestGapsBetweenTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("longest_gaps_between_transactions"); else _explicitNullProperties?.Remove("longest_gaps_between_transactions"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportLongestGapInsight>? _explicitNullValueLongestGapsBetweenTransactions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportLongestGapInsight> LongestGapsBetweenTransactions { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportLongestGapInsight> LongestGapsBetweenTransactions { get => _explicitNullValueLongestGapsBetweenTransactions; set { _explicitNullValueLongestGapsBetweenTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("longest_gaps_between_transactions"); else _explicitNullProperties?.Remove("longest_gaps_between_transactions"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportLongestGapInsight> _explicitNullValueLongestGapsBetweenTransactions = default!;
 #endif
         /// <summary>The date of the most recent transaction on the account. `null` if the account has no transactions.</summary>
-        public Date? MostRecentTransactionDate { get; set; }
+        public Date? MostRecentTransactionDate { get => _explicitNullValueMostRecentTransactionDate; set { _explicitNullValueMostRecentTransactionDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("most_recent_transaction_date"); else _explicitNullProperties?.Remove("most_recent_transaction_date"); } }
+        private Date? _explicitNullValueMostRecentTransactionDate = default!;
         /// <summary>The number of days with no transactions.</summary>
-        public int? NumberOfDaysNoTransactions { get; set; }
+        public int? NumberOfDaysNoTransactions { get => _explicitNullValueNumberOfDaysNoTransactions; set { _explicitNullValueNumberOfDaysNoTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number_of_days_no_transactions"); else _explicitNullProperties?.Remove("number_of_days_no_transactions"); } }
+        private int? _explicitNullValueNumberOfDaysNoTransactions = default!;
         /// <summary>The number of transactions that moved money into the account in each calendar month. Empty for non-depository accounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportNumberFlowInsights>? NumberOfInflows { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportNumberFlowInsights>? NumberOfInflows { get => _explicitNullValueNumberOfInflows; set { _explicitNullValueNumberOfInflows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number_of_inflows"); else _explicitNullProperties?.Remove("number_of_inflows"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportNumberFlowInsights>? _explicitNullValueNumberOfInflows = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportNumberFlowInsights> NumberOfInflows { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportNumberFlowInsights> NumberOfInflows { get => _explicitNullValueNumberOfInflows; set { _explicitNullValueNumberOfInflows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number_of_inflows"); else _explicitNullProperties?.Remove("number_of_inflows"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportNumberFlowInsights> _explicitNullValueNumberOfInflows = default!;
 #endif
         /// <summary>The number of transactions that moved money out of the account in each calendar month. Empty for non-depository accounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportNumberFlowInsights>? NumberOfOutflows { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportNumberFlowInsights>? NumberOfOutflows { get => _explicitNullValueNumberOfOutflows; set { _explicitNullValueNumberOfOutflows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number_of_outflows"); else _explicitNullProperties?.Remove("number_of_outflows"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportNumberFlowInsights>? _explicitNullValueNumberOfOutflows = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportNumberFlowInsights> NumberOfOutflows { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportNumberFlowInsights> NumberOfOutflows { get => _explicitNullValueNumberOfOutflows; set { _explicitNullValueNumberOfOutflows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number_of_outflows"); else _explicitNullProperties?.Remove("number_of_outflows"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportNumberFlowInsights> _explicitNullValueNumberOfOutflows = default!;
 #endif
         /// <summary>The date of the earliest transaction on the account. `null` if the account has no transactions.</summary>
-        public Date? OldestTransactionDate { get; set; }
+        public Date? OldestTransactionDate { get => _explicitNullValueOldestTransactionDate; set { _explicitNullValueOldestTransactionDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldest_transaction_date"); else _explicitNullProperties?.Remove("oldest_transaction_date"); } }
+        private Date? _explicitNullValueOldestTransactionDate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAccountAccountInsights"/> and sets the default values.
         /// </summary>
@@ -79,7 +109,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAccountAccountInsights CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAccountAccountInsights();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAccountAccountInsights(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -116,6 +146,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportNumberFlowInsights>("number_of_inflows", NumberOfInflows);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportNumberFlowInsights>("number_of_outflows", NumberOfOutflows);
             writer.WriteDateValue("oldest_transaction_date", OldestTransactionDate);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

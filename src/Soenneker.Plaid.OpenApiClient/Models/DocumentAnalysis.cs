@@ -12,52 +12,78 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DocumentAnalysis : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("aamva_verification") is { } nullNodeAamvaVerification && nullNodeAamvaVerification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AamvaVerification = null;
+            if (parseNode.GetChildNode("authenticity") is { } nullNodeAuthenticity && nullNodeAuthenticity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Authenticity = null;
+            if (parseNode.GetChildNode("extracted_data") is { } nullNodeExtractedData && nullNodeExtractedData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtractedData = null;
+            if (parseNode.GetChildNode("fraud_analysis_details") is { } nullNodeFraudAnalysisDetails && nullNodeFraudAnalysisDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FraudAnalysisDetails = null;
+            if (parseNode.GetChildNode("human_review") is { } nullNodeHumanReview && nullNodeHumanReview.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HumanReview = null;
+            if (parseNode.GetChildNode("image_quality") is { } nullNodeImageQuality && nullNodeImageQuality.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageQuality = null;
+            if (parseNode.GetChildNode("image_quality_details") is { } nullNodeImageQualityDetails && nullNodeImageQualityDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageQualityDetails = null;
+        }
+
         /// <summary>Analyzed AAMVA data for the associated hit.Note: This field is only available for U.S. driver&apos;s licenses issued by participating states.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaAnalysis? AamvaVerification { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaAnalysis? AamvaVerification { get => _explicitNullValueAamvaVerification; set { _explicitNullValueAamvaVerification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aamva_verification"); else _explicitNullProperties?.Remove("aamva_verification"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AamvaAnalysis? _explicitNullValueAamvaVerification = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaAnalysis AamvaVerification { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaAnalysis AamvaVerification { get => _explicitNullValueAamvaVerification; set { _explicitNullValueAamvaVerification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aamva_verification"); else _explicitNullProperties?.Remove("aamva_verification"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AamvaAnalysis _explicitNullValueAamvaVerification = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>High level summary of whether the document in the provided image matches the formatting rules and security checks for the associated jurisdiction.For example, most identity documents have formatting rules like the following:The image of the person&apos;s face must have a certain contrast in order to highlight skin toneThe subject in the document&apos;s image must remove eye glasses and pose in a certain wayThe informational fields (name, date of birth, ID number, etc.) must be colored and aligned according to specific rulesSecurity features like watermarks and background patterns must be presentSo a `match` status for this field indicates that the document in the provided image seems to conform to the various formatting and security rules associated with the detected document.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.DocumentAuthenticityMatchCode? Authenticity { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.DocumentAuthenticityMatchCode? Authenticity { get => _explicitNullValueAuthenticity; set { _explicitNullValueAuthenticity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticity"); else _explicitNullProperties?.Remove("authenticity"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.DocumentAuthenticityMatchCode? _explicitNullValueAuthenticity = default!;
         /// <summary>Analysis of the data extracted from the submitted document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PhysicalDocumentExtractedDataAnalysis? ExtractedData { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PhysicalDocumentExtractedDataAnalysis? ExtractedData { get => _explicitNullValueExtractedData; set { _explicitNullValueExtractedData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extracted_data"); else _explicitNullProperties?.Remove("extracted_data"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PhysicalDocumentExtractedDataAnalysis? _explicitNullValueExtractedData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PhysicalDocumentExtractedDataAnalysis ExtractedData { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PhysicalDocumentExtractedDataAnalysis ExtractedData { get => _explicitNullValueExtractedData; set { _explicitNullValueExtractedData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extracted_data"); else _explicitNullProperties?.Remove("extracted_data"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PhysicalDocumentExtractedDataAnalysis _explicitNullValueExtractedData = default!;
 #endif
         /// <summary>Details about the fraud analysis performed on the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetails? FraudAnalysisDetails { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetails? FraudAnalysisDetails { get => _explicitNullValueFraudAnalysisDetails; set { _explicitNullValueFraudAnalysisDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraud_analysis_details"); else _explicitNullProperties?.Remove("fraud_analysis_details"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetails? _explicitNullValueFraudAnalysisDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetails FraudAnalysisDetails { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetails FraudAnalysisDetails { get => _explicitNullValueFraudAnalysisDetails; set { _explicitNullValueFraudAnalysisDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraud_analysis_details"); else _explicitNullProperties?.Remove("fraud_analysis_details"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetails _explicitNullValueFraudAnalysisDetails = default!;
 #endif
         /// <summary>Details about the human review check, which refers to a check that is performed by a document specialist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.HumanReview? HumanReview { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.HumanReview? HumanReview { get => _explicitNullValueHumanReview; set { _explicitNullValueHumanReview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("human_review"); else _explicitNullProperties?.Remove("human_review"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.HumanReview? _explicitNullValueHumanReview = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.HumanReview HumanReview { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.HumanReview HumanReview { get => _explicitNullValueHumanReview; set { _explicitNullValueHumanReview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("human_review"); else _explicitNullProperties?.Remove("human_review"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.HumanReview _explicitNullValueHumanReview = default!;
 #endif
         /// <summary>A high level description of the quality of the image the user submitted.For example, an image that is blurry, distorted by glare from a nearby light source, or improperly framed might be marked as low or medium quality. Poor quality images are more likely to fail OCR and/or template conformity checks.Note: By default, Plaid will let a user recapture document images twice before failing the entire session if we attribute the failure to low image quality.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ImageQuality? ImageQuality { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ImageQuality? ImageQuality { get => _explicitNullValueImageQuality; set { _explicitNullValueImageQuality = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_quality"); else _explicitNullProperties?.Remove("image_quality"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ImageQuality? _explicitNullValueImageQuality = default!;
         /// <summary>Details about the image quality of the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetails? ImageQualityDetails { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetails? ImageQualityDetails { get => _explicitNullValueImageQualityDetails; set { _explicitNullValueImageQualityDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_quality_details"); else _explicitNullProperties?.Remove("image_quality_details"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetails? _explicitNullValueImageQualityDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetails ImageQualityDetails { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetails ImageQualityDetails { get => _explicitNullValueImageQualityDetails; set { _explicitNullValueImageQualityDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_quality_details"); else _explicitNullProperties?.Remove("image_quality_details"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetails _explicitNullValueImageQualityDetails = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.DocumentAnalysis"/> and sets the default values.
@@ -74,7 +100,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.DocumentAnalysis CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.DocumentAnalysis();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.DocumentAnalysis(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -107,6 +133,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.HumanReview>("human_review", HumanReview);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ImageQuality>("image_quality", ImageQuality);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetails>("image_quality_details", ImageQualityDetails);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

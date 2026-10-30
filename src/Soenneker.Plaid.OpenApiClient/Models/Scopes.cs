@@ -12,26 +12,41 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Scopes : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accounts") is { } nullNodeAccounts && nullNodeAccounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Accounts = null;
+            if (parseNode.GetChildNode("new_accounts") is { } nullNodeNewAccounts && nullNodeNewAccounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewAccounts = null;
+            if (parseNode.GetChildNode("product_access") is { } nullNodeProductAccess && nullNodeProductAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductAccess = null;
+        }
+
         /// <summary>The accounts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.AccountAccess>? Accounts { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.AccountAccess>? Accounts { get => _explicitNullValueAccounts; set { _explicitNullValueAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accounts"); else _explicitNullProperties?.Remove("accounts"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.AccountAccess>? _explicitNullValueAccounts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.AccountAccess> Accounts { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.AccountAccess> Accounts { get => _explicitNullValueAccounts; set { _explicitNullValueAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accounts"); else _explicitNullProperties?.Remove("accounts"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.AccountAccess> _explicitNullValueAccounts = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Allow access to newly opened accounts as they are opened. If unset, defaults to `true`.</summary>
-        public bool? NewAccounts { get; set; }
+        public bool? NewAccounts { get => _explicitNullValueNewAccounts; set { _explicitNullValueNewAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_accounts"); else _explicitNullProperties?.Remove("new_accounts"); } }
+        private bool? _explicitNullValueNewAccounts = default!;
         /// <summary>The product access being requested. Used to allow or disallow product access across all accounts. If unset, defaults to all products allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProductAccess? ProductAccess { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProductAccess? ProductAccess { get => _explicitNullValueProductAccess; set { _explicitNullValueProductAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product_access"); else _explicitNullProperties?.Remove("product_access"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ProductAccess? _explicitNullValueProductAccess = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProductAccess ProductAccess { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProductAccess ProductAccess { get => _explicitNullValueProductAccess; set { _explicitNullValueProductAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product_access"); else _explicitNullProperties?.Remove("product_access"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ProductAccess _explicitNullValueProductAccess = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.Scopes"/> and sets the default values.
@@ -49,7 +64,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.Scopes CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.Scopes();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.Scopes(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,6 +89,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.AccountAccess>("accounts", Accounts);
             writer.WriteBoolValue("new_accounts", NewAccounts);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProductAccess>("product_access", ProductAccess);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

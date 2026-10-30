@@ -12,41 +12,65 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FdxConsentGrant : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("createdTime") is { } nullNodeCreatedTime && nullNodeCreatedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedTime = null;
+            if (parseNode.GetChildNode("expirationTime") is { } nullNodeExpirationTime && nullNodeExpirationTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationTime = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("parties") is { } nullNodeParties && nullNodeParties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parties = null;
+            if (parseNode.GetChildNode("resources") is { } nullNodeResources && nullNodeResources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resources = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("updatedTime") is { } nullNodeUpdatedTime && nullNodeUpdatedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedTime = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the consent was initially granted</summary>
-        public DateTimeOffset? CreatedTime { get; set; }
+        public DateTimeOffset? CreatedTime { get => _explicitNullValueCreatedTime; set { _explicitNullValueCreatedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdTime"); else _explicitNullProperties?.Remove("createdTime"); } }
+        private DateTimeOffset? _explicitNullValueCreatedTime = default!;
         /// <summary>When the consent grant will expire. Omitted when the grant has no expiration.</summary>
-        public DateTimeOffset? ExpirationTime { get; set; }
+        public DateTimeOffset? ExpirationTime { get => _explicitNullValueExpirationTime; set { _explicitNullValueExpirationTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expirationTime"); else _explicitNullProperties?.Remove("expirationTime"); } }
+        private DateTimeOffset? _explicitNullValueExpirationTime = default!;
         /// <summary>The persistent identifier of the consent grant</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Non-end-user parties participating in the consent grant (Data Recipient, Data Provider, Data Access Platform).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.FdxParty>? Parties { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.FdxParty>? Parties { get => _explicitNullValueParties; set { _explicitNullValueParties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parties"); else _explicitNullProperties?.Remove("parties"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.FdxParty>? _explicitNullValueParties = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.FdxParty> Parties { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.FdxParty> Parties { get => _explicitNullValueParties; set { _explicitNullValueParties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parties"); else _explicitNullProperties?.Remove("parties"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.FdxParty> _explicitNullValueParties = default!;
 #endif
         /// <summary>Permissioned resource entries. Omitted when there are no resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentGrantResource>? Resources { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentGrantResource>? Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resources"); else _explicitNullProperties?.Remove("resources"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentGrantResource>? _explicitNullValueResources = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentGrantResource> Resources { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentGrantResource> Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resources"); else _explicitNullProperties?.Remove("resources"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentGrantResource> _explicitNullValueResources = default!;
 #endif
         /// <summary>Current status of a consent grant. One of `ACTIVE`, `REVOKED`, `EXPIRED`.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentGrantStatus? Status { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentGrantStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentGrantStatus? _explicitNullValueStatus = default!;
         /// <summary>When the consent grant was last updated</summary>
-        public DateTimeOffset? UpdatedTime { get; set; }
+        public DateTimeOffset? UpdatedTime { get => _explicitNullValueUpdatedTime; set { _explicitNullValueUpdatedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedTime"); else _explicitNullProperties?.Remove("updatedTime"); } }
+        private DateTimeOffset? _explicitNullValueUpdatedTime = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentGrant"/> and sets the default values.
         /// </summary>
@@ -62,7 +86,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentGrant CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentGrant();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentGrant(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,6 +119,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentGrantResource>("resources", Resources);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentGrantStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updatedTime", UpdatedTime);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,27 +12,52 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProductAccess : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accounts_details_transactions") is { } nullNodeAccountsDetailsTransactions && nullNodeAccountsDetailsTransactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountsDetailsTransactions = null;
+            if (parseNode.GetChildNode("accounts_routing_number") is { } nullNodeAccountsRoutingNumber && nullNodeAccountsRoutingNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountsRoutingNumber = null;
+            if (parseNode.GetChildNode("accounts_statements") is { } nullNodeAccountsStatements && nullNodeAccountsStatements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountsStatements = null;
+            if (parseNode.GetChildNode("accounts_tax_statements") is { } nullNodeAccountsTaxStatements && nullNodeAccountsTaxStatements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountsTaxStatements = null;
+            if (parseNode.GetChildNode("auth") is { } nullNodeAuth && nullNodeAuth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Auth = null;
+            if (parseNode.GetChildNode("customers_profiles") is { } nullNodeCustomersProfiles && nullNodeCustomersProfiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomersProfiles = null;
+            if (parseNode.GetChildNode("identity") is { } nullNodeIdentity && nullNodeIdentity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Identity = null;
+            if (parseNode.GetChildNode("statements") is { } nullNodeStatements && nullNodeStatements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Statements = null;
+            if (parseNode.GetChildNode("transactions") is { } nullNodeTransactions && nullNodeTransactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transactions = null;
+        }
+
         /// <summary>Allow access to `accounts_details_transactions`. Only used by certain partners. If relevant to the partner and unset, defaults to `true`.</summary>
-        public bool? AccountsDetailsTransactions { get; set; }
+        public bool? AccountsDetailsTransactions { get => _explicitNullValueAccountsDetailsTransactions; set { _explicitNullValueAccountsDetailsTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accounts_details_transactions"); else _explicitNullProperties?.Remove("accounts_details_transactions"); } }
+        private bool? _explicitNullValueAccountsDetailsTransactions = default!;
         /// <summary>Allow access to `accounts_routing_number`. Only used by certain partners. If relevant to the partner and unset, defaults to `true`.</summary>
-        public bool? AccountsRoutingNumber { get; set; }
+        public bool? AccountsRoutingNumber { get => _explicitNullValueAccountsRoutingNumber; set { _explicitNullValueAccountsRoutingNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accounts_routing_number"); else _explicitNullProperties?.Remove("accounts_routing_number"); } }
+        private bool? _explicitNullValueAccountsRoutingNumber = default!;
         /// <summary>Allow access to `accounts_statements`. Only used by certain partners. If relevant to the partner and unset, defaults to `true`.</summary>
-        public bool? AccountsStatements { get; set; }
+        public bool? AccountsStatements { get => _explicitNullValueAccountsStatements; set { _explicitNullValueAccountsStatements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accounts_statements"); else _explicitNullProperties?.Remove("accounts_statements"); } }
+        private bool? _explicitNullValueAccountsStatements = default!;
         /// <summary>Allow access to `accounts_tax_statements`. Only used by certain partners. If relevant to the partner and unset, defaults to `true`.</summary>
-        public bool? AccountsTaxStatements { get; set; }
+        public bool? AccountsTaxStatements { get => _explicitNullValueAccountsTaxStatements; set { _explicitNullValueAccountsTaxStatements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accounts_tax_statements"); else _explicitNullProperties?.Remove("accounts_tax_statements"); } }
+        private bool? _explicitNullValueAccountsTaxStatements = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Allow access to account number details. Only used by certain partners. If relevant to the partner and unset, defaults to `true`.</summary>
-        public bool? Auth { get; set; }
+        public bool? Auth { get => _explicitNullValueAuth; set { _explicitNullValueAuth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth"); else _explicitNullProperties?.Remove("auth"); } }
+        private bool? _explicitNullValueAuth = default!;
         /// <summary>Allow access to `customers_profiles`. Only used by certain partners. If relevant to the partner and unset, defaults to `true`.</summary>
-        public bool? CustomersProfiles { get; set; }
+        public bool? CustomersProfiles { get => _explicitNullValueCustomersProfiles; set { _explicitNullValueCustomersProfiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customers_profiles"); else _explicitNullProperties?.Remove("customers_profiles"); } }
+        private bool? _explicitNullValueCustomersProfiles = default!;
         /// <summary>Allow access to the Identity product (name, email, phone, address). Only used by certain partners. If relevant to the partner and unset, defaults to `true`.</summary>
-        public bool? Identity { get; set; }
+        public bool? Identity { get => _explicitNullValueIdentity; set { _explicitNullValueIdentity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity"); else _explicitNullProperties?.Remove("identity"); } }
+        private bool? _explicitNullValueIdentity = default!;
         /// <summary>Allow access to statements. Only used by certain partners. If relevant to the partner and unset, defaults to `true`.</summary>
-        public bool? Statements { get; set; }
+        public bool? Statements { get => _explicitNullValueStatements; set { _explicitNullValueStatements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statements"); else _explicitNullProperties?.Remove("statements"); } }
+        private bool? _explicitNullValueStatements = default!;
         /// <summary>Allow access to transaction details. Only used by certain partners. If relevant to the partner and unset, defaults to `true`.</summary>
-        public bool? Transactions { get; set; }
+        public bool? Transactions { get => _explicitNullValueTransactions; set { _explicitNullValueTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactions"); else _explicitNullProperties?.Remove("transactions"); } }
+        private bool? _explicitNullValueTransactions = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ProductAccess"/> and sets the default values.
         /// </summary>
@@ -57,7 +82,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.ProductAccess CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.ProductAccess();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.ProductAccess(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,6 +119,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteBoolValue("identity", Identity);
             writer.WriteBoolValue("statements", Statements);
             writer.WriteBoolValue("transactions", Transactions);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

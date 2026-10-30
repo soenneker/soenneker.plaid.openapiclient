@@ -12,131 +12,193 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransferIntentGetBody : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_id") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
+            if (parseNode.GetChildNode("ach_class") is { } nullNodeAchClass && nullNodeAchClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AchClass = null;
+            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("authorization_decision") is { } nullNodeAuthorizationDecision && nullNodeAuthorizationDecision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizationDecision = null;
+            if (parseNode.GetChildNode("authorization_decision_rationale") is { } nullNodeAuthorizationDecisionRationale && nullNodeAuthorizationDecisionRationale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizationDecisionRationale = null;
+            if (parseNode.GetChildNode("created") is { } nullNodeCreated && nullNodeCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Created = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("failure_reason") is { } nullNodeFailureReason && nullNodeFailureReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureReason = null;
+            if (parseNode.GetChildNode("funding_account_id") is { } nullNodeFundingAccountId && nullNodeFundingAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FundingAccountId = null;
+            if (parseNode.GetChildNode("guarantee_decision") is { } nullNodeGuaranteeDecision && nullNodeGuaranteeDecision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuaranteeDecision = null;
+            if (parseNode.GetChildNode("guarantee_decision_rationale") is { } nullNodeGuaranteeDecisionRationale && nullNodeGuaranteeDecisionRationale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuaranteeDecisionRationale = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("iso_currency_code") is { } nullNodeIsoCurrencyCode && nullNodeIsoCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsoCurrencyCode = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
+            if (parseNode.GetChildNode("network") is { } nullNodeNetwork && nullNodeNetwork.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Network = null;
+            if (parseNode.GetChildNode("origination_account_id") is { } nullNodeOriginationAccountId && nullNodeOriginationAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginationAccountId = null;
+            if (parseNode.GetChildNode("require_guarantee") is { } nullNodeRequireGuarantee && nullNodeRequireGuarantee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireGuarantee = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("transfer_id") is { } nullNodeTransferId && nullNodeTransferId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferId = null;
+            if (parseNode.GetChildNode("user") is { } nullNodeUser && nullNodeUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) User = null;
+        }
+
         /// <summary>The Plaid `account_id` for the account that will be debited or credited. Returned only if `account_id` was set on intent creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountId { get; set; }
+        public string? AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        private string? _explicitNullValueAccountId = default!;
 #nullable restore
 #else
-        public string AccountId { get; set; }
+        public string AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        private string _explicitNullValueAccountId = default!;
 #endif
         /// <summary>Specifies the use case of the transfer. Required for transfers on an ACH network. For more details, see [ACH SEC codes](https://plaid.com/docs/transfer/creating-transfers/#ach-sec-codes).Codes supported for credits: `ccd`, `ppd`Codes supported for debits: `ccd`, `ppd`, `tel`, `web``&quot;ccd&quot;` - Corporate Credit or Debit - fund transfer between two corporate bank accounts`&quot;ppd&quot;` - Prearranged Payment or Deposit - The transfer is part of a pre-existing relationship with a consumer. Authorization was obtained in writing either in person or via an electronic document signing, e.g. Docusign, by the consumer. Can be used for credits or debits.`&quot;web&quot;` - Internet-Initiated Entry. The transfer debits a consumer&apos;s bank account. Authorization from the consumer is obtained over the Internet (e.g. a web or mobile application). Can be used for single debits or recurring debits.`&quot;tel&quot;` - Telephone-Initiated Entry. The transfer debits a consumer. Debit authorization has been received orally over the telephone via a recorded call.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AchClass? AchClass { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AchClass? AchClass { get => _explicitNullValueAchClass; set { _explicitNullValueAchClass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ach_class"); else _explicitNullProperties?.Remove("ach_class"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AchClass? _explicitNullValueAchClass = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount of the transfer (decimal string with two digits of precision e.g. &quot;10.00&quot;). When calling `/transfer/authorization/create`, specify the maximum amount to authorize. When calling `/transfer/create`, specify the exact amount of the transfer, up to a maximum of the amount authorized. If this field is left blank when calling `/transfer/create`, the maximum amount authorized in the `authorization_id` will be sent. If the authorization&apos;s `guarantee_details.outcome` is `PARTIAL_INSTANT_ONLY`, this field is required when calling `/transfer/create`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Amount { get; set; }
+        public string? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private string? _explicitNullValueAmount = default!;
 #nullable restore
 #else
-        public string Amount { get; set; }
+        public string Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private string _explicitNullValueAmount = default!;
 #endif
         /// <summary>A decision regarding the proposed transfer.`APPROVED` - The proposed transfer has received the end user&apos;s consent and has been approved for processing by Plaid. The `decision_rationale` field is set if Plaid was unable to fetch the account information. You may proceed with the transfer, but further review is recommended (i.e., use Link in update mode to re-authenticate your user when `decision_rationale.code` is `ITEM_LOGIN_REQUIRED`). Refer to the `code` field in the `decision_rationale` object for details.`DECLINED` - Plaid reviewed the proposed transfer and declined processing. Refer to the `code` field in the `decision_rationale` object for details.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentAuthorizationDecision? AuthorizationDecision { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentAuthorizationDecision? AuthorizationDecision { get => _explicitNullValueAuthorizationDecision; set { _explicitNullValueAuthorizationDecision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorization_decision"); else _explicitNullProperties?.Remove("authorization_decision"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentAuthorizationDecision? _explicitNullValueAuthorizationDecision = default!;
         /// <summary>The rationale for Plaid&apos;s decision regarding a proposed transfer. It is always set for `declined` decisions, and may or may not be null for `approved` decisions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale? AuthorizationDecisionRationale { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale? AuthorizationDecisionRationale { get => _explicitNullValueAuthorizationDecisionRationale; set { _explicitNullValueAuthorizationDecisionRationale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorization_decision_rationale"); else _explicitNullProperties?.Remove("authorization_decision_rationale"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale? _explicitNullValueAuthorizationDecisionRationale = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale AuthorizationDecisionRationale { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale AuthorizationDecisionRationale { get => _explicitNullValueAuthorizationDecisionRationale; set { _explicitNullValueAuthorizationDecisionRationale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorization_decision_rationale"); else _explicitNullProperties?.Remove("authorization_decision_rationale"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale _explicitNullValueAuthorizationDecisionRationale = default!;
 #endif
         /// <summary>The datetime the transfer was created. This will be of the form `2006-01-02T15:04:05Z`.</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
+        private DateTimeOffset? _explicitNullValueCreated = default!;
         /// <summary>A description for the underlying transfer. Maximum of 15 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The reason for a failed transfer intent. Returned only if the transfer intent status is `failed`. Null otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentGetFailureReason? FailureReason { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentGetFailureReason? FailureReason { get => _explicitNullValueFailureReason; set { _explicitNullValueFailureReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_reason"); else _explicitNullProperties?.Remove("failure_reason"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentGetFailureReason? _explicitNullValueFailureReason = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentGetFailureReason FailureReason { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentGetFailureReason FailureReason { get => _explicitNullValueFailureReason; set { _explicitNullValueFailureReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_reason"); else _explicitNullProperties?.Remove("failure_reason"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentGetFailureReason _explicitNullValueFailureReason = default!;
 #endif
         /// <summary>The id of the funding account to use, available in the Plaid Dashboard. This determines which of your business checking accounts will be credited or debited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FundingAccountId { get; set; }
+        public string? FundingAccountId { get => _explicitNullValueFundingAccountId; set { _explicitNullValueFundingAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("funding_account_id"); else _explicitNullProperties?.Remove("funding_account_id"); } }
+        private string? _explicitNullValueFundingAccountId = default!;
 #nullable restore
 #else
-        public string FundingAccountId { get; set; }
+        public string FundingAccountId { get => _explicitNullValueFundingAccountId; set { _explicitNullValueFundingAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("funding_account_id"); else _explicitNullProperties?.Remove("funding_account_id"); } }
+        private string _explicitNullValueFundingAccountId = default!;
 #endif
         /// <summary>Indicates whether the transfer is guaranteed by Plaid (Guarantee customers only). This field will contain either `GUARANTEED` or `NOT_GUARANTEED` indicating whether Plaid will guarantee the transfer.</summary>
         [Obsolete("")]
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecision? GuaranteeDecision { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecision? GuaranteeDecision { get => _explicitNullValueGuaranteeDecision; set { _explicitNullValueGuaranteeDecision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guarantee_decision"); else _explicitNullProperties?.Remove("guarantee_decision"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecision? _explicitNullValueGuaranteeDecision = default!;
         /// <summary>The rationale for Plaid&apos;s decision to not guarantee a transfer. Will be `null` unless `guarantee_decision` is `NOT_GUARANTEED`.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale? GuaranteeDecisionRationale { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale? GuaranteeDecisionRationale { get => _explicitNullValueGuaranteeDecisionRationale; set { _explicitNullValueGuaranteeDecisionRationale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guarantee_decision_rationale"); else _explicitNullProperties?.Remove("guarantee_decision_rationale"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale? _explicitNullValueGuaranteeDecisionRationale = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale GuaranteeDecisionRationale { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale GuaranteeDecisionRationale { get => _explicitNullValueGuaranteeDecisionRationale; set { _explicitNullValueGuaranteeDecisionRationale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guarantee_decision_rationale"); else _explicitNullProperties?.Remove("guarantee_decision_rationale"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale _explicitNullValueGuaranteeDecisionRationale = default!;
 #endif
         /// <summary>Plaid&apos;s unique identifier for a transfer intent object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The currency of the transfer amount, e.g. &quot;USD&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IsoCurrencyCode { get; set; }
+        public string? IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
+        private string? _explicitNullValueIsoCurrencyCode = default!;
 #nullable restore
 #else
-        public string IsoCurrencyCode { get; set; }
+        public string IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
+        private string _explicitNullValueIsoCurrencyCode = default!;
 #endif
         /// <summary>The Metadata object is a mapping of client-provided string fields to any string value. The following limitations apply:The JSON values must be Strings (no nested JSON objects allowed)Only ASCII characters may be usedMaximum of 50 key/value pairsMaximum key length of 40 charactersMaximum value length of 500 characters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentGetBodyMetadata? Metadata { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentGetBodyMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentGetBodyMetadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentGetBodyMetadata Metadata { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentGetBodyMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentGetBodyMetadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>The direction of the flow of transfer funds.`PAYMENT`: Transfers funds from an end user&apos;s account to your business account.`DISBURSEMENT`: Transfers funds from your business account to an end user&apos;s account.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentCreateMode? Mode { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentCreateMode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentCreateMode? _explicitNullValueMode = default!;
         /// <summary>The network or rails used for the transfer. Defaults to `same-day-ach`.For transfers submitted using `ach`, the Standard ACH cutoff is 8:30 PM Eastern Time.For transfers submitted using `same-day-ach`, the Same Day ACH cutoff is 3:00 PM Eastern Time. It is recommended to send the request 15 minutes prior to the cutoff to ensure that it will be processed in time for submission before the cutoff. If the transfer is processed after this cutoff but before the Standard ACH cutoff, it will be sent over Standard ACH rails and will not incur same-day charges.For transfers submitted using `rtp`, in the case that the account being credited does not support RTP, the transfer will be sent over ACH as long as an `ach_class` is provided in the request. If RTP isn&apos;t supported by the account and no `ach_class` is provided, the transfer will fail to be submitted.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentCreateNetwork? Network { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentCreateNetwork? Network { get => _explicitNullValueNetwork; set { _explicitNullValueNetwork = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network"); else _explicitNullProperties?.Remove("network"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentCreateNetwork? _explicitNullValueNetwork = default!;
         /// <summary>Plaid&apos;s unique identifier for the origination account used for the transfer.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginationAccountId { get; set; }
+        public string? OriginationAccountId { get => _explicitNullValueOriginationAccountId; set { _explicitNullValueOriginationAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origination_account_id"); else _explicitNullProperties?.Remove("origination_account_id"); } }
+        private string? _explicitNullValueOriginationAccountId = default!;
 #nullable restore
 #else
-        public string OriginationAccountId { get; set; }
+        public string OriginationAccountId { get => _explicitNullValueOriginationAccountId; set { _explicitNullValueOriginationAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origination_account_id"); else _explicitNullProperties?.Remove("origination_account_id"); } }
+        private string _explicitNullValueOriginationAccountId = default!;
 #endif
         /// <summary>When `true`, the transfer requires a `GUARANTEED` decision by Plaid to proceed (Guarantee customers only).</summary>
-        public bool? RequireGuarantee { get; set; }
+        public bool? RequireGuarantee { get => _explicitNullValueRequireGuarantee; set { _explicitNullValueRequireGuarantee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require_guarantee"); else _explicitNullProperties?.Remove("require_guarantee"); } }
+        private bool? _explicitNullValueRequireGuarantee = default!;
         /// <summary>The status of the transfer intent.`PENDING`: The transfer intent is pending.`SUCCEEDED`: The transfer intent was successfully created.`FAILED`: The transfer intent was unable to be created.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentStatus? Status { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentStatus? _explicitNullValueStatus = default!;
         /// <summary>Plaid&apos;s unique identifier for the transfer created through the UI. Returned only if the transfer was successfully created. Null value otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TransferId { get; set; }
+        public string? TransferId { get => _explicitNullValueTransferId; set { _explicitNullValueTransferId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_id"); else _explicitNullProperties?.Remove("transfer_id"); } }
+        private string? _explicitNullValueTransferId = default!;
 #nullable restore
 #else
-        public string TransferId { get; set; }
+        public string TransferId { get => _explicitNullValueTransferId; set { _explicitNullValueTransferId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_id"); else _explicitNullProperties?.Remove("transfer_id"); } }
+        private string _explicitNullValueTransferId = default!;
 #endif
         /// <summary>The legal name and other information for the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferUserInResponse? User { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferUserInResponse? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferUserInResponse? _explicitNullValueUser = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferUserInResponse User { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferUserInResponse User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferUserInResponse _explicitNullValueUser = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentGetBody"/> and sets the default values.
@@ -153,7 +215,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentGetBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentGetBody();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentGetBody(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -214,6 +276,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferIntentStatus>("status", Status);
             writer.WriteStringValue("transfer_id", TransferId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferUserInResponse>("user", User);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

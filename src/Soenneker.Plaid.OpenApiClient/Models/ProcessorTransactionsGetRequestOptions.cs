@@ -12,24 +12,43 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProcessorTransactionsGetRequestOptions : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
+            if (parseNode.GetChildNode("include_logo_and_counterparty_beta") is { } nullNodeIncludeLogoAndCounterpartyBeta && nullNodeIncludeLogoAndCounterpartyBeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeLogoAndCounterpartyBeta = null;
+            if (parseNode.GetChildNode("include_original_description") is { } nullNodeIncludeOriginalDescription && nullNodeIncludeOriginalDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeOriginalDescription = null;
+            if (parseNode.GetChildNode("include_personal_finance_category") is { } nullNodeIncludePersonalFinanceCategory && nullNodeIncludePersonalFinanceCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludePersonalFinanceCategory = null;
+            if (parseNode.GetChildNode("include_personal_finance_category_beta") is { } nullNodeIncludePersonalFinanceCategoryBeta && nullNodeIncludePersonalFinanceCategoryBeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludePersonalFinanceCategoryBeta = null;
+            if (parseNode.GetChildNode("offset") is { } nullNodeOffset && nullNodeOffset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Offset = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of transactions to fetch.</summary>
-        public int? Count { get; set; }
+        public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        private int? _explicitNullValueCount = default!;
         /// <summary>Counterparties and extra merchant fields are now returned by default.</summary>
         [Obsolete("")]
-        public bool? IncludeLogoAndCounterpartyBeta { get; set; }
+        public bool? IncludeLogoAndCounterpartyBeta { get => _explicitNullValueIncludeLogoAndCounterpartyBeta; set { _explicitNullValueIncludeLogoAndCounterpartyBeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_logo_and_counterparty_beta"); else _explicitNullProperties?.Remove("include_logo_and_counterparty_beta"); } }
+        private bool? _explicitNullValueIncludeLogoAndCounterpartyBeta = default!;
         /// <summary>Include the raw unparsed transaction description from the financial institution.</summary>
-        public bool? IncludeOriginalDescription { get; set; }
+        public bool? IncludeOriginalDescription { get => _explicitNullValueIncludeOriginalDescription; set { _explicitNullValueIncludeOriginalDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_original_description"); else _explicitNullProperties?.Remove("include_original_description"); } }
+        private bool? _explicitNullValueIncludeOriginalDescription = default!;
         /// <summary>Personal finance categories are now returned by default.</summary>
         [Obsolete("")]
-        public bool? IncludePersonalFinanceCategory { get; set; }
+        public bool? IncludePersonalFinanceCategory { get => _explicitNullValueIncludePersonalFinanceCategory; set { _explicitNullValueIncludePersonalFinanceCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_personal_finance_category"); else _explicitNullProperties?.Remove("include_personal_finance_category"); } }
+        private bool? _explicitNullValueIncludePersonalFinanceCategory = default!;
         /// <summary>Personal finance categories are now returned by default.</summary>
         [Obsolete("")]
-        public bool? IncludePersonalFinanceCategoryBeta { get; set; }
+        public bool? IncludePersonalFinanceCategoryBeta { get => _explicitNullValueIncludePersonalFinanceCategoryBeta; set { _explicitNullValueIncludePersonalFinanceCategoryBeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_personal_finance_category_beta"); else _explicitNullProperties?.Remove("include_personal_finance_category_beta"); } }
+        private bool? _explicitNullValueIncludePersonalFinanceCategoryBeta = default!;
         /// <summary>The number of transactions to skip. The default value is 0.</summary>
-        public int? Offset { get; set; }
+        public int? Offset { get => _explicitNullValueOffset; set { _explicitNullValueOffset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offset"); else _explicitNullProperties?.Remove("offset"); } }
+        private int? _explicitNullValueOffset = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ProcessorTransactionsGetRequestOptions"/> and sets the default values.
         /// </summary>
@@ -51,7 +70,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.ProcessorTransactionsGetRequestOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.ProcessorTransactionsGetRequestOptions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.ProcessorTransactionsGetRequestOptions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +101,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteBoolValue("include_personal_finance_category", IncludePersonalFinanceCategory);
             writer.WriteBoolValue("include_personal_finance_category_beta", IncludePersonalFinanceCategoryBeta);
             writer.WriteIntValue("offset", Offset);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

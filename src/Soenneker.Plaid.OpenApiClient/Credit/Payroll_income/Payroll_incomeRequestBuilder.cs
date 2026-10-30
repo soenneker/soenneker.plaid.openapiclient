@@ -30,6 +30,7 @@ namespace Soenneker.Plaid.OpenApiClient.Credit.Payroll_income
             get => new global::Soenneker.Plaid.OpenApiClient.Credit.Payroll_income.Parsing_config.Parsing_configRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The precheck property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Credit.Payroll_income.Precheck.PrecheckRequestBuilder Precheck
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Credit.Payroll_income.Precheck.PrecheckRequestBuilder(PathParameters, RequestAdapter);

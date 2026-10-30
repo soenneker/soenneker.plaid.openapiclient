@@ -12,31 +12,50 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RiskCheckDevice : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("factors") is { } nullNodeFactors && nullNodeFactors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Factors = null;
+            if (parseNode.GetChildNode("ip_proxy_type") is { } nullNodeIpProxyType && nullNodeIpProxyType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpProxyType = null;
+            if (parseNode.GetChildNode("ip_spam_list_count") is { } nullNodeIpSpamListCount && nullNodeIpSpamListCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpSpamListCount = null;
+            if (parseNode.GetChildNode("ip_timezone_offset") is { } nullNodeIpTimezoneOffset && nullNodeIpTimezoneOffset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpTimezoneOffset = null;
+            if (parseNode.GetChildNode("risk_level") is { } nullNodeRiskLevel && nullNodeRiskLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskLevel = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of factors, when available, that contribute towards the risk level of the given risk check type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Factors { get; set; }
+        public List<string>? Factors { get => _explicitNullValueFactors; set { _explicitNullValueFactors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("factors"); else _explicitNullProperties?.Remove("factors"); } }
+        private List<string>? _explicitNullValueFactors = default!;
 #nullable restore
 #else
-        public List<string> Factors { get; set; }
+        public List<string> Factors { get => _explicitNullValueFactors; set { _explicitNullValueFactors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("factors"); else _explicitNullProperties?.Remove("factors"); } }
+        private List<string> _explicitNullValueFactors = default!;
 #endif
         /// <summary>An enum indicating whether a network proxy is present and if so what type it is.`none_detected` indicates the user is not on a detectable proxy network.`tor` indicates the user was using a Tor browser, which sends encrypted traffic on a decentralized network and is somewhat similar to a VPN (Virtual Private Network).`vpn` indicates the user is on a VPN (Virtual Private Network)`web_proxy` indicates the user is on a web proxy server, which may allow them to conceal information such as their IP address or other identifying information.`public_proxy` indicates the user is on a public web proxy server, which is similar to a web proxy but can be shared by multiple users. This may allow multiple users to appear as if they have the same IP address for instance.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProxyType? IpProxyType { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProxyType? IpProxyType { get => _explicitNullValueIpProxyType; set { _explicitNullValueIpProxyType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_proxy_type"); else _explicitNullProperties?.Remove("ip_proxy_type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ProxyType? _explicitNullValueIpProxyType = default!;
         /// <summary>Count of spam lists the IP address is associated with if known.</summary>
-        public int? IpSpamListCount { get; set; }
+        public int? IpSpamListCount { get => _explicitNullValueIpSpamListCount; set { _explicitNullValueIpSpamListCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_spam_list_count"); else _explicitNullProperties?.Remove("ip_spam_list_count"); } }
+        private int? _explicitNullValueIpSpamListCount = default!;
         /// <summary>UTC offset of the timezone associated with the IP address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IpTimezoneOffset { get; set; }
+        public string? IpTimezoneOffset { get => _explicitNullValueIpTimezoneOffset; set { _explicitNullValueIpTimezoneOffset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_timezone_offset"); else _explicitNullProperties?.Remove("ip_timezone_offset"); } }
+        private string? _explicitNullValueIpTimezoneOffset = default!;
 #nullable restore
 #else
-        public string IpTimezoneOffset { get; set; }
+        public string IpTimezoneOffset { get => _explicitNullValueIpTimezoneOffset; set { _explicitNullValueIpTimezoneOffset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_timezone_offset"); else _explicitNullProperties?.Remove("ip_timezone_offset"); } }
+        private string _explicitNullValueIpTimezoneOffset = default!;
 #endif
         /// <summary>Risk level for the given risk check type.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskLevel? RiskLevel { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskLevel? RiskLevel { get => _explicitNullValueRiskLevel; set { _explicitNullValueRiskLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_level"); else _explicitNullProperties?.Remove("risk_level"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskLevel? _explicitNullValueRiskLevel = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckDevice"/> and sets the default values.
         /// </summary>
@@ -52,7 +71,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckDevice CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckDevice();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckDevice(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,6 +100,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteIntValue("ip_spam_list_count", IpSpamListCount);
             writer.WriteStringValue("ip_timezone_offset", IpTimezoneOffset);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskLevel>("risk_level", RiskLevel);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -13,207 +13,303 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Transfer : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_id") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
+            if (parseNode.GetChildNode("ach_class") is { } nullNodeAchClass && nullNodeAchClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AchClass = null;
+            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("authorization_id") is { } nullNodeAuthorizationId && nullNodeAuthorizationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizationId = null;
+            if (parseNode.GetChildNode("cancellable") is { } nullNodeCancellable && nullNodeCancellable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cancellable = null;
+            if (parseNode.GetChildNode("created") is { } nullNodeCreated && nullNodeCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Created = null;
+            if (parseNode.GetChildNode("credit_funds_source") is { } nullNodeCreditFundsSource && nullNodeCreditFundsSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreditFundsSource = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("expected_funds_available_date") is { } nullNodeExpectedFundsAvailableDate && nullNodeExpectedFundsAvailableDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedFundsAvailableDate = null;
+            if (parseNode.GetChildNode("expected_settlement_date") is { } nullNodeExpectedSettlementDate && nullNodeExpectedSettlementDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedSettlementDate = null;
+            if (parseNode.GetChildNode("expected_sweep_settlement_schedule") is { } nullNodeExpectedSweepSettlementSchedule && nullNodeExpectedSweepSettlementSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedSweepSettlementSchedule = null;
+            if (parseNode.GetChildNode("facilitator_fee") is { } nullNodeFacilitatorFee && nullNodeFacilitatorFee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacilitatorFee = null;
+            if (parseNode.GetChildNode("failure_reason") is { } nullNodeFailureReason && nullNodeFailureReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureReason = null;
+            if (parseNode.GetChildNode("funding_account_id") is { } nullNodeFundingAccountId && nullNodeFundingAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FundingAccountId = null;
+            if (parseNode.GetChildNode("guarantee_decision") is { } nullNodeGuaranteeDecision && nullNodeGuaranteeDecision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuaranteeDecision = null;
+            if (parseNode.GetChildNode("guarantee_decision_rationale") is { } nullNodeGuaranteeDecisionRationale && nullNodeGuaranteeDecisionRationale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuaranteeDecisionRationale = null;
+            if (parseNode.GetChildNode("guarantee_details") is { } nullNodeGuaranteeDetails && nullNodeGuaranteeDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuaranteeDetails = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("iso_currency_code") is { } nullNodeIsoCurrencyCode && nullNodeIsoCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsoCurrencyCode = null;
+            if (parseNode.GetChildNode("ledger_id") is { } nullNodeLedgerId && nullNodeLedgerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LedgerId = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("network") is { } nullNodeNetwork && nullNodeNetwork.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Network = null;
+            if (parseNode.GetChildNode("network_trace_id") is { } nullNodeNetworkTraceId && nullNodeNetworkTraceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkTraceId = null;
+            if (parseNode.GetChildNode("origination_account_id") is { } nullNodeOriginationAccountId && nullNodeOriginationAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginationAccountId = null;
+            if (parseNode.GetChildNode("originator_client_id") is { } nullNodeOriginatorClientId && nullNodeOriginatorClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginatorClientId = null;
+            if (parseNode.GetChildNode("recurring_transfer_id") is { } nullNodeRecurringTransferId && nullNodeRecurringTransferId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecurringTransferId = null;
+            if (parseNode.GetChildNode("refunds") is { } nullNodeRefunds && nullNodeRefunds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Refunds = null;
+            if (parseNode.GetChildNode("standard_return_window") is { } nullNodeStandardReturnWindow && nullNodeStandardReturnWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StandardReturnWindow = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("sweep_status") is { } nullNodeSweepStatus && nullNodeSweepStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SweepStatus = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("unauthorized_return_window") is { } nullNodeUnauthorizedReturnWindow && nullNodeUnauthorizedReturnWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnauthorizedReturnWindow = null;
+            if (parseNode.GetChildNode("user") is { } nullNodeUser && nullNodeUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) User = null;
+            if (parseNode.GetChildNode("wire_details") is { } nullNodeWireDetails && nullNodeWireDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WireDetails = null;
+        }
+
         /// <summary>The Plaid `account_id` corresponding to the end-user account that will be debited or credited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountId { get; set; }
+        public string? AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        private string? _explicitNullValueAccountId = default!;
 #nullable restore
 #else
-        public string AccountId { get; set; }
+        public string AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        private string _explicitNullValueAccountId = default!;
 #endif
         /// <summary>Specifies the use case of the transfer. Required for transfers on an ACH network. For more details, see [ACH SEC codes](https://plaid.com/docs/transfer/creating-transfers/#ach-sec-codes).Codes supported for credits: `ccd`, `ppd`Codes supported for debits: `ccd`, `ppd`, `tel`, `web``&quot;ccd&quot;` - Corporate Credit or Debit - fund transfer between two corporate bank accounts`&quot;ppd&quot;` - Prearranged Payment or Deposit - The transfer is part of a pre-existing relationship with a consumer. Authorization was obtained in writing either in person or via an electronic document signing, e.g. Docusign, by the consumer. Can be used for credits or debits.`&quot;web&quot;` - Internet-Initiated Entry. The transfer debits a consumer&apos;s bank account. Authorization from the consumer is obtained over the Internet (e.g. a web or mobile application). Can be used for single debits or recurring debits.`&quot;tel&quot;` - Telephone-Initiated Entry. The transfer debits a consumer. Debit authorization has been received orally over the telephone via a recorded call.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AchClass? AchClass { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AchClass? AchClass { get => _explicitNullValueAchClass; set { _explicitNullValueAchClass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ach_class"); else _explicitNullProperties?.Remove("ach_class"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AchClass? _explicitNullValueAchClass = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount of the transfer (decimal string with two digits of precision e.g. &quot;10.00&quot;). When calling `/transfer/authorization/create`, specify the maximum amount to authorize. When calling `/transfer/create`, specify the exact amount of the transfer, up to a maximum of the amount authorized. If this field is left blank when calling `/transfer/create`, the maximum amount authorized in the `authorization_id` will be sent. If the authorization&apos;s `guarantee_details.outcome` is `PARTIAL_INSTANT_ONLY`, this field is required when calling `/transfer/create`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Amount { get; set; }
+        public string? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private string? _explicitNullValueAmount = default!;
 #nullable restore
 #else
-        public string Amount { get; set; }
+        public string Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private string _explicitNullValueAmount = default!;
 #endif
         /// <summary>Plaid&apos;s unique identifier for a transfer authorization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthorizationId { get; set; }
+        public string? AuthorizationId { get => _explicitNullValueAuthorizationId; set { _explicitNullValueAuthorizationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorization_id"); else _explicitNullProperties?.Remove("authorization_id"); } }
+        private string? _explicitNullValueAuthorizationId = default!;
 #nullable restore
 #else
-        public string AuthorizationId { get; set; }
+        public string AuthorizationId { get => _explicitNullValueAuthorizationId; set { _explicitNullValueAuthorizationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorization_id"); else _explicitNullProperties?.Remove("authorization_id"); } }
+        private string _explicitNullValueAuthorizationId = default!;
 #endif
         /// <summary>When `true`, you can still cancel this transfer.</summary>
-        public bool? Cancellable { get; set; }
+        public bool? Cancellable { get => _explicitNullValueCancellable; set { _explicitNullValueCancellable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancellable"); else _explicitNullProperties?.Remove("cancellable"); } }
+        private bool? _explicitNullValueCancellable = default!;
         /// <summary>The datetime when this transfer was created. This will be of the form `2006-01-02T15:04:05Z`</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
+        private DateTimeOffset? _explicitNullValueCreated = default!;
         /// <summary>This field is now deprecated. You may ignore it for transfers created on and after 12/01/2023.Specifies the source of funds for the transfer. Only valid for `credit` transfers, and defaults to `sweep` if not specified. This field is not specified for `debit` transfers.`sweep` - Sweep funds from your funding account`prefunded_rtp_credits` - Use your prefunded RTP credit balance with Plaid`prefunded_ach_credits` - Use your prefunded ACH credit balance with Plaid</summary>
         [Obsolete("")]
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferCreditFundsSourceComposed? CreditFundsSource { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferCreditFundsSourceComposed? CreditFundsSource { get => _explicitNullValueCreditFundsSource; set { _explicitNullValueCreditFundsSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit_funds_source"); else _explicitNullProperties?.Remove("credit_funds_source"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferCreditFundsSourceComposed? _explicitNullValueCreditFundsSource = default!;
         /// <summary>The description of the transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The expected date when funds from a transfer will be made available and can be withdrawn from the associated ledger balance, assuming the debit does not return before this date. If the transfer does return before this date, this field will be null. Only applies to debit transfers. This will be of the form YYYY-MM-DD.</summary>
-        public Date? ExpectedFundsAvailableDate { get; set; }
+        public Date? ExpectedFundsAvailableDate { get => _explicitNullValueExpectedFundsAvailableDate; set { _explicitNullValueExpectedFundsAvailableDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_funds_available_date"); else _explicitNullProperties?.Remove("expected_funds_available_date"); } }
+        private Date? _explicitNullValueExpectedFundsAvailableDate = default!;
         /// <summary>Deprecated for Plaid Ledger clients, use `expected_funds_available_date` instead.</summary>
         [Obsolete("")]
-        public Date? ExpectedSettlementDate { get; set; }
+        public Date? ExpectedSettlementDate { get => _explicitNullValueExpectedSettlementDate; set { _explicitNullValueExpectedSettlementDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_settlement_date"); else _explicitNullProperties?.Remove("expected_settlement_date"); } }
+        private Date? _explicitNullValueExpectedSettlementDate = default!;
         /// <summary>The expected sweep settlement schedule of this transfer, assuming this transfer is not `returned`. Only applies to ACH debit transfers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.TransferExpectedSweepSettlementScheduleItem>? ExpectedSweepSettlementSchedule { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.TransferExpectedSweepSettlementScheduleItem>? ExpectedSweepSettlementSchedule { get => _explicitNullValueExpectedSweepSettlementSchedule; set { _explicitNullValueExpectedSweepSettlementSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_sweep_settlement_schedule"); else _explicitNullProperties?.Remove("expected_sweep_settlement_schedule"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.TransferExpectedSweepSettlementScheduleItem>? _explicitNullValueExpectedSweepSettlementSchedule = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.TransferExpectedSweepSettlementScheduleItem> ExpectedSweepSettlementSchedule { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.TransferExpectedSweepSettlementScheduleItem> ExpectedSweepSettlementSchedule { get => _explicitNullValueExpectedSweepSettlementSchedule; set { _explicitNullValueExpectedSweepSettlementSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_sweep_settlement_schedule"); else _explicitNullProperties?.Remove("expected_sweep_settlement_schedule"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.TransferExpectedSweepSettlementScheduleItem> _explicitNullValueExpectedSweepSettlementSchedule = default!;
 #endif
         /// <summary>The amount to deduct from `transfer.amount` and distribute to the platform&apos;s Ledger balance as a facilitator fee (decimal string with two digits of precision e.g. &quot;10.00&quot;). The remainder will go to the end-customer&apos;s Ledger balance. This must be value greater than 0 and less than the `transfer.amount`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FacilitatorFee { get; set; }
+        public string? FacilitatorFee { get => _explicitNullValueFacilitatorFee; set { _explicitNullValueFacilitatorFee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facilitator_fee"); else _explicitNullProperties?.Remove("facilitator_fee"); } }
+        private string? _explicitNullValueFacilitatorFee = default!;
 #nullable restore
 #else
-        public string FacilitatorFee { get; set; }
+        public string FacilitatorFee { get => _explicitNullValueFacilitatorFee; set { _explicitNullValueFacilitatorFee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facilitator_fee"); else _explicitNullProperties?.Remove("facilitator_fee"); } }
+        private string _explicitNullValueFacilitatorFee = default!;
 #endif
         /// <summary>The failure reason if the event type for a transfer is `&quot;failed&quot;` or `&quot;returned&quot;`, or the adjustment reason if the event type is `&quot;adjustment&quot;`. Null value otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferFailure? FailureReason { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferFailure? FailureReason { get => _explicitNullValueFailureReason; set { _explicitNullValueFailureReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_reason"); else _explicitNullProperties?.Remove("failure_reason"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferFailure? _explicitNullValueFailureReason = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferFailure FailureReason { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferFailure FailureReason { get => _explicitNullValueFailureReason; set { _explicitNullValueFailureReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_reason"); else _explicitNullProperties?.Remove("failure_reason"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferFailure _explicitNullValueFailureReason = default!;
 #endif
         /// <summary>The id of the associated funding account, available in the Plaid Dashboard. If present, this indicates which of your business checking accounts will be credited or debited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FundingAccountId { get; set; }
+        public string? FundingAccountId { get => _explicitNullValueFundingAccountId; set { _explicitNullValueFundingAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("funding_account_id"); else _explicitNullProperties?.Remove("funding_account_id"); } }
+        private string? _explicitNullValueFundingAccountId = default!;
 #nullable restore
 #else
-        public string FundingAccountId { get; set; }
+        public string FundingAccountId { get => _explicitNullValueFundingAccountId; set { _explicitNullValueFundingAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("funding_account_id"); else _explicitNullProperties?.Remove("funding_account_id"); } }
+        private string _explicitNullValueFundingAccountId = default!;
 #endif
         /// <summary>Indicates whether the transfer is guaranteed by Plaid (Guarantee customers only). This field will contain either `GUARANTEED` or `NOT_GUARANTEED` indicating whether Plaid will guarantee the transfer.</summary>
         [Obsolete("")]
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeDecision? GuaranteeDecision { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeDecision? GuaranteeDecision { get => _explicitNullValueGuaranteeDecision; set { _explicitNullValueGuaranteeDecision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guarantee_decision"); else _explicitNullProperties?.Remove("guarantee_decision"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeDecision? _explicitNullValueGuaranteeDecision = default!;
         /// <summary>The rationale for Plaid&apos;s decision to not guarantee a transfer. Will be `null` unless `guarantee_decision` is `NOT_GUARANTEED`.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale? GuaranteeDecisionRationale { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale? GuaranteeDecisionRationale { get => _explicitNullValueGuaranteeDecisionRationale; set { _explicitNullValueGuaranteeDecisionRationale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guarantee_decision_rationale"); else _explicitNullProperties?.Remove("guarantee_decision_rationale"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale? _explicitNullValueGuaranteeDecisionRationale = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale GuaranteeDecisionRationale { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale GuaranteeDecisionRationale { get => _explicitNullValueGuaranteeDecisionRationale; set { _explicitNullValueGuaranteeDecisionRationale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guarantee_decision_rationale"); else _explicitNullProperties?.Remove("guarantee_decision_rationale"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale _explicitNullValueGuaranteeDecisionRationale = default!;
 #endif
         /// <summary>Adaptive guarantee details for a transfer, including the guaranteed amount and settlement schedule. Omitted when no guarantee was attempted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeDetails? GuaranteeDetails { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeDetails? GuaranteeDetails { get => _explicitNullValueGuaranteeDetails; set { _explicitNullValueGuaranteeDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guarantee_details"); else _explicitNullProperties?.Remove("guarantee_details"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeDetails? _explicitNullValueGuaranteeDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeDetails GuaranteeDetails { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeDetails GuaranteeDetails { get => _explicitNullValueGuaranteeDetails; set { _explicitNullValueGuaranteeDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guarantee_details"); else _explicitNullProperties?.Remove("guarantee_details"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeDetails _explicitNullValueGuaranteeDetails = default!;
 #endif
         /// <summary>Plaid&apos;s unique identifier for a transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The currency of the transfer amount, e.g. &quot;USD&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IsoCurrencyCode { get; set; }
+        public string? IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
+        private string? _explicitNullValueIsoCurrencyCode = default!;
 #nullable restore
 #else
-        public string IsoCurrencyCode { get; set; }
+        public string IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
+        private string _explicitNullValueIsoCurrencyCode = default!;
 #endif
         /// <summary>Plaid&apos;s unique identifier for a Plaid Ledger Balance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LedgerId { get; set; }
+        public string? LedgerId { get => _explicitNullValueLedgerId; set { _explicitNullValueLedgerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ledger_id"); else _explicitNullProperties?.Remove("ledger_id"); } }
+        private string? _explicitNullValueLedgerId = default!;
 #nullable restore
 #else
-        public string LedgerId { get; set; }
+        public string LedgerId { get => _explicitNullValueLedgerId; set { _explicitNullValueLedgerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ledger_id"); else _explicitNullProperties?.Remove("ledger_id"); } }
+        private string _explicitNullValueLedgerId = default!;
 #endif
         /// <summary>The Metadata object is a mapping of client-provided string fields to any string value. The following limitations apply:The JSON values must be Strings (no nested JSON objects allowed)Only ASCII characters may be usedMaximum of 50 key/value pairsMaximum key length of 40 charactersMaximum value length of 500 characters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferMetadataProperty? Metadata { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferMetadataProperty? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferMetadataProperty? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferMetadataProperty Metadata { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferMetadataProperty Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferMetadataProperty _explicitNullValueMetadata = default!;
 #endif
         /// <summary>The network or rails used for the transfer.For transfers submitted as `ach` or `same-day-ach`, the Standard ACH cutoff is 8:30 PM Eastern Time.For transfers submitted as `same-day-ach`, the Same Day ACH cutoff is 3:00 PM Eastern Time.  It is recommended to send the request 15 minutes prior to the cutoff to ensure that it will be processed in time for submission before the cutoff. If the transfer is processed after this cutoff but before the Standard ACH cutoff, it will be sent over Standard ACH rails and will not incur same-day charges; this will apply to both legs of the transfer if applicable. The transaction limit for a Same Day ACH transfer is $1,000,000. Authorization requests sent with an amount greater than $1,000,000 will fail.For transfers submitted as `rtp`, Plaid will automatically route between the Real-Time Payments (RTP) rail by TCH or FedNow rails as necessary. If a transfer is submitted as `rtp` and the counterparty account is not eligible for RTP, the `/transfer/authorization/create` request will fail with an `INVALID_FIELD` error code. To pre-check to determine whether a counterparty account can support RTP, call `/transfer/capabilities/get` before calling `/transfer/authorization/create`.Wire transfers are currently in early availability. To request access to `wire` as a payment network, contact your account manager. For transfers submitted as `wire`, the `type` must be `credit`; wire debits are not supported. The cutoff to submit a wire payment is 6:30 PM Eastern Time on a business day; wires submitted after that time will be processed on the next business day. The transaction limit for a wire is $999,999.99. Authorization requests sent with an amount greater than $999,999.99 will fail.Support for `rfp` (request for payment) is currently in closed beta. To learn more, contact your Plaid account manager. For transfers submitted as `rfp`, the `type` must be `debit`.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferNetwork? Network { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferNetwork? Network { get => _explicitNullValueNetwork; set { _explicitNullValueNetwork = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network"); else _explicitNullProperties?.Remove("network"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferNetwork? _explicitNullValueNetwork = default!;
         /// <summary>The trace identifier for the transfer based on its network. This will only be set after the transfer has posted.For `ach` or `same-day-ach` transfers, this is the ACH trace number.For `rtp` transfers, this is the Transaction Identification number.For `wire` transfers, this is the IMAD (Input Message Accountability Data) number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NetworkTraceId { get; set; }
+        public string? NetworkTraceId { get => _explicitNullValueNetworkTraceId; set { _explicitNullValueNetworkTraceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_trace_id"); else _explicitNullProperties?.Remove("network_trace_id"); } }
+        private string? _explicitNullValueNetworkTraceId = default!;
 #nullable restore
 #else
-        public string NetworkTraceId { get; set; }
+        public string NetworkTraceId { get => _explicitNullValueNetworkTraceId; set { _explicitNullValueNetworkTraceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_trace_id"); else _explicitNullProperties?.Remove("network_trace_id"); } }
+        private string _explicitNullValueNetworkTraceId = default!;
 #endif
         /// <summary>Plaid&apos;s unique identifier for the origination account that was used for this transfer.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginationAccountId { get; set; }
+        public string? OriginationAccountId { get => _explicitNullValueOriginationAccountId; set { _explicitNullValueOriginationAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origination_account_id"); else _explicitNullProperties?.Remove("origination_account_id"); } }
+        private string? _explicitNullValueOriginationAccountId = default!;
 #nullable restore
 #else
-        public string OriginationAccountId { get; set; }
+        public string OriginationAccountId { get => _explicitNullValueOriginationAccountId; set { _explicitNullValueOriginationAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origination_account_id"); else _explicitNullProperties?.Remove("origination_account_id"); } }
+        private string _explicitNullValueOriginationAccountId = default!;
 #endif
         /// <summary>The Plaid client ID that is the originator of this transfer. Only present if created on behalf of another client as a [Platform customer](https://plaid.com/docs/transfer/application/#originators-vs-platforms).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginatorClientId { get; set; }
+        public string? OriginatorClientId { get => _explicitNullValueOriginatorClientId; set { _explicitNullValueOriginatorClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originator_client_id"); else _explicitNullProperties?.Remove("originator_client_id"); } }
+        private string? _explicitNullValueOriginatorClientId = default!;
 #nullable restore
 #else
-        public string OriginatorClientId { get; set; }
+        public string OriginatorClientId { get => _explicitNullValueOriginatorClientId; set { _explicitNullValueOriginatorClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originator_client_id"); else _explicitNullProperties?.Remove("originator_client_id"); } }
+        private string _explicitNullValueOriginatorClientId = default!;
 #endif
         /// <summary>The id of the recurring transfer if this transfer belongs to a recurring transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecurringTransferId { get; set; }
+        public string? RecurringTransferId { get => _explicitNullValueRecurringTransferId; set { _explicitNullValueRecurringTransferId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurring_transfer_id"); else _explicitNullProperties?.Remove("recurring_transfer_id"); } }
+        private string? _explicitNullValueRecurringTransferId = default!;
 #nullable restore
 #else
-        public string RecurringTransferId { get; set; }
+        public string RecurringTransferId { get => _explicitNullValueRecurringTransferId; set { _explicitNullValueRecurringTransferId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurring_transfer_id"); else _explicitNullProperties?.Remove("recurring_transfer_id"); } }
+        private string _explicitNullValueRecurringTransferId = default!;
 #endif
         /// <summary>A list of refunds associated with this transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.TransferRefund>? Refunds { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.TransferRefund>? Refunds { get => _explicitNullValueRefunds; set { _explicitNullValueRefunds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refunds"); else _explicitNullProperties?.Remove("refunds"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.TransferRefund>? _explicitNullValueRefunds = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.TransferRefund> Refunds { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.TransferRefund> Refunds { get => _explicitNullValueRefunds; set { _explicitNullValueRefunds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refunds"); else _explicitNullProperties?.Remove("refunds"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.TransferRefund> _explicitNullValueRefunds = default!;
 #endif
         /// <summary>The date 3 business days from settlement date indicating the following ACH returns can no longer happen: R01, R02, R03, R29. This will be of the form YYYY-MM-DD.</summary>
-        public Date? StandardReturnWindow { get; set; }
+        public Date? StandardReturnWindow { get => _explicitNullValueStandardReturnWindow; set { _explicitNullValueStandardReturnWindow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("standard_return_window"); else _explicitNullProperties?.Remove("standard_return_window"); } }
+        private Date? _explicitNullValueStandardReturnWindow = default!;
         /// <summary>The status of the transfer.`pending`: A new transfer was created; it is in the pending state.`posted`: The transfer has been successfully submitted to the payment network.`settled`: The transfer was successfully completed by the payment network. Note that funds from received debits are not available to be moved out of the Ledger until the transfer reaches `funds_available` status. For credit transactions, `settled` means the funds have been delivered to the receiving bank account. This is the terminal state of a successful credit transfer.`funds_available`: Funds from the transfer have been released from hold and applied to the ledger&apos;s available balance. (Only applicable to ACH debits.) This is the terminal state of a successful debit transfer.`cancelled`: The transfer was cancelled by the client. This is the terminal state of a cancelled transfer.`failed`: The transfer failed, no funds were moved. This is the terminal state of a failed transfer.`returned`: A posted transfer was returned. This is the terminal state of a returned transfer.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferStatus? Status { get; set; }
-        /// <summary>The status of the sweep for the transfer.`unswept`: The transfer hasn&apos;t been swept yet.`swept`: The transfer was swept to the sweep account.`swept_settled`: Credits are available to be withdrawn or debits have been deducted from the customer&apos;s business checking account.`return_swept`: The transfer was returned, funds were pulled back or pushed back to the sweep account.`null`: The transfer will never be swept (e.g. if the transfer is cancelled or returned before being swept)</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferSweepStatus? SweepStatus { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferStatus? _explicitNullValueStatus = default!;
+        /// <summary>The status of the sweep for the transfer.`unswept`: The transfer hasn&apos;t been swept yet. Transfers that are cancelled, fail, or are returned before being swept remain `unswept`.`swept`: The transfer was swept to the sweep account.`swept_settled`: Credits are available to be withdrawn or debits have been deducted from the customer&apos;s business checking account.`return_swept`: The transfer was returned, funds were pulled back or pushed back to the sweep account.`null`: The transfer will never be swept because it is a credit funded from a prefunded balance.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferSweepStatus? SweepStatus { get => _explicitNullValueSweepStatus; set { _explicitNullValueSweepStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sweep_status"); else _explicitNullProperties?.Remove("sweep_status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferSweepStatus? _explicitNullValueSweepStatus = default!;
         /// <summary>The type of transfer. This will be either `debit` or `credit`.  A `debit` indicates a transfer of money into the origination account; a `credit` indicates a transfer of money out of the origination account.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferType? Type { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferType? _explicitNullValueType = default!;
         /// <summary>The date 61 business days from settlement date indicating the following ACH returns can no longer happen: R05, R07, R10, R11, R51, R33, R37, R38, R52, R53. This will be of the form YYYY-MM-DD.</summary>
-        public Date? UnauthorizedReturnWindow { get; set; }
+        public Date? UnauthorizedReturnWindow { get => _explicitNullValueUnauthorizedReturnWindow; set { _explicitNullValueUnauthorizedReturnWindow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unauthorized_return_window"); else _explicitNullProperties?.Remove("unauthorized_return_window"); } }
+        private Date? _explicitNullValueUnauthorizedReturnWindow = default!;
         /// <summary>The legal name and other information for the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferUserInResponse? User { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferUserInResponse? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferUserInResponse? _explicitNullValueUser = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferUserInResponse User { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferUserInResponse User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferUserInResponse _explicitNullValueUser = default!;
 #endif
         /// <summary>Information specific to wire transfers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferWireDetails? WireDetails { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferWireDetails? WireDetails { get => _explicitNullValueWireDetails; set { _explicitNullValueWireDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wire_details"); else _explicitNullProperties?.Remove("wire_details"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferWireDetails? _explicitNullValueWireDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferWireDetails WireDetails { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferWireDetails WireDetails { get => _explicitNullValueWireDetails; set { _explicitNullValueWireDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wire_details"); else _explicitNullProperties?.Remove("wire_details"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferWireDetails _explicitNullValueWireDetails = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.Transfer"/> and sets the default values.
@@ -230,7 +326,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.Transfer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.Transfer();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.Transfer(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -317,6 +413,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDateValue("unauthorized_return_window", UnauthorizedReturnWindow);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferUserInResponse>("user", User);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferWireDetails>("wire_details", WireDetails);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

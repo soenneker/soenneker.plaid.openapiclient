@@ -12,16 +12,26 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Loan : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("LOAN_IDENTIFIERS") is { } nullNodeLOANIDENTIFIERS && nullNodeLOANIDENTIFIERS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LOANIDENTIFIERS = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Collection of current and previous identifiers for this loan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LoanIdentifiers? LOANIDENTIFIERS { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LoanIdentifiers? LOANIDENTIFIERS { get => _explicitNullValueLOANIDENTIFIERS; set { _explicitNullValueLOANIDENTIFIERS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LOAN_IDENTIFIERS"); else _explicitNullProperties?.Remove("LOAN_IDENTIFIERS"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LoanIdentifiers? _explicitNullValueLOANIDENTIFIERS = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LoanIdentifiers LOANIDENTIFIERS { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LoanIdentifiers LOANIDENTIFIERS { get => _explicitNullValueLOANIDENTIFIERS; set { _explicitNullValueLOANIDENTIFIERS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LOAN_IDENTIFIERS"); else _explicitNullProperties?.Remove("LOAN_IDENTIFIERS"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LoanIdentifiers _explicitNullValueLOANIDENTIFIERS = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.Loan"/> and sets the default values.
@@ -38,7 +48,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.Loan CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.Loan();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.Loan(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,6 +69,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LoanIdentifiers>("LOAN_IDENTIFIERS", LOANIDENTIFIERS);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

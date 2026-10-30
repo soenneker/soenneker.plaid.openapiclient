@@ -13,19 +13,36 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraLoanPaymentHistory : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("amount_past_due") is { } nullNodeAmountPastDue && nullNodeAmountPastDue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountPastDue = null;
+            if (parseNode.GetChildNode("balance_remaining") is { } nullNodeBalanceRemaining && nullNodeBalanceRemaining.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceRemaining = null;
+            if (parseNode.GetChildNode("days_past_due") is { } nullNodeDaysPastDue && nullNodeDaysPastDue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DaysPastDue = null;
+            if (parseNode.GetChildNode("due_date") is { } nullNodeDueDate && nullNodeDueDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DueDate = null;
+            if (parseNode.GetChildNode("period") is { } nullNodePeriod && nullNodePeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Period = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount past due or the charge-off amount of the loan at the end of the payment period.</summary>
-        public double? AmountPastDue { get; set; }
+        public double? AmountPastDue { get => _explicitNullValueAmountPastDue; set { _explicitNullValueAmountPastDue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount_past_due"); else _explicitNullProperties?.Remove("amount_past_due"); } }
+        private double? _explicitNullValueAmountPastDue = default!;
         /// <summary>The balance remaining on the loan at the end of the payment period.</summary>
-        public double? BalanceRemaining { get; set; }
+        public double? BalanceRemaining { get => _explicitNullValueBalanceRemaining; set { _explicitNullValueBalanceRemaining = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balance_remaining"); else _explicitNullProperties?.Remove("balance_remaining"); } }
+        private double? _explicitNullValueBalanceRemaining = default!;
         /// <summary>The number of days the loan was delinquent at the end of the pay period.If specified, should be greater than or equal to 0.</summary>
-        public int? DaysPastDue { get; set; }
+        public int? DaysPastDue { get => _explicitNullValueDaysPastDue; set { _explicitNullValueDaysPastDue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days_past_due"); else _explicitNullProperties?.Remove("days_past_due"); } }
+        private int? _explicitNullValueDaysPastDue = default!;
         /// <summary>The payment due date or end date of the payment period. The date should be in ISO 8601 format (YYYY-MM-DD).</summary>
-        public Date? DueDate { get; set; }
+        public Date? DueDate { get => _explicitNullValueDueDate; set { _explicitNullValueDueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("due_date"); else _explicitNullProperties?.Remove("due_date"); } }
+        private Date? _explicitNullValueDueDate = default!;
         /// <summary>The index to identify the loan&apos;s payment period, starting from 1.For example:  1 means the period between the loan&apos;s opening date and the 1st payment due date.  2 means the period between the loan&apos;s 1st payment due date and 2nd payment due date.</summary>
-        public int? Period { get; set; }
+        public int? Period { get => _explicitNullValuePeriod; set { _explicitNullValuePeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period"); else _explicitNullProperties?.Remove("period"); } }
+        private int? _explicitNullValuePeriod = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraLoanPaymentHistory"/> and sets the default values.
         /// </summary>
@@ -41,7 +58,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CraLoanPaymentHistory CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CraLoanPaymentHistory();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraLoanPaymentHistory(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,6 +87,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteIntValue("days_past_due", DaysPastDue);
             writer.WriteDateValue("due_date", DueDate);
             writer.WriteIntValue("period", Period);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

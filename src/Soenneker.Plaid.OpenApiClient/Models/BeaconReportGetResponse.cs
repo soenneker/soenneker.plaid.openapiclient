@@ -13,57 +13,87 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BeaconReportGetResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("audit_trail") is { } nullNodeAuditTrail && nullNodeAuditTrail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuditTrail = null;
+            if (parseNode.GetChildNode("beacon_user_id") is { } nullNodeBeaconUserId && nullNodeBeaconUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BeaconUserId = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("event_date") is { } nullNodeEventDate && nullNodeEventDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventDate = null;
+            if (parseNode.GetChildNode("fraud_amount") is { } nullNodeFraudAmount && nullNodeFraudAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FraudAmount = null;
+            if (parseNode.GetChildNode("fraud_date") is { } nullNodeFraudDate && nullNodeFraudDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FraudDate = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Information about the last change made to the parent object specifying what caused the change as well as when it occurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BeaconAuditTrail? AuditTrail { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BeaconAuditTrail? AuditTrail { get => _explicitNullValueAuditTrail; set { _explicitNullValueAuditTrail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audit_trail"); else _explicitNullProperties?.Remove("audit_trail"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BeaconAuditTrail? _explicitNullValueAuditTrail = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BeaconAuditTrail AuditTrail { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BeaconAuditTrail AuditTrail { get => _explicitNullValueAuditTrail; set { _explicitNullValueAuditTrail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audit_trail"); else _explicitNullProperties?.Remove("audit_trail"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BeaconAuditTrail _explicitNullValueAuditTrail = default!;
 #endif
         /// <summary>ID of the associated Beacon User.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BeaconUserId { get; set; }
+        public string? BeaconUserId { get => _explicitNullValueBeaconUserId; set { _explicitNullValueBeaconUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("beacon_user_id"); else _explicitNullProperties?.Remove("beacon_user_id"); } }
+        private string? _explicitNullValueBeaconUserId = default!;
 #nullable restore
 #else
-        public string BeaconUserId { get; set; }
+        public string BeaconUserId { get => _explicitNullValueBeaconUserId; set { _explicitNullValueBeaconUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("beacon_user_id"); else _explicitNullProperties?.Remove("beacon_user_id"); } }
+        private string _explicitNullValueBeaconUserId = default!;
 #endif
         /// <summary>An ISO8601 formatted timestamp.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).</summary>
-        public Date? EventDate { get; set; }
+        public Date? EventDate { get => _explicitNullValueEventDate; set { _explicitNullValueEventDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_date"); else _explicitNullProperties?.Remove("event_date"); } }
+        private Date? _explicitNullValueEventDate = default!;
         /// <summary>The amount and currency of the fraud or attempted fraud.`fraud_amount` should be omitted to indicate an unknown fraud amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAmount? FraudAmount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAmount? FraudAmount { get => _explicitNullValueFraudAmount; set { _explicitNullValueFraudAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraud_amount"); else _explicitNullProperties?.Remove("fraud_amount"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.FraudAmount? _explicitNullValueFraudAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAmount FraudAmount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FraudAmount FraudAmount { get => _explicitNullValueFraudAmount; set { _explicitNullValueFraudAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraud_amount"); else _explicitNullProperties?.Remove("fraud_amount"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.FraudAmount _explicitNullValueFraudAmount = default!;
 #endif
         /// <summary>A date in the format YYYY-MM-DD (RFC 3339 Section 5.6).</summary>
-        public Date? FraudDate { get; set; }
+        public Date? FraudDate { get => _explicitNullValueFraudDate; set { _explicitNullValueFraudDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraud_date"); else _explicitNullProperties?.Remove("fraud_date"); } }
+        private Date? _explicitNullValueFraudDate = default!;
         /// <summary>ID of the associated Beacon Report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId { get; set; }
+        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        private string? _explicitNullValueRequestId = default!;
 #nullable restore
 #else
-        public string RequestId { get; set; }
+        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        private string _explicitNullValueRequestId = default!;
 #endif
         /// <summary>The type of Beacon Report.`first_party`: If this is the same individual as the one who submitted the KYC.`stolen`: If this is a different individual from the one who submitted the KYC.`synthetic`: If this is an individual using fabricated information.`account_takeover`: If this individual&apos;s account was compromised.`data_breach`: If this individual&apos;s data was compromised in a breach.`unknown`: If you aren&apos;t sure who committed the fraud.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BeaconReportType? Type { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BeaconReportType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BeaconReportType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BeaconReportGetResponse"/> and sets the default values.
         /// </summary>
@@ -79,7 +109,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.BeaconReportGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.BeaconReportGetResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.BeaconReportGetResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -116,6 +146,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("request_id", RequestId);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BeaconReportType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -18,16 +18,19 @@ namespace Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights
     public partial class Monitoring_insightsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The getPath property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights.Get.GetRequestBuilder GetPath
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights.Get.GetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The subscribe property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights.Subscribe.SubscribeRequestBuilder Subscribe
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights.Subscribe.SubscribeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The unsubscribe property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights.Unsubscribe.UnsubscribeRequestBuilder Unsubscribe
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Cra.Monitoring_insights.Unsubscribe.UnsubscribeRequestBuilder(PathParameters, RequestAdapter);

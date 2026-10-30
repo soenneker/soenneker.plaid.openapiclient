@@ -12,17 +12,32 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhysicalDocumentExtractedDataAnalysis : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("date_of_birth") is { } nullNodeDateOfBirth && nullNodeDateOfBirth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOfBirth = null;
+            if (parseNode.GetChildNode("expiration_date") is { } nullNodeExpirationDate && nullNodeExpirationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationDate = null;
+            if (parseNode.GetChildNode("issuing_country") is { } nullNodeIssuingCountry && nullNodeIssuingCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuingCountry = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A match summary describing the cross comparison between the subject&apos;s date of birth, extracted from the document image, and the date of birth they separately provided to the identity verification attempt.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.DocumentDateOfBirthMatchCode? DateOfBirth { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.DocumentDateOfBirthMatchCode? DateOfBirth { get => _explicitNullValueDateOfBirth; set { _explicitNullValueDateOfBirth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_of_birth"); else _explicitNullProperties?.Remove("date_of_birth"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.DocumentDateOfBirthMatchCode? _explicitNullValueDateOfBirth = default!;
         /// <summary>A description of whether the associated document was expired when the verification was performed.Note: In the case where an expiration date is not present on the document or failed to be extracted, this value will be `no_data`.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ExpirationDate? ExpirationDate { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ExpirationDate? ExpirationDate { get => _explicitNullValueExpirationDate; set { _explicitNullValueExpirationDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration_date"); else _explicitNullProperties?.Remove("expiration_date"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ExpirationDate? _explicitNullValueExpirationDate = default!;
         /// <summary>A binary match indicator specifying whether the country that issued the provided document matches the country that the user separately provided to Plaid.Note: You can configure whether a `no_match` on `issuing_country` fails the `documentary_verification` by editing your Plaid Template.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.IssuingCountry? IssuingCountry { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IssuingCountry? IssuingCountry { get => _explicitNullValueIssuingCountry; set { _explicitNullValueIssuingCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuing_country"); else _explicitNullProperties?.Remove("issuing_country"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IssuingCountry? _explicitNullValueIssuingCountry = default!;
         /// <summary>A match summary describing the cross comparison between the subject&apos;s name, extracted from the document image, and the name they separately provided to the identity verification attempt.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.DocumentNameMatchCode? Name { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.DocumentNameMatchCode? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.DocumentNameMatchCode? _explicitNullValueName = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PhysicalDocumentExtractedDataAnalysis"/> and sets the default values.
         /// </summary>
@@ -38,7 +53,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.PhysicalDocumentExtractedDataAnalysis CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.PhysicalDocumentExtractedDataAnalysis();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.PhysicalDocumentExtractedDataAnalysis(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,6 +82,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ExpirationDate>("expiration_date", ExpirationDate);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.IssuingCountry>("issuing_country", IssuingCountry);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.DocumentNameMatchCode>("name", Name);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

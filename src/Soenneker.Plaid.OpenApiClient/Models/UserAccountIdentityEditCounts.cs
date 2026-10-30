@@ -12,19 +12,36 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserAccountIdentityEditCounts : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("edits_1d") is { } nullNodeEdits1d && nullNodeEdits1d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Edits1d = null;
+            if (parseNode.GetChildNode("edits_30d") is { } nullNodeEdits30d && nullNodeEdits30d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Edits30d = null;
+            if (parseNode.GetChildNode("edits_365d") is { } nullNodeEdits365d && nullNodeEdits365d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Edits365d = null;
+            if (parseNode.GetChildNode("edits_all_time") is { } nullNodeEditsAllTime && nullNodeEditsAllTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EditsAllTime = null;
+            if (parseNode.GetChildNode("edits_current") is { } nullNodeEditsCurrent && nullNodeEditsCurrent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EditsCurrent = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of edits in the last 1 day</summary>
-        public int? Edits1d { get; set; }
+        public int? Edits1d { get => _explicitNullValueEdits1d; set { _explicitNullValueEdits1d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edits_1d"); else _explicitNullProperties?.Remove("edits_1d"); } }
+        private int? _explicitNullValueEdits1d = default!;
         /// <summary>Number of edits in the last 30 days</summary>
-        public int? Edits30d { get; set; }
+        public int? Edits30d { get => _explicitNullValueEdits30d; set { _explicitNullValueEdits30d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edits_30d"); else _explicitNullProperties?.Remove("edits_30d"); } }
+        private int? _explicitNullValueEdits30d = default!;
         /// <summary>Number of edits in the last 365 days</summary>
-        public int? Edits365d { get; set; }
+        public int? Edits365d { get => _explicitNullValueEdits365d; set { _explicitNullValueEdits365d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edits_365d"); else _explicitNullProperties?.Remove("edits_365d"); } }
+        private int? _explicitNullValueEdits365d = default!;
         /// <summary>Total number of edits</summary>
-        public int? EditsAllTime { get; set; }
+        public int? EditsAllTime { get => _explicitNullValueEditsAllTime; set { _explicitNullValueEditsAllTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edits_all_time"); else _explicitNullProperties?.Remove("edits_all_time"); } }
+        private int? _explicitNullValueEditsAllTime = default!;
         /// <summary>Number of edits in the current session</summary>
-        public int? EditsCurrent { get; set; }
+        public int? EditsCurrent { get => _explicitNullValueEditsCurrent; set { _explicitNullValueEditsCurrent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edits_current"); else _explicitNullProperties?.Remove("edits_current"); } }
+        private int? _explicitNullValueEditsCurrent = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts"/> and sets the default values.
         /// </summary>
@@ -40,7 +57,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditCounts(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +86,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteIntValue("edits_365d", Edits365d);
             writer.WriteIntValue("edits_all_time", EditsAllTime);
             writer.WriteIntValue("edits_current", EditsCurrent);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

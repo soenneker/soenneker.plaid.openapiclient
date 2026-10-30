@@ -12,23 +12,39 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LinkTokenCreateHostedLink : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("completion_redirect_uri") is { } nullNodeCompletionRedirectUri && nullNodeCompletionRedirectUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompletionRedirectUri = null;
+            if (parseNode.GetChildNode("delivery_method") is { } nullNodeDeliveryMethod && nullNodeDeliveryMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryMethod = null;
+            if (parseNode.GetChildNode("is_mobile_app") is { } nullNodeIsMobileApp && nullNodeIsMobileApp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsMobileApp = null;
+            if (parseNode.GetChildNode("url_lifetime_seconds") is { } nullNodeUrlLifetimeSeconds && nullNodeUrlLifetimeSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlLifetimeSeconds = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>URI that Hosted Link will redirect to upon completion of the Link flow. This will only occur in Hosted Link sessions, not in other implementation methods.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompletionRedirectUri { get; set; }
+        public string? CompletionRedirectUri { get => _explicitNullValueCompletionRedirectUri; set { _explicitNullValueCompletionRedirectUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completion_redirect_uri"); else _explicitNullProperties?.Remove("completion_redirect_uri"); } }
+        private string? _explicitNullValueCompletionRedirectUri = default!;
 #nullable restore
 #else
-        public string CompletionRedirectUri { get; set; }
+        public string CompletionRedirectUri { get => _explicitNullValueCompletionRedirectUri; set { _explicitNullValueCompletionRedirectUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completion_redirect_uri"); else _explicitNullProperties?.Remove("completion_redirect_uri"); } }
+        private string _explicitNullValueCompletionRedirectUri = default!;
 #endif
         /// <summary>How Plaid should deliver the Plaid Link session to the customer. Only available to customers enabled for Link Delivery (beta). To request Link Delivery access, contact your account manager.`sms` will deliver via SMS. Must pass `user.phone_number`.`email` will deliver via email. Must pass `user.email_address`.Link Delivery is only available in Production.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.HostedLinkDeliveryMethod? DeliveryMethod { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.HostedLinkDeliveryMethod? DeliveryMethod { get => _explicitNullValueDeliveryMethod; set { _explicitNullValueDeliveryMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_method"); else _explicitNullProperties?.Remove("delivery_method"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.HostedLinkDeliveryMethod? _explicitNullValueDeliveryMethod = default!;
         /// <summary>This indicates whether the client is opening Hosted Link in a mobile app in an `AsWebAuthenticationSession` or Chrome custom tab.</summary>
-        public bool? IsMobileApp { get; set; }
+        public bool? IsMobileApp { get => _explicitNullValueIsMobileApp; set { _explicitNullValueIsMobileApp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_mobile_app"); else _explicitNullProperties?.Remove("is_mobile_app"); } }
+        private bool? _explicitNullValueIsMobileApp = default!;
         /// <summary>How many seconds the link will be valid for. Must be positive. Cannot be longer than 21 days. The default lifetime is 7 days for links delivered by email, 1 day for links delivered via SMS, and 30 minutes for links not sent via Plaid Link delivery. This parameter will override the value of all three link types.</summary>
-        public int? UrlLifetimeSeconds { get; set; }
+        public int? UrlLifetimeSeconds { get => _explicitNullValueUrlLifetimeSeconds; set { _explicitNullValueUrlLifetimeSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_lifetime_seconds"); else _explicitNullProperties?.Remove("url_lifetime_seconds"); } }
+        private int? _explicitNullValueUrlLifetimeSeconds = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateHostedLink"/> and sets the default values.
         /// </summary>
@@ -45,7 +61,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateHostedLink CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateHostedLink();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateHostedLink(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +88,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.HostedLinkDeliveryMethod>("delivery_method", DeliveryMethod);
             writer.WriteBoolValue("is_mobile_app", IsMobileApp);
             writer.WriteIntValue("url_lifetime_seconds", UrlLifetimeSeconds);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

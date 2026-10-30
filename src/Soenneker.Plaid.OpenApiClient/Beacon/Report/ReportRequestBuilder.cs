@@ -18,16 +18,19 @@ namespace Soenneker.Plaid.OpenApiClient.Beacon.Report
     public partial class ReportRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The create property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Beacon.Report.Create.CreateRequestBuilder Create
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Beacon.Report.Create.CreateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The getPath property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Beacon.Report.Get.GetRequestBuilder GetPath
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Beacon.Report.Get.GetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The list property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Beacon.Report.List.ListRequestBuilder List
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Beacon.Report.List.ListRequestBuilder(PathParameters, RequestAdapter);

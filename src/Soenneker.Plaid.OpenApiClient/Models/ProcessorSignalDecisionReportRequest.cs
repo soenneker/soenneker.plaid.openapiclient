@@ -12,50 +12,79 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProcessorSignalDecisionReportRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("amount_instantly_available") is { } nullNodeAmountInstantlyAvailable && nullNodeAmountInstantlyAvailable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountInstantlyAvailable = null;
+            if (parseNode.GetChildNode("client_id") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
+            if (parseNode.GetChildNode("client_transaction_id") is { } nullNodeClientTransactionId && nullNodeClientTransactionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientTransactionId = null;
+            if (parseNode.GetChildNode("days_funds_on_hold") is { } nullNodeDaysFundsOnHold && nullNodeDaysFundsOnHold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DaysFundsOnHold = null;
+            if (parseNode.GetChildNode("decision_outcome") is { } nullNodeDecisionOutcome && nullNodeDecisionOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DecisionOutcome = null;
+            if (parseNode.GetChildNode("initiated") is { } nullNodeInitiated && nullNodeInitiated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Initiated = null;
+            if (parseNode.GetChildNode("payment_method") is { } nullNodePaymentMethod && nullNodePaymentMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentMethod = null;
+            if (parseNode.GetChildNode("processor_token") is { } nullNodeProcessorToken && nullNodeProcessorToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessorToken = null;
+            if (parseNode.GetChildNode("secret") is { } nullNodeSecret && nullNodeSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Secret = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount (in USD) made available to your customers instantly following the debit transaction. It could be a partial amount of the requested transaction (example: 102.05).</summary>
-        public double? AmountInstantlyAvailable { get; set; }
+        public double? AmountInstantlyAvailable { get => _explicitNullValueAmountInstantlyAvailable; set { _explicitNullValueAmountInstantlyAvailable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount_instantly_available"); else _explicitNullProperties?.Remove("amount_instantly_available"); } }
+        private double? _explicitNullValueAmountInstantlyAvailable = default!;
         /// <summary>Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get; set; }
+        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        private string? _explicitNullValueClientId = default!;
 #nullable restore
 #else
-        public string ClientId { get; set; }
+        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        private string _explicitNullValueClientId = default!;
 #endif
         /// <summary>Must be the same as the `client_transaction_id` supplied when calling `/processor/signal/evaluate`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientTransactionId { get; set; }
+        public string? ClientTransactionId { get => _explicitNullValueClientTransactionId; set { _explicitNullValueClientTransactionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_transaction_id"); else _explicitNullProperties?.Remove("client_transaction_id"); } }
+        private string? _explicitNullValueClientTransactionId = default!;
 #nullable restore
 #else
-        public string ClientTransactionId { get; set; }
+        public string ClientTransactionId { get => _explicitNullValueClientTransactionId; set { _explicitNullValueClientTransactionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_transaction_id"); else _explicitNullProperties?.Remove("client_transaction_id"); } }
+        private string _explicitNullValueClientTransactionId = default!;
 #endif
         /// <summary>The actual number of days (hold time) since the ACH debit transaction that you wait before making funds available to your customers. The holding time could affect the ACH return rate.For example, use 0 if you make funds available to your customers instantly or the same day following the debit transaction, or 1 if you make funds available the next day following the debit initialization.</summary>
-        public int? DaysFundsOnHold { get; set; }
+        public int? DaysFundsOnHold { get => _explicitNullValueDaysFundsOnHold; set { _explicitNullValueDaysFundsOnHold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days_funds_on_hold"); else _explicitNullProperties?.Remove("days_funds_on_hold"); } }
+        private int? _explicitNullValueDaysFundsOnHold = default!;
         /// <summary>The payment decision from the risk assessment.`APPROVE`: approve the transaction without requiring further actions from your customers. For example, use this field if you are placing a standard hold for all the approved transactions before making funds available to your customers. You should also use this field if you decide to accelerate the fund availability for your customers.`REVIEW`: the transaction requires manual review`REJECT`: reject the transaction`TAKE_OTHER_RISK_MEASURES`: for example, placing a longer hold on funds than those approved transactions or introducing customer frictions such as step-up verification/authentication`NOT_EVALUATED`: if only logging the results without using them</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.SignalDecisionOutcome? DecisionOutcome { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SignalDecisionOutcome? DecisionOutcome { get => _explicitNullValueDecisionOutcome; set { _explicitNullValueDecisionOutcome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decision_outcome"); else _explicitNullProperties?.Remove("decision_outcome"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SignalDecisionOutcome? _explicitNullValueDecisionOutcome = default!;
         /// <summary>`true` if the ACH transaction was initiated, `false` otherwise.This field must be returned as a boolean. If formatted incorrectly, this will result in an [`INVALID_FIELD`](https://plaid.com/docs/errors/invalid-request/#invalid_field) error.</summary>
-        public bool? Initiated { get; set; }
+        public bool? Initiated { get => _explicitNullValueInitiated; set { _explicitNullValueInitiated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initiated"); else _explicitNullProperties?.Remove("initiated"); } }
+        private bool? _explicitNullValueInitiated = default!;
         /// <summary>The payment method to complete the transaction after the risk assessment. It may be different from the default payment method.`SAME_DAY_ACH`: Same Day ACH by Nacha. The debit transaction is processed and settled on the same day.`STANDARD_ACH`: Standard ACH by Nacha.`MULTIPLE_PAYMENT_METHODS`: if there is no default debit rail or there are multiple payment methods.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.SignalPaymentMethod? PaymentMethod { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SignalPaymentMethod? PaymentMethod { get => _explicitNullValuePaymentMethod; set { _explicitNullValuePaymentMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_method"); else _explicitNullProperties?.Remove("payment_method"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SignalPaymentMethod? _explicitNullValuePaymentMethod = default!;
         /// <summary>The processor token obtained from the Plaid integration partner. Processor tokens are in the format: `processor-&lt;environment&gt;-&lt;identifier&gt;`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProcessorToken { get; set; }
+        public string? ProcessorToken { get => _explicitNullValueProcessorToken; set { _explicitNullValueProcessorToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processor_token"); else _explicitNullProperties?.Remove("processor_token"); } }
+        private string? _explicitNullValueProcessorToken = default!;
 #nullable restore
 #else
-        public string ProcessorToken { get; set; }
+        public string ProcessorToken { get => _explicitNullValueProcessorToken; set { _explicitNullValueProcessorToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processor_token"); else _explicitNullProperties?.Remove("processor_token"); } }
+        private string _explicitNullValueProcessorToken = default!;
 #endif
         /// <summary>Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Secret { get; set; }
+        public string? Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
+        private string? _explicitNullValueSecret = default!;
 #nullable restore
 #else
-        public string Secret { get; set; }
+        public string Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
+        private string _explicitNullValueSecret = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ProcessorSignalDecisionReportRequest"/> and sets the default values.
@@ -72,7 +101,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.ProcessorSignalDecisionReportRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.ProcessorSignalDecisionReportRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.ProcessorSignalDecisionReportRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,6 +138,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SignalPaymentMethod>("payment_method", PaymentMethod);
             writer.WriteStringValue("processor_token", ProcessorToken);
             writer.WriteStringValue("secret", Secret);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

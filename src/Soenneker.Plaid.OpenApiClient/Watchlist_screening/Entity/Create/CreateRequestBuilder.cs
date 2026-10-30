@@ -51,7 +51,7 @@ namespace Soenneker.Plaid.OpenApiClient.Watchlist_screening.Entity.Create
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningEntityCreateResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningEntityCreateResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningEntityCreateResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningEntityCreateResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new entity watchlist screening to check your customer against watchlists defined in the associated entity watchlist program. If your associated program has ongoing screening enabled, this is the profile information that will be used to monitor your customer over time.

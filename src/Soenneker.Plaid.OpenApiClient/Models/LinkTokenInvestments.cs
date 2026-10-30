@@ -12,13 +12,28 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LinkTokenInvestments : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allow_manual_entry") is { } nullNodeAllowManualEntry && nullNodeAllowManualEntry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowManualEntry = null;
+            if (parseNode.GetChildNode("allow_unverified_crypto_wallets") is { } nullNodeAllowUnverifiedCryptoWallets && nullNodeAllowUnverifiedCryptoWallets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowUnverifiedCryptoWallets = null;
+            if (parseNode.GetChildNode("async_update") is { } nullNodeAsyncUpdate && nullNodeAsyncUpdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AsyncUpdate = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If `true`, allow users to manually enter Investments account and holdings information. Defaults to `false`.</summary>
-        public bool? AllowManualEntry { get; set; }
+        public bool? AllowManualEntry { get => _explicitNullValueAllowManualEntry; set { _explicitNullValueAllowManualEntry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_manual_entry"); else _explicitNullProperties?.Remove("allow_manual_entry"); } }
+        private bool? _explicitNullValueAllowManualEntry = default!;
         /// <summary>If `true`, allow self-custody crypto wallets to be added without requiring signature verification. Defaults to `false`.</summary>
-        public bool? AllowUnverifiedCryptoWallets { get; set; }
+        public bool? AllowUnverifiedCryptoWallets { get => _explicitNullValueAllowUnverifiedCryptoWallets; set { _explicitNullValueAllowUnverifiedCryptoWallets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_unverified_crypto_wallets"); else _explicitNullProperties?.Remove("allow_unverified_crypto_wallets"); } }
+        private bool? _explicitNullValueAllowUnverifiedCryptoWallets = default!;
+        /// <summary>If `true`, only a 30-day initial history of investment transactions is pulled synchronously before the Link session completes, with the full history being pulled asynchronously after Link. When the full history is available, an `INVESTMENTS_TRANSACTIONS: HISTORICAL_UPDATE` webhook will be sent. If `false`, Link pulls the full history before the session completes. Only applies when `investments` is initialized in the `products` array. This field is configurable only for clients created before November 30, 2026, and will default to `false` if omitted. For newer clients created on or after that date, this field is ignored and is automatically `true`.</summary>
+        public bool? AsyncUpdate { get => _explicitNullValueAsyncUpdate; set { _explicitNullValueAsyncUpdate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("async_update"); else _explicitNullProperties?.Remove("async_update"); } }
+        private bool? _explicitNullValueAsyncUpdate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenInvestments"/> and sets the default values.
         /// </summary>
@@ -34,7 +49,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenInvestments CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenInvestments();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenInvestments(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -46,6 +61,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "allow_manual_entry", n => { AllowManualEntry = n.GetBoolValue(); } },
                 { "allow_unverified_crypto_wallets", n => { AllowUnverifiedCryptoWallets = n.GetBoolValue(); } },
+                { "async_update", n => { AsyncUpdate = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -57,6 +73,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allow_manual_entry", AllowManualEntry);
             writer.WriteBoolValue("allow_unverified_crypto_wallets", AllowUnverifiedCryptoWallets);
+            writer.WriteBoolValue("async_update", AsyncUpdate);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

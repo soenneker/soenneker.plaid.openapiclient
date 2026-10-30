@@ -12,192 +12,268 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreditW2 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allocated_tips") is { } nullNodeAllocatedTips && nullNodeAllocatedTips.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllocatedTips = null;
+            if (parseNode.GetChildNode("box_12") is { } nullNodeBox12 && nullNodeBox12.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Box12 = null;
+            if (parseNode.GetChildNode("box_9") is { } nullNodeBox9 && nullNodeBox9.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Box9 = null;
+            if (parseNode.GetChildNode("dependent_care_benefits") is { } nullNodeDependentCareBenefits && nullNodeDependentCareBenefits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DependentCareBenefits = null;
+            if (parseNode.GetChildNode("document_id") is { } nullNodeDocumentId && nullNodeDocumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentId = null;
+            if (parseNode.GetChildNode("document_metadata") is { } nullNodeDocumentMetadata && nullNodeDocumentMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentMetadata = null;
+            if (parseNode.GetChildNode("employee") is { } nullNodeEmployee && nullNodeEmployee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Employee = null;
+            if (parseNode.GetChildNode("employer") is { } nullNodeEmployer && nullNodeEmployer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Employer = null;
+            if (parseNode.GetChildNode("employer_id_number") is { } nullNodeEmployerIdNumber && nullNodeEmployerIdNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmployerIdNumber = null;
+            if (parseNode.GetChildNode("federal_income_tax_withheld") is { } nullNodeFederalIncomeTaxWithheld && nullNodeFederalIncomeTaxWithheld.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FederalIncomeTaxWithheld = null;
+            if (parseNode.GetChildNode("medicare_tax_withheld") is { } nullNodeMedicareTaxWithheld && nullNodeMedicareTaxWithheld.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MedicareTaxWithheld = null;
+            if (parseNode.GetChildNode("medicare_wages_and_tips") is { } nullNodeMedicareWagesAndTips && nullNodeMedicareWagesAndTips.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MedicareWagesAndTips = null;
+            if (parseNode.GetChildNode("nonqualified_plans") is { } nullNodeNonqualifiedPlans && nullNodeNonqualifiedPlans.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NonqualifiedPlans = null;
+            if (parseNode.GetChildNode("other") is { } nullNodeOther && nullNodeOther.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Other = null;
+            if (parseNode.GetChildNode("retirement_plan") is { } nullNodeRetirementPlan && nullNodeRetirementPlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetirementPlan = null;
+            if (parseNode.GetChildNode("social_security_tax_withheld") is { } nullNodeSocialSecurityTaxWithheld && nullNodeSocialSecurityTaxWithheld.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SocialSecurityTaxWithheld = null;
+            if (parseNode.GetChildNode("social_security_tips") is { } nullNodeSocialSecurityTips && nullNodeSocialSecurityTips.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SocialSecurityTips = null;
+            if (parseNode.GetChildNode("social_security_wages") is { } nullNodeSocialSecurityWages && nullNodeSocialSecurityWages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SocialSecurityWages = null;
+            if (parseNode.GetChildNode("state_and_local_wages") is { } nullNodeStateAndLocalWages && nullNodeStateAndLocalWages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StateAndLocalWages = null;
+            if (parseNode.GetChildNode("statutory_employee") is { } nullNodeStatutoryEmployee && nullNodeStatutoryEmployee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatutoryEmployee = null;
+            if (parseNode.GetChildNode("tax_year") is { } nullNodeTaxYear && nullNodeTaxYear.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxYear = null;
+            if (parseNode.GetChildNode("third_party_sick_pay") is { } nullNodeThirdPartySickPay && nullNodeThirdPartySickPay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThirdPartySickPay = null;
+            if (parseNode.GetChildNode("wages_tips_other_comp") is { } nullNodeWagesTipsOtherComp && nullNodeWagesTipsOtherComp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WagesTipsOtherComp = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Allocated tips.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AllocatedTips { get; set; }
+        public string? AllocatedTips { get => _explicitNullValueAllocatedTips; set { _explicitNullValueAllocatedTips = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allocated_tips"); else _explicitNullProperties?.Remove("allocated_tips"); } }
+        private string? _explicitNullValueAllocatedTips = default!;
 #nullable restore
 #else
-        public string AllocatedTips { get; set; }
+        public string AllocatedTips { get => _explicitNullValueAllocatedTips; set { _explicitNullValueAllocatedTips = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allocated_tips"); else _explicitNullProperties?.Remove("allocated_tips"); } }
+        private string _explicitNullValueAllocatedTips = default!;
 #endif
         /// <summary>The box_12 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.W2Box12>? Box12 { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.W2Box12>? Box12 { get => _explicitNullValueBox12; set { _explicitNullValueBox12 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("box_12"); else _explicitNullProperties?.Remove("box_12"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.W2Box12>? _explicitNullValueBox12 = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.W2Box12> Box12 { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.W2Box12> Box12 { get => _explicitNullValueBox12; set { _explicitNullValueBox12 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("box_12"); else _explicitNullProperties?.Remove("box_12"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.W2Box12> _explicitNullValueBox12 = default!;
 #endif
         /// <summary>Contents from box 9 on the W2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Box9 { get; set; }
+        public string? Box9 { get => _explicitNullValueBox9; set { _explicitNullValueBox9 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("box_9"); else _explicitNullProperties?.Remove("box_9"); } }
+        private string? _explicitNullValueBox9 = default!;
 #nullable restore
 #else
-        public string Box9 { get; set; }
+        public string Box9 { get => _explicitNullValueBox9; set { _explicitNullValueBox9 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("box_9"); else _explicitNullProperties?.Remove("box_9"); } }
+        private string _explicitNullValueBox9 = default!;
 #endif
         /// <summary>Dependent care benefits.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DependentCareBenefits { get; set; }
+        public string? DependentCareBenefits { get => _explicitNullValueDependentCareBenefits; set { _explicitNullValueDependentCareBenefits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dependent_care_benefits"); else _explicitNullProperties?.Remove("dependent_care_benefits"); } }
+        private string? _explicitNullValueDependentCareBenefits = default!;
 #nullable restore
 #else
-        public string DependentCareBenefits { get; set; }
+        public string DependentCareBenefits { get => _explicitNullValueDependentCareBenefits; set { _explicitNullValueDependentCareBenefits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dependent_care_benefits"); else _explicitNullProperties?.Remove("dependent_care_benefits"); } }
+        private string _explicitNullValueDependentCareBenefits = default!;
 #endif
         /// <summary>An identifier of the document referenced by the document metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentId { get; set; }
+        public string? DocumentId { get => _explicitNullValueDocumentId; set { _explicitNullValueDocumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_id"); else _explicitNullProperties?.Remove("document_id"); } }
+        private string? _explicitNullValueDocumentId = default!;
 #nullable restore
 #else
-        public string DocumentId { get; set; }
+        public string DocumentId { get => _explicitNullValueDocumentId; set { _explicitNullValueDocumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_id"); else _explicitNullProperties?.Remove("document_id"); } }
+        private string _explicitNullValueDocumentId = default!;
 #endif
         /// <summary>Object representing metadata pertaining to the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata? DocumentMetadata { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata? DocumentMetadata { get => _explicitNullValueDocumentMetadata; set { _explicitNullValueDocumentMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_metadata"); else _explicitNullProperties?.Remove("document_metadata"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata? _explicitNullValueDocumentMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata DocumentMetadata { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata DocumentMetadata { get => _explicitNullValueDocumentMetadata; set { _explicitNullValueDocumentMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_metadata"); else _explicitNullProperties?.Remove("document_metadata"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata _explicitNullValueDocumentMetadata = default!;
 #endif
         /// <summary>Data about the employee.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEmployee? Employee { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEmployee? Employee { get => _explicitNullValueEmployee; set { _explicitNullValueEmployee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employee"); else _explicitNullProperties?.Remove("employee"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEmployee? _explicitNullValueEmployee = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEmployee Employee { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEmployee Employee { get => _explicitNullValueEmployee; set { _explicitNullValueEmployee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employee"); else _explicitNullProperties?.Remove("employee"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEmployee _explicitNullValueEmployee = default!;
 #endif
         /// <summary>Information about the employer on the pay stub.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEmployer? Employer { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEmployer? Employer { get => _explicitNullValueEmployer; set { _explicitNullValueEmployer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employer"); else _explicitNullProperties?.Remove("employer"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEmployer? _explicitNullValueEmployer = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEmployer Employer { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEmployer Employer { get => _explicitNullValueEmployer; set { _explicitNullValueEmployer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employer"); else _explicitNullProperties?.Remove("employer"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEmployer _explicitNullValueEmployer = default!;
 #endif
         /// <summary>An employer identification number or EIN.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmployerIdNumber { get; set; }
+        public string? EmployerIdNumber { get => _explicitNullValueEmployerIdNumber; set { _explicitNullValueEmployerIdNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employer_id_number"); else _explicitNullProperties?.Remove("employer_id_number"); } }
+        private string? _explicitNullValueEmployerIdNumber = default!;
 #nullable restore
 #else
-        public string EmployerIdNumber { get; set; }
+        public string EmployerIdNumber { get => _explicitNullValueEmployerIdNumber; set { _explicitNullValueEmployerIdNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employer_id_number"); else _explicitNullProperties?.Remove("employer_id_number"); } }
+        private string _explicitNullValueEmployerIdNumber = default!;
 #endif
         /// <summary>Federal income tax withheld for the tax year.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FederalIncomeTaxWithheld { get; set; }
+        public string? FederalIncomeTaxWithheld { get => _explicitNullValueFederalIncomeTaxWithheld; set { _explicitNullValueFederalIncomeTaxWithheld = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("federal_income_tax_withheld"); else _explicitNullProperties?.Remove("federal_income_tax_withheld"); } }
+        private string? _explicitNullValueFederalIncomeTaxWithheld = default!;
 #nullable restore
 #else
-        public string FederalIncomeTaxWithheld { get; set; }
+        public string FederalIncomeTaxWithheld { get => _explicitNullValueFederalIncomeTaxWithheld; set { _explicitNullValueFederalIncomeTaxWithheld = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("federal_income_tax_withheld"); else _explicitNullProperties?.Remove("federal_income_tax_withheld"); } }
+        private string _explicitNullValueFederalIncomeTaxWithheld = default!;
 #endif
         /// <summary>Medicare tax withheld for the tax year.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MedicareTaxWithheld { get; set; }
+        public string? MedicareTaxWithheld { get => _explicitNullValueMedicareTaxWithheld; set { _explicitNullValueMedicareTaxWithheld = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("medicare_tax_withheld"); else _explicitNullProperties?.Remove("medicare_tax_withheld"); } }
+        private string? _explicitNullValueMedicareTaxWithheld = default!;
 #nullable restore
 #else
-        public string MedicareTaxWithheld { get; set; }
+        public string MedicareTaxWithheld { get => _explicitNullValueMedicareTaxWithheld; set { _explicitNullValueMedicareTaxWithheld = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("medicare_tax_withheld"); else _explicitNullProperties?.Remove("medicare_tax_withheld"); } }
+        private string _explicitNullValueMedicareTaxWithheld = default!;
 #endif
         /// <summary>Wages and tips from medicare.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MedicareWagesAndTips { get; set; }
+        public string? MedicareWagesAndTips { get => _explicitNullValueMedicareWagesAndTips; set { _explicitNullValueMedicareWagesAndTips = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("medicare_wages_and_tips"); else _explicitNullProperties?.Remove("medicare_wages_and_tips"); } }
+        private string? _explicitNullValueMedicareWagesAndTips = default!;
 #nullable restore
 #else
-        public string MedicareWagesAndTips { get; set; }
+        public string MedicareWagesAndTips { get => _explicitNullValueMedicareWagesAndTips; set { _explicitNullValueMedicareWagesAndTips = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("medicare_wages_and_tips"); else _explicitNullProperties?.Remove("medicare_wages_and_tips"); } }
+        private string _explicitNullValueMedicareWagesAndTips = default!;
 #endif
         /// <summary>Nonqualified plans.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NonqualifiedPlans { get; set; }
+        public string? NonqualifiedPlans { get => _explicitNullValueNonqualifiedPlans; set { _explicitNullValueNonqualifiedPlans = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nonqualified_plans"); else _explicitNullProperties?.Remove("nonqualified_plans"); } }
+        private string? _explicitNullValueNonqualifiedPlans = default!;
 #nullable restore
 #else
-        public string NonqualifiedPlans { get; set; }
+        public string NonqualifiedPlans { get => _explicitNullValueNonqualifiedPlans; set { _explicitNullValueNonqualifiedPlans = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nonqualified_plans"); else _explicitNullProperties?.Remove("nonqualified_plans"); } }
+        private string _explicitNullValueNonqualifiedPlans = default!;
 #endif
         /// <summary>Other.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Other { get; set; }
+        public string? Other { get => _explicitNullValueOther; set { _explicitNullValueOther = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other"); else _explicitNullProperties?.Remove("other"); } }
+        private string? _explicitNullValueOther = default!;
 #nullable restore
 #else
-        public string Other { get; set; }
+        public string Other { get => _explicitNullValueOther; set { _explicitNullValueOther = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other"); else _explicitNullProperties?.Remove("other"); } }
+        private string _explicitNullValueOther = default!;
 #endif
         /// <summary>Retirement plan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RetirementPlan { get; set; }
+        public string? RetirementPlan { get => _explicitNullValueRetirementPlan; set { _explicitNullValueRetirementPlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retirement_plan"); else _explicitNullProperties?.Remove("retirement_plan"); } }
+        private string? _explicitNullValueRetirementPlan = default!;
 #nullable restore
 #else
-        public string RetirementPlan { get; set; }
+        public string RetirementPlan { get => _explicitNullValueRetirementPlan; set { _explicitNullValueRetirementPlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retirement_plan"); else _explicitNullProperties?.Remove("retirement_plan"); } }
+        private string _explicitNullValueRetirementPlan = default!;
 #endif
         /// <summary>Social Security tax withheld for the tax year.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SocialSecurityTaxWithheld { get; set; }
+        public string? SocialSecurityTaxWithheld { get => _explicitNullValueSocialSecurityTaxWithheld; set { _explicitNullValueSocialSecurityTaxWithheld = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("social_security_tax_withheld"); else _explicitNullProperties?.Remove("social_security_tax_withheld"); } }
+        private string? _explicitNullValueSocialSecurityTaxWithheld = default!;
 #nullable restore
 #else
-        public string SocialSecurityTaxWithheld { get; set; }
+        public string SocialSecurityTaxWithheld { get => _explicitNullValueSocialSecurityTaxWithheld; set { _explicitNullValueSocialSecurityTaxWithheld = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("social_security_tax_withheld"); else _explicitNullProperties?.Remove("social_security_tax_withheld"); } }
+        private string _explicitNullValueSocialSecurityTaxWithheld = default!;
 #endif
         /// <summary>Tips from Social Security.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SocialSecurityTips { get; set; }
+        public string? SocialSecurityTips { get => _explicitNullValueSocialSecurityTips; set { _explicitNullValueSocialSecurityTips = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("social_security_tips"); else _explicitNullProperties?.Remove("social_security_tips"); } }
+        private string? _explicitNullValueSocialSecurityTips = default!;
 #nullable restore
 #else
-        public string SocialSecurityTips { get; set; }
+        public string SocialSecurityTips { get => _explicitNullValueSocialSecurityTips; set { _explicitNullValueSocialSecurityTips = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("social_security_tips"); else _explicitNullProperties?.Remove("social_security_tips"); } }
+        private string _explicitNullValueSocialSecurityTips = default!;
 #endif
         /// <summary>Wages from Social Security.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SocialSecurityWages { get; set; }
+        public string? SocialSecurityWages { get => _explicitNullValueSocialSecurityWages; set { _explicitNullValueSocialSecurityWages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("social_security_wages"); else _explicitNullProperties?.Remove("social_security_wages"); } }
+        private string? _explicitNullValueSocialSecurityWages = default!;
 #nullable restore
 #else
-        public string SocialSecurityWages { get; set; }
+        public string SocialSecurityWages { get => _explicitNullValueSocialSecurityWages; set { _explicitNullValueSocialSecurityWages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("social_security_wages"); else _explicitNullProperties?.Remove("social_security_wages"); } }
+        private string _explicitNullValueSocialSecurityWages = default!;
 #endif
         /// <summary>The state_and_local_wages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.W2StateAndLocalWages>? StateAndLocalWages { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.W2StateAndLocalWages>? StateAndLocalWages { get => _explicitNullValueStateAndLocalWages; set { _explicitNullValueStateAndLocalWages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state_and_local_wages"); else _explicitNullProperties?.Remove("state_and_local_wages"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.W2StateAndLocalWages>? _explicitNullValueStateAndLocalWages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.W2StateAndLocalWages> StateAndLocalWages { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.W2StateAndLocalWages> StateAndLocalWages { get => _explicitNullValueStateAndLocalWages; set { _explicitNullValueStateAndLocalWages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state_and_local_wages"); else _explicitNullProperties?.Remove("state_and_local_wages"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.W2StateAndLocalWages> _explicitNullValueStateAndLocalWages = default!;
 #endif
         /// <summary>Statutory employee.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StatutoryEmployee { get; set; }
+        public string? StatutoryEmployee { get => _explicitNullValueStatutoryEmployee; set { _explicitNullValueStatutoryEmployee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statutory_employee"); else _explicitNullProperties?.Remove("statutory_employee"); } }
+        private string? _explicitNullValueStatutoryEmployee = default!;
 #nullable restore
 #else
-        public string StatutoryEmployee { get; set; }
+        public string StatutoryEmployee { get => _explicitNullValueStatutoryEmployee; set { _explicitNullValueStatutoryEmployee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statutory_employee"); else _explicitNullProperties?.Remove("statutory_employee"); } }
+        private string _explicitNullValueStatutoryEmployee = default!;
 #endif
         /// <summary>The tax year of the W2 document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxYear { get; set; }
+        public string? TaxYear { get => _explicitNullValueTaxYear; set { _explicitNullValueTaxYear = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax_year"); else _explicitNullProperties?.Remove("tax_year"); } }
+        private string? _explicitNullValueTaxYear = default!;
 #nullable restore
 #else
-        public string TaxYear { get; set; }
+        public string TaxYear { get => _explicitNullValueTaxYear; set { _explicitNullValueTaxYear = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax_year"); else _explicitNullProperties?.Remove("tax_year"); } }
+        private string _explicitNullValueTaxYear = default!;
 #endif
         /// <summary>Third party sick pay.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThirdPartySickPay { get; set; }
+        public string? ThirdPartySickPay { get => _explicitNullValueThirdPartySickPay; set { _explicitNullValueThirdPartySickPay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("third_party_sick_pay"); else _explicitNullProperties?.Remove("third_party_sick_pay"); } }
+        private string? _explicitNullValueThirdPartySickPay = default!;
 #nullable restore
 #else
-        public string ThirdPartySickPay { get; set; }
+        public string ThirdPartySickPay { get => _explicitNullValueThirdPartySickPay; set { _explicitNullValueThirdPartySickPay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("third_party_sick_pay"); else _explicitNullProperties?.Remove("third_party_sick_pay"); } }
+        private string _explicitNullValueThirdPartySickPay = default!;
 #endif
         /// <summary>Wages from tips and other compensation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WagesTipsOtherComp { get; set; }
+        public string? WagesTipsOtherComp { get => _explicitNullValueWagesTipsOtherComp; set { _explicitNullValueWagesTipsOtherComp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wages_tips_other_comp"); else _explicitNullProperties?.Remove("wages_tips_other_comp"); } }
+        private string? _explicitNullValueWagesTipsOtherComp = default!;
 #nullable restore
 #else
-        public string WagesTipsOtherComp { get; set; }
+        public string WagesTipsOtherComp { get => _explicitNullValueWagesTipsOtherComp; set { _explicitNullValueWagesTipsOtherComp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wages_tips_other_comp"); else _explicitNullProperties?.Remove("wages_tips_other_comp"); } }
+        private string _explicitNullValueWagesTipsOtherComp = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CreditW2"/> and sets the default values.
@@ -214,7 +290,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CreditW2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CreditW2();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CreditW2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -279,6 +355,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("tax_year", TaxYear);
             writer.WriteStringValue("third_party_sick_pay", ThirdPartySickPay);
             writer.WriteStringValue("wages_tips_other_comp", WagesTipsOtherComp);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

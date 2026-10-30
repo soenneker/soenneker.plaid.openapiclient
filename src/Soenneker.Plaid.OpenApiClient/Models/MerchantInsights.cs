@@ -12,54 +12,82 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MerchantInsights : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("entity_id") is { } nullNodeEntityId && nullNodeEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityId = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("personal_finance_category_detailed") is { } nullNodePersonalFinanceCategoryDetailed && nullNodePersonalFinanceCategoryDetailed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalFinanceCategoryDetailed = null;
+            if (parseNode.GetChildNode("personal_finance_category_primary") is { } nullNodePersonalFinanceCategoryPrimary && nullNodePersonalFinanceCategoryPrimary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalFinanceCategoryPrimary = null;
+            if (parseNode.GetChildNode("total_inflows") is { } nullNodeTotalInflows && nullNodeTotalInflows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalInflows = null;
+            if (parseNode.GetChildNode("total_outflows") is { } nullNodeTotalOutflows && nullNodeTotalOutflows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalOutflows = null;
+            if (parseNode.GetChildNode("transaction_count") is { } nullNodeTransactionCount && nullNodeTransactionCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionCount = null;
+            if (parseNode.GetChildNode("website") is { } nullNodeWebsite && nullNodeWebsite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Website = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A unique, stable, Plaid-generated id that maps to the merchant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EntityId { get; set; }
+        public string? EntityId { get => _explicitNullValueEntityId; set { _explicitNullValueEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_id"); else _explicitNullProperties?.Remove("entity_id"); } }
+        private string? _explicitNullValueEntityId = default!;
 #nullable restore
 #else
-        public string EntityId { get; set; }
+        public string EntityId { get => _explicitNullValueEntityId; set { _explicitNullValueEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_id"); else _explicitNullProperties?.Remove("entity_id"); } }
+        private string _explicitNullValueEntityId = default!;
 #endif
         /// <summary>The counterparty name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The detailed personal finance category associated with this merchant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PersonalFinanceCategoryDetailed { get; set; }
+        public string? PersonalFinanceCategoryDetailed { get => _explicitNullValuePersonalFinanceCategoryDetailed; set { _explicitNullValuePersonalFinanceCategoryDetailed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category_detailed"); else _explicitNullProperties?.Remove("personal_finance_category_detailed"); } }
+        private string? _explicitNullValuePersonalFinanceCategoryDetailed = default!;
 #nullable restore
 #else
-        public string PersonalFinanceCategoryDetailed { get; set; }
+        public string PersonalFinanceCategoryDetailed { get => _explicitNullValuePersonalFinanceCategoryDetailed; set { _explicitNullValuePersonalFinanceCategoryDetailed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category_detailed"); else _explicitNullProperties?.Remove("personal_finance_category_detailed"); } }
+        private string _explicitNullValuePersonalFinanceCategoryDetailed = default!;
 #endif
         /// <summary>The primary personal finance category associated with this merchant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PersonalFinanceCategoryPrimary { get; set; }
+        public string? PersonalFinanceCategoryPrimary { get => _explicitNullValuePersonalFinanceCategoryPrimary; set { _explicitNullValuePersonalFinanceCategoryPrimary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category_primary"); else _explicitNullProperties?.Remove("personal_finance_category_primary"); } }
+        private string? _explicitNullValuePersonalFinanceCategoryPrimary = default!;
 #nullable restore
 #else
-        public string PersonalFinanceCategoryPrimary { get; set; }
+        public string PersonalFinanceCategoryPrimary { get => _explicitNullValuePersonalFinanceCategoryPrimary; set { _explicitNullValuePersonalFinanceCategoryPrimary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category_primary"); else _explicitNullProperties?.Remove("personal_finance_category_primary"); } }
+        private string _explicitNullValuePersonalFinanceCategoryPrimary = default!;
 #endif
         /// <summary>Sum of inflow amounts.</summary>
-        public double? TotalInflows { get; set; }
+        public double? TotalInflows { get => _explicitNullValueTotalInflows; set { _explicitNullValueTotalInflows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_inflows"); else _explicitNullProperties?.Remove("total_inflows"); } }
+        private double? _explicitNullValueTotalInflows = default!;
         /// <summary>Sum of outflow amounts.</summary>
-        public double? TotalOutflows { get; set; }
+        public double? TotalOutflows { get => _explicitNullValueTotalOutflows; set { _explicitNullValueTotalOutflows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_outflows"); else _explicitNullProperties?.Remove("total_outflows"); } }
+        private double? _explicitNullValueTotalOutflows = default!;
         /// <summary>The number of transactions associated with merchant of this type.</summary>
-        public int? TransactionCount { get; set; }
+        public int? TransactionCount { get => _explicitNullValueTransactionCount; set { _explicitNullValueTransactionCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_count"); else _explicitNullProperties?.Remove("transaction_count"); } }
+        private int? _explicitNullValueTransactionCount = default!;
         /// <summary>The website associated with the merchant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Website { get; set; }
+        public string? Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
+        private string? _explicitNullValueWebsite = default!;
 #nullable restore
 #else
-        public string Website { get; set; }
+        public string Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
+        private string _explicitNullValueWebsite = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.MerchantInsights"/> and sets the default values.
@@ -76,7 +104,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.MerchantInsights CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.MerchantInsights();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.MerchantInsights(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -111,6 +139,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDoubleValue("total_outflows", TotalOutflows);
             writer.WriteIntValue("transaction_count", TransactionCount);
             writer.WriteStringValue("website", Website);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

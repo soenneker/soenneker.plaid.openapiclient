@@ -12,17 +12,32 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SelfieAgeCheck : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("age_estimate_lower_bound") is { } nullNodeAgeEstimateLowerBound && nullNodeAgeEstimateLowerBound.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgeEstimateLowerBound = null;
+            if (parseNode.GetChildNode("age_estimate_upper_bound") is { } nullNodeAgeEstimateUpperBound && nullNodeAgeEstimateUpperBound.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgeEstimateUpperBound = null;
+            if (parseNode.GetChildNode("reported_age") is { } nullNodeReportedAge && nullNodeReportedAge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportedAge = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Lower bound of the estimated age range from the selfie capture.</summary>
-        public int? AgeEstimateLowerBound { get; set; }
+        public int? AgeEstimateLowerBound { get => _explicitNullValueAgeEstimateLowerBound; set { _explicitNullValueAgeEstimateLowerBound = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("age_estimate_lower_bound"); else _explicitNullProperties?.Remove("age_estimate_lower_bound"); } }
+        private int? _explicitNullValueAgeEstimateLowerBound = default!;
         /// <summary>Upper bound of the estimated age range from the selfie capture.</summary>
-        public int? AgeEstimateUpperBound { get; set; }
+        public int? AgeEstimateUpperBound { get => _explicitNullValueAgeEstimateUpperBound; set { _explicitNullValueAgeEstimateUpperBound = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("age_estimate_upper_bound"); else _explicitNullProperties?.Remove("age_estimate_upper_bound"); } }
+        private int? _explicitNullValueAgeEstimateUpperBound = default!;
         /// <summary>The user&apos;s age at the time of the selfie capture, calculated from the date of birth submitted during Identity Verification. If multiple date of birth sources are available, the date of birth submitted in the flow session takes priority over the document date of birth. This field is `null` when the date of birth is unavailable.</summary>
-        public int? ReportedAge { get; set; }
+        public int? ReportedAge { get => _explicitNullValueReportedAge; set { _explicitNullValueReportedAge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reported_age"); else _explicitNullProperties?.Remove("reported_age"); } }
+        private int? _explicitNullValueReportedAge = default!;
         /// <summary>An enum indicating whether the reported age aligns with the estimated selfie capture age range.`match` indicates that the reported age falls within the estimated selfie capture age range.`warning` indicates that the reported age falls outside the estimated selfie capture age range, but is close enough that the result should be reviewed.`no_match` indicates that the reported age falls far outside the estimated selfie capture age range.`no_data` indicates that there was not enough data available at age-estimation time to compare the reported age against the estimated selfie capture age range.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAgeCheckStatus? Status { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAgeCheckStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SelfieAgeCheckStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.SelfieAgeCheck"/> and sets the default values.
         /// </summary>
@@ -38,7 +53,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.SelfieAgeCheck CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.SelfieAgeCheck();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.SelfieAgeCheck(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,6 +82,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteIntValue("age_estimate_upper_bound", AgeEstimateUpperBound);
             writer.WriteIntValue("reported_age", ReportedAge);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SelfieAgeCheckStatus>("status", Status);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

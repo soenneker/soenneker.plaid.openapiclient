@@ -13,27 +13,42 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CashAdvanceRepayment : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("amount_due") is { } nullNodeAmountDue && nullNodeAmountDue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountDue = null;
+            if (parseNode.GetChildNode("amount_paid") is { } nullNodeAmountPaid && nullNodeAmountPaid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountPaid = null;
+            if (parseNode.GetChildNode("due_date") is { } nullNodeDueDate && nullNodeDueDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DueDate = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount a user is required to pay, including any fees or additional amounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceRepaymentAmountDue? AmountDue { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceRepaymentAmountDue? AmountDue { get => _explicitNullValueAmountDue; set { _explicitNullValueAmountDue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount_due"); else _explicitNullProperties?.Remove("amount_due"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceRepaymentAmountDue? _explicitNullValueAmountDue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceRepaymentAmountDue AmountDue { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceRepaymentAmountDue AmountDue { get => _explicitNullValueAmountDue; set { _explicitNullValueAmountDue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount_due"); else _explicitNullProperties?.Remove("amount_due"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceRepaymentAmountDue _explicitNullValueAmountDue = default!;
 #endif
         /// <summary>The amount a user paid. Required if there was a payment made.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceRepaymentAmountPaid? AmountPaid { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceRepaymentAmountPaid? AmountPaid { get => _explicitNullValueAmountPaid; set { _explicitNullValueAmountPaid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount_paid"); else _explicitNullProperties?.Remove("amount_paid"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceRepaymentAmountPaid? _explicitNullValueAmountPaid = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceRepaymentAmountPaid AmountPaid { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceRepaymentAmountPaid AmountPaid { get => _explicitNullValueAmountPaid; set { _explicitNullValueAmountPaid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount_paid"); else _explicitNullProperties?.Remove("amount_paid"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceRepaymentAmountPaid _explicitNullValueAmountPaid = default!;
 #endif
         /// <summary>The date the cash-advance is due, in ISO 8601 format (`YYYY-MM-DD`).</summary>
-        public Date? DueDate { get; set; }
+        public Date? DueDate { get => _explicitNullValueDueDate; set { _explicitNullValueDueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("due_date"); else _explicitNullProperties?.Remove("due_date"); } }
+        private Date? _explicitNullValueDueDate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceRepayment"/> and sets the default values.
         /// </summary>
@@ -49,7 +64,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceRepayment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceRepayment();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceRepayment(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,6 +89,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceRepaymentAmountDue>("amount_due", AmountDue);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceRepaymentAmountPaid>("amount_paid", AmountPaid);
             writer.WriteDateValue("due_date", DueDate);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

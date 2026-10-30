@@ -12,24 +12,37 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraProjectedModeledIncome : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("annual") is { } nullNodeAnnual && nullNodeAnnual.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Annual = null;
+            if (parseNode.GetChildNode("monthly") is { } nullNodeMonthly && nullNodeMonthly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Monthly = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Modeled estimate of the annual income.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraAnnualIncomeValues? Annual { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraAnnualIncomeValues? Annual { get => _explicitNullValueAnnual; set { _explicitNullValueAnnual = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annual"); else _explicitNullProperties?.Remove("annual"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraAnnualIncomeValues? _explicitNullValueAnnual = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraAnnualIncomeValues Annual { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraAnnualIncomeValues Annual { get => _explicitNullValueAnnual; set { _explicitNullValueAnnual = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annual"); else _explicitNullProperties?.Remove("annual"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraAnnualIncomeValues _explicitNullValueAnnual = default!;
 #endif
         /// <summary>Modeled estimate of the monthly income.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraMonthlyIncomeValues? Monthly { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraMonthlyIncomeValues? Monthly { get => _explicitNullValueMonthly; set { _explicitNullValueMonthly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly"); else _explicitNullProperties?.Remove("monthly"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraMonthlyIncomeValues? _explicitNullValueMonthly = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraMonthlyIncomeValues Monthly { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraMonthlyIncomeValues Monthly { get => _explicitNullValueMonthly; set { _explicitNullValueMonthly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly"); else _explicitNullProperties?.Remove("monthly"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraMonthlyIncomeValues _explicitNullValueMonthly = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraProjectedModeledIncome"/> and sets the default values.
@@ -46,7 +59,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CraProjectedModeledIncome CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CraProjectedModeledIncome();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraProjectedModeledIncome(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +84,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraAnnualIncomeValues>("annual", Annual);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraMonthlyIncomeValues>("monthly", Monthly);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

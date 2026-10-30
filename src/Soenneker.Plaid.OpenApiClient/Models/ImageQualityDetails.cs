@@ -12,15 +12,28 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ImageQualityDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("blur_check") is { } nullNodeBlurCheck && nullNodeBlurCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlurCheck = null;
+            if (parseNode.GetChildNode("dimensions_check") is { } nullNodeDimensionsCheck && nullNodeDimensionsCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DimensionsCheck = null;
+            if (parseNode.GetChildNode("glare_check") is { } nullNodeGlareCheck && nullNodeGlareCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GlareCheck = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The outcome of the image quality check.`success` - The check passed.`failed` - The check did not pass.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsBlurCheck? BlurCheck { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsBlurCheck? BlurCheck { get => _explicitNullValueBlurCheck; set { _explicitNullValueBlurCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blur_check"); else _explicitNullProperties?.Remove("blur_check"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsBlurCheck? _explicitNullValueBlurCheck = default!;
         /// <summary>The outcome of the image quality check.`success` - The check passed.`failed` - The check did not pass.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsDimensionsCheck? DimensionsCheck { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsDimensionsCheck? DimensionsCheck { get => _explicitNullValueDimensionsCheck; set { _explicitNullValueDimensionsCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions_check"); else _explicitNullProperties?.Remove("dimensions_check"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsDimensionsCheck? _explicitNullValueDimensionsCheck = default!;
         /// <summary>The outcome of the image quality check.`success` - The check passed.`failed` - The check did not pass.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsGlareCheck? GlareCheck { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsGlareCheck? GlareCheck { get => _explicitNullValueGlareCheck; set { _explicitNullValueGlareCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("glare_check"); else _explicitNullProperties?.Remove("glare_check"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsGlareCheck? _explicitNullValueGlareCheck = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetails"/> and sets the default values.
         /// </summary>
@@ -36,7 +49,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetails();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,6 +76,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsBlurCheck>("blur_check", BlurCheck);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsDimensionsCheck>("dimensions_check", DimensionsCheck);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsGlareCheck>("glare_check", GlareCheck);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

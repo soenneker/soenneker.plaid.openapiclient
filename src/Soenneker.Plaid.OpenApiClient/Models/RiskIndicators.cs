@@ -12,48 +12,70 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RiskIndicators : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bank_penalties") is { } nullNodeBankPenalties && nullNodeBankPenalties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankPenalties = null;
+            if (parseNode.GetChildNode("gambling") is { } nullNodeGambling && nullNodeGambling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gambling = null;
+            if (parseNode.GetChildNode("loan_disbursements") is { } nullNodeLoanDisbursements && nullNodeLoanDisbursements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoanDisbursements = null;
+            if (parseNode.GetChildNode("loan_payments") is { } nullNodeLoanPayments && nullNodeLoanPayments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoanPayments = null;
+            if (parseNode.GetChildNode("negative_balance") is { } nullNodeNegativeBalance && nullNodeNegativeBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NegativeBalance = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Insights into bank penalties and fees, including overdraft fees, NSF fees, and other bank-imposed charges.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BankPenaltiesIndicators? BankPenalties { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BankPenaltiesIndicators? BankPenalties { get => _explicitNullValueBankPenalties; set { _explicitNullValueBankPenalties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_penalties"); else _explicitNullProperties?.Remove("bank_penalties"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BankPenaltiesIndicators? _explicitNullValueBankPenalties = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BankPenaltiesIndicators BankPenalties { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BankPenaltiesIndicators BankPenalties { get => _explicitNullValueBankPenalties; set { _explicitNullValueBankPenalties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_penalties"); else _explicitNullProperties?.Remove("bank_penalties"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BankPenaltiesIndicators _explicitNullValueBankPenalties = default!;
 #endif
         /// <summary>Insights into gambling-related transactions, including frequency, amounts, and top merchants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.GamblingIndicators? Gambling { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.GamblingIndicators? Gambling { get => _explicitNullValueGambling; set { _explicitNullValueGambling = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gambling"); else _explicitNullProperties?.Remove("gambling"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.GamblingIndicators? _explicitNullValueGambling = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.GamblingIndicators Gambling { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.GamblingIndicators Gambling { get => _explicitNullValueGambling; set { _explicitNullValueGambling = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gambling"); else _explicitNullProperties?.Remove("gambling"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.GamblingIndicators _explicitNullValueGambling = default!;
 #endif
         /// <summary>Insights into loan disbursement transactions received by the user, tracking incoming funds from loan providers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LoanDisbursementsIndicators? LoanDisbursements { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LoanDisbursementsIndicators? LoanDisbursements { get => _explicitNullValueLoanDisbursements; set { _explicitNullValueLoanDisbursements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_disbursements"); else _explicitNullProperties?.Remove("loan_disbursements"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LoanDisbursementsIndicators? _explicitNullValueLoanDisbursements = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LoanDisbursementsIndicators LoanDisbursements { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LoanDisbursementsIndicators LoanDisbursements { get => _explicitNullValueLoanDisbursements; set { _explicitNullValueLoanDisbursements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_disbursements"); else _explicitNullProperties?.Remove("loan_disbursements"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LoanDisbursementsIndicators _explicitNullValueLoanDisbursements = default!;
 #endif
         /// <summary>Insights into loan payment transactions made by the user, tracking outgoing payments to loan providers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentsIndicators? LoanPayments { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentsIndicators? LoanPayments { get => _explicitNullValueLoanPayments; set { _explicitNullValueLoanPayments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_payments"); else _explicitNullProperties?.Remove("loan_payments"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentsIndicators? _explicitNullValueLoanPayments = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentsIndicators LoanPayments { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentsIndicators LoanPayments { get => _explicitNullValueLoanPayments; set { _explicitNullValueLoanPayments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_payments"); else _explicitNullProperties?.Remove("loan_payments"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentsIndicators _explicitNullValueLoanPayments = default!;
 #endif
         /// <summary>Insights into negative balance occurrences, including frequency, duration, and minimum balance details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.NegativeBalanceInsights? NegativeBalance { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.NegativeBalanceInsights? NegativeBalance { get => _explicitNullValueNegativeBalance; set { _explicitNullValueNegativeBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_balance"); else _explicitNullProperties?.Remove("negative_balance"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.NegativeBalanceInsights? _explicitNullValueNegativeBalance = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.NegativeBalanceInsights NegativeBalance { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.NegativeBalanceInsights NegativeBalance { get => _explicitNullValueNegativeBalance; set { _explicitNullValueNegativeBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_balance"); else _explicitNullProperties?.Remove("negative_balance"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.NegativeBalanceInsights _explicitNullValueNegativeBalance = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.RiskIndicators"/> and sets the default values.
@@ -70,7 +92,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.RiskIndicators CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.RiskIndicators();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.RiskIndicators(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,6 +123,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LoanDisbursementsIndicators>("loan_disbursements", LoanDisbursements);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentsIndicators>("loan_payments", LoanPayments);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NegativeBalanceInsights>("negative_balance", NegativeBalance);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

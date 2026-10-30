@@ -13,216 +13,312 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Transaction : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_id") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
+            if (parseNode.GetChildNode("account_owner") is { } nullNodeAccountOwner && nullNodeAccountOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountOwner = null;
+            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("authorized_date") is { } nullNodeAuthorizedDate && nullNodeAuthorizedDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizedDate = null;
+            if (parseNode.GetChildNode("authorized_datetime") is { } nullNodeAuthorizedDatetime && nullNodeAuthorizedDatetime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizedDatetime = null;
+            if (parseNode.GetChildNode("business_finance_category") is { } nullNodeBusinessFinanceCategory && nullNodeBusinessFinanceCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessFinanceCategory = null;
+            if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
+            if (parseNode.GetChildNode("category_id") is { } nullNodeCategoryId && nullNodeCategoryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CategoryId = null;
+            if (parseNode.GetChildNode("check_number") is { } nullNodeCheckNumber && nullNodeCheckNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckNumber = null;
+            if (parseNode.GetChildNode("client_customization") is { } nullNodeClientCustomization && nullNodeClientCustomization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientCustomization = null;
+            if (parseNode.GetChildNode("counterparties") is { } nullNodeCounterparties && nullNodeCounterparties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Counterparties = null;
+            if (parseNode.GetChildNode("date") is { } nullNodeDate && nullNodeDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Date = null;
+            if (parseNode.GetChildNode("datetime") is { } nullNodeDatetime && nullNodeDatetime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Datetime = null;
+            if (parseNode.GetChildNode("iso_currency_code") is { } nullNodeIsoCurrencyCode && nullNodeIsoCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsoCurrencyCode = null;
+            if (parseNode.GetChildNode("location") is { } nullNodeLocation && nullNodeLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Location = null;
+            if (parseNode.GetChildNode("logo_url") is { } nullNodeLogoUrl && nullNodeLogoUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogoUrl = null;
+            if (parseNode.GetChildNode("merchant_category_code") is { } nullNodeMerchantCategoryCode && nullNodeMerchantCategoryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantCategoryCode = null;
+            if (parseNode.GetChildNode("merchant_entity_id") is { } nullNodeMerchantEntityId && nullNodeMerchantEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantEntityId = null;
+            if (parseNode.GetChildNode("merchant_name") is { } nullNodeMerchantName && nullNodeMerchantName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantName = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("original_description") is { } nullNodeOriginalDescription && nullNodeOriginalDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalDescription = null;
+            if (parseNode.GetChildNode("payment_channel") is { } nullNodePaymentChannel && nullNodePaymentChannel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentChannel = null;
+            if (parseNode.GetChildNode("payment_meta") is { } nullNodePaymentMeta && nullNodePaymentMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentMeta = null;
+            if (parseNode.GetChildNode("pending") is { } nullNodePending && nullNodePending.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pending = null;
+            if (parseNode.GetChildNode("pending_transaction_id") is { } nullNodePendingTransactionId && nullNodePendingTransactionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PendingTransactionId = null;
+            if (parseNode.GetChildNode("personal_finance_category") is { } nullNodePersonalFinanceCategory && nullNodePersonalFinanceCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalFinanceCategory = null;
+            if (parseNode.GetChildNode("personal_finance_category_icon_url") is { } nullNodePersonalFinanceCategoryIconUrl && nullNodePersonalFinanceCategoryIconUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalFinanceCategoryIconUrl = null;
+            if (parseNode.GetChildNode("running_balance") is { } nullNodeRunningBalance && nullNodeRunningBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunningBalance = null;
+            if (parseNode.GetChildNode("transaction_code") is { } nullNodeTransactionCode && nullNodeTransactionCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionCode = null;
+            if (parseNode.GetChildNode("transaction_id") is { } nullNodeTransactionId && nullNodeTransactionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionId = null;
+            if (parseNode.GetChildNode("transaction_type") is { } nullNodeTransactionType && nullNodeTransactionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionType = null;
+            if (parseNode.GetChildNode("unofficial_currency_code") is { } nullNodeUnofficialCurrencyCode && nullNodeUnofficialCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnofficialCurrencyCode = null;
+            if (parseNode.GetChildNode("website") is { } nullNodeWebsite && nullNodeWebsite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Website = null;
+        }
+
         /// <summary>The ID of the account in which this transaction occurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountId { get; set; }
+        public string? AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        private string? _explicitNullValueAccountId = default!;
 #nullable restore
 #else
-        public string AccountId { get; set; }
+        public string AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        private string _explicitNullValueAccountId = default!;
 #endif
         /// <summary>This field is not typically populated and only relevant when dealing with sub-accounts. A sub-account most commonly exists in cases where a single account is linked to multiple cards, each with its own card number and card holder name; each card will be considered a sub-account. If the account does have sub-accounts, this field will typically be some combination of the sub-account owner&apos;s name and/or the sub-account mask. The format of this field is not standardized and will vary based on institution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountOwner { get; set; }
+        public string? AccountOwner { get => _explicitNullValueAccountOwner; set { _explicitNullValueAccountOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_owner"); else _explicitNullProperties?.Remove("account_owner"); } }
+        private string? _explicitNullValueAccountOwner = default!;
 #nullable restore
 #else
-        public string AccountOwner { get; set; }
+        public string AccountOwner { get => _explicitNullValueAccountOwner; set { _explicitNullValueAccountOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_owner"); else _explicitNullProperties?.Remove("account_owner"); } }
+        private string _explicitNullValueAccountOwner = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The settled value of the transaction, denominated in the transaction&apos;s currency, as stated in `iso_currency_code` or `unofficial_currency_code`. For all products except Income: Positive values when money moves out of the account; negative values when money moves in. For example, debit card purchases are positive; credit card payments, direct deposits, and refunds are negative. For Income endpoints, values are positive when representing income.</summary>
-        public double? Amount { get; set; }
+        public double? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private double? _explicitNullValueAmount = default!;
         /// <summary>The date that the transaction was authorized. For posted transactions, the `date` field will indicate the posted date, but `authorized_date` will indicate the day the transaction was authorized by the financial institution. If presenting transactions to the user in a UI, the `authorized_date`, when available, is generally preferable to use over the `date` field for posted transactions, as it will generally represent the date the user actually made the transaction. Dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ( `YYYY-MM-DD` ).</summary>
-        public Date? AuthorizedDate { get; set; }
+        public Date? AuthorizedDate { get => _explicitNullValueAuthorizedDate; set { _explicitNullValueAuthorizedDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorized_date"); else _explicitNullProperties?.Remove("authorized_date"); } }
+        private Date? _explicitNullValueAuthorizedDate = default!;
         /// <summary>Date and time when a transaction was authorized in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ( `YYYY-MM-DDTHH:mm:ssZ` ). For posted transactions, the `datetime` field will indicate the posted date, but `authorized_datetime` will indicate the day the transaction was authorized by the financial institution. If presenting transactions to the user in a UI, the `authorized_datetime`, when available, is generally preferable to use over the `datetime` field for posted transactions, as it will generally represent the date the user actually made the transaction.This field is returned for select financial institutions and comes as provided by the institution. It may contain default time values (such as 00:00:00). This field is only populated in API version 2019-05-29 and later.</summary>
-        public DateTimeOffset? AuthorizedDatetime { get; set; }
+        public DateTimeOffset? AuthorizedDatetime { get => _explicitNullValueAuthorizedDatetime; set { _explicitNullValueAuthorizedDatetime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorized_datetime"); else _explicitNullProperties?.Remove("authorized_datetime"); } }
+        private DateTimeOffset? _explicitNullValueAuthorizedDatetime = default!;
         /// <summary>Information describing the intent of the transaction. Most relevant for business finance use cases, but not limited to such use cases.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFinanceCategory? BusinessFinanceCategory { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFinanceCategory? BusinessFinanceCategory { get => _explicitNullValueBusinessFinanceCategory; set { _explicitNullValueBusinessFinanceCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_finance_category"); else _explicitNullProperties?.Remove("business_finance_category"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessFinanceCategory? _explicitNullValueBusinessFinanceCategory = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFinanceCategory BusinessFinanceCategory { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFinanceCategory BusinessFinanceCategory { get => _explicitNullValueBusinessFinanceCategory; set { _explicitNullValueBusinessFinanceCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_finance_category"); else _explicitNullProperties?.Remove("business_finance_category"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessFinanceCategory _explicitNullValueBusinessFinanceCategory = default!;
 #endif
         /// <summary>A hierarchical array of the categories to which this transaction belongs. For a full list of categories, see [`/categories/get`](https://plaid.com/docs/api/products/transactions/#categoriesget).All Transactions implementations are recommended to use the new `personal_finance_category` instead of `category`, as it provides greater accuracy and more meaningful categorization.If the `transactions` object was returned by an Assets endpoint such as `/asset_report/get` or `/asset_report/pdf/get`, this field will only appear in an Asset Report with Insights.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Category { get; set; }
+        public List<string>? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
+        private List<string>? _explicitNullValueCategory = default!;
 #nullable restore
 #else
-        public List<string> Category { get; set; }
+        public List<string> Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
+        private List<string> _explicitNullValueCategory = default!;
 #endif
         /// <summary>The ID of the category to which this transaction belongs. For a full list of categories, see [`/categories/get`](https://plaid.com/docs/api/products/transactions/#categoriesget).All Transactions implementations are recommended to use the new `personal_finance_category` instead of `category`, as it provides greater accuracy and more meaningful categorization.If the `transactions` object was returned by an Assets endpoint such as `/asset_report/get` or `/asset_report/pdf/get`, this field will only appear in an Asset Report with Insights.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CategoryId { get; set; }
+        public string? CategoryId { get => _explicitNullValueCategoryId; set { _explicitNullValueCategoryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_id"); else _explicitNullProperties?.Remove("category_id"); } }
+        private string? _explicitNullValueCategoryId = default!;
 #nullable restore
 #else
-        public string CategoryId { get; set; }
+        public string CategoryId { get => _explicitNullValueCategoryId; set { _explicitNullValueCategoryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_id"); else _explicitNullProperties?.Remove("category_id"); } }
+        private string _explicitNullValueCategoryId = default!;
 #endif
         /// <summary>The check number of the transaction. This field is only populated for check transactions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CheckNumber { get; set; }
+        public string? CheckNumber { get => _explicitNullValueCheckNumber; set { _explicitNullValueCheckNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_number"); else _explicitNullProperties?.Remove("check_number"); } }
+        private string? _explicitNullValueCheckNumber = default!;
 #nullable restore
 #else
-        public string CheckNumber { get; set; }
+        public string CheckNumber { get => _explicitNullValueCheckNumber; set { _explicitNullValueCheckNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_number"); else _explicitNullProperties?.Remove("check_number"); } }
+        private string _explicitNullValueCheckNumber = default!;
 #endif
         /// <summary>Custom client fields</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ClientCustomization? ClientCustomization { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ClientCustomization? ClientCustomization { get => _explicitNullValueClientCustomization; set { _explicitNullValueClientCustomization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_customization"); else _explicitNullProperties?.Remove("client_customization"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ClientCustomization? _explicitNullValueClientCustomization = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ClientCustomization ClientCustomization { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ClientCustomization ClientCustomization { get => _explicitNullValueClientCustomization; set { _explicitNullValueClientCustomization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_customization"); else _explicitNullProperties?.Remove("client_customization"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ClientCustomization _explicitNullValueClientCustomization = default!;
 #endif
         /// <summary>The counterparties present in the transaction. Counterparties, such as the merchant or the financial institution, are extracted by Plaid from the raw description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.TransactionCounterparty>? Counterparties { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.TransactionCounterparty>? Counterparties { get => _explicitNullValueCounterparties; set { _explicitNullValueCounterparties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparties"); else _explicitNullProperties?.Remove("counterparties"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.TransactionCounterparty>? _explicitNullValueCounterparties = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.TransactionCounterparty> Counterparties { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.TransactionCounterparty> Counterparties { get => _explicitNullValueCounterparties; set { _explicitNullValueCounterparties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparties"); else _explicitNullProperties?.Remove("counterparties"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.TransactionCounterparty> _explicitNullValueCounterparties = default!;
 #endif
         /// <summary>For pending transactions, the date that the transaction occurred; for posted transactions, the date that the transaction posted. Both dates are returned in an [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ( `YYYY-MM-DD` ). To receive information about the date that a posted transaction was initiated, see the `authorized_date` field.</summary>
-        public Date? Date { get; set; }
+        public Date? Date { get => _explicitNullValueDate; set { _explicitNullValueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date"); else _explicitNullProperties?.Remove("date"); } }
+        private Date? _explicitNullValueDate = default!;
         /// <summary>Date and time when a transaction was posted in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format ( `YYYY-MM-DDTHH:mm:ssZ` ). For the date that the transaction was initiated, rather than posted, see the `authorized_datetime` field.This field is returned for select financial institutions and comes as provided by the institution. It may contain default time values (such as 00:00:00). This field is only populated in API version 2019-05-29 and later.</summary>
-        public DateTimeOffset? Datetime { get; set; }
+        public DateTimeOffset? Datetime { get => _explicitNullValueDatetime; set { _explicitNullValueDatetime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetime"); else _explicitNullProperties?.Remove("datetime"); } }
+        private DateTimeOffset? _explicitNullValueDatetime = default!;
         /// <summary>The ISO-4217 currency code of the transaction. Always `null` if `unofficial_currency_code` is non-null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IsoCurrencyCode { get; set; }
+        public string? IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
+        private string? _explicitNullValueIsoCurrencyCode = default!;
 #nullable restore
 #else
-        public string IsoCurrencyCode { get; set; }
+        public string IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
+        private string _explicitNullValueIsoCurrencyCode = default!;
 #endif
         /// <summary>A representation of where a transaction took place. Location data is provided only for transactions at physical locations, not for online transactions. Location data availability depends primarily on the merchant and is most likely to be populated for transactions at large retail chains; small, local businesses are less likely to have location data available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.Location? Location { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Location? Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Location? _explicitNullValueLocation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.Location Location { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Location Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Location _explicitNullValueLocation = default!;
 #endif
         /// <summary>The URL of a logo associated with this transaction, if available. The logo will always be a 100×100 pixel PNG file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LogoUrl { get; set; }
+        public string? LogoUrl { get => _explicitNullValueLogoUrl; set { _explicitNullValueLogoUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo_url"); else _explicitNullProperties?.Remove("logo_url"); } }
+        private string? _explicitNullValueLogoUrl = default!;
 #nullable restore
 #else
-        public string LogoUrl { get; set; }
+        public string LogoUrl { get => _explicitNullValueLogoUrl; set { _explicitNullValueLogoUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo_url"); else _explicitNullProperties?.Remove("logo_url"); } }
+        private string _explicitNullValueLogoUrl = default!;
 #endif
         /// <summary>The merchant category code for the transaction, typically a four-digit [ISO 18245](https://www.iso.org/standard/33365.html) string. This field is in beta: it is populated primarily for card transactions, coverage varies by institution, and values are subject to change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantCategoryCode { get; set; }
+        public string? MerchantCategoryCode { get => _explicitNullValueMerchantCategoryCode; set { _explicitNullValueMerchantCategoryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant_category_code"); else _explicitNullProperties?.Remove("merchant_category_code"); } }
+        private string? _explicitNullValueMerchantCategoryCode = default!;
 #nullable restore
 #else
-        public string MerchantCategoryCode { get; set; }
+        public string MerchantCategoryCode { get => _explicitNullValueMerchantCategoryCode; set { _explicitNullValueMerchantCategoryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant_category_code"); else _explicitNullProperties?.Remove("merchant_category_code"); } }
+        private string _explicitNullValueMerchantCategoryCode = default!;
 #endif
         /// <summary>A unique, stable, Plaid-generated ID that maps to the merchant. In the case of a merchant with multiple retail locations, this field will map to the broader merchant, not a specific location or store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantEntityId { get; set; }
+        public string? MerchantEntityId { get => _explicitNullValueMerchantEntityId; set { _explicitNullValueMerchantEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant_entity_id"); else _explicitNullProperties?.Remove("merchant_entity_id"); } }
+        private string? _explicitNullValueMerchantEntityId = default!;
 #nullable restore
 #else
-        public string MerchantEntityId { get; set; }
+        public string MerchantEntityId { get => _explicitNullValueMerchantEntityId; set { _explicitNullValueMerchantEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant_entity_id"); else _explicitNullProperties?.Remove("merchant_entity_id"); } }
+        private string _explicitNullValueMerchantEntityId = default!;
 #endif
         /// <summary>The merchant name, as enriched by Plaid from the `name` field. This is typically a more human-readable version of the merchant counterparty in the transaction. For some bank transactions (such as checks or account transfers) where there is no meaningful merchant name, this value will be `null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantName { get; set; }
+        public string? MerchantName { get => _explicitNullValueMerchantName; set { _explicitNullValueMerchantName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant_name"); else _explicitNullProperties?.Remove("merchant_name"); } }
+        private string? _explicitNullValueMerchantName = default!;
 #nullable restore
 #else
-        public string MerchantName { get; set; }
+        public string MerchantName { get => _explicitNullValueMerchantName; set { _explicitNullValueMerchantName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant_name"); else _explicitNullProperties?.Remove("merchant_name"); } }
+        private string _explicitNullValueMerchantName = default!;
 #endif
         /// <summary>The merchant name or transaction description.Note: While Plaid does not currently plan to remove this field, it is a legacy field that is not actively maintained. Use `merchant_name` instead for the merchant name.If the `transactions` object was returned by a Transactions endpoint such as `/transactions/sync` or `/transactions/get`, this field will always appear. If the `transactions` object was returned by an Assets endpoint such as `/asset_report/get` or `/asset_report/pdf/get`, this field will only appear in an Asset Report with Insights.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The string returned by the financial institution to describe the transaction. For transactions returned by `/transactions/sync` or `/transactions/get`, this field will only be included if the client has set `options.include_original_description` to `true`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginalDescription { get; set; }
+        public string? OriginalDescription { get => _explicitNullValueOriginalDescription; set { _explicitNullValueOriginalDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_description"); else _explicitNullProperties?.Remove("original_description"); } }
+        private string? _explicitNullValueOriginalDescription = default!;
 #nullable restore
 #else
-        public string OriginalDescription { get; set; }
+        public string OriginalDescription { get => _explicitNullValueOriginalDescription; set { _explicitNullValueOriginalDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_description"); else _explicitNullProperties?.Remove("original_description"); } }
+        private string _explicitNullValueOriginalDescription = default!;
 #endif
         /// <summary>The channel used to make a payment.`online:` transactions that took place online.`in store:` transactions that were made at a physical location.`other:` transactions that relate to banks, e.g. fees or deposits.This field replaces the `transaction_type` field.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransactionPaymentChannel? PaymentChannel { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransactionPaymentChannel? PaymentChannel { get => _explicitNullValuePaymentChannel; set { _explicitNullValuePaymentChannel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_channel"); else _explicitNullProperties?.Remove("payment_channel"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransactionPaymentChannel? _explicitNullValuePaymentChannel = default!;
         /// <summary>Transaction information specific to inter-bank transfers. If the transaction was not an inter-bank transfer, all fields will be `null`.If the `transactions` object was returned by a Transactions endpoint such as `/transactions/sync` or `/transactions/get`, the `payment_meta` key will always appear, but no data elements are guaranteed. If the `transactions` object was returned by an Assets endpoint such as `/asset_report/get` or `/asset_report/pdf/get`, this field will only appear in an Asset Report with Insights.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentMeta? PaymentMeta { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentMeta? PaymentMeta { get => _explicitNullValuePaymentMeta; set { _explicitNullValuePaymentMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_meta"); else _explicitNullProperties?.Remove("payment_meta"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PaymentMeta? _explicitNullValuePaymentMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentMeta PaymentMeta { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentMeta PaymentMeta { get => _explicitNullValuePaymentMeta; set { _explicitNullValuePaymentMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_meta"); else _explicitNullProperties?.Remove("payment_meta"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PaymentMeta _explicitNullValuePaymentMeta = default!;
 #endif
         /// <summary>When `true`, identifies the transaction as pending or unsettled. Pending transaction details (name, type, amount, category ID) may change before they are settled. Not all institutions provide pending transactions.</summary>
-        public bool? Pending { get; set; }
+        public bool? Pending { get => _explicitNullValuePending; set { _explicitNullValuePending = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pending"); else _explicitNullProperties?.Remove("pending"); } }
+        private bool? _explicitNullValuePending = default!;
         /// <summary>The ID of a posted transaction&apos;s associated pending transaction, where applicable. Not all institutions provide pending transactions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PendingTransactionId { get; set; }
+        public string? PendingTransactionId { get => _explicitNullValuePendingTransactionId; set { _explicitNullValuePendingTransactionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pending_transaction_id"); else _explicitNullProperties?.Remove("pending_transaction_id"); } }
+        private string? _explicitNullValuePendingTransactionId = default!;
 #nullable restore
 #else
-        public string PendingTransactionId { get; set; }
+        public string PendingTransactionId { get => _explicitNullValuePendingTransactionId; set { _explicitNullValuePendingTransactionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pending_transaction_id"); else _explicitNullProperties?.Remove("pending_transaction_id"); } }
+        private string _explicitNullValuePendingTransactionId = default!;
 #endif
         /// <summary>Information describing the intent of the transaction. Most relevant for personal finance use cases, but not limited to such use cases.See the [taxonomy CSV file](https://plaid.com/documents/pfc-taxonomy-all.csv) for a full list of personal finance categories. If you are migrating to personal finance categories from the legacy categories, also refer to the [migration guide](https://plaid.com/docs/transactions/pfc-migration/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory? PersonalFinanceCategory { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory? PersonalFinanceCategory { get => _explicitNullValuePersonalFinanceCategory; set { _explicitNullValuePersonalFinanceCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category"); else _explicitNullProperties?.Remove("personal_finance_category"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory? _explicitNullValuePersonalFinanceCategory = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory PersonalFinanceCategory { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory PersonalFinanceCategory { get => _explicitNullValuePersonalFinanceCategory; set { _explicitNullValuePersonalFinanceCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category"); else _explicitNullProperties?.Remove("personal_finance_category"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory _explicitNullValuePersonalFinanceCategory = default!;
 #endif
         /// <summary>The URL of an icon associated with the primary personal finance category. The icon will always be a 100×100 pixel PNG file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PersonalFinanceCategoryIconUrl { get; set; }
+        public string? PersonalFinanceCategoryIconUrl { get => _explicitNullValuePersonalFinanceCategoryIconUrl; set { _explicitNullValuePersonalFinanceCategoryIconUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category_icon_url"); else _explicitNullProperties?.Remove("personal_finance_category_icon_url"); } }
+        private string? _explicitNullValuePersonalFinanceCategoryIconUrl = default!;
 #nullable restore
 #else
-        public string PersonalFinanceCategoryIconUrl { get; set; }
+        public string PersonalFinanceCategoryIconUrl { get => _explicitNullValuePersonalFinanceCategoryIconUrl; set { _explicitNullValuePersonalFinanceCategoryIconUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category_icon_url"); else _explicitNullProperties?.Remove("personal_finance_category_icon_url"); } }
+        private string _explicitNullValuePersonalFinanceCategoryIconUrl = default!;
 #endif
         /// <summary>The balance of the account after this transaction was applied, as reported by the financial institution. Returned on posted transactions only, and not populated for every institution or every transaction. May not reconcile with the balances returned by `/accounts/balance/get`.</summary>
-        public double? RunningBalance { get; set; }
+        public double? RunningBalance { get => _explicitNullValueRunningBalance; set { _explicitNullValueRunningBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("running_balance"); else _explicitNullProperties?.Remove("running_balance"); } }
+        private double? _explicitNullValueRunningBalance = default!;
         /// <summary>An identifier classifying the transaction type.This field is populated for European institutions, as well as certain institutions in the United States. For institutions where this classification is not available, this field is set to `null`.`adjustment:` Bank adjustment`atm:` Cash deposit or withdrawal via an automated teller machine`bank charge:` Charge or fee levied by the institution`bill payment`: Payment of a bill`cash:` Cash deposit or withdrawal`cash advance:` Cash advance drawn against a credit card or line of credit`cashback:` Cash withdrawal while making a debit card purchase`cheque:` Document ordering the payment of money to another person or organization`direct debit:` Automatic withdrawal of funds initiated by a third party at a regular interval`interest:` Interest earned or incurred`late fee:` Fee associated with a late or past-due payment`membership fee:` Annual or recurring membership fee`payment:` One-off outbound payment not classified as a bill payment, direct debit, or standing order`purchase:` Purchase made with a debit or credit card`refund:` Merchant credit or return, such as a refund of a prior purchase`returned item fee:` Fee for a returned item, such as a returned check or stop payment`standing order:` Payment instructed by the account holder to a third party at a regular interval`transfer:` Transfer of money between accounts</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransactionCode? TransactionCode { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransactionCode? TransactionCode { get => _explicitNullValueTransactionCode; set { _explicitNullValueTransactionCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_code"); else _explicitNullProperties?.Remove("transaction_code"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransactionCode? _explicitNullValueTransactionCode = default!;
         /// <summary>The unique ID of the transaction. Like all Plaid identifiers, the `transaction_id` is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TransactionId { get; set; }
+        public string? TransactionId { get => _explicitNullValueTransactionId; set { _explicitNullValueTransactionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_id"); else _explicitNullProperties?.Remove("transaction_id"); } }
+        private string? _explicitNullValueTransactionId = default!;
 #nullable restore
 #else
-        public string TransactionId { get; set; }
+        public string TransactionId { get => _explicitNullValueTransactionId; set { _explicitNullValueTransactionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_id"); else _explicitNullProperties?.Remove("transaction_id"); } }
+        private string _explicitNullValueTransactionId = default!;
 #endif
         /// <summary>Please use the `payment_channel` field, `transaction_type` will be deprecated in the future.`digital:` transactions that took place online.`place:` transactions that were made at a physical location.`special:` transactions that relate to banks, e.g. fees or deposits.`unresolved:` transactions that do not fit into the other three types.</summary>
         [Obsolete("")]
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransactionBaseTransactionType? TransactionType { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransactionBaseTransactionType? TransactionType { get => _explicitNullValueTransactionType; set { _explicitNullValueTransactionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_type"); else _explicitNullProperties?.Remove("transaction_type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransactionBaseTransactionType? _explicitNullValueTransactionType = default!;
         /// <summary>The unofficial currency code associated with the transaction. Always `null` if `iso_currency_code` is non-`null`. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `unofficial_currency_code`s.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnofficialCurrencyCode { get; set; }
+        public string? UnofficialCurrencyCode { get => _explicitNullValueUnofficialCurrencyCode; set { _explicitNullValueUnofficialCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unofficial_currency_code"); else _explicitNullProperties?.Remove("unofficial_currency_code"); } }
+        private string? _explicitNullValueUnofficialCurrencyCode = default!;
 #nullable restore
 #else
-        public string UnofficialCurrencyCode { get; set; }
+        public string UnofficialCurrencyCode { get => _explicitNullValueUnofficialCurrencyCode; set { _explicitNullValueUnofficialCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unofficial_currency_code"); else _explicitNullProperties?.Remove("unofficial_currency_code"); } }
+        private string _explicitNullValueUnofficialCurrencyCode = default!;
 #endif
         /// <summary>The website associated with this transaction, if available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Website { get; set; }
+        public string? Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
+        private string? _explicitNullValueWebsite = default!;
 #nullable restore
 #else
-        public string Website { get; set; }
+        public string Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
+        private string _explicitNullValueWebsite = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.Transaction"/> and sets the default values.
@@ -239,7 +335,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.Transaction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.Transaction();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.Transaction(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -324,6 +420,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransactionBaseTransactionType>("transaction_type", TransactionType);
             writer.WriteStringValue("unofficial_currency_code", UnofficialCurrencyCode);
             writer.WriteStringValue("website", Website);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

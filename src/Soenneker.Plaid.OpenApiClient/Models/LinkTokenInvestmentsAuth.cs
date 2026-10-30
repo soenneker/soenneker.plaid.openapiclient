@@ -8,21 +8,36 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Configuration parameters for the Investments Move product
+    /// Configuration parameters for the Investments Move product. Masked Number Match and Stated Account Number default to `true` when omitted. Manual Entry defaults to `false`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LinkTokenInvestmentsAuth : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("manual_entry_enabled") is { } nullNodeManualEntryEnabled && nullNodeManualEntryEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ManualEntryEnabled = null;
+            if (parseNode.GetChildNode("masked_number_match_enabled") is { } nullNodeMaskedNumberMatchEnabled && nullNodeMaskedNumberMatchEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaskedNumberMatchEnabled = null;
+            if (parseNode.GetChildNode("rollover_401k_enabled") is { } nullNodeRollover401kEnabled && nullNodeRollover401kEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rollover401kEnabled = null;
+            if (parseNode.GetChildNode("stated_account_number_enabled") is { } nullNodeStatedAccountNumberEnabled && nullNodeStatedAccountNumberEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatedAccountNumberEnabled = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>If `true`, show institutions that use the manual entry fallback flow.</summary>
-        public bool? ManualEntryEnabled { get; set; }
-        /// <summary>If `true`, show institutions that use the masked number match fallback flow.</summary>
-        public bool? MaskedNumberMatchEnabled { get; set; }
+        /// <summary>If `true`, show institutions that use the manual entry fallback flow. If omitted, this defaults to `false`.</summary>
+        public bool? ManualEntryEnabled { get => _explicitNullValueManualEntryEnabled; set { _explicitNullValueManualEntryEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("manual_entry_enabled"); else _explicitNullProperties?.Remove("manual_entry_enabled"); } }
+        private bool? _explicitNullValueManualEntryEnabled = default!;
+        /// <summary>If `true`, show institutions that use the masked number match fallback flow. If omitted, this defaults to `true`.</summary>
+        public bool? MaskedNumberMatchEnabled { get => _explicitNullValueMaskedNumberMatchEnabled; set { _explicitNullValueMaskedNumberMatchEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("masked_number_match_enabled"); else _explicitNullProperties?.Remove("masked_number_match_enabled"); } }
+        private bool? _explicitNullValueMaskedNumberMatchEnabled = default!;
         /// <summary>If `true`, the fee and contribution details for 401k accounts will be returned.</summary>
-        public bool? Rollover401kEnabled { get; set; }
-        /// <summary>If `true`, show institutions that use the stated account number fallback flow.</summary>
-        public bool? StatedAccountNumberEnabled { get; set; }
+        public bool? Rollover401kEnabled { get => _explicitNullValueRollover401kEnabled; set { _explicitNullValueRollover401kEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rollover_401k_enabled"); else _explicitNullProperties?.Remove("rollover_401k_enabled"); } }
+        private bool? _explicitNullValueRollover401kEnabled = default!;
+        /// <summary>If `true`, show institutions that use the stated account number fallback flow. If omitted, this defaults to `true`.</summary>
+        public bool? StatedAccountNumberEnabled { get => _explicitNullValueStatedAccountNumberEnabled; set { _explicitNullValueStatedAccountNumberEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stated_account_number_enabled"); else _explicitNullProperties?.Remove("stated_account_number_enabled"); } }
+        private bool? _explicitNullValueStatedAccountNumberEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenInvestmentsAuth"/> and sets the default values.
         /// </summary>
@@ -30,9 +45,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             ManualEntryEnabled = false;
-            MaskedNumberMatchEnabled = false;
             Rollover401kEnabled = false;
-            StatedAccountNumberEnabled = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -42,7 +55,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenInvestmentsAuth CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenInvestmentsAuth();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenInvestmentsAuth(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteBoolValue("masked_number_match_enabled", MaskedNumberMatchEnabled);
             writer.WriteBoolValue("rollover_401k_enabled", Rollover401kEnabled);
             writer.WriteBoolValue("stated_account_number_enabled", StatedAccountNumberEnabled);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

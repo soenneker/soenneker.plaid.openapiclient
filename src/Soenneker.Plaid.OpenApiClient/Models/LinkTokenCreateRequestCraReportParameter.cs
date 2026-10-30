@@ -12,37 +12,62 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LinkTokenCreateRequestCraReportParameter : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("client_report_id") is { } nullNodeClientReportId && nullNodeClientReportId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientReportId = null;
+            if (parseNode.GetChildNode("days_requested") is { } nullNodeDaysRequested && nullNodeDaysRequested.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DaysRequested = null;
+            if (parseNode.GetChildNode("days_required") is { } nullNodeDaysRequired && nullNodeDaysRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DaysRequired = null;
+            if (parseNode.GetChildNode("decision_stage") is { } nullNodeDecisionStage && nullNodeDecisionStage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DecisionStage = null;
+            if (parseNode.GetChildNode("include_identity_match") is { } nullNodeIncludeIdentityMatch && nullNodeIncludeIdentityMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeIdentityMatch = null;
+            if (parseNode.GetChildNode("include_investments") is { } nullNodeIncludeInvestments && nullNodeIncludeInvestments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeInvestments = null;
+            if (parseNode.GetChildNode("products") is { } nullNodeProducts && nullNodeProducts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Products = null;
+            if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Client-generated identifier, which can be used by lenders to track loan applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientReportId { get; set; }
+        public string? ClientReportId { get => _explicitNullValueClientReportId; set { _explicitNullValueClientReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_report_id"); else _explicitNullProperties?.Remove("client_report_id"); } }
+        private string? _explicitNullValueClientReportId = default!;
 #nullable restore
 #else
-        public string ClientReportId { get; set; }
+        public string ClientReportId { get => _explicitNullValueClientReportId; set { _explicitNullValueClientReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_report_id"); else _explicitNullProperties?.Remove("client_report_id"); } }
+        private string _explicitNullValueClientReportId = default!;
 #endif
         /// <summary>The number of days of history to include in Plaid Check products. Maximum is 731. If a value lower than 180 is provided, a minimum of 180 days of history will be requested.</summary>
-        public int? DaysRequested { get; set; }
+        public int? DaysRequested { get => _explicitNullValueDaysRequested; set { _explicitNullValueDaysRequested = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days_requested"); else _explicitNullProperties?.Remove("days_requested"); } }
+        private int? _explicitNullValueDaysRequested = default!;
         /// <summary>The minimum number of days of data required for the report to be successfully generated.</summary>
-        public int? DaysRequired { get; set; }
-        /// <summary>The stage in the credit or other eligibility decisioning lifecycle for which a given report will be utilized.Allowable permissible purposes for `PREQUALIFICATION`:- `WRITTEN_INSTRUCTION_PREQUALIFICATION`Allowable permissible purposes for `DECISIONING`:- `ELIGIBILITY_FOR_GOVT_BENEFITS`- `EXTENSION_OF_CREDIT`- `LEGITIMATE_BUSINESS_NEED_OTHER`- `LEGITIMATE_BUSINESS_NEED_TENANT_SCREENING`- `WRITTEN_INSTRUCTION_OTHER`If an incompatible `decision_stage` and `consumer_report_permissible_purpose` pairing is requested, an `INVALID_FIELD` error is returned. If your client isn&apos;t yet enabled for a given `decision_stage` on a product, a `DECISION_STAGE_NOT_ENABLED` error is returned instead (contact your Plaid account manager to enable it).</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportDecisionStage? DecisionStage { get; set; }
+        public int? DaysRequired { get => _explicitNullValueDaysRequired; set { _explicitNullValueDaysRequired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days_required"); else _explicitNullProperties?.Remove("days_required"); } }
+        private int? _explicitNullValueDaysRequired = default!;
+        /// <summary>The stage in the credit or other eligibility decisioning lifecycle for which a given report will be utilized.Allowable permissible purposes for `PREQUALIFICATION`:- `WRITTEN_INSTRUCTION_PREQUALIFICATION`Allowable permissible purposes for `DECISIONING`:- `ELIGIBILITY_FOR_GOVT_BENEFITS`- `EXTENSION_OF_CREDIT`- `INSURANCE_UNDERWRITING`- `LEGITIMATE_BUSINESS_NEED_OTHER`- `LEGITIMATE_BUSINESS_NEED_TENANT_SCREENING`- `WRITTEN_INSTRUCTION_OTHER`If an incompatible `decision_stage` and `consumer_report_permissible_purpose` pairing is requested, an `INVALID_FIELD` error is returned. If your client isn&apos;t yet enabled for a given `decision_stage` on a product, a `DECISION_STAGE_NOT_ENABLED` error is returned instead (contact your Plaid account manager to enable it).</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportDecisionStage? DecisionStage { get => _explicitNullValueDecisionStage; set { _explicitNullValueDecisionStage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decision_stage"); else _explicitNullProperties?.Remove("decision_stage"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraReportDecisionStage? _explicitNullValueDecisionStage = default!;
         /// <summary>Indicates that identity match results should be included for all products in the report that contain identity information. Defaults to `false`.</summary>
-        public bool? IncludeIdentityMatch { get; set; }
+        public bool? IncludeIdentityMatch { get => _explicitNullValueIncludeIdentityMatch; set { _explicitNullValueIncludeIdentityMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_identity_match"); else _explicitNullProperties?.Remove("include_identity_match"); } }
+        private bool? _explicitNullValueIncludeIdentityMatch = default!;
         /// <summary>Indicates that investment data should be extracted from the linked account(s).</summary>
-        public bool? IncludeInvestments { get; set; }
+        public bool? IncludeInvestments { get => _explicitNullValueIncludeInvestments; set { _explicitNullValueIncludeInvestments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_investments"); else _explicitNullProperties?.Remove("include_investments"); } }
+        private bool? _explicitNullValueIncludeInvestments = default!;
         /// <summary>The Plaid Check products, versions, and options to generate for the report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportProduct>? Products { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportProduct>? Products { get => _explicitNullValueProducts; set { _explicitNullValueProducts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("products"); else _explicitNullProperties?.Remove("products"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportProduct>? _explicitNullValueProducts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportProduct> Products { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportProduct> Products { get => _explicitNullValueProducts; set { _explicitNullValueProducts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("products"); else _explicitNullProperties?.Remove("products"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportProduct> _explicitNullValueProducts = default!;
 #endif
         /// <summary>Determines whose items are used. `PLAID_NETWORK` (default) uses the Plaid Network view of the user&apos;s profile. `CLIENT_USER` uses only the items linked by this client.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraReportParameterScope? Scope { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraReportParameterScope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraReportParameterScope? _explicitNullValueScope = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraReportParameter"/> and sets the default values.
         /// </summary>
@@ -58,7 +83,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraReportParameter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraReportParameter();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraReportParameter(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,6 +118,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteBoolValue("include_investments", IncludeInvestments);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraReportProduct>("products", Products);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraReportParameterScope>("scope", Scope);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

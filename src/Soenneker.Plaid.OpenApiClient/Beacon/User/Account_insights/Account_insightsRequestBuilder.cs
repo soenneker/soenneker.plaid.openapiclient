@@ -16,6 +16,7 @@ namespace Soenneker.Plaid.OpenApiClient.Beacon.User.Account_insights
     public partial class Account_insightsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The getPath property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Beacon.User.Account_insights.Get.GetRequestBuilder GetPath
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Beacon.User.Account_insights.Get.GetRequestBuilder(PathParameters, RequestAdapter);

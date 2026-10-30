@@ -12,33 +12,49 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PartnerEndCustomerSecrets : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("development") is { } nullNodeDevelopment && nullNodeDevelopment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Development = null;
+            if (parseNode.GetChildNode("production") is { } nullNodeProduction && nullNodeProduction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Production = null;
+            if (parseNode.GetChildNode("sandbox") is { } nullNodeSandbox && nullNodeSandbox.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sandbox = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The end customer&apos;s secret key for the Development environment. The Development environment has been removed.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Development { get; set; }
+        public string? Development { get => _explicitNullValueDevelopment; set { _explicitNullValueDevelopment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("development"); else _explicitNullProperties?.Remove("development"); } }
+        private string? _explicitNullValueDevelopment = default!;
 #nullable restore
 #else
-        public string Development { get; set; }
+        public string Development { get => _explicitNullValueDevelopment; set { _explicitNullValueDevelopment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("development"); else _explicitNullProperties?.Remove("development"); } }
+        private string _explicitNullValueDevelopment = default!;
 #endif
         /// <summary>The end customer&apos;s secret key for the Production environment. The end customer will be provided with a limited number of credits to test in the Production environment before full enablement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Production { get; set; }
+        public string? Production { get => _explicitNullValueProduction; set { _explicitNullValueProduction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("production"); else _explicitNullProperties?.Remove("production"); } }
+        private string? _explicitNullValueProduction = default!;
 #nullable restore
 #else
-        public string Production { get; set; }
+        public string Production { get => _explicitNullValueProduction; set { _explicitNullValueProduction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("production"); else _explicitNullProperties?.Remove("production"); } }
+        private string _explicitNullValueProduction = default!;
 #endif
         /// <summary>The end customer&apos;s secret key for the Sandbox environment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sandbox { get; set; }
+        public string? Sandbox { get => _explicitNullValueSandbox; set { _explicitNullValueSandbox = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandbox"); else _explicitNullProperties?.Remove("sandbox"); } }
+        private string? _explicitNullValueSandbox = default!;
 #nullable restore
 #else
-        public string Sandbox { get; set; }
+        public string Sandbox { get => _explicitNullValueSandbox; set { _explicitNullValueSandbox = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandbox"); else _explicitNullProperties?.Remove("sandbox"); } }
+        private string _explicitNullValueSandbox = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerSecrets"/> and sets the default values.
@@ -55,7 +71,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerSecrets CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerSecrets();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerSecrets(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,6 +96,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("development", Development);
             writer.WriteStringValue("production", Production);
             writer.WriteStringValue("sandbox", Sandbox);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,66 +12,101 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EntityWatchlistScreeningHit : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("analysis") is { } nullNodeAnalysis && nullNodeAnalysis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Analysis = null;
+            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("first_active") is { } nullNodeFirstActive && nullNodeFirstActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstActive = null;
+            if (parseNode.GetChildNode("historical_since") is { } nullNodeHistoricalSince && nullNodeHistoricalSince.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HistoricalSince = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("inactive_since") is { } nullNodeInactiveSince && nullNodeInactiveSince.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InactiveSince = null;
+            if (parseNode.GetChildNode("list_code") is { } nullNodeListCode && nullNodeListCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ListCode = null;
+            if (parseNode.GetChildNode("plaid_uid") is { } nullNodePlaidUid && nullNodePlaidUid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlaidUid = null;
+            if (parseNode.GetChildNode("review_status") is { } nullNodeReviewStatus && nullNodeReviewStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReviewStatus = null;
+            if (parseNode.GetChildNode("source_uid") is { } nullNodeSourceUid && nullNodeSourceUid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceUid = null;
+            if (parseNode.GetChildNode("sub_programs") is { } nullNodeSubPrograms && nullNodeSubPrograms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubPrograms = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Analysis information describing why a screening hit matched the provided entity information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitAnalysis? Analysis { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitAnalysis? Analysis { get => _explicitNullValueAnalysis; set { _explicitNullValueAnalysis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysis"); else _explicitNullProperties?.Remove("analysis"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitAnalysis? _explicitNullValueAnalysis = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitAnalysis Analysis { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitAnalysis Analysis { get => _explicitNullValueAnalysis; set { _explicitNullValueAnalysis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysis"); else _explicitNullProperties?.Remove("analysis"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitAnalysis _explicitNullValueAnalysis = default!;
 #endif
         /// <summary>Information associated with the entity watchlist hit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitData? Data { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitData? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitData? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitData Data { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitData Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitData _explicitNullValueData = default!;
 #endif
         /// <summary>An ISO8601 formatted timestamp.</summary>
-        public DateTimeOffset? FirstActive { get; set; }
+        public DateTimeOffset? FirstActive { get => _explicitNullValueFirstActive; set { _explicitNullValueFirstActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_active"); else _explicitNullProperties?.Remove("first_active"); } }
+        private DateTimeOffset? _explicitNullValueFirstActive = default!;
         /// <summary>An ISO8601 formatted timestamp.</summary>
-        public DateTimeOffset? HistoricalSince { get; set; }
+        public DateTimeOffset? HistoricalSince { get => _explicitNullValueHistoricalSince; set { _explicitNullValueHistoricalSince = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("historical_since"); else _explicitNullProperties?.Remove("historical_since"); } }
+        private DateTimeOffset? _explicitNullValueHistoricalSince = default!;
         /// <summary>ID of the associated entity screening hit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>An ISO8601 formatted timestamp.</summary>
-        public DateTimeOffset? InactiveSince { get; set; }
+        public DateTimeOffset? InactiveSince { get => _explicitNullValueInactiveSince; set { _explicitNullValueInactiveSince = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inactive_since"); else _explicitNullProperties?.Remove("inactive_since"); } }
+        private DateTimeOffset? _explicitNullValueInactiveSince = default!;
         /// <summary>Shorthand identifier for a specific screening list for entities. `AU_CON`: Australia Department of Foreign Affairs and Trade Consolidated List `CA_CON`: Government of Canada Consolidated List of Sanctions `EU_CON`: European External Action Service Consolidated List `IZ_SOE`: State Owned Enterprise List `IZ_UNC`: United Nations Consolidated Sanctions `IZ_WBK`: World Bank Listing of Ineligible Firms and Individuals `US_CAP`: US OFAC Correspondent Account or Payable-Through Account Sanctions `US_FSE`: US OFAC Foreign Sanctions Evaders `US_MBS`: US Non-SDN Menu-Based Sanctions `US_SDN`: US OFAC Specially Designated Nationals List `US_SSI`: US OFAC Sectoral Sanctions Identifications `US_CMC`: US OFAC Non-SDN Chinese Military-Industrial Complex List `US_UVL`: Bureau of Industry and Security Unverified List `US_SAM`: US System for Award Management Exclusion List `US_TEL`: US Terrorist Exclusion List `UK_HMC`: Foreign, Commonwealth &amp; Development Office UK Sanctions List</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.EntityWatchlistCode? ListCode { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.EntityWatchlistCode? ListCode { get => _explicitNullValueListCode; set { _explicitNullValueListCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_code"); else _explicitNullProperties?.Remove("list_code"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.EntityWatchlistCode? _explicitNullValueListCode = default!;
         /// <summary>A universal identifier for a watchlist individual that is stable across searches and updates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlaidUid { get; set; }
+        public string? PlaidUid { get => _explicitNullValuePlaidUid; set { _explicitNullValuePlaidUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plaid_uid"); else _explicitNullProperties?.Remove("plaid_uid"); } }
+        private string? _explicitNullValuePlaidUid = default!;
 #nullable restore
 #else
-        public string PlaidUid { get; set; }
+        public string PlaidUid { get => _explicitNullValuePlaidUid; set { _explicitNullValuePlaidUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plaid_uid"); else _explicitNullProperties?.Remove("plaid_uid"); } }
+        private string _explicitNullValuePlaidUid = default!;
 #endif
         /// <summary>The current state of review. All watchlist screening hits begin in a `pending_review` state but can be changed by creating a review. When a hit is in the `pending_review` state, it will always show the latest version of the watchlist data Plaid has available and be compared against the latest customer information saved in the watchlist screening. Once a hit has been marked as `confirmed` or `dismissed` it will no longer be updated so that the state is as it was when the review was first conducted.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningHitStatus? ReviewStatus { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningHitStatus? ReviewStatus { get => _explicitNullValueReviewStatus; set { _explicitNullValueReviewStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("review_status"); else _explicitNullProperties?.Remove("review_status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningHitStatus? _explicitNullValueReviewStatus = default!;
         /// <summary>The identifier provided by the source sanction or watchlist. When one is not provided by the source, this is `null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceUid { get; set; }
+        public string? SourceUid { get => _explicitNullValueSourceUid; set { _explicitNullValueSourceUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_uid"); else _explicitNullProperties?.Remove("source_uid"); } }
+        private string? _explicitNullValueSourceUid = default!;
 #nullable restore
 #else
-        public string SourceUid { get; set; }
+        public string SourceUid { get => _explicitNullValueSourceUid; set { _explicitNullValueSourceUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_uid"); else _explicitNullProperties?.Remove("source_uid"); } }
+        private string _explicitNullValueSourceUid = default!;
 #endif
         /// <summary>Sub-program designations that may be attached to the watchlist entry by the issuing authority. For OFAC SDNentries these are the program codes published in the SDN list (for example `SDGT` for SpeciallyDesignated Global Terrorists, `SDNTK` for Specially Designated Narcotics Trafficking Kingpins,`IRAN`, `RUSSIA-EO14024`). New codes are added by sanctioning authorities without prior notice,so callers should treat unknown values as opaque strings rather than enum members.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SubPrograms { get; set; }
+        public List<string>? SubPrograms { get => _explicitNullValueSubPrograms; set { _explicitNullValueSubPrograms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_programs"); else _explicitNullProperties?.Remove("sub_programs"); } }
+        private List<string>? _explicitNullValueSubPrograms = default!;
 #nullable restore
 #else
-        public List<string> SubPrograms { get; set; }
+        public List<string> SubPrograms { get => _explicitNullValueSubPrograms; set { _explicitNullValueSubPrograms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_programs"); else _explicitNullProperties?.Remove("sub_programs"); } }
+        private List<string> _explicitNullValueSubPrograms = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.EntityWatchlistScreeningHit"/> and sets the default values.
@@ -88,7 +123,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.EntityWatchlistScreeningHit CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.EntityWatchlistScreeningHit();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.EntityWatchlistScreeningHit(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -129,6 +164,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningHitStatus>("review_status", ReviewStatus);
             writer.WriteStringValue("source_uid", SourceUid);
             writer.WriteCollectionOfPrimitiveValues<string>("sub_programs", SubPrograms);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

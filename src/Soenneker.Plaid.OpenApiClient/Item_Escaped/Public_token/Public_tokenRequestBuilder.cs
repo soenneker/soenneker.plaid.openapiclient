@@ -17,6 +17,7 @@ namespace Soenneker.Plaid.OpenApiClient.Item_Escaped.Public_token
     public partial class Public_tokenRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The create property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Item_Escaped.Public_token.Create.CreateRequestBuilder Create
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Item_Escaped.Public_token.Create.CreateRequestBuilder(PathParameters, RequestAdapter);

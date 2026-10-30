@@ -12,16 +12,26 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ServiceProductFulfillment : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("SERVICE_PRODUCT_FULFILLMENT_DETAIL") is { } nullNodeSERVICEPRODUCTFULFILLMENTDETAIL && nullNodeSERVICEPRODUCTFULFILLMENTDETAIL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SERVICEPRODUCTFULFILLMENTDETAIL = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Documentation not found in the MISMO model viewer and not provided by Freddie Mac.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillmentDetail? SERVICEPRODUCTFULFILLMENTDETAIL { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillmentDetail? SERVICEPRODUCTFULFILLMENTDETAIL { get => _explicitNullValueSERVICEPRODUCTFULFILLMENTDETAIL; set { _explicitNullValueSERVICEPRODUCTFULFILLMENTDETAIL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SERVICE_PRODUCT_FULFILLMENT_DETAIL"); else _explicitNullProperties?.Remove("SERVICE_PRODUCT_FULFILLMENT_DETAIL"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillmentDetail? _explicitNullValueSERVICEPRODUCTFULFILLMENTDETAIL = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillmentDetail SERVICEPRODUCTFULFILLMENTDETAIL { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillmentDetail SERVICEPRODUCTFULFILLMENTDETAIL { get => _explicitNullValueSERVICEPRODUCTFULFILLMENTDETAIL; set { _explicitNullValueSERVICEPRODUCTFULFILLMENTDETAIL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SERVICE_PRODUCT_FULFILLMENT_DETAIL"); else _explicitNullProperties?.Remove("SERVICE_PRODUCT_FULFILLMENT_DETAIL"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillmentDetail _explicitNullValueSERVICEPRODUCTFULFILLMENTDETAIL = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillment"/> and sets the default values.
@@ -38,7 +48,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillment();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillment(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,6 +69,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillmentDetail>("SERVICE_PRODUCT_FULFILLMENT_DETAIL", SERVICEPRODUCTFULFILLMENTDETAIL);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

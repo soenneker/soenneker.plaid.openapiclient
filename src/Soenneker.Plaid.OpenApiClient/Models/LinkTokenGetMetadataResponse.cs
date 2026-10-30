@@ -12,72 +12,103 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LinkTokenGetMetadataResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_filters") is { } nullNodeAccountFilters && nullNodeAccountFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountFilters = null;
+            if (parseNode.GetChildNode("client_name") is { } nullNodeClientName && nullNodeClientName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientName = null;
+            if (parseNode.GetChildNode("country_codes") is { } nullNodeCountryCodes && nullNodeCountryCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountryCodes = null;
+            if (parseNode.GetChildNode("initial_products") is { } nullNodeInitialProducts && nullNodeInitialProducts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InitialProducts = null;
+            if (parseNode.GetChildNode("institution_data") is { } nullNodeInstitutionData && nullNodeInstitutionData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionData = null;
+            if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("redirect_uri") is { } nullNodeRedirectUri && nullNodeRedirectUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedirectUri = null;
+            if (parseNode.GetChildNode("webhook") is { } nullNodeWebhook && nullNodeWebhook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webhook = null;
+        }
+
         /// <summary>The `account_filters` specified in the original call to `/link/token/create`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountFiltersResponse? AccountFilters { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AccountFiltersResponse? AccountFilters { get => _explicitNullValueAccountFilters; set { _explicitNullValueAccountFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_filters"); else _explicitNullProperties?.Remove("account_filters"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AccountFiltersResponse? _explicitNullValueAccountFilters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountFiltersResponse AccountFilters { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AccountFiltersResponse AccountFilters { get => _explicitNullValueAccountFilters; set { _explicitNullValueAccountFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_filters"); else _explicitNullProperties?.Remove("account_filters"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AccountFiltersResponse _explicitNullValueAccountFilters = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The `client_name` specified in the `/link/token/create` call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientName { get; set; }
+        public string? ClientName { get => _explicitNullValueClientName; set { _explicitNullValueClientName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_name"); else _explicitNullProperties?.Remove("client_name"); } }
+        private string? _explicitNullValueClientName = default!;
 #nullable restore
 #else
-        public string ClientName { get; set; }
+        public string ClientName { get => _explicitNullValueClientName; set { _explicitNullValueClientName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_name"); else _explicitNullProperties?.Remove("client_name"); } }
+        private string _explicitNullValueClientName = default!;
 #endif
         /// <summary>The `country_codes` specified in the `/link/token/create` call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CountryCode?>? CountryCodes { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CountryCode?>? CountryCodes { get => _explicitNullValueCountryCodes; set { _explicitNullValueCountryCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country_codes"); else _explicitNullProperties?.Remove("country_codes"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CountryCode?>? _explicitNullValueCountryCodes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CountryCode?> CountryCodes { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CountryCode?> CountryCodes { get => _explicitNullValueCountryCodes; set { _explicitNullValueCountryCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country_codes"); else _explicitNullProperties?.Remove("country_codes"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CountryCode?> _explicitNullValueCountryCodes = default!;
 #endif
         /// <summary>The `products` specified in the `/link/token/create` call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? InitialProducts { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? InitialProducts { get => _explicitNullValueInitialProducts; set { _explicitNullValueInitialProducts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initial_products"); else _explicitNullProperties?.Remove("initial_products"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? _explicitNullValueInitialProducts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> InitialProducts { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> InitialProducts { get => _explicitNullValueInitialProducts; set { _explicitNullValueInitialProducts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initial_products"); else _explicitNullProperties?.Remove("initial_products"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> _explicitNullValueInitialProducts = default!;
 #endif
         /// <summary>A map containing data used to highlight institutions in Link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateInstitutionData? InstitutionData { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateInstitutionData? InstitutionData { get => _explicitNullValueInstitutionData; set { _explicitNullValueInstitutionData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_data"); else _explicitNullProperties?.Remove("institution_data"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateInstitutionData? _explicitNullValueInstitutionData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateInstitutionData InstitutionData { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateInstitutionData InstitutionData { get => _explicitNullValueInstitutionData; set { _explicitNullValueInstitutionData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_data"); else _explicitNullProperties?.Remove("institution_data"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateInstitutionData _explicitNullValueInstitutionData = default!;
 #endif
         /// <summary>The `language` specified in the `/link/token/create` call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language { get; set; }
+        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private string? _explicitNullValueLanguage = default!;
 #nullable restore
 #else
-        public string Language { get; set; }
+        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private string _explicitNullValueLanguage = default!;
 #endif
         /// <summary>The `redirect_uri` specified in the `/link/token/create` call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RedirectUri { get; set; }
+        public string? RedirectUri { get => _explicitNullValueRedirectUri; set { _explicitNullValueRedirectUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect_uri"); else _explicitNullProperties?.Remove("redirect_uri"); } }
+        private string? _explicitNullValueRedirectUri = default!;
 #nullable restore
 #else
-        public string RedirectUri { get; set; }
+        public string RedirectUri { get => _explicitNullValueRedirectUri; set { _explicitNullValueRedirectUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect_uri"); else _explicitNullProperties?.Remove("redirect_uri"); } }
+        private string _explicitNullValueRedirectUri = default!;
 #endif
         /// <summary>The `webhook` specified in the `/link/token/create` call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Webhook { get; set; }
+        public string? Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        private string? _explicitNullValueWebhook = default!;
 #nullable restore
 #else
-        public string Webhook { get; set; }
+        public string Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        private string _explicitNullValueWebhook = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenGetMetadataResponse"/> and sets the default values.
@@ -94,7 +125,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenGetMetadataResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenGetMetadataResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenGetMetadataResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -129,6 +160,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("language", Language);
             writer.WriteStringValue("redirect_uri", RedirectUri);
             writer.WriteStringValue("webhook", Webhook);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

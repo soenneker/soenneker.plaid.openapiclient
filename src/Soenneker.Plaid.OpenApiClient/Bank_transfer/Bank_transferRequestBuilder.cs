@@ -28,11 +28,13 @@ namespace Soenneker.Plaid.OpenApiClient.Bank_transfer
             get => new global::Soenneker.Plaid.OpenApiClient.Bank_transfer.Balance.BalanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The cancel property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Bank_transfer.Cancel.CancelRequestBuilder Cancel
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Bank_transfer.Cancel.CancelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The create property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Bank_transfer.Create.CreateRequestBuilder Create
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Bank_transfer.Create.CreateRequestBuilder(PathParameters, RequestAdapter);
@@ -43,16 +45,19 @@ namespace Soenneker.Plaid.OpenApiClient.Bank_transfer
             get => new global::Soenneker.Plaid.OpenApiClient.Bank_transfer.Event.EventRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The getPath property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Bank_transfer.Get.GetRequestBuilder GetPath
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Bank_transfer.Get.GetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The list property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Bank_transfer.List.ListRequestBuilder List
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Bank_transfer.List.ListRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The migrate_account property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Bank_transfer.Migrate_account.Migrate_accountRequestBuilder Migrate_account
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Bank_transfer.Migrate_account.Migrate_accountRequestBuilder(PathParameters, RequestAdapter);

@@ -12,40 +12,59 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreditFreddieMacReportingInformation : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ReportDateTime") is { } nullNodeReportDateTime && nullNodeReportDateTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportDateTime = null;
+            if (parseNode.GetChildNode("ReportIdentifierType") is { } nullNodeReportIdentifierType && nullNodeReportIdentifierType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportIdentifierType = null;
+            if (parseNode.GetChildNode("ReportingInformationIdentifier") is { } nullNodeReportingInformationIdentifier && nullNodeReportingInformationIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportingInformationIdentifier = null;
+            if (parseNode.GetChildNode("ReportingInformationParentIdentifier") is { } nullNodeReportingInformationParentIdentifier && nullNodeReportingInformationParentIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportingInformationParentIdentifier = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Documentation not found in the MISMO model viewer and not provided by Freddie Mac.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReportDateTime { get; set; }
+        public string? ReportDateTime { get => _explicitNullValueReportDateTime; set { _explicitNullValueReportDateTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ReportDateTime"); else _explicitNullProperties?.Remove("ReportDateTime"); } }
+        private string? _explicitNullValueReportDateTime = default!;
 #nullable restore
 #else
-        public string ReportDateTime { get; set; }
+        public string ReportDateTime { get => _explicitNullValueReportDateTime; set { _explicitNullValueReportDateTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ReportDateTime"); else _explicitNullProperties?.Remove("ReportDateTime"); } }
+        private string _explicitNullValueReportDateTime = default!;
 #endif
         /// <summary>Documentation not found in the MISMO model viewer and not provided by Freddie Mac. The value can only be &quot;ReportID&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReportIdentifierType { get; set; }
+        public string? ReportIdentifierType { get => _explicitNullValueReportIdentifierType; set { _explicitNullValueReportIdentifierType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ReportIdentifierType"); else _explicitNullProperties?.Remove("ReportIdentifierType"); } }
+        private string? _explicitNullValueReportIdentifierType = default!;
 #nullable restore
 #else
-        public string ReportIdentifierType { get; set; }
+        public string ReportIdentifierType { get => _explicitNullValueReportIdentifierType; set { _explicitNullValueReportIdentifierType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ReportIdentifierType"); else _explicitNullProperties?.Remove("ReportIdentifierType"); } }
+        private string _explicitNullValueReportIdentifierType = default!;
 #endif
         /// <summary>Documentation not found in the MISMO model viewer and not provided by Freddie Mac.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReportingInformationIdentifier { get; set; }
+        public string? ReportingInformationIdentifier { get => _explicitNullValueReportingInformationIdentifier; set { _explicitNullValueReportingInformationIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ReportingInformationIdentifier"); else _explicitNullProperties?.Remove("ReportingInformationIdentifier"); } }
+        private string? _explicitNullValueReportingInformationIdentifier = default!;
 #nullable restore
 #else
-        public string ReportingInformationIdentifier { get; set; }
+        public string ReportingInformationIdentifier { get => _explicitNullValueReportingInformationIdentifier; set { _explicitNullValueReportingInformationIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ReportingInformationIdentifier"); else _explicitNullProperties?.Remove("ReportingInformationIdentifier"); } }
+        private string _explicitNullValueReportingInformationIdentifier = default!;
 #endif
         /// <summary>Documentation not found in the MISMO model viewer and not provided by Freddie Mac.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReportingInformationParentIdentifier { get; set; }
+        public string? ReportingInformationParentIdentifier { get => _explicitNullValueReportingInformationParentIdentifier; set { _explicitNullValueReportingInformationParentIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ReportingInformationParentIdentifier"); else _explicitNullProperties?.Remove("ReportingInformationParentIdentifier"); } }
+        private string? _explicitNullValueReportingInformationParentIdentifier = default!;
 #nullable restore
 #else
-        public string ReportingInformationParentIdentifier { get; set; }
+        public string ReportingInformationParentIdentifier { get => _explicitNullValueReportingInformationParentIdentifier; set { _explicitNullValueReportingInformationParentIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ReportingInformationParentIdentifier"); else _explicitNullProperties?.Remove("ReportingInformationParentIdentifier"); } }
+        private string _explicitNullValueReportingInformationParentIdentifier = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacReportingInformation"/> and sets the default values.
@@ -62,7 +81,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacReportingInformation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacReportingInformation();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacReportingInformation(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +108,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("ReportIdentifierType", ReportIdentifierType);
             writer.WriteStringValue("ReportingInformationIdentifier", ReportingInformationIdentifier);
             writer.WriteStringValue("ReportingInformationParentIdentifier", ReportingInformationParentIdentifier);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -13,29 +13,46 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConsumerDispute : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
+            if (parseNode.GetChildNode("consumer_dispute_id") is { } nullNodeConsumerDisputeId && nullNodeConsumerDisputeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsumerDisputeId = null;
+            if (parseNode.GetChildNode("dispute_field_create_date") is { } nullNodeDisputeFieldCreateDate && nullNodeDisputeFieldCreateDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisputeFieldCreateDate = null;
+            if (parseNode.GetChildNode("statement") is { } nullNodeStatement && nullNodeStatement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Statement = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Type of data being disputed by the consumer</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDisputeCategory? Category { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDisputeCategory? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDisputeCategory? _explicitNullValueCategory = default!;
         /// <summary>(Deprecated) A unique identifier (UUID) of the consumer dispute that can be used for troubleshooting</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConsumerDisputeId { get; set; }
+        public string? ConsumerDisputeId { get => _explicitNullValueConsumerDisputeId; set { _explicitNullValueConsumerDisputeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumer_dispute_id"); else _explicitNullProperties?.Remove("consumer_dispute_id"); } }
+        private string? _explicitNullValueConsumerDisputeId = default!;
 #nullable restore
 #else
-        public string ConsumerDisputeId { get; set; }
+        public string ConsumerDisputeId { get => _explicitNullValueConsumerDisputeId; set { _explicitNullValueConsumerDisputeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumer_dispute_id"); else _explicitNullProperties?.Remove("consumer_dispute_id"); } }
+        private string _explicitNullValueConsumerDisputeId = default!;
 #endif
         /// <summary>Date of the disputed field (e.g. transaction date), in an ISO 8601 format (YYYY-MM-DD)</summary>
-        public Date? DisputeFieldCreateDate { get; set; }
+        public Date? DisputeFieldCreateDate { get => _explicitNullValueDisputeFieldCreateDate; set { _explicitNullValueDisputeFieldCreateDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dispute_field_create_date"); else _explicitNullProperties?.Remove("dispute_field_create_date"); } }
+        private Date? _explicitNullValueDisputeFieldCreateDate = default!;
         /// <summary>Text content of dispute</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Statement { get; set; }
+        public string? Statement { get => _explicitNullValueStatement; set { _explicitNullValueStatement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statement"); else _explicitNullProperties?.Remove("statement"); } }
+        private string? _explicitNullValueStatement = default!;
 #nullable restore
 #else
-        public string Statement { get; set; }
+        public string Statement { get => _explicitNullValueStatement; set { _explicitNullValueStatement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statement"); else _explicitNullProperties?.Remove("statement"); } }
+        private string _explicitNullValueStatement = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDispute"/> and sets the default values.
@@ -52,7 +69,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDispute CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDispute();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDispute(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +96,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("consumer_dispute_id", ConsumerDisputeId);
             writer.WriteDateValue("dispute_field_create_date", DisputeFieldCreateDate);
             writer.WriteStringValue("statement", Statement);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,39 +12,61 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraReportGetHomeLendingAttributes : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("income_by_categories") is { } nullNodeIncomeByCategories && nullNodeIncomeByCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeByCategories = null;
+            if (parseNode.GetChildNode("income_metrics") is { } nullNodeIncomeMetrics && nullNodeIncomeMetrics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeMetrics = null;
+            if (parseNode.GetChildNode("income_sources") is { } nullNodeIncomeSources && nullNodeIncomeSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeSources = null;
+            if (parseNode.GetChildNode("loan_payments_bnpl_count_90d") is { } nullNodeLoanPaymentsBnplCount90d && nullNodeLoanPaymentsBnplCount90d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoanPaymentsBnplCount90d = null;
+            if (parseNode.GetChildNode("loan_payments_cash_advance_count_90d") is { } nullNodeLoanPaymentsCashAdvanceCount90d && nullNodeLoanPaymentsCashAdvanceCount90d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoanPaymentsCashAdvanceCount90d = null;
+            if (parseNode.GetChildNode("payment_behavior_nsf_late_fees_flag_90d") is { } nullNodePaymentBehaviorNsfLateFeesFlag90d && nullNodePaymentBehaviorNsfLateFeesFlag90d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentBehaviorNsfLateFeesFlag90d = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Modeled income broken down by income category, one entry per currency observed across the user&apos;s income streams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingIncomeByCategories>? IncomeByCategories { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingIncomeByCategories>? IncomeByCategories { get => _explicitNullValueIncomeByCategories; set { _explicitNullValueIncomeByCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_by_categories"); else _explicitNullProperties?.Remove("income_by_categories"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingIncomeByCategories>? _explicitNullValueIncomeByCategories = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingIncomeByCategories> IncomeByCategories { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingIncomeByCategories> IncomeByCategories { get => _explicitNullValueIncomeByCategories; set { _explicitNullValueIncomeByCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_by_categories"); else _explicitNullProperties?.Remove("income_by_categories"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingIncomeByCategories> _explicitNullValueIncomeByCategories = default!;
 #endif
         /// <summary>Modeled income metrics, one entry per currency observed across the user&apos;s income streams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingIncomeMetrics>? IncomeMetrics { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingIncomeMetrics>? IncomeMetrics { get => _explicitNullValueIncomeMetrics; set { _explicitNullValueIncomeMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_metrics"); else _explicitNullProperties?.Remove("income_metrics"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingIncomeMetrics>? _explicitNullValueIncomeMetrics = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingIncomeMetrics> IncomeMetrics { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingIncomeMetrics> IncomeMetrics { get => _explicitNullValueIncomeMetrics; set { _explicitNullValueIncomeMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_metrics"); else _explicitNullProperties?.Remove("income_metrics"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingIncomeMetrics> _explicitNullValueIncomeMetrics = default!;
 #endif
         /// <summary>Summary of the income sources backing the Home Lending report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingIncomeSources? IncomeSources { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingIncomeSources? IncomeSources { get => _explicitNullValueIncomeSources; set { _explicitNullValueIncomeSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_sources"); else _explicitNullProperties?.Remove("income_sources"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingIncomeSources? _explicitNullValueIncomeSources = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingIncomeSources IncomeSources { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingIncomeSources IncomeSources { get => _explicitNullValueIncomeSources; set { _explicitNullValueIncomeSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_sources"); else _explicitNullProperties?.Remove("income_sources"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingIncomeSources _explicitNullValueIncomeSources = default!;
 #endif
         /// <summary>The number of buy-now-pay-later loan payments observed in the trailing 90 days.</summary>
-        public int? LoanPaymentsBnplCount90d { get; set; }
+        public int? LoanPaymentsBnplCount90d { get => _explicitNullValueLoanPaymentsBnplCount90d; set { _explicitNullValueLoanPaymentsBnplCount90d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_payments_bnpl_count_90d"); else _explicitNullProperties?.Remove("loan_payments_bnpl_count_90d"); } }
+        private int? _explicitNullValueLoanPaymentsBnplCount90d = default!;
         /// <summary>The number of cash advance loan payments observed in the trailing 90 days.</summary>
-        public int? LoanPaymentsCashAdvanceCount90d { get; set; }
+        public int? LoanPaymentsCashAdvanceCount90d { get => _explicitNullValueLoanPaymentsCashAdvanceCount90d; set { _explicitNullValueLoanPaymentsCashAdvanceCount90d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_payments_cash_advance_count_90d"); else _explicitNullProperties?.Remove("loan_payments_cash_advance_count_90d"); } }
+        private int? _explicitNullValueLoanPaymentsCashAdvanceCount90d = default!;
         /// <summary>A flag indicating whether non-sufficient-funds or late fees were observed in the trailing 90 days.</summary>
-        public int? PaymentBehaviorNsfLateFeesFlag90d { get; set; }
+        public int? PaymentBehaviorNsfLateFeesFlag90d { get => _explicitNullValuePaymentBehaviorNsfLateFeesFlag90d; set { _explicitNullValuePaymentBehaviorNsfLateFeesFlag90d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_behavior_nsf_late_fees_flag_90d"); else _explicitNullProperties?.Remove("payment_behavior_nsf_late_fees_flag_90d"); } }
+        private int? _explicitNullValuePaymentBehaviorNsfLateFeesFlag90d = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingAttributes"/> and sets the default values.
         /// </summary>
@@ -60,7 +82,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingAttributes CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingAttributes();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingAttributes(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -91,6 +115,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteIntValue("loan_payments_bnpl_count_90d", LoanPaymentsBnplCount90d);
             writer.WriteIntValue("loan_payments_cash_advance_count_90d", LoanPaymentsCashAdvanceCount90d);
             writer.WriteIntValue("payment_behavior_nsf_late_fees_flag_90d", PaymentBehaviorNsfLateFeesFlag90d);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

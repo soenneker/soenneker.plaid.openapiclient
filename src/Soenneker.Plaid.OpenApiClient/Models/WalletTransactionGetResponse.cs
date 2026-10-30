@@ -12,94 +12,142 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WalletTransactionGetResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("counterparty") is { } nullNodeCounterparty && nullNodeCounterparty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Counterparty = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("error") is { } nullNodeError && nullNodeError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Error = null;
+            if (parseNode.GetChildNode("failure_reason") is { } nullNodeFailureReason && nullNodeFailureReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureReason = null;
+            if (parseNode.GetChildNode("last_status_update") is { } nullNodeLastStatusUpdate && nullNodeLastStatusUpdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastStatusUpdate = null;
+            if (parseNode.GetChildNode("payee_verification_status") is { } nullNodePayeeVerificationStatus && nullNodePayeeVerificationStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayeeVerificationStatus = null;
+            if (parseNode.GetChildNode("payment_id") is { } nullNodePaymentId && nullNodePaymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentId = null;
+            if (parseNode.GetChildNode("reference") is { } nullNodeReference && nullNodeReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reference = null;
+            if (parseNode.GetChildNode("related_transactions") is { } nullNodeRelatedTransactions && nullNodeRelatedTransactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelatedTransactions = null;
+            if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
+            if (parseNode.GetChildNode("scheme") is { } nullNodeScheme && nullNodeScheme.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scheme = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("transaction_id") is { } nullNodeTransactionId && nullNodeTransactionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionId = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("wallet_id") is { } nullNodeWalletId && nullNodeWalletId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WalletId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount and currency of a transaction</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionAmount? Amount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionAmount? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionAmount? _explicitNullValueAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionAmount Amount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionAmount Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionAmount _explicitNullValueAmount = default!;
 #endif
         /// <summary>An object representing the e-wallet transaction&apos;s counterparty</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterparty? Counterparty { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterparty? Counterparty { get => _explicitNullValueCounterparty; set { _explicitNullValueCounterparty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparty"); else _explicitNullProperties?.Remove("counterparty"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterparty? _explicitNullValueCounterparty = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterparty Counterparty { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterparty Counterparty { get => _explicitNullValueCounterparty; set { _explicitNullValueCounterparty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparty"); else _explicitNullProperties?.Remove("counterparty"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterparty _explicitNullValueCounterparty = default!;
 #endif
         /// <summary>Timestamp when the transaction was created, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>Errors are identified by `error_code` and categorized by `error_type`. Use these in preference to HTTP status codes to identify and handle specific errors. HTTP status codes are set and provide the broadest categorization of errors: 4xx codes are for developer- or user-related errors, and 5xx codes are for Plaid-related errors, and the status will be 2xx in non-error cases. An Item with a non-`null` error object will only be part of an API response when calling `/item/get` to view Item status. Otherwise, error fields will be `null` if no error has occurred; if an error has occurred, an error code will be returned instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PlaidError? Error { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PlaidError? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PlaidError? _explicitNullValueError = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PlaidError Error { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PlaidError Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PlaidError _explicitNullValueError = default!;
 #endif
         /// <summary>The error code of a failed transaction. Error codes include:`EXTERNAL_SYSTEM`: The transaction was declined by an external system.`EXPIRED`: The transaction request has expired.`CANCELLED`: The transaction request was rescinded.`INVALID`: The transaction did not meet certain criteria, such as an inactive account or no valid counterparty, etc.`ACCOUNT_INVALID`: The transaction could not be processed because the wallet account is invalid or inactive.`AUTHENTICATION_FAILED`: The transaction could not be processed because authentication with the wallet provider failed.`UNKNOWN`: The transaction was unsuccessful, but the exact cause is unknown.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionFailureReason? FailureReason { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionFailureReason? FailureReason { get => _explicitNullValueFailureReason; set { _explicitNullValueFailureReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_reason"); else _explicitNullProperties?.Remove("failure_reason"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionFailureReason? _explicitNullValueFailureReason = default!;
         /// <summary>The date and time of the last time the `status` was updated, in ISO 8601 format</summary>
-        public DateTimeOffset? LastStatusUpdate { get; set; }
+        public DateTimeOffset? LastStatusUpdate { get => _explicitNullValueLastStatusUpdate; set { _explicitNullValueLastStatusUpdate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_status_update"); else _explicitNullProperties?.Remove("last_status_update"); } }
+        private DateTimeOffset? _explicitNullValueLastStatusUpdate = default!;
         /// <summary>Result of payee verification check for EUR and GBP payouts. Payee verification checks whether the payee name provided matches the account holder name at the destination institution.`FULL_MATCH`: The payee name fully matches the account holder.`PARTIAL_MATCH`: The payee name partially matches the account holder.`NO_MATCH`: The payee name does not match the account holder.`ERROR`: An error occurred during payee verification.`CHECK_NOT_POSSIBLE`: Payee verification could not be performed.This field is only populated for applicable EUR and GBP payout transactions and will be `null` for other transaction types.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionPayeeVerificationStatus? PayeeVerificationStatus { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionPayeeVerificationStatus? PayeeVerificationStatus { get => _explicitNullValuePayeeVerificationStatus; set { _explicitNullValuePayeeVerificationStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payee_verification_status"); else _explicitNullProperties?.Remove("payee_verification_status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionPayeeVerificationStatus? _explicitNullValuePayeeVerificationStatus = default!;
         /// <summary>The payment id that this transaction is associated with, if any. This is present only for transaction types `PIS_PAY_IN` and `REFUND`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentId { get; set; }
+        public string? PaymentId { get => _explicitNullValuePaymentId; set { _explicitNullValuePaymentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_id"); else _explicitNullProperties?.Remove("payment_id"); } }
+        private string? _explicitNullValuePaymentId = default!;
 #nullable restore
 #else
-        public string PaymentId { get; set; }
+        public string PaymentId { get => _explicitNullValuePaymentId; set { _explicitNullValuePaymentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_id"); else _explicitNullProperties?.Remove("payment_id"); } }
+        private string _explicitNullValuePaymentId = default!;
 #endif
         /// <summary>A reference for the transaction</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reference { get; set; }
+        public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        private string? _explicitNullValueReference = default!;
 #nullable restore
 #else
-        public string Reference { get; set; }
+        public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        private string _explicitNullValueReference = default!;
 #endif
         /// <summary>A list of wallet transactions that this transaction is associated with, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionRelation>? RelatedTransactions { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionRelation>? RelatedTransactions { get => _explicitNullValueRelatedTransactions; set { _explicitNullValueRelatedTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_transactions"); else _explicitNullProperties?.Remove("related_transactions"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionRelation>? _explicitNullValueRelatedTransactions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionRelation> RelatedTransactions { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionRelation> RelatedTransactions { get => _explicitNullValueRelatedTransactions; set { _explicitNullValueRelatedTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_transactions"); else _explicitNullProperties?.Remove("related_transactions"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionRelation> _explicitNullValueRelatedTransactions = default!;
 #endif
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId { get; set; }
+        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        private string? _explicitNullValueRequestId = default!;
 #nullable restore
 #else
-        public string RequestId { get; set; }
+        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        private string _explicitNullValueRequestId = default!;
 #endif
         /// <summary>The payment scheme used to execute this transaction. This is present only for transaction types `PAYOUT` and `REFUND`.`FASTER_PAYMENTS`: The standard payment scheme within the UK.`SEPA_CREDIT_TRANSFER`: The standard payment to a beneficiary within the SEPA area.`SEPA_CREDIT_TRANSFER_INSTANT`: Instant payment to a beneficiary within the SEPA area.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.WalletPaymentScheme? Scheme { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletPaymentScheme? Scheme { get => _explicitNullValueScheme; set { _explicitNullValueScheme = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheme"); else _explicitNullProperties?.Remove("scheme"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.WalletPaymentScheme? _explicitNullValueScheme = default!;
         /// <summary>The status of the transaction.`AUTHORISING`: The transaction is being processed for validation and compliance.`INITIATED`: The transaction has been initiated and is currently being processed.`EXECUTED`: The transaction has been successfully executed and is considered complete. This is only applicable for debit transactions.`SETTLED`: The transaction has settled and funds are available for use. This is only applicable for credit transactions. A transaction will typically settle within seconds to several days, depending on which payment rail is used.`FAILED`: The transaction failed to process successfully. This is a terminal status.`BLOCKED`: The transaction has been blocked for violating compliance rules. This is a terminal status.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionStatus? Status { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionStatus? _explicitNullValueStatus = default!;
         /// <summary>A unique ID identifying the transaction</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TransactionId { get; set; }
+        public string? TransactionId { get => _explicitNullValueTransactionId; set { _explicitNullValueTransactionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_id"); else _explicitNullProperties?.Remove("transaction_id"); } }
+        private string? _explicitNullValueTransactionId = default!;
 #nullable restore
 #else
-        public string TransactionId { get; set; }
+        public string TransactionId { get => _explicitNullValueTransactionId; set { _explicitNullValueTransactionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_id"); else _explicitNullProperties?.Remove("transaction_id"); } }
+        private string _explicitNullValueTransactionId = default!;
 #endif
         /// <summary>The type of the transaction. The supported transaction types that are returned are:`BANK_TRANSFER:` a transaction which credits an e-wallet through an external bank transfer.`PAYOUT:` a transaction which debits an e-wallet by disbursing funds to a counterparty.`PIS_PAY_IN:` a payment which credits an e-wallet through Plaid&apos;s Payment Initiation Services (PIS) APIs. For more information see the [Payment Initiation endpoints](https://plaid.com/docs/api/products/payment-initiation/).`REFUND:` a transaction which debits an e-wallet by refunding a previously initiated payment made through Plaid&apos;s [PIS APIs](https://plaid.com/docs/api/products/payment-initiation/).`FUNDS_SWEEP`: an automated transaction which debits funds from an e-wallet to a designated client-owned account.`RETURN`: an automated transaction where a debit transaction was reversed and money moved back to originating account.`RECALL`: a transaction where the sending bank has requested the return of funds due to a fraud claim, technical error, or other issue associated with the payment.`ACCOUNT_FUNDING`: an incoming transfer from an allowlisted account. Not automatically refunded.`AUTO_REFUND`: an outgoing refund automatically initiated by Plaid in response to an unexpected `BANK_TRANSFER`.`TRANSFER_OUT`: a transaction that debits an e-wallet and cannot be classified under another category, typically initiated by a non-Plaid flow due to technical errors, FPS timeouts, or other payment-related issues.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionGetResponseType? Type { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionGetResponseType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionGetResponseType? _explicitNullValueType = default!;
         /// <summary>The ID of the e-wallet that this transaction is associated with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WalletId { get; set; }
+        public string? WalletId { get => _explicitNullValueWalletId; set { _explicitNullValueWalletId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wallet_id"); else _explicitNullProperties?.Remove("wallet_id"); } }
+        private string? _explicitNullValueWalletId = default!;
 #nullable restore
 #else
-        public string WalletId { get; set; }
+        public string WalletId { get => _explicitNullValueWalletId; set { _explicitNullValueWalletId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wallet_id"); else _explicitNullProperties?.Remove("wallet_id"); } }
+        private string _explicitNullValueWalletId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionGetResponse"/> and sets the default values.
@@ -116,7 +164,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionGetResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionGetResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -167,6 +215,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("transaction_id", TransactionId);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionGetResponseType>("type", Type);
             writer.WriteStringValue("wallet_id", WalletId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,35 +12,58 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaymentInitiationMetadata : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("maximum_payment_amount") is { } nullNodeMaximumPaymentAmount && nullNodeMaximumPaymentAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumPaymentAmount = null;
+            if (parseNode.GetChildNode("standing_order_metadata") is { } nullNodeStandingOrderMetadata && nullNodeStandingOrderMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StandingOrderMetadata = null;
+            if (parseNode.GetChildNode("supports_commercial_payment_consents") is { } nullNodeSupportsCommercialPaymentConsents && nullNodeSupportsCommercialPaymentConsents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportsCommercialPaymentConsents = null;
+            if (parseNode.GetChildNode("supports_international_payments") is { } nullNodeSupportsInternationalPayments && nullNodeSupportsInternationalPayments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportsInternationalPayments = null;
+            if (parseNode.GetChildNode("supports_payment_consents") is { } nullNodeSupportsPaymentConsents && nullNodeSupportsPaymentConsents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportsPaymentConsents = null;
+            if (parseNode.GetChildNode("supports_refund_details") is { } nullNodeSupportsRefundDetails && nullNodeSupportsRefundDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportsRefundDetails = null;
+            if (parseNode.GetChildNode("supports_sepa_instant") is { } nullNodeSupportsSepaInstant && nullNodeSupportsSepaInstant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportsSepaInstant = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A mapping of currency to maximum payment amount (denominated in the smallest unit of currency) supported by the institution.Example: `{&quot;GBP&quot;: &quot;10000&quot;}`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMetadataMaximumPaymentAmount? MaximumPaymentAmount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMetadataMaximumPaymentAmount? MaximumPaymentAmount { get => _explicitNullValueMaximumPaymentAmount; set { _explicitNullValueMaximumPaymentAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximum_payment_amount"); else _explicitNullProperties?.Remove("maximum_payment_amount"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMetadataMaximumPaymentAmount? _explicitNullValueMaximumPaymentAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMetadataMaximumPaymentAmount MaximumPaymentAmount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMetadataMaximumPaymentAmount MaximumPaymentAmount { get => _explicitNullValueMaximumPaymentAmount; set { _explicitNullValueMaximumPaymentAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximum_payment_amount"); else _explicitNullProperties?.Remove("maximum_payment_amount"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMetadataMaximumPaymentAmount _explicitNullValueMaximumPaymentAmount = default!;
 #endif
         /// <summary>Metadata specifically related to valid Payment Initiation standing order configurations for the institution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationStandingOrderMetadata? StandingOrderMetadata { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationStandingOrderMetadata? StandingOrderMetadata { get => _explicitNullValueStandingOrderMetadata; set { _explicitNullValueStandingOrderMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("standing_order_metadata"); else _explicitNullProperties?.Remove("standing_order_metadata"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationStandingOrderMetadata? _explicitNullValueStandingOrderMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationStandingOrderMetadata StandingOrderMetadata { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationStandingOrderMetadata StandingOrderMetadata { get => _explicitNullValueStandingOrderMetadata; set { _explicitNullValueStandingOrderMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("standing_order_metadata"); else _explicitNullProperties?.Remove("standing_order_metadata"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationStandingOrderMetadata _explicitNullValueStandingOrderMetadata = default!;
 #endif
         /// <summary>Indicates whether the institution supports commercial variable recurring payment (cVRP) consents.</summary>
-        public bool? SupportsCommercialPaymentConsents { get; set; }
+        public bool? SupportsCommercialPaymentConsents { get => _explicitNullValueSupportsCommercialPaymentConsents; set { _explicitNullValueSupportsCommercialPaymentConsents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supports_commercial_payment_consents"); else _explicitNullProperties?.Remove("supports_commercial_payment_consents"); } }
+        private bool? _explicitNullValueSupportsCommercialPaymentConsents = default!;
         /// <summary>Indicates whether the institution supports payments from a different country.</summary>
-        public bool? SupportsInternationalPayments { get; set; }
+        public bool? SupportsInternationalPayments { get => _explicitNullValueSupportsInternationalPayments; set { _explicitNullValueSupportsInternationalPayments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supports_international_payments"); else _explicitNullProperties?.Remove("supports_international_payments"); } }
+        private bool? _explicitNullValueSupportsInternationalPayments = default!;
         /// <summary>Indicates whether the institution supports payment consents.</summary>
-        public bool? SupportsPaymentConsents { get; set; }
+        public bool? SupportsPaymentConsents { get => _explicitNullValueSupportsPaymentConsents; set { _explicitNullValueSupportsPaymentConsents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supports_payment_consents"); else _explicitNullProperties?.Remove("supports_payment_consents"); } }
+        private bool? _explicitNullValueSupportsPaymentConsents = default!;
         /// <summary>Indicates whether the institution supports returning refund details when initiating a payment.</summary>
-        public bool? SupportsRefundDetails { get; set; }
+        public bool? SupportsRefundDetails { get => _explicitNullValueSupportsRefundDetails; set { _explicitNullValueSupportsRefundDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supports_refund_details"); else _explicitNullProperties?.Remove("supports_refund_details"); } }
+        private bool? _explicitNullValueSupportsRefundDetails = default!;
         /// <summary>Indicates whether the institution supports SEPA Instant payments.</summary>
-        public bool? SupportsSepaInstant { get; set; }
+        public bool? SupportsSepaInstant { get => _explicitNullValueSupportsSepaInstant; set { _explicitNullValueSupportsSepaInstant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supports_sepa_instant"); else _explicitNullProperties?.Remove("supports_sepa_instant"); } }
+        private bool? _explicitNullValueSupportsSepaInstant = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMetadata"/> and sets the default values.
         /// </summary>
@@ -56,7 +79,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMetadata();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMetadata(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +114,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteBoolValue("supports_payment_consents", SupportsPaymentConsents);
             writer.WriteBoolValue("supports_refund_details", SupportsRefundDetails);
             writer.WriteBoolValue("supports_sepa_instant", SupportsSepaInstant);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

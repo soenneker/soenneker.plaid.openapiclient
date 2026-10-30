@@ -12,13 +12,24 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BetaIssuesV1IssueImpact : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("affected_existing_item_count") is { } nullNodeAffectedExistingItemCount && nullNodeAffectedExistingItemCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AffectedExistingItemCount = null;
+            if (parseNode.GetChildNode("affected_new_item_count") is { } nullNodeAffectedNewItemCount && nullNodeAffectedNewItemCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AffectedNewItemCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The affected_existing_item_count property</summary>
-        public int? AffectedExistingItemCount { get; set; }
+        public int? AffectedExistingItemCount { get => _explicitNullValueAffectedExistingItemCount; set { _explicitNullValueAffectedExistingItemCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("affected_existing_item_count"); else _explicitNullProperties?.Remove("affected_existing_item_count"); } }
+        private int? _explicitNullValueAffectedExistingItemCount = default!;
         /// <summary>The affected_new_item_count property</summary>
-        public int? AffectedNewItemCount { get; set; }
+        public int? AffectedNewItemCount { get => _explicitNullValueAffectedNewItemCount; set { _explicitNullValueAffectedNewItemCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("affected_new_item_count"); else _explicitNullProperties?.Remove("affected_new_item_count"); } }
+        private int? _explicitNullValueAffectedNewItemCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueImpact"/> and sets the default values.
         /// </summary>
@@ -34,7 +45,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueImpact CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueImpact();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueImpact(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,6 +70,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("affected_existing_item_count", AffectedExistingItemCount);
             writer.WriteIntValue("affected_new_item_count", AffectedNewItemCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

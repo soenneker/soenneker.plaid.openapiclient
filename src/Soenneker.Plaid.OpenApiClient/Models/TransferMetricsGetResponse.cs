@@ -12,81 +12,115 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransferMetricsGetResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("authorization_usage") is { } nullNodeAuthorizationUsage && nullNodeAuthorizationUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizationUsage = null;
+            if (parseNode.GetChildNode("daily_credit_transfer_volume") is { } nullNodeDailyCreditTransferVolume && nullNodeDailyCreditTransferVolume.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DailyCreditTransferVolume = null;
+            if (parseNode.GetChildNode("daily_debit_transfer_volume") is { } nullNodeDailyDebitTransferVolume && nullNodeDailyDebitTransferVolume.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DailyDebitTransferVolume = null;
+            if (parseNode.GetChildNode("iso_currency_code") is { } nullNodeIsoCurrencyCode && nullNodeIsoCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsoCurrencyCode = null;
+            if (parseNode.GetChildNode("monthly_credit_transfer_volume") is { } nullNodeMonthlyCreditTransferVolume && nullNodeMonthlyCreditTransferVolume.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonthlyCreditTransferVolume = null;
+            if (parseNode.GetChildNode("monthly_debit_transfer_volume") is { } nullNodeMonthlyDebitTransferVolume && nullNodeMonthlyDebitTransferVolume.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonthlyDebitTransferVolume = null;
+            if (parseNode.GetChildNode("monthly_transfer_volume") is { } nullNodeMonthlyTransferVolume && nullNodeMonthlyTransferVolume.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonthlyTransferVolume = null;
+            if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
+            if (parseNode.GetChildNode("return_rates") is { } nullNodeReturnRates && nullNodeReturnRates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReturnRates = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Details regarding authorization usage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetAuthorizationUsage? AuthorizationUsage { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetAuthorizationUsage? AuthorizationUsage { get => _explicitNullValueAuthorizationUsage; set { _explicitNullValueAuthorizationUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorization_usage"); else _explicitNullProperties?.Remove("authorization_usage"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetAuthorizationUsage? _explicitNullValueAuthorizationUsage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetAuthorizationUsage AuthorizationUsage { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetAuthorizationUsage AuthorizationUsage { get => _explicitNullValueAuthorizationUsage; set { _explicitNullValueAuthorizationUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorization_usage"); else _explicitNullProperties?.Remove("authorization_usage"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetAuthorizationUsage _explicitNullValueAuthorizationUsage = default!;
 #endif
         /// <summary>Sum of dollar amount of credit transfers created so far in the current day, Eastern Time (decimal string with two digits of precision e.g. &quot;10.00&quot;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DailyCreditTransferVolume { get; set; }
+        public string? DailyCreditTransferVolume { get => _explicitNullValueDailyCreditTransferVolume; set { _explicitNullValueDailyCreditTransferVolume = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_credit_transfer_volume"); else _explicitNullProperties?.Remove("daily_credit_transfer_volume"); } }
+        private string? _explicitNullValueDailyCreditTransferVolume = default!;
 #nullable restore
 #else
-        public string DailyCreditTransferVolume { get; set; }
+        public string DailyCreditTransferVolume { get => _explicitNullValueDailyCreditTransferVolume; set { _explicitNullValueDailyCreditTransferVolume = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_credit_transfer_volume"); else _explicitNullProperties?.Remove("daily_credit_transfer_volume"); } }
+        private string _explicitNullValueDailyCreditTransferVolume = default!;
 #endif
         /// <summary>Sum of dollar amount of debit transfers created so far in the current day, Eastern Time (decimal string with two digits of precision e.g. &quot;10.00&quot;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DailyDebitTransferVolume { get; set; }
+        public string? DailyDebitTransferVolume { get => _explicitNullValueDailyDebitTransferVolume; set { _explicitNullValueDailyDebitTransferVolume = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_debit_transfer_volume"); else _explicitNullProperties?.Remove("daily_debit_transfer_volume"); } }
+        private string? _explicitNullValueDailyDebitTransferVolume = default!;
 #nullable restore
 #else
-        public string DailyDebitTransferVolume { get; set; }
+        public string DailyDebitTransferVolume { get => _explicitNullValueDailyDebitTransferVolume; set { _explicitNullValueDailyDebitTransferVolume = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_debit_transfer_volume"); else _explicitNullProperties?.Remove("daily_debit_transfer_volume"); } }
+        private string _explicitNullValueDailyDebitTransferVolume = default!;
 #endif
         /// <summary>The currency of the dollar amount, e.g. &quot;USD&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IsoCurrencyCode { get; set; }
+        public string? IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
+        private string? _explicitNullValueIsoCurrencyCode = default!;
 #nullable restore
 #else
-        public string IsoCurrencyCode { get; set; }
+        public string IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
+        private string _explicitNullValueIsoCurrencyCode = default!;
 #endif
         /// <summary>Sum of dollar amount of credit transfers in current calendar month (decimal string with two digits of precision e.g. &quot;10.00&quot;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MonthlyCreditTransferVolume { get; set; }
+        public string? MonthlyCreditTransferVolume { get => _explicitNullValueMonthlyCreditTransferVolume; set { _explicitNullValueMonthlyCreditTransferVolume = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_credit_transfer_volume"); else _explicitNullProperties?.Remove("monthly_credit_transfer_volume"); } }
+        private string? _explicitNullValueMonthlyCreditTransferVolume = default!;
 #nullable restore
 #else
-        public string MonthlyCreditTransferVolume { get; set; }
+        public string MonthlyCreditTransferVolume { get => _explicitNullValueMonthlyCreditTransferVolume; set { _explicitNullValueMonthlyCreditTransferVolume = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_credit_transfer_volume"); else _explicitNullProperties?.Remove("monthly_credit_transfer_volume"); } }
+        private string _explicitNullValueMonthlyCreditTransferVolume = default!;
 #endif
         /// <summary>Sum of dollar amount of debit transfers in current calendar month (decimal string with two digits of precision e.g. &quot;10.00&quot;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MonthlyDebitTransferVolume { get; set; }
+        public string? MonthlyDebitTransferVolume { get => _explicitNullValueMonthlyDebitTransferVolume; set { _explicitNullValueMonthlyDebitTransferVolume = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_debit_transfer_volume"); else _explicitNullProperties?.Remove("monthly_debit_transfer_volume"); } }
+        private string? _explicitNullValueMonthlyDebitTransferVolume = default!;
 #nullable restore
 #else
-        public string MonthlyDebitTransferVolume { get; set; }
+        public string MonthlyDebitTransferVolume { get => _explicitNullValueMonthlyDebitTransferVolume; set { _explicitNullValueMonthlyDebitTransferVolume = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_debit_transfer_volume"); else _explicitNullProperties?.Remove("monthly_debit_transfer_volume"); } }
+        private string _explicitNullValueMonthlyDebitTransferVolume = default!;
 #endif
         /// <summary>Sum of dollar amount of credit and debit transfers in current calendar month (decimal string with two digits of precision e.g. &quot;10.00&quot;).</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MonthlyTransferVolume { get; set; }
+        public string? MonthlyTransferVolume { get => _explicitNullValueMonthlyTransferVolume; set { _explicitNullValueMonthlyTransferVolume = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_transfer_volume"); else _explicitNullProperties?.Remove("monthly_transfer_volume"); } }
+        private string? _explicitNullValueMonthlyTransferVolume = default!;
 #nullable restore
 #else
-        public string MonthlyTransferVolume { get; set; }
+        public string MonthlyTransferVolume { get => _explicitNullValueMonthlyTransferVolume; set { _explicitNullValueMonthlyTransferVolume = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_transfer_volume"); else _explicitNullProperties?.Remove("monthly_transfer_volume"); } }
+        private string _explicitNullValueMonthlyTransferVolume = default!;
 #endif
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId { get; set; }
+        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        private string? _explicitNullValueRequestId = default!;
 #nullable restore
 #else
-        public string RequestId { get; set; }
+        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        private string _explicitNullValueRequestId = default!;
 #endif
         /// <summary>Details regarding return rates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetReturnRates? ReturnRates { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetReturnRates? ReturnRates { get => _explicitNullValueReturnRates; set { _explicitNullValueReturnRates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("return_rates"); else _explicitNullProperties?.Remove("return_rates"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetReturnRates? _explicitNullValueReturnRates = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetReturnRates ReturnRates { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetReturnRates ReturnRates { get => _explicitNullValueReturnRates; set { _explicitNullValueReturnRates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("return_rates"); else _explicitNullProperties?.Remove("return_rates"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetReturnRates _explicitNullValueReturnRates = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetResponse"/> and sets the default values.
@@ -103,7 +137,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -140,6 +174,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("monthly_transfer_volume", MonthlyTransferVolume);
             writer.WriteStringValue("request_id", RequestId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetReturnRates>("return_rates", ReturnRates);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

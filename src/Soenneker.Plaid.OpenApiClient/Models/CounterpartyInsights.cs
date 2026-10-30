@@ -12,24 +12,37 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CounterpartyInsights : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("financial_institution_insights") is { } nullNodeFinancialInstitutionInsights && nullNodeFinancialInstitutionInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FinancialInstitutionInsights = null;
+            if (parseNode.GetChildNode("merchant_insights") is { } nullNodeMerchantInsights && nullNodeMerchantInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantInsights = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Insights related to a user&apos;s transactions with other financial institutions, including detected account types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.FinancialInstitutionInsights>? FinancialInstitutionInsights { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.FinancialInstitutionInsights>? FinancialInstitutionInsights { get => _explicitNullValueFinancialInstitutionInsights; set { _explicitNullValueFinancialInstitutionInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("financial_institution_insights"); else _explicitNullProperties?.Remove("financial_institution_insights"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.FinancialInstitutionInsights>? _explicitNullValueFinancialInstitutionInsights = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.FinancialInstitutionInsights> FinancialInstitutionInsights { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.FinancialInstitutionInsights> FinancialInstitutionInsights { get => _explicitNullValueFinancialInstitutionInsights; set { _explicitNullValueFinancialInstitutionInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("financial_institution_insights"); else _explicitNullProperties?.Remove("financial_institution_insights"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.FinancialInstitutionInsights> _explicitNullValueFinancialInstitutionInsights = default!;
 #endif
         /// <summary>Insights about a user&apos;s top merchants, ranked by spend.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.MerchantInsights>? MerchantInsights { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.MerchantInsights>? MerchantInsights { get => _explicitNullValueMerchantInsights; set { _explicitNullValueMerchantInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant_insights"); else _explicitNullProperties?.Remove("merchant_insights"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.MerchantInsights>? _explicitNullValueMerchantInsights = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.MerchantInsights> MerchantInsights { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.MerchantInsights> MerchantInsights { get => _explicitNullValueMerchantInsights; set { _explicitNullValueMerchantInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant_insights"); else _explicitNullProperties?.Remove("merchant_insights"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.MerchantInsights> _explicitNullValueMerchantInsights = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CounterpartyInsights"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CounterpartyInsights CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CounterpartyInsights();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CounterpartyInsights(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.FinancialInstitutionInsights>("financial_institution_insights", FinancialInstitutionInsights);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.MerchantInsights>("merchant_insights", MerchantInsights);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

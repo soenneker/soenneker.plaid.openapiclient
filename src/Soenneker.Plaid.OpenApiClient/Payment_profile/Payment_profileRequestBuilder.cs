@@ -18,16 +18,19 @@ namespace Soenneker.Plaid.OpenApiClient.Payment_profile
     public partial class Payment_profileRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The create property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Payment_profile.Create.CreateRequestBuilder Create
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Payment_profile.Create.CreateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The getPath property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Payment_profile.Get.GetRequestBuilder GetPath
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Payment_profile.Get.GetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The remove property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Payment_profile.Remove.RemoveRequestBuilder Remove
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Payment_profile.Remove.RemoveRequestBuilder(PathParameters, RequestAdapter);

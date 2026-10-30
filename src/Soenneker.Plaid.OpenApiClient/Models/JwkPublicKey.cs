@@ -12,68 +12,100 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class JwkPublicKey : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("alg") is { } nullNodeAlg && nullNodeAlg.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Alg = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("crv") is { } nullNodeCrv && nullNodeCrv.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Crv = null;
+            if (parseNode.GetChildNode("expired_at") is { } nullNodeExpiredAt && nullNodeExpiredAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiredAt = null;
+            if (parseNode.GetChildNode("kid") is { } nullNodeKid && nullNodeKid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kid = null;
+            if (parseNode.GetChildNode("kty") is { } nullNodeKty && nullNodeKty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kty = null;
+            if (parseNode.GetChildNode("use") is { } nullNodeUse && nullNodeUse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Use = null;
+            if (parseNode.GetChildNode("x") is { } nullNodeX && nullNodeX.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) X = null;
+            if (parseNode.GetChildNode("y") is { } nullNodeY && nullNodeY.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Y = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The alg member identifies the cryptographic algorithm family used with the key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Alg { get; set; }
+        public string? Alg { get => _explicitNullValueAlg; set { _explicitNullValueAlg = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alg"); else _explicitNullProperties?.Remove("alg"); } }
+        private string? _explicitNullValueAlg = default!;
 #nullable restore
 #else
-        public string Alg { get; set; }
+        public string Alg { get => _explicitNullValueAlg; set { _explicitNullValueAlg = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alg"); else _explicitNullProperties?.Remove("alg"); } }
+        private string _explicitNullValueAlg = default!;
 #endif
         /// <summary>The timestamp when the key was created, in Unix time.</summary>
-        public int? CreatedAt { get; set; }
+        public int? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private int? _explicitNullValueCreatedAt = default!;
         /// <summary>The crv member identifies the cryptographic curve used with the key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Crv { get; set; }
+        public string? Crv { get => _explicitNullValueCrv; set { _explicitNullValueCrv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crv"); else _explicitNullProperties?.Remove("crv"); } }
+        private string? _explicitNullValueCrv = default!;
 #nullable restore
 #else
-        public string Crv { get; set; }
+        public string Crv { get => _explicitNullValueCrv; set { _explicitNullValueCrv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crv"); else _explicitNullProperties?.Remove("crv"); } }
+        private string _explicitNullValueCrv = default!;
 #endif
         /// <summary>The timestamp when the key expired, in Unix time.</summary>
-        public int? ExpiredAt { get; set; }
+        public int? ExpiredAt { get => _explicitNullValueExpiredAt; set { _explicitNullValueExpiredAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expired_at"); else _explicitNullProperties?.Remove("expired_at"); } }
+        private int? _explicitNullValueExpiredAt = default!;
         /// <summary>The kid (Key ID) member can be used to match a specific key. This can be used, for instance, to choose among a set of keys within the JWK during key rollover.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Kid { get; set; }
+        public string? Kid { get => _explicitNullValueKid; set { _explicitNullValueKid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kid"); else _explicitNullProperties?.Remove("kid"); } }
+        private string? _explicitNullValueKid = default!;
 #nullable restore
 #else
-        public string Kid { get; set; }
+        public string Kid { get => _explicitNullValueKid; set { _explicitNullValueKid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kid"); else _explicitNullProperties?.Remove("kid"); } }
+        private string _explicitNullValueKid = default!;
 #endif
         /// <summary>The kty (key type) parameter identifies the cryptographic algorithm family used with the key, such as RSA or EC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Kty { get; set; }
+        public string? Kty { get => _explicitNullValueKty; set { _explicitNullValueKty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kty"); else _explicitNullProperties?.Remove("kty"); } }
+        private string? _explicitNullValueKty = default!;
 #nullable restore
 #else
-        public string Kty { get; set; }
+        public string Kty { get => _explicitNullValueKty; set { _explicitNullValueKty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kty"); else _explicitNullProperties?.Remove("kty"); } }
+        private string _explicitNullValueKty = default!;
 #endif
         /// <summary>The use (public key use) parameter identifies the intended use of the public key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Use { get; set; }
+        public string? Use { get => _explicitNullValueUse; set { _explicitNullValueUse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use"); else _explicitNullProperties?.Remove("use"); } }
+        private string? _explicitNullValueUse = default!;
 #nullable restore
 #else
-        public string Use { get; set; }
+        public string Use { get => _explicitNullValueUse; set { _explicitNullValueUse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use"); else _explicitNullProperties?.Remove("use"); } }
+        private string _explicitNullValueUse = default!;
 #endif
         /// <summary>The x member contains the x coordinate for the elliptic curve point, provided as a base64url-encoded string of the coordinate&apos;s big endian representation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? X { get; set; }
+        public string? X { get => _explicitNullValueX; set { _explicitNullValueX = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x"); else _explicitNullProperties?.Remove("x"); } }
+        private string? _explicitNullValueX = default!;
 #nullable restore
 #else
-        public string X { get; set; }
+        public string X { get => _explicitNullValueX; set { _explicitNullValueX = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x"); else _explicitNullProperties?.Remove("x"); } }
+        private string _explicitNullValueX = default!;
 #endif
         /// <summary>The y member contains the y coordinate for the elliptic curve point, provided as a base64url-encoded string of the coordinate&apos;s big endian representation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Y { get; set; }
+        public string? Y { get => _explicitNullValueY; set { _explicitNullValueY = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("y"); else _explicitNullProperties?.Remove("y"); } }
+        private string? _explicitNullValueY = default!;
 #nullable restore
 #else
-        public string Y { get; set; }
+        public string Y { get => _explicitNullValueY; set { _explicitNullValueY = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("y"); else _explicitNullProperties?.Remove("y"); } }
+        private string _explicitNullValueY = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.JwkPublicKey"/> and sets the default values.
@@ -90,7 +122,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.JwkPublicKey CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.JwkPublicKey();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.JwkPublicKey(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -127,6 +159,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("use", Use);
             writer.WriteStringValue("x", X);
             writer.WriteStringValue("y", Y);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

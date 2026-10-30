@@ -12,26 +12,41 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Warning : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cause") is { } nullNodeCause && nullNodeCause.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cause = null;
+            if (parseNode.GetChildNode("warning_code") is { } nullNodeWarningCode && nullNodeWarningCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WarningCode = null;
+            if (parseNode.GetChildNode("warning_type") is { } nullNodeWarningType && nullNodeWarningType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WarningType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An error object and associated `item_id` used to identify a specific Item and error when a batch operation operating on multiple Items has encountered an error in one of the Items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.Cause? Cause { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Cause? Cause { get => _explicitNullValueCause; set { _explicitNullValueCause = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cause"); else _explicitNullProperties?.Remove("cause"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Cause? _explicitNullValueCause = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.Cause Cause { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Cause Cause { get => _explicitNullValueCause; set { _explicitNullValueCause = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cause"); else _explicitNullProperties?.Remove("cause"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Cause _explicitNullValueCause = default!;
 #endif
         /// <summary>The warning code identifies a specific kind of warning. `OWNERS_UNAVAILABLE` indicates that account-owner information is not available. `INVESTMENTS_UNAVAILABLE` indicates that Investments specific information is not available. `TRANSACTIONS_UNAVAILABLE` indicates that transactions information associated with Credit and Depository accounts are unavailable. The `BANK_INCOME_INSIGHTS_*` codes apply to the Bank Income add-on: `BANK_INCOME_INSIGHTS_INSUFFICIENT_DATA` indicates there was not enough data to compute Bank Income Insights; `BANK_INCOME_INSIGHTS_INCOMPLETE` indicates the Bank Income Insights flow was not completed; `BANK_INCOME_INSIGHTS_STATUS_IN_PROGRESS` indicates Bank Income Insights are still being computed; `BANK_INCOME_INSIGHTS_INTERNAL_ERROR` indicates an internal error occurred while computing Bank Income Insights; `BANK_INCOME_INSIGHTS_MISMATCHED_DAYS_REQUESTED` indicates the days requested for Bank Income Insights did not match that of the Asset Report.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.WarningWarningCode? WarningCode { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WarningWarningCode? WarningCode { get => _explicitNullValueWarningCode; set { _explicitNullValueWarningCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_code"); else _explicitNullProperties?.Remove("warning_code"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.WarningWarningCode? _explicitNullValueWarningCode = default!;
         /// <summary>The warning type, which will always be `ASSET_REPORT_WARNING`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WarningType { get; set; }
+        public string? WarningType { get => _explicitNullValueWarningType; set { _explicitNullValueWarningType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_type"); else _explicitNullProperties?.Remove("warning_type"); } }
+        private string? _explicitNullValueWarningType = default!;
 #nullable restore
 #else
-        public string WarningType { get; set; }
+        public string WarningType { get => _explicitNullValueWarningType; set { _explicitNullValueWarningType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_type"); else _explicitNullProperties?.Remove("warning_type"); } }
+        private string _explicitNullValueWarningType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.Warning"/> and sets the default values.
@@ -48,7 +63,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.Warning CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.Warning();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.Warning(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +88,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Cause>("cause", Cause);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WarningWarningCode>("warning_code", WarningCode);
             writer.WriteStringValue("warning_type", WarningType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

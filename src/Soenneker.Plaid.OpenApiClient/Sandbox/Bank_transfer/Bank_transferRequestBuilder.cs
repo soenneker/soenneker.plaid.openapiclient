@@ -17,11 +17,13 @@ namespace Soenneker.Plaid.OpenApiClient.Sandbox.Bank_transfer
     public partial class Bank_transferRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The fire_webhook property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Sandbox.Bank_transfer.Fire_webhook.Fire_webhookRequestBuilder Fire_webhook
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Sandbox.Bank_transfer.Fire_webhook.Fire_webhookRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The simulate property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Sandbox.Bank_transfer.Simulate.SimulateRequestBuilder Simulate
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Sandbox.Bank_transfer.Simulate.SimulateRequestBuilder(PathParameters, RequestAdapter);

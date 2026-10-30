@@ -12,11 +12,22 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InvestmentsAuth401KFeeDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_fee_amount_12m") is { } nullNodeAccountFeeAmount12m && nullNodeAccountFeeAmount12m.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountFeeAmount12m = null;
+            if (parseNode.GetChildNode("account_fee_count_12m") is { } nullNodeAccountFeeCount12m && nullNodeAccountFeeCount12m.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountFeeCount12m = null;
+        }
+
         /// <summary>Sum of account fee transactions on this account, for the past 12 months.</summary>
-        public float? AccountFeeAmount12m { get; set; }
+        public float? AccountFeeAmount12m { get => _explicitNullValueAccountFeeAmount12m; set { _explicitNullValueAccountFeeAmount12m = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_fee_amount_12m"); else _explicitNullProperties?.Remove("account_fee_amount_12m"); } }
+        private float? _explicitNullValueAccountFeeAmount12m = default!;
         /// <summary>Number of account fee transactions on this account, for the past 12 months.</summary>
-        public int? AccountFeeCount12m { get; set; }
+        public int? AccountFeeCount12m { get => _explicitNullValueAccountFeeCount12m; set { _explicitNullValueAccountFeeCount12m = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_fee_count_12m"); else _explicitNullProperties?.Remove("account_fee_count_12m"); } }
+        private int? _explicitNullValueAccountFeeCount12m = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
@@ -34,7 +45,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuth401KFeeDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuth401KFeeDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuth401KFeeDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,6 +68,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteFloatValue("account_fee_amount_12m", AccountFeeAmount12m);
             writer.WriteIntValue("account_fee_count_12m", AccountFeeCount12m);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,32 +12,48 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Party : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("INDIVIDUAL") is { } nullNodeINDIVIDUAL && nullNodeINDIVIDUAL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) INDIVIDUAL = null;
+            if (parseNode.GetChildNode("ROLES") is { } nullNodeROLES && nullNodeROLES.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ROLES = null;
+            if (parseNode.GetChildNode("TAXPAYER_IDENTIFIERS") is { } nullNodeTAXPAYERIDENTIFIERS && nullNodeTAXPAYERIDENTIFIERS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TAXPAYERIDENTIFIERS = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Documentation not found in the MISMO model viewer and not provided by Freddie Mac.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartyIndividual? INDIVIDUAL { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartyIndividual? INDIVIDUAL { get => _explicitNullValueINDIVIDUAL; set { _explicitNullValueINDIVIDUAL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("INDIVIDUAL"); else _explicitNullProperties?.Remove("INDIVIDUAL"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartyIndividual? _explicitNullValueINDIVIDUAL = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartyIndividual INDIVIDUAL { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartyIndividual INDIVIDUAL { get => _explicitNullValueINDIVIDUAL; set { _explicitNullValueINDIVIDUAL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("INDIVIDUAL"); else _explicitNullProperties?.Remove("INDIVIDUAL"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartyIndividual _explicitNullValueINDIVIDUAL = default!;
 #endif
         /// <summary>Documentation not found in the MISMO model viewer and not provided by Freddie Mac.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.Roles? ROLES { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Roles? ROLES { get => _explicitNullValueROLES; set { _explicitNullValueROLES = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ROLES"); else _explicitNullProperties?.Remove("ROLES"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Roles? _explicitNullValueROLES = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.Roles ROLES { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Roles ROLES { get => _explicitNullValueROLES; set { _explicitNullValueROLES = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ROLES"); else _explicitNullProperties?.Remove("ROLES"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Roles _explicitNullValueROLES = default!;
 #endif
         /// <summary>The collection of `TAXPAYER_IDENTIFICATION` elements</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TaxpayerIdentifiers? TAXPAYERIDENTIFIERS { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TaxpayerIdentifiers? TAXPAYERIDENTIFIERS { get => _explicitNullValueTAXPAYERIDENTIFIERS; set { _explicitNullValueTAXPAYERIDENTIFIERS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TAXPAYER_IDENTIFIERS"); else _explicitNullProperties?.Remove("TAXPAYER_IDENTIFIERS"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TaxpayerIdentifiers? _explicitNullValueTAXPAYERIDENTIFIERS = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TaxpayerIdentifiers TAXPAYERIDENTIFIERS { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TaxpayerIdentifiers TAXPAYERIDENTIFIERS { get => _explicitNullValueTAXPAYERIDENTIFIERS; set { _explicitNullValueTAXPAYERIDENTIFIERS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TAXPAYER_IDENTIFIERS"); else _explicitNullProperties?.Remove("TAXPAYER_IDENTIFIERS"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TaxpayerIdentifiers _explicitNullValueTAXPAYERIDENTIFIERS = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.Party"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.Party CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.Party();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.Party(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PartyIndividual>("INDIVIDUAL", INDIVIDUAL);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Roles>("ROLES", ROLES);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TaxpayerIdentifiers>("TAXPAYER_IDENTIFIERS", TAXPAYERIDENTIFIERS);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

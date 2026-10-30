@@ -12,48 +12,70 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Asset : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ASSET_DETAIL") is { } nullNodeASSETDETAIL && nullNodeASSETDETAIL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ASSETDETAIL = null;
+            if (parseNode.GetChildNode("ASSET_HOLDER") is { } nullNodeASSETHOLDER && nullNodeASSETHOLDER.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ASSETHOLDER = null;
+            if (parseNode.GetChildNode("ASSET_OWNERS") is { } nullNodeASSETOWNERS && nullNodeASSETOWNERS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ASSETOWNERS = null;
+            if (parseNode.GetChildNode("ASSET_TRANSACTIONS") is { } nullNodeASSETTRANSACTIONS && nullNodeASSETTRANSACTIONS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ASSETTRANSACTIONS = null;
+            if (parseNode.GetChildNode("VALIDATION_SOURCES") is { } nullNodeVALIDATIONSOURCES && nullNodeVALIDATIONSOURCES.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VALIDATIONSOURCES = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Details about an asset.</summary>
+        /// <summary>Details about an asset. In CRA reports, holdings-derived balances, `AssetRetirementIndicator`, and `AssetEmployerSponsoredIndicator` may be omitted when recent investment data was unavailable at report generation. The account&apos;s current and available balances remain included.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AssetDetail? ASSETDETAIL { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetDetail? ASSETDETAIL { get => _explicitNullValueASSETDETAIL; set { _explicitNullValueASSETDETAIL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ASSET_DETAIL"); else _explicitNullProperties?.Remove("ASSET_DETAIL"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AssetDetail? _explicitNullValueASSETDETAIL = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AssetDetail ASSETDETAIL { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetDetail ASSETDETAIL { get => _explicitNullValueASSETDETAIL; set { _explicitNullValueASSETDETAIL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ASSET_DETAIL"); else _explicitNullProperties?.Remove("ASSET_DETAIL"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AssetDetail _explicitNullValueASSETDETAIL = default!;
 #endif
         /// <summary>Documentation not found in the MISMO model viewer and not provided by Freddie Mac.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AssetHolder? ASSETHOLDER { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetHolder? ASSETHOLDER { get => _explicitNullValueASSETHOLDER; set { _explicitNullValueASSETHOLDER = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ASSET_HOLDER"); else _explicitNullProperties?.Remove("ASSET_HOLDER"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AssetHolder? _explicitNullValueASSETHOLDER = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AssetHolder ASSETHOLDER { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetHolder ASSETHOLDER { get => _explicitNullValueASSETHOLDER; set { _explicitNullValueASSETHOLDER = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ASSET_HOLDER"); else _explicitNullProperties?.Remove("ASSET_HOLDER"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AssetHolder _explicitNullValueASSETHOLDER = default!;
 #endif
         /// <summary>Documentation not found in the MISMO model viewer and not provided by Freddie Mac.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AssetOwners? ASSETOWNERS { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetOwners? ASSETOWNERS { get => _explicitNullValueASSETOWNERS; set { _explicitNullValueASSETOWNERS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ASSET_OWNERS"); else _explicitNullProperties?.Remove("ASSET_OWNERS"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AssetOwners? _explicitNullValueASSETOWNERS = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AssetOwners ASSETOWNERS { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetOwners ASSETOWNERS { get => _explicitNullValueASSETOWNERS; set { _explicitNullValueASSETOWNERS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ASSET_OWNERS"); else _explicitNullProperties?.Remove("ASSET_OWNERS"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AssetOwners _explicitNullValueASSETOWNERS = default!;
 #endif
         /// <summary>Documentation not found in the MISMO model viewer and not provided by Freddie Mac.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactions? ASSETTRANSACTIONS { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactions? ASSETTRANSACTIONS { get => _explicitNullValueASSETTRANSACTIONS; set { _explicitNullValueASSETTRANSACTIONS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ASSET_TRANSACTIONS"); else _explicitNullProperties?.Remove("ASSET_TRANSACTIONS"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactions? _explicitNullValueASSETTRANSACTIONS = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactions ASSETTRANSACTIONS { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactions ASSETTRANSACTIONS { get => _explicitNullValueASSETTRANSACTIONS; set { _explicitNullValueASSETTRANSACTIONS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ASSET_TRANSACTIONS"); else _explicitNullProperties?.Remove("ASSET_TRANSACTIONS"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactions _explicitNullValueASSETTRANSACTIONS = default!;
 #endif
         /// <summary>Documentation not found in the MISMO model viewer and not provided by Freddie Mac.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ValidationSources? VALIDATIONSOURCES { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ValidationSources? VALIDATIONSOURCES { get => _explicitNullValueVALIDATIONSOURCES; set { _explicitNullValueVALIDATIONSOURCES = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("VALIDATION_SOURCES"); else _explicitNullProperties?.Remove("VALIDATION_SOURCES"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ValidationSources? _explicitNullValueVALIDATIONSOURCES = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ValidationSources VALIDATIONSOURCES { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ValidationSources VALIDATIONSOURCES { get => _explicitNullValueVALIDATIONSOURCES; set { _explicitNullValueVALIDATIONSOURCES = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("VALIDATION_SOURCES"); else _explicitNullProperties?.Remove("VALIDATION_SOURCES"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ValidationSources _explicitNullValueVALIDATIONSOURCES = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.Asset"/> and sets the default values.
@@ -70,7 +92,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.Asset CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.Asset();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.Asset(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,6 +121,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetOwners>("ASSET_OWNERS", ASSETOWNERS);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactions>("ASSET_TRANSACTIONS", ASSETTRANSACTIONS);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ValidationSources>("VALIDATION_SOURCES", VALIDATIONSOURCES);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

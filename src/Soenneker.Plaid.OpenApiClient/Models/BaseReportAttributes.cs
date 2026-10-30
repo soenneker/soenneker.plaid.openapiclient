@@ -12,84 +12,127 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BaseReportAttributes : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("is_primary_account") is { } nullNodeIsPrimaryAccount && nullNodeIsPrimaryAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsPrimaryAccount = null;
+            if (parseNode.GetChildNode("nsf_overdraft_transactions_count") is { } nullNodeNsfOverdraftTransactionsCount && nullNodeNsfOverdraftTransactionsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NsfOverdraftTransactionsCount = null;
+            if (parseNode.GetChildNode("nsf_overdraft_transactions_count_30d") is { } nullNodeNsfOverdraftTransactionsCount30d && nullNodeNsfOverdraftTransactionsCount30d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NsfOverdraftTransactionsCount30d = null;
+            if (parseNode.GetChildNode("nsf_overdraft_transactions_count_60d") is { } nullNodeNsfOverdraftTransactionsCount60d && nullNodeNsfOverdraftTransactionsCount60d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NsfOverdraftTransactionsCount60d = null;
+            if (parseNode.GetChildNode("nsf_overdraft_transactions_count_90d") is { } nullNodeNsfOverdraftTransactionsCount90d && nullNodeNsfOverdraftTransactionsCount90d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NsfOverdraftTransactionsCount90d = null;
+            if (parseNode.GetChildNode("primary_account_score") is { } nullNodePrimaryAccountScore && nullNodePrimaryAccountScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryAccountScore = null;
+            if (parseNode.GetChildNode("total_inflow_amount") is { } nullNodeTotalInflowAmount && nullNodeTotalInflowAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalInflowAmount = null;
+            if (parseNode.GetChildNode("total_inflow_amount_30d") is { } nullNodeTotalInflowAmount30d && nullNodeTotalInflowAmount30d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalInflowAmount30d = null;
+            if (parseNode.GetChildNode("total_inflow_amount_60d") is { } nullNodeTotalInflowAmount60d && nullNodeTotalInflowAmount60d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalInflowAmount60d = null;
+            if (parseNode.GetChildNode("total_inflow_amount_90d") is { } nullNodeTotalInflowAmount90d && nullNodeTotalInflowAmount90d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalInflowAmount90d = null;
+            if (parseNode.GetChildNode("total_outflow_amount") is { } nullNodeTotalOutflowAmount && nullNodeTotalOutflowAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalOutflowAmount = null;
+            if (parseNode.GetChildNode("total_outflow_amount_30d") is { } nullNodeTotalOutflowAmount30d && nullNodeTotalOutflowAmount30d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalOutflowAmount30d = null;
+            if (parseNode.GetChildNode("total_outflow_amount_60d") is { } nullNodeTotalOutflowAmount60d && nullNodeTotalOutflowAmount60d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalOutflowAmount60d = null;
+            if (parseNode.GetChildNode("total_outflow_amount_90d") is { } nullNodeTotalOutflowAmount90d && nullNodeTotalOutflowAmount90d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalOutflowAmount90d = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Prediction indicator of whether the account is a primary account. Only one account per account type across the items connected will have a value of true.</summary>
-        public bool? IsPrimaryAccount { get; set; }
+        public bool? IsPrimaryAccount { get => _explicitNullValueIsPrimaryAccount; set { _explicitNullValueIsPrimaryAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_primary_account"); else _explicitNullProperties?.Remove("is_primary_account"); } }
+        private bool? _explicitNullValueIsPrimaryAccount = default!;
         /// <summary>The number of net NSF fee transactions for a given account within the report time range (not counting any fees that were reversed within the time range).</summary>
-        public int? NsfOverdraftTransactionsCount { get; set; }
+        public int? NsfOverdraftTransactionsCount { get => _explicitNullValueNsfOverdraftTransactionsCount; set { _explicitNullValueNsfOverdraftTransactionsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nsf_overdraft_transactions_count"); else _explicitNullProperties?.Remove("nsf_overdraft_transactions_count"); } }
+        private int? _explicitNullValueNsfOverdraftTransactionsCount = default!;
         /// <summary>The number of net NSF fee transactions within the last 30 days for a given account (not counting any fees that were reversed within the time range).</summary>
-        public int? NsfOverdraftTransactionsCount30d { get; set; }
+        public int? NsfOverdraftTransactionsCount30d { get => _explicitNullValueNsfOverdraftTransactionsCount30d; set { _explicitNullValueNsfOverdraftTransactionsCount30d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nsf_overdraft_transactions_count_30d"); else _explicitNullProperties?.Remove("nsf_overdraft_transactions_count_30d"); } }
+        private int? _explicitNullValueNsfOverdraftTransactionsCount30d = default!;
         /// <summary>The number of net NSF fee transactions within the last 60 days for a given account (not counting any fees that were reversed within the time range).</summary>
-        public int? NsfOverdraftTransactionsCount60d { get; set; }
+        public int? NsfOverdraftTransactionsCount60d { get => _explicitNullValueNsfOverdraftTransactionsCount60d; set { _explicitNullValueNsfOverdraftTransactionsCount60d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nsf_overdraft_transactions_count_60d"); else _explicitNullProperties?.Remove("nsf_overdraft_transactions_count_60d"); } }
+        private int? _explicitNullValueNsfOverdraftTransactionsCount60d = default!;
         /// <summary>The number of net NSF fee transactions within the last 90 days for a given account (not counting any fees that were reversed within the time range).</summary>
-        public int? NsfOverdraftTransactionsCount90d { get; set; }
+        public int? NsfOverdraftTransactionsCount90d { get => _explicitNullValueNsfOverdraftTransactionsCount90d; set { _explicitNullValueNsfOverdraftTransactionsCount90d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nsf_overdraft_transactions_count_90d"); else _explicitNullProperties?.Remove("nsf_overdraft_transactions_count_90d"); } }
+        private int? _explicitNullValueNsfOverdraftTransactionsCount90d = default!;
         /// <summary>Value ranging from 0-1. The higher the score, the more confident we are of the account being the primary account.</summary>
-        public double? PrimaryAccountScore { get; set; }
+        public double? PrimaryAccountScore { get => _explicitNullValuePrimaryAccountScore; set { _explicitNullValuePrimaryAccountScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_account_score"); else _explicitNullProperties?.Remove("primary_account_score"); } }
+        private double? _explicitNullValuePrimaryAccountScore = default!;
         /// <summary>Total amount of money into the account in the time period of the report. For non-depository accounts, or accounts with no transactions, `amount` is `0` and both currency codes are `null`. This field only takes into account USD transactions from the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount? TotalInflowAmount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount? TotalInflowAmount { get => _explicitNullValueTotalInflowAmount; set { _explicitNullValueTotalInflowAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_inflow_amount"); else _explicitNullProperties?.Remove("total_inflow_amount"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount? _explicitNullValueTotalInflowAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount TotalInflowAmount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount TotalInflowAmount { get => _explicitNullValueTotalInflowAmount; set { _explicitNullValueTotalInflowAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_inflow_amount"); else _explicitNullProperties?.Remove("total_inflow_amount"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount _explicitNullValueTotalInflowAmount = default!;
 #endif
         /// <summary>Total amount of money into the account in the last 30 days. For non-depository accounts, or accounts with no transactions, `amount` is `0` and both currency codes are `null`. This field only takes into account USD transactions from the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount30D? TotalInflowAmount30d { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount30D? TotalInflowAmount30d { get => _explicitNullValueTotalInflowAmount30d; set { _explicitNullValueTotalInflowAmount30d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_inflow_amount_30d"); else _explicitNullProperties?.Remove("total_inflow_amount_30d"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount30D? _explicitNullValueTotalInflowAmount30d = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount30D TotalInflowAmount30d { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount30D TotalInflowAmount30d { get => _explicitNullValueTotalInflowAmount30d; set { _explicitNullValueTotalInflowAmount30d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_inflow_amount_30d"); else _explicitNullProperties?.Remove("total_inflow_amount_30d"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount30D _explicitNullValueTotalInflowAmount30d = default!;
 #endif
         /// <summary>Total amount of money into the account in the last 60 days. For non-depository accounts, or accounts with no transactions, `amount` is `0` and both currency codes are `null`. This field only takes into account USD transactions from the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount60D? TotalInflowAmount60d { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount60D? TotalInflowAmount60d { get => _explicitNullValueTotalInflowAmount60d; set { _explicitNullValueTotalInflowAmount60d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_inflow_amount_60d"); else _explicitNullProperties?.Remove("total_inflow_amount_60d"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount60D? _explicitNullValueTotalInflowAmount60d = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount60D TotalInflowAmount60d { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount60D TotalInflowAmount60d { get => _explicitNullValueTotalInflowAmount60d; set { _explicitNullValueTotalInflowAmount60d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_inflow_amount_60d"); else _explicitNullProperties?.Remove("total_inflow_amount_60d"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount60D _explicitNullValueTotalInflowAmount60d = default!;
 #endif
         /// <summary>Total amount of money into the account in the last 90 days. For non-depository accounts, or accounts with no transactions, `amount` is `0` and both currency codes are `null`. This field only takes into account USD transactions from the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount90D? TotalInflowAmount90d { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount90D? TotalInflowAmount90d { get => _explicitNullValueTotalInflowAmount90d; set { _explicitNullValueTotalInflowAmount90d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_inflow_amount_90d"); else _explicitNullProperties?.Remove("total_inflow_amount_90d"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount90D? _explicitNullValueTotalInflowAmount90d = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount90D TotalInflowAmount90d { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount90D TotalInflowAmount90d { get => _explicitNullValueTotalInflowAmount90d; set { _explicitNullValueTotalInflowAmount90d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_inflow_amount_90d"); else _explicitNullProperties?.Remove("total_inflow_amount_90d"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TotalInflowAmount90D _explicitNullValueTotalInflowAmount90d = default!;
 #endif
         /// <summary>Total amount of money out of the account in the time period of the report. For non-depository accounts, or accounts with no transactions, `amount` is `0` and both currency codes are `null`. This field only takes into account USD transactions from the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount? TotalOutflowAmount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount? TotalOutflowAmount { get => _explicitNullValueTotalOutflowAmount; set { _explicitNullValueTotalOutflowAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_outflow_amount"); else _explicitNullProperties?.Remove("total_outflow_amount"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount? _explicitNullValueTotalOutflowAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount TotalOutflowAmount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount TotalOutflowAmount { get => _explicitNullValueTotalOutflowAmount; set { _explicitNullValueTotalOutflowAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_outflow_amount"); else _explicitNullProperties?.Remove("total_outflow_amount"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount _explicitNullValueTotalOutflowAmount = default!;
 #endif
         /// <summary>Total amount of money out of the account in the last 30 days. For non-depository accounts, or accounts with no transactions, `amount` is `0` and both currency codes are `null`. This field only takes into account USD transactions from the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount30D? TotalOutflowAmount30d { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount30D? TotalOutflowAmount30d { get => _explicitNullValueTotalOutflowAmount30d; set { _explicitNullValueTotalOutflowAmount30d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_outflow_amount_30d"); else _explicitNullProperties?.Remove("total_outflow_amount_30d"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount30D? _explicitNullValueTotalOutflowAmount30d = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount30D TotalOutflowAmount30d { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount30D TotalOutflowAmount30d { get => _explicitNullValueTotalOutflowAmount30d; set { _explicitNullValueTotalOutflowAmount30d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_outflow_amount_30d"); else _explicitNullProperties?.Remove("total_outflow_amount_30d"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount30D _explicitNullValueTotalOutflowAmount30d = default!;
 #endif
         /// <summary>Total amount of money out of the account in the last 60 days. For non-depository accounts, or accounts with no transactions, `amount` is `0` and both currency codes are `null`. This field only takes into account USD transactions from the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount60D? TotalOutflowAmount60d { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount60D? TotalOutflowAmount60d { get => _explicitNullValueTotalOutflowAmount60d; set { _explicitNullValueTotalOutflowAmount60d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_outflow_amount_60d"); else _explicitNullProperties?.Remove("total_outflow_amount_60d"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount60D? _explicitNullValueTotalOutflowAmount60d = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount60D TotalOutflowAmount60d { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount60D TotalOutflowAmount60d { get => _explicitNullValueTotalOutflowAmount60d; set { _explicitNullValueTotalOutflowAmount60d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_outflow_amount_60d"); else _explicitNullProperties?.Remove("total_outflow_amount_60d"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount60D _explicitNullValueTotalOutflowAmount60d = default!;
 #endif
         /// <summary>Total amount of money out of the account in the last 90 days. For non-depository accounts, or accounts with no transactions, `amount` is `0` and both currency codes are `null`. This field only takes into account USD transactions from the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount90D? TotalOutflowAmount90d { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount90D? TotalOutflowAmount90d { get => _explicitNullValueTotalOutflowAmount90d; set { _explicitNullValueTotalOutflowAmount90d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_outflow_amount_90d"); else _explicitNullProperties?.Remove("total_outflow_amount_90d"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount90D? _explicitNullValueTotalOutflowAmount90d = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount90D TotalOutflowAmount90d { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount90D TotalOutflowAmount90d { get => _explicitNullValueTotalOutflowAmount90d; set { _explicitNullValueTotalOutflowAmount90d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_outflow_amount_90d"); else _explicitNullProperties?.Remove("total_outflow_amount_90d"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount90D _explicitNullValueTotalOutflowAmount90d = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAttributes"/> and sets the default values.
@@ -106,7 +149,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAttributes CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAttributes();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAttributes(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -153,6 +196,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount30D>("total_outflow_amount_30d", TotalOutflowAmount30d);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount60D>("total_outflow_amount_60d", TotalOutflowAmount60d);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalOutflowAmount90D>("total_outflow_amount_90d", TotalOutflowAmount90d);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

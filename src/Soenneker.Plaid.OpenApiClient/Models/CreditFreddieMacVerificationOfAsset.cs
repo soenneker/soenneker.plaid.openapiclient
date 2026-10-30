@@ -12,32 +12,48 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreditFreddieMacVerificationOfAsset : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("REPORTING_INFORMATION") is { } nullNodeREPORTINGINFORMATION && nullNodeREPORTINGINFORMATION.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) REPORTINGINFORMATION = null;
+            if (parseNode.GetChildNode("SERVICE_PRODUCT_FULFILLMENT") is { } nullNodeSERVICEPRODUCTFULFILLMENT && nullNodeSERVICEPRODUCTFULFILLMENT.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SERVICEPRODUCTFULFILLMENT = null;
+            if (parseNode.GetChildNode("VERIFICATION_OF_ASSET_RESPONSE") is { } nullNodeVERIFICATIONOFASSETRESPONSE && nullNodeVERIFICATIONOFASSETRESPONSE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VERIFICATIONOFASSETRESPONSE = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Information about a report identifier and a report name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacReportingInformation? REPORTINGINFORMATION { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacReportingInformation? REPORTINGINFORMATION { get => _explicitNullValueREPORTINGINFORMATION; set { _explicitNullValueREPORTINGINFORMATION = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("REPORTING_INFORMATION"); else _explicitNullProperties?.Remove("REPORTING_INFORMATION"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacReportingInformation? _explicitNullValueREPORTINGINFORMATION = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacReportingInformation REPORTINGINFORMATION { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacReportingInformation REPORTINGINFORMATION { get => _explicitNullValueREPORTINGINFORMATION; set { _explicitNullValueREPORTINGINFORMATION = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("REPORTING_INFORMATION"); else _explicitNullProperties?.Remove("REPORTING_INFORMATION"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacReportingInformation _explicitNullValueREPORTINGINFORMATION = default!;
 #endif
         /// <summary>A collection of details related to a fulfillment service or product in terms of request, process and result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillment? SERVICEPRODUCTFULFILLMENT { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillment? SERVICEPRODUCTFULFILLMENT { get => _explicitNullValueSERVICEPRODUCTFULFILLMENT; set { _explicitNullValueSERVICEPRODUCTFULFILLMENT = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SERVICE_PRODUCT_FULFILLMENT"); else _explicitNullProperties?.Remove("SERVICE_PRODUCT_FULFILLMENT"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillment? _explicitNullValueSERVICEPRODUCTFULFILLMENT = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillment SERVICEPRODUCTFULFILLMENT { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillment SERVICEPRODUCTFULFILLMENT { get => _explicitNullValueSERVICEPRODUCTFULFILLMENT; set { _explicitNullValueSERVICEPRODUCTFULFILLMENT = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SERVICE_PRODUCT_FULFILLMENT"); else _explicitNullProperties?.Remove("SERVICE_PRODUCT_FULFILLMENT"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillment _explicitNullValueSERVICEPRODUCTFULFILLMENT = default!;
 #endif
         /// <summary>Documentation not found in the MISMO model viewer and not provided by Freddie Mac.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacVerificationOfAssetResponse? VERIFICATIONOFASSETRESPONSE { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacVerificationOfAssetResponse? VERIFICATIONOFASSETRESPONSE { get => _explicitNullValueVERIFICATIONOFASSETRESPONSE; set { _explicitNullValueVERIFICATIONOFASSETRESPONSE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("VERIFICATION_OF_ASSET_RESPONSE"); else _explicitNullProperties?.Remove("VERIFICATION_OF_ASSET_RESPONSE"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacVerificationOfAssetResponse? _explicitNullValueVERIFICATIONOFASSETRESPONSE = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacVerificationOfAssetResponse VERIFICATIONOFASSETRESPONSE { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacVerificationOfAssetResponse VERIFICATIONOFASSETRESPONSE { get => _explicitNullValueVERIFICATIONOFASSETRESPONSE; set { _explicitNullValueVERIFICATIONOFASSETRESPONSE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("VERIFICATION_OF_ASSET_RESPONSE"); else _explicitNullProperties?.Remove("VERIFICATION_OF_ASSET_RESPONSE"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacVerificationOfAssetResponse _explicitNullValueVERIFICATIONOFASSETRESPONSE = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacVerificationOfAsset"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacVerificationOfAsset CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacVerificationOfAsset();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacVerificationOfAsset(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacReportingInformation>("REPORTING_INFORMATION", REPORTINGINFORMATION);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillment>("SERVICE_PRODUCT_FULFILLMENT", SERVICEPRODUCTFULFILLMENT);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacVerificationOfAssetResponse>("VERIFICATION_OF_ASSET_RESPONSE", VERIFICATIONOFASSETRESPONSE);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

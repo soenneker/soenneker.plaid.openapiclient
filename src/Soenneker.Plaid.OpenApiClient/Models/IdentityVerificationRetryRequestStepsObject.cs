@@ -12,17 +12,32 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IdentityVerificationRetryRequestStepsObject : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("documentary_verification") is { } nullNodeDocumentaryVerification && nullNodeDocumentaryVerification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentaryVerification = null;
+            if (parseNode.GetChildNode("kyc_check") is { } nullNodeKycCheck && nullNodeKycCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KycCheck = null;
+            if (parseNode.GetChildNode("selfie_check") is { } nullNodeSelfieCheck && nullNodeSelfieCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SelfieCheck = null;
+            if (parseNode.GetChildNode("verify_sms") is { } nullNodeVerifySms && nullNodeVerifySms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerifySms = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A boolean field specifying whether the new session should require or skip the `documentary_verification` step.</summary>
-        public bool? DocumentaryVerification { get; set; }
+        public bool? DocumentaryVerification { get => _explicitNullValueDocumentaryVerification; set { _explicitNullValueDocumentaryVerification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentary_verification"); else _explicitNullProperties?.Remove("documentary_verification"); } }
+        private bool? _explicitNullValueDocumentaryVerification = default!;
         /// <summary>A boolean field specifying whether the new session should require or skip the `kyc_check` (Data Source Verification) step.</summary>
-        public bool? KycCheck { get; set; }
+        public bool? KycCheck { get => _explicitNullValueKycCheck; set { _explicitNullValueKycCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kyc_check"); else _explicitNullProperties?.Remove("kyc_check"); } }
+        private bool? _explicitNullValueKycCheck = default!;
         /// <summary>A boolean field specifying whether the new session should require or skip the `selfie_check` step. If a previous session has already passed the `selfie_check` step, the new selfie check will be a Selfie Reauthentication check, in which the selfie is tested for liveness and for consistency with the previous selfie.</summary>
-        public bool? SelfieCheck { get; set; }
+        public bool? SelfieCheck { get => _explicitNullValueSelfieCheck; set { _explicitNullValueSelfieCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selfie_check"); else _explicitNullProperties?.Remove("selfie_check"); } }
+        private bool? _explicitNullValueSelfieCheck = default!;
         /// <summary>A boolean field specifying whether the new session should require or skip the `verify_sms` step.</summary>
-        public bool? VerifySms { get; set; }
+        public bool? VerifySms { get => _explicitNullValueVerifySms; set { _explicitNullValueVerifySms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verify_sms"); else _explicitNullProperties?.Remove("verify_sms"); } }
+        private bool? _explicitNullValueVerifySms = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationRetryRequestStepsObject"/> and sets the default values.
         /// </summary>
@@ -38,7 +53,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationRetryRequestStepsObject CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationRetryRequestStepsObject();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationRetryRequestStepsObject(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,6 +82,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteBoolValue("kyc_check", KycCheck);
             writer.WriteBoolValue("selfie_check", SelfieCheck);
             writer.WriteBoolValue("verify_sms", VerifySms);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,64 +12,97 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LoanDisbursementsIndicators : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("category_details") is { } nullNodeCategoryDetails && nullNodeCategoryDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CategoryDetails = null;
+            if (parseNode.GetChildNode("days_since_last_occurrence") is { } nullNodeDaysSinceLastOccurrence && nullNodeDaysSinceLastOccurrence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DaysSinceLastOccurrence = null;
+            if (parseNode.GetChildNode("iso_currency_code") is { } nullNodeIsoCurrencyCode && nullNodeIsoCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsoCurrencyCode = null;
+            if (parseNode.GetChildNode("monthly_average") is { } nullNodeMonthlyAverage && nullNodeMonthlyAverage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonthlyAverage = null;
+            if (parseNode.GetChildNode("monthly_summaries") is { } nullNodeMonthlySummaries && nullNodeMonthlySummaries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonthlySummaries = null;
+            if (parseNode.GetChildNode("percentage_of_income") is { } nullNodePercentageOfIncome && nullNodePercentageOfIncome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PercentageOfIncome = null;
+            if (parseNode.GetChildNode("top_providers") is { } nullNodeTopProviders && nullNodeTopProviders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopProviders = null;
+            if (parseNode.GetChildNode("transactions_count") is { } nullNodeTransactionsCount && nullNodeTransactionsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionsCount = null;
+            if (parseNode.GetChildNode("unofficial_currency_code") is { } nullNodeUnofficialCurrencyCode && nullNodeUnofficialCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnofficialCurrencyCode = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The total value of inflow transactions categorized as `LOAN_DISBURSEMENTS`, across all the accounts in the report within the requested time window.</summary>
-        public double? Amount { get; set; }
+        public double? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private double? _explicitNullValueAmount = default!;
         /// <summary>Detailed categories view of all the transactions that fall into the `LOAN_DISBURSEMENTS` credit category within the given time window, across all the accounts in the report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CategoryExpenses>? CategoryDetails { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CategoryExpenses>? CategoryDetails { get => _explicitNullValueCategoryDetails; set { _explicitNullValueCategoryDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_details"); else _explicitNullProperties?.Remove("category_details"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CategoryExpenses>? _explicitNullValueCategoryDetails = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CategoryExpenses> CategoryDetails { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CategoryExpenses> CategoryDetails { get => _explicitNullValueCategoryDetails; set { _explicitNullValueCategoryDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_details"); else _explicitNullProperties?.Remove("category_details"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CategoryExpenses> _explicitNullValueCategoryDetails = default!;
 #endif
         /// <summary>The number of days since the last transaction that falls into the `LOAN_DISBURSEMENTS` credit category, across all the accounts in the report.</summary>
-        public int? DaysSinceLastOccurrence { get; set; }
+        public int? DaysSinceLastOccurrence { get => _explicitNullValueDaysSinceLastOccurrence; set { _explicitNullValueDaysSinceLastOccurrence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days_since_last_occurrence"); else _explicitNullProperties?.Remove("days_since_last_occurrence"); } }
+        private int? _explicitNullValueDaysSinceLastOccurrence = default!;
         /// <summary>The ISO-4217 currency code of the amount. Always `null` if `unofficial_currency_code` is non-`null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IsoCurrencyCode { get; set; }
+        public string? IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
+        private string? _explicitNullValueIsoCurrencyCode = default!;
 #nullable restore
 #else
-        public string IsoCurrencyCode { get; set; }
+        public string IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
+        private string _explicitNullValueIsoCurrencyCode = default!;
 #endif
         /// <summary>The monthly average amount calculated by dividing the total by the number of calendar months in the time period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.MonthlyAverage? MonthlyAverage { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.MonthlyAverage? MonthlyAverage { get => _explicitNullValueMonthlyAverage; set { _explicitNullValueMonthlyAverage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_average"); else _explicitNullProperties?.Remove("monthly_average"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.MonthlyAverage? _explicitNullValueMonthlyAverage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.MonthlyAverage MonthlyAverage { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.MonthlyAverage MonthlyAverage { get => _explicitNullValueMonthlyAverage; set { _explicitNullValueMonthlyAverage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_average"); else _explicitNullProperties?.Remove("monthly_average"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.MonthlyAverage _explicitNullValueMonthlyAverage = default!;
 #endif
         /// <summary>The monthly summaries of the transactions that fall into the `LOAN_DISBURSEMENTS` category within the given time window, across all the accounts in the report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.MonthlySummary>? MonthlySummaries { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.MonthlySummary>? MonthlySummaries { get => _explicitNullValueMonthlySummaries; set { _explicitNullValueMonthlySummaries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_summaries"); else _explicitNullProperties?.Remove("monthly_summaries"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.MonthlySummary>? _explicitNullValueMonthlySummaries = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.MonthlySummary> MonthlySummaries { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.MonthlySummary> MonthlySummaries { get => _explicitNullValueMonthlySummaries; set { _explicitNullValueMonthlySummaries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_summaries"); else _explicitNullProperties?.Remove("monthly_summaries"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.MonthlySummary> _explicitNullValueMonthlySummaries = default!;
 #endif
         /// <summary>The percentage of the user&apos;s monthly inflows that was received on transactions that fall into the `LOAN_DISBURSEMENTS` credit category within the given time window, across all the accounts in the report. For example, a value of 100 indicates that 100% of the inflows were spent on transactions that fall into the `LOAN_DISBURSEMENTS` credit category.If there&apos;s no available income for the given time period, this field value will be `-1`.</summary>
-        public double? PercentageOfIncome { get; set; }
+        public double? PercentageOfIncome { get => _explicitNullValuePercentageOfIncome; set { _explicitNullValuePercentageOfIncome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("percentage_of_income"); else _explicitNullProperties?.Remove("percentage_of_income"); } }
+        private double? _explicitNullValuePercentageOfIncome = default!;
         /// <summary>Up to 3 top service providers that the user had the most transactions for in the given time window, in descending order of total spend.If the user has not received money from any provider in the given time window, this list will be empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TopProviders { get; set; }
+        public List<string>? TopProviders { get => _explicitNullValueTopProviders; set { _explicitNullValueTopProviders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_providers"); else _explicitNullProperties?.Remove("top_providers"); } }
+        private List<string>? _explicitNullValueTopProviders = default!;
 #nullable restore
 #else
-        public List<string> TopProviders { get; set; }
+        public List<string> TopProviders { get => _explicitNullValueTopProviders; set { _explicitNullValueTopProviders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_providers"); else _explicitNullProperties?.Remove("top_providers"); } }
+        private List<string> _explicitNullValueTopProviders = default!;
 #endif
         /// <summary>The total number of transactions that fall into the `LOAN_DISBURSEMENTS` credit category, across all the accounts in the report.</summary>
-        public int? TransactionsCount { get; set; }
+        public int? TransactionsCount { get => _explicitNullValueTransactionsCount; set { _explicitNullValueTransactionsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactions_count"); else _explicitNullProperties?.Remove("transactions_count"); } }
+        private int? _explicitNullValueTransactionsCount = default!;
         /// <summary>The unofficial currency code associated with the amount. Always `null` if `iso_currency_code` is non-`null`.See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `unofficial_currency_code`s.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnofficialCurrencyCode { get; set; }
+        public string? UnofficialCurrencyCode { get => _explicitNullValueUnofficialCurrencyCode; set { _explicitNullValueUnofficialCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unofficial_currency_code"); else _explicitNullProperties?.Remove("unofficial_currency_code"); } }
+        private string? _explicitNullValueUnofficialCurrencyCode = default!;
 #nullable restore
 #else
-        public string UnofficialCurrencyCode { get; set; }
+        public string UnofficialCurrencyCode { get => _explicitNullValueUnofficialCurrencyCode; set { _explicitNullValueUnofficialCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unofficial_currency_code"); else _explicitNullProperties?.Remove("unofficial_currency_code"); } }
+        private string _explicitNullValueUnofficialCurrencyCode = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LoanDisbursementsIndicators"/> and sets the default values.
@@ -86,7 +119,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.LoanDisbursementsIndicators CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.LoanDisbursementsIndicators();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.LoanDisbursementsIndicators(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -125,6 +160,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("top_providers", TopProviders);
             writer.WriteIntValue("transactions_count", TransactionsCount);
             writer.WriteStringValue("unofficial_currency_code", UnofficialCurrencyCode);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

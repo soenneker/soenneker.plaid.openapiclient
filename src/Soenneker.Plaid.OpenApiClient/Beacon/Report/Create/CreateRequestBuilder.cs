@@ -52,7 +52,7 @@ namespace Soenneker.Plaid.OpenApiClient.Beacon.Report.Create
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.BeaconReportCreateResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.BeaconReportCreateResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.BeaconReportCreateResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.BeaconReportCreateResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a fraud report for a given Beacon User.

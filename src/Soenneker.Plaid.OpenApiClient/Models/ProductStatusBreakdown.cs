@@ -12,17 +12,32 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProductStatusBreakdown : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("error_institution") is { } nullNodeErrorInstitution && nullNodeErrorInstitution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorInstitution = null;
+            if (parseNode.GetChildNode("error_plaid") is { } nullNodeErrorPlaid && nullNodeErrorPlaid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorPlaid = null;
+            if (parseNode.GetChildNode("refresh_interval") is { } nullNodeRefreshInterval && nullNodeRefreshInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RefreshInterval = null;
+            if (parseNode.GetChildNode("success") is { } nullNodeSuccess && nullNodeSuccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Success = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The percentage of logins that are failing due to an issue in the institution&apos;s system, expressed as a decimal.</summary>
-        public double? ErrorInstitution { get; set; }
+        public double? ErrorInstitution { get => _explicitNullValueErrorInstitution; set { _explicitNullValueErrorInstitution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_institution"); else _explicitNullProperties?.Remove("error_institution"); } }
+        private double? _explicitNullValueErrorInstitution = default!;
         /// <summary>The percentage of logins that are failing due to an internal Plaid issue, expressed as a decimal.</summary>
-        public double? ErrorPlaid { get; set; }
+        public double? ErrorPlaid { get => _explicitNullValueErrorPlaid; set { _explicitNullValueErrorPlaid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_plaid"); else _explicitNullProperties?.Remove("error_plaid"); } }
+        private double? _explicitNullValueErrorPlaid = default!;
         /// <summary>How frequently data for subscription products like Investments, Transactions, and Liabilities, is being refreshed. `NORMAL`: data is refreshed at least every 2 days. `DELAYED`: data is refreshed less often than every 2 days. `STOPPED`: data is refreshed less often than every 14 days, or not at all. The `refresh_interval` may be `DELAYED` or `STOPPED` even when the success rate is high.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatusBreakdownRefreshInterval? RefreshInterval { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatusBreakdownRefreshInterval? RefreshInterval { get => _explicitNullValueRefreshInterval; set { _explicitNullValueRefreshInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refresh_interval"); else _explicitNullProperties?.Remove("refresh_interval"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ProductStatusBreakdownRefreshInterval? _explicitNullValueRefreshInterval = default!;
         /// <summary>The percentage of login attempts that are successful, expressed as a decimal.</summary>
-        public double? Success { get; set; }
+        public double? Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
+        private double? _explicitNullValueSuccess = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ProductStatusBreakdown"/> and sets the default values.
         /// </summary>
@@ -38,7 +53,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.ProductStatusBreakdown CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.ProductStatusBreakdown();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.ProductStatusBreakdown(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,6 +80,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDoubleValue("error_plaid", ErrorPlaid);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ProductStatusBreakdownRefreshInterval>("refresh_interval", RefreshInterval);
             writer.WriteDoubleValue("success", Success);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -16,6 +16,7 @@ namespace Soenneker.Plaid.OpenApiClient.Beacon.Account_risk.V1
     public partial class V1RequestBuilder : BaseRequestBuilder
     {
         /// <summary>The evaluate property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Beacon.Account_risk.V1.Evaluate.EvaluateRequestBuilder Evaluate
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Beacon.Account_risk.V1.Evaluate.EvaluateRequestBuilder(PathParameters, RequestAdapter);

@@ -12,120 +12,174 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraCheckReportCreateRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("base_report") is { } nullNodeBaseReport && nullNodeBaseReport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseReport = null;
+            if (parseNode.GetChildNode("cashflow_insights") is { } nullNodeCashflowInsights && nullNodeCashflowInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CashflowInsights = null;
+            if (parseNode.GetChildNode("client_id") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
+            if (parseNode.GetChildNode("client_report_id") is { } nullNodeClientReportId && nullNodeClientReportId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientReportId = null;
+            if (parseNode.GetChildNode("consumer_report_permissible_purpose") is { } nullNodeConsumerReportPermissiblePurpose && nullNodeConsumerReportPermissiblePurpose.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsumerReportPermissiblePurpose = null;
+            if (parseNode.GetChildNode("days_requested") is { } nullNodeDaysRequested && nullNodeDaysRequested.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DaysRequested = null;
+            if (parseNode.GetChildNode("days_required") is { } nullNodeDaysRequired && nullNodeDaysRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DaysRequired = null;
+            if (parseNode.GetChildNode("include_investments") is { } nullNodeIncludeInvestments && nullNodeIncludeInvestments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeInvestments = null;
+            if (parseNode.GetChildNode("income_insights") is { } nullNodeIncomeInsights && nullNodeIncomeInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeInsights = null;
+            if (parseNode.GetChildNode("lend_score") is { } nullNodeLendScore && nullNodeLendScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LendScore = null;
+            if (parseNode.GetChildNode("network_insights") is { } nullNodeNetworkInsights && nullNodeNetworkInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkInsights = null;
+            if (parseNode.GetChildNode("partner_insights") is { } nullNodePartnerInsights && nullNodePartnerInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PartnerInsights = null;
+            if (parseNode.GetChildNode("products") is { } nullNodeProducts && nullNodeProducts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Products = null;
+            if (parseNode.GetChildNode("secret") is { } nullNodeSecret && nullNodeSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Secret = null;
+            if (parseNode.GetChildNode("user_id") is { } nullNodeUserId && nullNodeUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserId = null;
+            if (parseNode.GetChildNode("user_token") is { } nullNodeUserToken && nullNodeUserToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserToken = null;
+            if (parseNode.GetChildNode("webhook") is { } nullNodeWebhook && nullNodeWebhook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webhook = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Defines configuration options to generate a Base Report</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateBaseReportOptions? BaseReport { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateBaseReportOptions? BaseReport { get => _explicitNullValueBaseReport; set { _explicitNullValueBaseReport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_report"); else _explicitNullProperties?.Remove("base_report"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateBaseReportOptions? _explicitNullValueBaseReport = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateBaseReportOptions BaseReport { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateBaseReportOptions BaseReport { get => _explicitNullValueBaseReport; set { _explicitNullValueBaseReport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_report"); else _explicitNullProperties?.Remove("base_report"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateBaseReportOptions _explicitNullValueBaseReport = default!;
 #endif
         /// <summary>Defines configuration options to generate Cashflow Insights</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateCashflowInsightsOptions? CashflowInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateCashflowInsightsOptions? CashflowInsights { get => _explicitNullValueCashflowInsights; set { _explicitNullValueCashflowInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cashflow_insights"); else _explicitNullProperties?.Remove("cashflow_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateCashflowInsightsOptions? _explicitNullValueCashflowInsights = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateCashflowInsightsOptions CashflowInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateCashflowInsightsOptions CashflowInsights { get => _explicitNullValueCashflowInsights; set { _explicitNullValueCashflowInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cashflow_insights"); else _explicitNullProperties?.Remove("cashflow_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateCashflowInsightsOptions _explicitNullValueCashflowInsights = default!;
 #endif
         /// <summary>Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get; set; }
+        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        private string? _explicitNullValueClientId = default!;
 #nullable restore
 #else
-        public string ClientId { get; set; }
+        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        private string _explicitNullValueClientId = default!;
 #endif
         /// <summary>Client-generated identifier, which can be used by lenders to track loan applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientReportId { get; set; }
+        public string? ClientReportId { get => _explicitNullValueClientReportId; set { _explicitNullValueClientReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_report_id"); else _explicitNullProperties?.Remove("client_report_id"); } }
+        private string? _explicitNullValueClientReportId = default!;
 #nullable restore
 #else
-        public string ClientReportId { get; set; }
+        public string ClientReportId { get => _explicitNullValueClientReportId; set { _explicitNullValueClientReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_report_id"); else _explicitNullProperties?.Remove("client_report_id"); } }
+        private string _explicitNullValueClientReportId = default!;
 #endif
-        /// <summary>Describes the reason you are generating a Consumer Report for this user. When calling `/link/token/create`, this field is required when using Plaid Check (CRA) products; invalid if not using Plaid Check (CRA) products.`ACCOUNT_REVIEW_CREDIT`: In connection with a consumer credit transaction for the review or collection of an account pursuant to FCRA Section 604(a)(3)(A).`ACCOUNT_REVIEW_NON_CREDIT`: For a legitimate business need of the information to review a non-credit account provided primarily for personal, family, or household purposes to determine whether the consumer continues to meet the terms of the account pursuant to FCRA Section 604(a)(3)(F)(2).`EXTENSION_OF_CREDIT`: In connection with a credit transaction initiated by and involving the consumer pursuant to FCRA Section 604(a)(3)(A).`LEGITIMATE_BUSINESS_NEED_TENANT_SCREENING`: For a legitimate business need in connection with a business transaction initiated by the consumer primarily for personal, family, or household purposes in connection with a property rental assessment pursuant to FCRA Section 604(a)(3)(F)(i).`LEGITIMATE_BUSINESS_NEED_OTHER`: For a legitimate business need in connection with a business transaction made primarily for personal, family, or household initiated by the consumer pursuant to FCRA Section 604(a)(3)(F)(i).`WRITTEN_INSTRUCTION_PREQUALIFICATION`: In accordance with the written instructions of the consumer pursuant to FCRA Section 604(a)(2), to evaluate an application&apos;s profile to make an offer to the consumer.`WRITTEN_INSTRUCTION_OTHER`: In accordance with the written instructions of the consumer pursuant to FCRA Section 604(a)(2), such as when an individual agrees to act as a guarantor or assumes personal liability for a consumer, business, or commercial loan.`ELIGIBILITY_FOR_GOVT_BENEFITS`:  In connection with an eligibility determination for a government benefit where the entity is required to consider an applicant&apos;s financial status pursuant to FCRA Section 604(a)(3)(D).</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ConsumerReportPermissiblePurpose? ConsumerReportPermissiblePurpose { get; set; }
+        /// <summary>Describes the reason you are generating a Consumer Report for this user. When calling `/link/token/create`, this field is required when using Plaid Check (CRA) products; invalid if not using Plaid Check (CRA) products.`ACCOUNT_REVIEW_CREDIT`: In connection with a consumer credit transaction for the review or collection of an account pursuant to FCRA Section 604(a)(3)(A).`ACCOUNT_REVIEW_NON_CREDIT`: For a legitimate business need of the information to review a non-credit account provided primarily for personal, family, or household purposes to determine whether the consumer continues to meet the terms of the account pursuant to FCRA Section 604(a)(3)(F)(2).`EXTENSION_OF_CREDIT`: In connection with a credit transaction initiated by and involving the consumer pursuant to FCRA Section 604(a)(3)(A).`LEGITIMATE_BUSINESS_NEED_TENANT_SCREENING`: For a legitimate business need in connection with a business transaction initiated by the consumer primarily for personal, family, or household purposes in connection with a property rental assessment pursuant to FCRA Section 604(a)(3)(F)(i).`LEGITIMATE_BUSINESS_NEED_OTHER`: For a legitimate business need in connection with a business transaction made primarily for personal, family, or household initiated by the consumer pursuant to FCRA Section 604(a)(3)(F)(i).`WRITTEN_INSTRUCTION_PREQUALIFICATION`: In accordance with the written instructions of the consumer pursuant to FCRA Section 604(a)(2), to evaluate an application&apos;s profile to make an offer to the consumer.`WRITTEN_INSTRUCTION_OTHER`: In accordance with the written instructions of the consumer pursuant to FCRA Section 604(a)(2), such as when an individual agrees to act as a guarantor or assumes personal liability for a consumer, business, or commercial loan.`ELIGIBILITY_FOR_GOVT_BENEFITS`:  In connection with an eligibility determination for a government benefit where the entity is required to consider an applicant&apos;s financial status pursuant to FCRA Section 604(a)(3)(D).`INSURANCE_UNDERWRITING`: In connection with the underwriting of insurance involving the consumer pursuant to FCRA Section 604(a)(3)(C).`SECONDARY_INVESTOR`: As a potential investor or servicer, or current insurer, in connection with a valuation of, or an assessment of the credit or prepayment risks associated with, an existing credit obligation pursuant to FCRA Section 604(a)(3)(E).</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.ConsumerReportPermissiblePurpose? ConsumerReportPermissiblePurpose { get => _explicitNullValueConsumerReportPermissiblePurpose; set { _explicitNullValueConsumerReportPermissiblePurpose = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumer_report_permissible_purpose"); else _explicitNullProperties?.Remove("consumer_report_permissible_purpose"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ConsumerReportPermissiblePurpose? _explicitNullValueConsumerReportPermissiblePurpose = default!;
         /// <summary>The number of days of data to request for the report. Maximum is 731; minimum is 180. If a value lower than 180 is provided, a minimum of 180 days of history will be requested.</summary>
-        public int? DaysRequested { get; set; }
+        public int? DaysRequested { get => _explicitNullValueDaysRequested; set { _explicitNullValueDaysRequested = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days_requested"); else _explicitNullProperties?.Remove("days_requested"); } }
+        private int? _explicitNullValueDaysRequested = default!;
         /// <summary>The minimum number of days of data required for the report to be successfully generated.</summary>
-        public int? DaysRequired { get; set; }
+        public int? DaysRequired { get => _explicitNullValueDaysRequired; set { _explicitNullValueDaysRequired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days_required"); else _explicitNullProperties?.Remove("days_required"); } }
+        private int? _explicitNullValueDaysRequired = default!;
         /// <summary>Indicates that investment data should be extracted from the linked account(s).</summary>
-        public bool? IncludeInvestments { get; set; }
+        public bool? IncludeInvestments { get => _explicitNullValueIncludeInvestments; set { _explicitNullValueIncludeInvestments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_investments"); else _explicitNullProperties?.Remove("include_investments"); } }
+        private bool? _explicitNullValueIncludeInvestments = default!;
         /// <summary>Defines configuration options to generate Income Insights.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateIncomeInsightsOptions? IncomeInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateIncomeInsightsOptions? IncomeInsights { get => _explicitNullValueIncomeInsights; set { _explicitNullValueIncomeInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_insights"); else _explicitNullProperties?.Remove("income_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateIncomeInsightsOptions? _explicitNullValueIncomeInsights = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateIncomeInsightsOptions IncomeInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateIncomeInsightsOptions IncomeInsights { get => _explicitNullValueIncomeInsights; set { _explicitNullValueIncomeInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_insights"); else _explicitNullProperties?.Remove("income_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateIncomeInsightsOptions _explicitNullValueIncomeInsights = default!;
 #endif
         /// <summary>Defines configuration options to generate the LendScore</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateLendScoreOptions? LendScore { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateLendScoreOptions? LendScore { get => _explicitNullValueLendScore; set { _explicitNullValueLendScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lend_score"); else _explicitNullProperties?.Remove("lend_score"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateLendScoreOptions? _explicitNullValueLendScore = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateLendScoreOptions LendScore { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateLendScoreOptions LendScore { get => _explicitNullValueLendScore; set { _explicitNullValueLendScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lend_score"); else _explicitNullProperties?.Remove("lend_score"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateLendScoreOptions _explicitNullValueLendScore = default!;
 #endif
         /// <summary>Defines configuration options to generate Network Insights</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateNetworkInsightsOptions? NetworkInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateNetworkInsightsOptions? NetworkInsights { get => _explicitNullValueNetworkInsights; set { _explicitNullValueNetworkInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_insights"); else _explicitNullProperties?.Remove("network_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateNetworkInsightsOptions? _explicitNullValueNetworkInsights = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateNetworkInsightsOptions NetworkInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateNetworkInsightsOptions NetworkInsights { get => _explicitNullValueNetworkInsights; set { _explicitNullValueNetworkInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_insights"); else _explicitNullProperties?.Remove("network_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateNetworkInsightsOptions _explicitNullValueNetworkInsights = default!;
 #endif
         /// <summary>Defines configuration to generate Partner Insights.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreatePartnerInsightsOptions? PartnerInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreatePartnerInsightsOptions? PartnerInsights { get => _explicitNullValuePartnerInsights; set { _explicitNullValuePartnerInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partner_insights"); else _explicitNullProperties?.Remove("partner_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreatePartnerInsightsOptions? _explicitNullValuePartnerInsights = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreatePartnerInsightsOptions PartnerInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreatePartnerInsightsOptions PartnerInsights { get => _explicitNullValuePartnerInsights; set { _explicitNullValuePartnerInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partner_insights"); else _explicitNullProperties?.Remove("partner_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreatePartnerInsightsOptions _explicitNullValuePartnerInsights = default!;
 #endif
         /// <summary>Specifies a list of products to generate when creating the report (in addition to the Base Report, which is always generated except for requests for only `cra_network_insights` or for FICO-only Partner Insights). These products will be made available before a success webhook is sent. Note that specifying `cra_partner_insights` in this field will trigger a billable event. Other products are not billed until the respective reports are retrieved via their product-specific `/get` endpoints.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? Products { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? Products { get => _explicitNullValueProducts; set { _explicitNullValueProducts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("products"); else _explicitNullProperties?.Remove("products"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? _explicitNullValueProducts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> Products { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> Products { get => _explicitNullValueProducts; set { _explicitNullValueProducts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("products"); else _explicitNullProperties?.Remove("products"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> _explicitNullValueProducts = default!;
 #endif
         /// <summary>Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Secret { get; set; }
+        public string? Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
+        private string? _explicitNullValueSecret = default!;
 #nullable restore
 #else
-        public string Secret { get; set; }
+        public string Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
+        private string _explicitNullValueSecret = default!;
 #endif
         /// <summary>A unique user identifier, created by `/user/create`. Integrations that began using `/user/create` after December 10, 2025 use this field to identify a user instead of the `user_token`. For more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId { get; set; }
+        public string? UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
+        private string? _explicitNullValueUserId = default!;
 #nullable restore
 #else
-        public string UserId { get; set; }
+        public string UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
+        private string _explicitNullValueUserId = default!;
 #endif
         /// <summary>The user token associated with the user for which data is being requested. This field is used only by customers with pre-existing integrations that already use the `user_token` field. All other customers should use the `user_id` instead. For more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserToken { get; set; }
+        public string? UserToken { get => _explicitNullValueUserToken; set { _explicitNullValueUserToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_token"); else _explicitNullProperties?.Remove("user_token"); } }
+        private string? _explicitNullValueUserToken = default!;
 #nullable restore
 #else
-        public string UserToken { get; set; }
+        public string UserToken { get => _explicitNullValueUserToken; set { _explicitNullValueUserToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_token"); else _explicitNullProperties?.Remove("user_token"); } }
+        private string _explicitNullValueUserToken = default!;
 #endif
         /// <summary>The destination URL to which webhooks will be sent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Webhook { get; set; }
+        public string? Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        private string? _explicitNullValueWebhook = default!;
 #nullable restore
 #else
-        public string Webhook { get; set; }
+        public string Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        private string _explicitNullValueWebhook = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateRequest"/> and sets the default values.
@@ -142,7 +196,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -195,6 +249,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("user_id", UserId);
             writer.WriteStringValue("user_token", UserToken);
             writer.WriteStringValue("webhook", Webhook);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -16,6 +16,7 @@ namespace Soenneker.Plaid.OpenApiClient.Income.Verification.Documents
     public partial class DocumentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The download property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Income.Verification.Documents.Download.DownloadRequestBuilder Download
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Income.Verification.Documents.Download.DownloadRequestBuilder(PathParameters, RequestAdapter);

@@ -12,24 +12,37 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransferWireDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("message_to_beneficiary") is { } nullNodeMessageToBeneficiary && nullNodeMessageToBeneficiary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageToBeneficiary = null;
+            if (parseNode.GetChildNode("wire_return_fee") is { } nullNodeWireReturnFee && nullNodeWireReturnFee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WireReturnFee = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Additional information from the wire originator to the beneficiary. Max 140 characters.</summary>
+        /// <summary>Additional information from the wire originator to the beneficiary. Max 140 characters; no single word may exceed 35 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MessageToBeneficiary { get; set; }
+        public string? MessageToBeneficiary { get => _explicitNullValueMessageToBeneficiary; set { _explicitNullValueMessageToBeneficiary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_to_beneficiary"); else _explicitNullProperties?.Remove("message_to_beneficiary"); } }
+        private string? _explicitNullValueMessageToBeneficiary = default!;
 #nullable restore
 #else
-        public string MessageToBeneficiary { get; set; }
+        public string MessageToBeneficiary { get => _explicitNullValueMessageToBeneficiary; set { _explicitNullValueMessageToBeneficiary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_to_beneficiary"); else _explicitNullProperties?.Remove("message_to_beneficiary"); } }
+        private string _explicitNullValueMessageToBeneficiary = default!;
 #endif
         /// <summary>The fee amount deducted from the original transfer during a wire return, if applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WireReturnFee { get; set; }
+        public string? WireReturnFee { get => _explicitNullValueWireReturnFee; set { _explicitNullValueWireReturnFee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wire_return_fee"); else _explicitNullProperties?.Remove("wire_return_fee"); } }
+        private string? _explicitNullValueWireReturnFee = default!;
 #nullable restore
 #else
-        public string WireReturnFee { get; set; }
+        public string WireReturnFee { get => _explicitNullValueWireReturnFee; set { _explicitNullValueWireReturnFee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wire_return_fee"); else _explicitNullProperties?.Remove("wire_return_fee"); } }
+        private string _explicitNullValueWireReturnFee = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransferWireDetails"/> and sets the default values.
@@ -46,7 +59,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.TransferWireDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.TransferWireDetails();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.TransferWireDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +84,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("message_to_beneficiary", MessageToBeneficiary);
             writer.WriteStringValue("wire_return_fee", WireReturnFee);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

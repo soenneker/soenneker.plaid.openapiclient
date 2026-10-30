@@ -13,61 +13,105 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LoanLiability : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_id") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
+            if (parseNode.GetChildNode("account_number") is { } nullNodeAccountNumber && nullNodeAccountNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountNumber = null;
+            if (parseNode.GetChildNode("compounding_period") is { } nullNodeCompoundingPeriod && nullNodeCompoundingPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompoundingPeriod = null;
+            if (parseNode.GetChildNode("interest_rate") is { } nullNodeInterestRate && nullNodeInterestRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterestRate = null;
+            if (parseNode.GetChildNode("last_payment_amount") is { } nullNodeLastPaymentAmount && nullNodeLastPaymentAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastPaymentAmount = null;
+            if (parseNode.GetChildNode("last_payment_date") is { } nullNodeLastPaymentDate && nullNodeLastPaymentDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastPaymentDate = null;
+            if (parseNode.GetChildNode("loan_term_months") is { } nullNodeLoanTermMonths && nullNodeLoanTermMonths.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoanTermMonths = null;
+            if (parseNode.GetChildNode("maturity_date") is { } nullNodeMaturityDate && nullNodeMaturityDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaturityDate = null;
+            if (parseNode.GetChildNode("next_payment_amount") is { } nullNodeNextPaymentAmount && nullNodeNextPaymentAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextPaymentAmount = null;
+            if (parseNode.GetChildNode("next_payment_due_date") is { } nullNodeNextPaymentDueDate && nullNodeNextPaymentDueDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextPaymentDueDate = null;
+            if (parseNode.GetChildNode("origination_date") is { } nullNodeOriginationDate && nullNodeOriginationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginationDate = null;
+            if (parseNode.GetChildNode("origination_principal_amount") is { } nullNodeOriginationPrincipalAmount && nullNodeOriginationPrincipalAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginationPrincipalAmount = null;
+            if (parseNode.GetChildNode("payment_count") is { } nullNodePaymentCount && nullNodePaymentCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentCount = null;
+            if (parseNode.GetChildNode("payment_frequency") is { } nullNodePaymentFrequency && nullNodePaymentFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentFrequency = null;
+            if (parseNode.GetChildNode("payoff_amount") is { } nullNodePayoffAmount && nullNodePayoffAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayoffAmount = null;
+            if (parseNode.GetChildNode("principal_balance") is { } nullNodePrincipalBalance && nullNodePrincipalBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrincipalBalance = null;
+            if (parseNode.GetChildNode("ytd_interest_paid") is { } nullNodeYtdInterestPaid && nullNodeYtdInterestPaid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) YtdInterestPaid = null;
+        }
+
         /// <summary>The ID of the account that this liability belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountId { get; set; }
+        public string? AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        private string? _explicitNullValueAccountId = default!;
 #nullable restore
 #else
-        public string AccountId { get; set; }
+        public string AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        private string _explicitNullValueAccountId = default!;
 #endif
         /// <summary>The account number of the loan. For some institutions, this may be a masked version of the number (e.g., the last 4 digits instead of the entire number).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountNumber { get; set; }
+        public string? AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_number"); else _explicitNullProperties?.Remove("account_number"); } }
+        private string? _explicitNullValueAccountNumber = default!;
 #nullable restore
 #else
-        public string AccountNumber { get; set; }
+        public string AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_number"); else _explicitNullProperties?.Remove("account_number"); } }
+        private string _explicitNullValueAccountNumber = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The frequency at which interest is compounded.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.LoanCompoundingPeriod? CompoundingPeriod { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LoanCompoundingPeriod? CompoundingPeriod { get => _explicitNullValueCompoundingPeriod; set { _explicitNullValueCompoundingPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compounding_period"); else _explicitNullProperties?.Remove("compounding_period"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LoanCompoundingPeriod? _explicitNullValueCompoundingPeriod = default!;
         /// <summary>Information about the interest rate on a loan or line of credit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LoanInterestRate? InterestRate { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LoanInterestRate? InterestRate { get => _explicitNullValueInterestRate; set { _explicitNullValueInterestRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interest_rate"); else _explicitNullProperties?.Remove("interest_rate"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LoanInterestRate? _explicitNullValueInterestRate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LoanInterestRate InterestRate { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LoanInterestRate InterestRate { get => _explicitNullValueInterestRate; set { _explicitNullValueInterestRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interest_rate"); else _explicitNullProperties?.Remove("interest_rate"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LoanInterestRate _explicitNullValueInterestRate = default!;
 #endif
         /// <summary>The amount of the most recent payment.</summary>
-        public double? LastPaymentAmount { get; set; }
+        public double? LastPaymentAmount { get => _explicitNullValueLastPaymentAmount; set { _explicitNullValueLastPaymentAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_payment_amount"); else _explicitNullProperties?.Remove("last_payment_amount"); } }
+        private double? _explicitNullValueLastPaymentAmount = default!;
         /// <summary>The date of the most recent payment, in ISO 8601 format (YYYY-MM-DD).</summary>
-        public Date? LastPaymentDate { get; set; }
+        public Date? LastPaymentDate { get => _explicitNullValueLastPaymentDate; set { _explicitNullValueLastPaymentDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_payment_date"); else _explicitNullProperties?.Remove("last_payment_date"); } }
+        private Date? _explicitNullValueLastPaymentDate = default!;
         /// <summary>The length of the loan term in months.</summary>
-        public int? LoanTermMonths { get; set; }
+        public int? LoanTermMonths { get => _explicitNullValueLoanTermMonths; set { _explicitNullValueLoanTermMonths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_term_months"); else _explicitNullProperties?.Remove("loan_term_months"); } }
+        private int? _explicitNullValueLoanTermMonths = default!;
         /// <summary>The date on which the loan is scheduled to be fully paid, in ISO 8601 format (YYYY-MM-DD).</summary>
-        public Date? MaturityDate { get; set; }
+        public Date? MaturityDate { get => _explicitNullValueMaturityDate; set { _explicitNullValueMaturityDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maturity_date"); else _explicitNullProperties?.Remove("maturity_date"); } }
+        private Date? _explicitNullValueMaturityDate = default!;
         /// <summary>The amount of the next scheduled payment.</summary>
-        public double? NextPaymentAmount { get; set; }
+        public double? NextPaymentAmount { get => _explicitNullValueNextPaymentAmount; set { _explicitNullValueNextPaymentAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_payment_amount"); else _explicitNullProperties?.Remove("next_payment_amount"); } }
+        private double? _explicitNullValueNextPaymentAmount = default!;
         /// <summary>The due date of the next payment, in ISO 8601 format (YYYY-MM-DD).</summary>
-        public Date? NextPaymentDueDate { get; set; }
+        public Date? NextPaymentDueDate { get => _explicitNullValueNextPaymentDueDate; set { _explicitNullValueNextPaymentDueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_payment_due_date"); else _explicitNullProperties?.Remove("next_payment_due_date"); } }
+        private Date? _explicitNullValueNextPaymentDueDate = default!;
         /// <summary>The date on which the loan was originated, in ISO 8601 format (YYYY-MM-DD).</summary>
-        public Date? OriginationDate { get; set; }
+        public Date? OriginationDate { get => _explicitNullValueOriginationDate; set { _explicitNullValueOriginationDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origination_date"); else _explicitNullProperties?.Remove("origination_date"); } }
+        private Date? _explicitNullValueOriginationDate = default!;
         /// <summary>The original principal amount of the loan.</summary>
-        public double? OriginationPrincipalAmount { get; set; }
+        public double? OriginationPrincipalAmount { get => _explicitNullValueOriginationPrincipalAmount; set { _explicitNullValueOriginationPrincipalAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origination_principal_amount"); else _explicitNullProperties?.Remove("origination_principal_amount"); } }
+        private double? _explicitNullValueOriginationPrincipalAmount = default!;
         /// <summary>The total number of payments scheduled for the loan.</summary>
-        public int? PaymentCount { get; set; }
+        public int? PaymentCount { get => _explicitNullValuePaymentCount; set { _explicitNullValuePaymentCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_count"); else _explicitNullProperties?.Remove("payment_count"); } }
+        private int? _explicitNullValuePaymentCount = default!;
         /// <summary>The frequency at which payments are scheduled.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentFrequency? PaymentFrequency { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentFrequency? PaymentFrequency { get => _explicitNullValuePaymentFrequency; set { _explicitNullValuePaymentFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_frequency"); else _explicitNullProperties?.Remove("payment_frequency"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentFrequency? _explicitNullValuePaymentFrequency = default!;
         /// <summary>The amount required to fully pay off the loan.</summary>
-        public double? PayoffAmount { get; set; }
+        public double? PayoffAmount { get => _explicitNullValuePayoffAmount; set { _explicitNullValuePayoffAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoff_amount"); else _explicitNullProperties?.Remove("payoff_amount"); } }
+        private double? _explicitNullValuePayoffAmount = default!;
         /// <summary>The outstanding principal balance of the loan.</summary>
-        public double? PrincipalBalance { get; set; }
+        public double? PrincipalBalance { get => _explicitNullValuePrincipalBalance; set { _explicitNullValuePrincipalBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("principal_balance"); else _explicitNullProperties?.Remove("principal_balance"); } }
+        private double? _explicitNullValuePrincipalBalance = default!;
         /// <summary>The year-to-date interest paid on the loan.</summary>
-        public double? YtdInterestPaid { get; set; }
+        public double? YtdInterestPaid { get => _explicitNullValueYtdInterestPaid; set { _explicitNullValueYtdInterestPaid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ytd_interest_paid"); else _explicitNullProperties?.Remove("ytd_interest_paid"); } }
+        private double? _explicitNullValueYtdInterestPaid = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LoanLiability"/> and sets the default values.
         /// </summary>
@@ -83,7 +127,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.LoanLiability CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.LoanLiability();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.LoanLiability(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -136,6 +180,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDoubleValue("payoff_amount", PayoffAmount);
             writer.WriteDoubleValue("principal_balance", PrincipalBalance);
             writer.WriteDoubleValue("ytd_interest_paid", YtdInterestPaid);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

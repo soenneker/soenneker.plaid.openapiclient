@@ -12,220 +12,349 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Credit1099 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("april_amount") is { } nullNodeAprilAmount && nullNodeAprilAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AprilAmount = null;
+            if (parseNode.GetChildNode("august_amount") is { } nullNodeAugustAmount && nullNodeAugustAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AugustAmount = null;
+            if (parseNode.GetChildNode("card_not_present_transaction") is { } nullNodeCardNotPresentTransaction && nullNodeCardNotPresentTransaction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardNotPresentTransaction = null;
+            if (parseNode.GetChildNode("crop_insurance_proceeds") is { } nullNodeCropInsuranceProceeds && nullNodeCropInsuranceProceeds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CropInsuranceProceeds = null;
+            if (parseNode.GetChildNode("december_amount") is { } nullNodeDecemberAmount && nullNodeDecemberAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DecemberAmount = null;
+            if (parseNode.GetChildNode("document_id") is { } nullNodeDocumentId && nullNodeDocumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentId = null;
+            if (parseNode.GetChildNode("document_metadata") is { } nullNodeDocumentMetadata && nullNodeDocumentMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentMetadata = null;
+            if (parseNode.GetChildNode("excess_golden_parachute_payments") is { } nullNodeExcessGoldenParachutePayments && nullNodeExcessGoldenParachutePayments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcessGoldenParachutePayments = null;
+            if (parseNode.GetChildNode("february_amount") is { } nullNodeFebruaryAmount && nullNodeFebruaryAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FebruaryAmount = null;
+            if (parseNode.GetChildNode("federal_income_tax_withheld") is { } nullNodeFederalIncomeTaxWithheld && nullNodeFederalIncomeTaxWithheld.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FederalIncomeTaxWithheld = null;
+            if (parseNode.GetChildNode("filer") is { } nullNodeFiler && nullNodeFiler.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filer = null;
+            if (parseNode.GetChildNode("fishing_boat_proceeds") is { } nullNodeFishingBoatProceeds && nullNodeFishingBoatProceeds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FishingBoatProceeds = null;
+            if (parseNode.GetChildNode("form_1099_type") is { } nullNodeForm1099Type && nullNodeForm1099Type.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Form1099Type = null;
+            if (parseNode.GetChildNode("gross_amount") is { } nullNodeGrossAmount && nullNodeGrossAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrossAmount = null;
+            if (parseNode.GetChildNode("gross_proceeds_paid_to_an_attorney") is { } nullNodeGrossProceedsPaidToAnAttorney && nullNodeGrossProceedsPaidToAnAttorney.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrossProceedsPaidToAnAttorney = null;
+            if (parseNode.GetChildNode("january_amount") is { } nullNodeJanuaryAmount && nullNodeJanuaryAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JanuaryAmount = null;
+            if (parseNode.GetChildNode("july_amount") is { } nullNodeJulyAmount && nullNodeJulyAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JulyAmount = null;
+            if (parseNode.GetChildNode("june_amount") is { } nullNodeJuneAmount && nullNodeJuneAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JuneAmount = null;
+            if (parseNode.GetChildNode("march_amount") is { } nullNodeMarchAmount && nullNodeMarchAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MarchAmount = null;
+            if (parseNode.GetChildNode("may_amount") is { } nullNodeMayAmount && nullNodeMayAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MayAmount = null;
+            if (parseNode.GetChildNode("medical_and_healthcare_payments") is { } nullNodeMedicalAndHealthcarePayments && nullNodeMedicalAndHealthcarePayments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MedicalAndHealthcarePayments = null;
+            if (parseNode.GetChildNode("merchant_category_code") is { } nullNodeMerchantCategoryCode && nullNodeMerchantCategoryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantCategoryCode = null;
+            if (parseNode.GetChildNode("nonemployee_compensation") is { } nullNodeNonemployeeCompensation && nullNodeNonemployeeCompensation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NonemployeeCompensation = null;
+            if (parseNode.GetChildNode("november_amount") is { } nullNodeNovemberAmount && nullNodeNovemberAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NovemberAmount = null;
+            if (parseNode.GetChildNode("number_of_payment_transactions") is { } nullNodeNumberOfPaymentTransactions && nullNodeNumberOfPaymentTransactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumberOfPaymentTransactions = null;
+            if (parseNode.GetChildNode("october_amount") is { } nullNodeOctoberAmount && nullNodeOctoberAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OctoberAmount = null;
+            if (parseNode.GetChildNode("other_income") is { } nullNodeOtherIncome && nullNodeOtherIncome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OtherIncome = null;
+            if (parseNode.GetChildNode("payer") is { } nullNodePayer && nullNodePayer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Payer = null;
+            if (parseNode.GetChildNode("payer_made_direct_sales_of_5000_or_more_of_consumer_products_to_buyer") is { } nullNodePayerMadeDirectSalesOf5000OrMoreOfConsumerProductsToBuyer && nullNodePayerMadeDirectSalesOf5000OrMoreOfConsumerProductsToBuyer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayerMadeDirectSalesOf5000OrMoreOfConsumerProductsToBuyer = null;
+            if (parseNode.GetChildNode("payer_state_number") is { } nullNodePayerStateNumber && nullNodePayerStateNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayerStateNumber = null;
+            if (parseNode.GetChildNode("payer_state_number_lower") is { } nullNodePayerStateNumberLower && nullNodePayerStateNumberLower.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayerStateNumberLower = null;
+            if (parseNode.GetChildNode("primary_state") is { } nullNodePrimaryState && nullNodePrimaryState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryState = null;
+            if (parseNode.GetChildNode("primary_state_id") is { } nullNodePrimaryStateId && nullNodePrimaryStateId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryStateId = null;
+            if (parseNode.GetChildNode("primary_state_income_tax") is { } nullNodePrimaryStateIncomeTax && nullNodePrimaryStateIncomeTax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryStateIncomeTax = null;
+            if (parseNode.GetChildNode("pse_name") is { } nullNodePseName && nullNodePseName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PseName = null;
+            if (parseNode.GetChildNode("pse_telephone_number") is { } nullNodePseTelephoneNumber && nullNodePseTelephoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PseTelephoneNumber = null;
+            if (parseNode.GetChildNode("recipient") is { } nullNodeRecipient && nullNodeRecipient.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Recipient = null;
+            if (parseNode.GetChildNode("rents") is { } nullNodeRents && nullNodeRents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rents = null;
+            if (parseNode.GetChildNode("royalties") is { } nullNodeRoyalties && nullNodeRoyalties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Royalties = null;
+            if (parseNode.GetChildNode("secondary_state") is { } nullNodeSecondaryState && nullNodeSecondaryState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecondaryState = null;
+            if (parseNode.GetChildNode("secondary_state_id") is { } nullNodeSecondaryStateId && nullNodeSecondaryStateId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecondaryStateId = null;
+            if (parseNode.GetChildNode("secondary_state_income_tax") is { } nullNodeSecondaryStateIncomeTax && nullNodeSecondaryStateIncomeTax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecondaryStateIncomeTax = null;
+            if (parseNode.GetChildNode("section_409a_deferrals") is { } nullNodeSection409aDeferrals && nullNodeSection409aDeferrals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Section409aDeferrals = null;
+            if (parseNode.GetChildNode("section_409a_income") is { } nullNodeSection409aIncome && nullNodeSection409aIncome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Section409aIncome = null;
+            if (parseNode.GetChildNode("september_amount") is { } nullNodeSeptemberAmount && nullNodeSeptemberAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeptemberAmount = null;
+            if (parseNode.GetChildNode("state_income") is { } nullNodeStateIncome && nullNodeStateIncome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StateIncome = null;
+            if (parseNode.GetChildNode("state_income_lower") is { } nullNodeStateIncomeLower && nullNodeStateIncomeLower.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StateIncomeLower = null;
+            if (parseNode.GetChildNode("state_tax_withheld") is { } nullNodeStateTaxWithheld && nullNodeStateTaxWithheld.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StateTaxWithheld = null;
+            if (parseNode.GetChildNode("state_tax_withheld_lower") is { } nullNodeStateTaxWithheldLower && nullNodeStateTaxWithheldLower.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StateTaxWithheldLower = null;
+            if (parseNode.GetChildNode("substitute_payments_in_lieu_of_dividends_or_interest") is { } nullNodeSubstitutePaymentsInLieuOfDividendsOrInterest && nullNodeSubstitutePaymentsInLieuOfDividendsOrInterest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubstitutePaymentsInLieuOfDividendsOrInterest = null;
+            if (parseNode.GetChildNode("tax_year") is { } nullNodeTaxYear && nullNodeTaxYear.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxYear = null;
+            if (parseNode.GetChildNode("transactions_reported") is { } nullNodeTransactionsReported && nullNodeTransactionsReported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionsReported = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Amount reported for April.</summary>
-        public double? AprilAmount { get; set; }
+        public double? AprilAmount { get => _explicitNullValueAprilAmount; set { _explicitNullValueAprilAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("april_amount"); else _explicitNullProperties?.Remove("april_amount"); } }
+        private double? _explicitNullValueAprilAmount = default!;
         /// <summary>Amount reported for August.</summary>
-        public double? AugustAmount { get; set; }
+        public double? AugustAmount { get => _explicitNullValueAugustAmount; set { _explicitNullValueAugustAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("august_amount"); else _explicitNullProperties?.Remove("august_amount"); } }
+        private double? _explicitNullValueAugustAmount = default!;
         /// <summary>Amount in card not present transactions.</summary>
-        public double? CardNotPresentTransaction { get; set; }
+        public double? CardNotPresentTransaction { get => _explicitNullValueCardNotPresentTransaction; set { _explicitNullValueCardNotPresentTransaction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card_not_present_transaction"); else _explicitNullProperties?.Remove("card_not_present_transaction"); } }
+        private double? _explicitNullValueCardNotPresentTransaction = default!;
         /// <summary>Amount of crop insurance proceeds.</summary>
-        public double? CropInsuranceProceeds { get; set; }
+        public double? CropInsuranceProceeds { get => _explicitNullValueCropInsuranceProceeds; set { _explicitNullValueCropInsuranceProceeds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crop_insurance_proceeds"); else _explicitNullProperties?.Remove("crop_insurance_proceeds"); } }
+        private double? _explicitNullValueCropInsuranceProceeds = default!;
         /// <summary>Amount reported for December.</summary>
-        public double? DecemberAmount { get; set; }
+        public double? DecemberAmount { get => _explicitNullValueDecemberAmount; set { _explicitNullValueDecemberAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("december_amount"); else _explicitNullProperties?.Remove("december_amount"); } }
+        private double? _explicitNullValueDecemberAmount = default!;
         /// <summary>An identifier of the document referenced by the document metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentId { get; set; }
+        public string? DocumentId { get => _explicitNullValueDocumentId; set { _explicitNullValueDocumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_id"); else _explicitNullProperties?.Remove("document_id"); } }
+        private string? _explicitNullValueDocumentId = default!;
 #nullable restore
 #else
-        public string DocumentId { get; set; }
+        public string DocumentId { get => _explicitNullValueDocumentId; set { _explicitNullValueDocumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_id"); else _explicitNullProperties?.Remove("document_id"); } }
+        private string _explicitNullValueDocumentId = default!;
 #endif
         /// <summary>Object representing metadata pertaining to the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata? DocumentMetadata { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata? DocumentMetadata { get => _explicitNullValueDocumentMetadata; set { _explicitNullValueDocumentMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_metadata"); else _explicitNullProperties?.Remove("document_metadata"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata? _explicitNullValueDocumentMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata DocumentMetadata { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata DocumentMetadata { get => _explicitNullValueDocumentMetadata; set { _explicitNullValueDocumentMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_metadata"); else _explicitNullProperties?.Remove("document_metadata"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata _explicitNullValueDocumentMetadata = default!;
 #endif
         /// <summary>Amount of golden parachute payments made by payer.</summary>
-        public double? ExcessGoldenParachutePayments { get; set; }
+        public double? ExcessGoldenParachutePayments { get => _explicitNullValueExcessGoldenParachutePayments; set { _explicitNullValueExcessGoldenParachutePayments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excess_golden_parachute_payments"); else _explicitNullProperties?.Remove("excess_golden_parachute_payments"); } }
+        private double? _explicitNullValueExcessGoldenParachutePayments = default!;
         /// <summary>Amount reported for February.</summary>
-        public double? FebruaryAmount { get; set; }
+        public double? FebruaryAmount { get => _explicitNullValueFebruaryAmount; set { _explicitNullValueFebruaryAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("february_amount"); else _explicitNullProperties?.Remove("february_amount"); } }
+        private double? _explicitNullValueFebruaryAmount = default!;
         /// <summary>Amount of federal income tax withheld from payer.</summary>
-        public double? FederalIncomeTaxWithheld { get; set; }
+        public double? FederalIncomeTaxWithheld { get => _explicitNullValueFederalIncomeTaxWithheld; set { _explicitNullValueFederalIncomeTaxWithheld = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("federal_income_tax_withheld"); else _explicitNullProperties?.Remove("federal_income_tax_withheld"); } }
+        private double? _explicitNullValueFederalIncomeTaxWithheld = default!;
         /// <summary>An object representing a filer used by 1099-K tax documents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.Credit1099Filer? Filer { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Credit1099Filer? Filer { get => _explicitNullValueFiler; set { _explicitNullValueFiler = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filer"); else _explicitNullProperties?.Remove("filer"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Credit1099Filer? _explicitNullValueFiler = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.Credit1099Filer Filer { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Credit1099Filer Filer { get => _explicitNullValueFiler; set { _explicitNullValueFiler = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filer"); else _explicitNullProperties?.Remove("filer"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Credit1099Filer _explicitNullValueFiler = default!;
 #endif
         /// <summary>Amount of fishing boat proceeds from payer.</summary>
-        public double? FishingBoatProceeds { get; set; }
+        public double? FishingBoatProceeds { get => _explicitNullValueFishingBoatProceeds; set { _explicitNullValueFishingBoatProceeds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fishing_boat_proceeds"); else _explicitNullProperties?.Remove("fishing_boat_proceeds"); } }
+        private double? _explicitNullValueFishingBoatProceeds = default!;
         /// <summary>Form 1099 Type</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.Form1099Type? Form1099Type { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Form1099Type? Form1099Type { get => _explicitNullValueForm1099Type; set { _explicitNullValueForm1099Type = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("form_1099_type"); else _explicitNullProperties?.Remove("form_1099_type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Form1099Type? _explicitNullValueForm1099Type = default!;
         /// <summary>Gross amount reported.</summary>
-        public double? GrossAmount { get; set; }
+        public double? GrossAmount { get => _explicitNullValueGrossAmount; set { _explicitNullValueGrossAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gross_amount"); else _explicitNullProperties?.Remove("gross_amount"); } }
+        private double? _explicitNullValueGrossAmount = default!;
         /// <summary>Amount of gross proceeds paid to an attorney by payer.</summary>
-        public double? GrossProceedsPaidToAnAttorney { get; set; }
+        public double? GrossProceedsPaidToAnAttorney { get => _explicitNullValueGrossProceedsPaidToAnAttorney; set { _explicitNullValueGrossProceedsPaidToAnAttorney = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gross_proceeds_paid_to_an_attorney"); else _explicitNullProperties?.Remove("gross_proceeds_paid_to_an_attorney"); } }
+        private double? _explicitNullValueGrossProceedsPaidToAnAttorney = default!;
         /// <summary>Amount reported for January.</summary>
-        public double? JanuaryAmount { get; set; }
+        public double? JanuaryAmount { get => _explicitNullValueJanuaryAmount; set { _explicitNullValueJanuaryAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("january_amount"); else _explicitNullProperties?.Remove("january_amount"); } }
+        private double? _explicitNullValueJanuaryAmount = default!;
         /// <summary>Amount reported for July.</summary>
-        public double? JulyAmount { get; set; }
+        public double? JulyAmount { get => _explicitNullValueJulyAmount; set { _explicitNullValueJulyAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("july_amount"); else _explicitNullProperties?.Remove("july_amount"); } }
+        private double? _explicitNullValueJulyAmount = default!;
         /// <summary>Amount reported for June.</summary>
-        public double? JuneAmount { get; set; }
+        public double? JuneAmount { get => _explicitNullValueJuneAmount; set { _explicitNullValueJuneAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("june_amount"); else _explicitNullProperties?.Remove("june_amount"); } }
+        private double? _explicitNullValueJuneAmount = default!;
         /// <summary>Amount reported for March.</summary>
-        public double? MarchAmount { get; set; }
+        public double? MarchAmount { get => _explicitNullValueMarchAmount; set { _explicitNullValueMarchAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("march_amount"); else _explicitNullProperties?.Remove("march_amount"); } }
+        private double? _explicitNullValueMarchAmount = default!;
         /// <summary>Amount reported for May.</summary>
-        public double? MayAmount { get; set; }
+        public double? MayAmount { get => _explicitNullValueMayAmount; set { _explicitNullValueMayAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("may_amount"); else _explicitNullProperties?.Remove("may_amount"); } }
+        private double? _explicitNullValueMayAmount = default!;
         /// <summary>Amount of medical and healthcare payments from payer.</summary>
-        public double? MedicalAndHealthcarePayments { get; set; }
+        public double? MedicalAndHealthcarePayments { get => _explicitNullValueMedicalAndHealthcarePayments; set { _explicitNullValueMedicalAndHealthcarePayments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("medical_and_healthcare_payments"); else _explicitNullProperties?.Remove("medical_and_healthcare_payments"); } }
+        private double? _explicitNullValueMedicalAndHealthcarePayments = default!;
         /// <summary>Merchant category of filer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantCategoryCode { get; set; }
+        public string? MerchantCategoryCode { get => _explicitNullValueMerchantCategoryCode; set { _explicitNullValueMerchantCategoryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant_category_code"); else _explicitNullProperties?.Remove("merchant_category_code"); } }
+        private string? _explicitNullValueMerchantCategoryCode = default!;
 #nullable restore
 #else
-        public string MerchantCategoryCode { get; set; }
+        public string MerchantCategoryCode { get => _explicitNullValueMerchantCategoryCode; set { _explicitNullValueMerchantCategoryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant_category_code"); else _explicitNullProperties?.Remove("merchant_category_code"); } }
+        private string _explicitNullValueMerchantCategoryCode = default!;
 #endif
         /// <summary>Amount of nonemployee compensation from payer.</summary>
-        public double? NonemployeeCompensation { get; set; }
+        public double? NonemployeeCompensation { get => _explicitNullValueNonemployeeCompensation; set { _explicitNullValueNonemployeeCompensation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nonemployee_compensation"); else _explicitNullProperties?.Remove("nonemployee_compensation"); } }
+        private double? _explicitNullValueNonemployeeCompensation = default!;
         /// <summary>Amount reported for November.</summary>
-        public double? NovemberAmount { get; set; }
+        public double? NovemberAmount { get => _explicitNullValueNovemberAmount; set { _explicitNullValueNovemberAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("november_amount"); else _explicitNullProperties?.Remove("november_amount"); } }
+        private double? _explicitNullValueNovemberAmount = default!;
         /// <summary>Number of payment transactions made.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NumberOfPaymentTransactions { get; set; }
+        public string? NumberOfPaymentTransactions { get => _explicitNullValueNumberOfPaymentTransactions; set { _explicitNullValueNumberOfPaymentTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number_of_payment_transactions"); else _explicitNullProperties?.Remove("number_of_payment_transactions"); } }
+        private string? _explicitNullValueNumberOfPaymentTransactions = default!;
 #nullable restore
 #else
-        public string NumberOfPaymentTransactions { get; set; }
+        public string NumberOfPaymentTransactions { get => _explicitNullValueNumberOfPaymentTransactions; set { _explicitNullValueNumberOfPaymentTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number_of_payment_transactions"); else _explicitNullProperties?.Remove("number_of_payment_transactions"); } }
+        private string _explicitNullValueNumberOfPaymentTransactions = default!;
 #endif
         /// <summary>Amount reported for October.</summary>
-        public double? OctoberAmount { get; set; }
+        public double? OctoberAmount { get => _explicitNullValueOctoberAmount; set { _explicitNullValueOctoberAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("october_amount"); else _explicitNullProperties?.Remove("october_amount"); } }
+        private double? _explicitNullValueOctoberAmount = default!;
         /// <summary>Amount in other income by payer.</summary>
-        public double? OtherIncome { get; set; }
+        public double? OtherIncome { get => _explicitNullValueOtherIncome; set { _explicitNullValueOtherIncome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other_income"); else _explicitNullProperties?.Remove("other_income"); } }
+        private double? _explicitNullValueOtherIncome = default!;
         /// <summary>An object representing a payer used by 1099-MISC tax documents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.Credit1099Payer? Payer { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Credit1099Payer? Payer { get => _explicitNullValuePayer; set { _explicitNullValuePayer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payer"); else _explicitNullProperties?.Remove("payer"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Credit1099Payer? _explicitNullValuePayer = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.Credit1099Payer Payer { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Credit1099Payer Payer { get => _explicitNullValuePayer; set { _explicitNullValuePayer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payer"); else _explicitNullProperties?.Remove("payer"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Credit1099Payer _explicitNullValuePayer = default!;
 #endif
         /// <summary>Whether or not payer made direct sales over $5000 of consumer products.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayerMadeDirectSalesOf5000OrMoreOfConsumerProductsToBuyer { get; set; }
+        public string? PayerMadeDirectSalesOf5000OrMoreOfConsumerProductsToBuyer { get => _explicitNullValuePayerMadeDirectSalesOf5000OrMoreOfConsumerProductsToBuyer; set { _explicitNullValuePayerMadeDirectSalesOf5000OrMoreOfConsumerProductsToBuyer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payer_made_direct_sales_of_5000_or_more_of_consumer_products_to_buyer"); else _explicitNullProperties?.Remove("payer_made_direct_sales_of_5000_or_more_of_consumer_products_to_buyer"); } }
+        private string? _explicitNullValuePayerMadeDirectSalesOf5000OrMoreOfConsumerProductsToBuyer = default!;
 #nullable restore
 #else
-        public string PayerMadeDirectSalesOf5000OrMoreOfConsumerProductsToBuyer { get; set; }
+        public string PayerMadeDirectSalesOf5000OrMoreOfConsumerProductsToBuyer { get => _explicitNullValuePayerMadeDirectSalesOf5000OrMoreOfConsumerProductsToBuyer; set { _explicitNullValuePayerMadeDirectSalesOf5000OrMoreOfConsumerProductsToBuyer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payer_made_direct_sales_of_5000_or_more_of_consumer_products_to_buyer"); else _explicitNullProperties?.Remove("payer_made_direct_sales_of_5000_or_more_of_consumer_products_to_buyer"); } }
+        private string _explicitNullValuePayerMadeDirectSalesOf5000OrMoreOfConsumerProductsToBuyer = default!;
 #endif
         /// <summary>Primary state ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayerStateNumber { get; set; }
+        public string? PayerStateNumber { get => _explicitNullValuePayerStateNumber; set { _explicitNullValuePayerStateNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payer_state_number"); else _explicitNullProperties?.Remove("payer_state_number"); } }
+        private string? _explicitNullValuePayerStateNumber = default!;
 #nullable restore
 #else
-        public string PayerStateNumber { get; set; }
+        public string PayerStateNumber { get => _explicitNullValuePayerStateNumber; set { _explicitNullValuePayerStateNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payer_state_number"); else _explicitNullProperties?.Remove("payer_state_number"); } }
+        private string _explicitNullValuePayerStateNumber = default!;
 #endif
         /// <summary>Secondary state ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayerStateNumberLower { get; set; }
+        public string? PayerStateNumberLower { get => _explicitNullValuePayerStateNumberLower; set { _explicitNullValuePayerStateNumberLower = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payer_state_number_lower"); else _explicitNullProperties?.Remove("payer_state_number_lower"); } }
+        private string? _explicitNullValuePayerStateNumberLower = default!;
 #nullable restore
 #else
-        public string PayerStateNumberLower { get; set; }
+        public string PayerStateNumberLower { get => _explicitNullValuePayerStateNumberLower; set { _explicitNullValuePayerStateNumberLower = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payer_state_number_lower"); else _explicitNullProperties?.Remove("payer_state_number_lower"); } }
+        private string _explicitNullValuePayerStateNumberLower = default!;
 #endif
         /// <summary>Primary state of business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrimaryState { get; set; }
+        public string? PrimaryState { get => _explicitNullValuePrimaryState; set { _explicitNullValuePrimaryState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_state"); else _explicitNullProperties?.Remove("primary_state"); } }
+        private string? _explicitNullValuePrimaryState = default!;
 #nullable restore
 #else
-        public string PrimaryState { get; set; }
+        public string PrimaryState { get => _explicitNullValuePrimaryState; set { _explicitNullValuePrimaryState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_state"); else _explicitNullProperties?.Remove("primary_state"); } }
+        private string _explicitNullValuePrimaryState = default!;
 #endif
         /// <summary>Primary state ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrimaryStateId { get; set; }
+        public string? PrimaryStateId { get => _explicitNullValuePrimaryStateId; set { _explicitNullValuePrimaryStateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_state_id"); else _explicitNullProperties?.Remove("primary_state_id"); } }
+        private string? _explicitNullValuePrimaryStateId = default!;
 #nullable restore
 #else
-        public string PrimaryStateId { get; set; }
+        public string PrimaryStateId { get => _explicitNullValuePrimaryStateId; set { _explicitNullValuePrimaryStateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_state_id"); else _explicitNullProperties?.Remove("primary_state_id"); } }
+        private string _explicitNullValuePrimaryStateId = default!;
 #endif
         /// <summary>State income tax reported for primary state.</summary>
-        public double? PrimaryStateIncomeTax { get; set; }
+        public double? PrimaryStateIncomeTax { get => _explicitNullValuePrimaryStateIncomeTax; set { _explicitNullValuePrimaryStateIncomeTax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_state_income_tax"); else _explicitNullProperties?.Remove("primary_state_income_tax"); } }
+        private double? _explicitNullValuePrimaryStateIncomeTax = default!;
         /// <summary>Name of the PSE (Payment Settlement Entity).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PseName { get; set; }
+        public string? PseName { get => _explicitNullValuePseName; set { _explicitNullValuePseName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pse_name"); else _explicitNullProperties?.Remove("pse_name"); } }
+        private string? _explicitNullValuePseName = default!;
 #nullable restore
 #else
-        public string PseName { get; set; }
+        public string PseName { get => _explicitNullValuePseName; set { _explicitNullValuePseName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pse_name"); else _explicitNullProperties?.Remove("pse_name"); } }
+        private string _explicitNullValuePseName = default!;
 #endif
         /// <summary>Formatted (XXX) XXX-XXXX. Phone number of the PSE (Payment Settlement Entity).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PseTelephoneNumber { get; set; }
+        public string? PseTelephoneNumber { get => _explicitNullValuePseTelephoneNumber; set { _explicitNullValuePseTelephoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pse_telephone_number"); else _explicitNullProperties?.Remove("pse_telephone_number"); } }
+        private string? _explicitNullValuePseTelephoneNumber = default!;
 #nullable restore
 #else
-        public string PseTelephoneNumber { get; set; }
+        public string PseTelephoneNumber { get => _explicitNullValuePseTelephoneNumber; set { _explicitNullValuePseTelephoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pse_telephone_number"); else _explicitNullProperties?.Remove("pse_telephone_number"); } }
+        private string _explicitNullValuePseTelephoneNumber = default!;
 #endif
         /// <summary>An object representing a recipient used in both 1099-K and 1099-MISC tax documents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.Credit1099Recipient? Recipient { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Credit1099Recipient? Recipient { get => _explicitNullValueRecipient; set { _explicitNullValueRecipient = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipient"); else _explicitNullProperties?.Remove("recipient"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Credit1099Recipient? _explicitNullValueRecipient = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.Credit1099Recipient Recipient { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Credit1099Recipient Recipient { get => _explicitNullValueRecipient; set { _explicitNullValueRecipient = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipient"); else _explicitNullProperties?.Remove("recipient"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Credit1099Recipient _explicitNullValueRecipient = default!;
 #endif
         /// <summary>Amount in rent by payer.</summary>
-        public double? Rents { get; set; }
+        public double? Rents { get => _explicitNullValueRents; set { _explicitNullValueRents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rents"); else _explicitNullProperties?.Remove("rents"); } }
+        private double? _explicitNullValueRents = default!;
         /// <summary>Amount in royalties by payer.</summary>
-        public double? Royalties { get; set; }
+        public double? Royalties { get => _explicitNullValueRoyalties; set { _explicitNullValueRoyalties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("royalties"); else _explicitNullProperties?.Remove("royalties"); } }
+        private double? _explicitNullValueRoyalties = default!;
         /// <summary>Secondary state of business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecondaryState { get; set; }
+        public string? SecondaryState { get => _explicitNullValueSecondaryState; set { _explicitNullValueSecondaryState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondary_state"); else _explicitNullProperties?.Remove("secondary_state"); } }
+        private string? _explicitNullValueSecondaryState = default!;
 #nullable restore
 #else
-        public string SecondaryState { get; set; }
+        public string SecondaryState { get => _explicitNullValueSecondaryState; set { _explicitNullValueSecondaryState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondary_state"); else _explicitNullProperties?.Remove("secondary_state"); } }
+        private string _explicitNullValueSecondaryState = default!;
 #endif
         /// <summary>Secondary state ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecondaryStateId { get; set; }
+        public string? SecondaryStateId { get => _explicitNullValueSecondaryStateId; set { _explicitNullValueSecondaryStateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondary_state_id"); else _explicitNullProperties?.Remove("secondary_state_id"); } }
+        private string? _explicitNullValueSecondaryStateId = default!;
 #nullable restore
 #else
-        public string SecondaryStateId { get; set; }
+        public string SecondaryStateId { get => _explicitNullValueSecondaryStateId; set { _explicitNullValueSecondaryStateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondary_state_id"); else _explicitNullProperties?.Remove("secondary_state_id"); } }
+        private string _explicitNullValueSecondaryStateId = default!;
 #endif
         /// <summary>State income tax reported for secondary state.</summary>
-        public double? SecondaryStateIncomeTax { get; set; }
+        public double? SecondaryStateIncomeTax { get => _explicitNullValueSecondaryStateIncomeTax; set { _explicitNullValueSecondaryStateIncomeTax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondary_state_income_tax"); else _explicitNullProperties?.Remove("secondary_state_income_tax"); } }
+        private double? _explicitNullValueSecondaryStateIncomeTax = default!;
         /// <summary>Amount of 409A deferrals earned by payer.</summary>
-        public double? Section409aDeferrals { get; set; }
+        public double? Section409aDeferrals { get => _explicitNullValueSection409aDeferrals; set { _explicitNullValueSection409aDeferrals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("section_409a_deferrals"); else _explicitNullProperties?.Remove("section_409a_deferrals"); } }
+        private double? _explicitNullValueSection409aDeferrals = default!;
         /// <summary>Amount of 409A income earned by payer.</summary>
-        public double? Section409aIncome { get; set; }
+        public double? Section409aIncome { get => _explicitNullValueSection409aIncome; set { _explicitNullValueSection409aIncome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("section_409a_income"); else _explicitNullProperties?.Remove("section_409a_income"); } }
+        private double? _explicitNullValueSection409aIncome = default!;
         /// <summary>Amount reported for September.</summary>
-        public double? SeptemberAmount { get; set; }
+        public double? SeptemberAmount { get => _explicitNullValueSeptemberAmount; set { _explicitNullValueSeptemberAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("september_amount"); else _explicitNullProperties?.Remove("september_amount"); } }
+        private double? _explicitNullValueSeptemberAmount = default!;
         /// <summary>State income reported for primary state.</summary>
-        public double? StateIncome { get; set; }
+        public double? StateIncome { get => _explicitNullValueStateIncome; set { _explicitNullValueStateIncome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state_income"); else _explicitNullProperties?.Remove("state_income"); } }
+        private double? _explicitNullValueStateIncome = default!;
         /// <summary>State income reported for secondary state.</summary>
-        public double? StateIncomeLower { get; set; }
+        public double? StateIncomeLower { get => _explicitNullValueStateIncomeLower; set { _explicitNullValueStateIncomeLower = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state_income_lower"); else _explicitNullProperties?.Remove("state_income_lower"); } }
+        private double? _explicitNullValueStateIncomeLower = default!;
         /// <summary>Amount of state tax withheld of payer for primary state.</summary>
-        public double? StateTaxWithheld { get; set; }
+        public double? StateTaxWithheld { get => _explicitNullValueStateTaxWithheld; set { _explicitNullValueStateTaxWithheld = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state_tax_withheld"); else _explicitNullProperties?.Remove("state_tax_withheld"); } }
+        private double? _explicitNullValueStateTaxWithheld = default!;
         /// <summary>Amount of state tax withheld of payer for secondary state.</summary>
-        public double? StateTaxWithheldLower { get; set; }
+        public double? StateTaxWithheldLower { get => _explicitNullValueStateTaxWithheldLower; set { _explicitNullValueStateTaxWithheldLower = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state_tax_withheld_lower"); else _explicitNullProperties?.Remove("state_tax_withheld_lower"); } }
+        private double? _explicitNullValueStateTaxWithheldLower = default!;
         /// <summary>Amount of substitute payments made by payer.</summary>
-        public double? SubstitutePaymentsInLieuOfDividendsOrInterest { get; set; }
+        public double? SubstitutePaymentsInLieuOfDividendsOrInterest { get => _explicitNullValueSubstitutePaymentsInLieuOfDividendsOrInterest; set { _explicitNullValueSubstitutePaymentsInLieuOfDividendsOrInterest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("substitute_payments_in_lieu_of_dividends_or_interest"); else _explicitNullProperties?.Remove("substitute_payments_in_lieu_of_dividends_or_interest"); } }
+        private double? _explicitNullValueSubstitutePaymentsInLieuOfDividendsOrInterest = default!;
         /// <summary>Tax year of the tax form.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxYear { get; set; }
+        public string? TaxYear { get => _explicitNullValueTaxYear; set { _explicitNullValueTaxYear = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax_year"); else _explicitNullProperties?.Remove("tax_year"); } }
+        private string? _explicitNullValueTaxYear = default!;
 #nullable restore
 #else
-        public string TaxYear { get; set; }
+        public string TaxYear { get => _explicitNullValueTaxYear; set { _explicitNullValueTaxYear = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax_year"); else _explicitNullProperties?.Remove("tax_year"); } }
+        private string _explicitNullValueTaxYear = default!;
 #endif
         /// <summary>One of the values will be provided Payment card Third party network</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TransactionsReported { get; set; }
+        public string? TransactionsReported { get => _explicitNullValueTransactionsReported; set { _explicitNullValueTransactionsReported = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactions_reported"); else _explicitNullProperties?.Remove("transactions_reported"); } }
+        private string? _explicitNullValueTransactionsReported = default!;
 #nullable restore
 #else
-        public string TransactionsReported { get; set; }
+        public string TransactionsReported { get => _explicitNullValueTransactionsReported; set { _explicitNullValueTransactionsReported = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactions_reported"); else _explicitNullProperties?.Remove("transactions_reported"); } }
+        private string _explicitNullValueTransactionsReported = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.Credit1099"/> and sets the default values.
@@ -242,7 +371,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.Credit1099 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.Credit1099();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.Credit1099(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -365,6 +494,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDoubleValue("substitute_payments_in_lieu_of_dividends_or_interest", SubstitutePaymentsInLieuOfDividendsOrInterest);
             writer.WriteStringValue("tax_year", TaxYear);
             writer.WriteStringValue("transactions_reported", TransactionsReported);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

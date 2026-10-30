@@ -12,20 +12,34 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PartnerEndCustomerBankAddendumAcceptance : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("customer_accepted") is { } nullNodeCustomerAccepted && nullNodeCustomerAccepted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerAccepted = null;
+            if (parseNode.GetChildNode("customer_agreement_timestamp") is { } nullNodeCustomerAgreementTimestamp && nullNodeCustomerAgreementTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerAgreementTimestamp = null;
+            if (parseNode.GetChildNode("customer_ip_address") is { } nullNodeCustomerIpAddress && nullNodeCustomerIpAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerIpAddress = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Denotes whether the end customer has accepted the bank addendum terms.</summary>
-        public bool? CustomerAccepted { get; set; }
+        public bool? CustomerAccepted { get => _explicitNullValueCustomerAccepted; set { _explicitNullValueCustomerAccepted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_accepted"); else _explicitNullProperties?.Remove("customer_accepted"); } }
+        private bool? _explicitNullValueCustomerAccepted = default!;
         /// <summary>The timestamp of when the end customer accepted the bank addendum in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (`YYYY-MM-DDTHH:mm:ssZ`).</summary>
-        public DateTimeOffset? CustomerAgreementTimestamp { get; set; }
+        public DateTimeOffset? CustomerAgreementTimestamp { get => _explicitNullValueCustomerAgreementTimestamp; set { _explicitNullValueCustomerAgreementTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_agreement_timestamp"); else _explicitNullProperties?.Remove("customer_agreement_timestamp"); } }
+        private DateTimeOffset? _explicitNullValueCustomerAgreementTimestamp = default!;
         /// <summary>The IP address of the end customer when they accepted the bank addendum.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerIpAddress { get; set; }
+        public string? CustomerIpAddress { get => _explicitNullValueCustomerIpAddress; set { _explicitNullValueCustomerIpAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_ip_address"); else _explicitNullProperties?.Remove("customer_ip_address"); } }
+        private string? _explicitNullValueCustomerIpAddress = default!;
 #nullable restore
 #else
-        public string CustomerIpAddress { get; set; }
+        public string CustomerIpAddress { get => _explicitNullValueCustomerIpAddress; set { _explicitNullValueCustomerIpAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_ip_address"); else _explicitNullProperties?.Remove("customer_ip_address"); } }
+        private string _explicitNullValueCustomerIpAddress = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerBankAddendumAcceptance"/> and sets the default values.
@@ -42,7 +56,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerBankAddendumAcceptance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerBankAddendumAcceptance();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerBankAddendumAcceptance(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,6 +81,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteBoolValue("customer_accepted", CustomerAccepted);
             writer.WriteDateTimeOffsetValue("customer_agreement_timestamp", CustomerAgreementTimestamp);
             writer.WriteStringValue("customer_ip_address", CustomerIpAddress);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

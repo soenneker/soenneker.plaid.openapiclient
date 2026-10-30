@@ -13,52 +13,78 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreditI20Student : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("given_name") is { } nullNodeGivenName && nullNodeGivenName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GivenName = null;
+            if (parseNode.GetChildNode("passport_name") is { } nullNodePassportName && nullNodePassportName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PassportName = null;
+            if (parseNode.GetChildNode("preferred_name") is { } nullNodePreferredName && nullNodePreferredName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreferredName = null;
+            if (parseNode.GetChildNode("program_end_date") is { } nullNodeProgramEndDate && nullNodeProgramEndDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProgramEndDate = null;
+            if (parseNode.GetChildNode("program_start_date") is { } nullNodeProgramStartDate && nullNodeProgramStartDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProgramStartDate = null;
+            if (parseNode.GetChildNode("school_name") is { } nullNodeSchoolName && nullNodeSchoolName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchoolName = null;
+            if (parseNode.GetChildNode("surname_primary_name") is { } nullNodeSurnamePrimaryName && nullNodeSurnamePrimaryName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SurnamePrimaryName = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Given name of the student.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GivenName { get; set; }
+        public string? GivenName { get => _explicitNullValueGivenName; set { _explicitNullValueGivenName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("given_name"); else _explicitNullProperties?.Remove("given_name"); } }
+        private string? _explicitNullValueGivenName = default!;
 #nullable restore
 #else
-        public string GivenName { get; set; }
+        public string GivenName { get => _explicitNullValueGivenName; set { _explicitNullValueGivenName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("given_name"); else _explicitNullProperties?.Remove("given_name"); } }
+        private string _explicitNullValueGivenName = default!;
 #endif
         /// <summary>Name of the student as it appears on their passport.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PassportName { get; set; }
+        public string? PassportName { get => _explicitNullValuePassportName; set { _explicitNullValuePassportName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passport_name"); else _explicitNullProperties?.Remove("passport_name"); } }
+        private string? _explicitNullValuePassportName = default!;
 #nullable restore
 #else
-        public string PassportName { get; set; }
+        public string PassportName { get => _explicitNullValuePassportName; set { _explicitNullValuePassportName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passport_name"); else _explicitNullProperties?.Remove("passport_name"); } }
+        private string _explicitNullValuePassportName = default!;
 #endif
         /// <summary>Preferred name of the student.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreferredName { get; set; }
+        public string? PreferredName { get => _explicitNullValuePreferredName; set { _explicitNullValuePreferredName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferred_name"); else _explicitNullProperties?.Remove("preferred_name"); } }
+        private string? _explicitNullValuePreferredName = default!;
 #nullable restore
 #else
-        public string PreferredName { get; set; }
+        public string PreferredName { get => _explicitNullValuePreferredName; set { _explicitNullValuePreferredName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferred_name"); else _explicitNullProperties?.Remove("preferred_name"); } }
+        private string _explicitNullValuePreferredName = default!;
 #endif
         /// <summary>End date of the program in ISO 8601 format (YYYY-MM-DD).</summary>
-        public Date? ProgramEndDate { get; set; }
+        public Date? ProgramEndDate { get => _explicitNullValueProgramEndDate; set { _explicitNullValueProgramEndDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("program_end_date"); else _explicitNullProperties?.Remove("program_end_date"); } }
+        private Date? _explicitNullValueProgramEndDate = default!;
         /// <summary>Start date of the program in ISO 8601 format (YYYY-MM-DD).</summary>
-        public Date? ProgramStartDate { get; set; }
+        public Date? ProgramStartDate { get => _explicitNullValueProgramStartDate; set { _explicitNullValueProgramStartDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("program_start_date"); else _explicitNullProperties?.Remove("program_start_date"); } }
+        private Date? _explicitNullValueProgramStartDate = default!;
         /// <summary>Name of the school issuing the Form I-20.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SchoolName { get; set; }
+        public string? SchoolName { get => _explicitNullValueSchoolName; set { _explicitNullValueSchoolName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("school_name"); else _explicitNullProperties?.Remove("school_name"); } }
+        private string? _explicitNullValueSchoolName = default!;
 #nullable restore
 #else
-        public string SchoolName { get; set; }
+        public string SchoolName { get => _explicitNullValueSchoolName; set { _explicitNullValueSchoolName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("school_name"); else _explicitNullProperties?.Remove("school_name"); } }
+        private string _explicitNullValueSchoolName = default!;
 #endif
         /// <summary>Surname or primary name of the student.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SurnamePrimaryName { get; set; }
+        public string? SurnamePrimaryName { get => _explicitNullValueSurnamePrimaryName; set { _explicitNullValueSurnamePrimaryName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("surname_primary_name"); else _explicitNullProperties?.Remove("surname_primary_name"); } }
+        private string? _explicitNullValueSurnamePrimaryName = default!;
 #nullable restore
 #else
-        public string SurnamePrimaryName { get; set; }
+        public string SurnamePrimaryName { get => _explicitNullValueSurnamePrimaryName; set { _explicitNullValueSurnamePrimaryName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("surname_primary_name"); else _explicitNullProperties?.Remove("surname_primary_name"); } }
+        private string _explicitNullValueSurnamePrimaryName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CreditI20Student"/> and sets the default values.
@@ -75,7 +101,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CreditI20Student CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CreditI20Student();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CreditI20Student(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +134,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDateValue("program_start_date", ProgramStartDate);
             writer.WriteStringValue("school_name", SchoolName);
             writer.WriteStringValue("surname_primary_name", SurnamePrimaryName);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

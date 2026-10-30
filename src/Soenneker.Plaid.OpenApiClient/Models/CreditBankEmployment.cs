@@ -13,37 +13,57 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreditBankEmployment : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_id") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
+            if (parseNode.GetChildNode("bank_employment_id") is { } nullNodeBankEmploymentId && nullNodeBankEmploymentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankEmploymentId = null;
+            if (parseNode.GetChildNode("earliest_deposit_date") is { } nullNodeEarliestDepositDate && nullNodeEarliestDepositDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EarliestDepositDate = null;
+            if (parseNode.GetChildNode("employer") is { } nullNodeEmployer && nullNodeEmployer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Employer = null;
+            if (parseNode.GetChildNode("latest_deposit_date") is { } nullNodeLatestDepositDate && nullNodeLatestDepositDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatestDepositDate = null;
+        }
+
         /// <summary>Plaid&apos;s unique identifier for the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountId { get; set; }
+        public string? AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        private string? _explicitNullValueAccountId = default!;
 #nullable restore
 #else
-        public string AccountId { get; set; }
+        public string AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        private string _explicitNullValueAccountId = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A unique identifier for the bank employment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BankEmploymentId { get; set; }
+        public string? BankEmploymentId { get => _explicitNullValueBankEmploymentId; set { _explicitNullValueBankEmploymentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_employment_id"); else _explicitNullProperties?.Remove("bank_employment_id"); } }
+        private string? _explicitNullValueBankEmploymentId = default!;
 #nullable restore
 #else
-        public string BankEmploymentId { get; set; }
+        public string BankEmploymentId { get => _explicitNullValueBankEmploymentId; set { _explicitNullValueBankEmploymentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_employment_id"); else _explicitNullProperties?.Remove("bank_employment_id"); } }
+        private string _explicitNullValueBankEmploymentId = default!;
 #endif
         /// <summary>The date of the earliest deposit from this employer from within the period of the days requested.</summary>
-        public Date? EarliestDepositDate { get; set; }
+        public Date? EarliestDepositDate { get => _explicitNullValueEarliestDepositDate; set { _explicitNullValueEarliestDepositDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("earliest_deposit_date"); else _explicitNullProperties?.Remove("earliest_deposit_date"); } }
+        private Date? _explicitNullValueEarliestDepositDate = default!;
         /// <summary>Object containing employer data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditBankEmployer? Employer { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditBankEmployer? Employer { get => _explicitNullValueEmployer; set { _explicitNullValueEmployer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employer"); else _explicitNullProperties?.Remove("employer"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditBankEmployer? _explicitNullValueEmployer = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditBankEmployer Employer { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditBankEmployer Employer { get => _explicitNullValueEmployer; set { _explicitNullValueEmployer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employer"); else _explicitNullProperties?.Remove("employer"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditBankEmployer _explicitNullValueEmployer = default!;
 #endif
         /// <summary>The date of the most recent deposit from this employer.</summary>
-        public Date? LatestDepositDate { get; set; }
+        public Date? LatestDepositDate { get => _explicitNullValueLatestDepositDate; set { _explicitNullValueLatestDepositDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest_deposit_date"); else _explicitNullProperties?.Remove("latest_deposit_date"); } }
+        private Date? _explicitNullValueLatestDepositDate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CreditBankEmployment"/> and sets the default values.
         /// </summary>
@@ -59,7 +79,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CreditBankEmployment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CreditBankEmployment();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CreditBankEmployment(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +108,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDateValue("earliest_deposit_date", EarliestDepositDate);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankEmployer>("employer", Employer);
             writer.WriteDateValue("latest_deposit_date", LatestDepositDate);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

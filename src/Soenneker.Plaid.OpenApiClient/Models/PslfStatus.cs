@@ -14,15 +14,28 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [Obsolete("")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PslfStatus : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("estimated_eligibility_date") is { } nullNodeEstimatedEligibilityDate && nullNodeEstimatedEligibilityDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EstimatedEligibilityDate = null;
+            if (parseNode.GetChildNode("payments_made") is { } nullNodePaymentsMade && nullNodePaymentsMade.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentsMade = null;
+            if (parseNode.GetChildNode("payments_remaining") is { } nullNodePaymentsRemaining && nullNodePaymentsRemaining.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentsRemaining = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The estimated date borrower will have completed 120 qualifying monthly payments. Returned in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD).</summary>
-        public Date? EstimatedEligibilityDate { get; set; }
+        public Date? EstimatedEligibilityDate { get => _explicitNullValueEstimatedEligibilityDate; set { _explicitNullValueEstimatedEligibilityDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("estimated_eligibility_date"); else _explicitNullProperties?.Remove("estimated_eligibility_date"); } }
+        private Date? _explicitNullValueEstimatedEligibilityDate = default!;
         /// <summary>The number of qualifying payments that have been made.</summary>
-        public int? PaymentsMade { get; set; }
+        public int? PaymentsMade { get => _explicitNullValuePaymentsMade; set { _explicitNullValuePaymentsMade = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payments_made"); else _explicitNullProperties?.Remove("payments_made"); } }
+        private int? _explicitNullValuePaymentsMade = default!;
         /// <summary>The number of qualifying payments remaining.</summary>
-        public int? PaymentsRemaining { get; set; }
+        public int? PaymentsRemaining { get => _explicitNullValuePaymentsRemaining; set { _explicitNullValuePaymentsRemaining = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payments_remaining"); else _explicitNullProperties?.Remove("payments_remaining"); } }
+        private int? _explicitNullValuePaymentsRemaining = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PslfStatus"/> and sets the default values.
         /// </summary>
@@ -38,7 +51,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.PslfStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.PslfStatus();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.PslfStatus(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +76,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDateValue("estimated_eligibility_date", EstimatedEligibilityDate);
             writer.WriteIntValue("payments_made", PaymentsMade);
             writer.WriteIntValue("payments_remaining", PaymentsRemaining);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

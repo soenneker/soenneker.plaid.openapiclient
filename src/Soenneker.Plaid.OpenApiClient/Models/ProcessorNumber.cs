@@ -12,40 +12,59 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProcessorNumber : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ach") is { } nullNodeAch && nullNodeAch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ach = null;
+            if (parseNode.GetChildNode("bacs") is { } nullNodeBacs && nullNodeBacs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bacs = null;
+            if (parseNode.GetChildNode("eft") is { } nullNodeEft && nullNodeEft.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Eft = null;
+            if (parseNode.GetChildNode("international") is { } nullNodeInternational && nullNodeInternational.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) International = null;
+        }
+
         /// <summary>Identifying information for transferring money to or from a US account via ACH or wire transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersAchNullable? Ach { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersAchNullable? Ach { get => _explicitNullValueAch; set { _explicitNullValueAch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ach"); else _explicitNullProperties?.Remove("ach"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.NumbersAchNullable? _explicitNullValueAch = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersAchNullable Ach { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersAchNullable Ach { get => _explicitNullValueAch; set { _explicitNullValueAch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ach"); else _explicitNullProperties?.Remove("ach"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.NumbersAchNullable _explicitNullValueAch = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Identifying information for transferring money to or from a UK bank account via Bacs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersBacsNullable? Bacs { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersBacsNullable? Bacs { get => _explicitNullValueBacs; set { _explicitNullValueBacs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bacs"); else _explicitNullProperties?.Remove("bacs"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.NumbersBacsNullable? _explicitNullValueBacs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersBacsNullable Bacs { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersBacsNullable Bacs { get => _explicitNullValueBacs; set { _explicitNullValueBacs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bacs"); else _explicitNullProperties?.Remove("bacs"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.NumbersBacsNullable _explicitNullValueBacs = default!;
 #endif
         /// <summary>Identifying information for transferring money to or from a Canadian bank account via EFT.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersEftNullable? Eft { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersEftNullable? Eft { get => _explicitNullValueEft; set { _explicitNullValueEft = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eft"); else _explicitNullProperties?.Remove("eft"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.NumbersEftNullable? _explicitNullValueEft = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersEftNullable Eft { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersEftNullable Eft { get => _explicitNullValueEft; set { _explicitNullValueEft = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eft"); else _explicitNullProperties?.Remove("eft"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.NumbersEftNullable _explicitNullValueEft = default!;
 #endif
         /// <summary>Identifying information for transferring money to or from an international bank account via wire transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersInternationalNullable? International { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersInternationalNullable? International { get => _explicitNullValueInternational; set { _explicitNullValueInternational = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("international"); else _explicitNullProperties?.Remove("international"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.NumbersInternationalNullable? _explicitNullValueInternational = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersInternationalNullable International { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.NumbersInternationalNullable International { get => _explicitNullValueInternational; set { _explicitNullValueInternational = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("international"); else _explicitNullProperties?.Remove("international"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.NumbersInternationalNullable _explicitNullValueInternational = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ProcessorNumber"/> and sets the default values.
@@ -62,7 +81,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.ProcessorNumber CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.ProcessorNumber();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.ProcessorNumber(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +108,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NumbersBacsNullable>("bacs", Bacs);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NumbersEftNullable>("eft", Eft);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NumbersInternationalNullable>("international", International);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,40 +12,59 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransferMetricsGetAuthorizationUsage : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("daily_credit_utilization") is { } nullNodeDailyCreditUtilization && nullNodeDailyCreditUtilization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DailyCreditUtilization = null;
+            if (parseNode.GetChildNode("daily_debit_utilization") is { } nullNodeDailyDebitUtilization && nullNodeDailyDebitUtilization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DailyDebitUtilization = null;
+            if (parseNode.GetChildNode("monthly_credit_utilization") is { } nullNodeMonthlyCreditUtilization && nullNodeMonthlyCreditUtilization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonthlyCreditUtilization = null;
+            if (parseNode.GetChildNode("monthly_debit_utilization") is { } nullNodeMonthlyDebitUtilization && nullNodeMonthlyDebitUtilization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonthlyDebitUtilization = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The daily credit utilization formatted as a decimal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DailyCreditUtilization { get; set; }
+        public string? DailyCreditUtilization { get => _explicitNullValueDailyCreditUtilization; set { _explicitNullValueDailyCreditUtilization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_credit_utilization"); else _explicitNullProperties?.Remove("daily_credit_utilization"); } }
+        private string? _explicitNullValueDailyCreditUtilization = default!;
 #nullable restore
 #else
-        public string DailyCreditUtilization { get; set; }
+        public string DailyCreditUtilization { get => _explicitNullValueDailyCreditUtilization; set { _explicitNullValueDailyCreditUtilization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_credit_utilization"); else _explicitNullProperties?.Remove("daily_credit_utilization"); } }
+        private string _explicitNullValueDailyCreditUtilization = default!;
 #endif
         /// <summary>The daily debit utilization formatted as a decimal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DailyDebitUtilization { get; set; }
+        public string? DailyDebitUtilization { get => _explicitNullValueDailyDebitUtilization; set { _explicitNullValueDailyDebitUtilization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_debit_utilization"); else _explicitNullProperties?.Remove("daily_debit_utilization"); } }
+        private string? _explicitNullValueDailyDebitUtilization = default!;
 #nullable restore
 #else
-        public string DailyDebitUtilization { get; set; }
+        public string DailyDebitUtilization { get => _explicitNullValueDailyDebitUtilization; set { _explicitNullValueDailyDebitUtilization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_debit_utilization"); else _explicitNullProperties?.Remove("daily_debit_utilization"); } }
+        private string _explicitNullValueDailyDebitUtilization = default!;
 #endif
         /// <summary>The monthly credit utilization formatted as a decimal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MonthlyCreditUtilization { get; set; }
+        public string? MonthlyCreditUtilization { get => _explicitNullValueMonthlyCreditUtilization; set { _explicitNullValueMonthlyCreditUtilization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_credit_utilization"); else _explicitNullProperties?.Remove("monthly_credit_utilization"); } }
+        private string? _explicitNullValueMonthlyCreditUtilization = default!;
 #nullable restore
 #else
-        public string MonthlyCreditUtilization { get; set; }
+        public string MonthlyCreditUtilization { get => _explicitNullValueMonthlyCreditUtilization; set { _explicitNullValueMonthlyCreditUtilization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_credit_utilization"); else _explicitNullProperties?.Remove("monthly_credit_utilization"); } }
+        private string _explicitNullValueMonthlyCreditUtilization = default!;
 #endif
         /// <summary>The monthly debit utilization formatted as a decimal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MonthlyDebitUtilization { get; set; }
+        public string? MonthlyDebitUtilization { get => _explicitNullValueMonthlyDebitUtilization; set { _explicitNullValueMonthlyDebitUtilization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_debit_utilization"); else _explicitNullProperties?.Remove("monthly_debit_utilization"); } }
+        private string? _explicitNullValueMonthlyDebitUtilization = default!;
 #nullable restore
 #else
-        public string MonthlyDebitUtilization { get; set; }
+        public string MonthlyDebitUtilization { get => _explicitNullValueMonthlyDebitUtilization; set { _explicitNullValueMonthlyDebitUtilization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_debit_utilization"); else _explicitNullProperties?.Remove("monthly_debit_utilization"); } }
+        private string _explicitNullValueMonthlyDebitUtilization = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetAuthorizationUsage"/> and sets the default values.
@@ -62,7 +81,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetAuthorizationUsage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetAuthorizationUsage();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetAuthorizationUsage(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +110,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("daily_debit_utilization", DailyDebitUtilization);
             writer.WriteStringValue("monthly_credit_utilization", MonthlyCreditUtilization);
             writer.WriteStringValue("monthly_debit_utilization", MonthlyDebitUtilization);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

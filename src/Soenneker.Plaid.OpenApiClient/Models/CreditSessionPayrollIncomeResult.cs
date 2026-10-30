@@ -12,29 +12,46 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreditSessionPayrollIncomeResult : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("institution_id") is { } nullNodeInstitutionId && nullNodeInstitutionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionId = null;
+            if (parseNode.GetChildNode("institution_name") is { } nullNodeInstitutionName && nullNodeInstitutionName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionName = null;
+            if (parseNode.GetChildNode("num_paystubs_retrieved") is { } nullNodeNumPaystubsRetrieved && nullNodeNumPaystubsRetrieved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumPaystubsRetrieved = null;
+            if (parseNode.GetChildNode("num_w2s_retrieved") is { } nullNodeNumW2sRetrieved && nullNodeNumW2sRetrieved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumW2sRetrieved = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Plaid Institution ID associated with the Item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstitutionId { get; set; }
+        public string? InstitutionId { get => _explicitNullValueInstitutionId; set { _explicitNullValueInstitutionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_id"); else _explicitNullProperties?.Remove("institution_id"); } }
+        private string? _explicitNullValueInstitutionId = default!;
 #nullable restore
 #else
-        public string InstitutionId { get; set; }
+        public string InstitutionId { get => _explicitNullValueInstitutionId; set { _explicitNullValueInstitutionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_id"); else _explicitNullProperties?.Remove("institution_id"); } }
+        private string _explicitNullValueInstitutionId = default!;
 #endif
         /// <summary>The Institution Name associated with the Item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstitutionName { get; set; }
+        public string? InstitutionName { get => _explicitNullValueInstitutionName; set { _explicitNullValueInstitutionName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_name"); else _explicitNullProperties?.Remove("institution_name"); } }
+        private string? _explicitNullValueInstitutionName = default!;
 #nullable restore
 #else
-        public string InstitutionName { get; set; }
+        public string InstitutionName { get => _explicitNullValueInstitutionName; set { _explicitNullValueInstitutionName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_name"); else _explicitNullProperties?.Remove("institution_name"); } }
+        private string _explicitNullValueInstitutionName = default!;
 #endif
         /// <summary>The number of paystubs retrieved from a payroll provider.</summary>
-        public int? NumPaystubsRetrieved { get; set; }
+        public int? NumPaystubsRetrieved { get => _explicitNullValueNumPaystubsRetrieved; set { _explicitNullValueNumPaystubsRetrieved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("num_paystubs_retrieved"); else _explicitNullProperties?.Remove("num_paystubs_retrieved"); } }
+        private int? _explicitNullValueNumPaystubsRetrieved = default!;
         /// <summary>The number of w2s retrieved from a payroll provider.</summary>
-        public int? NumW2sRetrieved { get; set; }
+        public int? NumW2sRetrieved { get => _explicitNullValueNumW2sRetrieved; set { _explicitNullValueNumW2sRetrieved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("num_w2s_retrieved"); else _explicitNullProperties?.Remove("num_w2s_retrieved"); } }
+        private int? _explicitNullValueNumW2sRetrieved = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionPayrollIncomeResult"/> and sets the default values.
         /// </summary>
@@ -50,7 +67,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionPayrollIncomeResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionPayrollIncomeResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionPayrollIncomeResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +94,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("institution_name", InstitutionName);
             writer.WriteIntValue("num_paystubs_retrieved", NumPaystubsRetrieved);
             writer.WriteIntValue("num_w2s_retrieved", NumW2sRetrieved);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

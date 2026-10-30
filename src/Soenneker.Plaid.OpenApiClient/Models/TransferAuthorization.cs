@@ -12,65 +12,96 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransferAuthorization : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("created") is { } nullNodeCreated && nullNodeCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Created = null;
+            if (parseNode.GetChildNode("decision") is { } nullNodeDecision && nullNodeDecision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Decision = null;
+            if (parseNode.GetChildNode("decision_rationale") is { } nullNodeDecisionRationale && nullNodeDecisionRationale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DecisionRationale = null;
+            if (parseNode.GetChildNode("guarantee_decision") is { } nullNodeGuaranteeDecision && nullNodeGuaranteeDecision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuaranteeDecision = null;
+            if (parseNode.GetChildNode("guarantee_decision_rationale") is { } nullNodeGuaranteeDecisionRationale && nullNodeGuaranteeDecisionRationale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuaranteeDecisionRationale = null;
+            if (parseNode.GetChildNode("guarantee_details") is { } nullNodeGuaranteeDetails && nullNodeGuaranteeDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuaranteeDetails = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("payment_risk") is { } nullNodePaymentRisk && nullNodePaymentRisk.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentRisk = null;
+            if (parseNode.GetChildNode("proposed_transfer") is { } nullNodeProposedTransfer && nullNodeProposedTransfer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProposedTransfer = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The datetime representing when the authorization was created, in the format `2006-01-02T15:04:05Z`.</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get => _explicitNullValueCreated; set { _explicitNullValueCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created"); else _explicitNullProperties?.Remove("created"); } }
+        private DateTimeOffset? _explicitNullValueCreated = default!;
         /// <summary>A decision regarding the proposed transfer.`approved` - The proposed transfer has received the end user&apos;s consent and has been approved for processing by Plaid. The `decision_rationale` field is set if Plaid was unable to fetch the account information. You may proceed with the transfer, but further review is recommended. Refer to the `code` field in the `decision_rationale` object for details.`declined` - Plaid reviewed the proposed transfer and declined processing. Refer to the `code` field in the `decision_rationale` object for details.`user_action_required` - An action is required before Plaid can assess the transfer risk and make a decision. The most common scenario is to update authentication for an Item. To complete the required action, initialize Link by setting `transfer.authorization_id` in the request of `/link/token/create`. After Link flow is completed, you may re-attempt the authorization request.For `guarantee` requests, `approved` indicates the transfer is eligible for Plaid&apos;s guarantee, and `declined` indicates Plaid will not provide guarantee coverage for the transfer. `user_action_required` indicates you should follow the above guidance before re-attempting.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecision? Decision { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecision? Decision { get => _explicitNullValueDecision; set { _explicitNullValueDecision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decision"); else _explicitNullProperties?.Remove("decision"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecision? _explicitNullValueDecision = default!;
         /// <summary>The rationale for Plaid&apos;s decision regarding a proposed transfer. It is always set for `declined` decisions, and may or may not be null for `approved` decisions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale? DecisionRationale { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale? DecisionRationale { get => _explicitNullValueDecisionRationale; set { _explicitNullValueDecisionRationale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decision_rationale"); else _explicitNullProperties?.Remove("decision_rationale"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale? _explicitNullValueDecisionRationale = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale DecisionRationale { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale DecisionRationale { get => _explicitNullValueDecisionRationale; set { _explicitNullValueDecisionRationale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decision_rationale"); else _explicitNullProperties?.Remove("decision_rationale"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale _explicitNullValueDecisionRationale = default!;
 #endif
         /// <summary>Indicates whether the transfer is guaranteed by Plaid (Guarantee customers only). This field will contain either `GUARANTEED` or `NOT_GUARANTEED` indicating whether Plaid will guarantee the transfer.</summary>
         [Obsolete("")]
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionComposed? GuaranteeDecision { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionComposed? GuaranteeDecision { get => _explicitNullValueGuaranteeDecision; set { _explicitNullValueGuaranteeDecision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guarantee_decision"); else _explicitNullProperties?.Remove("guarantee_decision"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionComposed? _explicitNullValueGuaranteeDecision = default!;
         /// <summary>The rationale for Plaid&apos;s decision to not guarantee a transfer. Will be `null` unless `guarantee_decision` is `NOT_GUARANTEED`.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale? GuaranteeDecisionRationale { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale? GuaranteeDecisionRationale { get => _explicitNullValueGuaranteeDecisionRationale; set { _explicitNullValueGuaranteeDecisionRationale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guarantee_decision_rationale"); else _explicitNullProperties?.Remove("guarantee_decision_rationale"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale? _explicitNullValueGuaranteeDecisionRationale = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale GuaranteeDecisionRationale { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale GuaranteeDecisionRationale { get => _explicitNullValueGuaranteeDecisionRationale; set { _explicitNullValueGuaranteeDecisionRationale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guarantee_decision_rationale"); else _explicitNullProperties?.Remove("guarantee_decision_rationale"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale _explicitNullValueGuaranteeDecisionRationale = default!;
 #endif
         /// <summary>Adaptive guarantee details for a transfer authorization, including the guarantee outcome and settlement schedule. Omitted when no guarantee was attempted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AuthorizationGuaranteeDetails? GuaranteeDetails { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AuthorizationGuaranteeDetails? GuaranteeDetails { get => _explicitNullValueGuaranteeDetails; set { _explicitNullValueGuaranteeDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guarantee_details"); else _explicitNullProperties?.Remove("guarantee_details"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AuthorizationGuaranteeDetails? _explicitNullValueGuaranteeDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AuthorizationGuaranteeDetails GuaranteeDetails { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AuthorizationGuaranteeDetails GuaranteeDetails { get => _explicitNullValueGuaranteeDetails; set { _explicitNullValueGuaranteeDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guarantee_details"); else _explicitNullProperties?.Remove("guarantee_details"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AuthorizationGuaranteeDetails _explicitNullValueGuaranteeDetails = default!;
 #endif
         /// <summary>Plaid&apos;s unique identifier for a transfer authorization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>This object includes the scores and risk level. This response is offered as an add-on to `/transfer/authorization/create`. To request access to these fields, please contact your Plaid account manager.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationPaymentRisk? PaymentRisk { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationPaymentRisk? PaymentRisk { get => _explicitNullValuePaymentRisk; set { _explicitNullValuePaymentRisk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_risk"); else _explicitNullProperties?.Remove("payment_risk"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationPaymentRisk? _explicitNullValuePaymentRisk = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationPaymentRisk PaymentRisk { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationPaymentRisk PaymentRisk { get => _explicitNullValuePaymentRisk; set { _explicitNullValuePaymentRisk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_risk"); else _explicitNullProperties?.Remove("payment_risk"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationPaymentRisk _explicitNullValuePaymentRisk = default!;
 #endif
         /// <summary>Details regarding the proposed transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransfer? ProposedTransfer { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransfer? ProposedTransfer { get => _explicitNullValueProposedTransfer; set { _explicitNullValueProposedTransfer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proposed_transfer"); else _explicitNullProperties?.Remove("proposed_transfer"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransfer? _explicitNullValueProposedTransfer = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransfer ProposedTransfer { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransfer ProposedTransfer { get => _explicitNullValueProposedTransfer; set { _explicitNullValueProposedTransfer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proposed_transfer"); else _explicitNullProperties?.Remove("proposed_transfer"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransfer _explicitNullValueProposedTransfer = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorization"/> and sets the default values.
@@ -87,7 +118,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorization CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorization();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorization(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -124,6 +155,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationPaymentRisk>("payment_risk", PaymentRisk);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransfer>("proposed_transfer", ProposedTransfer);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

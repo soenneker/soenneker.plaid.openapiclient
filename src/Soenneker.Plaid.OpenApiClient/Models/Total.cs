@@ -13,36 +13,54 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [Obsolete("")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Total : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("canonical_description") is { } nullNodeCanonicalDescription && nullNodeCanonicalDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanonicalDescription = null;
+            if (parseNode.GetChildNode("current_pay") is { } nullNodeCurrentPay && nullNodeCurrentPay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentPay = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("ytd_pay") is { } nullNodeYtdPay && nullNodeYtdPay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) YtdPay = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Commonly used term to describe the line item.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalCanonicalDescription? CanonicalDescription { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalCanonicalDescription? CanonicalDescription { get => _explicitNullValueCanonicalDescription; set { _explicitNullValueCanonicalDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canonical_description"); else _explicitNullProperties?.Remove("canonical_description"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TotalCanonicalDescription? _explicitNullValueCanonicalDescription = default!;
         /// <summary>An object representing a monetary amount.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.Pay? CurrentPay { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Pay? CurrentPay { get => _explicitNullValueCurrentPay; set { _explicitNullValueCurrentPay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_pay"); else _explicitNullProperties?.Remove("current_pay"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Pay? _explicitNullValueCurrentPay = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.Pay CurrentPay { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Pay CurrentPay { get => _explicitNullValueCurrentPay; set { _explicitNullValueCurrentPay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_pay"); else _explicitNullProperties?.Remove("current_pay"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Pay _explicitNullValueCurrentPay = default!;
 #endif
         /// <summary>Text of the line item as printed on the paystub.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>An object representing a monetary amount.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.Pay? YtdPay { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Pay? YtdPay { get => _explicitNullValueYtdPay; set { _explicitNullValueYtdPay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ytd_pay"); else _explicitNullProperties?.Remove("ytd_pay"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Pay? _explicitNullValueYtdPay = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.Pay YtdPay { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Pay YtdPay { get => _explicitNullValueYtdPay; set { _explicitNullValueYtdPay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ytd_pay"); else _explicitNullProperties?.Remove("ytd_pay"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Pay _explicitNullValueYtdPay = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.Total"/> and sets the default values.
@@ -59,7 +77,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.Total CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.Total();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.Total(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +104,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Pay>("current_pay", CurrentPay);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Pay>("ytd_pay", YtdPay);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

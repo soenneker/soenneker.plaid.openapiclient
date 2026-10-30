@@ -12,13 +12,24 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionsEnrichRequestOptions : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("include_legacy_category") is { } nullNodeIncludeLegacyCategory && nullNodeIncludeLegacyCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeLegacyCategory = null;
+            if (parseNode.GetChildNode("personal_finance_category_version") is { } nullNodePersonalFinanceCategoryVersion && nullNodePersonalFinanceCategoryVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalFinanceCategoryVersion = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Include `legacy_category` and `legacy_category_id` in the response (in addition to the default `personal_finance_category`).Categories are based on Plaid&apos;s legacy taxonomy. For a full list of legacy categories, see [`/categories/get`](https://plaid.com/docs/api/products/transactions/#categoriesget).</summary>
-        public bool? IncludeLegacyCategory { get; set; }
+        public bool? IncludeLegacyCategory { get => _explicitNullValueIncludeLegacyCategory; set { _explicitNullValueIncludeLegacyCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_legacy_category"); else _explicitNullProperties?.Remove("include_legacy_category"); } }
+        private bool? _explicitNullValueIncludeLegacyCategory = default!;
         /// <summary>Indicates which version of the personal finance category taxonomy is being used. [View PFCv2 and PFCv1 taxonomies](https://plaid.com/documents/pfc-taxonomy-all.csv).If you enabled Transactions or Enrich before December 3, 2025 you will receive the `v1` taxonomy by default and may request `v2` by explicitly setting this field to `v2` in the request.If you enabled Transactions or Enrich on or after December 3, 2025, you may only receive the `v2` taxonomy.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategoryVersion? PersonalFinanceCategoryVersion { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategoryVersion? PersonalFinanceCategoryVersion { get => _explicitNullValuePersonalFinanceCategoryVersion; set { _explicitNullValuePersonalFinanceCategoryVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category_version"); else _explicitNullProperties?.Remove("personal_finance_category_version"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategoryVersion? _explicitNullValuePersonalFinanceCategoryVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransactionsEnrichRequestOptions"/> and sets the default values.
         /// </summary>
@@ -35,7 +46,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.TransactionsEnrichRequestOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.TransactionsEnrichRequestOptions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.TransactionsEnrichRequestOptions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,6 +69,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("include_legacy_category", IncludeLegacyCategory);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategoryVersion>("personal_finance_category_version", PersonalFinanceCategoryVersion);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

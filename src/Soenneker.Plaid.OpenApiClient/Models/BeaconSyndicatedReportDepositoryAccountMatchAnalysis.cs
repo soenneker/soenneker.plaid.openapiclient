@@ -12,26 +12,41 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BeaconSyndicatedReportDepositoryAccountMatchAnalysis : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_mask") is { } nullNodeAccountMask && nullNodeAccountMask.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountMask = null;
+            if (parseNode.GetChildNode("match_status") is { } nullNodeMatchStatus && nullNodeMatchStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchStatus = null;
+            if (parseNode.GetChildNode("routing_number") is { } nullNodeRoutingNumber && nullNodeRoutingNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoutingNumber = null;
+        }
+
         /// <summary>The last 2-4 numeric characters of this account&apos;s account number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountMask { get; set; }
+        public string? AccountMask { get => _explicitNullValueAccountMask; set { _explicitNullValueAccountMask = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_mask"); else _explicitNullProperties?.Remove("account_mask"); } }
+        private string? _explicitNullValueAccountMask = default!;
 #nullable restore
 #else
-        public string AccountMask { get; set; }
+        public string AccountMask { get => _explicitNullValueAccountMask; set { _explicitNullValueAccountMask = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_mask"); else _explicitNullProperties?.Remove("account_mask"); } }
+        private string _explicitNullValueAccountMask = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An enum indicating the match type between two Beacon Users.`match` indicates that the provided input data was a strong match against the other Beacon User.`partial_match` indicates the data approximately matched the other Beacon User. For example, &quot;Knope&quot; vs. &quot;Knope-Wyatt&quot; for last name.`no_match` indicates that Plaid was able to compare this field against the other Beacon User and it did not match the provided input data.`no_data` indicates that Plaid was unable to compare this field against the original Beacon User because the field was not present in one of the Beacon Users.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode? MatchStatus { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode? MatchStatus { get => _explicitNullValueMatchStatus; set { _explicitNullValueMatchStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_status"); else _explicitNullProperties?.Remove("match_status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode? _explicitNullValueMatchStatus = default!;
         /// <summary>The routing number of the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoutingNumber { get; set; }
+        public string? RoutingNumber { get => _explicitNullValueRoutingNumber; set { _explicitNullValueRoutingNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routing_number"); else _explicitNullProperties?.Remove("routing_number"); } }
+        private string? _explicitNullValueRoutingNumber = default!;
 #nullable restore
 #else
-        public string RoutingNumber { get; set; }
+        public string RoutingNumber { get => _explicitNullValueRoutingNumber; set { _explicitNullValueRoutingNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routing_number"); else _explicitNullProperties?.Remove("routing_number"); } }
+        private string _explicitNullValueRoutingNumber = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BeaconSyndicatedReportDepositoryAccountMatchAnalysis"/> and sets the default values.
@@ -48,7 +63,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.BeaconSyndicatedReportDepositoryAccountMatchAnalysis CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.BeaconSyndicatedReportDepositoryAccountMatchAnalysis();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.BeaconSyndicatedReportDepositoryAccountMatchAnalysis(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +88,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("account_mask", AccountMask);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode>("match_status", MatchStatus);
             writer.WriteStringValue("routing_number", RoutingNumber);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

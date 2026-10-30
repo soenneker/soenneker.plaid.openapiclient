@@ -12,26 +12,41 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LinkTokenCreateIdentity : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_ids") is { } nullNodeAccountIds && nullNodeAccountIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountIds = null;
+            if (parseNode.GetChildNode("is_document_upload") is { } nullNodeIsDocumentUpload && nullNodeIsDocumentUpload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDocumentUpload = null;
+            if (parseNode.GetChildNode("parsing_configs") is { } nullNodeParsingConfigs && nullNodeParsingConfigs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParsingConfigs = null;
+        }
+
         /// <summary>An array of `account_ids`. Currently can only contain one `account_id`. Must be populated if using Document Upload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AccountIds { get; set; }
+        public List<string>? AccountIds { get => _explicitNullValueAccountIds; set { _explicitNullValueAccountIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_ids"); else _explicitNullProperties?.Remove("account_ids"); } }
+        private List<string>? _explicitNullValueAccountIds = default!;
 #nullable restore
 #else
-        public List<string> AccountIds { get; set; }
+        public List<string> AccountIds { get => _explicitNullValueAccountIds; set { _explicitNullValueAccountIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_ids"); else _explicitNullProperties?.Remove("account_ids"); } }
+        private List<string> _explicitNullValueAccountIds = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Used to specify whether the Link session is Identity Document Upload</summary>
-        public bool? IsDocumentUpload { get; set; }
+        public bool? IsDocumentUpload { get => _explicitNullValueIsDocumentUpload; set { _explicitNullValueIsDocumentUpload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_document_upload"); else _explicitNullProperties?.Remove("is_document_upload"); } }
+        private bool? _explicitNullValueIsDocumentUpload = default!;
         /// <summary>An array of parsing configurations. Valid parsing configurations are `ocr` and `risk_signals`. If parsing configurations are omitted, defaults to `ocr`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationDocParsingConfig?>? ParsingConfigs { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationDocParsingConfig?>? ParsingConfigs { get => _explicitNullValueParsingConfigs; set { _explicitNullValueParsingConfigs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parsing_configs"); else _explicitNullProperties?.Remove("parsing_configs"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationDocParsingConfig?>? _explicitNullValueParsingConfigs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationDocParsingConfig?> ParsingConfigs { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationDocParsingConfig?> ParsingConfigs { get => _explicitNullValueParsingConfigs; set { _explicitNullValueParsingConfigs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parsing_configs"); else _explicitNullProperties?.Remove("parsing_configs"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationDocParsingConfig?> _explicitNullValueParsingConfigs = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateIdentity"/> and sets the default values.
@@ -48,7 +63,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateIdentity();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateIdentity(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +88,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("account_ids", AccountIds);
             writer.WriteBoolValue("is_document_upload", IsDocumentUpload);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationDocParsingConfig>("parsing_configs", ParsingConfigs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

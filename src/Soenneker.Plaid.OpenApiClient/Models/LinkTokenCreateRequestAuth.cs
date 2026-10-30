@@ -12,32 +12,59 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LinkTokenCreateRequestAuth : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("auth_type_select_enabled") is { } nullNodeAuthTypeSelectEnabled && nullNodeAuthTypeSelectEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthTypeSelectEnabled = null;
+            if (parseNode.GetChildNode("automated_microdeposits_enabled") is { } nullNodeAutomatedMicrodepositsEnabled && nullNodeAutomatedMicrodepositsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutomatedMicrodepositsEnabled = null;
+            if (parseNode.GetChildNode("database_insights_enabled") is { } nullNodeDatabaseInsightsEnabled && nullNodeDatabaseInsightsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatabaseInsightsEnabled = null;
+            if (parseNode.GetChildNode("database_match_enabled") is { } nullNodeDatabaseMatchEnabled && nullNodeDatabaseMatchEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatabaseMatchEnabled = null;
+            if (parseNode.GetChildNode("flow_type") is { } nullNodeFlowType && nullNodeFlowType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlowType = null;
+            if (parseNode.GetChildNode("instant_match_enabled") is { } nullNodeInstantMatchEnabled && nullNodeInstantMatchEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstantMatchEnabled = null;
+            if (parseNode.GetChildNode("instant_microdeposits_enabled") is { } nullNodeInstantMicrodepositsEnabled && nullNodeInstantMicrodepositsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstantMicrodepositsEnabled = null;
+            if (parseNode.GetChildNode("reroute_to_credentials") is { } nullNodeRerouteToCredentials && nullNodeRerouteToCredentials.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RerouteToCredentials = null;
+            if (parseNode.GetChildNode("same_day_microdeposits_enabled") is { } nullNodeSameDayMicrodepositsEnabled && nullNodeSameDayMicrodepositsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SameDayMicrodepositsEnabled = null;
+            if (parseNode.GetChildNode("sms_microdeposits_verification_enabled") is { } nullNodeSmsMicrodepositsVerificationEnabled && nullNodeSmsMicrodepositsVerificationEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SmsMicrodepositsVerificationEnabled = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies whether Auth Type Select is enabled for the Link session, allowing the end user to choose between linking via a credentials-based flow (i.e. Instant Auth, Instant Match, Automated Micro-deposits) or a manual flow that does not require login (all other Auth flows) prior to selecting their financial institution. Default behavior is `false`.</summary>
-        public bool? AuthTypeSelectEnabled { get; set; }
+        public bool? AuthTypeSelectEnabled { get => _explicitNullValueAuthTypeSelectEnabled; set { _explicitNullValueAuthTypeSelectEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_type_select_enabled"); else _explicitNullProperties?.Remove("auth_type_select_enabled"); } }
+        private bool? _explicitNullValueAuthTypeSelectEnabled = default!;
         /// <summary>Specifies whether the Link session is enabled for the Automated Micro-deposits flow. Default behavior is `false`.</summary>
-        public bool? AutomatedMicrodepositsEnabled { get; set; }
+        public bool? AutomatedMicrodepositsEnabled { get => _explicitNullValueAutomatedMicrodepositsEnabled; set { _explicitNullValueAutomatedMicrodepositsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automated_microdeposits_enabled"); else _explicitNullProperties?.Remove("automated_microdeposits_enabled"); } }
+        private bool? _explicitNullValueAutomatedMicrodepositsEnabled = default!;
         /// <summary>Database Insights has been deprecated and replaced with Database Auth. Use the [Account Verification Dashboard](https://dashboard.plaid.com/account-verification) to enable Database Auth.</summary>
         [Obsolete("")]
-        public bool? DatabaseInsightsEnabled { get; set; }
+        public bool? DatabaseInsightsEnabled { get => _explicitNullValueDatabaseInsightsEnabled; set { _explicitNullValueDatabaseInsightsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("database_insights_enabled"); else _explicitNullProperties?.Remove("database_insights_enabled"); } }
+        private bool? _explicitNullValueDatabaseInsightsEnabled = default!;
         /// <summary>Database Match has been deprecated and replaced with Database Auth. Use the [Account Verification Dashboard](https://dashboard.plaid.com/account-verification) to enable Database Auth.</summary>
         [Obsolete("")]
-        public bool? DatabaseMatchEnabled { get; set; }
+        public bool? DatabaseMatchEnabled { get => _explicitNullValueDatabaseMatchEnabled; set { _explicitNullValueDatabaseMatchEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("database_match_enabled"); else _explicitNullProperties?.Remove("database_match_enabled"); } }
+        private bool? _explicitNullValueDatabaseMatchEnabled = default!;
         /// <summary>This field has been deprecated in favor of `auth_type_select_enabled`.</summary>
         [Obsolete("")]
-        public global::Soenneker.Plaid.OpenApiClient.Models.FlexibleAuthFlowType? FlowType { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FlexibleAuthFlowType? FlowType { get => _explicitNullValueFlowType; set { _explicitNullValueFlowType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flow_type"); else _explicitNullProperties?.Remove("flow_type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.FlexibleAuthFlowType? _explicitNullValueFlowType = default!;
         /// <summary>Specifies whether the Link session is enabled for the Instant Match flow. Instant Match is enabled by default. Instant Match can be disabled by setting this field to `false`.</summary>
-        public bool? InstantMatchEnabled { get; set; }
+        public bool? InstantMatchEnabled { get => _explicitNullValueInstantMatchEnabled; set { _explicitNullValueInstantMatchEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instant_match_enabled"); else _explicitNullProperties?.Remove("instant_match_enabled"); } }
+        private bool? _explicitNullValueInstantMatchEnabled = default!;
         /// <summary>Specifies whether the Link session is enabled for the Instant Micro-deposits flow.  Default behavior for Plaid teams created after November 2023 is `false`; default behavior for Plaid teams created before that date is `true`.</summary>
-        public bool? InstantMicrodepositsEnabled { get; set; }
+        public bool? InstantMicrodepositsEnabled { get => _explicitNullValueInstantMicrodepositsEnabled; set { _explicitNullValueInstantMicrodepositsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instant_microdeposits_enabled"); else _explicitNullProperties?.Remove("instant_microdeposits_enabled"); } }
+        private bool? _explicitNullValueInstantMicrodepositsEnabled = default!;
         /// <summary>Specifies what type of [Reroute to Credentials](https://plaid.com/docs/auth/coverage/flow-options/#removing-manual-verification-entry-points-with-reroute-to-credentials) pane should be used in the Link session for the Same-Day Micro-deposits flow. Default behavior is `OPTIONAL`.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuthRerouteToCredentials? RerouteToCredentials { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuthRerouteToCredentials? RerouteToCredentials { get => _explicitNullValueRerouteToCredentials; set { _explicitNullValueRerouteToCredentials = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reroute_to_credentials"); else _explicitNullProperties?.Remove("reroute_to_credentials"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuthRerouteToCredentials? _explicitNullValueRerouteToCredentials = default!;
         /// <summary>Specifies whether the Link session is enabled for the Same-Day Micro-deposits flow.  Default behavior is `false`.</summary>
-        public bool? SameDayMicrodepositsEnabled { get; set; }
+        public bool? SameDayMicrodepositsEnabled { get => _explicitNullValueSameDayMicrodepositsEnabled; set { _explicitNullValueSameDayMicrodepositsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("same_day_microdeposits_enabled"); else _explicitNullProperties?.Remove("same_day_microdeposits_enabled"); } }
+        private bool? _explicitNullValueSameDayMicrodepositsEnabled = default!;
         /// <summary>Specifies whether the Link session is enabled for SMS micro-deposits verification. Default behavior is `true`.</summary>
-        public bool? SmsMicrodepositsVerificationEnabled { get; set; }
+        public bool? SmsMicrodepositsVerificationEnabled { get => _explicitNullValueSmsMicrodepositsVerificationEnabled; set { _explicitNullValueSmsMicrodepositsVerificationEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sms_microdeposits_verification_enabled"); else _explicitNullProperties?.Remove("sms_microdeposits_verification_enabled"); } }
+        private bool? _explicitNullValueSmsMicrodepositsVerificationEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuth"/> and sets the default values.
         /// </summary>
@@ -53,7 +80,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuth CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuth();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuth(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +119,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuthRerouteToCredentials>("reroute_to_credentials", RerouteToCredentials);
             writer.WriteBoolValue("same_day_microdeposits_enabled", SameDayMicrodepositsEnabled);
             writer.WriteBoolValue("sms_microdeposits_verification_enabled", SmsMicrodepositsVerificationEnabled);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

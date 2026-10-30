@@ -12,15 +12,28 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InvestmentsAuthDataSources : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("holdings") is { } nullNodeHoldings && nullNodeHoldings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Holdings = null;
+            if (parseNode.GetChildNode("numbers") is { } nullNodeNumbers && nullNodeNumbers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Numbers = null;
+            if (parseNode.GetChildNode("owners") is { } nullNodeOwners && nullNodeOwners.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owners = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A description of the source of data for a given product/data type.`INSTITUTION`: The institution supports this product, and the data was provided by the institution.`INSTITUTION_MASK`: The user manually provided the full account number, which was matched to the account mask provided by the institution. Only applicable to the `numbers` data type.`USER`: The institution does not support this product, and the data was manually provided by the user.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.DataSources? Holdings { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.DataSources? Holdings { get => _explicitNullValueHoldings; set { _explicitNullValueHoldings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("holdings"); else _explicitNullProperties?.Remove("holdings"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.DataSources? _explicitNullValueHoldings = default!;
         /// <summary>A description of the source of data for a given product/data type.`INSTITUTION`: The institution supports this product, and the data was provided by the institution.`INSTITUTION_MASK`: The user manually provided the full account number, which was matched to the account mask provided by the institution. Only applicable to the `numbers` data type.`USER`: The institution does not support this product, and the data was manually provided by the user.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.DataSources? Numbers { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.DataSources? Numbers { get => _explicitNullValueNumbers; set { _explicitNullValueNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("numbers"); else _explicitNullProperties?.Remove("numbers"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.DataSources? _explicitNullValueNumbers = default!;
         /// <summary>A description of the source of data for a given product/data type.`INSTITUTION`: The institution supports this product, and the data was provided by the institution.`INSTITUTION_MASK`: The user manually provided the full account number, which was matched to the account mask provided by the institution. Only applicable to the `numbers` data type.`USER`: The institution does not support this product, and the data was manually provided by the user.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.DataSources? Owners { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.DataSources? Owners { get => _explicitNullValueOwners; set { _explicitNullValueOwners = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owners"); else _explicitNullProperties?.Remove("owners"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.DataSources? _explicitNullValueOwners = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthDataSources"/> and sets the default values.
         /// </summary>
@@ -36,7 +49,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthDataSources CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthDataSources();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuthDataSources(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,6 +74,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.DataSources>("holdings", Holdings);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.DataSources>("numbers", Numbers);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.DataSources>("owners", Owners);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -17,11 +17,13 @@ namespace Soenneker.Plaid.OpenApiClient.Protect.Event
     public partial class EventRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The getPath property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Protect.Event.Get.GetRequestBuilder GetPath
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Protect.Event.Get.GetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The send property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Protect.Event.Send.SendRequestBuilder Send
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Protect.Event.Send.SendRequestBuilder(PathParameters, RequestAdapter);

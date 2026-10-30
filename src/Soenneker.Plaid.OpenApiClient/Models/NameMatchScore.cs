@@ -12,17 +12,32 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NameMatchScore : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("is_business_name_detected") is { } nullNodeIsBusinessNameDetected && nullNodeIsBusinessNameDetected.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsBusinessNameDetected = null;
+            if (parseNode.GetChildNode("is_first_name_or_last_name_match") is { } nullNodeIsFirstNameOrLastNameMatch && nullNodeIsFirstNameOrLastNameMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsFirstNameOrLastNameMatch = null;
+            if (parseNode.GetChildNode("is_nickname_match") is { } nullNodeIsNicknameMatch && nullNodeIsNicknameMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsNicknameMatch = null;
+            if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Is `true` if Plaid determined that one of the names being compared is a business name and scored the pair using its business name matching algorithm. Detection is based on business keywords (such as `LLC`, `INC`, `LTD`, `DBA`, `COMPANY`, or `BUSINESS`) appearing in either name, or on either name matching a known business name.</summary>
-        public bool? IsBusinessNameDetected { get; set; }
+        public bool? IsBusinessNameDetected { get => _explicitNullValueIsBusinessNameDetected; set { _explicitNullValueIsBusinessNameDetected = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_business_name_detected"); else _explicitNullProperties?.Remove("is_business_name_detected"); } }
+        private bool? _explicitNullValueIsBusinessNameDetected = default!;
         /// <summary>first or last name completely matched, likely a family member</summary>
-        public bool? IsFirstNameOrLastNameMatch { get; set; }
+        public bool? IsFirstNameOrLastNameMatch { get => _explicitNullValueIsFirstNameOrLastNameMatch; set { _explicitNullValueIsFirstNameOrLastNameMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_first_name_or_last_name_match"); else _explicitNullProperties?.Remove("is_first_name_or_last_name_match"); } }
+        private bool? _explicitNullValueIsFirstNameOrLastNameMatch = default!;
         /// <summary>nickname matched, example Jennifer and Jenn.</summary>
-        public bool? IsNicknameMatch { get; set; }
+        public bool? IsNicknameMatch { get => _explicitNullValueIsNicknameMatch; set { _explicitNullValueIsNicknameMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_nickname_match"); else _explicitNullProperties?.Remove("is_nickname_match"); } }
+        private bool? _explicitNullValueIsNicknameMatch = default!;
         /// <summary>Match score for name. 100 is a perfect score, 99-85 means a strong match, 84-70 is a partial match, any score less than 70 is a mismatch. Typically, the match threshold should be set to a score of 70 or higher. If the name is missing from either the API or financial institution, this is null.</summary>
-        public int? Score { get; set; }
+        public int? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
+        private int? _explicitNullValueScore = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.NameMatchScore"/> and sets the default values.
         /// </summary>
@@ -38,7 +53,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.NameMatchScore CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.NameMatchScore();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.NameMatchScore(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,6 +80,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteBoolValue("is_first_name_or_last_name_match", IsFirstNameOrLastNameMatch);
             writer.WriteBoolValue("is_nickname_match", IsNicknameMatch);
             writer.WriteIntValue("score", Score);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

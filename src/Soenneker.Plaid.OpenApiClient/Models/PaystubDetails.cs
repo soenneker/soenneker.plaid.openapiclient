@@ -14,24 +14,42 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [Obsolete("")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaystubDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("pay_date") is { } nullNodePayDate && nullNodePayDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayDate = null;
+            if (parseNode.GetChildNode("pay_frequency") is { } nullNodePayFrequency && nullNodePayFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayFrequency = null;
+            if (parseNode.GetChildNode("pay_period_end_date") is { } nullNodePayPeriodEndDate && nullNodePayPeriodEndDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayPeriodEndDate = null;
+            if (parseNode.GetChildNode("pay_period_start_date") is { } nullNodePayPeriodStartDate && nullNodePayPeriodStartDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayPeriodStartDate = null;
+            if (parseNode.GetChildNode("paystub_provider") is { } nullNodePaystubProvider && nullNodePaystubProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaystubProvider = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Pay date on the paystub in the &apos;YYYY-MM-DD&apos; format.</summary>
-        public Date? PayDate { get; set; }
+        public Date? PayDate { get => _explicitNullValuePayDate; set { _explicitNullValuePayDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_date"); else _explicitNullProperties?.Remove("pay_date"); } }
+        private Date? _explicitNullValuePayDate = default!;
         /// <summary>The frequency at which the employee is paid. Possible values: `MONTHLY`, `BI-WEEKLY`, `WEEKLY`, `SEMI-MONTHLY`.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaystubPayFrequency? PayFrequency { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaystubPayFrequency? PayFrequency { get => _explicitNullValuePayFrequency; set { _explicitNullValuePayFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_frequency"); else _explicitNullProperties?.Remove("pay_frequency"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PaystubPayFrequency? _explicitNullValuePayFrequency = default!;
         /// <summary>Ending date of the pay period on the paystub in the &apos;YYYY-MM-DD&apos; format.</summary>
-        public Date? PayPeriodEndDate { get; set; }
+        public Date? PayPeriodEndDate { get => _explicitNullValuePayPeriodEndDate; set { _explicitNullValuePayPeriodEndDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_period_end_date"); else _explicitNullProperties?.Remove("pay_period_end_date"); } }
+        private Date? _explicitNullValuePayPeriodEndDate = default!;
         /// <summary>Beginning date of the pay period on the paystub in the &apos;YYYY-MM-DD&apos; format.</summary>
-        public Date? PayPeriodStartDate { get; set; }
+        public Date? PayPeriodStartDate { get => _explicitNullValuePayPeriodStartDate; set { _explicitNullValuePayPeriodStartDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_period_start_date"); else _explicitNullProperties?.Remove("pay_period_start_date"); } }
+        private Date? _explicitNullValuePayPeriodStartDate = default!;
         /// <summary>The name of the payroll provider that generated the paystub, e.g. ADP</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaystubProvider { get; set; }
+        public string? PaystubProvider { get => _explicitNullValuePaystubProvider; set { _explicitNullValuePaystubProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paystub_provider"); else _explicitNullProperties?.Remove("paystub_provider"); } }
+        private string? _explicitNullValuePaystubProvider = default!;
 #nullable restore
 #else
-        public string PaystubProvider { get; set; }
+        public string PaystubProvider { get => _explicitNullValuePaystubProvider; set { _explicitNullValuePaystubProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paystub_provider"); else _explicitNullProperties?.Remove("paystub_provider"); } }
+        private string _explicitNullValuePaystubProvider = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PaystubDetails"/> and sets the default values.
@@ -48,7 +66,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.PaystubDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.PaystubDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.PaystubDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +95,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDateValue("pay_period_end_date", PayPeriodEndDate);
             writer.WriteDateValue("pay_period_start_date", PayPeriodStartDate);
             writer.WriteStringValue("paystub_provider", PaystubProvider);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

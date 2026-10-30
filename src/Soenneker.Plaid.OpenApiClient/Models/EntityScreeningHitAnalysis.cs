@@ -12,23 +12,44 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EntityScreeningHitAnalysis : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("documents") is { } nullNodeDocuments && nullNodeDocuments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Documents = null;
+            if (parseNode.GetChildNode("email_addresses") is { } nullNodeEmailAddresses && nullNodeEmailAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailAddresses = null;
+            if (parseNode.GetChildNode("locations") is { } nullNodeLocations && nullNodeLocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Locations = null;
+            if (parseNode.GetChildNode("names") is { } nullNodeNames && nullNodeNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Names = null;
+            if (parseNode.GetChildNode("phone_numbers") is { } nullNodePhoneNumbers && nullNodePhoneNumbers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumbers = null;
+            if (parseNode.GetChildNode("search_terms_version") is { } nullNodeSearchTermsVersion && nullNodeSearchTermsVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SearchTermsVersion = null;
+            if (parseNode.GetChildNode("urls") is { } nullNodeUrls && nullNodeUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Urls = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An enum indicating the match type between data provided by user and data checked against an external data source.`match` indicates that the provided input data was a strong match against external data.`partial_match` indicates the data approximately matched against external data. For example, &quot;Knope&quot; vs. &quot;Knope-Wyatt&quot; for last name.`no_match` indicates that Plaid was able to perform a check against an external data source and it did not match the provided input data.`no_data` indicates that Plaid was unable to find external data to compare against the provided input data.`no_input` indicates that Plaid was unable to perform a check because no information was provided for this field by the end user.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode? Documents { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode? Documents { get => _explicitNullValueDocuments; set { _explicitNullValueDocuments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documents"); else _explicitNullProperties?.Remove("documents"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode? _explicitNullValueDocuments = default!;
         /// <summary>An enum indicating the match type between data provided by user and data checked against an external data source.`match` indicates that the provided input data was a strong match against external data.`partial_match` indicates the data approximately matched against external data. For example, &quot;Knope&quot; vs. &quot;Knope-Wyatt&quot; for last name.`no_match` indicates that Plaid was able to perform a check against an external data source and it did not match the provided input data.`no_data` indicates that Plaid was unable to find external data to compare against the provided input data.`no_input` indicates that Plaid was unable to perform a check because no information was provided for this field by the end user.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode? EmailAddresses { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode? EmailAddresses { get => _explicitNullValueEmailAddresses; set { _explicitNullValueEmailAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_addresses"); else _explicitNullProperties?.Remove("email_addresses"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode? _explicitNullValueEmailAddresses = default!;
         /// <summary>An enum indicating the match type between data provided by user and data checked against an external data source.`match` indicates that the provided input data was a strong match against external data.`partial_match` indicates the data approximately matched against external data. For example, &quot;Knope&quot; vs. &quot;Knope-Wyatt&quot; for last name.`no_match` indicates that Plaid was able to perform a check against an external data source and it did not match the provided input data.`no_data` indicates that Plaid was unable to find external data to compare against the provided input data.`no_input` indicates that Plaid was unable to perform a check because no information was provided for this field by the end user.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode? Locations { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode? Locations { get => _explicitNullValueLocations; set { _explicitNullValueLocations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locations"); else _explicitNullProperties?.Remove("locations"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode? _explicitNullValueLocations = default!;
         /// <summary>An enum indicating the match type between data provided by user and data checked against an external data source.`match` indicates that the provided input data was a strong match against external data.`partial_match` indicates the data approximately matched against external data. For example, &quot;Knope&quot; vs. &quot;Knope-Wyatt&quot; for last name.`no_match` indicates that Plaid was able to perform a check against an external data source and it did not match the provided input data.`no_data` indicates that Plaid was unable to find external data to compare against the provided input data.`no_input` indicates that Plaid was unable to perform a check because no information was provided for this field by the end user.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode? Names { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode? Names { get => _explicitNullValueNames; set { _explicitNullValueNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("names"); else _explicitNullProperties?.Remove("names"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode? _explicitNullValueNames = default!;
         /// <summary>An enum indicating the match type between data provided by user and data checked against an external data source.`match` indicates that the provided input data was a strong match against external data.`partial_match` indicates the data approximately matched against external data. For example, &quot;Knope&quot; vs. &quot;Knope-Wyatt&quot; for last name.`no_match` indicates that Plaid was able to perform a check against an external data source and it did not match the provided input data.`no_data` indicates that Plaid was unable to find external data to compare against the provided input data.`no_input` indicates that Plaid was unable to perform a check because no information was provided for this field by the end user.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode? PhoneNumbers { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode? PhoneNumbers { get => _explicitNullValuePhoneNumbers; set { _explicitNullValuePhoneNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_numbers"); else _explicitNullProperties?.Remove("phone_numbers"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode? _explicitNullValuePhoneNumbers = default!;
         /// <summary>The version of the entity screening&apos;s `search_terms` that were compared when the entity screening hit was added. Entity screening hits are immutable once they have been reviewed. If changes are detected due to updates to the entity screening&apos;s `search_terms`, the associated entity program, or the list&apos;s source data prior to review, the entity screening hit will be updated to reflect those changes.</summary>
-        public int? SearchTermsVersion { get; set; }
+        public int? SearchTermsVersion { get => _explicitNullValueSearchTermsVersion; set { _explicitNullValueSearchTermsVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_terms_version"); else _explicitNullProperties?.Remove("search_terms_version"); } }
+        private int? _explicitNullValueSearchTermsVersion = default!;
         /// <summary>An enum indicating the match type between data provided by user and data checked against an external data source.`match` indicates that the provided input data was a strong match against external data.`partial_match` indicates the data approximately matched against external data. For example, &quot;Knope&quot; vs. &quot;Knope-Wyatt&quot; for last name.`no_match` indicates that Plaid was able to perform a check against an external data source and it did not match the provided input data.`no_data` indicates that Plaid was unable to find external data to compare against the provided input data.`no_input` indicates that Plaid was unable to perform a check because no information was provided for this field by the end user.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode? Urls { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode? Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode? _explicitNullValueUrls = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitAnalysis"/> and sets the default values.
         /// </summary>
@@ -44,7 +65,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitAnalysis CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitAnalysis();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitAnalysis(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +98,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode>("phone_numbers", PhoneNumbers);
             writer.WriteIntValue("search_terms_version", SearchTermsVersion);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode>("urls", Urls);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

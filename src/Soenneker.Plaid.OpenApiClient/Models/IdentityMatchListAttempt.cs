@@ -12,62 +12,93 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IdentityMatchListAttempt : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("attempt_id") is { } nullNodeAttemptId && nullNodeAttemptId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttemptId = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("item_id") is { } nullNodeItemId && nullNodeItemId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemId = null;
+            if (parseNode.GetChildNode("link_customization_name") is { } nullNodeLinkCustomizationName && nullNodeLinkCustomizationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkCustomizationName = null;
+            if (parseNode.GetChildNode("link_session_id") is { } nullNodeLinkSessionId && nullNodeLinkSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkSessionId = null;
+            if (parseNode.GetChildNode("outcome") is { } nullNodeOutcome && nullNodeOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Outcome = null;
+            if (parseNode.GetChildNode("outcome_account_id") is { } nullNodeOutcomeAccountId && nullNodeOutcomeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutcomeAccountId = null;
+            if (parseNode.GetChildNode("ruleset_revision") is { } nullNodeRulesetRevision && nullNodeRulesetRevision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RulesetRevision = null;
+            if (parseNode.GetChildNode("scores") is { } nullNodeScores && nullNodeScores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scores = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Identifier for the Identity Match attempt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AttemptId { get; set; }
+        public string? AttemptId { get => _explicitNullValueAttemptId; set { _explicitNullValueAttemptId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attempt_id"); else _explicitNullProperties?.Remove("attempt_id"); } }
+        private string? _explicitNullValueAttemptId = default!;
 #nullable restore
 #else
-        public string AttemptId { get; set; }
+        public string AttemptId { get => _explicitNullValueAttemptId; set { _explicitNullValueAttemptId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attempt_id"); else _explicitNullProperties?.Remove("attempt_id"); } }
+        private string _explicitNullValueAttemptId = default!;
 #endif
         /// <summary>Time at which the attempt was created.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>Item ID associated with the attempt. Null if the ID is unavailable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemId { get; set; }
+        public string? ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
+        private string? _explicitNullValueItemId = default!;
 #nullable restore
 #else
-        public string ItemId { get; set; }
+        public string ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
+        private string _explicitNullValueItemId = default!;
 #endif
         /// <summary>Link customization that supplied the ruleset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LinkCustomizationName { get; set; }
+        public string? LinkCustomizationName { get => _explicitNullValueLinkCustomizationName; set { _explicitNullValueLinkCustomizationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_customization_name"); else _explicitNullProperties?.Remove("link_customization_name"); } }
+        private string? _explicitNullValueLinkCustomizationName = default!;
 #nullable restore
 #else
-        public string LinkCustomizationName { get; set; }
+        public string LinkCustomizationName { get => _explicitNullValueLinkCustomizationName; set { _explicitNullValueLinkCustomizationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_customization_name"); else _explicitNullProperties?.Remove("link_customization_name"); } }
+        private string _explicitNullValueLinkCustomizationName = default!;
 #endif
         /// <summary>Link session that produced the attempt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LinkSessionId { get; set; }
+        public string? LinkSessionId { get => _explicitNullValueLinkSessionId; set { _explicitNullValueLinkSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_session_id"); else _explicitNullProperties?.Remove("link_session_id"); } }
+        private string? _explicitNullValueLinkSessionId = default!;
 #nullable restore
 #else
-        public string LinkSessionId { get; set; }
+        public string LinkSessionId { get => _explicitNullValueLinkSessionId; set { _explicitNullValueLinkSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_session_id"); else _explicitNullProperties?.Remove("link_session_id"); } }
+        private string _explicitNullValueLinkSessionId = default!;
 #endif
         /// <summary>The Identity Match decision for the attempt.`PASS`: The decision was to allow the user to continue.`FAIL`: The decision was to block the user.`UNKNOWN`: The attempt&apos;s decision is unavailable or unrecognized.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListOutcome? Outcome { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListOutcome? Outcome { get => _explicitNullValueOutcome; set { _explicitNullValueOutcome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome"); else _explicitNullProperties?.Remove("outcome"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListOutcome? _explicitNullValueOutcome = default!;
         /// <summary>Account ID associated with a `PASS` outcome. Null for `FAIL` or `UNKNOWN` outcomes, or if the ID is unavailable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OutcomeAccountId { get; set; }
+        public string? OutcomeAccountId { get => _explicitNullValueOutcomeAccountId; set { _explicitNullValueOutcomeAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome_account_id"); else _explicitNullProperties?.Remove("outcome_account_id"); } }
+        private string? _explicitNullValueOutcomeAccountId = default!;
 #nullable restore
 #else
-        public string OutcomeAccountId { get; set; }
+        public string OutcomeAccountId { get => _explicitNullValueOutcomeAccountId; set { _explicitNullValueOutcomeAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome_account_id"); else _explicitNullProperties?.Remove("outcome_account_id"); } }
+        private string _explicitNullValueOutcomeAccountId = default!;
 #endif
         /// <summary>Revision of the Identity Match ruleset that was applied.</summary>
-        public int? RulesetRevision { get; set; }
+        public int? RulesetRevision { get => _explicitNullValueRulesetRevision; set { _explicitNullValueRulesetRevision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleset_revision"); else _explicitNullProperties?.Remove("ruleset_revision"); } }
+        private int? _explicitNullValueRulesetRevision = default!;
         /// <summary>Per-account match scores. Empty if the attempt data is unavailable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListAttemptScore>? Scores { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListAttemptScore>? Scores { get => _explicitNullValueScores; set { _explicitNullValueScores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores"); else _explicitNullProperties?.Remove("scores"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListAttemptScore>? _explicitNullValueScores = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListAttemptScore> Scores { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListAttemptScore> Scores { get => _explicitNullValueScores; set { _explicitNullValueScores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores"); else _explicitNullProperties?.Remove("scores"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListAttemptScore> _explicitNullValueScores = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListAttempt"/> and sets the default values.
@@ -84,7 +115,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListAttempt CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListAttempt();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListAttempt(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -121,6 +152,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("outcome_account_id", OutcomeAccountId);
             writer.WriteIntValue("ruleset_revision", RulesetRevision);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListAttemptScore>("scores", Scores);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

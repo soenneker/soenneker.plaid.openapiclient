@@ -12,58 +12,90 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProtectCashAdvanceDecisionCreateRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("advance_type") is { } nullNodeAdvanceType && nullNodeAdvanceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdvanceType = null;
+            if (parseNode.GetChildNode("cash_advance") is { } nullNodeCashAdvance && nullNodeCashAdvance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CashAdvance = null;
+            if (parseNode.GetChildNode("client_advance_id") is { } nullNodeClientAdvanceId && nullNodeClientAdvanceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientAdvanceId = null;
+            if (parseNode.GetChildNode("client_id") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
+            if (parseNode.GetChildNode("decision") is { } nullNodeDecision && nullNodeDecision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Decision = null;
+            if (parseNode.GetChildNode("decision_time") is { } nullNodeDecisionTime && nullNodeDecisionTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DecisionTime = null;
+            if (parseNode.GetChildNode("is_taken") is { } nullNodeIsTaken && nullNodeIsTaken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsTaken = null;
+            if (parseNode.GetChildNode("previous_advance_count") is { } nullNodePreviousAdvanceCount && nullNodePreviousAdvanceCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousAdvanceCount = null;
+            if (parseNode.GetChildNode("secret") is { } nullNodeSecret && nullNodeSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Secret = null;
+            if (parseNode.GetChildNode("user") is { } nullNodeUser && nullNodeUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) User = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Required when `is_taken` is `true`.Indicates if this would be a user&apos;s first or repeat cash-advance.`FIRST` - A user&apos;s first cash-advance.`REPEAT` - A user has previously taken out a cash-advance.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceType? AdvanceType { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceType? AdvanceType { get => _explicitNullValueAdvanceType; set { _explicitNullValueAdvanceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advance_type"); else _explicitNullProperties?.Remove("advance_type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceType? _explicitNullValueAdvanceType = default!;
         /// <summary>The details of a cash-advance associated with the decision. Required when `is_taken` is `true`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceInfo? CashAdvance { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceInfo? CashAdvance { get => _explicitNullValueCashAdvance; set { _explicitNullValueCashAdvance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cash_advance"); else _explicitNullProperties?.Remove("cash_advance"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceInfo? _explicitNullValueCashAdvance = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceInfo CashAdvance { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceInfo CashAdvance { get => _explicitNullValueCashAdvance; set { _explicitNullValueCashAdvance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cash_advance"); else _explicitNullProperties?.Remove("cash_advance"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceInfo _explicitNullValueCashAdvance = default!;
 #endif
         /// <summary>Your unique identifier for a cash-advance. Required when `is_taken` is `true`. This should be the same identifier provided when recording a repayment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientAdvanceId { get; set; }
+        public string? ClientAdvanceId { get => _explicitNullValueClientAdvanceId; set { _explicitNullValueClientAdvanceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_advance_id"); else _explicitNullProperties?.Remove("client_advance_id"); } }
+        private string? _explicitNullValueClientAdvanceId = default!;
 #nullable restore
 #else
-        public string ClientAdvanceId { get; set; }
+        public string ClientAdvanceId { get => _explicitNullValueClientAdvanceId; set { _explicitNullValueClientAdvanceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_advance_id"); else _explicitNullProperties?.Remove("client_advance_id"); } }
+        private string _explicitNullValueClientAdvanceId = default!;
 #endif
         /// <summary>Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get; set; }
+        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        private string? _explicitNullValueClientId = default!;
 #nullable restore
 #else
-        public string ClientId { get; set; }
+        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        private string _explicitNullValueClientId = default!;
 #endif
         /// <summary>The outcome of a cash-advance decision.`APPROVED` - The cash-advance was approved.`DECLINED` - The cash-advance was declined.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceDecisionOutcome? Decision { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceDecisionOutcome? Decision { get => _explicitNullValueDecision; set { _explicitNullValueDecision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decision"); else _explicitNullProperties?.Remove("decision"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceDecisionOutcome? _explicitNullValueDecision = default!;
         /// <summary>The time the decision was made, in ISO 8601 / RFC 3339 format (`YYYY-MM-DDTHH:mm:ssZ`).</summary>
-        public DateTimeOffset? DecisionTime { get; set; }
+        public DateTimeOffset? DecisionTime { get => _explicitNullValueDecisionTime; set { _explicitNullValueDecisionTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decision_time"); else _explicitNullProperties?.Remove("decision_time"); } }
+        private DateTimeOffset? _explicitNullValueDecisionTime = default!;
         /// <summary>Whether the end user took the cash-advance. Required when `decision` is APPROVED. When `true`, `client_advance_id` and `cash_advance` are required.</summary>
-        public bool? IsTaken { get; set; }
+        public bool? IsTaken { get => _explicitNullValueIsTaken; set { _explicitNullValueIsTaken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_taken"); else _explicitNullProperties?.Remove("is_taken"); } }
+        private bool? _explicitNullValueIsTaken = default!;
         /// <summary>The number of cash-advances a user has previously taken.</summary>
-        public int? PreviousAdvanceCount { get; set; }
+        public int? PreviousAdvanceCount { get => _explicitNullValuePreviousAdvanceCount; set { _explicitNullValuePreviousAdvanceCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_advance_count"); else _explicitNullProperties?.Remove("previous_advance_count"); } }
+        private int? _explicitNullValuePreviousAdvanceCount = default!;
         /// <summary>Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Secret { get; set; }
+        public string? Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
+        private string? _explicitNullValueSecret = default!;
 #nullable restore
 #else
-        public string Secret { get; set; }
+        public string Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
+        private string _explicitNullValueSecret = default!;
 #endif
         /// <summary>Represents an end user for `/protect/compute` requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectUser? User { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectUser? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ProtectUser? _explicitNullValueUser = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectUser User { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectUser User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ProtectUser _explicitNullValueUser = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ProtectCashAdvanceDecisionCreateRequest"/> and sets the default values.
@@ -80,7 +112,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.ProtectCashAdvanceDecisionCreateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.ProtectCashAdvanceDecisionCreateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.ProtectCashAdvanceDecisionCreateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -119,6 +151,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteIntValue("previous_advance_count", PreviousAdvanceCount);
             writer.WriteStringValue("secret", Secret);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectUser>("user", User);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

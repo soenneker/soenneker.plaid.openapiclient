@@ -16,6 +16,7 @@ namespace Soenneker.Plaid.OpenApiClient.Payment_initiation.Payment.Token
     public partial class TokenRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The create property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Payment_initiation.Payment.Token.Create.CreateRequestBuilder Create
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Payment_initiation.Payment.Token.Create.CreateRequestBuilder(PathParameters, RequestAdapter);

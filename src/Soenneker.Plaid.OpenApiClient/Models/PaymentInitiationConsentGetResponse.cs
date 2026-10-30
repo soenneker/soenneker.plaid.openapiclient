@@ -12,72 +12,106 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaymentInitiationConsentGetResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("consent_id") is { } nullNodeConsentId && nullNodeConsentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsentId = null;
+            if (parseNode.GetChildNode("constraints") is { } nullNodeConstraints && nullNodeConstraints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Constraints = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("payer_details") is { } nullNodePayerDetails && nullNodePayerDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayerDetails = null;
+            if (parseNode.GetChildNode("recipient_id") is { } nullNodeRecipientId && nullNodeRecipientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecipientId = null;
+            if (parseNode.GetChildNode("reference") is { } nullNodeReference && nullNodeReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reference = null;
+            if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
+            if (parseNode.GetChildNode("scopes") is { } nullNodeScopes && nullNodeScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scopes = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The consent ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConsentId { get; set; }
+        public string? ConsentId { get => _explicitNullValueConsentId; set { _explicitNullValueConsentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consent_id"); else _explicitNullProperties?.Remove("consent_id"); } }
+        private string? _explicitNullValueConsentId = default!;
 #nullable restore
 #else
-        public string ConsentId { get; set; }
+        public string ConsentId { get => _explicitNullValueConsentId; set { _explicitNullValueConsentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consent_id"); else _explicitNullProperties?.Remove("consent_id"); } }
+        private string _explicitNullValueConsentId = default!;
 #endif
         /// <summary>Limitations that will be applied to payments initiated using the payment consent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentConstraints? Constraints { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentConstraints? Constraints { get => _explicitNullValueConstraints; set { _explicitNullValueConstraints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("constraints"); else _explicitNullProperties?.Remove("constraints"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentConstraints? _explicitNullValueConstraints = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentConstraints Constraints { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentConstraints Constraints { get => _explicitNullValueConstraints; set { _explicitNullValueConstraints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("constraints"); else _explicitNullProperties?.Remove("constraints"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentConstraints _explicitNullValueConstraints = default!;
 #endif
         /// <summary>Consent creation timestamp, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>Details about external payment refund</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentRefundDetails? PayerDetails { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentRefundDetails? PayerDetails { get => _explicitNullValuePayerDetails; set { _explicitNullValuePayerDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payer_details"); else _explicitNullProperties?.Remove("payer_details"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentRefundDetails? _explicitNullValuePayerDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentRefundDetails PayerDetails { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentRefundDetails PayerDetails { get => _explicitNullValuePayerDetails; set { _explicitNullValuePayerDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payer_details"); else _explicitNullProperties?.Remove("payer_details"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentRefundDetails _explicitNullValuePayerDetails = default!;
 #endif
         /// <summary>The ID of the recipient the payment consent is for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecipientId { get; set; }
+        public string? RecipientId { get => _explicitNullValueRecipientId; set { _explicitNullValueRecipientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipient_id"); else _explicitNullProperties?.Remove("recipient_id"); } }
+        private string? _explicitNullValueRecipientId = default!;
 #nullable restore
 #else
-        public string RecipientId { get; set; }
+        public string RecipientId { get => _explicitNullValueRecipientId; set { _explicitNullValueRecipientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipient_id"); else _explicitNullProperties?.Remove("recipient_id"); } }
+        private string _explicitNullValueRecipientId = default!;
 #endif
         /// <summary>A reference for the payment consent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reference { get; set; }
+        public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        private string? _explicitNullValueReference = default!;
 #nullable restore
 #else
-        public string Reference { get; set; }
+        public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        private string _explicitNullValueReference = default!;
 #endif
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId { get; set; }
+        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        private string? _explicitNullValueRequestId = default!;
 #nullable restore
 #else
-        public string RequestId { get; set; }
+        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        private string _explicitNullValueRequestId = default!;
 #endif
         /// <summary>Deprecated, use the &apos;type&apos; field instead.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentScope?>? Scopes { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentScope?>? Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentScope?>? _explicitNullValueScopes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentScope?> Scopes { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentScope?> Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentScope?> _explicitNullValueScopes = default!;
 #endif
         /// <summary>The status of the payment consent.`UNAUTHORISED`: Consent created, but requires user authorisation.`REJECTED`: Consent authorisation was rejected by the bank.`AUTHORISED`: Consent is active and ready to be used.`REVOKED`: Consent has been revoked and can no longer be used.`EXPIRED`: Consent is no longer valid.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentStatus? Status { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentStatus? _explicitNullValueStatus = default!;
         /// <summary>Payment consent type. Defines possible use case for payments made with the given consent.`SWEEPING`: Allows moving money between accounts owned by the same user.`COMMERCIAL`: Allows initiating payments from the user&apos;s account to third parties.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentType? Type { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentGetResponse"/> and sets the default values.
         /// </summary>
@@ -93,7 +127,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentGetResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentGetResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -132,6 +166,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentScope>("scopes", Scopes);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentStatus>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationConsentType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,29 +12,56 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PrismCashScoreMetadata : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("l1m_credit_value_cnt") is { } nullNodeL1mCreditValueCnt && nullNodeL1mCreditValueCnt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) L1mCreditValueCnt = null;
+            if (parseNode.GetChildNode("l1m_debit_value_cnt") is { } nullNodeL1mDebitValueCnt && nullNodeL1mDebitValueCnt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) L1mDebitValueCnt = null;
+            if (parseNode.GetChildNode("max_age") is { } nullNodeMaxAge && nullNodeMaxAge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxAge = null;
+            if (parseNode.GetChildNode("max_age_credit") is { } nullNodeMaxAgeCredit && nullNodeMaxAgeCredit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxAgeCredit = null;
+            if (parseNode.GetChildNode("max_age_debit") is { } nullNodeMaxAgeDebit && nullNodeMaxAgeDebit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxAgeDebit = null;
+            if (parseNode.GetChildNode("min_age") is { } nullNodeMinAge && nullNodeMinAge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinAge = null;
+            if (parseNode.GetChildNode("min_age_credit") is { } nullNodeMinAgeCredit && nullNodeMinAgeCredit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinAgeCredit = null;
+            if (parseNode.GetChildNode("min_age_debit") is { } nullNodeMinAgeDebit && nullNodeMinAgeDebit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinAgeDebit = null;
+            if (parseNode.GetChildNode("num_trxn_credit") is { } nullNodeNumTrxnCredit && nullNodeNumTrxnCredit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumTrxnCredit = null;
+            if (parseNode.GetChildNode("num_trxn_debit") is { } nullNodeNumTrxnDebit && nullNodeNumTrxnDebit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumTrxnDebit = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of credit transactions in the last 30 days.</summary>
-        public int? L1mCreditValueCnt { get; set; }
+        public int? L1mCreditValueCnt { get => _explicitNullValueL1mCreditValueCnt; set { _explicitNullValueL1mCreditValueCnt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("l1m_credit_value_cnt"); else _explicitNullProperties?.Remove("l1m_credit_value_cnt"); } }
+        private int? _explicitNullValueL1mCreditValueCnt = default!;
         /// <summary>Number of debit transactions in the last 30 days.</summary>
-        public int? L1mDebitValueCnt { get; set; }
+        public int? L1mDebitValueCnt { get => _explicitNullValueL1mDebitValueCnt; set { _explicitNullValueL1mDebitValueCnt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("l1m_debit_value_cnt"); else _explicitNullProperties?.Remove("l1m_debit_value_cnt"); } }
+        private int? _explicitNullValueL1mDebitValueCnt = default!;
         /// <summary>Number of days since the oldest transaction.</summary>
-        public int? MaxAge { get; set; }
+        public int? MaxAge { get => _explicitNullValueMaxAge; set { _explicitNullValueMaxAge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_age"); else _explicitNullProperties?.Remove("max_age"); } }
+        private int? _explicitNullValueMaxAge = default!;
         /// <summary>Number of days since the oldest credit transaction.</summary>
-        public int? MaxAgeCredit { get; set; }
+        public int? MaxAgeCredit { get => _explicitNullValueMaxAgeCredit; set { _explicitNullValueMaxAgeCredit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_age_credit"); else _explicitNullProperties?.Remove("max_age_credit"); } }
+        private int? _explicitNullValueMaxAgeCredit = default!;
         /// <summary>Number of days since the oldest debit transaction.</summary>
-        public int? MaxAgeDebit { get; set; }
+        public int? MaxAgeDebit { get => _explicitNullValueMaxAgeDebit; set { _explicitNullValueMaxAgeDebit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_age_debit"); else _explicitNullProperties?.Remove("max_age_debit"); } }
+        private int? _explicitNullValueMaxAgeDebit = default!;
         /// <summary>Number of days since the latest transaction.</summary>
-        public int? MinAge { get; set; }
+        public int? MinAge { get => _explicitNullValueMinAge; set { _explicitNullValueMinAge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_age"); else _explicitNullProperties?.Remove("min_age"); } }
+        private int? _explicitNullValueMinAge = default!;
         /// <summary>Number of days since the latest credit transaction.</summary>
-        public int? MinAgeCredit { get; set; }
+        public int? MinAgeCredit { get => _explicitNullValueMinAgeCredit; set { _explicitNullValueMinAgeCredit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_age_credit"); else _explicitNullProperties?.Remove("min_age_credit"); } }
+        private int? _explicitNullValueMinAgeCredit = default!;
         /// <summary>Number of days since the latest debit transaction.</summary>
-        public int? MinAgeDebit { get; set; }
+        public int? MinAgeDebit { get => _explicitNullValueMinAgeDebit; set { _explicitNullValueMinAgeDebit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_age_debit"); else _explicitNullProperties?.Remove("min_age_debit"); } }
+        private int? _explicitNullValueMinAgeDebit = default!;
         /// <summary>Number of credit transactions.</summary>
-        public int? NumTrxnCredit { get; set; }
+        public int? NumTrxnCredit { get => _explicitNullValueNumTrxnCredit; set { _explicitNullValueNumTrxnCredit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("num_trxn_credit"); else _explicitNullProperties?.Remove("num_trxn_credit"); } }
+        private int? _explicitNullValueNumTrxnCredit = default!;
         /// <summary>Number of debit transactions.</summary>
-        public int? NumTrxnDebit { get; set; }
+        public int? NumTrxnDebit { get => _explicitNullValueNumTrxnDebit; set { _explicitNullValueNumTrxnDebit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("num_trxn_debit"); else _explicitNullProperties?.Remove("num_trxn_debit"); } }
+        private int? _explicitNullValueNumTrxnDebit = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScoreMetadata"/> and sets the default values.
         /// </summary>
@@ -50,7 +77,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScoreMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScoreMetadata();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScoreMetadata(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +116,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteIntValue("min_age_debit", MinAgeDebit);
             writer.WriteIntValue("num_trxn_credit", NumTrxnCredit);
             writer.WriteIntValue("num_trxn_debit", NumTrxnDebit);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

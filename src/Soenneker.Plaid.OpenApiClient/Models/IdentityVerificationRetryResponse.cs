@@ -12,153 +12,219 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IdentityVerificationRetryResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("beacon_user_id") is { } nullNodeBeaconUserId && nullNodeBeaconUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BeaconUserId = null;
+            if (parseNode.GetChildNode("client_user_id") is { } nullNodeClientUserId && nullNodeClientUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientUserId = null;
+            if (parseNode.GetChildNode("completed_at") is { } nullNodeCompletedAt && nullNodeCompletedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompletedAt = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("documentary_verification") is { } nullNodeDocumentaryVerification && nullNodeDocumentaryVerification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentaryVerification = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("kyc_check") is { } nullNodeKycCheck && nullNodeKycCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KycCheck = null;
+            if (parseNode.GetChildNode("latest_scored_protect_event") is { } nullNodeLatestScoredProtectEvent && nullNodeLatestScoredProtectEvent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatestScoredProtectEvent = null;
+            if (parseNode.GetChildNode("previous_attempt_id") is { } nullNodePreviousAttemptId && nullNodePreviousAttemptId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousAttemptId = null;
+            if (parseNode.GetChildNode("redacted_at") is { } nullNodeRedactedAt && nullNodeRedactedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedactedAt = null;
+            if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
+            if (parseNode.GetChildNode("risk_check") is { } nullNodeRiskCheck && nullNodeRiskCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskCheck = null;
+            if (parseNode.GetChildNode("selfie_check") is { } nullNodeSelfieCheck && nullNodeSelfieCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SelfieCheck = null;
+            if (parseNode.GetChildNode("shareable_url") is { } nullNodeShareableUrl && nullNodeShareableUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareableUrl = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("steps") is { } nullNodeSteps && nullNodeSteps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Steps = null;
+            if (parseNode.GetChildNode("template") is { } nullNodeTemplate && nullNodeTemplate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Template = null;
+            if (parseNode.GetChildNode("user") is { } nullNodeUser && nullNodeUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) User = null;
+            if (parseNode.GetChildNode("user_id") is { } nullNodeUserId && nullNodeUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserId = null;
+            if (parseNode.GetChildNode("verify_sms") is { } nullNodeVerifySms && nullNodeVerifySms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerifySms = null;
+            if (parseNode.GetChildNode("watchlist_screening_id") is { } nullNodeWatchlistScreeningId && nullNodeWatchlistScreeningId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WatchlistScreeningId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Beacon is deprecated in favor of Plaid Protect. This field is only populated for users of the deprecated Beacon product.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BeaconUserId { get; set; }
+        public string? BeaconUserId { get => _explicitNullValueBeaconUserId; set { _explicitNullValueBeaconUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("beacon_user_id"); else _explicitNullProperties?.Remove("beacon_user_id"); } }
+        private string? _explicitNullValueBeaconUserId = default!;
 #nullable restore
 #else
-        public string BeaconUserId { get; set; }
+        public string BeaconUserId { get => _explicitNullValueBeaconUserId; set { _explicitNullValueBeaconUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("beacon_user_id"); else _explicitNullProperties?.Remove("beacon_user_id"); } }
+        private string _explicitNullValueBeaconUserId = default!;
 #endif
         /// <summary>A unique ID that identifies the end user in your system. Either a `user_id` or the `client_user_id` must be provided. This ID can also be used to associate user-specific data from other Plaid products. Financial Account Matching requires this field and the `/link/token/create` `client_user_id` to be consistent. Personally identifiable information, such as an email address or phone number, should not be used in the `client_user_id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientUserId { get; set; }
+        public string? ClientUserId { get => _explicitNullValueClientUserId; set { _explicitNullValueClientUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_user_id"); else _explicitNullProperties?.Remove("client_user_id"); } }
+        private string? _explicitNullValueClientUserId = default!;
 #nullable restore
 #else
-        public string ClientUserId { get; set; }
+        public string ClientUserId { get => _explicitNullValueClientUserId; set { _explicitNullValueClientUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_user_id"); else _explicitNullProperties?.Remove("client_user_id"); } }
+        private string _explicitNullValueClientUserId = default!;
 #endif
         /// <summary>An ISO8601 formatted timestamp.</summary>
-        public DateTimeOffset? CompletedAt { get; set; }
+        public DateTimeOffset? CompletedAt { get => _explicitNullValueCompletedAt; set { _explicitNullValueCompletedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed_at"); else _explicitNullProperties?.Remove("completed_at"); } }
+        private DateTimeOffset? _explicitNullValueCompletedAt = default!;
         /// <summary>An ISO8601 formatted timestamp.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>Data, images, analysis, and results from the `documentary_verification` step. This field will be `null` unless `steps.documentary_verification` has reached a terminal state of `success`, `failed`, `manually_approved`, or `manually_rejected`. It is also returned while the user is being asked to retry after a failed document attempt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.DocumentaryVerification? DocumentaryVerification { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.DocumentaryVerification? DocumentaryVerification { get => _explicitNullValueDocumentaryVerification; set { _explicitNullValueDocumentaryVerification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentary_verification"); else _explicitNullProperties?.Remove("documentary_verification"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.DocumentaryVerification? _explicitNullValueDocumentaryVerification = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.DocumentaryVerification DocumentaryVerification { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.DocumentaryVerification DocumentaryVerification { get => _explicitNullValueDocumentaryVerification; set { _explicitNullValueDocumentaryVerification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentary_verification"); else _explicitNullProperties?.Remove("documentary_verification"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.DocumentaryVerification _explicitNullValueDocumentaryVerification = default!;
 #endif
         /// <summary>ID of the associated Identity Verification attempt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Additional information for the `kyc_check` (Data Source Verification) step. This field will be `null` unless `steps.kyc_check` has reached a terminal state of `success`, `failed`, `manually_approved`, or `manually_rejected`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.KycCheckDetails? KycCheck { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.KycCheckDetails? KycCheck { get => _explicitNullValueKycCheck; set { _explicitNullValueKycCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kyc_check"); else _explicitNullProperties?.Remove("kyc_check"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.KycCheckDetails? _explicitNullValueKycCheck = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.KycCheckDetails KycCheck { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.KycCheckDetails KycCheck { get => _explicitNullValueKycCheck; set { _explicitNullValueKycCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kyc_check"); else _explicitNullProperties?.Remove("kyc_check"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.KycCheckDetails _explicitNullValueKycCheck = default!;
 #endif
         /// <summary>Information about a Protect event including Trust Index score and fraud attributes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdvProtectEvent? LatestScoredProtectEvent { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdvProtectEvent? LatestScoredProtectEvent { get => _explicitNullValueLatestScoredProtectEvent; set { _explicitNullValueLatestScoredProtectEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest_scored_protect_event"); else _explicitNullProperties?.Remove("latest_scored_protect_event"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdvProtectEvent? _explicitNullValueLatestScoredProtectEvent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdvProtectEvent LatestScoredProtectEvent { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdvProtectEvent LatestScoredProtectEvent { get => _explicitNullValueLatestScoredProtectEvent; set { _explicitNullValueLatestScoredProtectEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest_scored_protect_event"); else _explicitNullProperties?.Remove("latest_scored_protect_event"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdvProtectEvent _explicitNullValueLatestScoredProtectEvent = default!;
 #endif
         /// <summary>The ID for the Identity Verification preceding this session. This field will only be filled if the current Identity Verification is a retry of a previous attempt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousAttemptId { get; set; }
+        public string? PreviousAttemptId { get => _explicitNullValuePreviousAttemptId; set { _explicitNullValuePreviousAttemptId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_attempt_id"); else _explicitNullProperties?.Remove("previous_attempt_id"); } }
+        private string? _explicitNullValuePreviousAttemptId = default!;
 #nullable restore
 #else
-        public string PreviousAttemptId { get; set; }
+        public string PreviousAttemptId { get => _explicitNullValuePreviousAttemptId; set { _explicitNullValuePreviousAttemptId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_attempt_id"); else _explicitNullProperties?.Remove("previous_attempt_id"); } }
+        private string _explicitNullValuePreviousAttemptId = default!;
 #endif
         /// <summary>An ISO8601 formatted timestamp.</summary>
-        public DateTimeOffset? RedactedAt { get; set; }
+        public DateTimeOffset? RedactedAt { get => _explicitNullValueRedactedAt; set { _explicitNullValueRedactedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redacted_at"); else _explicitNullProperties?.Remove("redacted_at"); } }
+        private DateTimeOffset? _explicitNullValueRedactedAt = default!;
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId { get; set; }
+        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        private string? _explicitNullValueRequestId = default!;
 #nullable restore
 #else
-        public string RequestId { get; set; }
+        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        private string _explicitNullValueRequestId = default!;
 #endif
         /// <summary>Additional information for the `risk_check` step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckDetails? RiskCheck { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckDetails? RiskCheck { get => _explicitNullValueRiskCheck; set { _explicitNullValueRiskCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_check"); else _explicitNullProperties?.Remove("risk_check"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckDetails? _explicitNullValueRiskCheck = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckDetails RiskCheck { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckDetails RiskCheck { get => _explicitNullValueRiskCheck; set { _explicitNullValueRiskCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_check"); else _explicitNullProperties?.Remove("risk_check"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckDetails _explicitNullValueRiskCheck = default!;
 #endif
         /// <summary>Additional information for the `selfie_check` step. This field will be `null` unless `steps.selfie_check` has reached a terminal state of `success`, `failed`, `manually_approved`, or `manually_rejected`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieCheck? SelfieCheck { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieCheck? SelfieCheck { get => _explicitNullValueSelfieCheck; set { _explicitNullValueSelfieCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selfie_check"); else _explicitNullProperties?.Remove("selfie_check"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SelfieCheck? _explicitNullValueSelfieCheck = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieCheck SelfieCheck { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieCheck SelfieCheck { get => _explicitNullValueSelfieCheck; set { _explicitNullValueSelfieCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selfie_check"); else _explicitNullProperties?.Remove("selfie_check"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SelfieCheck _explicitNullValueSelfieCheck = default!;
 #endif
         /// <summary>A shareable URL that can be sent directly to the user to complete verification</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShareableUrl { get; set; }
+        public string? ShareableUrl { get => _explicitNullValueShareableUrl; set { _explicitNullValueShareableUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareable_url"); else _explicitNullProperties?.Remove("shareable_url"); } }
+        private string? _explicitNullValueShareableUrl = default!;
 #nullable restore
 #else
-        public string ShareableUrl { get; set; }
+        public string ShareableUrl { get => _explicitNullValueShareableUrl; set { _explicitNullValueShareableUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareable_url"); else _explicitNullProperties?.Remove("shareable_url"); } }
+        private string _explicitNullValueShareableUrl = default!;
 #endif
         /// <summary>The status of this Identity Verification attempt.`active` - The Identity Verification attempt is incomplete. The user may have completed part of the session, but has neither failed nor passed.`success` - The Identity Verification attempt has completed, passing all steps defined to the associated Identity Verification template.`failed` - The user failed one or more steps in the session and was told to contact support.`expired` - The Identity Verification attempt was active for a long period of time without being completed and was automatically marked as expired. Note that sessions currently do not expire. Automatic expiration is expected to be enabled in the future.`canceled` - The Identity Verification attempt was canceled, either via the dashboard by a user, or via API. The user may have completed part of the session, but has neither failed nor passed.`pending_review` - The Identity Verification attempt template was configured to perform a screening that had one or more hits needing review.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStatus? Status { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStatus? _explicitNullValueStatus = default!;
         /// <summary>Each step will be one of the following values:`active` - This step is the user&apos;s current step. They are either in the process of completing this step, or they recently closed their Identity Verification attempt while in the middle of this step. Only one step will be marked as `active` at any given point.`success` - The Identity Verification attempt has completed this step.`failed` - The user failed this step. This can either cause the user to fail the session as a whole, or cause them to fall back to another step depending on how the Identity Verification template is configured. A failed step does not imply a failed session.`waiting_for_prerequisite` - The user needs to complete another step first, before they progress to this step. This step may never run, depending on if the user fails an earlier step or if the step is only run as a fallback.`not_applicable` - This step will not be run for this session.`skipped` - This step was skipped, for example because the retry instructions that created this Identity Verification attempt specified that it should be skipped, because your template configuration skips it, or, for `accept_tos`, because `gave_consent` was `true`.`expired` - This step had not yet been completed when the Identity Verification attempt as a whole expired.`canceled` - The Identity Verification attempt was canceled before the user completed this step.`pending_review` - The Identity Verification attempt template was configured to perform a screening that had one or more hits needing review.`manually_approved` - The step was manually overridden to pass by a team member in the dashboard.`manually_rejected` - The step was manually overridden to fail by a team member in the dashboard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepSummary? Steps { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepSummary? Steps { get => _explicitNullValueSteps; set { _explicitNullValueSteps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("steps"); else _explicitNullProperties?.Remove("steps"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepSummary? _explicitNullValueSteps = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepSummary Steps { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepSummary Steps { get => _explicitNullValueSteps; set { _explicitNullValueSteps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("steps"); else _explicitNullProperties?.Remove("steps"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepSummary _explicitNullValueSteps = default!;
 #endif
         /// <summary>The resource ID and version number of the template configuring the behavior of a given Identity Verification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationTemplateReference? Template { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationTemplateReference? Template { get => _explicitNullValueTemplate; set { _explicitNullValueTemplate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template"); else _explicitNullProperties?.Remove("template"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationTemplateReference? _explicitNullValueTemplate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationTemplateReference Template { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationTemplateReference Template { get => _explicitNullValueTemplate; set { _explicitNullValueTemplate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template"); else _explicitNullProperties?.Remove("template"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationTemplateReference _explicitNullValueTemplate = default!;
 #endif
         /// <summary>The identity data that was either collected from the user or provided via API in order to perform an Identity Verification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationUserData? User { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationUserData? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationUserData? _explicitNullValueUser = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationUserData User { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationUserData User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationUserData _explicitNullValueUser = default!;
 #endif
         /// <summary>Unique user identifier, created by calling `/user/create`. Either a `user_id` or the `client_user_id` must be provided. The `user_id` may only be used instead of the `client_user_id` if you were not a pre-existing user of `/user/create` as of December 10, 2025, or if you have since [migrated to the new User APIs](https://plaid.com/docs/api/users/migrate-to-new-user-apis); for more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis). If both this field and a `client_user_id` are present in a request, the `user_id` must have been created from the provided `client_user_id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId { get; set; }
+        public string? UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
+        private string? _explicitNullValueUserId = default!;
 #nullable restore
 #else
-        public string UserId { get; set; }
+        public string UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
+        private string _explicitNullValueUserId = default!;
 #endif
         /// <summary>Additional information for the `verify_sms` step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.VerifySmsDetails? VerifySms { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.VerifySmsDetails? VerifySms { get => _explicitNullValueVerifySms; set { _explicitNullValueVerifySms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verify_sms"); else _explicitNullProperties?.Remove("verify_sms"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.VerifySmsDetails? _explicitNullValueVerifySms = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.VerifySmsDetails VerifySms { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.VerifySmsDetails VerifySms { get => _explicitNullValueVerifySms; set { _explicitNullValueVerifySms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verify_sms"); else _explicitNullProperties?.Remove("verify_sms"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.VerifySmsDetails _explicitNullValueVerifySms = default!;
 #endif
         /// <summary>ID of the associated screening.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WatchlistScreeningId { get; set; }
+        public string? WatchlistScreeningId { get => _explicitNullValueWatchlistScreeningId; set { _explicitNullValueWatchlistScreeningId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("watchlist_screening_id"); else _explicitNullProperties?.Remove("watchlist_screening_id"); } }
+        private string? _explicitNullValueWatchlistScreeningId = default!;
 #nullable restore
 #else
-        public string WatchlistScreeningId { get; set; }
+        public string WatchlistScreeningId { get => _explicitNullValueWatchlistScreeningId; set { _explicitNullValueWatchlistScreeningId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("watchlist_screening_id"); else _explicitNullProperties?.Remove("watchlist_screening_id"); } }
+        private string _explicitNullValueWatchlistScreeningId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationRetryResponse"/> and sets the default values.
@@ -175,7 +241,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationRetryResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationRetryResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationRetryResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -236,6 +302,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("user_id", UserId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.VerifySmsDetails>("verify_sms", VerifySms);
             writer.WriteStringValue("watchlist_screening_id", WatchlistScreeningId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

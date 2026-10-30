@@ -12,36 +12,54 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PrismInsights : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("error_reason") is { } nullNodeErrorReason && nullNodeErrorReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorReason = null;
+            if (parseNode.GetChildNode("model_version") is { } nullNodeModelVersion && nullNodeModelVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelVersion = null;
+            if (parseNode.GetChildNode("result") is { } nullNodeResult && nullNodeResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Result = null;
+            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The error returned by Prism for this product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorReason { get; set; }
+        public string? ErrorReason { get => _explicitNullValueErrorReason; set { _explicitNullValueErrorReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_reason"); else _explicitNullProperties?.Remove("error_reason"); } }
+        private string? _explicitNullValueErrorReason = default!;
 #nullable restore
 #else
-        public string ErrorReason { get; set; }
+        public string ErrorReason { get => _explicitNullValueErrorReason; set { _explicitNullValueErrorReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_reason"); else _explicitNullProperties?.Remove("error_reason"); } }
+        private string _explicitNullValueErrorReason = default!;
 #endif
         /// <summary>The version of Prism Data&apos;s insights model used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModelVersion { get; set; }
+        public string? ModelVersion { get => _explicitNullValueModelVersion; set { _explicitNullValueModelVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_version"); else _explicitNullProperties?.Remove("model_version"); } }
+        private string? _explicitNullValueModelVersion = default!;
 #nullable restore
 #else
-        public string ModelVersion { get; set; }
+        public string ModelVersion { get => _explicitNullValueModelVersion; set { _explicitNullValueModelVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_version"); else _explicitNullProperties?.Remove("model_version"); } }
+        private string _explicitNullValueModelVersion = default!;
 #endif
         /// <summary>The Insights Result object is a map of cash flow attributes, where the key is a string, and the value is a float or string. For a full list of all ~2,000 attributes, contact your account manager. The attributes may vary depending on the Prism version used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsResultProperty? Result { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsResultProperty? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsResultProperty? _explicitNullValueResult = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsResultProperty Result { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsResultProperty Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsResultProperty _explicitNullValueResult = default!;
 #endif
         /// <summary>The version of Prism Data&apos;s insights model used. This field is deprecated in favor of `model_version`.</summary>
         [Obsolete("")]
-        public int? Version { get; set; }
+        public int? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private int? _explicitNullValueVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PrismInsights"/> and sets the default values.
         /// </summary>
@@ -57,7 +75,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.PrismInsights CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.PrismInsights();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.PrismInsights(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,6 +104,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("model_version", ModelVersion);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsResultProperty>("result", Result);
             writer.WriteIntValue("version", Version);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

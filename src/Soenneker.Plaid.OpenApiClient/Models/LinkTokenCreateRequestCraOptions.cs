@@ -12,70 +12,104 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LinkTokenCreateRequestCraOptions : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("base_report") is { } nullNodeBaseReport && nullNodeBaseReport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseReport = null;
+            if (parseNode.GetChildNode("cashflow_insights") is { } nullNodeCashflowInsights && nullNodeCashflowInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CashflowInsights = null;
+            if (parseNode.GetChildNode("client_report_id") is { } nullNodeClientReportId && nullNodeClientReportId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientReportId = null;
+            if (parseNode.GetChildNode("days_requested") is { } nullNodeDaysRequested && nullNodeDaysRequested.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DaysRequested = null;
+            if (parseNode.GetChildNode("days_required") is { } nullNodeDaysRequired && nullNodeDaysRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DaysRequired = null;
+            if (parseNode.GetChildNode("include_investments") is { } nullNodeIncludeInvestments && nullNodeIncludeInvestments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeInvestments = null;
+            if (parseNode.GetChildNode("income_insights") is { } nullNodeIncomeInsights && nullNodeIncomeInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeInsights = null;
+            if (parseNode.GetChildNode("lend_score") is { } nullNodeLendScore && nullNodeLendScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LendScore = null;
+            if (parseNode.GetChildNode("network_insights") is { } nullNodeNetworkInsights && nullNodeNetworkInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkInsights = null;
+            if (parseNode.GetChildNode("partner_insights") is { } nullNodePartnerInsights && nullNodePartnerInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PartnerInsights = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies options for initializing Link for use with the Base Report product, specifically the `client_report_id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsBaseReport? BaseReport { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsBaseReport? BaseReport { get => _explicitNullValueBaseReport; set { _explicitNullValueBaseReport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_report"); else _explicitNullProperties?.Remove("base_report"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsBaseReport? _explicitNullValueBaseReport = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsBaseReport BaseReport { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsBaseReport BaseReport { get => _explicitNullValueBaseReport; set { _explicitNullValueBaseReport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_report"); else _explicitNullProperties?.Remove("base_report"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsBaseReport _explicitNullValueBaseReport = default!;
 #endif
         /// <summary>Specifies options for initializing Link for use with the Cashflow Insights product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsCashflowInsights? CashflowInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsCashflowInsights? CashflowInsights { get => _explicitNullValueCashflowInsights; set { _explicitNullValueCashflowInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cashflow_insights"); else _explicitNullProperties?.Remove("cashflow_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsCashflowInsights? _explicitNullValueCashflowInsights = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsCashflowInsights CashflowInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsCashflowInsights CashflowInsights { get => _explicitNullValueCashflowInsights; set { _explicitNullValueCashflowInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cashflow_insights"); else _explicitNullProperties?.Remove("cashflow_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsCashflowInsights _explicitNullValueCashflowInsights = default!;
 #endif
         /// <summary>Client-generated identifier, which can be used by lenders to track loan applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientReportId { get; set; }
+        public string? ClientReportId { get => _explicitNullValueClientReportId; set { _explicitNullValueClientReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_report_id"); else _explicitNullProperties?.Remove("client_report_id"); } }
+        private string? _explicitNullValueClientReportId = default!;
 #nullable restore
 #else
-        public string ClientReportId { get; set; }
+        public string ClientReportId { get => _explicitNullValueClientReportId; set { _explicitNullValueClientReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_report_id"); else _explicitNullProperties?.Remove("client_report_id"); } }
+        private string _explicitNullValueClientReportId = default!;
 #endif
         /// <summary>The number of days of history to include in Plaid Check products. Maximum is 731; minimum is 180. If a value lower than 180 is provided, a minimum of 180 days of history will be requested.</summary>
-        public int? DaysRequested { get; set; }
+        public int? DaysRequested { get => _explicitNullValueDaysRequested; set { _explicitNullValueDaysRequested = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days_requested"); else _explicitNullProperties?.Remove("days_requested"); } }
+        private int? _explicitNullValueDaysRequested = default!;
         /// <summary>The minimum number of days of data required for the report to be successfully generated.</summary>
-        public int? DaysRequired { get; set; }
+        public int? DaysRequired { get => _explicitNullValueDaysRequired; set { _explicitNullValueDaysRequired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days_required"); else _explicitNullProperties?.Remove("days_required"); } }
+        private int? _explicitNullValueDaysRequired = default!;
         /// <summary>Indicates that investment data should be extracted from the linked account(s).</summary>
-        public bool? IncludeInvestments { get; set; }
+        public bool? IncludeInvestments { get => _explicitNullValueIncludeInvestments; set { _explicitNullValueIncludeInvestments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_investments"); else _explicitNullProperties?.Remove("include_investments"); } }
+        private bool? _explicitNullValueIncludeInvestments = default!;
         /// <summary>Specifies options for initializing Link for use with the CRA Income Insights product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsIncomeInsights? IncomeInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsIncomeInsights? IncomeInsights { get => _explicitNullValueIncomeInsights; set { _explicitNullValueIncomeInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_insights"); else _explicitNullProperties?.Remove("income_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsIncomeInsights? _explicitNullValueIncomeInsights = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsIncomeInsights IncomeInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsIncomeInsights IncomeInsights { get => _explicitNullValueIncomeInsights; set { _explicitNullValueIncomeInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_insights"); else _explicitNullProperties?.Remove("income_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsIncomeInsights _explicitNullValueIncomeInsights = default!;
 #endif
         /// <summary>Specifies options for initializing Link for use with the CRA LendScore product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsLendScore? LendScore { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsLendScore? LendScore { get => _explicitNullValueLendScore; set { _explicitNullValueLendScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lend_score"); else _explicitNullProperties?.Remove("lend_score"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsLendScore? _explicitNullValueLendScore = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsLendScore LendScore { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsLendScore LendScore { get => _explicitNullValueLendScore; set { _explicitNullValueLendScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lend_score"); else _explicitNullProperties?.Remove("lend_score"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsLendScore _explicitNullValueLendScore = default!;
 #endif
         /// <summary>Specifies options for initializing Link for use with the CRA Network Insights product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsNetworkInsights? NetworkInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsNetworkInsights? NetworkInsights { get => _explicitNullValueNetworkInsights; set { _explicitNullValueNetworkInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_insights"); else _explicitNullProperties?.Remove("network_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsNetworkInsights? _explicitNullValueNetworkInsights = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsNetworkInsights NetworkInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsNetworkInsights NetworkInsights { get => _explicitNullValueNetworkInsights; set { _explicitNullValueNetworkInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_insights"); else _explicitNullProperties?.Remove("network_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsNetworkInsights _explicitNullValueNetworkInsights = default!;
 #endif
         /// <summary>Specifies options for initializing Link for use with the Credit Partner Insights product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsPartnerInsights? PartnerInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsPartnerInsights? PartnerInsights { get => _explicitNullValuePartnerInsights; set { _explicitNullValuePartnerInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partner_insights"); else _explicitNullProperties?.Remove("partner_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsPartnerInsights? _explicitNullValuePartnerInsights = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsPartnerInsights PartnerInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsPartnerInsights PartnerInsights { get => _explicitNullValuePartnerInsights; set { _explicitNullValuePartnerInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partner_insights"); else _explicitNullProperties?.Remove("partner_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsPartnerInsights _explicitNullValuePartnerInsights = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptions"/> and sets the default values.
@@ -92,7 +126,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -131,6 +165,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsLendScore>("lend_score", LendScore);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsNetworkInsights>("network_insights", NetworkInsights);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsPartnerInsights>("partner_insights", PartnerInsights);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

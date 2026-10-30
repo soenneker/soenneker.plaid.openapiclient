@@ -12,64 +12,103 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LinkSessionResults : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bank_income_results") is { } nullNodeBankIncomeResults && nullNodeBankIncomeResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankIncomeResults = null;
+            if (parseNode.GetChildNode("cra_document_upload_results") is { } nullNodeCraDocumentUploadResults && nullNodeCraDocumentUploadResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CraDocumentUploadResults = null;
+            if (parseNode.GetChildNode("cra_item_add_results") is { } nullNodeCraItemAddResults && nullNodeCraItemAddResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CraItemAddResults = null;
+            if (parseNode.GetChildNode("cra_report_results") is { } nullNodeCraReportResults && nullNodeCraReportResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CraReportResults = null;
+            if (parseNode.GetChildNode("cra_update_results") is { } nullNodeCraUpdateResults && nullNodeCraUpdateResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CraUpdateResults = null;
+            if (parseNode.GetChildNode("document_income_results") is { } nullNodeDocumentIncomeResults && nullNodeDocumentIncomeResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentIncomeResults = null;
+            if (parseNode.GetChildNode("item_add_results") is { } nullNodeItemAddResults && nullNodeItemAddResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemAddResults = null;
+            if (parseNode.GetChildNode("payroll_income_results") is { } nullNodePayrollIncomeResults && nullNodePayrollIncomeResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayrollIncomeResults = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The set of bank income verifications for the Link session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionBankIncomeResult>? BankIncomeResults { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionBankIncomeResult>? BankIncomeResults { get => _explicitNullValueBankIncomeResults; set { _explicitNullValueBankIncomeResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_income_results"); else _explicitNullProperties?.Remove("bank_income_results"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionBankIncomeResult>? _explicitNullValueBankIncomeResults = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionBankIncomeResult> BankIncomeResults { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionBankIncomeResult> BankIncomeResults { get => _explicitNullValueBankIncomeResults; set { _explicitNullValueBankIncomeResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_income_results"); else _explicitNullProperties?.Remove("bank_income_results"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionBankIncomeResult> _explicitNullValueBankIncomeResults = default!;
 #endif
         /// <summary>The details of a document upload CRA session in Link</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraDocumentUploadResult? CraDocumentUploadResults { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraDocumentUploadResult? CraDocumentUploadResults { get => _explicitNullValueCraDocumentUploadResults; set { _explicitNullValueCraDocumentUploadResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cra_document_upload_results"); else _explicitNullProperties?.Remove("cra_document_upload_results"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraDocumentUploadResult? _explicitNullValueCraDocumentUploadResults = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraDocumentUploadResult CraDocumentUploadResults { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraDocumentUploadResult CraDocumentUploadResults { get => _explicitNullValueCraDocumentUploadResults; set { _explicitNullValueCraDocumentUploadResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cra_document_upload_results"); else _explicitNullProperties?.Remove("cra_document_upload_results"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraDocumentUploadResult _explicitNullValueCraDocumentUploadResults = default!;
 #endif
         /// <summary>The set of Plaid Check Item adds for the Link session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraItemAddResult>? CraItemAddResults { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraItemAddResult>? CraItemAddResults { get => _explicitNullValueCraItemAddResults; set { _explicitNullValueCraItemAddResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cra_item_add_results"); else _explicitNullProperties?.Remove("cra_item_add_results"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraItemAddResult>? _explicitNullValueCraItemAddResults = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraItemAddResult> CraItemAddResults { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraItemAddResult> CraItemAddResults { get => _explicitNullValueCraItemAddResults; set { _explicitNullValueCraItemAddResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cra_item_add_results"); else _explicitNullProperties?.Remove("cra_item_add_results"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraItemAddResult> _explicitNullValueCraItemAddResults = default!;
+#endif
+        /// <summary>Plaid Check report details for the Link session.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraReportResult? CraReportResults { get => _explicitNullValueCraReportResults; set { _explicitNullValueCraReportResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cra_report_results"); else _explicitNullProperties?.Remove("cra_report_results"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraReportResult? _explicitNullValueCraReportResults = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraReportResult CraReportResults { get => _explicitNullValueCraReportResults; set { _explicitNullValueCraReportResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cra_report_results"); else _explicitNullProperties?.Remove("cra_report_results"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraReportResult _explicitNullValueCraReportResults = default!;
 #endif
         /// <summary>The set of Plaid Check Item updates for the Link session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraUpdateResult>? CraUpdateResults { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraUpdateResult>? CraUpdateResults { get => _explicitNullValueCraUpdateResults; set { _explicitNullValueCraUpdateResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cra_update_results"); else _explicitNullProperties?.Remove("cra_update_results"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraUpdateResult>? _explicitNullValueCraUpdateResults = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraUpdateResult> CraUpdateResults { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraUpdateResult> CraUpdateResults { get => _explicitNullValueCraUpdateResults; set { _explicitNullValueCraUpdateResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cra_update_results"); else _explicitNullProperties?.Remove("cra_update_results"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraUpdateResult> _explicitNullValueCraUpdateResults = default!;
 #endif
         /// <summary>The details of a document income verification in Link</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionDocumentIncomeResult? DocumentIncomeResults { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionDocumentIncomeResult? DocumentIncomeResults { get => _explicitNullValueDocumentIncomeResults; set { _explicitNullValueDocumentIncomeResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_income_results"); else _explicitNullProperties?.Remove("document_income_results"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionDocumentIncomeResult? _explicitNullValueDocumentIncomeResults = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionDocumentIncomeResult DocumentIncomeResults { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionDocumentIncomeResult DocumentIncomeResults { get => _explicitNullValueDocumentIncomeResults; set { _explicitNullValueDocumentIncomeResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_income_results"); else _explicitNullProperties?.Remove("document_income_results"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionDocumentIncomeResult _explicitNullValueDocumentIncomeResults = default!;
 #endif
         /// <summary>The set of Item adds for the Link session. If you are not receiving this field and are instead receiving the deprecated `on_success` field, contact your account manager to update your integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionItemAddResult>? ItemAddResults { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionItemAddResult>? ItemAddResults { get => _explicitNullValueItemAddResults; set { _explicitNullValueItemAddResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_add_results"); else _explicitNullProperties?.Remove("item_add_results"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionItemAddResult>? _explicitNullValueItemAddResults = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionItemAddResult> ItemAddResults { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionItemAddResult> ItemAddResults { get => _explicitNullValueItemAddResults; set { _explicitNullValueItemAddResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_add_results"); else _explicitNullProperties?.Remove("item_add_results"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionItemAddResult> _explicitNullValueItemAddResults = default!;
 #endif
         /// <summary>The set of payroll income verifications for the Link session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionPayrollIncomeResult>? PayrollIncomeResults { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionPayrollIncomeResult>? PayrollIncomeResults { get => _explicitNullValuePayrollIncomeResults; set { _explicitNullValuePayrollIncomeResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payroll_income_results"); else _explicitNullProperties?.Remove("payroll_income_results"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionPayrollIncomeResult>? _explicitNullValuePayrollIncomeResults = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionPayrollIncomeResult> PayrollIncomeResults { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionPayrollIncomeResult> PayrollIncomeResults { get => _explicitNullValuePayrollIncomeResults; set { _explicitNullValuePayrollIncomeResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payroll_income_results"); else _explicitNullProperties?.Remove("payroll_income_results"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionPayrollIncomeResult> _explicitNullValuePayrollIncomeResults = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionResults"/> and sets the default values.
@@ -86,7 +125,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionResults CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionResults();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionResults(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,6 +140,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "bank_income_results", n => { BankIncomeResults = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionBankIncomeResult>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionBankIncomeResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cra_document_upload_results", n => { CraDocumentUploadResults = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraDocumentUploadResult>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraDocumentUploadResult.CreateFromDiscriminatorValue); } },
                 { "cra_item_add_results", n => { CraItemAddResults = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraItemAddResult>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraItemAddResult.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "cra_report_results", n => { CraReportResults = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraReportResult>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraReportResult.CreateFromDiscriminatorValue); } },
                 { "cra_update_results", n => { CraUpdateResults = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraUpdateResult>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraUpdateResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "document_income_results", n => { DocumentIncomeResults = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionDocumentIncomeResult>(global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionDocumentIncomeResult.CreateFromDiscriminatorValue); } },
                 { "item_add_results", n => { ItemAddResults = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionItemAddResult>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionItemAddResult.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -115,10 +157,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionBankIncomeResult>("bank_income_results", BankIncomeResults);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraDocumentUploadResult>("cra_document_upload_results", CraDocumentUploadResults);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraItemAddResult>("cra_item_add_results", CraItemAddResults);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraReportResult>("cra_report_results", CraReportResults);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraUpdateResult>("cra_update_results", CraUpdateResults);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionDocumentIncomeResult>("document_income_results", DocumentIncomeResults);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionItemAddResult>("item_add_results", ItemAddResults);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionPayrollIncomeResult>("payroll_income_results", PayrollIncomeResults);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

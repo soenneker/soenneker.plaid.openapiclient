@@ -12,26 +12,41 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MonitoringLoanInsights : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("loan_disbursements_count") is { } nullNodeLoanDisbursementsCount && nullNodeLoanDisbursementsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoanDisbursementsCount = null;
+            if (parseNode.GetChildNode("loan_payment_merchants_counts") is { } nullNodeLoanPaymentMerchantsCounts && nullNodeLoanPaymentMerchantsCounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoanPaymentMerchantsCounts = null;
+            if (parseNode.GetChildNode("loan_payments_counts") is { } nullNodeLoanPaymentsCounts && nullNodeLoanPaymentsCounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoanPaymentsCounts = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of loan disbursements detected in the last 30 days</summary>
-        public double? LoanDisbursementsCount { get; set; }
+        public double? LoanDisbursementsCount { get => _explicitNullValueLoanDisbursementsCount; set { _explicitNullValueLoanDisbursementsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_disbursements_count"); else _explicitNullProperties?.Remove("loan_disbursements_count"); } }
+        private double? _explicitNullValueLoanDisbursementsCount = default!;
         /// <summary>Details regarding the number of unique loan payment merchants</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentsMerchantCounts? LoanPaymentMerchantsCounts { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentsMerchantCounts? LoanPaymentMerchantsCounts { get => _explicitNullValueLoanPaymentMerchantsCounts; set { _explicitNullValueLoanPaymentMerchantsCounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_payment_merchants_counts"); else _explicitNullProperties?.Remove("loan_payment_merchants_counts"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentsMerchantCounts? _explicitNullValueLoanPaymentMerchantsCounts = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentsMerchantCounts LoanPaymentMerchantsCounts { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentsMerchantCounts LoanPaymentMerchantsCounts { get => _explicitNullValueLoanPaymentMerchantsCounts; set { _explicitNullValueLoanPaymentMerchantsCounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_payment_merchants_counts"); else _explicitNullProperties?.Remove("loan_payment_merchants_counts"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentsMerchantCounts _explicitNullValueLoanPaymentMerchantsCounts = default!;
 #endif
         /// <summary>Details regarding the number of loan payments</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentsCounts? LoanPaymentsCounts { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentsCounts? LoanPaymentsCounts { get => _explicitNullValueLoanPaymentsCounts; set { _explicitNullValueLoanPaymentsCounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_payments_counts"); else _explicitNullProperties?.Remove("loan_payments_counts"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentsCounts? _explicitNullValueLoanPaymentsCounts = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentsCounts LoanPaymentsCounts { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentsCounts LoanPaymentsCounts { get => _explicitNullValueLoanPaymentsCounts; set { _explicitNullValueLoanPaymentsCounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_payments_counts"); else _explicitNullProperties?.Remove("loan_payments_counts"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentsCounts _explicitNullValueLoanPaymentsCounts = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.MonitoringLoanInsights"/> and sets the default values.
@@ -48,7 +63,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.MonitoringLoanInsights CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.MonitoringLoanInsights();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.MonitoringLoanInsights(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +88,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDoubleValue("loan_disbursements_count", LoanDisbursementsCount);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentsMerchantCounts>("loan_payment_merchants_counts", LoanPaymentMerchantsCounts);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentsCounts>("loan_payments_counts", LoanPaymentsCounts);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

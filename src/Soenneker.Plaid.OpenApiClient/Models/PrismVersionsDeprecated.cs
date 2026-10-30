@@ -13,19 +13,36 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [Obsolete("")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PrismVersionsDeprecated : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cashscore") is { } nullNodeCashscore && nullNodeCashscore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cashscore = null;
+            if (parseNode.GetChildNode("detect") is { } nullNodeDetect && nullNodeDetect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Detect = null;
+            if (parseNode.GetChildNode("extend") is { } nullNodeExtend && nullNodeExtend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Extend = null;
+            if (parseNode.GetChildNode("firstdetect") is { } nullNodeFirstdetect && nullNodeFirstdetect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Firstdetect = null;
+            if (parseNode.GetChildNode("insights") is { } nullNodeInsights && nullNodeInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Insights = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The version of Prism CashScore. If `prism_versions` is omitted entirely, your client&apos;s configured default Prism version is used (v3 if none is configured). If other Prism versions are specified but this one is not, this product is not generated.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScoreVersion? Cashscore { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScoreVersion? Cashscore { get => _explicitNullValueCashscore; set { _explicitNullValueCashscore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cashscore"); else _explicitNullProperties?.Remove("cashscore"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScoreVersion? _explicitNullValueCashscore = default!;
         /// <summary>The version of Prism Detect</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismDetectVersion? Detect { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismDetectVersion? Detect { get => _explicitNullValueDetect; set { _explicitNullValueDetect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detect"); else _explicitNullProperties?.Remove("detect"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PrismDetectVersion? _explicitNullValueDetect = default!;
         /// <summary>The version of Prism Extend</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismExtendVersion? Extend { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismExtendVersion? Extend { get => _explicitNullValueExtend; set { _explicitNullValueExtend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extend"); else _explicitNullProperties?.Remove("extend"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PrismExtendVersion? _explicitNullValueExtend = default!;
         /// <summary>The version of Prism FirstDetect. If `prism_versions` is omitted entirely, FirstDetect v3 is generated when your client&apos;s configured default Prism version is v3 or no default is configured; it is not generated if the default is v4 or v4.1. If other Prism versions are specified but this one is not, this product is not generated.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismFirstDetectVersion? Firstdetect { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismFirstDetectVersion? Firstdetect { get => _explicitNullValueFirstdetect; set { _explicitNullValueFirstdetect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstdetect"); else _explicitNullProperties?.Remove("firstdetect"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PrismFirstDetectVersion? _explicitNullValueFirstdetect = default!;
         /// <summary>The version of Prism Insights. If `prism_versions` is omitted entirely, your client&apos;s configured default Prism version is used (v3 if none is configured). If other Prism versions are specified but this one is not, this product is not generated.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsVersion? Insights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsVersion? Insights { get => _explicitNullValueInsights; set { _explicitNullValueInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insights"); else _explicitNullProperties?.Remove("insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsVersion? _explicitNullValueInsights = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PrismVersionsDeprecated"/> and sets the default values.
         /// </summary>
@@ -41,7 +58,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.PrismVersionsDeprecated CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.PrismVersionsDeprecated();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.PrismVersionsDeprecated(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,6 +89,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismExtendVersion>("extend", Extend);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismFirstDetectVersion>("firstdetect", Firstdetect);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsVersion>("insights", Insights);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -13,21 +13,40 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserDataOverview : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("days_available") is { } nullNodeDaysAvailable && nullNodeDaysAvailable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DaysAvailable = null;
+            if (parseNode.GetChildNode("newest_transaction_date") is { } nullNodeNewestTransactionDate && nullNodeNewestTransactionDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewestTransactionDate = null;
+            if (parseNode.GetChildNode("oldest_transaction_date") is { } nullNodeOldestTransactionDate && nullNodeOldestTransactionDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldestTransactionDate = null;
+            if (parseNode.GetChildNode("total_inflows") is { } nullNodeTotalInflows && nullNodeTotalInflows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalInflows = null;
+            if (parseNode.GetChildNode("total_outflows") is { } nullNodeTotalOutflows && nullNodeTotalOutflows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalOutflows = null;
+            if (parseNode.GetChildNode("transaction_count") is { } nullNodeTransactionCount && nullNodeTransactionCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The range of days of transactions available.</summary>
-        public int? DaysAvailable { get; set; }
+        public int? DaysAvailable { get => _explicitNullValueDaysAvailable; set { _explicitNullValueDaysAvailable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days_available"); else _explicitNullProperties?.Remove("days_available"); } }
+        private int? _explicitNullValueDaysAvailable = default!;
         /// <summary>The date of the newest transaction processed to generate insights.</summary>
-        public Date? NewestTransactionDate { get; set; }
+        public Date? NewestTransactionDate { get => _explicitNullValueNewestTransactionDate; set { _explicitNullValueNewestTransactionDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newest_transaction_date"); else _explicitNullProperties?.Remove("newest_transaction_date"); } }
+        private Date? _explicitNullValueNewestTransactionDate = default!;
         /// <summary>The date of the oldest transaction processed to generate insights.</summary>
-        public Date? OldestTransactionDate { get; set; }
+        public Date? OldestTransactionDate { get => _explicitNullValueOldestTransactionDate; set { _explicitNullValueOldestTransactionDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldest_transaction_date"); else _explicitNullProperties?.Remove("oldest_transaction_date"); } }
+        private Date? _explicitNullValueOldestTransactionDate = default!;
         /// <summary>Sum of inflow amounts.</summary>
-        public double? TotalInflows { get; set; }
+        public double? TotalInflows { get => _explicitNullValueTotalInflows; set { _explicitNullValueTotalInflows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_inflows"); else _explicitNullProperties?.Remove("total_inflows"); } }
+        private double? _explicitNullValueTotalInflows = default!;
         /// <summary>Sum of outflow amounts.</summary>
-        public double? TotalOutflows { get; set; }
+        public double? TotalOutflows { get => _explicitNullValueTotalOutflows; set { _explicitNullValueTotalOutflows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_outflows"); else _explicitNullProperties?.Remove("total_outflows"); } }
+        private double? _explicitNullValueTotalOutflows = default!;
         /// <summary>The total number of transactions.</summary>
-        public int? TransactionCount { get; set; }
+        public int? TransactionCount { get => _explicitNullValueTransactionCount; set { _explicitNullValueTransactionCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_count"); else _explicitNullProperties?.Remove("transaction_count"); } }
+        private int? _explicitNullValueTransactionCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.UserDataOverview"/> and sets the default values.
         /// </summary>
@@ -43,7 +62,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.UserDataOverview CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.UserDataOverview();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.UserDataOverview(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,6 +93,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDoubleValue("total_inflows", TotalInflows);
             writer.WriteDoubleValue("total_outflows", TotalOutflows);
             writer.WriteIntValue("transaction_count", TransactionCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,56 +12,81 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraPartnerInsightsPrism : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cash_score") is { } nullNodeCashScore && nullNodeCashScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CashScore = null;
+            if (parseNode.GetChildNode("detect") is { } nullNodeDetect && nullNodeDetect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Detect = null;
+            if (parseNode.GetChildNode("extend") is { } nullNodeExtend && nullNodeExtend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Extend = null;
+            if (parseNode.GetChildNode("first_detect") is { } nullNodeFirstDetect && nullNodeFirstDetect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstDetect = null;
+            if (parseNode.GetChildNode("insights") is { } nullNodeInsights && nullNodeInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Insights = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The data from the CashScore® product returned by Prism Data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScore? CashScore { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScore? CashScore { get => _explicitNullValueCashScore; set { _explicitNullValueCashScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cash_score"); else _explicitNullProperties?.Remove("cash_score"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScore? _explicitNullValueCashScore = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScore CashScore { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScore CashScore { get => _explicitNullValueCashScore; set { _explicitNullValueCashScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cash_score"); else _explicitNullProperties?.Remove("cash_score"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScore _explicitNullValueCashScore = default!;
 #endif
         /// <summary>The data from the CashScore® Detect product returned by Prism Data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismDetect? Detect { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismDetect? Detect { get => _explicitNullValueDetect; set { _explicitNullValueDetect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detect"); else _explicitNullProperties?.Remove("detect"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PrismDetect? _explicitNullValueDetect = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismDetect Detect { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismDetect Detect { get => _explicitNullValueDetect; set { _explicitNullValueDetect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detect"); else _explicitNullProperties?.Remove("detect"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PrismDetect _explicitNullValueDetect = default!;
 #endif
         /// <summary>The data from the CashScore® Extend product returned by Prism Data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismExtend? Extend { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismExtend? Extend { get => _explicitNullValueExtend; set { _explicitNullValueExtend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extend"); else _explicitNullProperties?.Remove("extend"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PrismExtend? _explicitNullValueExtend = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismExtend Extend { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismExtend Extend { get => _explicitNullValueExtend; set { _explicitNullValueExtend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extend"); else _explicitNullProperties?.Remove("extend"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PrismExtend _explicitNullValueExtend = default!;
 #endif
         /// <summary>The data from the FirstDetect product returned by Prism Data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismFirstDetect? FirstDetect { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismFirstDetect? FirstDetect { get => _explicitNullValueFirstDetect; set { _explicitNullValueFirstDetect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_detect"); else _explicitNullProperties?.Remove("first_detect"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PrismFirstDetect? _explicitNullValueFirstDetect = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismFirstDetect FirstDetect { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismFirstDetect FirstDetect { get => _explicitNullValueFirstDetect; set { _explicitNullValueFirstDetect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_detect"); else _explicitNullProperties?.Remove("first_detect"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PrismFirstDetect _explicitNullValueFirstDetect = default!;
 #endif
         /// <summary>The data from the Insights product returned by Prism Data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismInsights? Insights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismInsights? Insights { get => _explicitNullValueInsights; set { _explicitNullValueInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insights"); else _explicitNullProperties?.Remove("insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PrismInsights? _explicitNullValueInsights = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismInsights Insights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismInsights Insights { get => _explicitNullValueInsights; set { _explicitNullValueInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insights"); else _explicitNullProperties?.Remove("insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PrismInsights _explicitNullValueInsights = default!;
 #endif
         /// <summary>Details on whether the Prism Data attributes succeeded or failed to be generated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status { get; set; }
+        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public string Status { get; set; }
+        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string _explicitNullValueStatus = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsPrism"/> and sets the default values.
@@ -78,7 +103,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsPrism CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsPrism();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsPrism(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,6 +136,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismFirstDetect>("first_detect", FirstDetect);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismInsights>("insights", Insights);
             writer.WriteStringValue("status", Status);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

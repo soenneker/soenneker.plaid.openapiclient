@@ -12,21 +12,35 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreditBankEmploymentWarning : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cause") is { } nullNodeCause && nullNodeCause.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cause = null;
+            if (parseNode.GetChildNode("warning_code") is { } nullNodeWarningCode && nullNodeWarningCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WarningCode = null;
+            if (parseNode.GetChildNode("warning_type") is { } nullNodeWarningType && nullNodeWarningType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WarningType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An error object and associated `item_id` used to identify a specific Item and error when a batch operation operating on multiple Items has encountered an error in one of the Items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeCause? Cause { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeCause? Cause { get => _explicitNullValueCause; set { _explicitNullValueCause = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cause"); else _explicitNullProperties?.Remove("cause"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeCause? _explicitNullValueCause = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeCause Cause { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeCause Cause { get => _explicitNullValueCause; set { _explicitNullValueCause = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cause"); else _explicitNullProperties?.Remove("cause"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeCause _explicitNullValueCause = default!;
 #endif
         /// <summary>The warning code identifies a specific kind of warning.`IDENTITY_UNAVAILABLE`: Unable to extract identity for the Item`TRANSACTIONS_UNAVAILABLE`: Unable to extract transactions for the Item`ITEM_UNAPPROVED`: User exited flow before giving permission to share data for the Item`REPORT_DELETED`: Report deleted due to customer or consumer request`DATA_UNAVAILABLE`: No relevant data was found for the Item</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeWarningCode? WarningCode { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeWarningCode? WarningCode { get => _explicitNullValueWarningCode; set { _explicitNullValueWarningCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_code"); else _explicitNullProperties?.Remove("warning_code"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeWarningCode? _explicitNullValueWarningCode = default!;
         /// <summary>The warning type which will always be `BANK_EMPLOYMENT_WARNING`.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditBankEmploymentWarningType? WarningType { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditBankEmploymentWarningType? WarningType { get => _explicitNullValueWarningType; set { _explicitNullValueWarningType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_type"); else _explicitNullProperties?.Remove("warning_type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditBankEmploymentWarningType? _explicitNullValueWarningType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CreditBankEmploymentWarning"/> and sets the default values.
         /// </summary>
@@ -42,7 +56,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CreditBankEmploymentWarning CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CreditBankEmploymentWarning();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CreditBankEmploymentWarning(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,6 +81,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeCause>("cause", Cause);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeWarningCode>("warning_code", WarningCode);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankEmploymentWarningType>("warning_type", WarningType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

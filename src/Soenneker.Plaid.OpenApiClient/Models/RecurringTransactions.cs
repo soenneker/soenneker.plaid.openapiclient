@@ -12,24 +12,37 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecurringTransactions : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("inflow_streams") is { } nullNodeInflowStreams && nullNodeInflowStreams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InflowStreams = null;
+            if (parseNode.GetChildNode("outflow_streams") is { } nullNodeOutflowStreams && nullNodeOutflowStreams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutflowStreams = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An array of inflow transaction streams (e.g., income).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.RecurringInsightsStream>? InflowStreams { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.RecurringInsightsStream>? InflowStreams { get => _explicitNullValueInflowStreams; set { _explicitNullValueInflowStreams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inflow_streams"); else _explicitNullProperties?.Remove("inflow_streams"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.RecurringInsightsStream>? _explicitNullValueInflowStreams = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.RecurringInsightsStream> InflowStreams { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.RecurringInsightsStream> InflowStreams { get => _explicitNullValueInflowStreams; set { _explicitNullValueInflowStreams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inflow_streams"); else _explicitNullProperties?.Remove("inflow_streams"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.RecurringInsightsStream> _explicitNullValueInflowStreams = default!;
 #endif
         /// <summary>An array of outflow transaction streams (e.g., subscriptions, bills, loan payments).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.RecurringInsightsStream>? OutflowStreams { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.RecurringInsightsStream>? OutflowStreams { get => _explicitNullValueOutflowStreams; set { _explicitNullValueOutflowStreams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outflow_streams"); else _explicitNullProperties?.Remove("outflow_streams"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.RecurringInsightsStream>? _explicitNullValueOutflowStreams = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.RecurringInsightsStream> OutflowStreams { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.RecurringInsightsStream> OutflowStreams { get => _explicitNullValueOutflowStreams; set { _explicitNullValueOutflowStreams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outflow_streams"); else _explicitNullProperties?.Remove("outflow_streams"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.RecurringInsightsStream> _explicitNullValueOutflowStreams = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.RecurringTransactions"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.RecurringTransactions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.RecurringTransactions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.RecurringTransactions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.RecurringInsightsStream>("inflow_streams", InflowStreams);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.RecurringInsightsStream>("outflow_streams", OutflowStreams);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

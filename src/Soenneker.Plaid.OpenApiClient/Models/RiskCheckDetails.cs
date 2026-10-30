@@ -12,69 +12,101 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RiskCheckDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("behavior") is { } nullNodeBehavior && nullNodeBehavior.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Behavior = null;
+            if (parseNode.GetChildNode("devices") is { } nullNodeDevices && nullNodeDevices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Devices = null;
+            if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
+            if (parseNode.GetChildNode("facial_duplicates") is { } nullNodeFacialDuplicates && nullNodeFacialDuplicates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacialDuplicates = null;
+            if (parseNode.GetChildNode("identity_abuse_signals") is { } nullNodeIdentityAbuseSignals && nullNodeIdentityAbuseSignals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdentityAbuseSignals = null;
+            if (parseNode.GetChildNode("network") is { } nullNodeNetwork && nullNodeNetwork.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Network = null;
+            if (parseNode.GetChildNode("phone") is { } nullNodePhone && nullNodePhone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Phone = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("trust_index_score") is { } nullNodeTrustIndexScore && nullNodeTrustIndexScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrustIndexScore = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Result summary object specifying values for `behavior` attributes of risk check, when available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckBehavior? Behavior { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckBehavior? Behavior { get => _explicitNullValueBehavior; set { _explicitNullValueBehavior = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("behavior"); else _explicitNullProperties?.Remove("behavior"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckBehavior? _explicitNullValueBehavior = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckBehavior Behavior { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckBehavior Behavior { get => _explicitNullValueBehavior; set { _explicitNullValueBehavior = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("behavior"); else _explicitNullProperties?.Remove("behavior"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckBehavior _explicitNullValueBehavior = default!;
 #endif
         /// <summary>Array of result summary objects specifying values for `device` attributes of risk check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckDevice>? Devices { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckDevice>? Devices { get => _explicitNullValueDevices; set { _explicitNullValueDevices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("devices"); else _explicitNullProperties?.Remove("devices"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckDevice>? _explicitNullValueDevices = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckDevice> Devices { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckDevice> Devices { get => _explicitNullValueDevices; set { _explicitNullValueDevices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("devices"); else _explicitNullProperties?.Remove("devices"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckDevice> _explicitNullValueDevices = default!;
 #endif
         /// <summary>Result summary object specifying values for `email` attributes of risk check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmail? Email { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmail? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmail? _explicitNullValueEmail = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmail Email { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmail Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmail _explicitNullValueEmail = default!;
 #endif
         /// <summary>The attributes related to the facial duplicates captured in risk check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckFacialDuplicate>? FacialDuplicates { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckFacialDuplicate>? FacialDuplicates { get => _explicitNullValueFacialDuplicates; set { _explicitNullValueFacialDuplicates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facial_duplicates"); else _explicitNullProperties?.Remove("facial_duplicates"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckFacialDuplicate>? _explicitNullValueFacialDuplicates = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckFacialDuplicate> FacialDuplicates { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckFacialDuplicate> FacialDuplicates { get => _explicitNullValueFacialDuplicates; set { _explicitNullValueFacialDuplicates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facial_duplicates"); else _explicitNullProperties?.Remove("facial_duplicates"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckFacialDuplicate> _explicitNullValueFacialDuplicates = default!;
 #endif
         /// <summary>Result summary object capturing abuse signals related to `identity abuse`, e.g. stolen and synthetic identity fraud. These attributes are only available for US identities and some signals may not be available depending on what information was collected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckIdentityAbuseSignals? IdentityAbuseSignals { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckIdentityAbuseSignals? IdentityAbuseSignals { get => _explicitNullValueIdentityAbuseSignals; set { _explicitNullValueIdentityAbuseSignals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_abuse_signals"); else _explicitNullProperties?.Remove("identity_abuse_signals"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckIdentityAbuseSignals? _explicitNullValueIdentityAbuseSignals = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckIdentityAbuseSignals IdentityAbuseSignals { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckIdentityAbuseSignals IdentityAbuseSignals { get => _explicitNullValueIdentityAbuseSignals; set { _explicitNullValueIdentityAbuseSignals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_abuse_signals"); else _explicitNullProperties?.Remove("identity_abuse_signals"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckIdentityAbuseSignals _explicitNullValueIdentityAbuseSignals = default!;
 #endif
         /// <summary>Result summary object specifying values for network attributes of risk check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckNetwork? Network { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckNetwork? Network { get => _explicitNullValueNetwork; set { _explicitNullValueNetwork = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network"); else _explicitNullProperties?.Remove("network"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckNetwork? _explicitNullValueNetwork = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckNetwork Network { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckNetwork Network { get => _explicitNullValueNetwork; set { _explicitNullValueNetwork = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network"); else _explicitNullProperties?.Remove("network"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckNetwork _explicitNullValueNetwork = default!;
 #endif
         /// <summary>Result summary object specifying values for `phone` attributes of risk check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckPhone? Phone { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckPhone? Phone { get => _explicitNullValuePhone; set { _explicitNullValuePhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone"); else _explicitNullProperties?.Remove("phone"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckPhone? _explicitNullValuePhone = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckPhone Phone { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckPhone Phone { get => _explicitNullValuePhone; set { _explicitNullValuePhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone"); else _explicitNullProperties?.Remove("phone"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckPhone _explicitNullValuePhone = default!;
 #endif
         /// <summary>The status of a step in the Identity Verification process.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus? Status { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus? _explicitNullValueStatus = default!;
         /// <summary>The trust index score for the `risk_check` step.</summary>
-        public int? TrustIndexScore { get; set; }
+        public int? TrustIndexScore { get => _explicitNullValueTrustIndexScore; set { _explicitNullValueTrustIndexScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trust_index_score"); else _explicitNullProperties?.Remove("trust_index_score"); } }
+        private int? _explicitNullValueTrustIndexScore = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckDetails"/> and sets the default values.
         /// </summary>
@@ -90,7 +122,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckDetails();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -127,6 +161,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckPhone>("phone", Phone);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus>("status", Status);
             writer.WriteIntValue("trust_index_score", TrustIndexScore);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

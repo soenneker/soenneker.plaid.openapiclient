@@ -12,64 +12,92 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class W2StateAndLocalWages : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("employer_state_id_number") is { } nullNodeEmployerStateIdNumber && nullNodeEmployerStateIdNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmployerStateIdNumber = null;
+            if (parseNode.GetChildNode("local_income_tax") is { } nullNodeLocalIncomeTax && nullNodeLocalIncomeTax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalIncomeTax = null;
+            if (parseNode.GetChildNode("locality_name") is { } nullNodeLocalityName && nullNodeLocalityName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalityName = null;
+            if (parseNode.GetChildNode("local_wages_tips") is { } nullNodeLocalWagesTips && nullNodeLocalWagesTips.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalWagesTips = null;
+            if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("state_income_tax") is { } nullNodeStateIncomeTax && nullNodeStateIncomeTax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StateIncomeTax = null;
+            if (parseNode.GetChildNode("state_wages_tips") is { } nullNodeStateWagesTips && nullNodeStateWagesTips.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StateWagesTips = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>State identification number of the employer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmployerStateIdNumber { get; set; }
+        public string? EmployerStateIdNumber { get => _explicitNullValueEmployerStateIdNumber; set { _explicitNullValueEmployerStateIdNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employer_state_id_number"); else _explicitNullProperties?.Remove("employer_state_id_number"); } }
+        private string? _explicitNullValueEmployerStateIdNumber = default!;
 #nullable restore
 #else
-        public string EmployerStateIdNumber { get; set; }
+        public string EmployerStateIdNumber { get => _explicitNullValueEmployerStateIdNumber; set { _explicitNullValueEmployerStateIdNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employer_state_id_number"); else _explicitNullProperties?.Remove("employer_state_id_number"); } }
+        private string _explicitNullValueEmployerStateIdNumber = default!;
 #endif
         /// <summary>Income tax from the locality.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocalIncomeTax { get; set; }
+        public string? LocalIncomeTax { get => _explicitNullValueLocalIncomeTax; set { _explicitNullValueLocalIncomeTax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_income_tax"); else _explicitNullProperties?.Remove("local_income_tax"); } }
+        private string? _explicitNullValueLocalIncomeTax = default!;
 #nullable restore
 #else
-        public string LocalIncomeTax { get; set; }
+        public string LocalIncomeTax { get => _explicitNullValueLocalIncomeTax; set { _explicitNullValueLocalIncomeTax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_income_tax"); else _explicitNullProperties?.Remove("local_income_tax"); } }
+        private string _explicitNullValueLocalIncomeTax = default!;
 #endif
         /// <summary>Name of the locality.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocalityName { get; set; }
+        public string? LocalityName { get => _explicitNullValueLocalityName; set { _explicitNullValueLocalityName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locality_name"); else _explicitNullProperties?.Remove("locality_name"); } }
+        private string? _explicitNullValueLocalityName = default!;
 #nullable restore
 #else
-        public string LocalityName { get; set; }
+        public string LocalityName { get => _explicitNullValueLocalityName; set { _explicitNullValueLocalityName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locality_name"); else _explicitNullProperties?.Remove("locality_name"); } }
+        private string _explicitNullValueLocalityName = default!;
 #endif
         /// <summary>Wages and tips from the locality.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocalWagesTips { get; set; }
+        public string? LocalWagesTips { get => _explicitNullValueLocalWagesTips; set { _explicitNullValueLocalWagesTips = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_wages_tips"); else _explicitNullProperties?.Remove("local_wages_tips"); } }
+        private string? _explicitNullValueLocalWagesTips = default!;
 #nullable restore
 #else
-        public string LocalWagesTips { get; set; }
+        public string LocalWagesTips { get => _explicitNullValueLocalWagesTips; set { _explicitNullValueLocalWagesTips = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("local_wages_tips"); else _explicitNullProperties?.Remove("local_wages_tips"); } }
+        private string _explicitNullValueLocalWagesTips = default!;
 #endif
         /// <summary>State associated with the wage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State { get; set; }
+        public string? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private string? _explicitNullValueState = default!;
 #nullable restore
 #else
-        public string State { get; set; }
+        public string State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private string _explicitNullValueState = default!;
 #endif
         /// <summary>Income tax from the specified state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StateIncomeTax { get; set; }
+        public string? StateIncomeTax { get => _explicitNullValueStateIncomeTax; set { _explicitNullValueStateIncomeTax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state_income_tax"); else _explicitNullProperties?.Remove("state_income_tax"); } }
+        private string? _explicitNullValueStateIncomeTax = default!;
 #nullable restore
 #else
-        public string StateIncomeTax { get; set; }
+        public string StateIncomeTax { get => _explicitNullValueStateIncomeTax; set { _explicitNullValueStateIncomeTax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state_income_tax"); else _explicitNullProperties?.Remove("state_income_tax"); } }
+        private string _explicitNullValueStateIncomeTax = default!;
 #endif
         /// <summary>Wages and tips from the specified state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StateWagesTips { get; set; }
+        public string? StateWagesTips { get => _explicitNullValueStateWagesTips; set { _explicitNullValueStateWagesTips = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state_wages_tips"); else _explicitNullProperties?.Remove("state_wages_tips"); } }
+        private string? _explicitNullValueStateWagesTips = default!;
 #nullable restore
 #else
-        public string StateWagesTips { get; set; }
+        public string StateWagesTips { get => _explicitNullValueStateWagesTips; set { _explicitNullValueStateWagesTips = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state_wages_tips"); else _explicitNullProperties?.Remove("state_wages_tips"); } }
+        private string _explicitNullValueStateWagesTips = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.W2StateAndLocalWages"/> and sets the default values.
@@ -86,7 +114,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.W2StateAndLocalWages CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.W2StateAndLocalWages();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.W2StateAndLocalWages(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -119,6 +147,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("state_income_tax", StateIncomeTax);
             writer.WriteStringValue("state_wages_tips", StateWagesTips);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,18 +12,30 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TaxpayerIdentifier : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("TaxpayerIdentifierType") is { } nullNodeTaxpayerIdentifierType && nullNodeTaxpayerIdentifierType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxpayerIdentifierType = null;
+            if (parseNode.GetChildNode("TaxpayerIdentifierValue") is { } nullNodeTaxpayerIdentifierValue && nullNodeTaxpayerIdentifierValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxpayerIdentifierValue = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A value from a MISMO prescribed list that classifies identification numbers used by the Internal Revenue Service (IRS) in the administration of tax laws. A Social Security number (SSN) is issued by the SSA; all other taxpayer identification numbers are issued by the IRS.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.TaxpayerIdentifierType? TaxpayerIdentifierType { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TaxpayerIdentifierType? TaxpayerIdentifierType { get => _explicitNullValueTaxpayerIdentifierType; set { _explicitNullValueTaxpayerIdentifierType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TaxpayerIdentifierType"); else _explicitNullProperties?.Remove("TaxpayerIdentifierType"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TaxpayerIdentifierType? _explicitNullValueTaxpayerIdentifierType = default!;
         /// <summary>The value of the taxpayer identifier as assigned by the IRS to the individual or legal entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxpayerIdentifierValue { get; set; }
+        public string? TaxpayerIdentifierValue { get => _explicitNullValueTaxpayerIdentifierValue; set { _explicitNullValueTaxpayerIdentifierValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TaxpayerIdentifierValue"); else _explicitNullProperties?.Remove("TaxpayerIdentifierValue"); } }
+        private string? _explicitNullValueTaxpayerIdentifierValue = default!;
 #nullable restore
 #else
-        public string TaxpayerIdentifierValue { get; set; }
+        public string TaxpayerIdentifierValue { get => _explicitNullValueTaxpayerIdentifierValue; set { _explicitNullValueTaxpayerIdentifierValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TaxpayerIdentifierValue"); else _explicitNullProperties?.Remove("TaxpayerIdentifierValue"); } }
+        private string _explicitNullValueTaxpayerIdentifierValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TaxpayerIdentifier"/> and sets the default values.
@@ -40,7 +52,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.TaxpayerIdentifier CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.TaxpayerIdentifier();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.TaxpayerIdentifier(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TaxpayerIdentifierType>("TaxpayerIdentifierType", TaxpayerIdentifierType);
             writer.WriteStringValue("TaxpayerIdentifierValue", TaxpayerIdentifierValue);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,67 +12,97 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProtectIncidentEventResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("idv_session_id") is { } nullNodeIdvSessionId && nullNodeIdvSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdvSessionId = null;
+            if (parseNode.GetChildNode("internal_reference") is { } nullNodeInternalReference && nullNodeInternalReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InternalReference = null;
+            if (parseNode.GetChildNode("item_id") is { } nullNodeItemId && nullNodeItemId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemId = null;
+            if (parseNode.GetChildNode("link_session_id") is { } nullNodeLinkSessionId && nullNodeLinkSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkSessionId = null;
+            if (parseNode.GetChildNode("protect_event_id") is { } nullNodeProtectEventId && nullNodeProtectEventId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProtectEventId = null;
+            if (parseNode.GetChildNode("signal_client_transaction_id") is { } nullNodeSignalClientTransactionId && nullNodeSignalClientTransactionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignalClientTransactionId = null;
+            if (parseNode.GetChildNode("time") is { } nullNodeTime && nullNodeTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Time = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The monetary amount associated with the incident.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentAmount? Amount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentAmount? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentAmount? _explicitNullValueAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentAmount Amount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentAmount Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentAmount _explicitNullValueAmount = default!;
 #endif
         /// <summary>A unique identifier for an Identity Verification session that may be associated with this incident.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdvSessionId { get; set; }
+        public string? IdvSessionId { get => _explicitNullValueIdvSessionId; set { _explicitNullValueIdvSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idv_session_id"); else _explicitNullProperties?.Remove("idv_session_id"); } }
+        private string? _explicitNullValueIdvSessionId = default!;
 #nullable restore
 #else
-        public string IdvSessionId { get; set; }
+        public string IdvSessionId { get => _explicitNullValueIdvSessionId; set { _explicitNullValueIdvSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idv_session_id"); else _explicitNullProperties?.Remove("idv_session_id"); } }
+        private string _explicitNullValueIdvSessionId = default!;
 #endif
         /// <summary>A unique ID representing the incident in your system. Personally identifiable information, such as an email address or phone number, should not be used in this field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InternalReference { get; set; }
+        public string? InternalReference { get => _explicitNullValueInternalReference; set { _explicitNullValueInternalReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internal_reference"); else _explicitNullProperties?.Remove("internal_reference"); } }
+        private string? _explicitNullValueInternalReference = default!;
 #nullable restore
 #else
-        public string InternalReference { get; set; }
+        public string InternalReference { get => _explicitNullValueInternalReference; set { _explicitNullValueInternalReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internal_reference"); else _explicitNullProperties?.Remove("internal_reference"); } }
+        private string _explicitNullValueInternalReference = default!;
 #endif
         /// <summary>The `item_id` associated with the Item related to this incident.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemId { get; set; }
+        public string? ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
+        private string? _explicitNullValueItemId = default!;
 #nullable restore
 #else
-        public string ItemId { get; set; }
+        public string ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
+        private string _explicitNullValueItemId = default!;
 #endif
         /// <summary>A unique identifier for a Link session that may be associated with this incident.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LinkSessionId { get; set; }
+        public string? LinkSessionId { get => _explicitNullValueLinkSessionId; set { _explicitNullValueLinkSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_session_id"); else _explicitNullProperties?.Remove("link_session_id"); } }
+        private string? _explicitNullValueLinkSessionId = default!;
 #nullable restore
 #else
-        public string LinkSessionId { get; set; }
+        public string LinkSessionId { get => _explicitNullValueLinkSessionId; set { _explicitNullValueLinkSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_session_id"); else _explicitNullProperties?.Remove("link_session_id"); } }
+        private string _explicitNullValueLinkSessionId = default!;
 #endif
         /// <summary>A globally unique identifier representing a Protect event that may be associated with this incident.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProtectEventId { get; set; }
+        public string? ProtectEventId { get => _explicitNullValueProtectEventId; set { _explicitNullValueProtectEventId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protect_event_id"); else _explicitNullProperties?.Remove("protect_event_id"); } }
+        private string? _explicitNullValueProtectEventId = default!;
 #nullable restore
 #else
-        public string ProtectEventId { get; set; }
+        public string ProtectEventId { get => _explicitNullValueProtectEventId; set { _explicitNullValueProtectEventId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protect_event_id"); else _explicitNullProperties?.Remove("protect_event_id"); } }
+        private string _explicitNullValueProtectEventId = default!;
 #endif
         /// <summary>The unique ID used to refer to a Signal transaction evaluation that may be associated with this incident.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SignalClientTransactionId { get; set; }
+        public string? SignalClientTransactionId { get => _explicitNullValueSignalClientTransactionId; set { _explicitNullValueSignalClientTransactionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signal_client_transaction_id"); else _explicitNullProperties?.Remove("signal_client_transaction_id"); } }
+        private string? _explicitNullValueSignalClientTransactionId = default!;
 #nullable restore
 #else
-        public string SignalClientTransactionId { get; set; }
+        public string SignalClientTransactionId { get => _explicitNullValueSignalClientTransactionId; set { _explicitNullValueSignalClientTransactionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signal_client_transaction_id"); else _explicitNullProperties?.Remove("signal_client_transaction_id"); } }
+        private string _explicitNullValueSignalClientTransactionId = default!;
 #endif
         /// <summary>The timestamp when the incident occurred, in ISO 8601 format (e.g., &apos;2020-07-24T03:26:02Z&apos;).</summary>
-        public DateTimeOffset? Time { get; set; }
+        public DateTimeOffset? Time { get => _explicitNullValueTime; set { _explicitNullValueTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time"); else _explicitNullProperties?.Remove("time"); } }
+        private DateTimeOffset? _explicitNullValueTime = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEventResponse"/> and sets the default values.
         /// </summary>
@@ -88,7 +118,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEventResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEventResponse();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentEventResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -123,6 +155,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("protect_event_id", ProtectEventId);
             writer.WriteStringValue("signal_client_transaction_id", SignalClientTransactionId);
             writer.WriteDateTimeOffsetValue("time", Time);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,32 +12,48 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ItemStatusNullable : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("investments") is { } nullNodeInvestments && nullNodeInvestments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Investments = null;
+            if (parseNode.GetChildNode("last_webhook") is { } nullNodeLastWebhook && nullNodeLastWebhook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastWebhook = null;
+            if (parseNode.GetChildNode("transactions") is { } nullNodeTransactions && nullNodeTransactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transactions = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Information about the last successful and failed investments update for the Item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ItemStatusInvestments? Investments { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ItemStatusInvestments? Investments { get => _explicitNullValueInvestments; set { _explicitNullValueInvestments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investments"); else _explicitNullProperties?.Remove("investments"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ItemStatusInvestments? _explicitNullValueInvestments = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ItemStatusInvestments Investments { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ItemStatusInvestments Investments { get => _explicitNullValueInvestments; set { _explicitNullValueInvestments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investments"); else _explicitNullProperties?.Remove("investments"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ItemStatusInvestments _explicitNullValueInvestments = default!;
 #endif
         /// <summary>Information about the last webhook fired for the Item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ItemStatusLastWebhook? LastWebhook { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ItemStatusLastWebhook? LastWebhook { get => _explicitNullValueLastWebhook; set { _explicitNullValueLastWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_webhook"); else _explicitNullProperties?.Remove("last_webhook"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ItemStatusLastWebhook? _explicitNullValueLastWebhook = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ItemStatusLastWebhook LastWebhook { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ItemStatusLastWebhook LastWebhook { get => _explicitNullValueLastWebhook; set { _explicitNullValueLastWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_webhook"); else _explicitNullProperties?.Remove("last_webhook"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ItemStatusLastWebhook _explicitNullValueLastWebhook = default!;
 #endif
         /// <summary>Information about the last successful and failed transactions update for the Item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ItemStatusTransactions? Transactions { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ItemStatusTransactions? Transactions { get => _explicitNullValueTransactions; set { _explicitNullValueTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactions"); else _explicitNullProperties?.Remove("transactions"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ItemStatusTransactions? _explicitNullValueTransactions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ItemStatusTransactions Transactions { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ItemStatusTransactions Transactions { get => _explicitNullValueTransactions; set { _explicitNullValueTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactions"); else _explicitNullProperties?.Remove("transactions"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ItemStatusTransactions _explicitNullValueTransactions = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ItemStatusNullable"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.ItemStatusNullable CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.ItemStatusNullable();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.ItemStatusNullable(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ItemStatusInvestments>("investments", Investments);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ItemStatusLastWebhook>("last_webhook", LastWebhook);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ItemStatusTransactions>("transactions", Transactions);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

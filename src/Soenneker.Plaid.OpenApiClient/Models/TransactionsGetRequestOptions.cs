@@ -12,36 +12,62 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionsGetRequestOptions : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_ids") is { } nullNodeAccountIds && nullNodeAccountIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountIds = null;
+            if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
+            if (parseNode.GetChildNode("days_requested") is { } nullNodeDaysRequested && nullNodeDaysRequested.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DaysRequested = null;
+            if (parseNode.GetChildNode("include_logo_and_counterparty_beta") is { } nullNodeIncludeLogoAndCounterpartyBeta && nullNodeIncludeLogoAndCounterpartyBeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeLogoAndCounterpartyBeta = null;
+            if (parseNode.GetChildNode("include_original_description") is { } nullNodeIncludeOriginalDescription && nullNodeIncludeOriginalDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeOriginalDescription = null;
+            if (parseNode.GetChildNode("include_personal_finance_category") is { } nullNodeIncludePersonalFinanceCategory && nullNodeIncludePersonalFinanceCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludePersonalFinanceCategory = null;
+            if (parseNode.GetChildNode("include_personal_finance_category_beta") is { } nullNodeIncludePersonalFinanceCategoryBeta && nullNodeIncludePersonalFinanceCategoryBeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludePersonalFinanceCategoryBeta = null;
+            if (parseNode.GetChildNode("offset") is { } nullNodeOffset && nullNodeOffset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Offset = null;
+            if (parseNode.GetChildNode("personal_finance_category_version") is { } nullNodePersonalFinanceCategoryVersion && nullNodePersonalFinanceCategoryVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalFinanceCategoryVersion = null;
+        }
+
         /// <summary>A list of `account_ids` to retrieve for the ItemNote: An error will be returned if a provided `account_id` is not associated with the Item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AccountIds { get; set; }
+        public List<string>? AccountIds { get => _explicitNullValueAccountIds; set { _explicitNullValueAccountIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_ids"); else _explicitNullProperties?.Remove("account_ids"); } }
+        private List<string>? _explicitNullValueAccountIds = default!;
 #nullable restore
 #else
-        public List<string> AccountIds { get; set; }
+        public List<string> AccountIds { get => _explicitNullValueAccountIds; set { _explicitNullValueAccountIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_ids"); else _explicitNullProperties?.Remove("account_ids"); } }
+        private List<string> _explicitNullValueAccountIds = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of transactions to fetch.</summary>
-        public int? Count { get; set; }
+        public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        private int? _explicitNullValueCount = default!;
         /// <summary>This field only applies to calls for Items where the Transactions product has not already been initialized (i.e. by specifying `transactions` in the `products`, `optional_products`, or `required_if_supported_products` array when calling `/link/token/create` or by making a previous call to `/transactions/sync` or `/transactions/get`). In those cases, the field controls the maximum number of days of transaction history that Plaid will request from the financial institution. The more transaction history is requested, the longer the historical update poll will take. If no value is specified, 90 days of history will be requested by default. In Production, if a value under 30 is provided, a minimum of 30 days of history will be requested.If you are initializing your Items with transactions during the `/link/token/create` call (e.g. by including `transactions` in the `/link/token/create` `products` array), you must use the [`transactions.days_requested`](https://plaid.com/docs/api/link/#link-token-create-request-transactions-days-requested) field in the `/link/token/create` request instead of in the `/transactions/get` request.If the Item has already been initialized with the Transactions product, this field will have no effect. The maximum amount of transaction history to request on an Item cannot be updated if Transactions has already been added to the Item. To request older transaction history on an Item where Transactions has already been added, you must delete the Item via `/item/remove` and send the user through Link to create a new Item.Customers using [Recurring Transactions](https://plaid.com/docs/api/products/transactions/#transactionsrecurringget) should request at least 180 days of history for optimal results.</summary>
-        public int? DaysRequested { get; set; }
+        public int? DaysRequested { get => _explicitNullValueDaysRequested; set { _explicitNullValueDaysRequested = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days_requested"); else _explicitNullProperties?.Remove("days_requested"); } }
+        private int? _explicitNullValueDaysRequested = default!;
         /// <summary>Counterparties and extra merchant fields are now returned by default.</summary>
         [Obsolete("")]
-        public bool? IncludeLogoAndCounterpartyBeta { get; set; }
+        public bool? IncludeLogoAndCounterpartyBeta { get => _explicitNullValueIncludeLogoAndCounterpartyBeta; set { _explicitNullValueIncludeLogoAndCounterpartyBeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_logo_and_counterparty_beta"); else _explicitNullProperties?.Remove("include_logo_and_counterparty_beta"); } }
+        private bool? _explicitNullValueIncludeLogoAndCounterpartyBeta = default!;
         /// <summary>Include the raw unparsed transaction description from the financial institution.</summary>
-        public bool? IncludeOriginalDescription { get; set; }
+        public bool? IncludeOriginalDescription { get => _explicitNullValueIncludeOriginalDescription; set { _explicitNullValueIncludeOriginalDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_original_description"); else _explicitNullProperties?.Remove("include_original_description"); } }
+        private bool? _explicitNullValueIncludeOriginalDescription = default!;
         /// <summary>Personal finance categories are now returned by default.</summary>
         [Obsolete("")]
-        public bool? IncludePersonalFinanceCategory { get; set; }
+        public bool? IncludePersonalFinanceCategory { get => _explicitNullValueIncludePersonalFinanceCategory; set { _explicitNullValueIncludePersonalFinanceCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_personal_finance_category"); else _explicitNullProperties?.Remove("include_personal_finance_category"); } }
+        private bool? _explicitNullValueIncludePersonalFinanceCategory = default!;
         /// <summary>Personal finance categories are now returned by default.</summary>
         [Obsolete("")]
-        public bool? IncludePersonalFinanceCategoryBeta { get; set; }
+        public bool? IncludePersonalFinanceCategoryBeta { get => _explicitNullValueIncludePersonalFinanceCategoryBeta; set { _explicitNullValueIncludePersonalFinanceCategoryBeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_personal_finance_category_beta"); else _explicitNullProperties?.Remove("include_personal_finance_category_beta"); } }
+        private bool? _explicitNullValueIncludePersonalFinanceCategoryBeta = default!;
         /// <summary>The number of transactions to skip. The default value is 0.</summary>
-        public int? Offset { get; set; }
+        public int? Offset { get => _explicitNullValueOffset; set { _explicitNullValueOffset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offset"); else _explicitNullProperties?.Remove("offset"); } }
+        private int? _explicitNullValueOffset = default!;
         /// <summary>Indicates which version of the personal finance category taxonomy is being used. [View PFCv2 and PFCv1 taxonomies](https://plaid.com/documents/pfc-taxonomy-all.csv).If you enabled Transactions or Enrich before December 3, 2025 you will receive the `v1` taxonomy by default and may request `v2` by explicitly setting this field to `v2` in the request.If you enabled Transactions or Enrich on or after December 3, 2025, you may only receive the `v2` taxonomy.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategoryVersion? PersonalFinanceCategoryVersion { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategoryVersion? PersonalFinanceCategoryVersion { get => _explicitNullValuePersonalFinanceCategoryVersion; set { _explicitNullValuePersonalFinanceCategoryVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category_version"); else _explicitNullProperties?.Remove("personal_finance_category_version"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategoryVersion? _explicitNullValuePersonalFinanceCategoryVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransactionsGetRequestOptions"/> and sets the default values.
         /// </summary>
@@ -64,7 +90,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.TransactionsGetRequestOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.TransactionsGetRequestOptions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.TransactionsGetRequestOptions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -101,6 +127,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteBoolValue("include_personal_finance_category_beta", IncludePersonalFinanceCategoryBeta);
             writer.WriteIntValue("offset", Offset);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategoryVersion>("personal_finance_category_version", PersonalFinanceCategoryVersion);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

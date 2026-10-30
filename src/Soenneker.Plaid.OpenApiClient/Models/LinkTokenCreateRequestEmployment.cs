@@ -12,24 +12,37 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LinkTokenCreateRequestEmployment : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bank_employment") is { } nullNodeBankEmployment && nullNodeBankEmployment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankEmployment = null;
+            if (parseNode.GetChildNode("employment_source_types") is { } nullNodeEmploymentSourceTypes && nullNodeEmploymentSourceTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmploymentSourceTypes = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies options for initializing Link for use with Bank Employment. This field is required if `employment` is included in the `products` array and `bank` is specified in `employment_source_types`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestEmploymentBankIncome? BankEmployment { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestEmploymentBankIncome? BankEmployment { get => _explicitNullValueBankEmployment; set { _explicitNullValueBankEmployment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_employment"); else _explicitNullProperties?.Remove("bank_employment"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestEmploymentBankIncome? _explicitNullValueBankEmployment = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestEmploymentBankIncome BankEmployment { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestEmploymentBankIncome BankEmployment { get => _explicitNullValueBankEmployment; set { _explicitNullValueBankEmployment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_employment"); else _explicitNullProperties?.Remove("bank_employment"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestEmploymentBankIncome _explicitNullValueBankEmployment = default!;
 #endif
         /// <summary>The types of source employment data that users will be permitted to share. Options include `bank` and `payroll`. Currently you can only specify one of these options.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.EmploymentSourceType?>? EmploymentSourceTypes { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.EmploymentSourceType?>? EmploymentSourceTypes { get => _explicitNullValueEmploymentSourceTypes; set { _explicitNullValueEmploymentSourceTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employment_source_types"); else _explicitNullProperties?.Remove("employment_source_types"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.EmploymentSourceType?>? _explicitNullValueEmploymentSourceTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.EmploymentSourceType?> EmploymentSourceTypes { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.EmploymentSourceType?> EmploymentSourceTypes { get => _explicitNullValueEmploymentSourceTypes; set { _explicitNullValueEmploymentSourceTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employment_source_types"); else _explicitNullProperties?.Remove("employment_source_types"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.EmploymentSourceType?> _explicitNullValueEmploymentSourceTypes = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestEmployment"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestEmployment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestEmployment();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestEmployment(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestEmploymentBankIncome>("bank_employment", BankEmployment);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.EmploymentSourceType>("employment_source_types", EmploymentSourceTypes);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

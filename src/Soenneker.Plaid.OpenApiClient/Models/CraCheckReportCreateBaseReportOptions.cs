@@ -12,42 +12,65 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraCheckReportCreateBaseReportOptions : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("client_report_id") is { } nullNodeClientReportId && nullNodeClientReportId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientReportId = null;
+            if (parseNode.GetChildNode("exclude_transactions") is { } nullNodeExcludeTransactions && nullNodeExcludeTransactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeTransactions = null;
+            if (parseNode.GetChildNode("gse_options") is { } nullNodeGseOptions && nullNodeGseOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GseOptions = null;
+            if (parseNode.GetChildNode("home_lending_report_options") is { } nullNodeHomeLendingReportOptions && nullNodeHomeLendingReportOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HomeLendingReportOptions = null;
+            if (parseNode.GetChildNode("require_identity") is { } nullNodeRequireIdentity && nullNodeRequireIdentity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireIdentity = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Client-generated identifier, which can be used by lenders to track loan applications. This field is deprecated. Use the `client_report_id` field at the top level of the request instead.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientReportId { get; set; }
+        public string? ClientReportId { get => _explicitNullValueClientReportId; set { _explicitNullValueClientReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_report_id"); else _explicitNullProperties?.Remove("client_report_id"); } }
+        private string? _explicitNullValueClientReportId = default!;
 #nullable restore
 #else
-        public string ClientReportId { get; set; }
+        public string ClientReportId { get => _explicitNullValueClientReportId; set { _explicitNullValueClientReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_report_id"); else _explicitNullProperties?.Remove("client_report_id"); } }
+        private string _explicitNullValueClientReportId = default!;
 #endif
+        /// <summary>When set to `true`, this option excludes account transaction records from the Base Report before it is stored. In the `/cra/check_report/base_report/get` response, each account&apos;s `transactions` field remains present as an empty array. This option does not affect insight calculations.Omitting this option or setting it to `null` or `false` preserves existing behavior. These values do not override any client configuration that excludes transactions.Requests with `exclude_transactions` set to `true` are rejected with an `INVALID_FIELD` error if they also request GSE or Home Lending reports. A Base Report created with this option set to `true` cannot be used to generate those reports later.</summary>
+        public bool? ExcludeTransactions { get => _explicitNullValueExcludeTransactions; set { _explicitNullValueExcludeTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude_transactions"); else _explicitNullProperties?.Remove("exclude_transactions"); } }
+        private bool? _explicitNullValueExcludeTransactions = default!;
         /// <summary>Specifies options for creating reports that can be shared with GSEs for mortgage verification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportGseOptions? GseOptions { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportGseOptions? GseOptions { get => _explicitNullValueGseOptions; set { _explicitNullValueGseOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gse_options"); else _explicitNullProperties?.Remove("gse_options"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportGseOptions? _explicitNullValueGseOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportGseOptions GseOptions { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportGseOptions GseOptions { get => _explicitNullValueGseOptions; set { _explicitNullValueGseOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gse_options"); else _explicitNullProperties?.Remove("gse_options"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportGseOptions _explicitNullValueGseOptions = default!;
 #endif
         /// <summary>Options for configuring Home Lending Report (Verification Report) generation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportHomeLendingReportOptions? HomeLendingReportOptions { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportHomeLendingReportOptions? HomeLendingReportOptions { get => _explicitNullValueHomeLendingReportOptions; set { _explicitNullValueHomeLendingReportOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("home_lending_report_options"); else _explicitNullProperties?.Remove("home_lending_report_options"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportHomeLendingReportOptions? _explicitNullValueHomeLendingReportOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportHomeLendingReportOptions HomeLendingReportOptions { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportHomeLendingReportOptions HomeLendingReportOptions { get => _explicitNullValueHomeLendingReportOptions; set { _explicitNullValueHomeLendingReportOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("home_lending_report_options"); else _explicitNullProperties?.Remove("home_lending_report_options"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportHomeLendingReportOptions _explicitNullValueHomeLendingReportOptions = default!;
 #endif
         /// <summary>Indicates that the report must include identity information. If identity information is not available, the report will fail.</summary>
-        public bool? RequireIdentity { get; set; }
+        public bool? RequireIdentity { get => _explicitNullValueRequireIdentity; set { _explicitNullValueRequireIdentity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require_identity"); else _explicitNullProperties?.Remove("require_identity"); } }
+        private bool? _explicitNullValueRequireIdentity = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateBaseReportOptions"/> and sets the default values.
         /// </summary>
         public CraCheckReportCreateBaseReportOptions()
         {
             AdditionalData = new Dictionary<string, object>();
+            ExcludeTransactions = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -57,7 +80,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateBaseReportOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateBaseReportOptions();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateBaseReportOptions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +93,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "client_report_id", n => { ClientReportId = n.GetStringValue(); } },
+                { "exclude_transactions", n => { ExcludeTransactions = n.GetBoolValue(); } },
                 { "gse_options", n => { GseOptions = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportGseOptions>(global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportGseOptions.CreateFromDiscriminatorValue); } },
                 { "home_lending_report_options", n => { HomeLendingReportOptions = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportHomeLendingReportOptions>(global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportHomeLendingReportOptions.CreateFromDiscriminatorValue); } },
                 { "require_identity", n => { RequireIdentity = n.GetBoolValue(); } },
@@ -81,9 +107,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("client_report_id", ClientReportId);
+            writer.WriteBoolValue("exclude_transactions", ExcludeTransactions);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportGseOptions>("gse_options", GseOptions);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportHomeLendingReportOptions>("home_lending_report_options", HomeLendingReportOptions);
             writer.WriteBoolValue("require_identity", RequireIdentity);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,28 +12,50 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InvestmentsAuth401KContributionDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("contribution_amount_12m") is { } nullNodeContributionAmount12m && nullNodeContributionAmount12m.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContributionAmount12m = null;
+            if (parseNode.GetChildNode("contribution_amount_1m") is { } nullNodeContributionAmount1m && nullNodeContributionAmount1m.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContributionAmount1m = null;
+            if (parseNode.GetChildNode("contribution_amount_6m") is { } nullNodeContributionAmount6m && nullNodeContributionAmount6m.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContributionAmount6m = null;
+            if (parseNode.GetChildNode("contribution_count_12m") is { } nullNodeContributionCount12m && nullNodeContributionCount12m.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContributionCount12m = null;
+            if (parseNode.GetChildNode("contribution_count_1m") is { } nullNodeContributionCount1m && nullNodeContributionCount1m.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContributionCount1m = null;
+            if (parseNode.GetChildNode("contribution_count_6m") is { } nullNodeContributionCount6m && nullNodeContributionCount6m.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContributionCount6m = null;
+            if (parseNode.GetChildNode("last_contribution_transactions") is { } nullNodeLastContributionTransactions && nullNodeLastContributionTransactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastContributionTransactions = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Sum of the contribution transactions on this account, for the past 12 months.</summary>
-        public float? ContributionAmount12m { get; set; }
+        public float? ContributionAmount12m { get => _explicitNullValueContributionAmount12m; set { _explicitNullValueContributionAmount12m = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contribution_amount_12m"); else _explicitNullProperties?.Remove("contribution_amount_12m"); } }
+        private float? _explicitNullValueContributionAmount12m = default!;
         /// <summary>Sum of the contribution transactions on this account, for the past month.</summary>
-        public float? ContributionAmount1m { get; set; }
+        public float? ContributionAmount1m { get => _explicitNullValueContributionAmount1m; set { _explicitNullValueContributionAmount1m = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contribution_amount_1m"); else _explicitNullProperties?.Remove("contribution_amount_1m"); } }
+        private float? _explicitNullValueContributionAmount1m = default!;
         /// <summary>Sum of the contribution transactions on this account, for the past 6 months.</summary>
-        public float? ContributionAmount6m { get; set; }
+        public float? ContributionAmount6m { get => _explicitNullValueContributionAmount6m; set { _explicitNullValueContributionAmount6m = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contribution_amount_6m"); else _explicitNullProperties?.Remove("contribution_amount_6m"); } }
+        private float? _explicitNullValueContributionAmount6m = default!;
         /// <summary>Number of contribution transactions on this account, for the past 12 months.</summary>
-        public int? ContributionCount12m { get; set; }
+        public int? ContributionCount12m { get => _explicitNullValueContributionCount12m; set { _explicitNullValueContributionCount12m = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contribution_count_12m"); else _explicitNullProperties?.Remove("contribution_count_12m"); } }
+        private int? _explicitNullValueContributionCount12m = default!;
         /// <summary>Number of contribution transactions on this account, for the past month.</summary>
-        public int? ContributionCount1m { get; set; }
+        public int? ContributionCount1m { get => _explicitNullValueContributionCount1m; set { _explicitNullValueContributionCount1m = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contribution_count_1m"); else _explicitNullProperties?.Remove("contribution_count_1m"); } }
+        private int? _explicitNullValueContributionCount1m = default!;
         /// <summary>Number of contribution transactions on this account, for the past 6 months.</summary>
-        public int? ContributionCount6m { get; set; }
+        public int? ContributionCount6m { get => _explicitNullValueContributionCount6m; set { _explicitNullValueContributionCount6m = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contribution_count_6m"); else _explicitNullProperties?.Remove("contribution_count_6m"); } }
+        private int? _explicitNullValueContributionCount6m = default!;
         /// <summary>A list of the most recent contribution transactions for the 401k account. Includes all contributions made on the same day.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransaction>? LastContributionTransactions { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransaction>? LastContributionTransactions { get => _explicitNullValueLastContributionTransactions; set { _explicitNullValueLastContributionTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_contribution_transactions"); else _explicitNullProperties?.Remove("last_contribution_transactions"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransaction>? _explicitNullValueLastContributionTransactions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransaction> LastContributionTransactions { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransaction> LastContributionTransactions { get => _explicitNullValueLastContributionTransactions; set { _explicitNullValueLastContributionTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_contribution_transactions"); else _explicitNullProperties?.Remove("last_contribution_transactions"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransaction> _explicitNullValueLastContributionTransactions = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuth401KContributionDetails"/> and sets the default values.
@@ -50,7 +72,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuth401KContributionDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuth401KContributionDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.InvestmentsAuth401KContributionDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,6 +105,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteIntValue("contribution_count_1m", ContributionCount1m);
             writer.WriteIntValue("contribution_count_6m", ContributionCount6m);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransaction>("last_contribution_transactions", LastContributionTransactions);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

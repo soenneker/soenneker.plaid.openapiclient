@@ -12,32 +12,48 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreditPlatformIds : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("employee_id") is { } nullNodeEmployeeId && nullNodeEmployeeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmployeeId = null;
+            if (parseNode.GetChildNode("payroll_id") is { } nullNodePayrollId && nullNodePayrollId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayrollId = null;
+            if (parseNode.GetChildNode("position_id") is { } nullNodePositionId && nullNodePositionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PositionId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of an employee as given by their employer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmployeeId { get; set; }
+        public string? EmployeeId { get => _explicitNullValueEmployeeId; set { _explicitNullValueEmployeeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employee_id"); else _explicitNullProperties?.Remove("employee_id"); } }
+        private string? _explicitNullValueEmployeeId = default!;
 #nullable restore
 #else
-        public string EmployeeId { get; set; }
+        public string EmployeeId { get => _explicitNullValueEmployeeId; set { _explicitNullValueEmployeeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employee_id"); else _explicitNullProperties?.Remove("employee_id"); } }
+        private string _explicitNullValueEmployeeId = default!;
 #endif
         /// <summary>The ID of an employee as given by their payroll.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayrollId { get; set; }
+        public string? PayrollId { get => _explicitNullValuePayrollId; set { _explicitNullValuePayrollId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payroll_id"); else _explicitNullProperties?.Remove("payroll_id"); } }
+        private string? _explicitNullValuePayrollId = default!;
 #nullable restore
 #else
-        public string PayrollId { get; set; }
+        public string PayrollId { get => _explicitNullValuePayrollId; set { _explicitNullValuePayrollId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payroll_id"); else _explicitNullProperties?.Remove("payroll_id"); } }
+        private string _explicitNullValuePayrollId = default!;
 #endif
         /// <summary>The ID of the position of the employee.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PositionId { get; set; }
+        public string? PositionId { get => _explicitNullValuePositionId; set { _explicitNullValuePositionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("position_id"); else _explicitNullProperties?.Remove("position_id"); } }
+        private string? _explicitNullValuePositionId = default!;
 #nullable restore
 #else
-        public string PositionId { get; set; }
+        public string PositionId { get => _explicitNullValuePositionId; set { _explicitNullValuePositionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("position_id"); else _explicitNullProperties?.Remove("position_id"); } }
+        private string _explicitNullValuePositionId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CreditPlatformIds"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CreditPlatformIds CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CreditPlatformIds();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CreditPlatformIds(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("employee_id", EmployeeId);
             writer.WriteStringValue("payroll_id", PayrollId);
             writer.WriteStringValue("position_id", PositionId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

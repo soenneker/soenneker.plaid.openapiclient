@@ -13,18 +13,30 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransferExpectedSweepSettlementScheduleItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("sweep_settlement_date") is { } nullNodeSweepSettlementDate && nullNodeSweepSettlementDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SweepSettlementDate = null;
+            if (parseNode.GetChildNode("swept_settled_amount") is { } nullNodeSweptSettledAmount && nullNodeSweptSettledAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SweptSettledAmount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The settlement date of a sweep for this transfer.</summary>
-        public Date? SweepSettlementDate { get; set; }
+        public Date? SweepSettlementDate { get => _explicitNullValueSweepSettlementDate; set { _explicitNullValueSweepSettlementDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sweep_settlement_date"); else _explicitNullProperties?.Remove("sweep_settlement_date"); } }
+        private Date? _explicitNullValueSweepSettlementDate = default!;
         /// <summary>The accumulated amount that has been swept by `sweep_settlement_date`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SweptSettledAmount { get; set; }
+        public string? SweptSettledAmount { get => _explicitNullValueSweptSettledAmount; set { _explicitNullValueSweptSettledAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("swept_settled_amount"); else _explicitNullProperties?.Remove("swept_settled_amount"); } }
+        private string? _explicitNullValueSweptSettledAmount = default!;
 #nullable restore
 #else
-        public string SweptSettledAmount { get; set; }
+        public string SweptSettledAmount { get => _explicitNullValueSweptSettledAmount; set { _explicitNullValueSweptSettledAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("swept_settled_amount"); else _explicitNullProperties?.Remove("swept_settled_amount"); } }
+        private string _explicitNullValueSweptSettledAmount = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransferExpectedSweepSettlementScheduleItem"/> and sets the default values.
@@ -41,7 +53,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.TransferExpectedSweepSettlementScheduleItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.TransferExpectedSweepSettlementScheduleItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.TransferExpectedSweepSettlementScheduleItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,6 +76,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateValue("sweep_settlement_date", SweepSettlementDate);
             writer.WriteStringValue("swept_settled_amount", SweptSettledAmount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

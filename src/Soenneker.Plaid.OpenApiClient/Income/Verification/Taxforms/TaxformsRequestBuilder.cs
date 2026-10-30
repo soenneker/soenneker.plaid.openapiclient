@@ -16,6 +16,7 @@ namespace Soenneker.Plaid.OpenApiClient.Income.Verification.Taxforms
     public partial class TaxformsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The getPath property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Income.Verification.Taxforms.Get.GetRequestBuilder GetPath
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Income.Verification.Taxforms.Get.GetRequestBuilder(PathParameters, RequestAdapter);

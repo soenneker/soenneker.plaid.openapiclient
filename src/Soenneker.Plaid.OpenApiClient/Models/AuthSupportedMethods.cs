@@ -12,17 +12,32 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuthSupportedMethods : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("automated_micro_deposits") is { } nullNodeAutomatedMicroDeposits && nullNodeAutomatedMicroDeposits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutomatedMicroDeposits = null;
+            if (parseNode.GetChildNode("instant_auth") is { } nullNodeInstantAuth && nullNodeInstantAuth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstantAuth = null;
+            if (parseNode.GetChildNode("instant_match") is { } nullNodeInstantMatch && nullNodeInstantMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstantMatch = null;
+            if (parseNode.GetChildNode("instant_micro_deposits") is { } nullNodeInstantMicroDeposits && nullNodeInstantMicroDeposits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstantMicroDeposits = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if automated micro-deposits are supported.</summary>
-        public bool? AutomatedMicroDeposits { get; set; }
+        public bool? AutomatedMicroDeposits { get => _explicitNullValueAutomatedMicroDeposits; set { _explicitNullValueAutomatedMicroDeposits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automated_micro_deposits"); else _explicitNullProperties?.Remove("automated_micro_deposits"); } }
+        private bool? _explicitNullValueAutomatedMicroDeposits = default!;
         /// <summary>Indicates if instant auth is supported.</summary>
-        public bool? InstantAuth { get; set; }
+        public bool? InstantAuth { get => _explicitNullValueInstantAuth; set { _explicitNullValueInstantAuth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instant_auth"); else _explicitNullProperties?.Remove("instant_auth"); } }
+        private bool? _explicitNullValueInstantAuth = default!;
         /// <summary>Indicates if instant match is supported.</summary>
-        public bool? InstantMatch { get; set; }
+        public bool? InstantMatch { get => _explicitNullValueInstantMatch; set { _explicitNullValueInstantMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instant_match"); else _explicitNullProperties?.Remove("instant_match"); } }
+        private bool? _explicitNullValueInstantMatch = default!;
         /// <summary>Indicates if instant micro-deposits are supported.</summary>
-        public bool? InstantMicroDeposits { get; set; }
+        public bool? InstantMicroDeposits { get => _explicitNullValueInstantMicroDeposits; set { _explicitNullValueInstantMicroDeposits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instant_micro_deposits"); else _explicitNullProperties?.Remove("instant_micro_deposits"); } }
+        private bool? _explicitNullValueInstantMicroDeposits = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.AuthSupportedMethods"/> and sets the default values.
         /// </summary>
@@ -38,7 +53,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.AuthSupportedMethods CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.AuthSupportedMethods();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.AuthSupportedMethods(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,6 +82,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteBoolValue("instant_auth", InstantAuth);
             writer.WriteBoolValue("instant_match", InstantMatch);
             writer.WriteBoolValue("instant_micro_deposits", InstantMicroDeposits);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

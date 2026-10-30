@@ -13,37 +13,62 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DetectedAccount : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_subtype") is { } nullNodeAccountSubtype && nullNodeAccountSubtype.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountSubtype = null;
+            if (parseNode.GetChildNode("account_type") is { } nullNodeAccountType && nullNodeAccountType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountType = null;
+            if (parseNode.GetChildNode("newest_transaction_amount") is { } nullNodeNewestTransactionAmount && nullNodeNewestTransactionAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewestTransactionAmount = null;
+            if (parseNode.GetChildNode("newest_transaction_date") is { } nullNodeNewestTransactionDate && nullNodeNewestTransactionDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewestTransactionDate = null;
+            if (parseNode.GetChildNode("oldest_transaction_date") is { } nullNodeOldestTransactionDate && nullNodeOldestTransactionDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldestTransactionDate = null;
+            if (parseNode.GetChildNode("total_inflows") is { } nullNodeTotalInflows && nullNodeTotalInflows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalInflows = null;
+            if (parseNode.GetChildNode("total_outflows") is { } nullNodeTotalOutflows && nullNodeTotalOutflows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalOutflows = null;
+            if (parseNode.GetChildNode("transaction_count") is { } nullNodeTransactionCount && nullNodeTransactionCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionCount = null;
+        }
+
         /// <summary>The detected subtype of the account, based on the transactions to/from the institution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountSubtype { get; set; }
+        public string? AccountSubtype { get => _explicitNullValueAccountSubtype; set { _explicitNullValueAccountSubtype = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_subtype"); else _explicitNullProperties?.Remove("account_subtype"); } }
+        private string? _explicitNullValueAccountSubtype = default!;
 #nullable restore
 #else
-        public string AccountSubtype { get; set; }
+        public string AccountSubtype { get => _explicitNullValueAccountSubtype; set { _explicitNullValueAccountSubtype = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_subtype"); else _explicitNullProperties?.Remove("account_subtype"); } }
+        private string _explicitNullValueAccountSubtype = default!;
 #endif
         /// <summary>The detected account type (depository, credit, loan, investment etc.).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountType { get; set; }
+        public string? AccountType { get => _explicitNullValueAccountType; set { _explicitNullValueAccountType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_type"); else _explicitNullProperties?.Remove("account_type"); } }
+        private string? _explicitNullValueAccountType = default!;
 #nullable restore
 #else
-        public string AccountType { get; set; }
+        public string AccountType { get => _explicitNullValueAccountType; set { _explicitNullValueAccountType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_type"); else _explicitNullProperties?.Remove("account_type"); } }
+        private string _explicitNullValueAccountType = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Amount of the most recent transaction associated with this detected account type at this financial institution.</summary>
-        public double? NewestTransactionAmount { get; set; }
+        public double? NewestTransactionAmount { get => _explicitNullValueNewestTransactionAmount; set { _explicitNullValueNewestTransactionAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newest_transaction_amount"); else _explicitNullProperties?.Remove("newest_transaction_amount"); } }
+        private double? _explicitNullValueNewestTransactionAmount = default!;
         /// <summary>The date of the newest transaction associated with this detected account type at this financial institution.</summary>
-        public Date? NewestTransactionDate { get; set; }
+        public Date? NewestTransactionDate { get => _explicitNullValueNewestTransactionDate; set { _explicitNullValueNewestTransactionDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newest_transaction_date"); else _explicitNullProperties?.Remove("newest_transaction_date"); } }
+        private Date? _explicitNullValueNewestTransactionDate = default!;
         /// <summary>The date of the oldest transaction associated with this detected account type at this financial institution.</summary>
-        public Date? OldestTransactionDate { get; set; }
+        public Date? OldestTransactionDate { get => _explicitNullValueOldestTransactionDate; set { _explicitNullValueOldestTransactionDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldest_transaction_date"); else _explicitNullProperties?.Remove("oldest_transaction_date"); } }
+        private Date? _explicitNullValueOldestTransactionDate = default!;
         /// <summary>Sum of inflow amounts associated with this detected account type at this financial institution.</summary>
-        public double? TotalInflows { get; set; }
+        public double? TotalInflows { get => _explicitNullValueTotalInflows; set { _explicitNullValueTotalInflows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_inflows"); else _explicitNullProperties?.Remove("total_inflows"); } }
+        private double? _explicitNullValueTotalInflows = default!;
         /// <summary>Sum of outflow amounts associated with this detected account type at this financial institution.</summary>
-        public double? TotalOutflows { get; set; }
+        public double? TotalOutflows { get => _explicitNullValueTotalOutflows; set { _explicitNullValueTotalOutflows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_outflows"); else _explicitNullProperties?.Remove("total_outflows"); } }
+        private double? _explicitNullValueTotalOutflows = default!;
         /// <summary>The number of transactions associated with this detected account type at this financial institution.</summary>
-        public int? TransactionCount { get; set; }
+        public int? TransactionCount { get => _explicitNullValueTransactionCount; set { _explicitNullValueTransactionCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_count"); else _explicitNullProperties?.Remove("transaction_count"); } }
+        private int? _explicitNullValueTransactionCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.DetectedAccount"/> and sets the default values.
         /// </summary>
@@ -59,7 +84,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.DetectedAccount CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.DetectedAccount();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.DetectedAccount(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,6 +119,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDoubleValue("total_inflows", TotalInflows);
             writer.WriteDoubleValue("total_outflows", TotalOutflows);
             writer.WriteIntValue("transaction_count", TransactionCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

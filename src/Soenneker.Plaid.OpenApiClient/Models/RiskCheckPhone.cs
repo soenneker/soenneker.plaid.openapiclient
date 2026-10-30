@@ -12,27 +12,42 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RiskCheckPhone : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("factors") is { } nullNodeFactors && nullNodeFactors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Factors = null;
+            if (parseNode.GetChildNode("linked_services") is { } nullNodeLinkedServices && nullNodeLinkedServices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkedServices = null;
+            if (parseNode.GetChildNode("risk_level") is { } nullNodeRiskLevel && nullNodeRiskLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskLevel = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of factors, when available, that contribute towards the risk level of the given risk check type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Factors { get; set; }
+        public List<string>? Factors { get => _explicitNullValueFactors; set { _explicitNullValueFactors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("factors"); else _explicitNullProperties?.Remove("factors"); } }
+        private List<string>? _explicitNullValueFactors = default!;
 #nullable restore
 #else
-        public List<string> Factors { get; set; }
+        public List<string> Factors { get => _explicitNullValueFactors; set { _explicitNullValueFactors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("factors"); else _explicitNullProperties?.Remove("factors"); } }
+        private List<string> _explicitNullValueFactors = default!;
 #endif
         /// <summary>A list of online services where this phone number has been detected to have accounts or other activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckLinkedService?>? LinkedServices { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckLinkedService?>? LinkedServices { get => _explicitNullValueLinkedServices; set { _explicitNullValueLinkedServices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_services"); else _explicitNullProperties?.Remove("linked_services"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckLinkedService?>? _explicitNullValueLinkedServices = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckLinkedService?> LinkedServices { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckLinkedService?> LinkedServices { get => _explicitNullValueLinkedServices; set { _explicitNullValueLinkedServices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_services"); else _explicitNullProperties?.Remove("linked_services"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckLinkedService?> _explicitNullValueLinkedServices = default!;
 #endif
         /// <summary>Risk level for the given risk check type.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskLevel? RiskLevel { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskLevel? RiskLevel { get => _explicitNullValueRiskLevel; set { _explicitNullValueRiskLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_level"); else _explicitNullProperties?.Remove("risk_level"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RiskLevel? _explicitNullValueRiskLevel = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckPhone"/> and sets the default values.
         /// </summary>
@@ -48,7 +63,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckPhone CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckPhone();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckPhone(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +90,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("factors", Factors);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckLinkedService>("linked_services", LinkedServices);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskLevel>("risk_level", RiskLevel);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

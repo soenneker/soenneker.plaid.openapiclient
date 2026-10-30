@@ -12,21 +12,35 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BusinessRiskCheck : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("industry_prediction") is { } nullNodeIndustryPrediction && nullNodeIndustryPrediction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndustryPrediction = null;
+            if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Nullable industry prediction details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessIndustryPredictionNullable? IndustryPrediction { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessIndustryPredictionNullable? IndustryPrediction { get => _explicitNullValueIndustryPrediction; set { _explicitNullValueIndustryPrediction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("industry_prediction"); else _explicitNullProperties?.Remove("industry_prediction"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessIndustryPredictionNullable? _explicitNullValueIndustryPrediction = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessIndustryPredictionNullable IndustryPrediction { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessIndustryPredictionNullable IndustryPrediction { get => _explicitNullValueIndustryPrediction; set { _explicitNullValueIndustryPrediction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("industry_prediction"); else _explicitNullProperties?.Remove("industry_prediction"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessIndustryPredictionNullable _explicitNullValueIndustryPrediction = default!;
 #endif
-        /// <summary>A score from 0 to 100 indicating the risk assessment for the business</summary>
-        public int? Score { get; set; }
+        /// <summary>A score from 0 to 100 indicating the risk assessment for the business. `null` if no risk score is available for this verification. Industry classification may still be available when the risk score is `null`. A completed check can have `status: failed` and a `null` score when the risk assessment could not be completed; this does not represent a score of zero or a high-risk assessment. Read `status` separately to determine the check outcome; `null` does not mean the check is still running.</summary>
+        public int? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
+        private int? _explicitNullValueScore = default!;
         /// <summary>Status of the business risk assessment check</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatusRiskCheck? Status { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatusRiskCheck? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatusRiskCheck? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BusinessRiskCheck"/> and sets the default values.
         /// </summary>
@@ -42,7 +56,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.BusinessRiskCheck CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.BusinessRiskCheck();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.BusinessRiskCheck(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,6 +83,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessIndustryPredictionNullable>("industry_prediction", IndustryPrediction);
             writer.WriteIntValue("score", Score);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationStatusRiskCheck>("status", Status);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,32 +12,48 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SignalWarning : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("warning_code") is { } nullNodeWarningCode && nullNodeWarningCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WarningCode = null;
+            if (parseNode.GetChildNode("warning_message") is { } nullNodeWarningMessage && nullNodeWarningMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WarningMessage = null;
+            if (parseNode.GetChildNode("warning_type") is { } nullNodeWarningType && nullNodeWarningType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WarningType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The warning code identifies a specific kind of warning that pertains to the error causing bank data to be missing. Safe for programmatic use. For more details on warning codes, please refer to Plaid standard error codes documentation. If you receive the `ITEM_LOGIN_REQUIRED` warning, we recommend re-authenticating your user by implementing Link&apos;s update mode. This will guide your user to fix their credentials, allowing Plaid to start fetching data again for future requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WarningCode { get; set; }
+        public string? WarningCode { get => _explicitNullValueWarningCode; set { _explicitNullValueWarningCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_code"); else _explicitNullProperties?.Remove("warning_code"); } }
+        private string? _explicitNullValueWarningCode = default!;
 #nullable restore
 #else
-        public string WarningCode { get; set; }
+        public string WarningCode { get => _explicitNullValueWarningCode; set { _explicitNullValueWarningCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_code"); else _explicitNullProperties?.Remove("warning_code"); } }
+        private string _explicitNullValueWarningCode = default!;
 #endif
         /// <summary>A developer-friendly representation of the warning type. This may change over time and is not safe for programmatic use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WarningMessage { get; set; }
+        public string? WarningMessage { get => _explicitNullValueWarningMessage; set { _explicitNullValueWarningMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_message"); else _explicitNullProperties?.Remove("warning_message"); } }
+        private string? _explicitNullValueWarningMessage = default!;
 #nullable restore
 #else
-        public string WarningMessage { get; set; }
+        public string WarningMessage { get => _explicitNullValueWarningMessage; set { _explicitNullValueWarningMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_message"); else _explicitNullProperties?.Remove("warning_message"); } }
+        private string _explicitNullValueWarningMessage = default!;
 #endif
         /// <summary>A broad categorization of the warning. Safe for programmatic use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WarningType { get; set; }
+        public string? WarningType { get => _explicitNullValueWarningType; set { _explicitNullValueWarningType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_type"); else _explicitNullProperties?.Remove("warning_type"); } }
+        private string? _explicitNullValueWarningType = default!;
 #nullable restore
 #else
-        public string WarningType { get; set; }
+        public string WarningType { get => _explicitNullValueWarningType; set { _explicitNullValueWarningType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_type"); else _explicitNullProperties?.Remove("warning_type"); } }
+        private string _explicitNullValueWarningType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("warning_code", WarningCode);
             writer.WriteStringValue("warning_message", WarningMessage);
             writer.WriteStringValue("warning_type", WarningType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

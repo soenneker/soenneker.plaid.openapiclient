@@ -13,48 +13,75 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Activity : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("activity") is { } nullNodeActivityProp && nullNodeActivityProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActivityProp = null;
+            if (parseNode.GetChildNode("authentication") is { } nullNodeAuthentication && nullNodeAuthentication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Authentication = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("initiated_date") is { } nullNodeInitiatedDate && nullNodeInitiatedDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InitiatedDate = null;
+            if (parseNode.GetChildNode("initiator") is { } nullNodeInitiator && nullNodeInitiator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Initiator = null;
+            if (parseNode.GetChildNode("scopes") is { } nullNodeScopes && nullNodeScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scopes = null;
+            if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("target_application_id") is { } nullNodeTargetApplicationId && nullNodeTargetApplicationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetApplicationId = null;
+        }
+
         /// <summary>Types of consent activities</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ActivityType? ActivityProp { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ActivityType? ActivityProp { get => _explicitNullValueActivityProp; set { _explicitNullValueActivityProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activity"); else _explicitNullProperties?.Remove("activity"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ActivityType? _explicitNullValueActivityProp = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Enum representing the entity authenticating the user.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ItemCreateAuthentication? Authentication { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ItemCreateAuthentication? Authentication { get => _explicitNullValueAuthentication; set { _explicitNullValueAuthentication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentication"); else _explicitNullProperties?.Remove("authentication"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ItemCreateAuthentication? _explicitNullValueAuthentication = default!;
         /// <summary>A unique identifier for the activity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The date this activity was initiated [ISO 8601](https://wikipedia.org/wiki/ISO_8601) (YYYY-MM-DD) format in UTC.</summary>
-        public Date? InitiatedDate { get; set; }
+        public Date? InitiatedDate { get => _explicitNullValueInitiatedDate; set { _explicitNullValueInitiatedDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initiated_date"); else _explicitNullProperties?.Remove("initiated_date"); } }
+        private Date? _explicitNullValueInitiatedDate = default!;
         /// <summary>Application ID of the client who initiated the activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Initiator { get; set; }
+        public string? Initiator { get => _explicitNullValueInitiator; set { _explicitNullValueInitiator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initiator"); else _explicitNullProperties?.Remove("initiator"); } }
+        private string? _explicitNullValueInitiator = default!;
 #nullable restore
 #else
-        public string Initiator { get; set; }
+        public string Initiator { get => _explicitNullValueInitiator; set { _explicitNullValueInitiator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initiator"); else _explicitNullProperties?.Remove("initiator"); } }
+        private string _explicitNullValueInitiator = default!;
 #endif
         /// <summary>The scopes object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ScopesNullable? Scopes { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ScopesNullable? Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ScopesNullable? _explicitNullValueScopes = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ScopesNullable Scopes { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ScopesNullable Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ScopesNullable _explicitNullValueScopes = default!;
 #endif
         /// <summary>Enum representing the state of the action/activity.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ActionState? State { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ActionState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ActionState? _explicitNullValueState = default!;
         /// <summary>This field will map to the application ID that is returned from `/item/application/list`, or provided to the institution in an oauth redirect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetApplicationId { get; set; }
+        public string? TargetApplicationId { get => _explicitNullValueTargetApplicationId; set { _explicitNullValueTargetApplicationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_application_id"); else _explicitNullProperties?.Remove("target_application_id"); } }
+        private string? _explicitNullValueTargetApplicationId = default!;
 #nullable restore
 #else
-        public string TargetApplicationId { get; set; }
+        public string TargetApplicationId { get => _explicitNullValueTargetApplicationId; set { _explicitNullValueTargetApplicationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_application_id"); else _explicitNullProperties?.Remove("target_application_id"); } }
+        private string _explicitNullValueTargetApplicationId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.Activity"/> and sets the default values.
@@ -71,7 +98,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.Activity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.Activity();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.Activity(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -106,6 +133,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ScopesNullable>("scopes", Scopes);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ActionState>("state", State);
             writer.WriteStringValue("target_application_id", TargetApplicationId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

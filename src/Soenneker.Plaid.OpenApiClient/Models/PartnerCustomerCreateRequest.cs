@@ -12,134 +12,192 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PartnerCustomerCreateRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
+            if (parseNode.GetChildNode("application_name") is { } nullNodeApplicationName && nullNodeApplicationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApplicationName = null;
+            if (parseNode.GetChildNode("assets_under_management") is { } nullNodeAssetsUnderManagement && nullNodeAssetsUnderManagement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetsUnderManagement = null;
+            if (parseNode.GetChildNode("billing_contact") is { } nullNodeBillingContact && nullNodeBillingContact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingContact = null;
+            if (parseNode.GetChildNode("client_id") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
+            if (parseNode.GetChildNode("company_name") is { } nullNodeCompanyName && nullNodeCompanyName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyName = null;
+            if (parseNode.GetChildNode("create_link_customization") is { } nullNodeCreateLinkCustomization && nullNodeCreateLinkCustomization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreateLinkCustomization = null;
+            if (parseNode.GetChildNode("customer_support_info") is { } nullNodeCustomerSupportInfo && nullNodeCustomerSupportInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerSupportInfo = null;
+            if (parseNode.GetChildNode("is_bank_addendum_completed") is { } nullNodeIsBankAddendumCompleted && nullNodeIsBankAddendumCompleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsBankAddendumCompleted = null;
+            if (parseNode.GetChildNode("is_diligence_attested") is { } nullNodeIsDiligenceAttested && nullNodeIsDiligenceAttested.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDiligenceAttested = null;
+            if (parseNode.GetChildNode("legal_entity_name") is { } nullNodeLegalEntityName && nullNodeLegalEntityName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalEntityName = null;
+            if (parseNode.GetChildNode("logo") is { } nullNodeLogo && nullNodeLogo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Logo = null;
+            if (parseNode.GetChildNode("products") is { } nullNodeProducts && nullNodeProducts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Products = null;
+            if (parseNode.GetChildNode("redirect_uris") is { } nullNodeRedirectUris && nullNodeRedirectUris.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedirectUris = null;
+            if (parseNode.GetChildNode("registration_number") is { } nullNodeRegistrationNumber && nullNodeRegistrationNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistrationNumber = null;
+            if (parseNode.GetChildNode("secret") is { } nullNodeSecret && nullNodeSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Secret = null;
+            if (parseNode.GetChildNode("technical_contact") is { } nullNodeTechnicalContact && nullNodeTechnicalContact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TechnicalContact = null;
+            if (parseNode.GetChildNode("website") is { } nullNodeWebsite && nullNodeWebsite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Website = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The end customer&apos;s address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerAddress? Address { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerAddress? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerAddress? _explicitNullValueAddress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerAddress Address { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerAddress Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerAddress _explicitNullValueAddress = default!;
 #endif
         /// <summary>The name of the end customer&apos;s application. This will be shown to end users when they go through the Plaid Link flow. The application name must be unique and cannot match the name of another application already registered with Plaid.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApplicationName { get; set; }
+        public string? ApplicationName { get => _explicitNullValueApplicationName; set { _explicitNullValueApplicationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application_name"); else _explicitNullProperties?.Remove("application_name"); } }
+        private string? _explicitNullValueApplicationName = default!;
 #nullable restore
 #else
-        public string ApplicationName { get; set; }
+        public string ApplicationName { get => _explicitNullValueApplicationName; set { _explicitNullValueApplicationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application_name"); else _explicitNullProperties?.Remove("application_name"); } }
+        private string _explicitNullValueApplicationName = default!;
 #endif
         /// <summary>Assets under management for the given end customer. Required for end customers with monthly service commitments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerAssetsUnderManagement? AssetsUnderManagement { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerAssetsUnderManagement? AssetsUnderManagement { get => _explicitNullValueAssetsUnderManagement; set { _explicitNullValueAssetsUnderManagement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assets_under_management"); else _explicitNullProperties?.Remove("assets_under_management"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerAssetsUnderManagement? _explicitNullValueAssetsUnderManagement = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerAssetsUnderManagement AssetsUnderManagement { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerAssetsUnderManagement AssetsUnderManagement { get => _explicitNullValueAssetsUnderManagement; set { _explicitNullValueAssetsUnderManagement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assets_under_management"); else _explicitNullProperties?.Remove("assets_under_management"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerAssetsUnderManagement _explicitNullValueAssetsUnderManagement = default!;
 #endif
         /// <summary>The billing contact for the end customer. Defaults to partner&apos;s billing contact if omitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerBillingContact? BillingContact { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerBillingContact? BillingContact { get => _explicitNullValueBillingContact; set { _explicitNullValueBillingContact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_contact"); else _explicitNullProperties?.Remove("billing_contact"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerBillingContact? _explicitNullValueBillingContact = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerBillingContact BillingContact { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerBillingContact BillingContact { get => _explicitNullValueBillingContact; set { _explicitNullValueBillingContact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_contact"); else _explicitNullProperties?.Remove("billing_contact"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerBillingContact _explicitNullValueBillingContact = default!;
 #endif
         /// <summary>Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get; set; }
+        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        private string? _explicitNullValueClientId = default!;
 #nullable restore
 #else
-        public string ClientId { get; set; }
+        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        private string _explicitNullValueClientId = default!;
 #endif
         /// <summary>The company name of the end customer being created. This will be used to display the end customer in the Plaid Dashboard. It will not be shown to end users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompanyName { get; set; }
+        public string? CompanyName { get => _explicitNullValueCompanyName; set { _explicitNullValueCompanyName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company_name"); else _explicitNullProperties?.Remove("company_name"); } }
+        private string? _explicitNullValueCompanyName = default!;
 #nullable restore
 #else
-        public string CompanyName { get; set; }
+        public string CompanyName { get => _explicitNullValueCompanyName; set { _explicitNullValueCompanyName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company_name"); else _explicitNullProperties?.Remove("company_name"); } }
+        private string _explicitNullValueCompanyName = default!;
 #endif
         /// <summary>If `true`, the end customer&apos;s default Link customization will be set to match the partner&apos;s. You can always change the end customer&apos;s Link customization in the Plaid Dashboard. See the [Link Customization docs](https://plaid.com/docs/link/customization/) for more information. If you require the ability to programmatically create end customers using multiple different Link customization profiles, contact your Plaid account manager for assistance.Important: Data Transparency Messaging (DTM) use cases will not be copied to the end customer&apos;s Link customization unless the **Publish changes** button is clicked after the use cases are applied. Link will not work in Production unless the end customer&apos;s DTM use cases are configured. For more details, see [Data Transparency Messaging](https://plaid.com/docs/link/data-transparency-messaging-migration-guide/).</summary>
-        public bool? CreateLinkCustomization { get; set; }
+        public bool? CreateLinkCustomization { get => _explicitNullValueCreateLinkCustomization; set { _explicitNullValueCreateLinkCustomization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("create_link_customization"); else _explicitNullProperties?.Remove("create_link_customization"); } }
+        private bool? _explicitNullValueCreateLinkCustomization = default!;
         /// <summary>This information is public. Users of your app will see this information when managing connections between your app and their bank accounts in Plaid Portal. Defaults to partner&apos;s customer support info if omitted. This field is mandatory for partners whose Plaid accounts were created after November 26, 2024 and will be mandatory for all partners by the 1033 compliance deadline.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCustomerSupportInfo? CustomerSupportInfo { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCustomerSupportInfo? CustomerSupportInfo { get => _explicitNullValueCustomerSupportInfo; set { _explicitNullValueCustomerSupportInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_support_info"); else _explicitNullProperties?.Remove("customer_support_info"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCustomerSupportInfo? _explicitNullValueCustomerSupportInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCustomerSupportInfo CustomerSupportInfo { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCustomerSupportInfo CustomerSupportInfo { get => _explicitNullValueCustomerSupportInfo; set { _explicitNullValueCustomerSupportInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_support_info"); else _explicitNullProperties?.Remove("customer_support_info"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCustomerSupportInfo _explicitNullValueCustomerSupportInfo = default!;
 #endif
         /// <summary>Denotes whether the partner has forwarded the Plaid bank addendum to the end customer.</summary>
-        public bool? IsBankAddendumCompleted { get; set; }
+        public bool? IsBankAddendumCompleted { get => _explicitNullValueIsBankAddendumCompleted; set { _explicitNullValueIsBankAddendumCompleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_bank_addendum_completed"); else _explicitNullProperties?.Remove("is_bank_addendum_completed"); } }
+        private bool? _explicitNullValueIsBankAddendumCompleted = default!;
         /// <summary>Denotes whether or not the partner has completed attestation of diligence for the end customer to be created.</summary>
-        public bool? IsDiligenceAttested { get; set; }
+        public bool? IsDiligenceAttested { get => _explicitNullValueIsDiligenceAttested; set { _explicitNullValueIsDiligenceAttested = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_diligence_attested"); else _explicitNullProperties?.Remove("is_diligence_attested"); } }
+        private bool? _explicitNullValueIsDiligenceAttested = default!;
         /// <summary>The end customer&apos;s legal name. This will be shared with financial institutions as part of the OAuth registration process. It will not be shown to end users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LegalEntityName { get; set; }
+        public string? LegalEntityName { get => _explicitNullValueLegalEntityName; set { _explicitNullValueLegalEntityName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legal_entity_name"); else _explicitNullProperties?.Remove("legal_entity_name"); } }
+        private string? _explicitNullValueLegalEntityName = default!;
 #nullable restore
 #else
-        public string LegalEntityName { get; set; }
+        public string LegalEntityName { get => _explicitNullValueLegalEntityName; set { _explicitNullValueLegalEntityName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legal_entity_name"); else _explicitNullProperties?.Remove("legal_entity_name"); } }
+        private string _explicitNullValueLegalEntityName = default!;
 #endif
         /// <summary>Base64-encoded representation of the end customer&apos;s logo. Must be a PNG of size 1024x1024 under 4MB. The logo will be shared with financial institutions and shown to the end user during Link flows. A logo is required if `create_link_customization` is `true`. If `create_link_customization` is `false` and the logo is omitted, the partner&apos;s logo will be used if one exists, otherwise a stock logo will be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Logo { get; set; }
+        public string? Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
+        private string? _explicitNullValueLogo = default!;
 #nullable restore
 #else
-        public string Logo { get; set; }
+        public string Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
+        private string _explicitNullValueLogo = default!;
 #endif
         /// <summary>The products to be enabled for the end customer. If empty or `null`, this field will default to the products enabled for the reseller at the time this endpoint is called.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? Products { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? Products { get => _explicitNullValueProducts; set { _explicitNullValueProducts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("products"); else _explicitNullProperties?.Remove("products"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? _explicitNullValueProducts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> Products { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> Products { get => _explicitNullValueProducts; set { _explicitNullValueProducts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("products"); else _explicitNullProperties?.Remove("products"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> _explicitNullValueProducts = default!;
 #endif
         /// <summary>A list of URIs indicating the destination(s) where a user can be forwarded after completing the Link flow; used to support OAuth authentication flows when launching Link in the browser or another app. URIs should not contain any query parameters. When used in Production, URIs must use https. To modify redirect URIs for an end customer after creating them, go to the end customer&apos;s [API page](https://dashboard.plaid.com/team/api) in the Dashboard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RedirectUris { get; set; }
+        public List<string>? RedirectUris { get => _explicitNullValueRedirectUris; set { _explicitNullValueRedirectUris = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect_uris"); else _explicitNullProperties?.Remove("redirect_uris"); } }
+        private List<string>? _explicitNullValueRedirectUris = default!;
 #nullable restore
 #else
-        public List<string> RedirectUris { get; set; }
+        public List<string> RedirectUris { get => _explicitNullValueRedirectUris; set { _explicitNullValueRedirectUris = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect_uris"); else _explicitNullProperties?.Remove("redirect_uris"); } }
+        private List<string> _explicitNullValueRedirectUris = default!;
 #endif
         /// <summary>The unique identifier assigned to a financial institution by regulatory authorities, if applicable. For banks, this is the FDIC Certificate Number. For credit unions, this is the Credit Union Charter Number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RegistrationNumber { get; set; }
+        public string? RegistrationNumber { get => _explicitNullValueRegistrationNumber; set { _explicitNullValueRegistrationNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registration_number"); else _explicitNullProperties?.Remove("registration_number"); } }
+        private string? _explicitNullValueRegistrationNumber = default!;
 #nullable restore
 #else
-        public string RegistrationNumber { get; set; }
+        public string RegistrationNumber { get => _explicitNullValueRegistrationNumber; set { _explicitNullValueRegistrationNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registration_number"); else _explicitNullProperties?.Remove("registration_number"); } }
+        private string _explicitNullValueRegistrationNumber = default!;
 #endif
         /// <summary>Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Secret { get; set; }
+        public string? Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
+        private string? _explicitNullValueSecret = default!;
 #nullable restore
 #else
-        public string Secret { get; set; }
+        public string Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
+        private string _explicitNullValueSecret = default!;
 #endif
         /// <summary>The technical contact for the end customer. Defaults to partner&apos;s technical contact if omitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerTechnicalContact? TechnicalContact { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerTechnicalContact? TechnicalContact { get => _explicitNullValueTechnicalContact; set { _explicitNullValueTechnicalContact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("technical_contact"); else _explicitNullProperties?.Remove("technical_contact"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerTechnicalContact? _explicitNullValueTechnicalContact = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerTechnicalContact TechnicalContact { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerTechnicalContact TechnicalContact { get => _explicitNullValueTechnicalContact; set { _explicitNullValueTechnicalContact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("technical_contact"); else _explicitNullProperties?.Remove("technical_contact"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerTechnicalContact _explicitNullValueTechnicalContact = default!;
 #endif
         /// <summary>The end customer&apos;s website.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Website { get; set; }
+        public string? Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
+        private string? _explicitNullValueWebsite = default!;
 #nullable restore
 #else
-        public string Website { get; set; }
+        public string Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
+        private string _explicitNullValueWebsite = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PartnerCustomerCreateRequest"/> and sets the default values.
@@ -156,7 +214,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.PartnerCustomerCreateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.PartnerCustomerCreateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.PartnerCustomerCreateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -211,6 +269,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("secret", Secret);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerTechnicalContact>("technical_contact", TechnicalContact);
             writer.WriteStringValue("website", Website);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

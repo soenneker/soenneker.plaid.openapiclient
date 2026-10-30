@@ -12,40 +12,59 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetRecipientResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("client_name") is { } nullNodeClientName && nullNodeClientName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientName = null;
+            if (parseNode.GetChildNode("logo_uri") is { } nullNodeLogoUri && nullNodeLogoUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogoUri = null;
+            if (parseNode.GetChildNode("recipient_id") is { } nullNodeRecipientId && nullNodeRecipientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecipientId = null;
+            if (parseNode.GetChildNode("third_party_legal_name") is { } nullNodeThirdPartyLegalName && nullNodeThirdPartyLegalName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThirdPartyLegalName = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The recipient&apos;s (application&apos;s) name, as displayed to your customers during the consent flow</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientName { get; set; }
+        public string? ClientName { get => _explicitNullValueClientName; set { _explicitNullValueClientName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_name"); else _explicitNullProperties?.Remove("client_name"); } }
+        private string? _explicitNullValueClientName = default!;
 #nullable restore
 #else
-        public string ClientName { get; set; }
+        public string ClientName { get => _explicitNullValueClientName; set { _explicitNullValueClientName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_name"); else _explicitNullProperties?.Remove("client_name"); } }
+        private string _explicitNullValueClientName = default!;
 #endif
         /// <summary>URL for the recipient&apos;s (application&apos;s) logo</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LogoUri { get; set; }
+        public string? LogoUri { get => _explicitNullValueLogoUri; set { _explicitNullValueLogoUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo_uri"); else _explicitNullProperties?.Remove("logo_uri"); } }
+        private string? _explicitNullValueLogoUri = default!;
 #nullable restore
 #else
-        public string LogoUri { get; set; }
+        public string LogoUri { get => _explicitNullValueLogoUri; set { _explicitNullValueLogoUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo_uri"); else _explicitNullProperties?.Remove("logo_uri"); } }
+        private string _explicitNullValueLogoUri = default!;
 #endif
         /// <summary>The recipient&apos;s (application&apos;s) identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecipientId { get; set; }
+        public string? RecipientId { get => _explicitNullValueRecipientId; set { _explicitNullValueRecipientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipient_id"); else _explicitNullProperties?.Remove("recipient_id"); } }
+        private string? _explicitNullValueRecipientId = default!;
 #nullable restore
 #else
-        public string RecipientId { get; set; }
+        public string RecipientId { get => _explicitNullValueRecipientId; set { _explicitNullValueRecipientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipient_id"); else _explicitNullProperties?.Remove("recipient_id"); } }
+        private string _explicitNullValueRecipientId = default!;
 #endif
         /// <summary>The recipient&apos;s (application&apos;s) legal entity name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThirdPartyLegalName { get; set; }
+        public string? ThirdPartyLegalName { get => _explicitNullValueThirdPartyLegalName; set { _explicitNullValueThirdPartyLegalName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("third_party_legal_name"); else _explicitNullProperties?.Remove("third_party_legal_name"); } }
+        private string? _explicitNullValueThirdPartyLegalName = default!;
 #nullable restore
 #else
-        public string ThirdPartyLegalName { get; set; }
+        public string ThirdPartyLegalName { get => _explicitNullValueThirdPartyLegalName; set { _explicitNullValueThirdPartyLegalName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("third_party_legal_name"); else _explicitNullProperties?.Remove("third_party_legal_name"); } }
+        private string _explicitNullValueThirdPartyLegalName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.GetRecipientResponse"/> and sets the default values.
@@ -62,7 +81,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.GetRecipientResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.GetRecipientResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.GetRecipientResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +108,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("logo_uri", LogoUri);
             writer.WriteStringValue("recipient_id", RecipientId);
             writer.WriteStringValue("third_party_legal_name", ThirdPartyLegalName);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

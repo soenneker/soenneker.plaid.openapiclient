@@ -12,37 +12,72 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AamvaAnalysis : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("city") is { } nullNodeCity && nullNodeCity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) City = null;
+            if (parseNode.GetChildNode("date_of_birth") is { } nullNodeDateOfBirth && nullNodeDateOfBirth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOfBirth = null;
+            if (parseNode.GetChildNode("eye_color") is { } nullNodeEyeColor && nullNodeEyeColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EyeColor = null;
+            if (parseNode.GetChildNode("first_name") is { } nullNodeFirstName && nullNodeFirstName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstName = null;
+            if (parseNode.GetChildNode("gender") is { } nullNodeGender && nullNodeGender.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gender = null;
+            if (parseNode.GetChildNode("height") is { } nullNodeHeight && nullNodeHeight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Height = null;
+            if (parseNode.GetChildNode("id_expiration_date") is { } nullNodeIdExpirationDate && nullNodeIdExpirationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdExpirationDate = null;
+            if (parseNode.GetChildNode("id_issue_date") is { } nullNodeIdIssueDate && nullNodeIdIssueDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdIssueDate = null;
+            if (parseNode.GetChildNode("id_number") is { } nullNodeIdNumber && nullNodeIdNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdNumber = null;
+            if (parseNode.GetChildNode("is_verified") is { } nullNodeIsVerified && nullNodeIsVerified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsVerified = null;
+            if (parseNode.GetChildNode("last_name") is { } nullNodeLastName && nullNodeLastName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastName = null;
+            if (parseNode.GetChildNode("middle_name") is { } nullNodeMiddleName && nullNodeMiddleName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MiddleName = null;
+            if (parseNode.GetChildNode("postal_code") is { } nullNodePostalCode && nullNodePostalCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostalCode = null;
+            if (parseNode.GetChildNode("street") is { } nullNodeStreet && nullNodeStreet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Street = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The outcome of checking the particular field against state databases.`match` - The field is an exact match with the state database.`no_match` - The field is not an exact match with the state database.`no_data` - The field was unable to be checked against state databases.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaMatchResult? City { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaMatchResult? City { get => _explicitNullValueCity; set { _explicitNullValueCity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("city"); else _explicitNullProperties?.Remove("city"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AamvaMatchResult? _explicitNullValueCity = default!;
         /// <summary>The outcome of checking the particular field against state databases.`match` - The field is an exact match with the state database.`no_match` - The field is not an exact match with the state database.`no_data` - The field was unable to be checked against state databases.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaMatchResult? DateOfBirth { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaMatchResult? DateOfBirth { get => _explicitNullValueDateOfBirth; set { _explicitNullValueDateOfBirth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_of_birth"); else _explicitNullProperties?.Remove("date_of_birth"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AamvaMatchResult? _explicitNullValueDateOfBirth = default!;
         /// <summary>The outcome of checking the particular field against state databases.`match` - The field is an exact match with the state database.`no_match` - The field is not an exact match with the state database.`no_data` - The field was unable to be checked against state databases.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaMatchResult? EyeColor { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaMatchResult? EyeColor { get => _explicitNullValueEyeColor; set { _explicitNullValueEyeColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eye_color"); else _explicitNullProperties?.Remove("eye_color"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AamvaMatchResult? _explicitNullValueEyeColor = default!;
         /// <summary>The outcome of checking the associated hit against state databases.`match` - The field is an exact match with the state database.`partial_match` - The field is a partial match with the state database.`no_match` - The field is not an exact match with the state database.`no_data` - The field was unable to be checked against state databases.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaDetailedMatchResult? FirstName { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaDetailedMatchResult? FirstName { get => _explicitNullValueFirstName; set { _explicitNullValueFirstName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_name"); else _explicitNullProperties?.Remove("first_name"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AamvaDetailedMatchResult? _explicitNullValueFirstName = default!;
         /// <summary>The outcome of checking the particular field against state databases.`match` - The field is an exact match with the state database.`no_match` - The field is not an exact match with the state database.`no_data` - The field was unable to be checked against state databases.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaMatchResult? Gender { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaMatchResult? Gender { get => _explicitNullValueGender; set { _explicitNullValueGender = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gender"); else _explicitNullProperties?.Remove("gender"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AamvaMatchResult? _explicitNullValueGender = default!;
         /// <summary>The outcome of checking the particular field against state databases.`match` - The field is an exact match with the state database.`no_match` - The field is not an exact match with the state database.`no_data` - The field was unable to be checked against state databases.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaMatchResult? Height { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaMatchResult? Height { get => _explicitNullValueHeight; set { _explicitNullValueHeight = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("height"); else _explicitNullProperties?.Remove("height"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AamvaMatchResult? _explicitNullValueHeight = default!;
         /// <summary>The outcome of checking the particular field against state databases.`match` - The field is an exact match with the state database.`no_match` - The field is not an exact match with the state database.`no_data` - The field was unable to be checked against state databases.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaMatchResult? IdExpirationDate { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaMatchResult? IdExpirationDate { get => _explicitNullValueIdExpirationDate; set { _explicitNullValueIdExpirationDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id_expiration_date"); else _explicitNullProperties?.Remove("id_expiration_date"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AamvaMatchResult? _explicitNullValueIdExpirationDate = default!;
         /// <summary>The outcome of checking the particular field against state databases.`match` - The field is an exact match with the state database.`no_match` - The field is not an exact match with the state database.`no_data` - The field was unable to be checked against state databases.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaMatchResult? IdIssueDate { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaMatchResult? IdIssueDate { get => _explicitNullValueIdIssueDate; set { _explicitNullValueIdIssueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id_issue_date"); else _explicitNullProperties?.Remove("id_issue_date"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AamvaMatchResult? _explicitNullValueIdIssueDate = default!;
         /// <summary>The outcome of checking the particular field against state databases.`match` - The field is an exact match with the state database.`no_match` - The field is not an exact match with the state database.`no_data` - The field was unable to be checked against state databases.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaMatchResult? IdNumber { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaMatchResult? IdNumber { get => _explicitNullValueIdNumber; set { _explicitNullValueIdNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id_number"); else _explicitNullProperties?.Remove("id_number"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AamvaMatchResult? _explicitNullValueIdNumber = default!;
         /// <summary>The overall outcome of checking the associated hit against the issuing state database.</summary>
-        public bool? IsVerified { get; set; }
+        public bool? IsVerified { get => _explicitNullValueIsVerified; set { _explicitNullValueIsVerified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_verified"); else _explicitNullProperties?.Remove("is_verified"); } }
+        private bool? _explicitNullValueIsVerified = default!;
         /// <summary>The outcome of checking the associated hit against state databases.`match` - The field is an exact match with the state database.`partial_match` - The field is a partial match with the state database.`no_match` - The field is not an exact match with the state database.`no_data` - The field was unable to be checked against state databases.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaDetailedMatchResult? LastName { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaDetailedMatchResult? LastName { get => _explicitNullValueLastName; set { _explicitNullValueLastName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_name"); else _explicitNullProperties?.Remove("last_name"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AamvaDetailedMatchResult? _explicitNullValueLastName = default!;
         /// <summary>The outcome of checking the associated hit against state databases.`match` - The field is an exact match with the state database.`partial_match` - The field is a partial match with the state database.`no_match` - The field is not an exact match with the state database.`no_data` - The field was unable to be checked against state databases.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaDetailedMatchResult? MiddleName { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaDetailedMatchResult? MiddleName { get => _explicitNullValueMiddleName; set { _explicitNullValueMiddleName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("middle_name"); else _explicitNullProperties?.Remove("middle_name"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AamvaDetailedMatchResult? _explicitNullValueMiddleName = default!;
         /// <summary>The outcome of checking the associated hit against state databases.`match` - The field is an exact match with the state database.`partial_match` - The field is a partial match with the state database.`no_match` - The field is not an exact match with the state database.`no_data` - The field was unable to be checked against state databases.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaDetailedMatchResult? PostalCode { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaDetailedMatchResult? PostalCode { get => _explicitNullValuePostalCode; set { _explicitNullValuePostalCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postal_code"); else _explicitNullProperties?.Remove("postal_code"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AamvaDetailedMatchResult? _explicitNullValuePostalCode = default!;
         /// <summary>The outcome of checking the associated hit against state databases.`match` - The field is an exact match with the state database.`partial_match` - The field is a partial match with the state database.`no_match` - The field is not an exact match with the state database.`no_data` - The field was unable to be checked against state databases.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaDetailedMatchResult? Street { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AamvaDetailedMatchResult? Street { get => _explicitNullValueStreet; set { _explicitNullValueStreet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("street"); else _explicitNullProperties?.Remove("street"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AamvaDetailedMatchResult? _explicitNullValueStreet = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.AamvaAnalysis"/> and sets the default values.
         /// </summary>
@@ -58,7 +93,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.AamvaAnalysis CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.AamvaAnalysis();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.AamvaAnalysis(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -105,6 +142,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AamvaDetailedMatchResult>("middle_name", MiddleName);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AamvaDetailedMatchResult>("postal_code", PostalCode);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AamvaDetailedMatchResult>("street", Street);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,29 +12,46 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SelfieAnalysis : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("age_check") is { } nullNodeAgeCheck && nullNodeAgeCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgeCheck = null;
+            if (parseNode.GetChildNode("document_comparison") is { } nullNodeDocumentComparison && nullNodeDocumentComparison.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentComparison = null;
+            if (parseNode.GetChildNode("facial_analysis") is { } nullNodeFacialAnalysis && nullNodeFacialAnalysis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacialAnalysis = null;
+            if (parseNode.GetChildNode("liveness_check") is { } nullNodeLivenessCheck && nullNodeLivenessCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LivenessCheck = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Age-estimation results from the selfie capture. This field is `null` when an age range could not be estimated from the selfie capture.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAgeCheck? AgeCheck { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAgeCheck? AgeCheck { get => _explicitNullValueAgeCheck; set { _explicitNullValueAgeCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("age_check"); else _explicitNullProperties?.Remove("age_check"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SelfieAgeCheck? _explicitNullValueAgeCheck = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAgeCheck AgeCheck { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAgeCheck AgeCheck { get => _explicitNullValueAgeCheck; set { _explicitNullValueAgeCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("age_check"); else _explicitNullProperties?.Remove("age_check"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SelfieAgeCheck _explicitNullValueAgeCheck = default!;
 #endif
         /// <summary>Information about the comparison between the selfie and the document (if documentary verification also ran).</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisDocumentComparison? DocumentComparison { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisDocumentComparison? DocumentComparison { get => _explicitNullValueDocumentComparison; set { _explicitNullValueDocumentComparison = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_comparison"); else _explicitNullProperties?.Remove("document_comparison"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisDocumentComparison? _explicitNullValueDocumentComparison = default!;
         /// <summary>Analysis of the facial features of the selfie when compared to the face in the uploaded document, if one is present.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysis? FacialAnalysis { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysis? FacialAnalysis { get => _explicitNullValueFacialAnalysis; set { _explicitNullValueFacialAnalysis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facial_analysis"); else _explicitNullProperties?.Remove("facial_analysis"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysis? _explicitNullValueFacialAnalysis = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysis FacialAnalysis { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysis FacialAnalysis { get => _explicitNullValueFacialAnalysis; set { _explicitNullValueFacialAnalysis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facial_analysis"); else _explicitNullProperties?.Remove("facial_analysis"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysis _explicitNullValueFacialAnalysis = default!;
 #endif
         /// <summary>Assessment of whether the selfie capture is of a real human being, as opposed to a picture of a human on a screen, a picture of a paper cut out, someone wearing a mask, or a deepfake.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisLivenessCheck? LivenessCheck { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisLivenessCheck? LivenessCheck { get => _explicitNullValueLivenessCheck; set { _explicitNullValueLivenessCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("liveness_check"); else _explicitNullProperties?.Remove("liveness_check"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisLivenessCheck? _explicitNullValueLivenessCheck = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysis"/> and sets the default values.
         /// </summary>
@@ -50,7 +67,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysis CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysis();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysis(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +94,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisDocumentComparison>("document_comparison", DocumentComparison);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysis>("facial_analysis", FacialAnalysis);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisLivenessCheck>("liveness_check", LivenessCheck);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

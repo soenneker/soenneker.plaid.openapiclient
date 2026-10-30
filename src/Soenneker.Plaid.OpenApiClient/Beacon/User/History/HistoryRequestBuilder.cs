@@ -16,6 +16,7 @@ namespace Soenneker.Plaid.OpenApiClient.Beacon.User.History
     public partial class HistoryRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The list property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Beacon.User.History.List.ListRequestBuilder List
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Beacon.User.History.List.ListRequestBuilder(PathParameters, RequestAdapter);

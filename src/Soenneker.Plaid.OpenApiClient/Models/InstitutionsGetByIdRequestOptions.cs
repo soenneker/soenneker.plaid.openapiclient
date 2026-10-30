@@ -12,17 +12,32 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InstitutionsGetByIdRequestOptions : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("include_auth_metadata") is { } nullNodeIncludeAuthMetadata && nullNodeIncludeAuthMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeAuthMetadata = null;
+            if (parseNode.GetChildNode("include_optional_metadata") is { } nullNodeIncludeOptionalMetadata && nullNodeIncludeOptionalMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeOptionalMetadata = null;
+            if (parseNode.GetChildNode("include_payment_initiation_metadata") is { } nullNodeIncludePaymentInitiationMetadata && nullNodeIncludePaymentInitiationMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludePaymentInitiationMetadata = null;
+            if (parseNode.GetChildNode("include_status") is { } nullNodeIncludeStatus && nullNodeIncludeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeStatus = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When `true`, returns metadata related to the Auth product indicating which auth methods are supported.</summary>
-        public bool? IncludeAuthMetadata { get; set; }
+        public bool? IncludeAuthMetadata { get => _explicitNullValueIncludeAuthMetadata; set { _explicitNullValueIncludeAuthMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_auth_metadata"); else _explicitNullProperties?.Remove("include_auth_metadata"); } }
+        private bool? _explicitNullValueIncludeAuthMetadata = default!;
         /// <summary>When `true`, return an institution&apos;s logo, brand color, and URL. When available, the bank&apos;s logo is returned as a base64 encoded 152x152 PNG, the brand color is in hexadecimal format. The default value is `false`.Note that Plaid does not own any of the logos shared by the API and that by accessing or using these logos, you agree that you are doing so at your own risk and will, if necessary, obtain all required permissions from the appropriate rights holders and adhere to any applicable usage guidelines. Plaid disclaims all express or implied warranties with respect to the logos.</summary>
-        public bool? IncludeOptionalMetadata { get; set; }
+        public bool? IncludeOptionalMetadata { get => _explicitNullValueIncludeOptionalMetadata; set { _explicitNullValueIncludeOptionalMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_optional_metadata"); else _explicitNullProperties?.Remove("include_optional_metadata"); } }
+        private bool? _explicitNullValueIncludeOptionalMetadata = default!;
         /// <summary>When `true`, returns metadata related to the Payment Initiation product indicating which payment configurations are supported.</summary>
-        public bool? IncludePaymentInitiationMetadata { get; set; }
+        public bool? IncludePaymentInitiationMetadata { get => _explicitNullValueIncludePaymentInitiationMetadata; set { _explicitNullValueIncludePaymentInitiationMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_payment_initiation_metadata"); else _explicitNullProperties?.Remove("include_payment_initiation_metadata"); } }
+        private bool? _explicitNullValueIncludePaymentInitiationMetadata = default!;
         /// <summary>If `true`, the response will include status information about the institution. Default value is `false`.</summary>
-        public bool? IncludeStatus { get; set; }
+        public bool? IncludeStatus { get => _explicitNullValueIncludeStatus; set { _explicitNullValueIncludeStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_status"); else _explicitNullProperties?.Remove("include_status"); } }
+        private bool? _explicitNullValueIncludeStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.InstitutionsGetByIdRequestOptions"/> and sets the default values.
         /// </summary>
@@ -42,7 +57,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.InstitutionsGetByIdRequestOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.InstitutionsGetByIdRequestOptions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.InstitutionsGetByIdRequestOptions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +84,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteBoolValue("include_optional_metadata", IncludeOptionalMetadata);
             writer.WriteBoolValue("include_payment_initiation_metadata", IncludePaymentInitiationMetadata);
             writer.WriteBoolValue("include_status", IncludeStatus);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,40 +12,59 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreditBankStatementUploadObject : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bank_accounts") is { } nullNodeBankAccounts && nullNodeBankAccounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankAccounts = null;
+            if (parseNode.GetChildNode("document_id") is { } nullNodeDocumentId && nullNodeDocumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentId = null;
+            if (parseNode.GetChildNode("document_metadata") is { } nullNodeDocumentMetadata && nullNodeDocumentMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentMetadata = null;
+            if (parseNode.GetChildNode("transactions") is { } nullNodeTransactions && nullNodeTransactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transactions = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An array of bank accounts associated with the uploaded bank statement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankStatementUploadBankAccount>? BankAccounts { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankStatementUploadBankAccount>? BankAccounts { get => _explicitNullValueBankAccounts; set { _explicitNullValueBankAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_accounts"); else _explicitNullProperties?.Remove("bank_accounts"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankStatementUploadBankAccount>? _explicitNullValueBankAccounts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankStatementUploadBankAccount> BankAccounts { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankStatementUploadBankAccount> BankAccounts { get => _explicitNullValueBankAccounts; set { _explicitNullValueBankAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_accounts"); else _explicitNullProperties?.Remove("bank_accounts"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankStatementUploadBankAccount> _explicitNullValueBankAccounts = default!;
 #endif
         /// <summary>An identifier of the document referenced by the document metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentId { get; set; }
+        public string? DocumentId { get => _explicitNullValueDocumentId; set { _explicitNullValueDocumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_id"); else _explicitNullProperties?.Remove("document_id"); } }
+        private string? _explicitNullValueDocumentId = default!;
 #nullable restore
 #else
-        public string DocumentId { get; set; }
+        public string DocumentId { get => _explicitNullValueDocumentId; set { _explicitNullValueDocumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_id"); else _explicitNullProperties?.Remove("document_id"); } }
+        private string _explicitNullValueDocumentId = default!;
 #endif
         /// <summary>Object representing metadata pertaining to the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata? DocumentMetadata { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata? DocumentMetadata { get => _explicitNullValueDocumentMetadata; set { _explicitNullValueDocumentMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_metadata"); else _explicitNullProperties?.Remove("document_metadata"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata? _explicitNullValueDocumentMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata DocumentMetadata { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata DocumentMetadata { get => _explicitNullValueDocumentMetadata; set { _explicitNullValueDocumentMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_metadata"); else _explicitNullProperties?.Remove("document_metadata"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata _explicitNullValueDocumentMetadata = default!;
 #endif
         /// <summary>An array of transactions appearing on the bank statement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankStatementUploadTransaction>? Transactions { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankStatementUploadTransaction>? Transactions { get => _explicitNullValueTransactions; set { _explicitNullValueTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactions"); else _explicitNullProperties?.Remove("transactions"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankStatementUploadTransaction>? _explicitNullValueTransactions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankStatementUploadTransaction> Transactions { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankStatementUploadTransaction> Transactions { get => _explicitNullValueTransactions; set { _explicitNullValueTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactions"); else _explicitNullProperties?.Remove("transactions"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankStatementUploadTransaction> _explicitNullValueTransactions = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CreditBankStatementUploadObject"/> and sets the default values.
@@ -62,7 +81,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CreditBankStatementUploadObject CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CreditBankStatementUploadObject();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CreditBankStatementUploadObject(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +108,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("document_id", DocumentId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata>("document_metadata", DocumentMetadata);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankStatementUploadTransaction>("transactions", Transactions);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

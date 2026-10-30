@@ -12,20 +12,34 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransferPlatformTosAcceptanceMetadata : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("agreement_accepted") is { } nullNodeAgreementAccepted && nullNodeAgreementAccepted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgreementAccepted = null;
+            if (parseNode.GetChildNode("agreement_accepted_at") is { } nullNodeAgreementAcceptedAt && nullNodeAgreementAcceptedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgreementAcceptedAt = null;
+            if (parseNode.GetChildNode("originator_ip_address") is { } nullNodeOriginatorIpAddress && nullNodeOriginatorIpAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginatorIpAddress = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the TOS agreement was accepted</summary>
-        public bool? AgreementAccepted { get; set; }
+        public bool? AgreementAccepted { get => _explicitNullValueAgreementAccepted; set { _explicitNullValueAgreementAccepted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agreement_accepted"); else _explicitNullProperties?.Remove("agreement_accepted"); } }
+        private bool? _explicitNullValueAgreementAccepted = default!;
         /// <summary>ISO8601 timestamp indicating when the originator accepted the TOS</summary>
-        public DateTimeOffset? AgreementAcceptedAt { get; set; }
+        public DateTimeOffset? AgreementAcceptedAt { get => _explicitNullValueAgreementAcceptedAt; set { _explicitNullValueAgreementAcceptedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agreement_accepted_at"); else _explicitNullProperties?.Remove("agreement_accepted_at"); } }
+        private DateTimeOffset? _explicitNullValueAgreementAcceptedAt = default!;
         /// <summary>The IP address of the originator when they accepted the TOS. Formatted as an IPv4 or IPv6 IP address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginatorIpAddress { get; set; }
+        public string? OriginatorIpAddress { get => _explicitNullValueOriginatorIpAddress; set { _explicitNullValueOriginatorIpAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originator_ip_address"); else _explicitNullProperties?.Remove("originator_ip_address"); } }
+        private string? _explicitNullValueOriginatorIpAddress = default!;
 #nullable restore
 #else
-        public string OriginatorIpAddress { get; set; }
+        public string OriginatorIpAddress { get => _explicitNullValueOriginatorIpAddress; set { _explicitNullValueOriginatorIpAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originator_ip_address"); else _explicitNullProperties?.Remove("originator_ip_address"); } }
+        private string _explicitNullValueOriginatorIpAddress = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformTosAcceptanceMetadata"/> and sets the default values.
@@ -42,7 +56,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformTosAcceptanceMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformTosAcceptanceMetadata();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.TransferPlatformTosAcceptanceMetadata(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,6 +81,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteBoolValue("agreement_accepted", AgreementAccepted);
             writer.WriteDateTimeOffsetValue("agreement_accepted_at", AgreementAcceptedAt);
             writer.WriteStringValue("originator_ip_address", OriginatorIpAddress);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

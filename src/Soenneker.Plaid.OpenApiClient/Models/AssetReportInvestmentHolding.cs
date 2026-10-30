@@ -13,69 +13,106 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AssetReportInvestmentHolding : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_id") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
+            if (parseNode.GetChildNode("institution_price") is { } nullNodeInstitutionPrice && nullNodeInstitutionPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionPrice = null;
+            if (parseNode.GetChildNode("institution_price_as_of") is { } nullNodeInstitutionPriceAsOf && nullNodeInstitutionPriceAsOf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionPriceAsOf = null;
+            if (parseNode.GetChildNode("institution_value") is { } nullNodeInstitutionValue && nullNodeInstitutionValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionValue = null;
+            if (parseNode.GetChildNode("iso_currency_code") is { } nullNodeIsoCurrencyCode && nullNodeIsoCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsoCurrencyCode = null;
+            if (parseNode.GetChildNode("quantity") is { } nullNodeQuantity && nullNodeQuantity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quantity = null;
+            if (parseNode.GetChildNode("security_id") is { } nullNodeSecurityId && nullNodeSecurityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecurityId = null;
+            if (parseNode.GetChildNode("tax_lots") is { } nullNodeTaxLots && nullNodeTaxLots.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxLots = null;
+            if (parseNode.GetChildNode("ticker_symbol") is { } nullNodeTickerSymbol && nullNodeTickerSymbol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TickerSymbol = null;
+            if (parseNode.GetChildNode("unofficial_currency_code") is { } nullNodeUnofficialCurrencyCode && nullNodeUnofficialCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnofficialCurrencyCode = null;
+            if (parseNode.GetChildNode("vested_quantity") is { } nullNodeVestedQuantity && nullNodeVestedQuantity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VestedQuantity = null;
+            if (parseNode.GetChildNode("vested_value") is { } nullNodeVestedValue && nullNodeVestedValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VestedValue = null;
+        }
+
         /// <summary>The Plaid `account_id` associated with the holding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountId { get; set; }
+        public string? AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        private string? _explicitNullValueAccountId = default!;
 #nullable restore
 #else
-        public string AccountId { get; set; }
+        public string AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        private string _explicitNullValueAccountId = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The last price given by the institution for this security.</summary>
-        public double? InstitutionPrice { get; set; }
+        public double? InstitutionPrice { get => _explicitNullValueInstitutionPrice; set { _explicitNullValueInstitutionPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_price"); else _explicitNullProperties?.Remove("institution_price"); } }
+        private double? _explicitNullValueInstitutionPrice = default!;
         /// <summary>The date at which `institution_price` was current.</summary>
-        public Date? InstitutionPriceAsOf { get; set; }
+        public Date? InstitutionPriceAsOf { get => _explicitNullValueInstitutionPriceAsOf; set { _explicitNullValueInstitutionPriceAsOf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_price_as_of"); else _explicitNullProperties?.Remove("institution_price_as_of"); } }
+        private Date? _explicitNullValueInstitutionPriceAsOf = default!;
         /// <summary>The value of the holding, as reported by the institution.</summary>
-        public double? InstitutionValue { get; set; }
+        public double? InstitutionValue { get => _explicitNullValueInstitutionValue; set { _explicitNullValueInstitutionValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_value"); else _explicitNullProperties?.Remove("institution_value"); } }
+        private double? _explicitNullValueInstitutionValue = default!;
         /// <summary>The ISO-4217 currency code of the holding. Always `null` if `unofficial_currency_code` is non-`null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IsoCurrencyCode { get; set; }
+        public string? IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
+        private string? _explicitNullValueIsoCurrencyCode = default!;
 #nullable restore
 #else
-        public string IsoCurrencyCode { get; set; }
+        public string IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
+        private string _explicitNullValueIsoCurrencyCode = default!;
 #endif
         /// <summary>The total quantity of the asset held, as reported by the financial institution. If the security is an option, `quantity` will reflect the total number of options (typically the number of contracts multiplied by 100), not the number of contracts.</summary>
-        public double? Quantity { get; set; }
+        public double? Quantity { get => _explicitNullValueQuantity; set { _explicitNullValueQuantity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quantity"); else _explicitNullProperties?.Remove("quantity"); } }
+        private double? _explicitNullValueQuantity = default!;
         /// <summary>The Plaid `security_id` associated with the holding. Security data is not specific to a user&apos;s account; any user who held the same security at the same financial institution at the same time would have identical security data. The `security_id` for the same security will typically be the same across different institutions, but this is not guaranteed. The `security_id` does not typically change, but may change if inherent details of the security change due to a corporate action, for example, in the event of a ticker symbol change or CUSIP change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecurityId { get; set; }
+        public string? SecurityId { get => _explicitNullValueSecurityId; set { _explicitNullValueSecurityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("security_id"); else _explicitNullProperties?.Remove("security_id"); } }
+        private string? _explicitNullValueSecurityId = default!;
 #nullable restore
 #else
-        public string SecurityId { get; set; }
+        public string SecurityId { get => _explicitNullValueSecurityId; set { _explicitNullValueSecurityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("security_id"); else _explicitNullProperties?.Remove("security_id"); } }
+        private string _explicitNullValueSecurityId = default!;
 #endif
         /// <summary>Per-lot acquisition data for this holding. This field is absent when lot-level data is not available for the holding — either the institution does not provide it, or the report was generated before lot-level data was supported. Refresh the report if you expect lots.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLot>? TaxLots { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLot>? TaxLots { get => _explicitNullValueTaxLots; set { _explicitNullValueTaxLots = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax_lots"); else _explicitNullProperties?.Remove("tax_lots"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLot>? _explicitNullValueTaxLots = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLot> TaxLots { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLot> TaxLots { get => _explicitNullValueTaxLots; set { _explicitNullValueTaxLots = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax_lots"); else _explicitNullProperties?.Remove("tax_lots"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLot> _explicitNullValueTaxLots = default!;
 #endif
         /// <summary>The holding&apos;s trading symbol for publicly traded holdings, and otherwise a short identifier if available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TickerSymbol { get; set; }
+        public string? TickerSymbol { get => _explicitNullValueTickerSymbol; set { _explicitNullValueTickerSymbol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ticker_symbol"); else _explicitNullProperties?.Remove("ticker_symbol"); } }
+        private string? _explicitNullValueTickerSymbol = default!;
 #nullable restore
 #else
-        public string TickerSymbol { get; set; }
+        public string TickerSymbol { get => _explicitNullValueTickerSymbol; set { _explicitNullValueTickerSymbol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ticker_symbol"); else _explicitNullProperties?.Remove("ticker_symbol"); } }
+        private string _explicitNullValueTickerSymbol = default!;
 #endif
         /// <summary>The unofficial currency code associated with the holding. Always `null` if `iso_currency_code` is non-`null`. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `unofficial_currency_code`s.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnofficialCurrencyCode { get; set; }
+        public string? UnofficialCurrencyCode { get => _explicitNullValueUnofficialCurrencyCode; set { _explicitNullValueUnofficialCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unofficial_currency_code"); else _explicitNullProperties?.Remove("unofficial_currency_code"); } }
+        private string? _explicitNullValueUnofficialCurrencyCode = default!;
 #nullable restore
 #else
-        public string UnofficialCurrencyCode { get; set; }
+        public string UnofficialCurrencyCode { get => _explicitNullValueUnofficialCurrencyCode; set { _explicitNullValueUnofficialCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unofficial_currency_code"); else _explicitNullProperties?.Remove("unofficial_currency_code"); } }
+        private string _explicitNullValueUnofficialCurrencyCode = default!;
 #endif
         /// <summary>The total quantity of vested assets held, as reported by the financial institution. Vested assets are only associated with [equities](https://plaid.com/docs/api/products/investments/#investments-holdings-get-response-securities-type).</summary>
-        public double? VestedQuantity { get; set; }
+        public double? VestedQuantity { get => _explicitNullValueVestedQuantity; set { _explicitNullValueVestedQuantity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vested_quantity"); else _explicitNullProperties?.Remove("vested_quantity"); } }
+        private double? _explicitNullValueVestedQuantity = default!;
         /// <summary>The value of the vested holdings as reported by the institution.</summary>
-        public double? VestedValue { get; set; }
+        public double? VestedValue { get => _explicitNullValueVestedValue; set { _explicitNullValueVestedValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vested_value"); else _explicitNullProperties?.Remove("vested_value"); } }
+        private double? _explicitNullValueVestedValue = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.AssetReportInvestmentHolding"/> and sets the default values.
         /// </summary>
@@ -91,7 +128,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.AssetReportInvestmentHolding CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.AssetReportInvestmentHolding();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.AssetReportInvestmentHolding(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -134,6 +171,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("unofficial_currency_code", UnofficialCurrencyCode);
             writer.WriteDoubleValue("vested_quantity", VestedQuantity);
             writer.WriteDoubleValue("vested_value", VestedValue);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

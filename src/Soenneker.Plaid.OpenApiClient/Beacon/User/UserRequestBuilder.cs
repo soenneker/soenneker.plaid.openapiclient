@@ -26,11 +26,13 @@ namespace Soenneker.Plaid.OpenApiClient.Beacon.User
             get => new global::Soenneker.Plaid.OpenApiClient.Beacon.User.Account_insights.Account_insightsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The create property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Beacon.User.Create.CreateRequestBuilder Create
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Beacon.User.Create.CreateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The getPath property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Beacon.User.Get.GetRequestBuilder GetPath
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Beacon.User.Get.GetRequestBuilder(PathParameters, RequestAdapter);
@@ -41,11 +43,13 @@ namespace Soenneker.Plaid.OpenApiClient.Beacon.User
             get => new global::Soenneker.Plaid.OpenApiClient.Beacon.User.History.HistoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The review property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Beacon.User.Review.ReviewRequestBuilder Review
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Beacon.User.Review.ReviewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The update property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Beacon.User.Update.UpdateRequestBuilder Update
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Beacon.User.Update.UpdateRequestBuilder(PathParameters, RequestAdapter);

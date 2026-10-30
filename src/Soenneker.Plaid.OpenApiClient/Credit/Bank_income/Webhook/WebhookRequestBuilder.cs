@@ -16,6 +16,7 @@ namespace Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Webhook
     public partial class WebhookRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The update property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Webhook.Update.UpdateRequestBuilder Update
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Webhook.Update.UpdateRequestBuilder(PathParameters, RequestAdapter);

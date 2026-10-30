@@ -12,32 +12,48 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraReportGetLendScoreCompleteAttributes : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cashflow_insights") is { } nullNodeCashflowInsights && nullNodeCashflowInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CashflowInsights = null;
+            if (parseNode.GetChildNode("lend_scores") is { } nullNodeLendScores && nullNodeLendScores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LendScores = null;
+            if (parseNode.GetChildNode("network_insights") is { } nullNodeNetworkInsights && nullNodeNetworkInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkInsights = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A map of Cashflow Insights attributes, where the key is a string and the value is a string, float, int, or boolean. The specific list of attributes depends on the version requested. For a full list, contact your account manager. May be `null` if attributes were not available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributesCashflowInsights? CashflowInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributesCashflowInsights? CashflowInsights { get => _explicitNullValueCashflowInsights; set { _explicitNullValueCashflowInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cashflow_insights"); else _explicitNullProperties?.Remove("cashflow_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributesCashflowInsights? _explicitNullValueCashflowInsights = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributesCashflowInsights CashflowInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributesCashflowInsights CashflowInsights { get => _explicitNullValueCashflowInsights; set { _explicitNullValueCashflowInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cashflow_insights"); else _explicitNullProperties?.Remove("cashflow_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributesCashflowInsights _explicitNullValueCashflowInsights = default!;
 #endif
         /// <summary>The results for the requested LendScore variants. If a variant fails due to a client error, its `score` is `null` and its `error_code` is populated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreVariantScore>? LendScores { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreVariantScore>? LendScores { get => _explicitNullValueLendScores; set { _explicitNullValueLendScores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lend_scores"); else _explicitNullProperties?.Remove("lend_scores"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreVariantScore>? _explicitNullValueLendScores = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreVariantScore> LendScores { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreVariantScore> LendScores { get => _explicitNullValueLendScores; set { _explicitNullValueLendScores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lend_scores"); else _explicitNullProperties?.Remove("lend_scores"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreVariantScore> _explicitNullValueLendScores = default!;
 #endif
         /// <summary>A map of Network Insights attributes, where the key is a string and the value is a float, int, or boolean. The specific list of attributes depends on the version requested. For a full list, contact your account manager. May be `null` if attributes were not available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributesNetworkInsights? NetworkInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributesNetworkInsights? NetworkInsights { get => _explicitNullValueNetworkInsights; set { _explicitNullValueNetworkInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_insights"); else _explicitNullProperties?.Remove("network_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributesNetworkInsights? _explicitNullValueNetworkInsights = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributesNetworkInsights NetworkInsights { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributesNetworkInsights NetworkInsights { get => _explicitNullValueNetworkInsights; set { _explicitNullValueNetworkInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_insights"); else _explicitNullProperties?.Remove("network_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributesNetworkInsights _explicitNullValueNetworkInsights = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributes"/> and sets the default values.
@@ -54,7 +70,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributes CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributes();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributes(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +97,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributesCashflowInsights>("cashflow_insights", CashflowInsights);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreVariantScore>("lend_scores", LendScores);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributesNetworkInsights>("network_insights", NetworkInsights);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

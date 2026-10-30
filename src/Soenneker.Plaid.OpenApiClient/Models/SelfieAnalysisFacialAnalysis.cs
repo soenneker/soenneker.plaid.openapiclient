@@ -12,33 +12,64 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SelfieAnalysisFacialAnalysis : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("forehead") is { } nullNodeForehead && nullNodeForehead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Forehead = null;
+            if (parseNode.GetChildNode("jaw") is { } nullNodeJaw && nullNodeJaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Jaw = null;
+            if (parseNode.GetChildNode("left_brow") is { } nullNodeLeftBrow && nullNodeLeftBrow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeftBrow = null;
+            if (parseNode.GetChildNode("left_cheek") is { } nullNodeLeftCheek && nullNodeLeftCheek.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeftCheek = null;
+            if (parseNode.GetChildNode("left_eye") is { } nullNodeLeftEye && nullNodeLeftEye.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeftEye = null;
+            if (parseNode.GetChildNode("middle_forehead") is { } nullNodeMiddleForehead && nullNodeMiddleForehead.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MiddleForehead = null;
+            if (parseNode.GetChildNode("mouth") is { } nullNodeMouth && nullNodeMouth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mouth = null;
+            if (parseNode.GetChildNode("nose") is { } nullNodeNose && nullNodeNose.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nose = null;
+            if (parseNode.GetChildNode("philtrum") is { } nullNodePhiltrum && nullNodePhiltrum.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Philtrum = null;
+            if (parseNode.GetChildNode("right_brow") is { } nullNodeRightBrow && nullNodeRightBrow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RightBrow = null;
+            if (parseNode.GetChildNode("right_cheek") is { } nullNodeRightCheek && nullNodeRightCheek.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RightCheek = null;
+            if (parseNode.GetChildNode("right_eye") is { } nullNodeRightEye && nullNodeRightEye.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RightEye = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Outcome of the facial analysis for a specific facial feature.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? Forehead { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? Forehead { get => _explicitNullValueForehead; set { _explicitNullValueForehead = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forehead"); else _explicitNullProperties?.Remove("forehead"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? _explicitNullValueForehead = default!;
         /// <summary>Outcome of the facial analysis for a specific facial feature.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? Jaw { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? Jaw { get => _explicitNullValueJaw; set { _explicitNullValueJaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jaw"); else _explicitNullProperties?.Remove("jaw"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? _explicitNullValueJaw = default!;
         /// <summary>Outcome of the facial analysis for a specific facial feature.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? LeftBrow { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? LeftBrow { get => _explicitNullValueLeftBrow; set { _explicitNullValueLeftBrow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("left_brow"); else _explicitNullProperties?.Remove("left_brow"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? _explicitNullValueLeftBrow = default!;
         /// <summary>Outcome of the facial analysis for a specific facial feature.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? LeftCheek { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? LeftCheek { get => _explicitNullValueLeftCheek; set { _explicitNullValueLeftCheek = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("left_cheek"); else _explicitNullProperties?.Remove("left_cheek"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? _explicitNullValueLeftCheek = default!;
         /// <summary>Outcome of the facial analysis for a specific facial feature.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? LeftEye { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? LeftEye { get => _explicitNullValueLeftEye; set { _explicitNullValueLeftEye = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("left_eye"); else _explicitNullProperties?.Remove("left_eye"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? _explicitNullValueLeftEye = default!;
         /// <summary>Outcome of the facial analysis for a specific facial feature.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? MiddleForehead { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? MiddleForehead { get => _explicitNullValueMiddleForehead; set { _explicitNullValueMiddleForehead = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("middle_forehead"); else _explicitNullProperties?.Remove("middle_forehead"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? _explicitNullValueMiddleForehead = default!;
         /// <summary>Outcome of the facial analysis for a specific facial feature.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? Mouth { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? Mouth { get => _explicitNullValueMouth; set { _explicitNullValueMouth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mouth"); else _explicitNullProperties?.Remove("mouth"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? _explicitNullValueMouth = default!;
         /// <summary>Outcome of the facial analysis for a specific facial feature.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? Nose { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? Nose { get => _explicitNullValueNose; set { _explicitNullValueNose = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nose"); else _explicitNullProperties?.Remove("nose"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? _explicitNullValueNose = default!;
         /// <summary>Outcome of the facial analysis for a specific facial feature.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? Philtrum { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? Philtrum { get => _explicitNullValuePhiltrum; set { _explicitNullValuePhiltrum = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("philtrum"); else _explicitNullProperties?.Remove("philtrum"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? _explicitNullValuePhiltrum = default!;
         /// <summary>Outcome of the facial analysis for a specific facial feature.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? RightBrow { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? RightBrow { get => _explicitNullValueRightBrow; set { _explicitNullValueRightBrow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("right_brow"); else _explicitNullProperties?.Remove("right_brow"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? _explicitNullValueRightBrow = default!;
         /// <summary>Outcome of the facial analysis for a specific facial feature.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? RightCheek { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? RightCheek { get => _explicitNullValueRightCheek; set { _explicitNullValueRightCheek = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("right_cheek"); else _explicitNullProperties?.Remove("right_cheek"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? _explicitNullValueRightCheek = default!;
         /// <summary>Outcome of the facial analysis for a specific facial feature.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? RightEye { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? RightEye { get => _explicitNullValueRightEye; set { _explicitNullValueRightEye = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("right_eye"); else _explicitNullProperties?.Remove("right_eye"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome? _explicitNullValueRightEye = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysis"/> and sets the default values.
         /// </summary>
@@ -54,7 +85,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysis CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysis();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysis(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -97,6 +130,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome>("right_brow", RightBrow);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome>("right_cheek", RightCheek);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisFacialAnalysisOutcome>("right_eye", RightEye);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

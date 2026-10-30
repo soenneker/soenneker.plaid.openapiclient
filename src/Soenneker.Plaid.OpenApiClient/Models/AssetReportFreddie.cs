@@ -12,32 +12,48 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AssetReportFreddie : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("LOANS") is { } nullNodeLOANS && nullNodeLOANS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LOANS = null;
+            if (parseNode.GetChildNode("PARTIES") is { } nullNodePARTIES && nullNodePARTIES.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PARTIES = null;
+            if (parseNode.GetChildNode("SERVICES") is { } nullNodeSERVICES && nullNodeSERVICES.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SERVICES = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A collection of loans that are part of a single deal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.Loans? LOANS { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Loans? LOANS { get => _explicitNullValueLOANS; set { _explicitNullValueLOANS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LOANS"); else _explicitNullProperties?.Remove("LOANS"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Loans? _explicitNullValueLOANS = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.Loans LOANS { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Loans LOANS { get => _explicitNullValueLOANS; set { _explicitNullValueLOANS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LOANS"); else _explicitNullProperties?.Remove("LOANS"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Loans _explicitNullValueLOANS = default!;
 #endif
         /// <summary>A collection of objects that define specific parties to a deal. This includes the direct participating parties, such as borrower and seller and the indirect parties such as the credit report provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.Parties? PARTIES { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Parties? PARTIES { get => _explicitNullValuePARTIES; set { _explicitNullValuePARTIES = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PARTIES"); else _explicitNullProperties?.Remove("PARTIES"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Parties? _explicitNullValuePARTIES = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.Parties PARTIES { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Parties PARTIES { get => _explicitNullValuePARTIES; set { _explicitNullValuePARTIES = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PARTIES"); else _explicitNullProperties?.Remove("PARTIES"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Parties _explicitNullValuePARTIES = default!;
 #endif
         /// <summary>A collection of objects that describe requests and responses for services.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.Services? SERVICES { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Services? SERVICES { get => _explicitNullValueSERVICES; set { _explicitNullValueSERVICES = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SERVICES"); else _explicitNullProperties?.Remove("SERVICES"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Services? _explicitNullValueSERVICES = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.Services SERVICES { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Services SERVICES { get => _explicitNullValueSERVICES; set { _explicitNullValueSERVICES = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SERVICES"); else _explicitNullProperties?.Remove("SERVICES"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.Services _explicitNullValueSERVICES = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.AssetReportFreddie"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.AssetReportFreddie CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.AssetReportFreddie();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.AssetReportFreddie(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Loans>("LOANS", LOANS);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Parties>("PARTIES", PARTIES);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Services>("SERVICES", SERVICES);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

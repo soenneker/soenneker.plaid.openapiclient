@@ -12,13 +12,24 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransferAuthorizationCreateRequestUserAttributes : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_created_time") is { } nullNodeAccountCreatedTime && nullNodeAccountCreatedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountCreatedTime = null;
+            if (parseNode.GetChildNode("successful_payment_count") is { } nullNodeSuccessfulPaymentCount && nullNodeSuccessfulPaymentCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuccessfulPaymentCount = null;
+        }
+
         /// <summary>The date and time the end user created their account on your platform, in ISO 8601 format (`YYYY-MM-DDTHH:mm:ssZ`). This is the user&apos;s account with you, not a Plaid `account_id`.</summary>
-        public DateTimeOffset? AccountCreatedTime { get; set; }
+        public DateTimeOffset? AccountCreatedTime { get => _explicitNullValueAccountCreatedTime; set { _explicitNullValueAccountCreatedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_created_time"); else _explicitNullProperties?.Remove("account_created_time"); } }
+        private DateTimeOffset? _explicitNullValueAccountCreatedTime = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The total number of payments the end user has successfully completed on your platform since their account was created, across all payment methods. Excludes the payment being authorized, and excludes payments that were returned, charged back, or subsequently failed.</summary>
-        public long? SuccessfulPaymentCount { get; set; }
+        public long? SuccessfulPaymentCount { get => _explicitNullValueSuccessfulPaymentCount; set { _explicitNullValueSuccessfulPaymentCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("successful_payment_count"); else _explicitNullProperties?.Remove("successful_payment_count"); } }
+        private long? _explicitNullValueSuccessfulPaymentCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationCreateRequestUserAttributes"/> and sets the default values.
         /// </summary>
@@ -34,7 +45,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationCreateRequestUserAttributes CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationCreateRequestUserAttributes();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationCreateRequestUserAttributes(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,6 +68,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("account_created_time", AccountCreatedTime);
             writer.WriteLongValue("successful_payment_count", SuccessfulPaymentCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

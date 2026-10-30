@@ -12,23 +12,39 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FdxConsentRevocation : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("initiator") is { } nullNodeInitiator && nullNodeInitiator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Initiator = null;
+            if (parseNode.GetChildNode("otherReason") is { } nullNodeOtherReason && nullNodeOtherReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OtherReason = null;
+            if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
+            if (parseNode.GetChildNode("updatedTime") is { } nullNodeUpdatedTime && nullNodeUpdatedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedTime = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Identifies the type of a party</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.FdxPartyType? Initiator { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FdxPartyType? Initiator { get => _explicitNullValueInitiator; set { _explicitNullValueInitiator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initiator"); else _explicitNullProperties?.Remove("initiator"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.FdxPartyType? _explicitNullValueInitiator = default!;
         /// <summary>Additional information or description of an `OTHER` reason</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OtherReason { get; set; }
+        public string? OtherReason { get => _explicitNullValueOtherReason; set { _explicitNullValueOtherReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("otherReason"); else _explicitNullProperties?.Remove("otherReason"); } }
+        private string? _explicitNullValueOtherReason = default!;
 #nullable restore
 #else
-        public string OtherReason { get; set; }
+        public string OtherReason { get => _explicitNullValueOtherReason; set { _explicitNullValueOtherReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("otherReason"); else _explicitNullProperties?.Remove("otherReason"); } }
+        private string _explicitNullValueOtherReason = default!;
 #endif
         /// <summary>Reason for lifecycle event status change</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.FdxUpdateReason? Reason { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FdxUpdateReason? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.FdxUpdateReason? _explicitNullValueReason = default!;
         /// <summary>When the revocation was effected on the initiator&apos;s side</summary>
-        public DateTimeOffset? UpdatedTime { get; set; }
+        public DateTimeOffset? UpdatedTime { get => _explicitNullValueUpdatedTime; set { _explicitNullValueUpdatedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedTime"); else _explicitNullProperties?.Remove("updatedTime"); } }
+        private DateTimeOffset? _explicitNullValueUpdatedTime = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentRevocation"/> and sets the default values.
         /// </summary>
@@ -44,7 +60,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentRevocation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentRevocation();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentRevocation(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,6 +87,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("otherReason", OtherReason);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FdxUpdateReason>("reason", Reason);
             writer.WriteDateTimeOffsetValue("updatedTime", UpdatedTime);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

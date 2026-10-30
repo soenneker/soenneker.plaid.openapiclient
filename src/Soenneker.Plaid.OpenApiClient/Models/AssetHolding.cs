@@ -12,60 +12,94 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AssetHolding : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("AssetHoldingCurrentPriceAmount") is { } nullNodeAssetHoldingCurrentPriceAmount && nullNodeAssetHoldingCurrentPriceAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetHoldingCurrentPriceAmount = null;
+            if (parseNode.GetChildNode("AssetHoldingDescription") is { } nullNodeAssetHoldingDescription && nullNodeAssetHoldingDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetHoldingDescription = null;
+            if (parseNode.GetChildNode("AssetHoldingID") is { } nullNodeAssetHoldingID && nullNodeAssetHoldingID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetHoldingID = null;
+            if (parseNode.GetChildNode("AssetHoldingMarketValueAmount") is { } nullNodeAssetHoldingMarketValueAmount && nullNodeAssetHoldingMarketValueAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetHoldingMarketValueAmount = null;
+            if (parseNode.GetChildNode("AssetHoldingRestrictedIndicator") is { } nullNodeAssetHoldingRestrictedIndicator && nullNodeAssetHoldingRestrictedIndicator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetHoldingRestrictedIndicator = null;
+            if (parseNode.GetChildNode("AssetHoldingSecurityName") is { } nullNodeAssetHoldingSecurityName && nullNodeAssetHoldingSecurityName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetHoldingSecurityName = null;
+            if (parseNode.GetChildNode("AssetHoldingSymbol") is { } nullNodeAssetHoldingSymbol && nullNodeAssetHoldingSymbol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetHoldingSymbol = null;
+            if (parseNode.GetChildNode("AssetHoldingType") is { } nullNodeAssetHoldingType && nullNodeAssetHoldingType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetHoldingType = null;
+            if (parseNode.GetChildNode("AssetHoldingUnits") is { } nullNodeAssetHoldingUnits && nullNodeAssetHoldingUnits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetHoldingUnits = null;
+            if (parseNode.GetChildNode("AssetHoldingVestedAmount") is { } nullNodeAssetHoldingVestedAmount && nullNodeAssetHoldingVestedAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetHoldingVestedAmount = null;
+            if (parseNode.GetChildNode("Currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>current price of investment holding</summary>
-        public double? AssetHoldingCurrentPriceAmount { get; set; }
+        public double? AssetHoldingCurrentPriceAmount { get => _explicitNullValueAssetHoldingCurrentPriceAmount; set { _explicitNullValueAssetHoldingCurrentPriceAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetHoldingCurrentPriceAmount"); else _explicitNullProperties?.Remove("AssetHoldingCurrentPriceAmount"); } }
+        private double? _explicitNullValueAssetHoldingCurrentPriceAmount = default!;
         /// <summary>Description of holding</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetHoldingDescription { get; set; }
+        public string? AssetHoldingDescription { get => _explicitNullValueAssetHoldingDescription; set { _explicitNullValueAssetHoldingDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetHoldingDescription"); else _explicitNullProperties?.Remove("AssetHoldingDescription"); } }
+        private string? _explicitNullValueAssetHoldingDescription = default!;
 #nullable restore
 #else
-        public string AssetHoldingDescription { get; set; }
+        public string AssetHoldingDescription { get => _explicitNullValueAssetHoldingDescription; set { _explicitNullValueAssetHoldingDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetHoldingDescription"); else _explicitNullProperties?.Remove("AssetHoldingDescription"); } }
+        private string _explicitNullValueAssetHoldingDescription = default!;
 #endif
         /// <summary>Unique id of investment position</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetHoldingID { get; set; }
+        public string? AssetHoldingID { get => _explicitNullValueAssetHoldingID; set { _explicitNullValueAssetHoldingID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetHoldingID"); else _explicitNullProperties?.Remove("AssetHoldingID"); } }
+        private string? _explicitNullValueAssetHoldingID = default!;
 #nullable restore
 #else
-        public string AssetHoldingID { get; set; }
+        public string AssetHoldingID { get => _explicitNullValueAssetHoldingID; set { _explicitNullValueAssetHoldingID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetHoldingID"); else _explicitNullProperties?.Remove("AssetHoldingID"); } }
+        private string _explicitNullValueAssetHoldingID = default!;
 #endif
         /// <summary>market value of investment position</summary>
-        public double? AssetHoldingMarketValueAmount { get; set; }
+        public double? AssetHoldingMarketValueAmount { get => _explicitNullValueAssetHoldingMarketValueAmount; set { _explicitNullValueAssetHoldingMarketValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetHoldingMarketValueAmount"); else _explicitNullProperties?.Remove("AssetHoldingMarketValueAmount"); } }
+        private double? _explicitNullValueAssetHoldingMarketValueAmount = default!;
         /// <summary>Whether or not the stock is restricted, i.e. &quot;Restricted&quot; or &quot;Not Restricted&quot;</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AssetHoldingAssetHoldingRestrictedIndicator? AssetHoldingRestrictedIndicator { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetHoldingAssetHoldingRestrictedIndicator? AssetHoldingRestrictedIndicator { get => _explicitNullValueAssetHoldingRestrictedIndicator; set { _explicitNullValueAssetHoldingRestrictedIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetHoldingRestrictedIndicator"); else _explicitNullProperties?.Remove("AssetHoldingRestrictedIndicator"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AssetHoldingAssetHoldingRestrictedIndicator? _explicitNullValueAssetHoldingRestrictedIndicator = default!;
         /// <summary>Security name of investment holding</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetHoldingSecurityName { get; set; }
+        public string? AssetHoldingSecurityName { get => _explicitNullValueAssetHoldingSecurityName; set { _explicitNullValueAssetHoldingSecurityName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetHoldingSecurityName"); else _explicitNullProperties?.Remove("AssetHoldingSecurityName"); } }
+        private string? _explicitNullValueAssetHoldingSecurityName = default!;
 #nullable restore
 #else
-        public string AssetHoldingSecurityName { get; set; }
+        public string AssetHoldingSecurityName { get => _explicitNullValueAssetHoldingSecurityName; set { _explicitNullValueAssetHoldingSecurityName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetHoldingSecurityName"); else _explicitNullProperties?.Remove("AssetHoldingSecurityName"); } }
+        private string _explicitNullValueAssetHoldingSecurityName = default!;
 #endif
         /// <summary>Investment position&apos;s market ticker symbol</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetHoldingSymbol { get; set; }
+        public string? AssetHoldingSymbol { get => _explicitNullValueAssetHoldingSymbol; set { _explicitNullValueAssetHoldingSymbol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetHoldingSymbol"); else _explicitNullProperties?.Remove("AssetHoldingSymbol"); } }
+        private string? _explicitNullValueAssetHoldingSymbol = default!;
 #nullable restore
 #else
-        public string AssetHoldingSymbol { get; set; }
+        public string AssetHoldingSymbol { get => _explicitNullValueAssetHoldingSymbol; set { _explicitNullValueAssetHoldingSymbol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetHoldingSymbol"); else _explicitNullProperties?.Remove("AssetHoldingSymbol"); } }
+        private string _explicitNullValueAssetHoldingSymbol = default!;
 #endif
         /// <summary>Type of holding (e.g. bond, stock, crypto, other)</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AssetHoldingAssetHoldingType? AssetHoldingType { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetHoldingAssetHoldingType? AssetHoldingType { get => _explicitNullValueAssetHoldingType; set { _explicitNullValueAssetHoldingType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetHoldingType"); else _explicitNullProperties?.Remove("AssetHoldingType"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AssetHoldingAssetHoldingType? _explicitNullValueAssetHoldingType = default!;
         /// <summary>Number of units of holding</summary>
-        public double? AssetHoldingUnits { get; set; }
+        public double? AssetHoldingUnits { get => _explicitNullValueAssetHoldingUnits; set { _explicitNullValueAssetHoldingUnits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetHoldingUnits"); else _explicitNullProperties?.Remove("AssetHoldingUnits"); } }
+        private double? _explicitNullValueAssetHoldingUnits = default!;
         /// <summary>Amount of holding vested</summary>
-        public double? AssetHoldingVestedAmount { get; set; }
+        public double? AssetHoldingVestedAmount { get => _explicitNullValueAssetHoldingVestedAmount; set { _explicitNullValueAssetHoldingVestedAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetHoldingVestedAmount"); else _explicitNullProperties?.Remove("AssetHoldingVestedAmount"); } }
+        private double? _explicitNullValueAssetHoldingVestedAmount = default!;
         /// <summary>US Dollar</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Currency"); else _explicitNullProperties?.Remove("Currency"); } }
+        private string? _explicitNullValueCurrency = default!;
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Currency"); else _explicitNullProperties?.Remove("Currency"); } }
+        private string _explicitNullValueCurrency = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.AssetHolding"/> and sets the default values.
@@ -82,7 +116,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.AssetHolding CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.AssetHolding();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.AssetHolding(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -123,6 +157,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDoubleValue("AssetHoldingUnits", AssetHoldingUnits);
             writer.WriteDoubleValue("AssetHoldingVestedAmount", AssetHoldingVestedAmount);
             writer.WriteStringValue("Currency", Currency);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

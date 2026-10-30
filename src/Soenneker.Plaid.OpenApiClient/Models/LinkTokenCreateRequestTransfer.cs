@@ -12,32 +12,48 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LinkTokenCreateRequestTransfer : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("authorization_id") is { } nullNodeAuthorizationId && nullNodeAuthorizationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizationId = null;
+            if (parseNode.GetChildNode("intent_id") is { } nullNodeIntentId && nullNodeIntentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntentId = null;
+            if (parseNode.GetChildNode("payment_profile_token") is { } nullNodePaymentProfileToken && nullNodePaymentProfileToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentProfileToken = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The `id` returned by the `/transfer/authorization/create` endpoint. Used to indicate Link session to complete required user action in order to make a decision for the authorization. If set, `access_token` can be omitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthorizationId { get; set; }
+        public string? AuthorizationId { get => _explicitNullValueAuthorizationId; set { _explicitNullValueAuthorizationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorization_id"); else _explicitNullProperties?.Remove("authorization_id"); } }
+        private string? _explicitNullValueAuthorizationId = default!;
 #nullable restore
 #else
-        public string AuthorizationId { get; set; }
+        public string AuthorizationId { get => _explicitNullValueAuthorizationId; set { _explicitNullValueAuthorizationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorization_id"); else _explicitNullProperties?.Remove("authorization_id"); } }
+        private string _explicitNullValueAuthorizationId = default!;
 #endif
         /// <summary>The `id` returned by the `/transfer/intent/create` endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntentId { get; set; }
+        public string? IntentId { get => _explicitNullValueIntentId; set { _explicitNullValueIntentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intent_id"); else _explicitNullProperties?.Remove("intent_id"); } }
+        private string? _explicitNullValueIntentId = default!;
 #nullable restore
 #else
-        public string IntentId { get; set; }
+        public string IntentId { get => _explicitNullValueIntentId; set { _explicitNullValueIntentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intent_id"); else _explicitNullProperties?.Remove("intent_id"); } }
+        private string _explicitNullValueIntentId = default!;
 #endif
         /// <summary>The `payment_profile_token` returned by the `/payment_profile/create` endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentProfileToken { get; set; }
+        public string? PaymentProfileToken { get => _explicitNullValuePaymentProfileToken; set { _explicitNullValuePaymentProfileToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_profile_token"); else _explicitNullProperties?.Remove("payment_profile_token"); } }
+        private string? _explicitNullValuePaymentProfileToken = default!;
 #nullable restore
 #else
-        public string PaymentProfileToken { get; set; }
+        public string PaymentProfileToken { get => _explicitNullValuePaymentProfileToken; set { _explicitNullValuePaymentProfileToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_profile_token"); else _explicitNullProperties?.Remove("payment_profile_token"); } }
+        private string _explicitNullValuePaymentProfileToken = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestTransfer"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestTransfer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestTransfer();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestTransfer(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("authorization_id", AuthorizationId);
             writer.WriteStringValue("intent_id", IntentId);
             writer.WriteStringValue("payment_profile_token", PaymentProfileToken);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

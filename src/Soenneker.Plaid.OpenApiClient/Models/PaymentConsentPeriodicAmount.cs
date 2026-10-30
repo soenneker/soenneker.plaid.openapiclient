@@ -12,21 +12,35 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaymentConsentPeriodicAmount : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("alignment") is { } nullNodeAlignment && nullNodeAlignment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Alignment = null;
+            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("interval") is { } nullNodeInterval && nullNodeInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interval = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Where the payment consent period should start.If the institution is Monzo, only `CONSENT` alignments are supported.`CALENDAR`: line up with a calendar.`CONSENT`: on the date of consent creation.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentPeriodicAlignment? Alignment { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentPeriodicAlignment? Alignment { get => _explicitNullValueAlignment; set { _explicitNullValueAlignment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alignment"); else _explicitNullProperties?.Remove("alignment"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentPeriodicAlignment? _explicitNullValueAlignment = default!;
         /// <summary>Maximum cumulative amount for all payments in the specified interval.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentPeriodicAmountAmount? Amount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentPeriodicAmountAmount? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentPeriodicAmountAmount? _explicitNullValueAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentPeriodicAmountAmount Amount { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentPeriodicAmountAmount Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentPeriodicAmountAmount _explicitNullValueAmount = default!;
 #endif
         /// <summary>Payment consent periodic interval.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentPeriodicInterval? Interval { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentPeriodicInterval? Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentPeriodicInterval? _explicitNullValueInterval = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentPeriodicAmount"/> and sets the default values.
         /// </summary>
@@ -42,7 +56,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentPeriodicAmount CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentPeriodicAmount();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentPeriodicAmount(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,6 +81,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentPeriodicAlignment>("alignment", Alignment);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentPeriodicAmountAmount>("amount", Amount);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentPeriodicInterval>("interval", Interval);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

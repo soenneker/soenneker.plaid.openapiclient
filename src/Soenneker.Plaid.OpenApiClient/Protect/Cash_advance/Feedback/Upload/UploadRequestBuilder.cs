@@ -51,7 +51,7 @@ namespace Soenneker.Plaid.OpenApiClient.Protect.Cash_advance.Feedback.Upload
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.ProtectCashAdvanceFeedbackUploadResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.ProtectCashAdvanceFeedbackUploadResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.ProtectCashAdvanceFeedbackUploadResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.ProtectCashAdvanceFeedbackUploadResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Upload a CSV file of cash advance decision or repayment feedback. Each row is equivalent to one call to `/protect/cash_advance/decision/create` or `/protect/cash_advance/repayment/create`. Send the request as `multipart/form-data` with `client_id` and `secret` in the `PLAID-CLIENT-ID` and `PLAID-SECRET` headers. The file is accepted for asynchronous processing; the response contains a `request_id` and an `upload_id` that identifies the upload.

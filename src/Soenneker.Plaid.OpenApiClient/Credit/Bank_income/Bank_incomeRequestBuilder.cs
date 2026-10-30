@@ -29,6 +29,7 @@ namespace Soenneker.Plaid.OpenApiClient.Credit.Bank_income
             get => new global::Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Pdf.PdfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The refresh property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Refresh.RefreshRequestBuilder Refresh
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Credit.Bank_income.Refresh.RefreshRequestBuilder(PathParameters, RequestAdapter);

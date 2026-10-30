@@ -12,22 +12,38 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BusinessWhoisRecord : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("domain_created_at") is { } nullNodeDomainCreatedAt && nullNodeDomainCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainCreatedAt = null;
+            if (parseNode.GetChildNode("domain_expires_at") is { } nullNodeDomainExpiresAt && nullNodeDomainExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainExpiresAt = null;
+            if (parseNode.GetChildNode("domain_updated_at") is { } nullNodeDomainUpdatedAt && nullNodeDomainUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainUpdatedAt = null;
+            if (parseNode.GetChildNode("registrar") is { } nullNodeRegistrar && nullNodeRegistrar.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Registrar = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An ISO8601 formatted timestamp.</summary>
-        public DateTimeOffset? DomainCreatedAt { get; set; }
+        public DateTimeOffset? DomainCreatedAt { get => _explicitNullValueDomainCreatedAt; set { _explicitNullValueDomainCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_created_at"); else _explicitNullProperties?.Remove("domain_created_at"); } }
+        private DateTimeOffset? _explicitNullValueDomainCreatedAt = default!;
         /// <summary>An ISO8601 formatted timestamp.</summary>
-        public DateTimeOffset? DomainExpiresAt { get; set; }
+        public DateTimeOffset? DomainExpiresAt { get => _explicitNullValueDomainExpiresAt; set { _explicitNullValueDomainExpiresAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_expires_at"); else _explicitNullProperties?.Remove("domain_expires_at"); } }
+        private DateTimeOffset? _explicitNullValueDomainExpiresAt = default!;
         /// <summary>An ISO8601 formatted timestamp.</summary>
-        public DateTimeOffset? DomainUpdatedAt { get; set; }
+        public DateTimeOffset? DomainUpdatedAt { get => _explicitNullValueDomainUpdatedAt; set { _explicitNullValueDomainUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_updated_at"); else _explicitNullProperties?.Remove("domain_updated_at"); } }
+        private DateTimeOffset? _explicitNullValueDomainUpdatedAt = default!;
         /// <summary>Domain registrar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Registrar { get; set; }
+        public string? Registrar { get => _explicitNullValueRegistrar; set { _explicitNullValueRegistrar = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrar"); else _explicitNullProperties?.Remove("registrar"); } }
+        private string? _explicitNullValueRegistrar = default!;
 #nullable restore
 #else
-        public string Registrar { get; set; }
+        public string Registrar { get => _explicitNullValueRegistrar; set { _explicitNullValueRegistrar = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrar"); else _explicitNullProperties?.Remove("registrar"); } }
+        private string _explicitNullValueRegistrar = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BusinessWhoisRecord"/> and sets the default values.
@@ -44,7 +60,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.BusinessWhoisRecord CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.BusinessWhoisRecord();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.BusinessWhoisRecord(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,6 +87,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("domain_expires_at", DomainExpiresAt);
             writer.WriteDateTimeOffsetValue("domain_updated_at", DomainUpdatedAt);
             writer.WriteStringValue("registrar", Registrar);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

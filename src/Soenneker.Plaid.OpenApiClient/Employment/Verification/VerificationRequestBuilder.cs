@@ -16,6 +16,7 @@ namespace Soenneker.Plaid.OpenApiClient.Employment.Verification
     public partial class VerificationRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The getPath property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Employment.Verification.Get.GetRequestBuilder GetPath
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Employment.Verification.Get.GetRequestBuilder(PathParameters, RequestAdapter);

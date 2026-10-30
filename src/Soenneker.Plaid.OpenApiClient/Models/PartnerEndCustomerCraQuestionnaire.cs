@@ -12,20 +12,34 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PartnerEndCustomerCraQuestionnaire : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("is_technical_service_provider_involved") is { } nullNodeIsTechnicalServiceProviderInvolved && nullNodeIsTechnicalServiceProviderInvolved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsTechnicalServiceProviderInvolved = null;
+            if (parseNode.GetChildNode("is_third_party_involved") is { } nullNodeIsThirdPartyInvolved && nullNodeIsThirdPartyInvolved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsThirdPartyInvolved = null;
+            if (parseNode.GetChildNode("purposes") is { } nullNodePurposes && nullNodePurposes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Purposes = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Denotes whether the technical service provider is involved.</summary>
-        public bool? IsTechnicalServiceProviderInvolved { get; set; }
+        public bool? IsTechnicalServiceProviderInvolved { get => _explicitNullValueIsTechnicalServiceProviderInvolved; set { _explicitNullValueIsTechnicalServiceProviderInvolved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_technical_service_provider_involved"); else _explicitNullProperties?.Remove("is_technical_service_provider_involved"); } }
+        private bool? _explicitNullValueIsTechnicalServiceProviderInvolved = default!;
         /// <summary>Denotes whether the third party is involved.</summary>
-        public bool? IsThirdPartyInvolved { get; set; }
+        public bool? IsThirdPartyInvolved { get => _explicitNullValueIsThirdPartyInvolved; set { _explicitNullValueIsThirdPartyInvolved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_third_party_involved"); else _explicitNullProperties?.Remove("is_third_party_involved"); } }
+        private bool? _explicitNullValueIsThirdPartyInvolved = default!;
         /// <summary>A map of permissible purposes to their corresponding use cases.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraPurposes? Purposes { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraPurposes? Purposes { get => _explicitNullValuePurposes; set { _explicitNullValuePurposes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purposes"); else _explicitNullProperties?.Remove("purposes"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraPurposes? _explicitNullValuePurposes = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraPurposes Purposes { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraPurposes Purposes { get => _explicitNullValuePurposes; set { _explicitNullValuePurposes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purposes"); else _explicitNullProperties?.Remove("purposes"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraPurposes _explicitNullValuePurposes = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraQuestionnaire"/> and sets the default values.
@@ -42,7 +56,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraQuestionnaire CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraQuestionnaire();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraQuestionnaire(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,6 +81,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteBoolValue("is_technical_service_provider_involved", IsTechnicalServiceProviderInvolved);
             writer.WriteBoolValue("is_third_party_involved", IsThirdPartyInvolved);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraPurposes>("purposes", Purposes);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

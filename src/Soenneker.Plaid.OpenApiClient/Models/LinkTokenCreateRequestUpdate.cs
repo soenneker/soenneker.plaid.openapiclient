@@ -12,23 +12,39 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LinkTokenCreateRequestUpdate : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_selection_enabled") is { } nullNodeAccountSelectionEnabled && nullNodeAccountSelectionEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountSelectionEnabled = null;
+            if (parseNode.GetChildNode("item_ids") is { } nullNodeItemIds && nullNodeItemIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemIds = null;
+            if (parseNode.GetChildNode("reauthorization_enabled") is { } nullNodeReauthorizationEnabled && nullNodeReauthorizationEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReauthorizationEnabled = null;
+            if (parseNode.GetChildNode("user") is { } nullNodeUser && nullNodeUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) User = null;
+        }
+
         /// <summary>If `true`, enables [update mode with Account Select](https://plaid.com/docs/link/update-mode/#using-update-mode-to-request-new-accounts) for institutions in the US and Canada that do not use OAuth, or that use OAuth but do not have their own account selection flow. For institutions in the US that have an OAuth account selection flow (i.e. most OAuth-enabled institutions), update mode with Account Select will always be enabled, regardless of the value of this field.</summary>
-        public bool? AccountSelectionEnabled { get; set; }
+        public bool? AccountSelectionEnabled { get => _explicitNullValueAccountSelectionEnabled; set { _explicitNullValueAccountSelectionEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_selection_enabled"); else _explicitNullProperties?.Remove("account_selection_enabled"); } }
+        private bool? _explicitNullValueAccountSelectionEnabled = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An array of `item_id`s associated with the user to be updated in update mode. If empty or `null`, this field will default to initializing update mode for the most recent unhealthy Item associated with the user. A `user_token` or `user_id` must also be provided, and `update.user` must be `true`. Only one `item_id` may currently be specified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ItemIds { get; set; }
+        public List<string>? ItemIds { get => _explicitNullValueItemIds; set { _explicitNullValueItemIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_ids"); else _explicitNullProperties?.Remove("item_ids"); } }
+        private List<string>? _explicitNullValueItemIds = default!;
 #nullable restore
 #else
-        public List<string> ItemIds { get; set; }
+        public List<string> ItemIds { get => _explicitNullValueItemIds; set { _explicitNullValueItemIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_ids"); else _explicitNullProperties?.Remove("item_ids"); } }
+        private List<string> _explicitNullValueItemIds = default!;
 #endif
         /// <summary>Note: this field is not currently used. Plaid may enable this field in the future if 1033-related expiration begins to be enforced.By default, Plaid will enable the reauthorization flow during update mode for an Item enabled for [Data Transparency Messaging](https://plaid.com/docs/link/data-transparency-messaging-migration-guide/) if the Item expires within six months. During a reauthorization flow, an end user will review Plaid&apos;s end user privacy policy, use case and data scope consents, and account access consents; they may also be required to log in to their financial institution&apos;s OAuth flow. After the end user successfully completes the reauthorization flow, the Item&apos;s expiration date will be extended to 12 months from the time that the reauthorization took place. This field allows you to optionally override the default reauthorization scheduling logic to either forcibly enable or disable the reauthorization flow for a given update mode session. This field does not impact the flow for Items at institutions in the EU or UK.</summary>
-        public bool? ReauthorizationEnabled { get; set; }
+        public bool? ReauthorizationEnabled { get => _explicitNullValueReauthorizationEnabled; set { _explicitNullValueReauthorizationEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reauthorization_enabled"); else _explicitNullProperties?.Remove("reauthorization_enabled"); } }
+        private bool? _explicitNullValueReauthorizationEnabled = default!;
         /// <summary>If `true`, a `user_token` or `user_id` must also be provided, and Link will open in update mode for the given user.</summary>
-        public bool? User { get; set; }
+        public bool? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private bool? _explicitNullValueUser = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUpdate"/> and sets the default values.
         /// </summary>
@@ -46,7 +62,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUpdate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUpdate();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUpdate(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +89,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("item_ids", ItemIds);
             writer.WriteBoolValue("reauthorization_enabled", ReauthorizationEnabled);
             writer.WriteBoolValue("user", User);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

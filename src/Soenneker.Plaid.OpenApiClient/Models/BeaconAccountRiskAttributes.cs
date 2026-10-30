@@ -12,65 +12,128 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BeaconAccountRiskAttributes : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("address_change_count_28d") is { } nullNodeAddressChangeCount28d && nullNodeAddressChangeCount28d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddressChangeCount28d = null;
+            if (parseNode.GetChildNode("address_change_count_90d") is { } nullNodeAddressChangeCount90d && nullNodeAddressChangeCount90d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddressChangeCount90d = null;
+            if (parseNode.GetChildNode("days_since_account_opening") is { } nullNodeDaysSinceAccountOpening && nullNodeDaysSinceAccountOpening.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DaysSinceAccountOpening = null;
+            if (parseNode.GetChildNode("days_since_first_observed_transaction") is { } nullNodeDaysSinceFirstObservedTransaction && nullNodeDaysSinceFirstObservedTransaction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DaysSinceFirstObservedTransaction = null;
+            if (parseNode.GetChildNode("days_since_first_plaid_connection") is { } nullNodeDaysSinceFirstPlaidConnection && nullNodeDaysSinceFirstPlaidConnection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DaysSinceFirstPlaidConnection = null;
+            if (parseNode.GetChildNode("distinct_ip_addresses_count_30d") is { } nullNodeDistinctIpAddressesCount30d && nullNodeDistinctIpAddressesCount30d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DistinctIpAddressesCount30d = null;
+            if (parseNode.GetChildNode("distinct_ip_addresses_count_3d") is { } nullNodeDistinctIpAddressesCount3d && nullNodeDistinctIpAddressesCount3d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DistinctIpAddressesCount3d = null;
+            if (parseNode.GetChildNode("distinct_ip_addresses_count_7d") is { } nullNodeDistinctIpAddressesCount7d && nullNodeDistinctIpAddressesCount7d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DistinctIpAddressesCount7d = null;
+            if (parseNode.GetChildNode("distinct_ip_addresses_count_90d") is { } nullNodeDistinctIpAddressesCount90d && nullNodeDistinctIpAddressesCount90d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DistinctIpAddressesCount90d = null;
+            if (parseNode.GetChildNode("distinct_user_agents_count_30d") is { } nullNodeDistinctUserAgentsCount30d && nullNodeDistinctUserAgentsCount30d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DistinctUserAgentsCount30d = null;
+            if (parseNode.GetChildNode("distinct_user_agents_count_3d") is { } nullNodeDistinctUserAgentsCount3d && nullNodeDistinctUserAgentsCount3d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DistinctUserAgentsCount3d = null;
+            if (parseNode.GetChildNode("distinct_user_agents_count_7d") is { } nullNodeDistinctUserAgentsCount7d && nullNodeDistinctUserAgentsCount7d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DistinctUserAgentsCount7d = null;
+            if (parseNode.GetChildNode("distinct_user_agents_count_90d") is { } nullNodeDistinctUserAgentsCount90d && nullNodeDistinctUserAgentsCount90d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DistinctUserAgentsCount90d = null;
+            if (parseNode.GetChildNode("email_change_count_28d") is { } nullNodeEmailChangeCount28d && nullNodeEmailChangeCount28d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailChangeCount28d = null;
+            if (parseNode.GetChildNode("email_change_count_90d") is { } nullNodeEmailChangeCount90d && nullNodeEmailChangeCount90d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailChangeCount90d = null;
+            if (parseNode.GetChildNode("failed_plaid_non_oauth_authentication_attempts_count_30d") is { } nullNodeFailedPlaidNonOauthAuthenticationAttemptsCount30d && nullNodeFailedPlaidNonOauthAuthenticationAttemptsCount30d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedPlaidNonOauthAuthenticationAttemptsCount30d = null;
+            if (parseNode.GetChildNode("failed_plaid_non_oauth_authentication_attempts_count_3d") is { } nullNodeFailedPlaidNonOauthAuthenticationAttemptsCount3d && nullNodeFailedPlaidNonOauthAuthenticationAttemptsCount3d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedPlaidNonOauthAuthenticationAttemptsCount3d = null;
+            if (parseNode.GetChildNode("failed_plaid_non_oauth_authentication_attempts_count_7d") is { } nullNodeFailedPlaidNonOauthAuthenticationAttemptsCount7d && nullNodeFailedPlaidNonOauthAuthenticationAttemptsCount7d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedPlaidNonOauthAuthenticationAttemptsCount7d = null;
+            if (parseNode.GetChildNode("is_account_closed") is { } nullNodeIsAccountClosed && nullNodeIsAccountClosed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsAccountClosed = null;
+            if (parseNode.GetChildNode("is_account_frozen_or_restricted") is { } nullNodeIsAccountFrozenOrRestricted && nullNodeIsAccountFrozenOrRestricted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsAccountFrozenOrRestricted = null;
+            if (parseNode.GetChildNode("phone_change_count_28d") is { } nullNodePhoneChangeCount28d && nullNodePhoneChangeCount28d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneChangeCount28d = null;
+            if (parseNode.GetChildNode("phone_change_count_90d") is { } nullNodePhoneChangeCount90d && nullNodePhoneChangeCount90d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneChangeCount90d = null;
+            if (parseNode.GetChildNode("plaid_connections_count_30d") is { } nullNodePlaidConnectionsCount30d && nullNodePlaidConnectionsCount30d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlaidConnectionsCount30d = null;
+            if (parseNode.GetChildNode("plaid_connections_count_7d") is { } nullNodePlaidConnectionsCount7d && nullNodePlaidConnectionsCount7d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlaidConnectionsCount7d = null;
+            if (parseNode.GetChildNode("plaid_non_oauth_authentication_attempts_count_30d") is { } nullNodePlaidNonOauthAuthenticationAttemptsCount30d && nullNodePlaidNonOauthAuthenticationAttemptsCount30d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlaidNonOauthAuthenticationAttemptsCount30d = null;
+            if (parseNode.GetChildNode("plaid_non_oauth_authentication_attempts_count_3d") is { } nullNodePlaidNonOauthAuthenticationAttemptsCount3d && nullNodePlaidNonOauthAuthenticationAttemptsCount3d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlaidNonOauthAuthenticationAttemptsCount3d = null;
+            if (parseNode.GetChildNode("plaid_non_oauth_authentication_attempts_count_7d") is { } nullNodePlaidNonOauthAuthenticationAttemptsCount7d && nullNodePlaidNonOauthAuthenticationAttemptsCount7d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlaidNonOauthAuthenticationAttemptsCount7d = null;
+            if (parseNode.GetChildNode("total_plaid_connections_count") is { } nullNodeTotalPlaidConnectionsCount && nullNodeTotalPlaidConnectionsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalPlaidConnectionsCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of times the account&apos;s addresses on file have changed over the past 28 days</summary>
-        public int? AddressChangeCount28d { get; set; }
+        public int? AddressChangeCount28d { get => _explicitNullValueAddressChangeCount28d; set { _explicitNullValueAddressChangeCount28d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address_change_count_28d"); else _explicitNullProperties?.Remove("address_change_count_28d"); } }
+        private int? _explicitNullValueAddressChangeCount28d = default!;
         /// <summary>The number of times the account&apos;s addresses on file have changed over the past 90 days</summary>
-        public int? AddressChangeCount90d { get; set; }
+        public int? AddressChangeCount90d { get => _explicitNullValueAddressChangeCount90d; set { _explicitNullValueAddressChangeCount90d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address_change_count_90d"); else _explicitNullProperties?.Remove("address_change_count_90d"); } }
+        private int? _explicitNullValueAddressChangeCount90d = default!;
         /// <summary>The number of days since the bank account was opened, as reported by the financial institution</summary>
-        public int? DaysSinceAccountOpening { get; set; }
+        public int? DaysSinceAccountOpening { get => _explicitNullValueDaysSinceAccountOpening; set { _explicitNullValueDaysSinceAccountOpening = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days_since_account_opening"); else _explicitNullProperties?.Remove("days_since_account_opening"); } }
+        private int? _explicitNullValueDaysSinceAccountOpening = default!;
         /// <summary>The number of days since the oldest transaction available to Plaid for this account. This measure, combined with Plaid connection history, can be used to infer the age of the account</summary>
-        public int? DaysSinceFirstObservedTransaction { get; set; }
+        public int? DaysSinceFirstObservedTransaction { get => _explicitNullValueDaysSinceFirstObservedTransaction; set { _explicitNullValueDaysSinceFirstObservedTransaction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days_since_first_observed_transaction"); else _explicitNullProperties?.Remove("days_since_first_observed_transaction"); } }
+        private int? _explicitNullValueDaysSinceFirstObservedTransaction = default!;
         /// <summary>The number of days since the first time the Item was connected to an application via Plaid</summary>
-        public int? DaysSinceFirstPlaidConnection { get; set; }
+        public int? DaysSinceFirstPlaidConnection { get => _explicitNullValueDaysSinceFirstPlaidConnection; set { _explicitNullValueDaysSinceFirstPlaidConnection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days_since_first_plaid_connection"); else _explicitNullProperties?.Remove("days_since_first_plaid_connection"); } }
+        private int? _explicitNullValueDaysSinceFirstPlaidConnection = default!;
         /// <summary>The number of distinct IP addresses linked to the same bank account during Plaid authentication in the last 30 days</summary>
-        public int? DistinctIpAddressesCount30d { get; set; }
+        public int? DistinctIpAddressesCount30d { get => _explicitNullValueDistinctIpAddressesCount30d; set { _explicitNullValueDistinctIpAddressesCount30d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distinct_ip_addresses_count_30d"); else _explicitNullProperties?.Remove("distinct_ip_addresses_count_30d"); } }
+        private int? _explicitNullValueDistinctIpAddressesCount30d = default!;
         /// <summary>The number of distinct IP addresses linked to the same bank account during Plaid authentication in the last 3 days</summary>
-        public int? DistinctIpAddressesCount3d { get; set; }
+        public int? DistinctIpAddressesCount3d { get => _explicitNullValueDistinctIpAddressesCount3d; set { _explicitNullValueDistinctIpAddressesCount3d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distinct_ip_addresses_count_3d"); else _explicitNullProperties?.Remove("distinct_ip_addresses_count_3d"); } }
+        private int? _explicitNullValueDistinctIpAddressesCount3d = default!;
         /// <summary>The number of distinct IP addresses linked to the same bank account during Plaid authentication in the last 7 days</summary>
-        public int? DistinctIpAddressesCount7d { get; set; }
+        public int? DistinctIpAddressesCount7d { get => _explicitNullValueDistinctIpAddressesCount7d; set { _explicitNullValueDistinctIpAddressesCount7d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distinct_ip_addresses_count_7d"); else _explicitNullProperties?.Remove("distinct_ip_addresses_count_7d"); } }
+        private int? _explicitNullValueDistinctIpAddressesCount7d = default!;
         /// <summary>The number of distinct IP addresses linked to the same bank account during Plaid authentication in the last 90 days</summary>
-        public int? DistinctIpAddressesCount90d { get; set; }
+        public int? DistinctIpAddressesCount90d { get => _explicitNullValueDistinctIpAddressesCount90d; set { _explicitNullValueDistinctIpAddressesCount90d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distinct_ip_addresses_count_90d"); else _explicitNullProperties?.Remove("distinct_ip_addresses_count_90d"); } }
+        private int? _explicitNullValueDistinctIpAddressesCount90d = default!;
         /// <summary>The number of distinct user agents linked to the same bank account during Plaid authentication in the last 30 days</summary>
-        public int? DistinctUserAgentsCount30d { get; set; }
+        public int? DistinctUserAgentsCount30d { get => _explicitNullValueDistinctUserAgentsCount30d; set { _explicitNullValueDistinctUserAgentsCount30d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distinct_user_agents_count_30d"); else _explicitNullProperties?.Remove("distinct_user_agents_count_30d"); } }
+        private int? _explicitNullValueDistinctUserAgentsCount30d = default!;
         /// <summary>The number of distinct user agents linked to the same bank account during Plaid authentication in the last 3 days</summary>
-        public int? DistinctUserAgentsCount3d { get; set; }
+        public int? DistinctUserAgentsCount3d { get => _explicitNullValueDistinctUserAgentsCount3d; set { _explicitNullValueDistinctUserAgentsCount3d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distinct_user_agents_count_3d"); else _explicitNullProperties?.Remove("distinct_user_agents_count_3d"); } }
+        private int? _explicitNullValueDistinctUserAgentsCount3d = default!;
         /// <summary>The number of distinct user agents linked to the same bank account during Plaid authentication in the last 7 days</summary>
-        public int? DistinctUserAgentsCount7d { get; set; }
+        public int? DistinctUserAgentsCount7d { get => _explicitNullValueDistinctUserAgentsCount7d; set { _explicitNullValueDistinctUserAgentsCount7d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distinct_user_agents_count_7d"); else _explicitNullProperties?.Remove("distinct_user_agents_count_7d"); } }
+        private int? _explicitNullValueDistinctUserAgentsCount7d = default!;
         /// <summary>The number of distinct user agents linked to the same bank account during Plaid authentication in the last 90 days</summary>
-        public int? DistinctUserAgentsCount90d { get; set; }
+        public int? DistinctUserAgentsCount90d { get => _explicitNullValueDistinctUserAgentsCount90d; set { _explicitNullValueDistinctUserAgentsCount90d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distinct_user_agents_count_90d"); else _explicitNullProperties?.Remove("distinct_user_agents_count_90d"); } }
+        private int? _explicitNullValueDistinctUserAgentsCount90d = default!;
         /// <summary>The number of times the account&apos;s email addresses on file have changed over the past 28 days</summary>
-        public int? EmailChangeCount28d { get; set; }
+        public int? EmailChangeCount28d { get => _explicitNullValueEmailChangeCount28d; set { _explicitNullValueEmailChangeCount28d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_change_count_28d"); else _explicitNullProperties?.Remove("email_change_count_28d"); } }
+        private int? _explicitNullValueEmailChangeCount28d = default!;
         /// <summary>The number of times the account&apos;s email addresses on file have changed over the past 90 days</summary>
-        public int? EmailChangeCount90d { get; set; }
+        public int? EmailChangeCount90d { get => _explicitNullValueEmailChangeCount90d; set { _explicitNullValueEmailChangeCount90d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_change_count_90d"); else _explicitNullProperties?.Remove("email_change_count_90d"); } }
+        private int? _explicitNullValueEmailChangeCount90d = default!;
         /// <summary>The number of failed non-OAuth authentication attempts via Plaid for this bank account over the past 30 days</summary>
-        public int? FailedPlaidNonOauthAuthenticationAttemptsCount30d { get; set; }
+        public int? FailedPlaidNonOauthAuthenticationAttemptsCount30d { get => _explicitNullValueFailedPlaidNonOauthAuthenticationAttemptsCount30d; set { _explicitNullValueFailedPlaidNonOauthAuthenticationAttemptsCount30d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failed_plaid_non_oauth_authentication_attempts_count_30d"); else _explicitNullProperties?.Remove("failed_plaid_non_oauth_authentication_attempts_count_30d"); } }
+        private int? _explicitNullValueFailedPlaidNonOauthAuthenticationAttemptsCount30d = default!;
         /// <summary>The number of failed non-OAuth authentication attempts via Plaid for this bank account over the past 3 days</summary>
-        public int? FailedPlaidNonOauthAuthenticationAttemptsCount3d { get; set; }
+        public int? FailedPlaidNonOauthAuthenticationAttemptsCount3d { get => _explicitNullValueFailedPlaidNonOauthAuthenticationAttemptsCount3d; set { _explicitNullValueFailedPlaidNonOauthAuthenticationAttemptsCount3d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failed_plaid_non_oauth_authentication_attempts_count_3d"); else _explicitNullProperties?.Remove("failed_plaid_non_oauth_authentication_attempts_count_3d"); } }
+        private int? _explicitNullValueFailedPlaidNonOauthAuthenticationAttemptsCount3d = default!;
         /// <summary>The number of failed non-OAuth authentication attempts via Plaid for this bank account over the past 7 days</summary>
-        public int? FailedPlaidNonOauthAuthenticationAttemptsCount7d { get; set; }
+        public int? FailedPlaidNonOauthAuthenticationAttemptsCount7d { get => _explicitNullValueFailedPlaidNonOauthAuthenticationAttemptsCount7d; set { _explicitNullValueFailedPlaidNonOauthAuthenticationAttemptsCount7d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failed_plaid_non_oauth_authentication_attempts_count_7d"); else _explicitNullProperties?.Remove("failed_plaid_non_oauth_authentication_attempts_count_7d"); } }
+        private int? _explicitNullValueFailedPlaidNonOauthAuthenticationAttemptsCount7d = default!;
         /// <summary>Indicates if the account has been closed by the financial institution or the consumer, or is at risk of being closed</summary>
-        public bool? IsAccountClosed { get; set; }
+        public bool? IsAccountClosed { get => _explicitNullValueIsAccountClosed; set { _explicitNullValueIsAccountClosed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_account_closed"); else _explicitNullProperties?.Remove("is_account_closed"); } }
+        private bool? _explicitNullValueIsAccountClosed = default!;
         /// <summary>Indicates whether the account has withdrawals and transfers disabled or if access to the account is restricted. This could be due to a freeze by the credit issuer, legal restrictions (e.g., sanctions), or regulatory requirements limiting monthly withdrawals, among other reasons</summary>
-        public bool? IsAccountFrozenOrRestricted { get; set; }
+        public bool? IsAccountFrozenOrRestricted { get => _explicitNullValueIsAccountFrozenOrRestricted; set { _explicitNullValueIsAccountFrozenOrRestricted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_account_frozen_or_restricted"); else _explicitNullProperties?.Remove("is_account_frozen_or_restricted"); } }
+        private bool? _explicitNullValueIsAccountFrozenOrRestricted = default!;
         /// <summary>The number of times the account&apos;s phone numbers on file have changed over the past 28 days</summary>
-        public int? PhoneChangeCount28d { get; set; }
+        public int? PhoneChangeCount28d { get => _explicitNullValuePhoneChangeCount28d; set { _explicitNullValuePhoneChangeCount28d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_change_count_28d"); else _explicitNullProperties?.Remove("phone_change_count_28d"); } }
+        private int? _explicitNullValuePhoneChangeCount28d = default!;
         /// <summary>The number of times the account&apos;s phone numbers on file have changed over the past 90 days</summary>
-        public int? PhoneChangeCount90d { get; set; }
+        public int? PhoneChangeCount90d { get => _explicitNullValuePhoneChangeCount90d; set { _explicitNullValuePhoneChangeCount90d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_change_count_90d"); else _explicitNullProperties?.Remove("phone_change_count_90d"); } }
+        private int? _explicitNullValuePhoneChangeCount90d = default!;
         /// <summary>The number of times the Item has been connected to applications via Plaid over the past 30 days</summary>
-        public int? PlaidConnectionsCount30d { get; set; }
+        public int? PlaidConnectionsCount30d { get => _explicitNullValuePlaidConnectionsCount30d; set { _explicitNullValuePlaidConnectionsCount30d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plaid_connections_count_30d"); else _explicitNullProperties?.Remove("plaid_connections_count_30d"); } }
+        private int? _explicitNullValuePlaidConnectionsCount30d = default!;
         /// <summary>The number of times the Item has been connected to applications via Plaid over the past 7 days</summary>
-        public int? PlaidConnectionsCount7d { get; set; }
+        public int? PlaidConnectionsCount7d { get => _explicitNullValuePlaidConnectionsCount7d; set { _explicitNullValuePlaidConnectionsCount7d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plaid_connections_count_7d"); else _explicitNullProperties?.Remove("plaid_connections_count_7d"); } }
+        private int? _explicitNullValuePlaidConnectionsCount7d = default!;
         /// <summary>The number of non-OAuth authentication attempts via Plaid for this bank account over the past 30 days</summary>
-        public int? PlaidNonOauthAuthenticationAttemptsCount30d { get; set; }
+        public int? PlaidNonOauthAuthenticationAttemptsCount30d { get => _explicitNullValuePlaidNonOauthAuthenticationAttemptsCount30d; set { _explicitNullValuePlaidNonOauthAuthenticationAttemptsCount30d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plaid_non_oauth_authentication_attempts_count_30d"); else _explicitNullProperties?.Remove("plaid_non_oauth_authentication_attempts_count_30d"); } }
+        private int? _explicitNullValuePlaidNonOauthAuthenticationAttemptsCount30d = default!;
         /// <summary>The number of non-OAuth authentication attempts via Plaid for this bank account over the past 3 days</summary>
-        public int? PlaidNonOauthAuthenticationAttemptsCount3d { get; set; }
+        public int? PlaidNonOauthAuthenticationAttemptsCount3d { get => _explicitNullValuePlaidNonOauthAuthenticationAttemptsCount3d; set { _explicitNullValuePlaidNonOauthAuthenticationAttemptsCount3d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plaid_non_oauth_authentication_attempts_count_3d"); else _explicitNullProperties?.Remove("plaid_non_oauth_authentication_attempts_count_3d"); } }
+        private int? _explicitNullValuePlaidNonOauthAuthenticationAttemptsCount3d = default!;
         /// <summary>The number of non-OAuth authentication attempts via Plaid for this bank account over the past 7 days</summary>
-        public int? PlaidNonOauthAuthenticationAttemptsCount7d { get; set; }
+        public int? PlaidNonOauthAuthenticationAttemptsCount7d { get => _explicitNullValuePlaidNonOauthAuthenticationAttemptsCount7d; set { _explicitNullValuePlaidNonOauthAuthenticationAttemptsCount7d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plaid_non_oauth_authentication_attempts_count_7d"); else _explicitNullProperties?.Remove("plaid_non_oauth_authentication_attempts_count_7d"); } }
+        private int? _explicitNullValuePlaidNonOauthAuthenticationAttemptsCount7d = default!;
         /// <summary>The total number of times the Item has been connected to applications via Plaid</summary>
-        public int? TotalPlaidConnectionsCount { get; set; }
+        public int? TotalPlaidConnectionsCount { get => _explicitNullValueTotalPlaidConnectionsCount; set { _explicitNullValueTotalPlaidConnectionsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_plaid_connections_count"); else _explicitNullProperties?.Remove("total_plaid_connections_count"); } }
+        private int? _explicitNullValueTotalPlaidConnectionsCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BeaconAccountRiskAttributes"/> and sets the default values.
         /// </summary>
@@ -86,7 +149,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.BeaconAccountRiskAttributes CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.BeaconAccountRiskAttributes();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.BeaconAccountRiskAttributes(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -161,6 +224,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteIntValue("plaid_non_oauth_authentication_attempts_count_3d", PlaidNonOauthAuthenticationAttemptsCount3d);
             writer.WriteIntValue("plaid_non_oauth_authentication_attempts_count_7d", PlaidNonOauthAuthenticationAttemptsCount7d);
             writer.WriteIntValue("total_plaid_connections_count", TotalPlaidConnectionsCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

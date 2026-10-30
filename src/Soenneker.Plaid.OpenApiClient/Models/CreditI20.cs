@@ -12,51 +12,85 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreditI20 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("document_id") is { } nullNodeDocumentId && nullNodeDocumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentId = null;
+            if (parseNode.GetChildNode("document_metadata") is { } nullNodeDocumentMetadata && nullNodeDocumentMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentMetadata = null;
+            if (parseNode.GetChildNode("estimated_average_costs_period_months") is { } nullNodeEstimatedAverageCostsPeriodMonths && nullNodeEstimatedAverageCostsPeriodMonths.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EstimatedAverageCostsPeriodMonths = null;
+            if (parseNode.GetChildNode("estimated_average_costs_total") is { } nullNodeEstimatedAverageCostsTotal && nullNodeEstimatedAverageCostsTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EstimatedAverageCostsTotal = null;
+            if (parseNode.GetChildNode("estimated_average_living_expenses") is { } nullNodeEstimatedAverageLivingExpenses && nullNodeEstimatedAverageLivingExpenses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EstimatedAverageLivingExpenses = null;
+            if (parseNode.GetChildNode("funds_from_another_source") is { } nullNodeFundsFromAnotherSource && nullNodeFundsFromAnotherSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FundsFromAnotherSource = null;
+            if (parseNode.GetChildNode("funds_from_this_school") is { } nullNodeFundsFromThisSchool && nullNodeFundsFromThisSchool.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FundsFromThisSchool = null;
+            if (parseNode.GetChildNode("on_campus_employment") is { } nullNodeOnCampusEmployment && nullNodeOnCampusEmployment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnCampusEmployment = null;
+            if (parseNode.GetChildNode("personal_funds") is { } nullNodePersonalFunds && nullNodePersonalFunds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalFunds = null;
+            if (parseNode.GetChildNode("student") is { } nullNodeStudent && nullNodeStudent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Student = null;
+            if (parseNode.GetChildNode("students_funding_period_months") is { } nullNodeStudentsFundingPeriodMonths && nullNodeStudentsFundingPeriodMonths.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StudentsFundingPeriodMonths = null;
+            if (parseNode.GetChildNode("students_funding_total") is { } nullNodeStudentsFundingTotal && nullNodeStudentsFundingTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StudentsFundingTotal = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An identifier of the document referenced by the document metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentId { get; set; }
+        public string? DocumentId { get => _explicitNullValueDocumentId; set { _explicitNullValueDocumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_id"); else _explicitNullProperties?.Remove("document_id"); } }
+        private string? _explicitNullValueDocumentId = default!;
 #nullable restore
 #else
-        public string DocumentId { get; set; }
+        public string DocumentId { get => _explicitNullValueDocumentId; set { _explicitNullValueDocumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_id"); else _explicitNullProperties?.Remove("document_id"); } }
+        private string _explicitNullValueDocumentId = default!;
 #endif
         /// <summary>Object representing metadata pertaining to the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata? DocumentMetadata { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata? DocumentMetadata { get => _explicitNullValueDocumentMetadata; set { _explicitNullValueDocumentMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_metadata"); else _explicitNullProperties?.Remove("document_metadata"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata? _explicitNullValueDocumentMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata DocumentMetadata { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata DocumentMetadata { get => _explicitNullValueDocumentMetadata; set { _explicitNullValueDocumentMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_metadata"); else _explicitNullProperties?.Remove("document_metadata"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata _explicitNullValueDocumentMetadata = default!;
 #endif
         /// <summary>Number of months the estimated average costs cover.</summary>
-        public long? EstimatedAverageCostsPeriodMonths { get; set; }
+        public long? EstimatedAverageCostsPeriodMonths { get => _explicitNullValueEstimatedAverageCostsPeriodMonths; set { _explicitNullValueEstimatedAverageCostsPeriodMonths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("estimated_average_costs_period_months"); else _explicitNullProperties?.Remove("estimated_average_costs_period_months"); } }
+        private long? _explicitNullValueEstimatedAverageCostsPeriodMonths = default!;
         /// <summary>Estimated total average costs for the program period.</summary>
-        public double? EstimatedAverageCostsTotal { get; set; }
+        public double? EstimatedAverageCostsTotal { get => _explicitNullValueEstimatedAverageCostsTotal; set { _explicitNullValueEstimatedAverageCostsTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("estimated_average_costs_total"); else _explicitNullProperties?.Remove("estimated_average_costs_total"); } }
+        private double? _explicitNullValueEstimatedAverageCostsTotal = default!;
         /// <summary>Estimated average living expenses.</summary>
-        public double? EstimatedAverageLivingExpenses { get; set; }
+        public double? EstimatedAverageLivingExpenses { get => _explicitNullValueEstimatedAverageLivingExpenses; set { _explicitNullValueEstimatedAverageLivingExpenses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("estimated_average_living_expenses"); else _explicitNullProperties?.Remove("estimated_average_living_expenses"); } }
+        private double? _explicitNullValueEstimatedAverageLivingExpenses = default!;
         /// <summary>Amount of funds from another source.</summary>
-        public double? FundsFromAnotherSource { get; set; }
+        public double? FundsFromAnotherSource { get => _explicitNullValueFundsFromAnotherSource; set { _explicitNullValueFundsFromAnotherSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("funds_from_another_source"); else _explicitNullProperties?.Remove("funds_from_another_source"); } }
+        private double? _explicitNullValueFundsFromAnotherSource = default!;
         /// <summary>Amount of funds provided by the issuing school.</summary>
-        public double? FundsFromThisSchool { get; set; }
+        public double? FundsFromThisSchool { get => _explicitNullValueFundsFromThisSchool; set { _explicitNullValueFundsFromThisSchool = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("funds_from_this_school"); else _explicitNullProperties?.Remove("funds_from_this_school"); } }
+        private double? _explicitNullValueFundsFromThisSchool = default!;
         /// <summary>Amount of funds from on-campus employment.</summary>
-        public double? OnCampusEmployment { get; set; }
+        public double? OnCampusEmployment { get => _explicitNullValueOnCampusEmployment; set { _explicitNullValueOnCampusEmployment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("on_campus_employment"); else _explicitNullProperties?.Remove("on_campus_employment"); } }
+        private double? _explicitNullValueOnCampusEmployment = default!;
         /// <summary>Amount of the student&apos;s personal funds.</summary>
-        public double? PersonalFunds { get; set; }
+        public double? PersonalFunds { get => _explicitNullValuePersonalFunds; set { _explicitNullValuePersonalFunds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_funds"); else _explicitNullProperties?.Remove("personal_funds"); } }
+        private double? _explicitNullValuePersonalFunds = default!;
         /// <summary>An object representing the student named on a Form I-20.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditI20Student? Student { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditI20Student? Student { get => _explicitNullValueStudent; set { _explicitNullValueStudent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("student"); else _explicitNullProperties?.Remove("student"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditI20Student? _explicitNullValueStudent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditI20Student Student { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditI20Student Student { get => _explicitNullValueStudent; set { _explicitNullValueStudent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("student"); else _explicitNullProperties?.Remove("student"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditI20Student _explicitNullValueStudent = default!;
 #endif
         /// <summary>Number of months the student&apos;s funding covers.</summary>
-        public long? StudentsFundingPeriodMonths { get; set; }
+        public long? StudentsFundingPeriodMonths { get => _explicitNullValueStudentsFundingPeriodMonths; set { _explicitNullValueStudentsFundingPeriodMonths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("students_funding_period_months"); else _explicitNullProperties?.Remove("students_funding_period_months"); } }
+        private long? _explicitNullValueStudentsFundingPeriodMonths = default!;
         /// <summary>Total amount of funds available to the student.</summary>
-        public double? StudentsFundingTotal { get; set; }
+        public double? StudentsFundingTotal { get => _explicitNullValueStudentsFundingTotal; set { _explicitNullValueStudentsFundingTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("students_funding_total"); else _explicitNullProperties?.Remove("students_funding_total"); } }
+        private double? _explicitNullValueStudentsFundingTotal = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CreditI20"/> and sets the default values.
         /// </summary>
@@ -72,7 +106,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CreditI20 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CreditI20();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CreditI20(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -115,6 +149,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CreditI20Student>("student", Student);
             writer.WriteLongValue("students_funding_period_months", StudentsFundingPeriodMonths);
             writer.WriteDoubleValue("students_funding_total", StudentsFundingTotal);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,48 +12,70 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreditSessionResults : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bank_employment_results") is { } nullNodeBankEmploymentResults && nullNodeBankEmploymentResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankEmploymentResults = null;
+            if (parseNode.GetChildNode("bank_income_results") is { } nullNodeBankIncomeResults && nullNodeBankIncomeResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankIncomeResults = null;
+            if (parseNode.GetChildNode("document_income_results") is { } nullNodeDocumentIncomeResults && nullNodeDocumentIncomeResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentIncomeResults = null;
+            if (parseNode.GetChildNode("item_add_results") is { } nullNodeItemAddResults && nullNodeItemAddResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemAddResults = null;
+            if (parseNode.GetChildNode("payroll_income_results") is { } nullNodePayrollIncomeResults && nullNodePayrollIncomeResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayrollIncomeResults = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The set of bank employment verifications for the Link session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionBankEmploymentResult>? BankEmploymentResults { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionBankEmploymentResult>? BankEmploymentResults { get => _explicitNullValueBankEmploymentResults; set { _explicitNullValueBankEmploymentResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_employment_results"); else _explicitNullProperties?.Remove("bank_employment_results"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionBankEmploymentResult>? _explicitNullValueBankEmploymentResults = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionBankEmploymentResult> BankEmploymentResults { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionBankEmploymentResult> BankEmploymentResults { get => _explicitNullValueBankEmploymentResults; set { _explicitNullValueBankEmploymentResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_employment_results"); else _explicitNullProperties?.Remove("bank_employment_results"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionBankEmploymentResult> _explicitNullValueBankEmploymentResults = default!;
 #endif
         /// <summary>The set of bank income verifications for the Link session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionBankIncomeResult>? BankIncomeResults { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionBankIncomeResult>? BankIncomeResults { get => _explicitNullValueBankIncomeResults; set { _explicitNullValueBankIncomeResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_income_results"); else _explicitNullProperties?.Remove("bank_income_results"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionBankIncomeResult>? _explicitNullValueBankIncomeResults = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionBankIncomeResult> BankIncomeResults { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionBankIncomeResult> BankIncomeResults { get => _explicitNullValueBankIncomeResults; set { _explicitNullValueBankIncomeResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_income_results"); else _explicitNullProperties?.Remove("bank_income_results"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionBankIncomeResult> _explicitNullValueBankIncomeResults = default!;
 #endif
         /// <summary>The details of a document income verification in Link</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionDocumentIncomeResult? DocumentIncomeResults { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionDocumentIncomeResult? DocumentIncomeResults { get => _explicitNullValueDocumentIncomeResults; set { _explicitNullValueDocumentIncomeResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_income_results"); else _explicitNullProperties?.Remove("document_income_results"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionDocumentIncomeResult? _explicitNullValueDocumentIncomeResults = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionDocumentIncomeResult DocumentIncomeResults { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionDocumentIncomeResult DocumentIncomeResults { get => _explicitNullValueDocumentIncomeResults; set { _explicitNullValueDocumentIncomeResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_income_results"); else _explicitNullProperties?.Remove("document_income_results"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionDocumentIncomeResult _explicitNullValueDocumentIncomeResults = default!;
 #endif
         /// <summary>The set of Item adds for the Link session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionItemAddResult>? ItemAddResults { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionItemAddResult>? ItemAddResults { get => _explicitNullValueItemAddResults; set { _explicitNullValueItemAddResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_add_results"); else _explicitNullProperties?.Remove("item_add_results"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionItemAddResult>? _explicitNullValueItemAddResults = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionItemAddResult> ItemAddResults { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionItemAddResult> ItemAddResults { get => _explicitNullValueItemAddResults; set { _explicitNullValueItemAddResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_add_results"); else _explicitNullProperties?.Remove("item_add_results"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionItemAddResult> _explicitNullValueItemAddResults = default!;
 #endif
         /// <summary>The set of payroll income verifications for the Link session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionPayrollIncomeResult>? PayrollIncomeResults { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionPayrollIncomeResult>? PayrollIncomeResults { get => _explicitNullValuePayrollIncomeResults; set { _explicitNullValuePayrollIncomeResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payroll_income_results"); else _explicitNullProperties?.Remove("payroll_income_results"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionPayrollIncomeResult>? _explicitNullValuePayrollIncomeResults = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionPayrollIncomeResult> PayrollIncomeResults { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionPayrollIncomeResult> PayrollIncomeResults { get => _explicitNullValuePayrollIncomeResults; set { _explicitNullValuePayrollIncomeResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payroll_income_results"); else _explicitNullProperties?.Remove("payroll_income_results"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionPayrollIncomeResult> _explicitNullValuePayrollIncomeResults = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionResults"/> and sets the default values.
@@ -70,7 +92,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionResults CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionResults();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionResults(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,6 +121,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionDocumentIncomeResult>("document_income_results", DocumentIncomeResults);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionItemAddResult>("item_add_results", ItemAddResults);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CreditSessionPayrollIncomeResult>("payroll_income_results", PayrollIncomeResults);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

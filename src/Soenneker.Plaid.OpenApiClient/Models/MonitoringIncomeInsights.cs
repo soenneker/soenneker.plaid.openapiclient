@@ -12,48 +12,70 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MonitoringIncomeInsights : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("forecasted_monthly_income") is { } nullNodeForecastedMonthlyIncome && nullNodeForecastedMonthlyIncome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForecastedMonthlyIncome = null;
+            if (parseNode.GetChildNode("historical_annual_income") is { } nullNodeHistoricalAnnualIncome && nullNodeHistoricalAnnualIncome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HistoricalAnnualIncome = null;
+            if (parseNode.GetChildNode("income_sources") is { } nullNodeIncomeSources && nullNodeIncomeSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeSources = null;
+            if (parseNode.GetChildNode("income_sources_counts") is { } nullNodeIncomeSourcesCounts && nullNodeIncomeSourcesCounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeSourcesCounts = null;
+            if (parseNode.GetChildNode("total_monthly_income") is { } nullNodeTotalMonthlyIncome && nullNodeTotalMonthlyIncome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalMonthlyIncome = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An object representing the predicted average monthly net income amount. This amount reflects the funds deposited into the account and may not include any withheld income such as taxes or other payroll deductions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ForecastedMonthlyIncome? ForecastedMonthlyIncome { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ForecastedMonthlyIncome? ForecastedMonthlyIncome { get => _explicitNullValueForecastedMonthlyIncome; set { _explicitNullValueForecastedMonthlyIncome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forecasted_monthly_income"); else _explicitNullProperties?.Remove("forecasted_monthly_income"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ForecastedMonthlyIncome? _explicitNullValueForecastedMonthlyIncome = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ForecastedMonthlyIncome ForecastedMonthlyIncome { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ForecastedMonthlyIncome ForecastedMonthlyIncome { get => _explicitNullValueForecastedMonthlyIncome; set { _explicitNullValueForecastedMonthlyIncome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forecasted_monthly_income"); else _explicitNullProperties?.Remove("forecasted_monthly_income"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ForecastedMonthlyIncome _explicitNullValueForecastedMonthlyIncome = default!;
 #endif
         /// <summary>An object representing the historical annual income amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.HistoricalAnnualIncome? HistoricalAnnualIncome { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.HistoricalAnnualIncome? HistoricalAnnualIncome { get => _explicitNullValueHistoricalAnnualIncome; set { _explicitNullValueHistoricalAnnualIncome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("historical_annual_income"); else _explicitNullProperties?.Remove("historical_annual_income"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.HistoricalAnnualIncome? _explicitNullValueHistoricalAnnualIncome = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.HistoricalAnnualIncome HistoricalAnnualIncome { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.HistoricalAnnualIncome HistoricalAnnualIncome { get => _explicitNullValueHistoricalAnnualIncome; set { _explicitNullValueHistoricalAnnualIncome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("historical_annual_income"); else _explicitNullProperties?.Remove("historical_annual_income"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.HistoricalAnnualIncome _explicitNullValueHistoricalAnnualIncome = default!;
 #endif
         /// <summary>The income sources for this Item. Each entry in the array is a single income source</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.MonitoringIncomeSource>? IncomeSources { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.MonitoringIncomeSource>? IncomeSources { get => _explicitNullValueIncomeSources; set { _explicitNullValueIncomeSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_sources"); else _explicitNullProperties?.Remove("income_sources"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.MonitoringIncomeSource>? _explicitNullValueIncomeSources = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.MonitoringIncomeSource> IncomeSources { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.MonitoringIncomeSource> IncomeSources { get => _explicitNullValueIncomeSources; set { _explicitNullValueIncomeSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_sources"); else _explicitNullProperties?.Remove("income_sources"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.MonitoringIncomeSource> _explicitNullValueIncomeSources = default!;
 #endif
         /// <summary>Details about the number of income sources</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeSourcesCounts? IncomeSourcesCounts { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeSourcesCounts? IncomeSourcesCounts { get => _explicitNullValueIncomeSourcesCounts; set { _explicitNullValueIncomeSourcesCounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_sources_counts"); else _explicitNullProperties?.Remove("income_sources_counts"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IncomeSourcesCounts? _explicitNullValueIncomeSourcesCounts = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeSourcesCounts IncomeSourcesCounts { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeSourcesCounts IncomeSourcesCounts { get => _explicitNullValueIncomeSourcesCounts; set { _explicitNullValueIncomeSourcesCounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_sources_counts"); else _explicitNullProperties?.Remove("income_sources_counts"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IncomeSourcesCounts _explicitNullValueIncomeSourcesCounts = default!;
 #endif
         /// <summary>Details about the total monthly income</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalMonthlyIncomeInsights? TotalMonthlyIncome { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalMonthlyIncomeInsights? TotalMonthlyIncome { get => _explicitNullValueTotalMonthlyIncome; set { _explicitNullValueTotalMonthlyIncome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_monthly_income"); else _explicitNullProperties?.Remove("total_monthly_income"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TotalMonthlyIncomeInsights? _explicitNullValueTotalMonthlyIncome = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalMonthlyIncomeInsights TotalMonthlyIncome { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalMonthlyIncomeInsights TotalMonthlyIncome { get => _explicitNullValueTotalMonthlyIncome; set { _explicitNullValueTotalMonthlyIncome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_monthly_income"); else _explicitNullProperties?.Remove("total_monthly_income"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TotalMonthlyIncomeInsights _explicitNullValueTotalMonthlyIncome = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.MonitoringIncomeInsights"/> and sets the default values.
@@ -70,7 +92,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.MonitoringIncomeInsights CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.MonitoringIncomeInsights();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.MonitoringIncomeInsights(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,6 +121,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.MonitoringIncomeSource>("income_sources", IncomeSources);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IncomeSourcesCounts>("income_sources_counts", IncomeSourcesCounts);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalMonthlyIncomeInsights>("total_monthly_income", TotalMonthlyIncome);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -16,6 +16,7 @@ namespace Soenneker.Plaid.OpenApiClient.Income.Verification.Paystubs
     public partial class PaystubsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The getPath property</summary>
+        [Obsolete("")]
         public global::Soenneker.Plaid.OpenApiClient.Income.Verification.Paystubs.Get.GetRequestBuilder GetPath
         {
             get => new global::Soenneker.Plaid.OpenApiClient.Income.Verification.Paystubs.Get.GetRequestBuilder(PathParameters, RequestAdapter);

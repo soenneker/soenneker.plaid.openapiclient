@@ -12,35 +12,53 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraPartnerInsightsUltraFicoScoreRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("base_fico_score") is { } nullNodeBaseFicoScore && nullNodeBaseFicoScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseFicoScore = null;
+            if (parseNode.GetChildNode("fico_scoring_request_id") is { } nullNodeFicoScoringRequestId && nullNodeFicoScoringRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FicoScoringRequestId = null;
+            if (parseNode.GetChildNode("request_correlation_id") is { } nullNodeRequestCorrelationId && nullNodeRequestCorrelationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestCorrelationId = null;
+            if (parseNode.GetChildNode("ultrafico_score_version") is { } nullNodeUltraficoScoreVersion && nullNodeUltraficoScoreVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UltraficoScoreVersion = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Details about the base FICO score associated with an UltraFICO® scoring request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsBaseFicoScore? BaseFicoScore { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsBaseFicoScore? BaseFicoScore { get => _explicitNullValueBaseFicoScore; set { _explicitNullValueBaseFicoScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_fico_score"); else _explicitNullProperties?.Remove("base_fico_score"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsBaseFicoScore? _explicitNullValueBaseFicoScore = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsBaseFicoScore BaseFicoScore { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsBaseFicoScore BaseFicoScore { get => _explicitNullValueBaseFicoScore; set { _explicitNullValueBaseFicoScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_fico_score"); else _explicitNullProperties?.Remove("base_fico_score"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsBaseFicoScore _explicitNullValueBaseFicoScore = default!;
 #endif
         /// <summary>FICO identifier for a particular scoring request. Should only be provided by FICO as part of the FICO-led flow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FicoScoringRequestId { get; set; }
+        public string? FicoScoringRequestId { get => _explicitNullValueFicoScoringRequestId; set { _explicitNullValueFicoScoringRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fico_scoring_request_id"); else _explicitNullProperties?.Remove("fico_scoring_request_id"); } }
+        private string? _explicitNullValueFicoScoringRequestId = default!;
 #nullable restore
 #else
-        public string FicoScoringRequestId { get; set; }
+        public string FicoScoringRequestId { get => _explicitNullValueFicoScoringRequestId; set { _explicitNullValueFicoScoringRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fico_scoring_request_id"); else _explicitNullProperties?.Remove("fico_scoring_request_id"); } }
+        private string _explicitNullValueFicoScoringRequestId = default!;
 #endif
         /// <summary>Client-generated identifier that can be used to correlate scoring requests with their scoring results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestCorrelationId { get; set; }
+        public string? RequestCorrelationId { get => _explicitNullValueRequestCorrelationId; set { _explicitNullValueRequestCorrelationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_correlation_id"); else _explicitNullProperties?.Remove("request_correlation_id"); } }
+        private string? _explicitNullValueRequestCorrelationId = default!;
 #nullable restore
 #else
-        public string RequestCorrelationId { get; set; }
+        public string RequestCorrelationId { get => _explicitNullValueRequestCorrelationId; set { _explicitNullValueRequestCorrelationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_correlation_id"); else _explicitNullProperties?.Remove("request_correlation_id"); } }
+        private string _explicitNullValueRequestCorrelationId = default!;
 #endif
         /// <summary>The version of the UltraFICO® score.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreVersion? UltraficoScoreVersion { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreVersion? UltraficoScoreVersion { get => _explicitNullValueUltraficoScoreVersion; set { _explicitNullValueUltraficoScoreVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ultrafico_score_version"); else _explicitNullProperties?.Remove("ultrafico_score_version"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreVersion? _explicitNullValueUltraficoScoreVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreRequest"/> and sets the default values.
         /// </summary>
@@ -56,7 +74,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,6 +101,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("fico_scoring_request_id", FicoScoringRequestId);
             writer.WriteStringValue("request_correlation_id", RequestCorrelationId);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreVersion>("ultrafico_score_version", UltraficoScoreVersion);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

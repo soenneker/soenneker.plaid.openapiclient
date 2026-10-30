@@ -13,22 +13,38 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     [Obsolete("")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransferAuthorizationPaymentRisk : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bank_initiated_return_score") is { } nullNodeBankInitiatedReturnScore && nullNodeBankInitiatedReturnScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankInitiatedReturnScore = null;
+            if (parseNode.GetChildNode("customer_initiated_return_score") is { } nullNodeCustomerInitiatedReturnScore && nullNodeCustomerInitiatedReturnScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerInitiatedReturnScore = null;
+            if (parseNode.GetChildNode("risk_level") is { } nullNodeRiskLevel && nullNodeRiskLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskLevel = null;
+            if (parseNode.GetChildNode("warnings") is { } nullNodeWarnings && nullNodeWarnings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Warnings = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A score from 1-99 that indicates the transaction return risk: a higher risk score suggests a higher return likelihood.The score evaluates the transaction return risk because an account is overdrawn or because an ineligible account is used and covers return codes: &quot;R01&quot;, &quot;R02&quot;, &quot;R03&quot;, &quot;R04&quot;, &quot;R06&quot;, &quot;R08&quot;,  &quot;R09&quot;, &quot;R13&quot;,&quot;R16&quot;, &quot;R17&quot;, &quot;R20&quot;, &quot;R23&quot;. These returns have a turnaround time of 2 banking days.</summary>
-        public int? BankInitiatedReturnScore { get; set; }
+        public int? BankInitiatedReturnScore { get => _explicitNullValueBankInitiatedReturnScore; set { _explicitNullValueBankInitiatedReturnScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_initiated_return_score"); else _explicitNullProperties?.Remove("bank_initiated_return_score"); } }
+        private int? _explicitNullValueBankInitiatedReturnScore = default!;
         /// <summary>A score from 1-99 that indicates the transaction return risk: a higher risk score suggests a higher return likelihood.The score evaluates the transaction return risk of an unauthorized debit and covers return codes: &quot;R05&quot;, &quot;R07&quot;, &quot;R10&quot;, &quot;R11&quot;, &quot;R29&quot;.These returns typically have a return time frame of up to 60 calendar days. During this period, customers of financial institutions can dispute a transaction as unauthorized.</summary>
-        public int? CustomerInitiatedReturnScore { get; set; }
+        public int? CustomerInitiatedReturnScore { get => _explicitNullValueCustomerInitiatedReturnScore; set { _explicitNullValueCustomerInitiatedReturnScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_initiated_return_score"); else _explicitNullProperties?.Remove("customer_initiated_return_score"); } }
+        private int? _explicitNullValueCustomerInitiatedReturnScore = default!;
         /// <summary>Comprises five risk categories (high risk, medium-high risk, medium risk, medium-low risk, low risk) based on the probability of return</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationRiskLevel? RiskLevel { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationRiskLevel? RiskLevel { get => _explicitNullValueRiskLevel; set { _explicitNullValueRiskLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_level"); else _explicitNullProperties?.Remove("risk_level"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationRiskLevel? _explicitNullValueRiskLevel = default!;
         /// <summary>If bank information was not available to be used, this array contains warnings describing why bank data is missing. If you want to receive an API error instead of scores in the case of missing bank data, file a support ticket or contact your Plaid account manager.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning>? Warnings { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning>? Warnings { get => _explicitNullValueWarnings; set { _explicitNullValueWarnings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warnings"); else _explicitNullProperties?.Remove("warnings"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning>? _explicitNullValueWarnings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning> Warnings { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning> Warnings { get => _explicitNullValueWarnings; set { _explicitNullValueWarnings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warnings"); else _explicitNullProperties?.Remove("warnings"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning> _explicitNullValueWarnings = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationPaymentRisk"/> and sets the default values.
@@ -45,7 +61,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationPaymentRisk CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationPaymentRisk();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationPaymentRisk(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +90,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteIntValue("customer_initiated_return_score", CustomerInitiatedReturnScore);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationRiskLevel>("risk_level", RiskLevel);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning>("warnings", Warnings);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

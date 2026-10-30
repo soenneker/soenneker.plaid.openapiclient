@@ -13,48 +13,75 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CraLoanRegister : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("application") is { } nullNodeApplication && nullNodeApplication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Application = null;
+            if (parseNode.GetChildNode("loan_amount") is { } nullNodeLoanAmount && nullNodeLoanAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoanAmount = null;
+            if (parseNode.GetChildNode("loan_id") is { } nullNodeLoanId && nullNodeLoanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoanId = null;
+            if (parseNode.GetChildNode("opened_date") is { } nullNodeOpenedDate && nullNodeOpenedDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpenedDate = null;
+            if (parseNode.GetChildNode("opened_with_status") is { } nullNodeOpenedWithStatus && nullNodeOpenedWithStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpenedWithStatus = null;
+            if (parseNode.GetChildNode("payment_schedule") is { } nullNodePaymentSchedule && nullNodePaymentSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentSchedule = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("user_token") is { } nullNodeUserToken && nullNodeUserToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserToken = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains loan application data to register.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanRegisterApplication? Application { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanRegisterApplication? Application { get => _explicitNullValueApplication; set { _explicitNullValueApplication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application"); else _explicitNullProperties?.Remove("application"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraLoanRegisterApplication? _explicitNullValueApplication = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanRegisterApplication Application { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanRegisterApplication Application { get => _explicitNullValueApplication; set { _explicitNullValueApplication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application"); else _explicitNullProperties?.Remove("application"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraLoanRegisterApplication _explicitNullValueApplication = default!;
 #endif
         /// <summary>The total amount of the approved loan.</summary>
-        public double? LoanAmount { get; set; }
+        public double? LoanAmount { get => _explicitNullValueLoanAmount; set { _explicitNullValueLoanAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_amount"); else _explicitNullProperties?.Remove("loan_amount"); } }
+        private double? _explicitNullValueLoanAmount = default!;
         /// <summary>A unique identifier for the loan.Personally identifiable information, such as an email address or phone number, should not be used in the `loan_id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LoanId { get; set; }
+        public string? LoanId { get => _explicitNullValueLoanId; set { _explicitNullValueLoanId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_id"); else _explicitNullProperties?.Remove("loan_id"); } }
+        private string? _explicitNullValueLoanId = default!;
 #nullable restore
 #else
-        public string LoanId { get; set; }
+        public string LoanId { get => _explicitNullValueLoanId; set { _explicitNullValueLoanId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_id"); else _explicitNullProperties?.Remove("loan_id"); } }
+        private string _explicitNullValueLoanId = default!;
 #endif
         /// <summary>The date the loan account was opened. The date should be in ISO 8601 format (YYYY-MM-DD).</summary>
-        public Date? OpenedDate { get; set; }
+        public Date? OpenedDate { get => _explicitNullValueOpenedDate; set { _explicitNullValueOpenedDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opened_date"); else _explicitNullProperties?.Remove("opened_date"); } }
+        private Date? _explicitNullValueOpenedDate = default!;
         /// <summary>Contains the status and date information of the loan when registering.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanOpenedStatus? OpenedWithStatus { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanOpenedStatus? OpenedWithStatus { get => _explicitNullValueOpenedWithStatus; set { _explicitNullValueOpenedWithStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opened_with_status"); else _explicitNullProperties?.Remove("opened_with_status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraLoanOpenedStatus? _explicitNullValueOpenedWithStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanOpenedStatus OpenedWithStatus { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanOpenedStatus OpenedWithStatus { get => _explicitNullValueOpenedWithStatus; set { _explicitNullValueOpenedWithStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opened_with_status"); else _explicitNullProperties?.Remove("opened_with_status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraLoanOpenedStatus _explicitNullValueOpenedWithStatus = default!;
 #endif
         /// <summary>The frequency of a loan&apos;s payment schedule.`BIWEEKLY` represents one payment every two weeks.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanPaymentSchedule? PaymentSchedule { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanPaymentSchedule? PaymentSchedule { get => _explicitNullValuePaymentSchedule; set { _explicitNullValuePaymentSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_schedule"); else _explicitNullProperties?.Remove("payment_schedule"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraLoanPaymentSchedule? _explicitNullValuePaymentSchedule = default!;
         /// <summary>The type of loan the user applied for.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanType? Type { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraLoanType? _explicitNullValueType = default!;
         /// <summary>The user token for the user associated with the loan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserToken { get; set; }
+        public string? UserToken { get => _explicitNullValueUserToken; set { _explicitNullValueUserToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_token"); else _explicitNullProperties?.Remove("user_token"); } }
+        private string? _explicitNullValueUserToken = default!;
 #nullable restore
 #else
-        public string UserToken { get; set; }
+        public string UserToken { get => _explicitNullValueUserToken; set { _explicitNullValueUserToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_token"); else _explicitNullProperties?.Remove("user_token"); } }
+        private string _explicitNullValueUserToken = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraLoanRegister"/> and sets the default values.
@@ -71,7 +98,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.CraLoanRegister CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.CraLoanRegister();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraLoanRegister(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -106,6 +133,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraLoanPaymentSchedule>("payment_schedule", PaymentSchedule);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraLoanType>("type", Type);
             writer.WriteStringValue("user_token", UserToken);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

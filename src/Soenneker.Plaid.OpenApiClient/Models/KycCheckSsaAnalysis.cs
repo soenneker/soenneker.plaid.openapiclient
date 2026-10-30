@@ -12,13 +12,40 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class KycCheckSsaAnalysis : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("date_of_birth_match") is { } nullNodeDateOfBirthMatch && nullNodeDateOfBirthMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOfBirthMatch = null;
+            if (parseNode.GetChildNode("is_deceased") is { } nullNodeIsDeceased && nullNodeIsDeceased.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDeceased = null;
+            if (parseNode.GetChildNode("match") is { } nullNodeMatch && nullNodeMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Match = null;
+            if (parseNode.GetChildNode("name_match") is { } nullNodeNameMatch && nullNodeNameMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NameMatch = null;
+            if (parseNode.GetChildNode("other_match") is { } nullNodeOtherMatch && nullNodeOtherMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OtherMatch = null;
+            if (parseNode.GetChildNode("ssn_match") is { } nullNodeSsnMatch && nullNodeSsnMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SsnMatch = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether the Social Security Administration reported the person as deceased. Null when the status is unavailable.</summary>
-        public bool? IsDeceased { get; set; }
         /// <summary>The Social Security Administration (SSA) match result for the person&apos;s name, date of birth, and Social Security number.`match` indicates that the provided information matches SSA records.`no_match` indicates that the provided information does not match SSA records.`no_data` indicates that no SSA match result is available.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaMatchStatus? Match { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysisDateOfBirthMatch? DateOfBirthMatch { get => _explicitNullValueDateOfBirthMatch; set { _explicitNullValueDateOfBirthMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_of_birth_match"); else _explicitNullProperties?.Remove("date_of_birth_match"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysisDateOfBirthMatch? _explicitNullValueDateOfBirthMatch = default!;
+        /// <summary>Whether the Social Security Administration reported the person as deceased. Null when the status is unavailable.</summary>
+        public bool? IsDeceased { get => _explicitNullValueIsDeceased; set { _explicitNullValueIsDeceased = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_deceased"); else _explicitNullProperties?.Remove("is_deceased"); } }
+        private bool? _explicitNullValueIsDeceased = default!;
+        /// <summary>The Social Security Administration (SSA) match result for the person&apos;s name, date of birth, and Social Security number.`match` indicates that the provided information matches SSA records.`no_match` indicates that the provided information does not match SSA records.`no_data` indicates that no SSA match result is available.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaMatchStatus? Match { get => _explicitNullValueMatch; set { _explicitNullValueMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match"); else _explicitNullProperties?.Remove("match"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaMatchStatus? _explicitNullValueMatch = default!;
+        /// <summary>The Social Security Administration (SSA) match result for the person&apos;s name, date of birth, and Social Security number.`match` indicates that the provided information matches SSA records.`no_match` indicates that the provided information does not match SSA records.`no_data` indicates that no SSA match result is available.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysisNameMatch? NameMatch { get => _explicitNullValueNameMatch; set { _explicitNullValueNameMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name_match"); else _explicitNullProperties?.Remove("name_match"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysisNameMatch? _explicitNullValueNameMatch = default!;
+        /// <summary>The Social Security Administration (SSA) match result for the person&apos;s name, date of birth, and Social Security number.`match` indicates that the provided information matches SSA records.`no_match` indicates that the provided information does not match SSA records.`no_data` indicates that no SSA match result is available.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysisOtherMatch? OtherMatch { get => _explicitNullValueOtherMatch; set { _explicitNullValueOtherMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other_match"); else _explicitNullProperties?.Remove("other_match"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysisOtherMatch? _explicitNullValueOtherMatch = default!;
+        /// <summary>The Social Security Administration (SSA) match result for the person&apos;s name, date of birth, and Social Security number.`match` indicates that the provided information matches SSA records.`no_match` indicates that the provided information does not match SSA records.`no_data` indicates that no SSA match result is available.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysisSsnMatch? SsnMatch { get => _explicitNullValueSsnMatch; set { _explicitNullValueSsnMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssn_match"); else _explicitNullProperties?.Remove("ssn_match"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysisSsnMatch? _explicitNullValueSsnMatch = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysis"/> and sets the default values.
         /// </summary>
@@ -34,7 +61,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysis CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysis();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysis(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,8 +73,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "date_of_birth_match", n => { DateOfBirthMatch = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysisDateOfBirthMatch>(); } },
                 { "is_deceased", n => { IsDeceased = n.GetBoolValue(); } },
                 { "match", n => { Match = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaMatchStatus>(); } },
+                { "name_match", n => { NameMatch = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysisNameMatch>(); } },
+                { "other_match", n => { OtherMatch = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysisOtherMatch>(); } },
+                { "ssn_match", n => { SsnMatch = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysisSsnMatch>(); } },
             };
         }
         /// <summary>
@@ -55,8 +88,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysisDateOfBirthMatch>("date_of_birth_match", DateOfBirthMatch);
             writer.WriteBoolValue("is_deceased", IsDeceased);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaMatchStatus>("match", Match);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysisNameMatch>("name_match", NameMatch);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysisOtherMatch>("other_match", OtherMatch);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysisSsnMatch>("ssn_match", SsnMatch);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

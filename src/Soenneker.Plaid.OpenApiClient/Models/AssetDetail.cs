@@ -8,90 +8,145 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// Details about an asset.
+    /// Details about an asset. In CRA reports, holdings-derived balances, `AssetRetirementIndicator`, and `AssetEmployerSponsoredIndicator` may be omitted when recent investment data was unavailable at report generation. The account&apos;s current and available balances remain included.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AssetDetail : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("AssetAccountIdentifier") is { } nullNodeAssetAccountIdentifier && nullNodeAssetAccountIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetAccountIdentifier = null;
+            if (parseNode.GetChildNode("AssetAsOfDate") is { } nullNodeAssetAsOfDate && nullNodeAssetAsOfDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetAsOfDate = null;
+            if (parseNode.GetChildNode("AssetAvailableBalanceAmount") is { } nullNodeAssetAvailableBalanceAmount && nullNodeAssetAvailableBalanceAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetAvailableBalanceAmount = null;
+            if (parseNode.GetChildNode("AssetAvailableCashBalanceAmount") is { } nullNodeAssetAvailableCashBalanceAmount && nullNodeAssetAvailableCashBalanceAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetAvailableCashBalanceAmount = null;
+            if (parseNode.GetChildNode("AssetBondsBalanceAmount") is { } nullNodeAssetBondsBalanceAmount && nullNodeAssetBondsBalanceAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetBondsBalanceAmount = null;
+            if (parseNode.GetChildNode("AssetCashBalanceAmount") is { } nullNodeAssetCashBalanceAmount && nullNodeAssetCashBalanceAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetCashBalanceAmount = null;
+            if (parseNode.GetChildNode("AssetCryptoBalanceAmount") is { } nullNodeAssetCryptoBalanceAmount && nullNodeAssetCryptoBalanceAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetCryptoBalanceAmount = null;
+            if (parseNode.GetChildNode("AssetCurrentBalanceAmount") is { } nullNodeAssetCurrentBalanceAmount && nullNodeAssetCurrentBalanceAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetCurrentBalanceAmount = null;
+            if (parseNode.GetChildNode("AssetDaysRequestedCount") is { } nullNodeAssetDaysRequestedCount && nullNodeAssetDaysRequestedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetDaysRequestedCount = null;
+            if (parseNode.GetChildNode("AssetDescription") is { } nullNodeAssetDescription && nullNodeAssetDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetDescription = null;
+            if (parseNode.GetChildNode("AssetEmployerSponsoredIndicator") is { } nullNodeAssetEmployerSponsoredIndicator && nullNodeAssetEmployerSponsoredIndicator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetEmployerSponsoredIndicator = null;
+            if (parseNode.GetChildNode("AssetHoldingBalanceAmount") is { } nullNodeAssetHoldingBalanceAmount && nullNodeAssetHoldingBalanceAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetHoldingBalanceAmount = null;
+            if (parseNode.GetChildNode("AssetHoldingBalanceNetMarginAmount") is { } nullNodeAssetHoldingBalanceNetMarginAmount && nullNodeAssetHoldingBalanceNetMarginAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetHoldingBalanceNetMarginAmount = null;
+            if (parseNode.GetChildNode("AssetMarginAmountBalance") is { } nullNodeAssetMarginAmountBalance && nullNodeAssetMarginAmountBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetMarginAmountBalance = null;
+            if (parseNode.GetChildNode("AssetOtherBalanceAmount") is { } nullNodeAssetOtherBalanceAmount && nullNodeAssetOtherBalanceAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetOtherBalanceAmount = null;
+            if (parseNode.GetChildNode("AssetOwnershipType") is { } nullNodeAssetOwnershipType && nullNodeAssetOwnershipType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetOwnershipType = null;
+            if (parseNode.GetChildNode("AssetRetirementIndicator") is { } nullNodeAssetRetirementIndicator && nullNodeAssetRetirementIndicator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetRetirementIndicator = null;
+            if (parseNode.GetChildNode("AssetStocksBalanceAmount") is { } nullNodeAssetStocksBalanceAmount && nullNodeAssetStocksBalanceAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetStocksBalanceAmount = null;
+            if (parseNode.GetChildNode("AssetType") is { } nullNodeAssetType && nullNodeAssetType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetType = null;
+            if (parseNode.GetChildNode("AssetTypeAdditionalDescription") is { } nullNodeAssetTypeAdditionalDescription && nullNodeAssetTypeAdditionalDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetTypeAdditionalDescription = null;
+            if (parseNode.GetChildNode("AssetUniqueIdentifier") is { } nullNodeAssetUniqueIdentifier && nullNodeAssetUniqueIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetUniqueIdentifier = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A unique alphanumeric string identifying an asset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetAccountIdentifier { get; set; }
+        public string? AssetAccountIdentifier { get => _explicitNullValueAssetAccountIdentifier; set { _explicitNullValueAssetAccountIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetAccountIdentifier"); else _explicitNullProperties?.Remove("AssetAccountIdentifier"); } }
+        private string? _explicitNullValueAssetAccountIdentifier = default!;
 #nullable restore
 #else
-        public string AssetAccountIdentifier { get; set; }
+        public string AssetAccountIdentifier { get => _explicitNullValueAssetAccountIdentifier; set { _explicitNullValueAssetAccountIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetAccountIdentifier"); else _explicitNullProperties?.Remove("AssetAccountIdentifier"); } }
+        private string _explicitNullValueAssetAccountIdentifier = default!;
 #endif
         /// <summary>Account Report As of Date / Create Date. Format YYYY-MM-DD</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetAsOfDate { get; set; }
+        public string? AssetAsOfDate { get => _explicitNullValueAssetAsOfDate; set { _explicitNullValueAssetAsOfDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetAsOfDate"); else _explicitNullProperties?.Remove("AssetAsOfDate"); } }
+        private string? _explicitNullValueAssetAsOfDate = default!;
 #nullable restore
 #else
-        public string AssetAsOfDate { get; set; }
+        public string AssetAsOfDate { get => _explicitNullValueAssetAsOfDate; set { _explicitNullValueAssetAsOfDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetAsOfDate"); else _explicitNullProperties?.Remove("AssetAsOfDate"); } }
+        private string _explicitNullValueAssetAsOfDate = default!;
 #endif
         /// <summary>Asset Account Available Balance.</summary>
-        public double? AssetAvailableBalanceAmount { get; set; }
+        public double? AssetAvailableBalanceAmount { get => _explicitNullValueAssetAvailableBalanceAmount; set { _explicitNullValueAssetAvailableBalanceAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetAvailableBalanceAmount"); else _explicitNullProperties?.Remove("AssetAvailableBalanceAmount"); } }
+        private double? _explicitNullValueAssetAvailableBalanceAmount = default!;
         /// <summary>amount available for cash withdrawal</summary>
-        public double? AssetAvailableCashBalanceAmount { get; set; }
+        public double? AssetAvailableCashBalanceAmount { get => _explicitNullValueAssetAvailableCashBalanceAmount; set { _explicitNullValueAssetAvailableCashBalanceAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetAvailableCashBalanceAmount"); else _explicitNullProperties?.Remove("AssetAvailableCashBalanceAmount"); } }
+        private double? _explicitNullValueAssetAvailableCashBalanceAmount = default!;
         /// <summary>Total market value of all bonds held (non-restricted, vested)</summary>
-        public double? AssetBondsBalanceAmount { get; set; }
+        public double? AssetBondsBalanceAmount { get => _explicitNullValueAssetBondsBalanceAmount; set { _explicitNullValueAssetBondsBalanceAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetBondsBalanceAmount"); else _explicitNullProperties?.Remove("AssetBondsBalanceAmount"); } }
+        private double? _explicitNullValueAssetBondsBalanceAmount = default!;
         /// <summary>cash balance of the account</summary>
-        public double? AssetCashBalanceAmount { get; set; }
+        public double? AssetCashBalanceAmount { get => _explicitNullValueAssetCashBalanceAmount; set { _explicitNullValueAssetCashBalanceAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetCashBalanceAmount"); else _explicitNullProperties?.Remove("AssetCashBalanceAmount"); } }
+        private double? _explicitNullValueAssetCashBalanceAmount = default!;
         /// <summary>Total balance of all cryptocurrency held (non-restricted, vested)</summary>
-        public double? AssetCryptoBalanceAmount { get; set; }
+        public double? AssetCryptoBalanceAmount { get => _explicitNullValueAssetCryptoBalanceAmount; set { _explicitNullValueAssetCryptoBalanceAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetCryptoBalanceAmount"); else _explicitNullProperties?.Remove("AssetCryptoBalanceAmount"); } }
+        private double? _explicitNullValueAssetCryptoBalanceAmount = default!;
         /// <summary>Asset Account Current Balance.</summary>
-        public double? AssetCurrentBalanceAmount { get; set; }
+        public double? AssetCurrentBalanceAmount { get => _explicitNullValueAssetCurrentBalanceAmount; set { _explicitNullValueAssetCurrentBalanceAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetCurrentBalanceAmount"); else _explicitNullProperties?.Remove("AssetCurrentBalanceAmount"); } }
+        private double? _explicitNullValueAssetCurrentBalanceAmount = default!;
         /// <summary>The number of days requested from the Financial Institution. Example: When looking for 3 months of data from the FI, pass in 90 days.</summary>
-        public int? AssetDaysRequestedCount { get; set; }
+        public int? AssetDaysRequestedCount { get => _explicitNullValueAssetDaysRequestedCount; set { _explicitNullValueAssetDaysRequestedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetDaysRequestedCount"); else _explicitNullProperties?.Remove("AssetDaysRequestedCount"); } }
+        private int? _explicitNullValueAssetDaysRequestedCount = default!;
         /// <summary>A text description that further defines the Asset. This could be used to describe the shares associated with the stocks, bonds or mutual funds, retirement funds or business owned that the borrower has disclosed (named) as an asset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetDescription { get; set; }
+        public string? AssetDescription { get => _explicitNullValueAssetDescription; set { _explicitNullValueAssetDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetDescription"); else _explicitNullProperties?.Remove("AssetDescription"); } }
+        private string? _explicitNullValueAssetDescription = default!;
 #nullable restore
 #else
-        public string AssetDescription { get; set; }
+        public string AssetDescription { get => _explicitNullValueAssetDescription; set { _explicitNullValueAssetDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetDescription"); else _explicitNullProperties?.Remove("AssetDescription"); } }
+        private string _explicitNullValueAssetDescription = default!;
 #endif
         /// <summary>Whether the account is employer sponsored retirement account or not (e.g., 401K, 403b, 457, thrift savings plan)</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AssetDetailAssetEmployerSponsoredIndicator? AssetEmployerSponsoredIndicator { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetDetailAssetEmployerSponsoredIndicator? AssetEmployerSponsoredIndicator { get => _explicitNullValueAssetEmployerSponsoredIndicator; set { _explicitNullValueAssetEmployerSponsoredIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetEmployerSponsoredIndicator"); else _explicitNullProperties?.Remove("AssetEmployerSponsoredIndicator"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AssetDetailAssetEmployerSponsoredIndicator? _explicitNullValueAssetEmployerSponsoredIndicator = default!;
         /// <summary>Total market value of holdings (non-restricted, vested, not crypto, not other, not cash) Note: Any employer stock plan balance must be excluded from the total account balance (identification is &apos;stock plan&apos;)</summary>
-        public double? AssetHoldingBalanceAmount { get; set; }
+        public double? AssetHoldingBalanceAmount { get => _explicitNullValueAssetHoldingBalanceAmount; set { _explicitNullValueAssetHoldingBalanceAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetHoldingBalanceAmount"); else _explicitNullProperties?.Remove("AssetHoldingBalanceAmount"); } }
+        private double? _explicitNullValueAssetHoldingBalanceAmount = default!;
         /// <summary>HoldingsBalance net MarginAmount</summary>
-        public double? AssetHoldingBalanceNetMarginAmount { get; set; }
+        public double? AssetHoldingBalanceNetMarginAmount { get => _explicitNullValueAssetHoldingBalanceNetMarginAmount; set { _explicitNullValueAssetHoldingBalanceNetMarginAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetHoldingBalanceNetMarginAmount"); else _explicitNullProperties?.Remove("AssetHoldingBalanceNetMarginAmount"); } }
+        private double? _explicitNullValueAssetHoldingBalanceNetMarginAmount = default!;
         /// <summary>loan balance (amount owed by account owner)</summary>
-        public double? AssetMarginAmountBalance { get; set; }
+        public double? AssetMarginAmountBalance { get => _explicitNullValueAssetMarginAmountBalance; set { _explicitNullValueAssetMarginAmountBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetMarginAmountBalance"); else _explicitNullProperties?.Remove("AssetMarginAmountBalance"); } }
+        private double? _explicitNullValueAssetMarginAmountBalance = default!;
         /// <summary>Total balance of all other holding types (non-restricted, vested)</summary>
-        public double? AssetOtherBalanceAmount { get; set; }
+        public double? AssetOtherBalanceAmount { get => _explicitNullValueAssetOtherBalanceAmount; set { _explicitNullValueAssetOtherBalanceAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetOtherBalanceAmount"); else _explicitNullProperties?.Remove("AssetOtherBalanceAmount"); } }
+        private double? _explicitNullValueAssetOtherBalanceAmount = default!;
         /// <summary>Ownership type of the asset account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetOwnershipType { get; set; }
+        public string? AssetOwnershipType { get => _explicitNullValueAssetOwnershipType; set { _explicitNullValueAssetOwnershipType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetOwnershipType"); else _explicitNullProperties?.Remove("AssetOwnershipType"); } }
+        private string? _explicitNullValueAssetOwnershipType = default!;
 #nullable restore
 #else
-        public string AssetOwnershipType { get; set; }
+        public string AssetOwnershipType { get => _explicitNullValueAssetOwnershipType; set { _explicitNullValueAssetOwnershipType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetOwnershipType"); else _explicitNullProperties?.Remove("AssetOwnershipType"); } }
+        private string _explicitNullValueAssetOwnershipType = default!;
 #endif
         /// <summary>Whether or not the account is a retirement account (e.g., 401K, 403b, 457, thrift savings plans, traditional and Roth, IRAs, SEP-IRA, SIMPLE-IRA, KEOGH, state retirement savings plans, other independent and IRS-qualified employer retirement plans)</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AssetDetailAssetRetirementIndicator? AssetRetirementIndicator { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetDetailAssetRetirementIndicator? AssetRetirementIndicator { get => _explicitNullValueAssetRetirementIndicator; set { _explicitNullValueAssetRetirementIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetRetirementIndicator"); else _explicitNullProperties?.Remove("AssetRetirementIndicator"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AssetDetailAssetRetirementIndicator? _explicitNullValueAssetRetirementIndicator = default!;
         /// <summary>Total market value of all stocks held (non-restricted, vested, not employer sponsored stock plan)</summary>
-        public double? AssetStocksBalanceAmount { get; set; }
+        public double? AssetStocksBalanceAmount { get => _explicitNullValueAssetStocksBalanceAmount; set { _explicitNullValueAssetStocksBalanceAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetStocksBalanceAmount"); else _explicitNullProperties?.Remove("AssetStocksBalanceAmount"); } }
+        private double? _explicitNullValueAssetStocksBalanceAmount = default!;
         /// <summary>A value from a MISMO prescribed list that specifies financial assets in a mortgage loan transaction. Assets may be either liquid or fixed and are associated with a corresponding asset amount.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AssetType? AssetType { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetType? AssetType { get => _explicitNullValueAssetType; set { _explicitNullValueAssetType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetType"); else _explicitNullProperties?.Remove("AssetType"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AssetType? _explicitNullValueAssetType = default!;
         /// <summary>Additional Asset Description. Some examples are Investment Tax-Deferred, Loan, 401K, 403B, Checking, Money Market, Credit Card, ROTH, 529, Biller, ROLLOVER, CD, Savings, Investment Taxable, IRA, Mortgage, Line Of Credit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetTypeAdditionalDescription { get; set; }
+        public string? AssetTypeAdditionalDescription { get => _explicitNullValueAssetTypeAdditionalDescription; set { _explicitNullValueAssetTypeAdditionalDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetTypeAdditionalDescription"); else _explicitNullProperties?.Remove("AssetTypeAdditionalDescription"); } }
+        private string? _explicitNullValueAssetTypeAdditionalDescription = default!;
 #nullable restore
 #else
-        public string AssetTypeAdditionalDescription { get; set; }
+        public string AssetTypeAdditionalDescription { get => _explicitNullValueAssetTypeAdditionalDescription; set { _explicitNullValueAssetTypeAdditionalDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetTypeAdditionalDescription"); else _explicitNullProperties?.Remove("AssetTypeAdditionalDescription"); } }
+        private string _explicitNullValueAssetTypeAdditionalDescription = default!;
 #endif
         /// <summary>A vendor created unique Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetUniqueIdentifier { get; set; }
+        public string? AssetUniqueIdentifier { get => _explicitNullValueAssetUniqueIdentifier; set { _explicitNullValueAssetUniqueIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetUniqueIdentifier"); else _explicitNullProperties?.Remove("AssetUniqueIdentifier"); } }
+        private string? _explicitNullValueAssetUniqueIdentifier = default!;
 #nullable restore
 #else
-        public string AssetUniqueIdentifier { get; set; }
+        public string AssetUniqueIdentifier { get => _explicitNullValueAssetUniqueIdentifier; set { _explicitNullValueAssetUniqueIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetUniqueIdentifier"); else _explicitNullProperties?.Remove("AssetUniqueIdentifier"); } }
+        private string _explicitNullValueAssetUniqueIdentifier = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.AssetDetail"/> and sets the default values.
@@ -108,7 +163,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.AssetDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.AssetDetail();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.AssetDetail(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -169,6 +224,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetType>("AssetType", AssetType);
             writer.WriteStringValue("AssetTypeAdditionalDescription", AssetTypeAdditionalDescription);
             writer.WriteStringValue("AssetUniqueIdentifier", AssetUniqueIdentifier);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

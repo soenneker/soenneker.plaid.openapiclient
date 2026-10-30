@@ -12,49 +12,76 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EntityWatchlistProgram : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("audit_trail") is { } nullNodeAuditTrail && nullNodeAuditTrail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuditTrail = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("is_archived") is { } nullNodeIsArchived && nullNodeIsArchived.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsArchived = null;
+            if (parseNode.GetChildNode("is_rescanning_enabled") is { } nullNodeIsRescanningEnabled && nullNodeIsRescanningEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsRescanningEnabled = null;
+            if (parseNode.GetChildNode("lists_enabled") is { } nullNodeListsEnabled && nullNodeListsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ListsEnabled = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("name_sensitivity") is { } nullNodeNameSensitivity && nullNodeNameSensitivity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NameSensitivity = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Information about the last change made to the parent object specifying what caused the change as well as when it occurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningAuditTrail? AuditTrail { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningAuditTrail? AuditTrail { get => _explicitNullValueAuditTrail; set { _explicitNullValueAuditTrail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audit_trail"); else _explicitNullProperties?.Remove("audit_trail"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningAuditTrail? _explicitNullValueAuditTrail = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningAuditTrail AuditTrail { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningAuditTrail AuditTrail { get => _explicitNullValueAuditTrail; set { _explicitNullValueAuditTrail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audit_trail"); else _explicitNullProperties?.Remove("audit_trail"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningAuditTrail _explicitNullValueAuditTrail = default!;
 #endif
         /// <summary>An ISO8601 formatted timestamp.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>ID of the associated entity program.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Archived programs are read-only and cannot screen new customers nor participate in ongoing monitoring.</summary>
-        public bool? IsArchived { get; set; }
+        public bool? IsArchived { get => _explicitNullValueIsArchived; set { _explicitNullValueIsArchived = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_archived"); else _explicitNullProperties?.Remove("is_archived"); } }
+        private bool? _explicitNullValueIsArchived = default!;
         /// <summary>Indicator specifying whether the program is enabled and will perform daily rescans.</summary>
-        public bool? IsRescanningEnabled { get; set; }
+        public bool? IsRescanningEnabled { get => _explicitNullValueIsRescanningEnabled; set { _explicitNullValueIsRescanningEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_rescanning_enabled"); else _explicitNullProperties?.Remove("is_rescanning_enabled"); } }
+        private bool? _explicitNullValueIsRescanningEnabled = default!;
         /// <summary>Watchlists enabled for the associated program</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.EntityWatchlistCode?>? ListsEnabled { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.EntityWatchlistCode?>? ListsEnabled { get => _explicitNullValueListsEnabled; set { _explicitNullValueListsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lists_enabled"); else _explicitNullProperties?.Remove("lists_enabled"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.EntityWatchlistCode?>? _explicitNullValueListsEnabled = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.EntityWatchlistCode?> ListsEnabled { get; set; }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.EntityWatchlistCode?> ListsEnabled { get => _explicitNullValueListsEnabled; set { _explicitNullValueListsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lists_enabled"); else _explicitNullProperties?.Remove("lists_enabled"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.EntityWatchlistCode?> _explicitNullValueListsEnabled = default!;
 #endif
         /// <summary>A name for the entity program to define its purpose. For example, &quot;High Risk Organizations&quot; or &quot;Applicants&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The valid name matching sensitivity configurations for a screening program. Note that while certain matching techniques may be more prevalent on less strict settings, all matching algorithms are enabled for every sensitivity.`coarse` - See more potential matches. This sensitivity will see more broad phonetic matches across alphabets that make missing a potential hit very unlikely. This setting is noisier and will require more manual review.`balanced` - A good default for most companies. This sensitivity is balanced to show high quality hits with reduced noise.`strict` - Aggressive false positive reduction. This sensitivity will require names to be more similar than `coarse` and `balanced` settings, relying less on phonetics, while still accounting for character transpositions, missing tokens, and other common permutations.`exact` - Matches must be nearly exact. This sensitivity will only show hits with exact or nearly exact name matches with only basic correction such as extraneous symbols and capitalization. This setting is generally not recommended unless you have a very specific use case.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProgramNameSensitivity? NameSensitivity { get; set; }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProgramNameSensitivity? NameSensitivity { get => _explicitNullValueNameSensitivity; set { _explicitNullValueNameSensitivity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name_sensitivity"); else _explicitNullProperties?.Remove("name_sensitivity"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ProgramNameSensitivity? _explicitNullValueNameSensitivity = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.EntityWatchlistProgram"/> and sets the default values.
         /// </summary>
@@ -70,7 +97,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.EntityWatchlistProgram CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Plaid.OpenApiClient.Models.EntityWatchlistProgram();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.EntityWatchlistProgram(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -105,6 +132,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.EntityWatchlistCode>("lists_enabled", ListsEnabled);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ProgramNameSensitivity>("name_sensitivity", NameSensitivity);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

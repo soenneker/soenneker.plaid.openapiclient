@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bacs") is { } nullNodeBacs && nullNodeBacs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bacs = null;
-            if (parseNode.GetChildNode("international") is { } nullNodeInternational && nullNodeInternational.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) International = null;
+            if (parseNode.GetChildNode("bacs") is null) { _explicitNullValueBacs = default!; _explicitNullProperties?.Remove("bacs"); }
+            else if (parseNode.GetChildNode("bacs") is { } nullNodeBacs && nullNodeBacs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bacs = null;
+            if (parseNode.GetChildNode("international") is null) { _explicitNullValueInternational = default!; _explicitNullProperties?.Remove("international"); }
+            else if (parseNode.GetChildNode("international") is { } nullNodeInternational && nullNodeInternational.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) International = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The account number and sort code of the counterparty&apos;s account. The account number must be exactly 8 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyBacs? Bacs { get => _explicitNullValueBacs; set { _explicitNullValueBacs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bacs"); else _explicitNullProperties?.Remove("bacs"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyBacs? Bacs { get => _explicitNullValueBacs; set { _explicitNullValueBacs = value; AdditionalData?.Remove("bacs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bacs"); else _explicitNullProperties?.Remove("bacs"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyBacs? _explicitNullValueBacs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyBacs Bacs { get => _explicitNullValueBacs; set { _explicitNullValueBacs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bacs"); else _explicitNullProperties?.Remove("bacs"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyBacs Bacs { get => _explicitNullValueBacs; set { _explicitNullValueBacs = value; AdditionalData?.Remove("bacs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bacs"); else _explicitNullProperties?.Remove("bacs"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyBacs _explicitNullValueBacs = default!;
 #endif
         /// <summary>International Bank Account Number for a Wallet Transaction</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyInternational? International { get => _explicitNullValueInternational; set { _explicitNullValueInternational = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("international"); else _explicitNullProperties?.Remove("international"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyInternational? International { get => _explicitNullValueInternational; set { _explicitNullValueInternational = value; AdditionalData?.Remove("international"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("international"); else _explicitNullProperties?.Remove("international"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyInternational? _explicitNullValueInternational = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyInternational International { get => _explicitNullValueInternational; set { _explicitNullValueInternational = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("international"); else _explicitNullProperties?.Remove("international"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyInternational International { get => _explicitNullValueInternational; set { _explicitNullValueInternational = value; AdditionalData?.Remove("international"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("international"); else _explicitNullProperties?.Remove("international"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyInternational _explicitNullValueInternational = default!;
 #endif
         /// <summary>

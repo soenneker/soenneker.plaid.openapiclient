@@ -18,9 +18,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("development") is { } nullNodeDevelopment && nullNodeDevelopment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Development = null;
-            if (parseNode.GetChildNode("production") is { } nullNodeProduction && nullNodeProduction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Production = null;
-            if (parseNode.GetChildNode("sandbox") is { } nullNodeSandbox && nullNodeSandbox.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sandbox = null;
+            if (parseNode.GetChildNode("development") is null) { _explicitNullValueDevelopment = default!; _explicitNullProperties?.Remove("development"); }
+            else if (parseNode.GetChildNode("development") is { } nullNodeDevelopment && nullNodeDevelopment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Development = null;
+            if (parseNode.GetChildNode("production") is null) { _explicitNullValueProduction = default!; _explicitNullProperties?.Remove("production"); }
+            else if (parseNode.GetChildNode("production") is { } nullNodeProduction && nullNodeProduction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Production = null;
+            if (parseNode.GetChildNode("sandbox") is null) { _explicitNullValueSandbox = default!; _explicitNullProperties?.Remove("sandbox"); }
+            else if (parseNode.GetChildNode("sandbox") is { } nullNodeSandbox && nullNodeSandbox.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sandbox = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,31 +32,31 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Development { get => _explicitNullValueDevelopment; set { _explicitNullValueDevelopment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("development"); else _explicitNullProperties?.Remove("development"); } }
+        public string? Development { get => _explicitNullValueDevelopment; set { _explicitNullValueDevelopment = value; AdditionalData?.Remove("development"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("development"); else _explicitNullProperties?.Remove("development"); } }
         private string? _explicitNullValueDevelopment = default!;
 #nullable restore
 #else
-        public string Development { get => _explicitNullValueDevelopment; set { _explicitNullValueDevelopment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("development"); else _explicitNullProperties?.Remove("development"); } }
+        public string Development { get => _explicitNullValueDevelopment; set { _explicitNullValueDevelopment = value; AdditionalData?.Remove("development"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("development"); else _explicitNullProperties?.Remove("development"); } }
         private string _explicitNullValueDevelopment = default!;
 #endif
         /// <summary>The end customer&apos;s secret key for the Production environment. The end customer will be provided with a limited number of credits to test in the Production environment before full enablement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Production { get => _explicitNullValueProduction; set { _explicitNullValueProduction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("production"); else _explicitNullProperties?.Remove("production"); } }
+        public string? Production { get => _explicitNullValueProduction; set { _explicitNullValueProduction = value; AdditionalData?.Remove("production"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("production"); else _explicitNullProperties?.Remove("production"); } }
         private string? _explicitNullValueProduction = default!;
 #nullable restore
 #else
-        public string Production { get => _explicitNullValueProduction; set { _explicitNullValueProduction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("production"); else _explicitNullProperties?.Remove("production"); } }
+        public string Production { get => _explicitNullValueProduction; set { _explicitNullValueProduction = value; AdditionalData?.Remove("production"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("production"); else _explicitNullProperties?.Remove("production"); } }
         private string _explicitNullValueProduction = default!;
 #endif
         /// <summary>The end customer&apos;s secret key for the Sandbox environment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sandbox { get => _explicitNullValueSandbox; set { _explicitNullValueSandbox = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandbox"); else _explicitNullProperties?.Remove("sandbox"); } }
+        public string? Sandbox { get => _explicitNullValueSandbox; set { _explicitNullValueSandbox = value; AdditionalData?.Remove("sandbox"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandbox"); else _explicitNullProperties?.Remove("sandbox"); } }
         private string? _explicitNullValueSandbox = default!;
 #nullable restore
 #else
-        public string Sandbox { get => _explicitNullValueSandbox; set { _explicitNullValueSandbox = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandbox"); else _explicitNullProperties?.Remove("sandbox"); } }
+        public string Sandbox { get => _explicitNullValueSandbox; set { _explicitNullValueSandbox = value; AdditionalData?.Remove("sandbox"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandbox"); else _explicitNullProperties?.Remove("sandbox"); } }
         private string _explicitNullValueSandbox = default!;
 #endif
         /// <summary>

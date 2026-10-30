@@ -18,18 +18,20 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("risk_tier") is { } nullNodeRiskTier && nullNodeRiskTier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskTier = null;
-            if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
+            if (parseNode.GetChildNode("risk_tier") is null) { _explicitNullValueRiskTier = default!; _explicitNullProperties?.Remove("risk_tier"); }
+            else if (parseNode.GetChildNode("risk_tier") is { } nullNodeRiskTier && nullNodeRiskTier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskTier = null;
+            if (parseNode.GetChildNode("score") is null) { _explicitNullValueScore = default!; _explicitNullProperties?.Remove("score"); }
+            else if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>DEPRECATED. Use Signal Rules instead to transform the `score` into a useful action.A tier corresponding to the projected likelihood that the transaction, if initiated, will be subject to a return.In the `customer_initiated_return_risk` object, there are five risk tiers corresponding to the scores:  1: Predicted customer-initiated return incidence rate between 0.00% - 0.02%  2: Predicted customer-initiated return incidence rate between 0.02% - 0.05%  3: Predicted customer-initiated return incidence rate between 0.05% - 0.1%  4: Predicted customer-initiated return incidence rate between 0.1% - 0.5%  5: Predicted customer-initiated return incidence rate greater than 0.5%</summary>
         [Obsolete("")]
-        public int? RiskTier { get => _explicitNullValueRiskTier; set { _explicitNullValueRiskTier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_tier"); else _explicitNullProperties?.Remove("risk_tier"); } }
+        public int? RiskTier { get => _explicitNullValueRiskTier; set { _explicitNullValueRiskTier = value; AdditionalData?.Remove("risk_tier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_tier"); else _explicitNullProperties?.Remove("risk_tier"); } }
         private int? _explicitNullValueRiskTier = default!;
         /// <summary>A score from 1-99 that indicates the transaction return risk: a higher risk score suggests a higher return likelihood.</summary>
-        public int? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
+        public int? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; AdditionalData?.Remove("score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
         private int? _explicitNullValueScore = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CustomerInitiatedReturnRisk"/> and sets the default values.

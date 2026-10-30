@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("guaranteed_amount") is { } nullNodeGuaranteedAmount && nullNodeGuaranteedAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuaranteedAmount = null;
-            if (parseNode.GetChildNode("schedule") is { } nullNodeSchedule && nullNodeSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schedule = null;
+            if (parseNode.GetChildNode("guaranteed_amount") is null) { _explicitNullValueGuaranteedAmount = default!; _explicitNullProperties?.Remove("guaranteed_amount"); }
+            else if (parseNode.GetChildNode("guaranteed_amount") is { } nullNodeGuaranteedAmount && nullNodeGuaranteedAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuaranteedAmount = null;
+            if (parseNode.GetChildNode("schedule") is null) { _explicitNullValueSchedule = default!; _explicitNullProperties?.Remove("schedule"); }
+            else if (parseNode.GetChildNode("schedule") is { } nullNodeSchedule && nullNodeSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schedule = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The amount currently covered by Plaid&apos;s guarantee (decimal string with two digits of precision e.g. &quot;10.00&quot;). This may change over time as scheduled tranches reach their observation window expiration and become guaranteed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GuaranteedAmount { get => _explicitNullValueGuaranteedAmount; set { _explicitNullValueGuaranteedAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guaranteed_amount"); else _explicitNullProperties?.Remove("guaranteed_amount"); } }
+        public string? GuaranteedAmount { get => _explicitNullValueGuaranteedAmount; set { _explicitNullValueGuaranteedAmount = value; AdditionalData?.Remove("guaranteed_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guaranteed_amount"); else _explicitNullProperties?.Remove("guaranteed_amount"); } }
         private string? _explicitNullValueGuaranteedAmount = default!;
 #nullable restore
 #else
-        public string GuaranteedAmount { get => _explicitNullValueGuaranteedAmount; set { _explicitNullValueGuaranteedAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guaranteed_amount"); else _explicitNullProperties?.Remove("guaranteed_amount"); } }
+        public string GuaranteedAmount { get => _explicitNullValueGuaranteedAmount; set { _explicitNullValueGuaranteedAmount = value; AdditionalData?.Remove("guaranteed_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guaranteed_amount"); else _explicitNullProperties?.Remove("guaranteed_amount"); } }
         private string _explicitNullValueGuaranteedAmount = default!;
 #endif
         /// <summary>The adaptive guarantee settlement schedule for this transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeScheduleItem>? Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeScheduleItem>? Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; AdditionalData?.Remove("schedule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeScheduleItem>? _explicitNullValueSchedule = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeScheduleItem> Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeScheduleItem> Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; AdditionalData?.Remove("schedule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeScheduleItem> _explicitNullValueSchedule = default!;
 #endif
         /// <summary>

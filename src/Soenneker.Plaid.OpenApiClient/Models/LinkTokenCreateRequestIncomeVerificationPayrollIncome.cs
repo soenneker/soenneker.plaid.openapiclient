@@ -18,10 +18,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("flow_types") is { } nullNodeFlowTypes && nullNodeFlowTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlowTypes = null;
-            if (parseNode.GetChildNode("is_update_mode") is { } nullNodeIsUpdateMode && nullNodeIsUpdateMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsUpdateMode = null;
-            if (parseNode.GetChildNode("item_id_to_update") is { } nullNodeItemIdToUpdate && nullNodeItemIdToUpdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemIdToUpdate = null;
-            if (parseNode.GetChildNode("parsing_config") is { } nullNodeParsingConfig && nullNodeParsingConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParsingConfig = null;
+            if (parseNode.GetChildNode("flow_types") is null) { _explicitNullValueFlowTypes = default!; _explicitNullProperties?.Remove("flow_types"); }
+            else if (parseNode.GetChildNode("flow_types") is { } nullNodeFlowTypes && nullNodeFlowTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlowTypes = null;
+            if (parseNode.GetChildNode("is_update_mode") is null) { _explicitNullValueIsUpdateMode = default!; _explicitNullProperties?.Remove("is_update_mode"); }
+            else if (parseNode.GetChildNode("is_update_mode") is { } nullNodeIsUpdateMode && nullNodeIsUpdateMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsUpdateMode = null;
+            if (parseNode.GetChildNode("item_id_to_update") is null) { _explicitNullValueItemIdToUpdate = default!; _explicitNullProperties?.Remove("item_id_to_update"); }
+            else if (parseNode.GetChildNode("item_id_to_update") is { } nullNodeItemIdToUpdate && nullNodeItemIdToUpdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemIdToUpdate = null;
+            if (parseNode.GetChildNode("parsing_config") is null) { _explicitNullValueParsingConfig = default!; _explicitNullProperties?.Remove("parsing_config"); }
+            else if (parseNode.GetChildNode("parsing_config") is { } nullNodeParsingConfig && nullNodeParsingConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParsingConfig = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,34 +33,34 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The types of payroll income verification to enable for the Link session. If none are specified, then users will see both document and digital payroll income.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationPayrollFlowType?>? FlowTypes { get => _explicitNullValueFlowTypes; set { _explicitNullValueFlowTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flow_types"); else _explicitNullProperties?.Remove("flow_types"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationPayrollFlowType?>? FlowTypes { get => _explicitNullValueFlowTypes; set { _explicitNullValueFlowTypes = value; AdditionalData?.Remove("flow_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flow_types"); else _explicitNullProperties?.Remove("flow_types"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationPayrollFlowType?>? _explicitNullValueFlowTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationPayrollFlowType?> FlowTypes { get => _explicitNullValueFlowTypes; set { _explicitNullValueFlowTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flow_types"); else _explicitNullProperties?.Remove("flow_types"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationPayrollFlowType?> FlowTypes { get => _explicitNullValueFlowTypes; set { _explicitNullValueFlowTypes = value; AdditionalData?.Remove("flow_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flow_types"); else _explicitNullProperties?.Remove("flow_types"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationPayrollFlowType?> _explicitNullValueFlowTypes = default!;
 #endif
         /// <summary>An identifier to indicate whether the income verification Link token will be used for update mode. This field is only relevant for participants in the Payroll Income Refresh beta.</summary>
-        public bool? IsUpdateMode { get => _explicitNullValueIsUpdateMode; set { _explicitNullValueIsUpdateMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_update_mode"); else _explicitNullProperties?.Remove("is_update_mode"); } }
+        public bool? IsUpdateMode { get => _explicitNullValueIsUpdateMode; set { _explicitNullValueIsUpdateMode = value; AdditionalData?.Remove("is_update_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_update_mode"); else _explicitNullProperties?.Remove("is_update_mode"); } }
         private bool? _explicitNullValueIsUpdateMode = default!;
         /// <summary>Uniquely identify a payroll income Item to update with.  This field is only relevant for participants in the Payroll Income Refresh beta.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemIdToUpdate { get => _explicitNullValueItemIdToUpdate; set { _explicitNullValueItemIdToUpdate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id_to_update"); else _explicitNullProperties?.Remove("item_id_to_update"); } }
+        public string? ItemIdToUpdate { get => _explicitNullValueItemIdToUpdate; set { _explicitNullValueItemIdToUpdate = value; AdditionalData?.Remove("item_id_to_update"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id_to_update"); else _explicitNullProperties?.Remove("item_id_to_update"); } }
         private string? _explicitNullValueItemIdToUpdate = default!;
 #nullable restore
 #else
-        public string ItemIdToUpdate { get => _explicitNullValueItemIdToUpdate; set { _explicitNullValueItemIdToUpdate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id_to_update"); else _explicitNullProperties?.Remove("item_id_to_update"); } }
+        public string ItemIdToUpdate { get => _explicitNullValueItemIdToUpdate; set { _explicitNullValueItemIdToUpdate = value; AdditionalData?.Remove("item_id_to_update"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id_to_update"); else _explicitNullProperties?.Remove("item_id_to_update"); } }
         private string _explicitNullValueItemIdToUpdate = default!;
 #endif
         /// <summary>The types of analysis to enable for document uploads. If this field is not provided, then docs will undergo OCR parsing only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationDocParsingConfig?>? ParsingConfig { get => _explicitNullValueParsingConfig; set { _explicitNullValueParsingConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parsing_config"); else _explicitNullProperties?.Remove("parsing_config"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationDocParsingConfig?>? ParsingConfig { get => _explicitNullValueParsingConfig; set { _explicitNullValueParsingConfig = value; AdditionalData?.Remove("parsing_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parsing_config"); else _explicitNullProperties?.Remove("parsing_config"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationDocParsingConfig?>? _explicitNullValueParsingConfig = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationDocParsingConfig?> ParsingConfig { get => _explicitNullValueParsingConfig; set { _explicitNullValueParsingConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parsing_config"); else _explicitNullProperties?.Remove("parsing_config"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationDocParsingConfig?> ParsingConfig { get => _explicitNullValueParsingConfig; set { _explicitNullValueParsingConfig = value; AdditionalData?.Remove("parsing_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parsing_config"); else _explicitNullProperties?.Remove("parsing_config"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationDocParsingConfig?> _explicitNullValueParsingConfig = default!;
 #endif
         /// <summary>

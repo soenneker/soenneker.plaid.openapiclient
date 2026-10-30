@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("total_inflow_amount") is { } nullNodeTotalInflowAmount && nullNodeTotalInflowAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalInflowAmount = null;
-            if (parseNode.GetChildNode("total_outflow_amount") is { } nullNodeTotalOutflowAmount && nullNodeTotalOutflowAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalOutflowAmount = null;
+            if (parseNode.GetChildNode("total_inflow_amount") is null) { _explicitNullValueTotalInflowAmount = default!; _explicitNullProperties?.Remove("total_inflow_amount"); }
+            else if (parseNode.GetChildNode("total_inflow_amount") is { } nullNodeTotalInflowAmount && nullNodeTotalInflowAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalInflowAmount = null;
+            if (parseNode.GetChildNode("total_outflow_amount") is null) { _explicitNullValueTotalOutflowAmount = default!; _explicitNullProperties?.Remove("total_outflow_amount"); }
+            else if (parseNode.GetChildNode("total_outflow_amount") is { } nullNodeTotalOutflowAmount && nullNodeTotalOutflowAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalOutflowAmount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Total amount of money into the report&apos;s accounts in the time period of the report. This field only takes into account USD transactions from the accounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalReportInflowAmount? TotalInflowAmount { get => _explicitNullValueTotalInflowAmount; set { _explicitNullValueTotalInflowAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_inflow_amount"); else _explicitNullProperties?.Remove("total_inflow_amount"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalReportInflowAmount? TotalInflowAmount { get => _explicitNullValueTotalInflowAmount; set { _explicitNullValueTotalInflowAmount = value; AdditionalData?.Remove("total_inflow_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_inflow_amount"); else _explicitNullProperties?.Remove("total_inflow_amount"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TotalReportInflowAmount? _explicitNullValueTotalInflowAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalReportInflowAmount TotalInflowAmount { get => _explicitNullValueTotalInflowAmount; set { _explicitNullValueTotalInflowAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_inflow_amount"); else _explicitNullProperties?.Remove("total_inflow_amount"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalReportInflowAmount TotalInflowAmount { get => _explicitNullValueTotalInflowAmount; set { _explicitNullValueTotalInflowAmount = value; AdditionalData?.Remove("total_inflow_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_inflow_amount"); else _explicitNullProperties?.Remove("total_inflow_amount"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TotalReportInflowAmount _explicitNullValueTotalInflowAmount = default!;
 #endif
         /// <summary>Total amount of money out of the report&apos;s accounts in the time period of the report. This field only takes into account USD transactions from the accounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalReportOutflowAmount? TotalOutflowAmount { get => _explicitNullValueTotalOutflowAmount; set { _explicitNullValueTotalOutflowAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_outflow_amount"); else _explicitNullProperties?.Remove("total_outflow_amount"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalReportOutflowAmount? TotalOutflowAmount { get => _explicitNullValueTotalOutflowAmount; set { _explicitNullValueTotalOutflowAmount = value; AdditionalData?.Remove("total_outflow_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_outflow_amount"); else _explicitNullProperties?.Remove("total_outflow_amount"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TotalReportOutflowAmount? _explicitNullValueTotalOutflowAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TotalReportOutflowAmount TotalOutflowAmount { get => _explicitNullValueTotalOutflowAmount; set { _explicitNullValueTotalOutflowAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_outflow_amount"); else _explicitNullProperties?.Remove("total_outflow_amount"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalReportOutflowAmount TotalOutflowAmount { get => _explicitNullValueTotalOutflowAmount; set { _explicitNullValueTotalOutflowAmount = value; AdditionalData?.Remove("total_outflow_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_outflow_amount"); else _explicitNullProperties?.Remove("total_outflow_amount"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TotalReportOutflowAmount _explicitNullValueTotalOutflowAmount = default!;
 #endif
         /// <summary>

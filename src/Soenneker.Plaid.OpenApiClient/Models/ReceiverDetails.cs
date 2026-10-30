@@ -18,7 +18,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("available_balance") is { } nullNodeAvailableBalance && nullNodeAvailableBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableBalance = null;
+            if (parseNode.GetChildNode("available_balance") is null) { _explicitNullValueAvailableBalance = default!; _explicitNullProperties?.Remove("available_balance"); }
+            else if (parseNode.GetChildNode("available_balance") is { } nullNodeAvailableBalance && nullNodeAvailableBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableBalance = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The available balance associated with the receiver event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AvailableBalance { get => _explicitNullValueAvailableBalance; set { _explicitNullValueAvailableBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_balance"); else _explicitNullProperties?.Remove("available_balance"); } }
+        public string? AvailableBalance { get => _explicitNullValueAvailableBalance; set { _explicitNullValueAvailableBalance = value; AdditionalData?.Remove("available_balance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_balance"); else _explicitNullProperties?.Remove("available_balance"); } }
         private string? _explicitNullValueAvailableBalance = default!;
 #nullable restore
 #else
-        public string AvailableBalance { get => _explicitNullValueAvailableBalance; set { _explicitNullValueAvailableBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_balance"); else _explicitNullProperties?.Remove("available_balance"); } }
+        public string AvailableBalance { get => _explicitNullValueAvailableBalance; set { _explicitNullValueAvailableBalance = value; AdditionalData?.Remove("available_balance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_balance"); else _explicitNullProperties?.Remove("available_balance"); } }
         private string _explicitNullValueAvailableBalance = default!;
 #endif
         /// <summary>

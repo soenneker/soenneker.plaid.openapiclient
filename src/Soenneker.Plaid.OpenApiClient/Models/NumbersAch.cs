@@ -18,64 +18,71 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("account") is { } nullNodeAccount && nullNodeAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Account = null;
-            if (parseNode.GetChildNode("account_id") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
-            if (parseNode.GetChildNode("can_transfer_in") is { } nullNodeCanTransferIn && nullNodeCanTransferIn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanTransferIn = null;
-            if (parseNode.GetChildNode("can_transfer_out") is { } nullNodeCanTransferOut && nullNodeCanTransferOut.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanTransferOut = null;
-            if (parseNode.GetChildNode("is_tokenized_account_number") is { } nullNodeIsTokenizedAccountNumber && nullNodeIsTokenizedAccountNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsTokenizedAccountNumber = null;
-            if (parseNode.GetChildNode("routing") is { } nullNodeRouting && nullNodeRouting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Routing = null;
-            if (parseNode.GetChildNode("wire_routing") is { } nullNodeWireRouting && nullNodeWireRouting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WireRouting = null;
+            if (parseNode.GetChildNode("account") is null) { _explicitNullValueAccount = default!; _explicitNullProperties?.Remove("account"); }
+            else if (parseNode.GetChildNode("account") is { } nullNodeAccount && nullNodeAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Account = null;
+            if (parseNode.GetChildNode("account_id") is null) { _explicitNullValueAccountId = default!; _explicitNullProperties?.Remove("account_id"); }
+            else if (parseNode.GetChildNode("account_id") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
+            if (parseNode.GetChildNode("can_transfer_in") is null) { _explicitNullValueCanTransferIn = default!; _explicitNullProperties?.Remove("can_transfer_in"); }
+            else if (parseNode.GetChildNode("can_transfer_in") is { } nullNodeCanTransferIn && nullNodeCanTransferIn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanTransferIn = null;
+            if (parseNode.GetChildNode("can_transfer_out") is null) { _explicitNullValueCanTransferOut = default!; _explicitNullProperties?.Remove("can_transfer_out"); }
+            else if (parseNode.GetChildNode("can_transfer_out") is { } nullNodeCanTransferOut && nullNodeCanTransferOut.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanTransferOut = null;
+            if (parseNode.GetChildNode("is_tokenized_account_number") is null) { _explicitNullValueIsTokenizedAccountNumber = default!; _explicitNullProperties?.Remove("is_tokenized_account_number"); }
+            else if (parseNode.GetChildNode("is_tokenized_account_number") is { } nullNodeIsTokenizedAccountNumber && nullNodeIsTokenizedAccountNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsTokenizedAccountNumber = null;
+            if (parseNode.GetChildNode("routing") is null) { _explicitNullValueRouting = default!; _explicitNullProperties?.Remove("routing"); }
+            else if (parseNode.GetChildNode("routing") is { } nullNodeRouting && nullNodeRouting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Routing = null;
+            if (parseNode.GetChildNode("wire_routing") is null) { _explicitNullValueWireRouting = default!; _explicitNullProperties?.Remove("wire_routing"); }
+            else if (parseNode.GetChildNode("wire_routing") is { } nullNodeWireRouting && nullNodeWireRouting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WireRouting = null;
         }
 
         /// <summary>The ACH account number for the account.At certain institutions, including Chase, PNC, and US Bank, you will receive a &quot;tokenized&quot; account number, which is not the user&apos;s actual account number. For important details on how this may impact your integration and on how to avoid fraud, user confusion, and ACH returns, see [Tokenized account numbers](https://plaid.com/docs/auth/#tokenized-account-numbers).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
+        public string? Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; AdditionalData?.Remove("account"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
         private string? _explicitNullValueAccount = default!;
 #nullable restore
 #else
-        public string Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
+        public string Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; AdditionalData?.Remove("account"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
         private string _explicitNullValueAccount = default!;
 #endif
         /// <summary>The Plaid account ID associated with the account numbers</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        public string? AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; AdditionalData?.Remove("account_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
         private string? _explicitNullValueAccountId = default!;
 #nullable restore
 #else
-        public string AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        public string AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; AdditionalData?.Remove("account_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
         private string _explicitNullValueAccountId = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the account supports ACH transfers into the account</summary>
-        public bool? CanTransferIn { get => _explicitNullValueCanTransferIn; set { _explicitNullValueCanTransferIn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_transfer_in"); else _explicitNullProperties?.Remove("can_transfer_in"); } }
+        public bool? CanTransferIn { get => _explicitNullValueCanTransferIn; set { _explicitNullValueCanTransferIn = value; AdditionalData?.Remove("can_transfer_in"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_transfer_in"); else _explicitNullProperties?.Remove("can_transfer_in"); } }
         private bool? _explicitNullValueCanTransferIn = default!;
         /// <summary>Whether the account supports ACH transfers out of the account</summary>
-        public bool? CanTransferOut { get => _explicitNullValueCanTransferOut; set { _explicitNullValueCanTransferOut = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_transfer_out"); else _explicitNullProperties?.Remove("can_transfer_out"); } }
+        public bool? CanTransferOut { get => _explicitNullValueCanTransferOut; set { _explicitNullValueCanTransferOut = value; AdditionalData?.Remove("can_transfer_out"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_transfer_out"); else _explicitNullProperties?.Remove("can_transfer_out"); } }
         private bool? _explicitNullValueCanTransferOut = default!;
         /// <summary>Indicates whether the account number is tokenized by the institution. For important details on how tokenized account numbers may impact your integration, see [Tokenized account numbers](https://plaid.com/docs/auth/#tokenized-account-numbers).</summary>
-        public bool? IsTokenizedAccountNumber { get => _explicitNullValueIsTokenizedAccountNumber; set { _explicitNullValueIsTokenizedAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_tokenized_account_number"); else _explicitNullProperties?.Remove("is_tokenized_account_number"); } }
+        public bool? IsTokenizedAccountNumber { get => _explicitNullValueIsTokenizedAccountNumber; set { _explicitNullValueIsTokenizedAccountNumber = value; AdditionalData?.Remove("is_tokenized_account_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_tokenized_account_number"); else _explicitNullProperties?.Remove("is_tokenized_account_number"); } }
         private bool? _explicitNullValueIsTokenizedAccountNumber = default!;
         /// <summary>The ACH routing number for the account. For more information, see [Tokenized account numbers](https://plaid.com/docs/auth/#tokenized-account-numbers).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Routing { get => _explicitNullValueRouting; set { _explicitNullValueRouting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routing"); else _explicitNullProperties?.Remove("routing"); } }
+        public string? Routing { get => _explicitNullValueRouting; set { _explicitNullValueRouting = value; AdditionalData?.Remove("routing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routing"); else _explicitNullProperties?.Remove("routing"); } }
         private string? _explicitNullValueRouting = default!;
 #nullable restore
 #else
-        public string Routing { get => _explicitNullValueRouting; set { _explicitNullValueRouting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routing"); else _explicitNullProperties?.Remove("routing"); } }
+        public string Routing { get => _explicitNullValueRouting; set { _explicitNullValueRouting = value; AdditionalData?.Remove("routing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routing"); else _explicitNullProperties?.Remove("routing"); } }
         private string _explicitNullValueRouting = default!;
 #endif
         /// <summary>The wire transfer routing number for the account. This field is only populated if the institution is known to use a separate wire transfer routing number. Many institutions do not have a separate wire routing number and use the ACH routing number for wires instead. It is recommended to have the end user manually confirm their wire routing number before sending any wires to their account, especially if this field is `null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WireRouting { get => _explicitNullValueWireRouting; set { _explicitNullValueWireRouting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wire_routing"); else _explicitNullProperties?.Remove("wire_routing"); } }
+        public string? WireRouting { get => _explicitNullValueWireRouting; set { _explicitNullValueWireRouting = value; AdditionalData?.Remove("wire_routing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wire_routing"); else _explicitNullProperties?.Remove("wire_routing"); } }
         private string? _explicitNullValueWireRouting = default!;
 #nullable restore
 #else
-        public string WireRouting { get => _explicitNullValueWireRouting; set { _explicitNullValueWireRouting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wire_routing"); else _explicitNullProperties?.Remove("wire_routing"); } }
+        public string WireRouting { get => _explicitNullValueWireRouting; set { _explicitNullValueWireRouting = value; AdditionalData?.Remove("wire_routing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wire_routing"); else _explicitNullProperties?.Remove("wire_routing"); } }
         private string _explicitNullValueWireRouting = default!;
 #endif
         /// <summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("LoanIdentifier") is { } nullNodeLoanIdentifierProp && nullNodeLoanIdentifierProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoanIdentifierProp = null;
-            if (parseNode.GetChildNode("LoanIdentifierType") is { } nullNodeLoanIdentifierType && nullNodeLoanIdentifierType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoanIdentifierType = null;
+            if (parseNode.GetChildNode("LoanIdentifier") is null) { _explicitNullValueLoanIdentifierProp = default!; _explicitNullProperties?.Remove("LoanIdentifier"); }
+            else if (parseNode.GetChildNode("LoanIdentifier") is { } nullNodeLoanIdentifierProp && nullNodeLoanIdentifierProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoanIdentifierProp = null;
+            if (parseNode.GetChildNode("LoanIdentifierType") is null) { _explicitNullValueLoanIdentifierType = default!; _explicitNullProperties?.Remove("LoanIdentifierType"); }
+            else if (parseNode.GetChildNode("LoanIdentifierType") is { } nullNodeLoanIdentifierType && nullNodeLoanIdentifierType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoanIdentifierType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The value of the identifier for the specified type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LoanIdentifierProp { get => _explicitNullValueLoanIdentifierProp; set { _explicitNullValueLoanIdentifierProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoanIdentifier"); else _explicitNullProperties?.Remove("LoanIdentifier"); } }
+        public string? LoanIdentifierProp { get => _explicitNullValueLoanIdentifierProp; set { _explicitNullValueLoanIdentifierProp = value; AdditionalData?.Remove("LoanIdentifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoanIdentifier"); else _explicitNullProperties?.Remove("LoanIdentifier"); } }
         private string? _explicitNullValueLoanIdentifierProp = default!;
 #nullable restore
 #else
-        public string LoanIdentifierProp { get => _explicitNullValueLoanIdentifierProp; set { _explicitNullValueLoanIdentifierProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoanIdentifier"); else _explicitNullProperties?.Remove("LoanIdentifier"); } }
+        public string LoanIdentifierProp { get => _explicitNullValueLoanIdentifierProp; set { _explicitNullValueLoanIdentifierProp = value; AdditionalData?.Remove("LoanIdentifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoanIdentifier"); else _explicitNullProperties?.Remove("LoanIdentifier"); } }
         private string _explicitNullValueLoanIdentifierProp = default!;
 #endif
         /// <summary>A value from a MISMO prescribed list that specifies the type of loan identifier.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.LoanIdentifierType? LoanIdentifierType { get => _explicitNullValueLoanIdentifierType; set { _explicitNullValueLoanIdentifierType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoanIdentifierType"); else _explicitNullProperties?.Remove("LoanIdentifierType"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LoanIdentifierType? LoanIdentifierType { get => _explicitNullValueLoanIdentifierType; set { _explicitNullValueLoanIdentifierType = value; AdditionalData?.Remove("LoanIdentifierType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoanIdentifierType"); else _explicitNullProperties?.Remove("LoanIdentifierType"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.LoanIdentifierType? _explicitNullValueLoanIdentifierType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LoanIdentifier"/> and sets the default values.
@@ -63,7 +65,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "LoanIdentifier", n => { LoanIdentifierProp = n.GetStringValue(); } },
-                { "LoanIdentifierType", n => { LoanIdentifierType = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.LoanIdentifierType>(); } },
+                { "LoanIdentifierType", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.LoanIdentifierType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLoanIdentifierType = default; _explicitNullProperties?.Remove("LoanIdentifierType"); AdditionalData["LoanIdentifierType"] = unknown; } else { LoanIdentifierType = parsed; AdditionalData.Remove("LoanIdentifierType"); } } },
             };
         }
         /// <summary>

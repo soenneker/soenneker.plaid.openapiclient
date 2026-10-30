@@ -18,24 +18,32 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("actual_value") is { } nullNodeActualValue && nullNodeActualValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActualValue = null;
-            if (parseNode.GetChildNode("expected_value") is { } nullNodeExpectedValue && nullNodeExpectedValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedValue = null;
-            if (parseNode.GetChildNode("field") is { } nullNodeField && nullNodeField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Field = null;
-            if (parseNode.GetChildNode("has_fraud_risk") is { } nullNodeHasFraudRisk && nullNodeHasFraudRisk.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasFraudRisk = null;
-            if (parseNode.GetChildNode("institution_metadata") is { } nullNodeInstitutionMetadata && nullNodeInstitutionMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionMetadata = null;
-            if (parseNode.GetChildNode("page_number") is { } nullNodePageNumber && nullNodePageNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageNumber = null;
-            if (parseNode.GetChildNode("signal_description") is { } nullNodeSignalDescription && nullNodeSignalDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignalDescription = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("actual_value") is null) { _explicitNullValueActualValue = default!; _explicitNullProperties?.Remove("actual_value"); }
+            else if (parseNode.GetChildNode("actual_value") is { } nullNodeActualValue && nullNodeActualValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActualValue = null;
+            if (parseNode.GetChildNode("expected_value") is null) { _explicitNullValueExpectedValue = default!; _explicitNullProperties?.Remove("expected_value"); }
+            else if (parseNode.GetChildNode("expected_value") is { } nullNodeExpectedValue && nullNodeExpectedValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedValue = null;
+            if (parseNode.GetChildNode("field") is null) { _explicitNullValueField = default!; _explicitNullProperties?.Remove("field"); }
+            else if (parseNode.GetChildNode("field") is { } nullNodeField && nullNodeField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Field = null;
+            if (parseNode.GetChildNode("has_fraud_risk") is null) { _explicitNullValueHasFraudRisk = default!; _explicitNullProperties?.Remove("has_fraud_risk"); }
+            else if (parseNode.GetChildNode("has_fraud_risk") is { } nullNodeHasFraudRisk && nullNodeHasFraudRisk.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasFraudRisk = null;
+            if (parseNode.GetChildNode("institution_metadata") is null) { _explicitNullValueInstitutionMetadata = default!; _explicitNullProperties?.Remove("institution_metadata"); }
+            else if (parseNode.GetChildNode("institution_metadata") is { } nullNodeInstitutionMetadata && nullNodeInstitutionMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionMetadata = null;
+            if (parseNode.GetChildNode("page_number") is null) { _explicitNullValuePageNumber = default!; _explicitNullProperties?.Remove("page_number"); }
+            else if (parseNode.GetChildNode("page_number") is { } nullNodePageNumber && nullNodePageNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageNumber = null;
+            if (parseNode.GetChildNode("signal_description") is null) { _explicitNullValueSignalDescription = default!; _explicitNullProperties?.Remove("signal_description"); }
+            else if (parseNode.GetChildNode("signal_description") is { } nullNodeSignalDescription && nullNodeSignalDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignalDescription = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>The derived value obtained in the risk signal calculation process for this field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActualValue { get => _explicitNullValueActualValue; set { _explicitNullValueActualValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actual_value"); else _explicitNullProperties?.Remove("actual_value"); } }
+        public string? ActualValue { get => _explicitNullValueActualValue; set { _explicitNullValueActualValue = value; AdditionalData?.Remove("actual_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actual_value"); else _explicitNullProperties?.Remove("actual_value"); } }
         private string? _explicitNullValueActualValue = default!;
 #nullable restore
 #else
-        public string ActualValue { get => _explicitNullValueActualValue; set { _explicitNullValueActualValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actual_value"); else _explicitNullProperties?.Remove("actual_value"); } }
+        public string ActualValue { get => _explicitNullValueActualValue; set { _explicitNullValueActualValue = value; AdditionalData?.Remove("actual_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actual_value"); else _explicitNullProperties?.Remove("actual_value"); } }
         private string _explicitNullValueActualValue = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -43,57 +51,57 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The expected value of the field, as seen on the document</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpectedValue { get => _explicitNullValueExpectedValue; set { _explicitNullValueExpectedValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_value"); else _explicitNullProperties?.Remove("expected_value"); } }
+        public string? ExpectedValue { get => _explicitNullValueExpectedValue; set { _explicitNullValueExpectedValue = value; AdditionalData?.Remove("expected_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_value"); else _explicitNullProperties?.Remove("expected_value"); } }
         private string? _explicitNullValueExpectedValue = default!;
 #nullable restore
 #else
-        public string ExpectedValue { get => _explicitNullValueExpectedValue; set { _explicitNullValueExpectedValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_value"); else _explicitNullProperties?.Remove("expected_value"); } }
+        public string ExpectedValue { get => _explicitNullValueExpectedValue; set { _explicitNullValueExpectedValue = value; AdditionalData?.Remove("expected_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_value"); else _explicitNullProperties?.Remove("expected_value"); } }
         private string _explicitNullValueExpectedValue = default!;
 #endif
         /// <summary>The field which the risk signal was computed for</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        public string? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; AdditionalData?.Remove("field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
         private string? _explicitNullValueField = default!;
 #nullable restore
 #else
-        public string Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        public string Field { get => _explicitNullValueField; set { _explicitNullValueField = value; AdditionalData?.Remove("field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
         private string _explicitNullValueField = default!;
 #endif
         /// <summary>A flag used to quickly identify if the signal indicates that this field is authentic or fraudulent</summary>
-        public bool? HasFraudRisk { get => _explicitNullValueHasFraudRisk; set { _explicitNullValueHasFraudRisk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_fraud_risk"); else _explicitNullProperties?.Remove("has_fraud_risk"); } }
+        public bool? HasFraudRisk { get => _explicitNullValueHasFraudRisk; set { _explicitNullValueHasFraudRisk = value; AdditionalData?.Remove("has_fraud_risk"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_fraud_risk"); else _explicitNullProperties?.Remove("has_fraud_risk"); } }
         private bool? _explicitNullValueHasFraudRisk = default!;
         /// <summary>An object which contains additional metadata about the institution used to compute the verification attribute</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.DocumentRiskSignalInstitutionMetadata? InstitutionMetadata { get => _explicitNullValueInstitutionMetadata; set { _explicitNullValueInstitutionMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_metadata"); else _explicitNullProperties?.Remove("institution_metadata"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.DocumentRiskSignalInstitutionMetadata? InstitutionMetadata { get => _explicitNullValueInstitutionMetadata; set { _explicitNullValueInstitutionMetadata = value; AdditionalData?.Remove("institution_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_metadata"); else _explicitNullProperties?.Remove("institution_metadata"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.DocumentRiskSignalInstitutionMetadata? _explicitNullValueInstitutionMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.DocumentRiskSignalInstitutionMetadata InstitutionMetadata { get => _explicitNullValueInstitutionMetadata; set { _explicitNullValueInstitutionMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_metadata"); else _explicitNullProperties?.Remove("institution_metadata"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.DocumentRiskSignalInstitutionMetadata InstitutionMetadata { get => _explicitNullValueInstitutionMetadata; set { _explicitNullValueInstitutionMetadata = value; AdditionalData?.Remove("institution_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_metadata"); else _explicitNullProperties?.Remove("institution_metadata"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.DocumentRiskSignalInstitutionMetadata _explicitNullValueInstitutionMetadata = default!;
 #endif
         /// <summary>The relevant page associated with the risk signal. If the risk signal is not associated with a specific page, the value will be 0.</summary>
-        public int? PageNumber { get => _explicitNullValuePageNumber; set { _explicitNullValuePageNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page_number"); else _explicitNullProperties?.Remove("page_number"); } }
+        public int? PageNumber { get => _explicitNullValuePageNumber; set { _explicitNullValuePageNumber = value; AdditionalData?.Remove("page_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page_number"); else _explicitNullProperties?.Remove("page_number"); } }
         private int? _explicitNullValuePageNumber = default!;
         /// <summary>A human-readable explanation providing more detail into the particular risk signal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SignalDescription { get => _explicitNullValueSignalDescription; set { _explicitNullValueSignalDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signal_description"); else _explicitNullProperties?.Remove("signal_description"); } }
+        public string? SignalDescription { get => _explicitNullValueSignalDescription; set { _explicitNullValueSignalDescription = value; AdditionalData?.Remove("signal_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signal_description"); else _explicitNullProperties?.Remove("signal_description"); } }
         private string? _explicitNullValueSignalDescription = default!;
 #nullable restore
 #else
-        public string SignalDescription { get => _explicitNullValueSignalDescription; set { _explicitNullValueSignalDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signal_description"); else _explicitNullProperties?.Remove("signal_description"); } }
+        public string SignalDescription { get => _explicitNullValueSignalDescription; set { _explicitNullValueSignalDescription = value; AdditionalData?.Remove("signal_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signal_description"); else _explicitNullProperties?.Remove("signal_description"); } }
         private string _explicitNullValueSignalDescription = default!;
 #endif
         /// <summary>The type of risk found in the risk signal check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private string? _explicitNullValueType = default!;
 #nullable restore
 #else
-        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private string _explicitNullValueType = default!;
 #endif
         /// <summary>

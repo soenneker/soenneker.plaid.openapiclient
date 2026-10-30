@@ -18,12 +18,18 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("core_attributes") is { } nullNodeCoreAttributes && nullNodeCoreAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CoreAttributes = null;
-            if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
-            if (parseNode.GetChildNode("risk_profile") is { } nullNodeRiskProfile && nullNodeRiskProfile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskProfile = null;
-            if (parseNode.GetChildNode("ruleset") is { } nullNodeRuleset && nullNodeRuleset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ruleset = null;
-            if (parseNode.GetChildNode("scores") is { } nullNodeScores && nullNodeScores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scores = null;
-            if (parseNode.GetChildNode("warnings") is { } nullNodeWarnings && nullNodeWarnings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Warnings = null;
+            if (parseNode.GetChildNode("core_attributes") is null) { _explicitNullValueCoreAttributes = default!; _explicitNullProperties?.Remove("core_attributes"); }
+            else if (parseNode.GetChildNode("core_attributes") is { } nullNodeCoreAttributes && nullNodeCoreAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CoreAttributes = null;
+            if (parseNode.GetChildNode("request_id") is null) { _explicitNullValueRequestId = default!; _explicitNullProperties?.Remove("request_id"); }
+            else if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
+            if (parseNode.GetChildNode("risk_profile") is null) { _explicitNullValueRiskProfile = default!; _explicitNullProperties?.Remove("risk_profile"); }
+            else if (parseNode.GetChildNode("risk_profile") is { } nullNodeRiskProfile && nullNodeRiskProfile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskProfile = null;
+            if (parseNode.GetChildNode("ruleset") is null) { _explicitNullValueRuleset = default!; _explicitNullProperties?.Remove("ruleset"); }
+            else if (parseNode.GetChildNode("ruleset") is { } nullNodeRuleset && nullNodeRuleset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ruleset = null;
+            if (parseNode.GetChildNode("scores") is null) { _explicitNullValueScores = default!; _explicitNullProperties?.Remove("scores"); }
+            else if (parseNode.GetChildNode("scores") is { } nullNodeScores && nullNodeScores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scores = null;
+            if (parseNode.GetChildNode("warnings") is null) { _explicitNullValueWarnings = default!; _explicitNullProperties?.Remove("warnings"); }
+            else if (parseNode.GetChildNode("warnings") is { } nullNodeWarnings && nullNodeWarnings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Warnings = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,62 +37,62 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The core attributes object contains additional data that can be used to assess the ACH return risk.If using a Balance-only ruleset, only `available_balance` and `current_balance` will be returned as core attributes. If using a Signal Transaction Scores ruleset, over 80 core attributes will be returned. Examples of attributes include:`available_balance` and `current_balance`: The balance in the ACH transaction funding account`days_since_first_plaid_connection`: The number of days since the first time the Item was connected to an application via Plaid`plaid_connections_count_7d`: The number of times the Item has been connected to applications via Plaid over the past 7 days`plaid_connections_count_30d`: The number of times the Item has been connected to applications via Plaid over the past 30 days`total_plaid_connections_count`: The number of times the Item has been connected to applications via Plaid`is_savings_or_money_market_account`: Indicates whether the ACH transaction funding account is a savings/money market accountFor the full list and detailed documentation of core attributes available, or to request that core attributes not be returned, contact sales or your Plaid account manager.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.SignalEvaluateCoreAttributes? CoreAttributes { get => _explicitNullValueCoreAttributes; set { _explicitNullValueCoreAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("core_attributes"); else _explicitNullProperties?.Remove("core_attributes"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SignalEvaluateCoreAttributes? CoreAttributes { get => _explicitNullValueCoreAttributes; set { _explicitNullValueCoreAttributes = value; AdditionalData?.Remove("core_attributes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("core_attributes"); else _explicitNullProperties?.Remove("core_attributes"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.SignalEvaluateCoreAttributes? _explicitNullValueCoreAttributes = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.SignalEvaluateCoreAttributes CoreAttributes { get => _explicitNullValueCoreAttributes; set { _explicitNullValueCoreAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("core_attributes"); else _explicitNullProperties?.Remove("core_attributes"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SignalEvaluateCoreAttributes CoreAttributes { get => _explicitNullValueCoreAttributes; set { _explicitNullValueCoreAttributes = value; AdditionalData?.Remove("core_attributes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("core_attributes"); else _explicitNullProperties?.Remove("core_attributes"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.SignalEvaluateCoreAttributes _explicitNullValueCoreAttributes = default!;
 #endif
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; AdditionalData?.Remove("request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
         private string? _explicitNullValueRequestId = default!;
 #nullable restore
 #else
-        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; AdditionalData?.Remove("request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
         private string _explicitNullValueRequestId = default!;
 #endif
         /// <summary>RiskProfile is deprecated, use `ruleset` instead.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskProfile? RiskProfile { get => _explicitNullValueRiskProfile; set { _explicitNullValueRiskProfile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_profile"); else _explicitNullProperties?.Remove("risk_profile"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskProfile? RiskProfile { get => _explicitNullValueRiskProfile; set { _explicitNullValueRiskProfile = value; AdditionalData?.Remove("risk_profile"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_profile"); else _explicitNullProperties?.Remove("risk_profile"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.RiskProfile? _explicitNullValueRiskProfile = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskProfile RiskProfile { get => _explicitNullValueRiskProfile; set { _explicitNullValueRiskProfile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_profile"); else _explicitNullProperties?.Remove("risk_profile"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskProfile RiskProfile { get => _explicitNullValueRiskProfile; set { _explicitNullValueRiskProfile = value; AdditionalData?.Remove("risk_profile"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_profile"); else _explicitNullProperties?.Remove("risk_profile"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.RiskProfile _explicitNullValueRiskProfile = default!;
 #endif
         /// <summary>Details about the transaction result after evaluation by the requested Ruleset. If a `ruleset_key` is not provided, for customers who began using Signal Transaction Scores before October 15, 2025, by default, this field will be omitted. To learn more, see [Signal Rules](https://plaid.com/docs/signal/signal-rules/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.Ruleset? Ruleset { get => _explicitNullValueRuleset; set { _explicitNullValueRuleset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleset"); else _explicitNullProperties?.Remove("ruleset"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Ruleset? Ruleset { get => _explicitNullValueRuleset; set { _explicitNullValueRuleset = value; AdditionalData?.Remove("ruleset"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleset"); else _explicitNullProperties?.Remove("ruleset"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.Ruleset? _explicitNullValueRuleset = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.Ruleset Ruleset { get => _explicitNullValueRuleset; set { _explicitNullValueRuleset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleset"); else _explicitNullProperties?.Remove("ruleset"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Ruleset Ruleset { get => _explicitNullValueRuleset; set { _explicitNullValueRuleset = value; AdditionalData?.Remove("ruleset"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleset"); else _explicitNullProperties?.Remove("ruleset"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.Ruleset _explicitNullValueRuleset = default!;
 #endif
         /// <summary>Risk scoring details broken down by risk category. When using a Balance-only ruleset, this object will not be returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.SignalScores? Scores { get => _explicitNullValueScores; set { _explicitNullValueScores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores"); else _explicitNullProperties?.Remove("scores"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SignalScores? Scores { get => _explicitNullValueScores; set { _explicitNullValueScores = value; AdditionalData?.Remove("scores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores"); else _explicitNullProperties?.Remove("scores"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.SignalScores? _explicitNullValueScores = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.SignalScores Scores { get => _explicitNullValueScores; set { _explicitNullValueScores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores"); else _explicitNullProperties?.Remove("scores"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SignalScores Scores { get => _explicitNullValueScores; set { _explicitNullValueScores = value; AdditionalData?.Remove("scores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores"); else _explicitNullProperties?.Remove("scores"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.SignalScores _explicitNullValueScores = default!;
 #endif
         /// <summary>If bank information was not available to be used in the Signal Transaction Scores model, this array contains warnings describing why bank data is missing. If you want to receive an API error instead of results in the case of missing bank data, file a support ticket or contact your Plaid account manager.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning>? Warnings { get => _explicitNullValueWarnings; set { _explicitNullValueWarnings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warnings"); else _explicitNullProperties?.Remove("warnings"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning>? Warnings { get => _explicitNullValueWarnings; set { _explicitNullValueWarnings = value; AdditionalData?.Remove("warnings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warnings"); else _explicitNullProperties?.Remove("warnings"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning>? _explicitNullValueWarnings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning> Warnings { get => _explicitNullValueWarnings; set { _explicitNullValueWarnings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warnings"); else _explicitNullProperties?.Remove("warnings"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning> Warnings { get => _explicitNullValueWarnings; set { _explicitNullValueWarnings = value; AdditionalData?.Remove("warnings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warnings"); else _explicitNullProperties?.Remove("warnings"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.SignalWarning> _explicitNullValueWarnings = default!;
 #endif
         /// <summary>

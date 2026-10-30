@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("closed_with_status") is { } nullNodeClosedWithStatus && nullNodeClosedWithStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClosedWithStatus = null;
-            if (parseNode.GetChildNode("loan_id") is { } nullNodeLoanId && nullNodeLoanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoanId = null;
+            if (parseNode.GetChildNode("closed_with_status") is null) { _explicitNullValueClosedWithStatus = default!; _explicitNullProperties?.Remove("closed_with_status"); }
+            else if (parseNode.GetChildNode("closed_with_status") is { } nullNodeClosedWithStatus && nullNodeClosedWithStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClosedWithStatus = null;
+            if (parseNode.GetChildNode("loan_id") is null) { _explicitNullValueLoanId = default!; _explicitNullProperties?.Remove("loan_id"); }
+            else if (parseNode.GetChildNode("loan_id") is { } nullNodeLoanId && nullNodeLoanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoanId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Contains the status and date information of the loan when unregistering.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanClosedStatus? ClosedWithStatus { get => _explicitNullValueClosedWithStatus; set { _explicitNullValueClosedWithStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("closed_with_status"); else _explicitNullProperties?.Remove("closed_with_status"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanClosedStatus? ClosedWithStatus { get => _explicitNullValueClosedWithStatus; set { _explicitNullValueClosedWithStatus = value; AdditionalData?.Remove("closed_with_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("closed_with_status"); else _explicitNullProperties?.Remove("closed_with_status"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraLoanClosedStatus? _explicitNullValueClosedWithStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanClosedStatus ClosedWithStatus { get => _explicitNullValueClosedWithStatus; set { _explicitNullValueClosedWithStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("closed_with_status"); else _explicitNullProperties?.Remove("closed_with_status"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanClosedStatus ClosedWithStatus { get => _explicitNullValueClosedWithStatus; set { _explicitNullValueClosedWithStatus = value; AdditionalData?.Remove("closed_with_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("closed_with_status"); else _explicitNullProperties?.Remove("closed_with_status"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraLoanClosedStatus _explicitNullValueClosedWithStatus = default!;
 #endif
         /// <summary>A unique identifier for the loan.Personally identifiable information, such as an email address or phone number, should not be used in the `loan_id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LoanId { get => _explicitNullValueLoanId; set { _explicitNullValueLoanId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_id"); else _explicitNullProperties?.Remove("loan_id"); } }
+        public string? LoanId { get => _explicitNullValueLoanId; set { _explicitNullValueLoanId = value; AdditionalData?.Remove("loan_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_id"); else _explicitNullProperties?.Remove("loan_id"); } }
         private string? _explicitNullValueLoanId = default!;
 #nullable restore
 #else
-        public string LoanId { get => _explicitNullValueLoanId; set { _explicitNullValueLoanId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_id"); else _explicitNullProperties?.Remove("loan_id"); } }
+        public string LoanId { get => _explicitNullValueLoanId; set { _explicitNullValueLoanId = value; AdditionalData?.Remove("loan_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_id"); else _explicitNullProperties?.Remove("loan_id"); } }
         private string _explicitNullValueLoanId = default!;
 #endif
         /// <summary>

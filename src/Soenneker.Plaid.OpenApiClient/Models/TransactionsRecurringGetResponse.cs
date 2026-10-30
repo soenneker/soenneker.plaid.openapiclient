@@ -18,11 +18,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("inflow_streams") is { } nullNodeInflowStreams && nullNodeInflowStreams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InflowStreams = null;
-            if (parseNode.GetChildNode("outflow_streams") is { } nullNodeOutflowStreams && nullNodeOutflowStreams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutflowStreams = null;
-            if (parseNode.GetChildNode("personal_finance_category_version") is { } nullNodePersonalFinanceCategoryVersion && nullNodePersonalFinanceCategoryVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalFinanceCategoryVersion = null;
-            if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
-            if (parseNode.GetChildNode("updated_datetime") is { } nullNodeUpdatedDatetime && nullNodeUpdatedDatetime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedDatetime = null;
+            if (parseNode.GetChildNode("inflow_streams") is null) { _explicitNullValueInflowStreams = default!; _explicitNullProperties?.Remove("inflow_streams"); }
+            else if (parseNode.GetChildNode("inflow_streams") is { } nullNodeInflowStreams && nullNodeInflowStreams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InflowStreams = null;
+            if (parseNode.GetChildNode("outflow_streams") is null) { _explicitNullValueOutflowStreams = default!; _explicitNullProperties?.Remove("outflow_streams"); }
+            else if (parseNode.GetChildNode("outflow_streams") is { } nullNodeOutflowStreams && nullNodeOutflowStreams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutflowStreams = null;
+            if (parseNode.GetChildNode("personal_finance_category_version") is null) { _explicitNullValuePersonalFinanceCategoryVersion = default!; _explicitNullProperties?.Remove("personal_finance_category_version"); }
+            else if (parseNode.GetChildNode("personal_finance_category_version") is { } nullNodePersonalFinanceCategoryVersion && nullNodePersonalFinanceCategoryVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalFinanceCategoryVersion = null;
+            if (parseNode.GetChildNode("request_id") is null) { _explicitNullValueRequestId = default!; _explicitNullProperties?.Remove("request_id"); }
+            else if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
+            if (parseNode.GetChildNode("updated_datetime") is null) { _explicitNullValueUpdatedDatetime = default!; _explicitNullProperties?.Remove("updated_datetime"); }
+            else if (parseNode.GetChildNode("updated_datetime") is { } nullNodeUpdatedDatetime && nullNodeUpdatedDatetime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedDatetime = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,38 +35,38 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>An array of inflow transaction streams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.TransactionStream>? InflowStreams { get => _explicitNullValueInflowStreams; set { _explicitNullValueInflowStreams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inflow_streams"); else _explicitNullProperties?.Remove("inflow_streams"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.TransactionStream>? InflowStreams { get => _explicitNullValueInflowStreams; set { _explicitNullValueInflowStreams = value; AdditionalData?.Remove("inflow_streams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inflow_streams"); else _explicitNullProperties?.Remove("inflow_streams"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.TransactionStream>? _explicitNullValueInflowStreams = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.TransactionStream> InflowStreams { get => _explicitNullValueInflowStreams; set { _explicitNullValueInflowStreams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inflow_streams"); else _explicitNullProperties?.Remove("inflow_streams"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.TransactionStream> InflowStreams { get => _explicitNullValueInflowStreams; set { _explicitNullValueInflowStreams = value; AdditionalData?.Remove("inflow_streams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inflow_streams"); else _explicitNullProperties?.Remove("inflow_streams"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.TransactionStream> _explicitNullValueInflowStreams = default!;
 #endif
         /// <summary>An array of expense transaction streams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.TransactionStream>? OutflowStreams { get => _explicitNullValueOutflowStreams; set { _explicitNullValueOutflowStreams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outflow_streams"); else _explicitNullProperties?.Remove("outflow_streams"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.TransactionStream>? OutflowStreams { get => _explicitNullValueOutflowStreams; set { _explicitNullValueOutflowStreams = value; AdditionalData?.Remove("outflow_streams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outflow_streams"); else _explicitNullProperties?.Remove("outflow_streams"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.TransactionStream>? _explicitNullValueOutflowStreams = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.TransactionStream> OutflowStreams { get => _explicitNullValueOutflowStreams; set { _explicitNullValueOutflowStreams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outflow_streams"); else _explicitNullProperties?.Remove("outflow_streams"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.TransactionStream> OutflowStreams { get => _explicitNullValueOutflowStreams; set { _explicitNullValueOutflowStreams = value; AdditionalData?.Remove("outflow_streams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outflow_streams"); else _explicitNullProperties?.Remove("outflow_streams"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.TransactionStream> _explicitNullValueOutflowStreams = default!;
 #endif
         /// <summary>Indicates which version of the personal finance category taxonomy is being used. [View PFCv2 and PFCv1 taxonomies](https://plaid.com/documents/pfc-taxonomy-all.csv).If you enabled Transactions or Enrich before December 3, 2025 you will receive the `v1` taxonomy by default and may request `v2` by explicitly setting this field to `v2` in the request.If you enabled Transactions or Enrich on or after December 3, 2025, you may only receive the `v2` taxonomy.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategoryVersion? PersonalFinanceCategoryVersion { get => _explicitNullValuePersonalFinanceCategoryVersion; set { _explicitNullValuePersonalFinanceCategoryVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category_version"); else _explicitNullProperties?.Remove("personal_finance_category_version"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategoryVersion? PersonalFinanceCategoryVersion { get => _explicitNullValuePersonalFinanceCategoryVersion; set { _explicitNullValuePersonalFinanceCategoryVersion = value; AdditionalData?.Remove("personal_finance_category_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category_version"); else _explicitNullProperties?.Remove("personal_finance_category_version"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategoryVersion? _explicitNullValuePersonalFinanceCategoryVersion = default!;
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; AdditionalData?.Remove("request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
         private string? _explicitNullValueRequestId = default!;
 #nullable restore
 #else
-        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; AdditionalData?.Remove("request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
         private string _explicitNullValueRequestId = default!;
 #endif
         /// <summary>Timestamp in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (`YYYY-MM-DDTHH:mm:ssZ`) indicating the last time transaction streams for the given account were updated on</summary>
-        public DateTimeOffset? UpdatedDatetime { get => _explicitNullValueUpdatedDatetime; set { _explicitNullValueUpdatedDatetime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_datetime"); else _explicitNullProperties?.Remove("updated_datetime"); } }
+        public DateTimeOffset? UpdatedDatetime { get => _explicitNullValueUpdatedDatetime; set { _explicitNullValueUpdatedDatetime = value; AdditionalData?.Remove("updated_datetime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_datetime"); else _explicitNullProperties?.Remove("updated_datetime"); } }
         private DateTimeOffset? _explicitNullValueUpdatedDatetime = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransactionsRecurringGetResponse"/> and sets the default values.
@@ -90,7 +95,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "inflow_streams", n => { InflowStreams = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.TransactionStream>(global::Soenneker.Plaid.OpenApiClient.Models.TransactionStream.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "outflow_streams", n => { OutflowStreams = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.TransactionStream>(global::Soenneker.Plaid.OpenApiClient.Models.TransactionStream.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "personal_finance_category_version", n => { PersonalFinanceCategoryVersion = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategoryVersion>(); } },
+                { "personal_finance_category_version", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategoryVersion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePersonalFinanceCategoryVersion = default; _explicitNullProperties?.Remove("personal_finance_category_version"); AdditionalData["personal_finance_category_version"] = unknown; } else { PersonalFinanceCategoryVersion = parsed; AdditionalData.Remove("personal_finance_category_version"); } } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
                 { "updated_datetime", n => { UpdatedDatetime = n.GetDateTimeOffsetValue(); } },
             };

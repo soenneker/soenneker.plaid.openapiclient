@@ -18,22 +18,28 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("account") is { } nullNodeAccount && nullNodeAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Account = null;
-            if (parseNode.GetChildNode("investment_transactions") is { } nullNodeInvestmentTransactions && nullNodeInvestmentTransactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvestmentTransactions = null;
-            if (parseNode.GetChildNode("is_investments_fallback_item") is { } nullNodeIsInvestmentsFallbackItem && nullNodeIsInvestmentsFallbackItem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsInvestmentsFallbackItem = null;
-            if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
-            if (parseNode.GetChildNode("securities") is { } nullNodeSecurities && nullNodeSecurities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Securities = null;
-            if (parseNode.GetChildNode("total_investment_transactions") is { } nullNodeTotalInvestmentTransactions && nullNodeTotalInvestmentTransactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalInvestmentTransactions = null;
+            if (parseNode.GetChildNode("account") is null) { _explicitNullValueAccount = default!; _explicitNullProperties?.Remove("account"); }
+            else if (parseNode.GetChildNode("account") is { } nullNodeAccount && nullNodeAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Account = null;
+            if (parseNode.GetChildNode("investment_transactions") is null) { _explicitNullValueInvestmentTransactions = default!; _explicitNullProperties?.Remove("investment_transactions"); }
+            else if (parseNode.GetChildNode("investment_transactions") is { } nullNodeInvestmentTransactions && nullNodeInvestmentTransactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvestmentTransactions = null;
+            if (parseNode.GetChildNode("is_investments_fallback_item") is null) { _explicitNullValueIsInvestmentsFallbackItem = default!; _explicitNullProperties?.Remove("is_investments_fallback_item"); }
+            else if (parseNode.GetChildNode("is_investments_fallback_item") is { } nullNodeIsInvestmentsFallbackItem && nullNodeIsInvestmentsFallbackItem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsInvestmentsFallbackItem = null;
+            if (parseNode.GetChildNode("request_id") is null) { _explicitNullValueRequestId = default!; _explicitNullProperties?.Remove("request_id"); }
+            else if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
+            if (parseNode.GetChildNode("securities") is null) { _explicitNullValueSecurities = default!; _explicitNullProperties?.Remove("securities"); }
+            else if (parseNode.GetChildNode("securities") is { } nullNodeSecurities && nullNodeSecurities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Securities = null;
+            if (parseNode.GetChildNode("total_investment_transactions") is null) { _explicitNullValueTotalInvestmentTransactions = default!; _explicitNullProperties?.Remove("total_investment_transactions"); }
+            else if (parseNode.GetChildNode("total_investment_transactions") is { } nullNodeTotalInvestmentTransactions && nullNodeTotalInvestmentTransactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalInvestmentTransactions = null;
         }
 
         /// <summary>A single account at a financial institution, with additional investment-specific balance information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.InvestmentAccount? Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.InvestmentAccount? Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; AdditionalData?.Remove("account"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.InvestmentAccount? _explicitNullValueAccount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.InvestmentAccount Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.InvestmentAccount Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; AdditionalData?.Remove("account"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.InvestmentAccount _explicitNullValueAccount = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -41,38 +47,38 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>An array containing investment transactions from the account. Investments transactions are returned in reverse chronological order, with the most recent at the beginning of the array. The maximum number of transactions returned is determined by the `count` parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransaction>? InvestmentTransactions { get => _explicitNullValueInvestmentTransactions; set { _explicitNullValueInvestmentTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investment_transactions"); else _explicitNullProperties?.Remove("investment_transactions"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransaction>? InvestmentTransactions { get => _explicitNullValueInvestmentTransactions; set { _explicitNullValueInvestmentTransactions = value; AdditionalData?.Remove("investment_transactions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investment_transactions"); else _explicitNullProperties?.Remove("investment_transactions"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransaction>? _explicitNullValueInvestmentTransactions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransaction> InvestmentTransactions { get => _explicitNullValueInvestmentTransactions; set { _explicitNullValueInvestmentTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investment_transactions"); else _explicitNullProperties?.Remove("investment_transactions"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransaction> InvestmentTransactions { get => _explicitNullValueInvestmentTransactions; set { _explicitNullValueInvestmentTransactions = value; AdditionalData?.Remove("investment_transactions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investment_transactions"); else _explicitNullProperties?.Remove("investment_transactions"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransaction> _explicitNullValueInvestmentTransactions = default!;
 #endif
         /// <summary>When true, this field indicates that the Item&apos;s portfolio was manually created with the Investments Fallback flow.</summary>
-        public bool? IsInvestmentsFallbackItem { get => _explicitNullValueIsInvestmentsFallbackItem; set { _explicitNullValueIsInvestmentsFallbackItem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_investments_fallback_item"); else _explicitNullProperties?.Remove("is_investments_fallback_item"); } }
+        public bool? IsInvestmentsFallbackItem { get => _explicitNullValueIsInvestmentsFallbackItem; set { _explicitNullValueIsInvestmentsFallbackItem = value; AdditionalData?.Remove("is_investments_fallback_item"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_investments_fallback_item"); else _explicitNullProperties?.Remove("is_investments_fallback_item"); } }
         private bool? _explicitNullValueIsInvestmentsFallbackItem = default!;
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; AdditionalData?.Remove("request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
         private string? _explicitNullValueRequestId = default!;
 #nullable restore
 #else
-        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; AdditionalData?.Remove("request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
         private string _explicitNullValueRequestId = default!;
 #endif
         /// <summary>All securities for which there is a corresponding transaction being fetched.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Security>? Securities { get => _explicitNullValueSecurities; set { _explicitNullValueSecurities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("securities"); else _explicitNullProperties?.Remove("securities"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Security>? Securities { get => _explicitNullValueSecurities; set { _explicitNullValueSecurities = value; AdditionalData?.Remove("securities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("securities"); else _explicitNullProperties?.Remove("securities"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.Security>? _explicitNullValueSecurities = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Security> Securities { get => _explicitNullValueSecurities; set { _explicitNullValueSecurities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("securities"); else _explicitNullProperties?.Remove("securities"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Security> Securities { get => _explicitNullValueSecurities; set { _explicitNullValueSecurities = value; AdditionalData?.Remove("securities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("securities"); else _explicitNullProperties?.Remove("securities"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.Security> _explicitNullValueSecurities = default!;
 #endif
         /// <summary>The total number of transactions available within the date range specified. If `total_investment_transactions` is larger than the size of the `investment_transactions` array, more transactions are available and can be fetched via manipulating the `offset` parameter.</summary>
-        public int? TotalInvestmentTransactions { get => _explicitNullValueTotalInvestmentTransactions; set { _explicitNullValueTotalInvestmentTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_investment_transactions"); else _explicitNullProperties?.Remove("total_investment_transactions"); } }
+        public int? TotalInvestmentTransactions { get => _explicitNullValueTotalInvestmentTransactions; set { _explicitNullValueTotalInvestmentTransactions = value; AdditionalData?.Remove("total_investment_transactions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_investment_transactions"); else _explicitNullProperties?.Remove("total_investment_transactions"); } }
         private int? _explicitNullValueTotalInvestmentTransactions = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ProcessorInvestmentsTransactionsGetResponse"/> and sets the default values.

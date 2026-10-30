@@ -18,10 +18,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("daily_credit_utilization") is { } nullNodeDailyCreditUtilization && nullNodeDailyCreditUtilization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DailyCreditUtilization = null;
-            if (parseNode.GetChildNode("daily_debit_utilization") is { } nullNodeDailyDebitUtilization && nullNodeDailyDebitUtilization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DailyDebitUtilization = null;
-            if (parseNode.GetChildNode("monthly_credit_utilization") is { } nullNodeMonthlyCreditUtilization && nullNodeMonthlyCreditUtilization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonthlyCreditUtilization = null;
-            if (parseNode.GetChildNode("monthly_debit_utilization") is { } nullNodeMonthlyDebitUtilization && nullNodeMonthlyDebitUtilization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonthlyDebitUtilization = null;
+            if (parseNode.GetChildNode("daily_credit_utilization") is null) { _explicitNullValueDailyCreditUtilization = default!; _explicitNullProperties?.Remove("daily_credit_utilization"); }
+            else if (parseNode.GetChildNode("daily_credit_utilization") is { } nullNodeDailyCreditUtilization && nullNodeDailyCreditUtilization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DailyCreditUtilization = null;
+            if (parseNode.GetChildNode("daily_debit_utilization") is null) { _explicitNullValueDailyDebitUtilization = default!; _explicitNullProperties?.Remove("daily_debit_utilization"); }
+            else if (parseNode.GetChildNode("daily_debit_utilization") is { } nullNodeDailyDebitUtilization && nullNodeDailyDebitUtilization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DailyDebitUtilization = null;
+            if (parseNode.GetChildNode("monthly_credit_utilization") is null) { _explicitNullValueMonthlyCreditUtilization = default!; _explicitNullProperties?.Remove("monthly_credit_utilization"); }
+            else if (parseNode.GetChildNode("monthly_credit_utilization") is { } nullNodeMonthlyCreditUtilization && nullNodeMonthlyCreditUtilization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonthlyCreditUtilization = null;
+            if (parseNode.GetChildNode("monthly_debit_utilization") is null) { _explicitNullValueMonthlyDebitUtilization = default!; _explicitNullProperties?.Remove("monthly_debit_utilization"); }
+            else if (parseNode.GetChildNode("monthly_debit_utilization") is { } nullNodeMonthlyDebitUtilization && nullNodeMonthlyDebitUtilization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonthlyDebitUtilization = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The daily credit utilization formatted as a decimal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DailyCreditUtilization { get => _explicitNullValueDailyCreditUtilization; set { _explicitNullValueDailyCreditUtilization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_credit_utilization"); else _explicitNullProperties?.Remove("daily_credit_utilization"); } }
+        public string? DailyCreditUtilization { get => _explicitNullValueDailyCreditUtilization; set { _explicitNullValueDailyCreditUtilization = value; AdditionalData?.Remove("daily_credit_utilization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_credit_utilization"); else _explicitNullProperties?.Remove("daily_credit_utilization"); } }
         private string? _explicitNullValueDailyCreditUtilization = default!;
 #nullable restore
 #else
-        public string DailyCreditUtilization { get => _explicitNullValueDailyCreditUtilization; set { _explicitNullValueDailyCreditUtilization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_credit_utilization"); else _explicitNullProperties?.Remove("daily_credit_utilization"); } }
+        public string DailyCreditUtilization { get => _explicitNullValueDailyCreditUtilization; set { _explicitNullValueDailyCreditUtilization = value; AdditionalData?.Remove("daily_credit_utilization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_credit_utilization"); else _explicitNullProperties?.Remove("daily_credit_utilization"); } }
         private string _explicitNullValueDailyCreditUtilization = default!;
 #endif
         /// <summary>The daily debit utilization formatted as a decimal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DailyDebitUtilization { get => _explicitNullValueDailyDebitUtilization; set { _explicitNullValueDailyDebitUtilization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_debit_utilization"); else _explicitNullProperties?.Remove("daily_debit_utilization"); } }
+        public string? DailyDebitUtilization { get => _explicitNullValueDailyDebitUtilization; set { _explicitNullValueDailyDebitUtilization = value; AdditionalData?.Remove("daily_debit_utilization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_debit_utilization"); else _explicitNullProperties?.Remove("daily_debit_utilization"); } }
         private string? _explicitNullValueDailyDebitUtilization = default!;
 #nullable restore
 #else
-        public string DailyDebitUtilization { get => _explicitNullValueDailyDebitUtilization; set { _explicitNullValueDailyDebitUtilization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_debit_utilization"); else _explicitNullProperties?.Remove("daily_debit_utilization"); } }
+        public string DailyDebitUtilization { get => _explicitNullValueDailyDebitUtilization; set { _explicitNullValueDailyDebitUtilization = value; AdditionalData?.Remove("daily_debit_utilization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_debit_utilization"); else _explicitNullProperties?.Remove("daily_debit_utilization"); } }
         private string _explicitNullValueDailyDebitUtilization = default!;
 #endif
         /// <summary>The monthly credit utilization formatted as a decimal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MonthlyCreditUtilization { get => _explicitNullValueMonthlyCreditUtilization; set { _explicitNullValueMonthlyCreditUtilization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_credit_utilization"); else _explicitNullProperties?.Remove("monthly_credit_utilization"); } }
+        public string? MonthlyCreditUtilization { get => _explicitNullValueMonthlyCreditUtilization; set { _explicitNullValueMonthlyCreditUtilization = value; AdditionalData?.Remove("monthly_credit_utilization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_credit_utilization"); else _explicitNullProperties?.Remove("monthly_credit_utilization"); } }
         private string? _explicitNullValueMonthlyCreditUtilization = default!;
 #nullable restore
 #else
-        public string MonthlyCreditUtilization { get => _explicitNullValueMonthlyCreditUtilization; set { _explicitNullValueMonthlyCreditUtilization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_credit_utilization"); else _explicitNullProperties?.Remove("monthly_credit_utilization"); } }
+        public string MonthlyCreditUtilization { get => _explicitNullValueMonthlyCreditUtilization; set { _explicitNullValueMonthlyCreditUtilization = value; AdditionalData?.Remove("monthly_credit_utilization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_credit_utilization"); else _explicitNullProperties?.Remove("monthly_credit_utilization"); } }
         private string _explicitNullValueMonthlyCreditUtilization = default!;
 #endif
         /// <summary>The monthly debit utilization formatted as a decimal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MonthlyDebitUtilization { get => _explicitNullValueMonthlyDebitUtilization; set { _explicitNullValueMonthlyDebitUtilization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_debit_utilization"); else _explicitNullProperties?.Remove("monthly_debit_utilization"); } }
+        public string? MonthlyDebitUtilization { get => _explicitNullValueMonthlyDebitUtilization; set { _explicitNullValueMonthlyDebitUtilization = value; AdditionalData?.Remove("monthly_debit_utilization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_debit_utilization"); else _explicitNullProperties?.Remove("monthly_debit_utilization"); } }
         private string? _explicitNullValueMonthlyDebitUtilization = default!;
 #nullable restore
 #else
-        public string MonthlyDebitUtilization { get => _explicitNullValueMonthlyDebitUtilization; set { _explicitNullValueMonthlyDebitUtilization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_debit_utilization"); else _explicitNullProperties?.Remove("monthly_debit_utilization"); } }
+        public string MonthlyDebitUtilization { get => _explicitNullValueMonthlyDebitUtilization; set { _explicitNullValueMonthlyDebitUtilization = value; AdditionalData?.Remove("monthly_debit_utilization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_debit_utilization"); else _explicitNullProperties?.Remove("monthly_debit_utilization"); } }
         private string _explicitNullValueMonthlyDebitUtilization = default!;
 #endif
         /// <summary>

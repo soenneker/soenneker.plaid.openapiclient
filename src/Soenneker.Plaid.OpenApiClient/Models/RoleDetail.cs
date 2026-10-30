@@ -18,13 +18,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("PartyRoleType") is { } nullNodePartyRoleType && nullNodePartyRoleType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PartyRoleType = null;
+            if (parseNode.GetChildNode("PartyRoleType") is null) { _explicitNullValuePartyRoleType = default!; _explicitNullProperties?.Remove("PartyRoleType"); }
+            else if (parseNode.GetChildNode("PartyRoleType") is { } nullNodePartyRoleType && nullNodePartyRoleType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PartyRoleType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A value from a MISMO defined list that identifies the role that the party plays in the transaction. Parties may be either a person or legal entity. A party may play multiple roles in a transaction.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartyRoleType? PartyRoleType { get => _explicitNullValuePartyRoleType; set { _explicitNullValuePartyRoleType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PartyRoleType"); else _explicitNullProperties?.Remove("PartyRoleType"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartyRoleType? PartyRoleType { get => _explicitNullValuePartyRoleType; set { _explicitNullValuePartyRoleType = value; AdditionalData?.Remove("PartyRoleType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PartyRoleType"); else _explicitNullProperties?.Remove("PartyRoleType"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PartyRoleType? _explicitNullValuePartyRoleType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.RoleDetail"/> and sets the default values.
@@ -51,7 +52,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "PartyRoleType", n => { PartyRoleType = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PartyRoleType>(); } },
+                { "PartyRoleType", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PartyRoleType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePartyRoleType = default; _explicitNullProperties?.Remove("PartyRoleType"); AdditionalData["PartyRoleType"] = unknown; } else { PartyRoleType = parsed; AdditionalData.Remove("PartyRoleType"); } } },
             };
         }
         /// <summary>

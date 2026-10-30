@@ -18,13 +18,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("has_previous_administrative_return") is { } nullNodeHasPreviousAdministrativeReturn && nullNodeHasPreviousAdministrativeReturn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasPreviousAdministrativeReturn = null;
+            if (parseNode.GetChildNode("has_previous_administrative_return") is null) { _explicitNullValueHasPreviousAdministrativeReturn = default!; _explicitNullProperties?.Remove("has_previous_administrative_return"); }
+            else if (parseNode.GetChildNode("has_previous_administrative_return") is { } nullNodeHasPreviousAdministrativeReturn && nullNodeHasPreviousAdministrativeReturn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasPreviousAdministrativeReturn = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether Plaid&apos;s data sources include a known administrative ACH return for this account and routing number.</summary>
-        public bool? HasPreviousAdministrativeReturn { get => _explicitNullValueHasPreviousAdministrativeReturn; set { _explicitNullValueHasPreviousAdministrativeReturn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_previous_administrative_return"); else _explicitNullProperties?.Remove("has_previous_administrative_return"); } }
+        public bool? HasPreviousAdministrativeReturn { get => _explicitNullValueHasPreviousAdministrativeReturn; set { _explicitNullValueHasPreviousAdministrativeReturn = value; AdditionalData?.Remove("has_previous_administrative_return"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_previous_administrative_return"); else _explicitNullProperties?.Remove("has_previous_administrative_return"); } }
         private bool? _explicitNullValueHasPreviousAdministrativeReturn = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsPreviousReturns"/> and sets the default values.

@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("message_to_beneficiary") is { } nullNodeMessageToBeneficiary && nullNodeMessageToBeneficiary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageToBeneficiary = null;
-            if (parseNode.GetChildNode("wire_return_fee") is { } nullNodeWireReturnFee && nullNodeWireReturnFee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WireReturnFee = null;
+            if (parseNode.GetChildNode("message_to_beneficiary") is null) { _explicitNullValueMessageToBeneficiary = default!; _explicitNullProperties?.Remove("message_to_beneficiary"); }
+            else if (parseNode.GetChildNode("message_to_beneficiary") is { } nullNodeMessageToBeneficiary && nullNodeMessageToBeneficiary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageToBeneficiary = null;
+            if (parseNode.GetChildNode("wire_return_fee") is null) { _explicitNullValueWireReturnFee = default!; _explicitNullProperties?.Remove("wire_return_fee"); }
+            else if (parseNode.GetChildNode("wire_return_fee") is { } nullNodeWireReturnFee && nullNodeWireReturnFee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WireReturnFee = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Additional information from the wire originator to the beneficiary. Max 140 characters; no single word may exceed 35 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MessageToBeneficiary { get => _explicitNullValueMessageToBeneficiary; set { _explicitNullValueMessageToBeneficiary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_to_beneficiary"); else _explicitNullProperties?.Remove("message_to_beneficiary"); } }
+        public string? MessageToBeneficiary { get => _explicitNullValueMessageToBeneficiary; set { _explicitNullValueMessageToBeneficiary = value; AdditionalData?.Remove("message_to_beneficiary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_to_beneficiary"); else _explicitNullProperties?.Remove("message_to_beneficiary"); } }
         private string? _explicitNullValueMessageToBeneficiary = default!;
 #nullable restore
 #else
-        public string MessageToBeneficiary { get => _explicitNullValueMessageToBeneficiary; set { _explicitNullValueMessageToBeneficiary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_to_beneficiary"); else _explicitNullProperties?.Remove("message_to_beneficiary"); } }
+        public string MessageToBeneficiary { get => _explicitNullValueMessageToBeneficiary; set { _explicitNullValueMessageToBeneficiary = value; AdditionalData?.Remove("message_to_beneficiary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_to_beneficiary"); else _explicitNullProperties?.Remove("message_to_beneficiary"); } }
         private string _explicitNullValueMessageToBeneficiary = default!;
 #endif
         /// <summary>The fee amount deducted from the original transfer during a wire return, if applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WireReturnFee { get => _explicitNullValueWireReturnFee; set { _explicitNullValueWireReturnFee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wire_return_fee"); else _explicitNullProperties?.Remove("wire_return_fee"); } }
+        public string? WireReturnFee { get => _explicitNullValueWireReturnFee; set { _explicitNullValueWireReturnFee = value; AdditionalData?.Remove("wire_return_fee"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wire_return_fee"); else _explicitNullProperties?.Remove("wire_return_fee"); } }
         private string? _explicitNullValueWireReturnFee = default!;
 #nullable restore
 #else
-        public string WireReturnFee { get => _explicitNullValueWireReturnFee; set { _explicitNullValueWireReturnFee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wire_return_fee"); else _explicitNullProperties?.Remove("wire_return_fee"); } }
+        public string WireReturnFee { get => _explicitNullValueWireReturnFee; set { _explicitNullValueWireReturnFee = value; AdditionalData?.Remove("wire_return_fee"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wire_return_fee"); else _explicitNullProperties?.Remove("wire_return_fee"); } }
         private string _explicitNullValueWireReturnFee = default!;
 #endif
         /// <summary>

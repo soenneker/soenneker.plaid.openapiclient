@@ -18,27 +18,30 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("is_technical_service_provider_involved") is { } nullNodeIsTechnicalServiceProviderInvolved && nullNodeIsTechnicalServiceProviderInvolved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsTechnicalServiceProviderInvolved = null;
-            if (parseNode.GetChildNode("is_third_party_involved") is { } nullNodeIsThirdPartyInvolved && nullNodeIsThirdPartyInvolved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsThirdPartyInvolved = null;
-            if (parseNode.GetChildNode("purposes") is { } nullNodePurposes && nullNodePurposes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Purposes = null;
+            if (parseNode.GetChildNode("is_technical_service_provider_involved") is null) { _explicitNullValueIsTechnicalServiceProviderInvolved = default!; _explicitNullProperties?.Remove("is_technical_service_provider_involved"); }
+            else if (parseNode.GetChildNode("is_technical_service_provider_involved") is { } nullNodeIsTechnicalServiceProviderInvolved && nullNodeIsTechnicalServiceProviderInvolved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsTechnicalServiceProviderInvolved = null;
+            if (parseNode.GetChildNode("is_third_party_involved") is null) { _explicitNullValueIsThirdPartyInvolved = default!; _explicitNullProperties?.Remove("is_third_party_involved"); }
+            else if (parseNode.GetChildNode("is_third_party_involved") is { } nullNodeIsThirdPartyInvolved && nullNodeIsThirdPartyInvolved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsThirdPartyInvolved = null;
+            if (parseNode.GetChildNode("purposes") is null) { _explicitNullValuePurposes = default!; _explicitNullProperties?.Remove("purposes"); }
+            else if (parseNode.GetChildNode("purposes") is { } nullNodePurposes && nullNodePurposes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Purposes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Denotes whether the technical service provider is involved.</summary>
-        public bool? IsTechnicalServiceProviderInvolved { get => _explicitNullValueIsTechnicalServiceProviderInvolved; set { _explicitNullValueIsTechnicalServiceProviderInvolved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_technical_service_provider_involved"); else _explicitNullProperties?.Remove("is_technical_service_provider_involved"); } }
+        public bool? IsTechnicalServiceProviderInvolved { get => _explicitNullValueIsTechnicalServiceProviderInvolved; set { _explicitNullValueIsTechnicalServiceProviderInvolved = value; AdditionalData?.Remove("is_technical_service_provider_involved"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_technical_service_provider_involved"); else _explicitNullProperties?.Remove("is_technical_service_provider_involved"); } }
         private bool? _explicitNullValueIsTechnicalServiceProviderInvolved = default!;
         /// <summary>Denotes whether the third party is involved.</summary>
-        public bool? IsThirdPartyInvolved { get => _explicitNullValueIsThirdPartyInvolved; set { _explicitNullValueIsThirdPartyInvolved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_third_party_involved"); else _explicitNullProperties?.Remove("is_third_party_involved"); } }
+        public bool? IsThirdPartyInvolved { get => _explicitNullValueIsThirdPartyInvolved; set { _explicitNullValueIsThirdPartyInvolved = value; AdditionalData?.Remove("is_third_party_involved"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_third_party_involved"); else _explicitNullProperties?.Remove("is_third_party_involved"); } }
         private bool? _explicitNullValueIsThirdPartyInvolved = default!;
         /// <summary>A map of permissible purposes to their corresponding use cases.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraPurposes? Purposes { get => _explicitNullValuePurposes; set { _explicitNullValuePurposes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purposes"); else _explicitNullProperties?.Remove("purposes"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraPurposes? Purposes { get => _explicitNullValuePurposes; set { _explicitNullValuePurposes = value; AdditionalData?.Remove("purposes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purposes"); else _explicitNullProperties?.Remove("purposes"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraPurposes? _explicitNullValuePurposes = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraPurposes Purposes { get => _explicitNullValuePurposes; set { _explicitNullValuePurposes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purposes"); else _explicitNullProperties?.Remove("purposes"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraPurposes Purposes { get => _explicitNullValuePurposes; set { _explicitNullValuePurposes = value; AdditionalData?.Remove("purposes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purposes"); else _explicitNullProperties?.Remove("purposes"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraPurposes _explicitNullValuePurposes = default!;
 #endif
         /// <summary>

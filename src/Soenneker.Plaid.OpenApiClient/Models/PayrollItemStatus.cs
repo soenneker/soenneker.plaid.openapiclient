@@ -18,7 +18,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("processing_status") is { } nullNodeProcessingStatus && nullNodeProcessingStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessingStatus = null;
+            if (parseNode.GetChildNode("processing_status") is null) { _explicitNullValueProcessingStatus = default!; _explicitNullProperties?.Remove("processing_status"); }
+            else if (parseNode.GetChildNode("processing_status") is { } nullNodeProcessingStatus && nullNodeProcessingStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessingStatus = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Denotes the processing status for the verification.`UNKNOWN`: The processing status could not be determined.`PROCESSING_COMPLETE`: The processing has completed and the user has approved for sharing. The data is available to be retrieved.`PROCESSING`: The verification is still processing. The data is not available yet.`FAILED`: The processing failed to complete successfully.`APPROVAL_STATUS_PENDING`: The processing has completed but the user has not yet approved the sharing of the data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProcessingStatus { get => _explicitNullValueProcessingStatus; set { _explicitNullValueProcessingStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processing_status"); else _explicitNullProperties?.Remove("processing_status"); } }
+        public string? ProcessingStatus { get => _explicitNullValueProcessingStatus; set { _explicitNullValueProcessingStatus = value; AdditionalData?.Remove("processing_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processing_status"); else _explicitNullProperties?.Remove("processing_status"); } }
         private string? _explicitNullValueProcessingStatus = default!;
 #nullable restore
 #else
-        public string ProcessingStatus { get => _explicitNullValueProcessingStatus; set { _explicitNullValueProcessingStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processing_status"); else _explicitNullProperties?.Remove("processing_status"); } }
+        public string ProcessingStatus { get => _explicitNullValueProcessingStatus; set { _explicitNullValueProcessingStatus = value; AdditionalData?.Remove("processing_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processing_status"); else _explicitNullProperties?.Remove("processing_status"); } }
         private string _explicitNullValueProcessingStatus = default!;
 #endif
         /// <summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("financial_institution_insights") is { } nullNodeFinancialInstitutionInsights && nullNodeFinancialInstitutionInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FinancialInstitutionInsights = null;
-            if (parseNode.GetChildNode("merchant_insights") is { } nullNodeMerchantInsights && nullNodeMerchantInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantInsights = null;
+            if (parseNode.GetChildNode("financial_institution_insights") is null) { _explicitNullValueFinancialInstitutionInsights = default!; _explicitNullProperties?.Remove("financial_institution_insights"); }
+            else if (parseNode.GetChildNode("financial_institution_insights") is { } nullNodeFinancialInstitutionInsights && nullNodeFinancialInstitutionInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FinancialInstitutionInsights = null;
+            if (parseNode.GetChildNode("merchant_insights") is null) { _explicitNullValueMerchantInsights = default!; _explicitNullProperties?.Remove("merchant_insights"); }
+            else if (parseNode.GetChildNode("merchant_insights") is { } nullNodeMerchantInsights && nullNodeMerchantInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantInsights = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Insights related to a user&apos;s transactions with other financial institutions, including detected account types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.FinancialInstitutionInsights>? FinancialInstitutionInsights { get => _explicitNullValueFinancialInstitutionInsights; set { _explicitNullValueFinancialInstitutionInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("financial_institution_insights"); else _explicitNullProperties?.Remove("financial_institution_insights"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.FinancialInstitutionInsights>? FinancialInstitutionInsights { get => _explicitNullValueFinancialInstitutionInsights; set { _explicitNullValueFinancialInstitutionInsights = value; AdditionalData?.Remove("financial_institution_insights"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("financial_institution_insights"); else _explicitNullProperties?.Remove("financial_institution_insights"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.FinancialInstitutionInsights>? _explicitNullValueFinancialInstitutionInsights = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.FinancialInstitutionInsights> FinancialInstitutionInsights { get => _explicitNullValueFinancialInstitutionInsights; set { _explicitNullValueFinancialInstitutionInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("financial_institution_insights"); else _explicitNullProperties?.Remove("financial_institution_insights"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.FinancialInstitutionInsights> FinancialInstitutionInsights { get => _explicitNullValueFinancialInstitutionInsights; set { _explicitNullValueFinancialInstitutionInsights = value; AdditionalData?.Remove("financial_institution_insights"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("financial_institution_insights"); else _explicitNullProperties?.Remove("financial_institution_insights"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.FinancialInstitutionInsights> _explicitNullValueFinancialInstitutionInsights = default!;
 #endif
         /// <summary>Insights about a user&apos;s top merchants, ranked by spend.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.MerchantInsights>? MerchantInsights { get => _explicitNullValueMerchantInsights; set { _explicitNullValueMerchantInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant_insights"); else _explicitNullProperties?.Remove("merchant_insights"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.MerchantInsights>? MerchantInsights { get => _explicitNullValueMerchantInsights; set { _explicitNullValueMerchantInsights = value; AdditionalData?.Remove("merchant_insights"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant_insights"); else _explicitNullProperties?.Remove("merchant_insights"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.MerchantInsights>? _explicitNullValueMerchantInsights = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.MerchantInsights> MerchantInsights { get => _explicitNullValueMerchantInsights; set { _explicitNullValueMerchantInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant_insights"); else _explicitNullProperties?.Remove("merchant_insights"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.MerchantInsights> MerchantInsights { get => _explicitNullValueMerchantInsights; set { _explicitNullValueMerchantInsights = value; AdditionalData?.Remove("merchant_insights"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant_insights"); else _explicitNullProperties?.Remove("merchant_insights"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.MerchantInsights> _explicitNullValueMerchantInsights = default!;
 #endif
         /// <summary>

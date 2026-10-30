@@ -18,13 +18,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("attributes_version") is { } nullNodeAttributesVersion && nullNodeAttributesVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributesVersion = null;
+            if (parseNode.GetChildNode("attributes_version") is null) { _explicitNullValueAttributesVersion = default!; _explicitNullProperties?.Remove("attributes_version"); }
+            else if (parseNode.GetChildNode("attributes_version") is { } nullNodeAttributesVersion && nullNodeAttributesVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributesVersion = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The version of cashflow attributes. Required if using Cash Flow Insights.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowAttributesVersion? AttributesVersion { get => _explicitNullValueAttributesVersion; set { _explicitNullValueAttributesVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributes_version"); else _explicitNullProperties?.Remove("attributes_version"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashflowAttributesVersion? AttributesVersion { get => _explicitNullValueAttributesVersion; set { _explicitNullValueAttributesVersion = value; AdditionalData?.Remove("attributes_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributes_version"); else _explicitNullProperties?.Remove("attributes_version"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CashflowAttributesVersion? _explicitNullValueAttributesVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateCashflowInsightsOptions"/> and sets the default values.
@@ -53,7 +54,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attributes_version", n => { AttributesVersion = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CashflowAttributesVersion>(); } },
+                { "attributes_version", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CashflowAttributesVersion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAttributesVersion = default; _explicitNullProperties?.Remove("attributes_version"); AdditionalData["attributes_version"] = unknown; } else { AttributesVersion = parsed; AdditionalData.Remove("attributes_version"); } } },
             };
         }
         /// <summary>

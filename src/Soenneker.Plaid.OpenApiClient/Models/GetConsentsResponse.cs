@@ -18,7 +18,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("consent_grants") is { } nullNodeConsentGrants && nullNodeConsentGrants.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsentGrants = null;
+            if (parseNode.GetChildNode("consent_grants") is null) { _explicitNullValueConsentGrants = default!; _explicitNullProperties?.Remove("consent_grants"); }
+            else if (parseNode.GetChildNode("consent_grants") is { } nullNodeConsentGrants && nullNodeConsentGrants.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsentGrants = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Consent grants matching the customerId (and optional status) filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentGrant>? ConsentGrants { get => _explicitNullValueConsentGrants; set { _explicitNullValueConsentGrants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consent_grants"); else _explicitNullProperties?.Remove("consent_grants"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentGrant>? ConsentGrants { get => _explicitNullValueConsentGrants; set { _explicitNullValueConsentGrants = value; AdditionalData?.Remove("consent_grants"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consent_grants"); else _explicitNullProperties?.Remove("consent_grants"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentGrant>? _explicitNullValueConsentGrants = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentGrant> ConsentGrants { get => _explicitNullValueConsentGrants; set { _explicitNullValueConsentGrants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consent_grants"); else _explicitNullProperties?.Remove("consent_grants"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentGrant> ConsentGrants { get => _explicitNullValueConsentGrants; set { _explicitNullValueConsentGrants = value; AdditionalData?.Remove("consent_grants"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consent_grants"); else _explicitNullProperties?.Remove("consent_grants"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentGrant> _explicitNullValueConsentGrants = default!;
 #endif
         /// <summary>

@@ -18,9 +18,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cause") is { } nullNodeCause && nullNodeCause.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cause = null;
-            if (parseNode.GetChildNode("warning_code") is { } nullNodeWarningCode && nullNodeWarningCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WarningCode = null;
-            if (parseNode.GetChildNode("warning_type") is { } nullNodeWarningType && nullNodeWarningType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WarningType = null;
+            if (parseNode.GetChildNode("cause") is null) { _explicitNullValueCause = default!; _explicitNullProperties?.Remove("cause"); }
+            else if (parseNode.GetChildNode("cause") is { } nullNodeCause && nullNodeCause.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cause = null;
+            if (parseNode.GetChildNode("warning_code") is null) { _explicitNullValueWarningCode = default!; _explicitNullProperties?.Remove("warning_code"); }
+            else if (parseNode.GetChildNode("warning_code") is { } nullNodeWarningCode && nullNodeWarningCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WarningCode = null;
+            if (parseNode.GetChildNode("warning_type") is null) { _explicitNullValueWarningType = default!; _explicitNullProperties?.Remove("warning_type"); }
+            else if (parseNode.GetChildNode("warning_type") is { } nullNodeWarningType && nullNodeWarningType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WarningType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,24 +31,24 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>An error object and associated `item_id` used to identify a specific Item and error when a batch operation operating on multiple Items has encountered an error in one of the Items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.Cause? Cause { get => _explicitNullValueCause; set { _explicitNullValueCause = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cause"); else _explicitNullProperties?.Remove("cause"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Cause? Cause { get => _explicitNullValueCause; set { _explicitNullValueCause = value; AdditionalData?.Remove("cause"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cause"); else _explicitNullProperties?.Remove("cause"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.Cause? _explicitNullValueCause = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.Cause Cause { get => _explicitNullValueCause; set { _explicitNullValueCause = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cause"); else _explicitNullProperties?.Remove("cause"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Cause Cause { get => _explicitNullValueCause; set { _explicitNullValueCause = value; AdditionalData?.Remove("cause"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cause"); else _explicitNullProperties?.Remove("cause"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.Cause _explicitNullValueCause = default!;
 #endif
         /// <summary>The warning code identifies a specific kind of warning.`IDENTITY_UNAVAILABLE`: Account-owner information is not available.`TRANSACTIONS_UNAVAILABLE`: Transactions information associated with Credit and Depository accounts are unavailable.`USER_FRAUD_ALERT`: The User has placed a fraud alert on their Plaid Check consumer report due to suspected fraud. Note: when a fraud alert is in place, the recipient of the consumer report has an obligation to verify the consumer&apos;s identity.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BaseReportWarningCode? WarningCode { get => _explicitNullValueWarningCode; set { _explicitNullValueWarningCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_code"); else _explicitNullProperties?.Remove("warning_code"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BaseReportWarningCode? WarningCode { get => _explicitNullValueWarningCode; set { _explicitNullValueWarningCode = value; AdditionalData?.Remove("warning_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_code"); else _explicitNullProperties?.Remove("warning_code"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.BaseReportWarningCode? _explicitNullValueWarningCode = default!;
         /// <summary>The warning type, which will always be `BASE_REPORT_WARNING`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WarningType { get => _explicitNullValueWarningType; set { _explicitNullValueWarningType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_type"); else _explicitNullProperties?.Remove("warning_type"); } }
+        public string? WarningType { get => _explicitNullValueWarningType; set { _explicitNullValueWarningType = value; AdditionalData?.Remove("warning_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_type"); else _explicitNullProperties?.Remove("warning_type"); } }
         private string? _explicitNullValueWarningType = default!;
 #nullable restore
 #else
-        public string WarningType { get => _explicitNullValueWarningType; set { _explicitNullValueWarningType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_type"); else _explicitNullProperties?.Remove("warning_type"); } }
+        public string WarningType { get => _explicitNullValueWarningType; set { _explicitNullValueWarningType = value; AdditionalData?.Remove("warning_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_type"); else _explicitNullProperties?.Remove("warning_type"); } }
         private string _explicitNullValueWarningType = default!;
 #endif
         /// <summary>
@@ -74,7 +77,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cause", n => { Cause = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Cause>(global::Soenneker.Plaid.OpenApiClient.Models.Cause.CreateFromDiscriminatorValue); } },
-                { "warning_code", n => { WarningCode = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportWarningCode>(); } },
+                { "warning_code", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportWarningCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueWarningCode = default; _explicitNullProperties?.Remove("warning_code"); AdditionalData["warning_code"] = unknown; } else { WarningCode = parsed; AdditionalData.Remove("warning_code"); } } },
                 { "warning_type", n => { WarningType = n.GetStringValue(); } },
             };
         }

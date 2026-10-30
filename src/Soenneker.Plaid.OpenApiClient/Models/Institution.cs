@@ -18,20 +18,34 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("auth_metadata") is { } nullNodeAuthMetadata && nullNodeAuthMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthMetadata = null;
-            if (parseNode.GetChildNode("connection_availability") is { } nullNodeConnectionAvailability && nullNodeConnectionAvailability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionAvailability = null;
-            if (parseNode.GetChildNode("country_codes") is { } nullNodeCountryCodes && nullNodeCountryCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountryCodes = null;
-            if (parseNode.GetChildNode("dtc_numbers") is { } nullNodeDtcNumbers && nullNodeDtcNumbers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DtcNumbers = null;
-            if (parseNode.GetChildNode("institution_id") is { } nullNodeInstitutionId && nullNodeInstitutionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionId = null;
-            if (parseNode.GetChildNode("logo") is { } nullNodeLogo && nullNodeLogo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Logo = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("oauth") is { } nullNodeOauth && nullNodeOauth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Oauth = null;
-            if (parseNode.GetChildNode("payment_initiation_metadata") is { } nullNodePaymentInitiationMetadata && nullNodePaymentInitiationMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentInitiationMetadata = null;
-            if (parseNode.GetChildNode("primary_color") is { } nullNodePrimaryColor && nullNodePrimaryColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryColor = null;
-            if (parseNode.GetChildNode("products") is { } nullNodeProducts && nullNodeProducts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Products = null;
-            if (parseNode.GetChildNode("routing_numbers") is { } nullNodeRoutingNumbers && nullNodeRoutingNumbers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoutingNumbers = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("auth_metadata") is null) { _explicitNullValueAuthMetadata = default!; _explicitNullProperties?.Remove("auth_metadata"); }
+            else if (parseNode.GetChildNode("auth_metadata") is { } nullNodeAuthMetadata && nullNodeAuthMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthMetadata = null;
+            if (parseNode.GetChildNode("connection_availability") is null) { _explicitNullValueConnectionAvailability = default!; _explicitNullProperties?.Remove("connection_availability"); }
+            else if (parseNode.GetChildNode("connection_availability") is { } nullNodeConnectionAvailability && nullNodeConnectionAvailability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionAvailability = null;
+            if (parseNode.GetChildNode("country_codes") is null) { _explicitNullValueCountryCodes = default!; _explicitNullProperties?.Remove("country_codes"); }
+            else if (parseNode.GetChildNode("country_codes") is { } nullNodeCountryCodes && nullNodeCountryCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountryCodes = null;
+            if (parseNode.GetChildNode("dtc_numbers") is null) { _explicitNullValueDtcNumbers = default!; _explicitNullProperties?.Remove("dtc_numbers"); }
+            else if (parseNode.GetChildNode("dtc_numbers") is { } nullNodeDtcNumbers && nullNodeDtcNumbers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DtcNumbers = null;
+            if (parseNode.GetChildNode("institution_id") is null) { _explicitNullValueInstitutionId = default!; _explicitNullProperties?.Remove("institution_id"); }
+            else if (parseNode.GetChildNode("institution_id") is { } nullNodeInstitutionId && nullNodeInstitutionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionId = null;
+            if (parseNode.GetChildNode("logo") is null) { _explicitNullValueLogo = default!; _explicitNullProperties?.Remove("logo"); }
+            else if (parseNode.GetChildNode("logo") is { } nullNodeLogo && nullNodeLogo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Logo = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("oauth") is null) { _explicitNullValueOauth = default!; _explicitNullProperties?.Remove("oauth"); }
+            else if (parseNode.GetChildNode("oauth") is { } nullNodeOauth && nullNodeOauth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Oauth = null;
+            if (parseNode.GetChildNode("payment_initiation_metadata") is null) { _explicitNullValuePaymentInitiationMetadata = default!; _explicitNullProperties?.Remove("payment_initiation_metadata"); }
+            else if (parseNode.GetChildNode("payment_initiation_metadata") is { } nullNodePaymentInitiationMetadata && nullNodePaymentInitiationMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentInitiationMetadata = null;
+            if (parseNode.GetChildNode("primary_color") is null) { _explicitNullValuePrimaryColor = default!; _explicitNullProperties?.Remove("primary_color"); }
+            else if (parseNode.GetChildNode("primary_color") is { } nullNodePrimaryColor && nullNodePrimaryColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryColor = null;
+            if (parseNode.GetChildNode("products") is null) { _explicitNullValueProducts = default!; _explicitNullProperties?.Remove("products"); }
+            else if (parseNode.GetChildNode("products") is { } nullNodeProducts && nullNodeProducts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Products = null;
+            if (parseNode.GetChildNode("routing_numbers") is null) { _explicitNullValueRoutingNumbers = default!; _explicitNullProperties?.Remove("routing_numbers"); }
+            else if (parseNode.GetChildNode("routing_numbers") is { } nullNodeRoutingNumbers && nullNodeRoutingNumbers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoutingNumbers = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -39,127 +53,127 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Metadata that captures information about the Auth features of an institution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AuthMetadata? AuthMetadata { get => _explicitNullValueAuthMetadata; set { _explicitNullValueAuthMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_metadata"); else _explicitNullProperties?.Remove("auth_metadata"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AuthMetadata? AuthMetadata { get => _explicitNullValueAuthMetadata; set { _explicitNullValueAuthMetadata = value; AdditionalData?.Remove("auth_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_metadata"); else _explicitNullProperties?.Remove("auth_metadata"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.AuthMetadata? _explicitNullValueAuthMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AuthMetadata AuthMetadata { get => _explicitNullValueAuthMetadata; set { _explicitNullValueAuthMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_metadata"); else _explicitNullProperties?.Remove("auth_metadata"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AuthMetadata AuthMetadata { get => _explicitNullValueAuthMetadata; set { _explicitNullValueAuthMetadata = value; AdditionalData?.Remove("auth_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_metadata"); else _explicitNullProperties?.Remove("auth_metadata"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.AuthMetadata _explicitNullValueAuthMetadata = default!;
 #endif
         /// <summary>Whether Plaid supports creating new Items for the institution.`SUPPORTED`: Plaid supports new connections to the institution. Whether a given connection succeeds can still depend on your integration and account: some institutions require completing [OAuth registration](https://plaid.com/docs/link/oauth/#complete-the-registration-requirements-in-the-compliance-center) before they can be used, the institution may not support every product requested in `/link/token/create`, and your Plaid account must be in good standing.`NOT_SUPPORTED`: Plaid does not support new connections to the institution. Existing Items may continue to work. Attempting to create a new Item for the institution returns an `INSTITUTION_NO_LONGER_SUPPORTED` error. Institutions with this value are returned only by `/institutions/get_by_id`.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.InstitutionConnectionAvailability? ConnectionAvailability { get => _explicitNullValueConnectionAvailability; set { _explicitNullValueConnectionAvailability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_availability"); else _explicitNullProperties?.Remove("connection_availability"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.InstitutionConnectionAvailability? ConnectionAvailability { get => _explicitNullValueConnectionAvailability; set { _explicitNullValueConnectionAvailability = value; AdditionalData?.Remove("connection_availability"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_availability"); else _explicitNullProperties?.Remove("connection_availability"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.InstitutionConnectionAvailability? _explicitNullValueConnectionAvailability = default!;
         /// <summary>A list of the country codes supported by the institution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CountryCode?>? CountryCodes { get => _explicitNullValueCountryCodes; set { _explicitNullValueCountryCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country_codes"); else _explicitNullProperties?.Remove("country_codes"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CountryCode?>? CountryCodes { get => _explicitNullValueCountryCodes; set { _explicitNullValueCountryCodes = value; AdditionalData?.Remove("country_codes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country_codes"); else _explicitNullProperties?.Remove("country_codes"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CountryCode?>? _explicitNullValueCountryCodes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CountryCode?> CountryCodes { get => _explicitNullValueCountryCodes; set { _explicitNullValueCountryCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country_codes"); else _explicitNullProperties?.Remove("country_codes"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CountryCode?> CountryCodes { get => _explicitNullValueCountryCodes; set { _explicitNullValueCountryCodes = value; AdditionalData?.Remove("country_codes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country_codes"); else _explicitNullProperties?.Remove("country_codes"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CountryCode?> _explicitNullValueCountryCodes = default!;
 #endif
         /// <summary>A partial list of DTC numbers associated with the institution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DtcNumbers { get => _explicitNullValueDtcNumbers; set { _explicitNullValueDtcNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dtc_numbers"); else _explicitNullProperties?.Remove("dtc_numbers"); } }
+        public List<string>? DtcNumbers { get => _explicitNullValueDtcNumbers; set { _explicitNullValueDtcNumbers = value; AdditionalData?.Remove("dtc_numbers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dtc_numbers"); else _explicitNullProperties?.Remove("dtc_numbers"); } }
         private List<string>? _explicitNullValueDtcNumbers = default!;
 #nullable restore
 #else
-        public List<string> DtcNumbers { get => _explicitNullValueDtcNumbers; set { _explicitNullValueDtcNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dtc_numbers"); else _explicitNullProperties?.Remove("dtc_numbers"); } }
+        public List<string> DtcNumbers { get => _explicitNullValueDtcNumbers; set { _explicitNullValueDtcNumbers = value; AdditionalData?.Remove("dtc_numbers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dtc_numbers"); else _explicitNullProperties?.Remove("dtc_numbers"); } }
         private List<string> _explicitNullValueDtcNumbers = default!;
 #endif
         /// <summary>Unique identifier for the institution. Note that the same institution may have multiple records, each with different institution IDs; for example, if the institution has migrated to OAuth, there may be separate `institution_id`s for the OAuth and non-OAuth versions of the institution. Institutions that operate in different countries or with multiple login portals may also have separate `institution_id`s for each country or portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstitutionId { get => _explicitNullValueInstitutionId; set { _explicitNullValueInstitutionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_id"); else _explicitNullProperties?.Remove("institution_id"); } }
+        public string? InstitutionId { get => _explicitNullValueInstitutionId; set { _explicitNullValueInstitutionId = value; AdditionalData?.Remove("institution_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_id"); else _explicitNullProperties?.Remove("institution_id"); } }
         private string? _explicitNullValueInstitutionId = default!;
 #nullable restore
 #else
-        public string InstitutionId { get => _explicitNullValueInstitutionId; set { _explicitNullValueInstitutionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_id"); else _explicitNullProperties?.Remove("institution_id"); } }
+        public string InstitutionId { get => _explicitNullValueInstitutionId; set { _explicitNullValueInstitutionId = value; AdditionalData?.Remove("institution_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_id"); else _explicitNullProperties?.Remove("institution_id"); } }
         private string _explicitNullValueInstitutionId = default!;
 #endif
         /// <summary>Base64 encoded representation of the institution&apos;s logo, returned as a base64 encoded 152x152 PNG. Not all institutions&apos; logos are available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
+        public string? Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; AdditionalData?.Remove("logo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
         private string? _explicitNullValueLogo = default!;
 #nullable restore
 #else
-        public string Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
+        public string Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; AdditionalData?.Remove("logo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
         private string _explicitNullValueLogo = default!;
 #endif
         /// <summary>The official name of the institution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Indicates that the institution has an OAuth login flow. This will be `true` if OAuth is supported for any Items associated with the institution, even if the institution also supports non-OAuth connections.</summary>
-        public bool? Oauth { get => _explicitNullValueOauth; set { _explicitNullValueOauth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth"); else _explicitNullProperties?.Remove("oauth"); } }
+        public bool? Oauth { get => _explicitNullValueOauth; set { _explicitNullValueOauth = value; AdditionalData?.Remove("oauth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth"); else _explicitNullProperties?.Remove("oauth"); } }
         private bool? _explicitNullValueOauth = default!;
         /// <summary>Metadata that captures what specific payment configurations an institution supports when making Payment Initiation requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMetadata? PaymentInitiationMetadata { get => _explicitNullValuePaymentInitiationMetadata; set { _explicitNullValuePaymentInitiationMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_initiation_metadata"); else _explicitNullProperties?.Remove("payment_initiation_metadata"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMetadata? PaymentInitiationMetadata { get => _explicitNullValuePaymentInitiationMetadata; set { _explicitNullValuePaymentInitiationMetadata = value; AdditionalData?.Remove("payment_initiation_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_initiation_metadata"); else _explicitNullProperties?.Remove("payment_initiation_metadata"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMetadata? _explicitNullValuePaymentInitiationMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMetadata PaymentInitiationMetadata { get => _explicitNullValuePaymentInitiationMetadata; set { _explicitNullValuePaymentInitiationMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_initiation_metadata"); else _explicitNullProperties?.Remove("payment_initiation_metadata"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMetadata PaymentInitiationMetadata { get => _explicitNullValuePaymentInitiationMetadata; set { _explicitNullValuePaymentInitiationMetadata = value; AdditionalData?.Remove("payment_initiation_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_initiation_metadata"); else _explicitNullProperties?.Remove("payment_initiation_metadata"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationMetadata _explicitNullValuePaymentInitiationMetadata = default!;
 #endif
         /// <summary>Hexadecimal representation of the primary color used by the institution. If Plaid does not have primary color data for the institution, this field will be a deterministically generated fallback color.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrimaryColor { get => _explicitNullValuePrimaryColor; set { _explicitNullValuePrimaryColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_color"); else _explicitNullProperties?.Remove("primary_color"); } }
+        public string? PrimaryColor { get => _explicitNullValuePrimaryColor; set { _explicitNullValuePrimaryColor = value; AdditionalData?.Remove("primary_color"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_color"); else _explicitNullProperties?.Remove("primary_color"); } }
         private string? _explicitNullValuePrimaryColor = default!;
 #nullable restore
 #else
-        public string PrimaryColor { get => _explicitNullValuePrimaryColor; set { _explicitNullValuePrimaryColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_color"); else _explicitNullProperties?.Remove("primary_color"); } }
+        public string PrimaryColor { get => _explicitNullValuePrimaryColor; set { _explicitNullValuePrimaryColor = value; AdditionalData?.Remove("primary_color"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_color"); else _explicitNullProperties?.Remove("primary_color"); } }
         private string _explicitNullValuePrimaryColor = default!;
 #endif
         /// <summary>A list of the Plaid products supported by the institution. Note that only institutions that support Instant Auth will return `auth` in the product array; institutions that do not list `auth` may still support other Auth methods such as Instant Match or Automated Micro-deposit Verification. To identify institutions that support those methods, use the `auth_metadata` object. For more details, see [Full Auth coverage](https://plaid.com/docs/auth/coverage/). The `income_verification` product here indicates support for Bank Income. Note: For Signal Transaction Scores and Transfer, listed institutions may be incomplete or incorrect. Instead, use the following: `balance` support also indicates coverage of Signal Transaction Scores; `auth` support also indicates coverage of Transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? Products { get => _explicitNullValueProducts; set { _explicitNullValueProducts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("products"); else _explicitNullProperties?.Remove("products"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? Products { get => _explicitNullValueProducts; set { _explicitNullValueProducts = value; AdditionalData?.Remove("products"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("products"); else _explicitNullProperties?.Remove("products"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.Products?>? _explicitNullValueProducts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> Products { get => _explicitNullValueProducts; set { _explicitNullValueProducts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("products"); else _explicitNullProperties?.Remove("products"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> Products { get => _explicitNullValueProducts; set { _explicitNullValueProducts = value; AdditionalData?.Remove("products"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("products"); else _explicitNullProperties?.Remove("products"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.Products?> _explicitNullValueProducts = default!;
 #endif
         /// <summary>A list of routing numbers known to be associated with the institution. This list is provided for the purpose of looking up institutions by routing number. It is generally comprehensive but is not guaranteed to be a complete list of routing numbers for an institution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RoutingNumbers { get => _explicitNullValueRoutingNumbers; set { _explicitNullValueRoutingNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routing_numbers"); else _explicitNullProperties?.Remove("routing_numbers"); } }
+        public List<string>? RoutingNumbers { get => _explicitNullValueRoutingNumbers; set { _explicitNullValueRoutingNumbers = value; AdditionalData?.Remove("routing_numbers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routing_numbers"); else _explicitNullProperties?.Remove("routing_numbers"); } }
         private List<string>? _explicitNullValueRoutingNumbers = default!;
 #nullable restore
 #else
-        public List<string> RoutingNumbers { get => _explicitNullValueRoutingNumbers; set { _explicitNullValueRoutingNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routing_numbers"); else _explicitNullProperties?.Remove("routing_numbers"); } }
+        public List<string> RoutingNumbers { get => _explicitNullValueRoutingNumbers; set { _explicitNullValueRoutingNumbers = value; AdditionalData?.Remove("routing_numbers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routing_numbers"); else _explicitNullProperties?.Remove("routing_numbers"); } }
         private List<string> _explicitNullValueRoutingNumbers = default!;
 #endif
         /// <summary>The status of an institution is determined by the health of its Item logins, Transactions updates, Investments updates, Liabilities updates, Auth requests, Balance requests, Identity requests, Investments requests, and Liabilities requests. A login attempt is conducted during the initial Item add in Link. If there is not enough traffic to accurately calculate an institution&apos;s status, Plaid will return null rather than potentially inaccurate data.Institution status is accessible in the Dashboard and via the API using the `/institutions/get_by_id` endpoint with the `options.include_status` option set to true. In the Sandbox environment, institution status is only available for First Platypus Bank (`ins_109508`) and Houndstooth Bank (`ins_109512`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.InstitutionStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.InstitutionStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.InstitutionStatus? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.InstitutionStatus Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.InstitutionStatus Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.InstitutionStatus _explicitNullValueStatus = default!;
 #endif
         /// <summary>The URL for the institution&apos;s website</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
@@ -188,7 +202,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "auth_metadata", n => { AuthMetadata = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AuthMetadata>(global::Soenneker.Plaid.OpenApiClient.Models.AuthMetadata.CreateFromDiscriminatorValue); } },
-                { "connection_availability", n => { ConnectionAvailability = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.InstitutionConnectionAvailability>(); } },
+                { "connection_availability", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.InstitutionConnectionAvailability>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueConnectionAvailability = default; _explicitNullProperties?.Remove("connection_availability"); AdditionalData["connection_availability"] = unknown; } else { ConnectionAvailability = parsed; AdditionalData.Remove("connection_availability"); } } },
                 { "country_codes", n => { CountryCodes = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.CountryCode>()?.AsList(); } },
                 { "dtc_numbers", n => { DtcNumbers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "institution_id", n => { InstitutionId = n.GetStringValue(); } },

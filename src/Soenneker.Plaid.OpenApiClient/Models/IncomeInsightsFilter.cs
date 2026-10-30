@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("excluded_categories") is { } nullNodeExcludedCategories && nullNodeExcludedCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedCategories = null;
-            if (parseNode.GetChildNode("included_categories") is { } nullNodeIncludedCategories && nullNodeIncludedCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludedCategories = null;
+            if (parseNode.GetChildNode("excluded_categories") is null) { _explicitNullValueExcludedCategories = default!; _explicitNullProperties?.Remove("excluded_categories"); }
+            else if (parseNode.GetChildNode("excluded_categories") is { } nullNodeExcludedCategories && nullNodeExcludedCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedCategories = null;
+            if (parseNode.GetChildNode("included_categories") is null) { _explicitNullValueIncludedCategories = default!; _explicitNullProperties?.Remove("included_categories"); }
+            else if (parseNode.GetChildNode("included_categories") is { } nullNodeIncludedCategories && nullNodeIncludedCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludedCategories = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Excludes income streams matching the specified categories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludedCategories { get => _explicitNullValueExcludedCategories; set { _explicitNullValueExcludedCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_categories"); else _explicitNullProperties?.Remove("excluded_categories"); } }
+        public List<string>? ExcludedCategories { get => _explicitNullValueExcludedCategories; set { _explicitNullValueExcludedCategories = value; AdditionalData?.Remove("excluded_categories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_categories"); else _explicitNullProperties?.Remove("excluded_categories"); } }
         private List<string>? _explicitNullValueExcludedCategories = default!;
 #nullable restore
 #else
-        public List<string> ExcludedCategories { get => _explicitNullValueExcludedCategories; set { _explicitNullValueExcludedCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_categories"); else _explicitNullProperties?.Remove("excluded_categories"); } }
+        public List<string> ExcludedCategories { get => _explicitNullValueExcludedCategories; set { _explicitNullValueExcludedCategories = value; AdditionalData?.Remove("excluded_categories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded_categories"); else _explicitNullProperties?.Remove("excluded_categories"); } }
         private List<string> _explicitNullValueExcludedCategories = default!;
 #endif
         /// <summary>Includes income streams matching the specified categories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IncludedCategories { get => _explicitNullValueIncludedCategories; set { _explicitNullValueIncludedCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("included_categories"); else _explicitNullProperties?.Remove("included_categories"); } }
+        public List<string>? IncludedCategories { get => _explicitNullValueIncludedCategories; set { _explicitNullValueIncludedCategories = value; AdditionalData?.Remove("included_categories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("included_categories"); else _explicitNullProperties?.Remove("included_categories"); } }
         private List<string>? _explicitNullValueIncludedCategories = default!;
 #nullable restore
 #else
-        public List<string> IncludedCategories { get => _explicitNullValueIncludedCategories; set { _explicitNullValueIncludedCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("included_categories"); else _explicitNullProperties?.Remove("included_categories"); } }
+        public List<string> IncludedCategories { get => _explicitNullValueIncludedCategories; set { _explicitNullValueIncludedCategories = value; AdditionalData?.Remove("included_categories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("included_categories"); else _explicitNullProperties?.Remove("included_categories"); } }
         private List<string> _explicitNullValueIncludedCategories = default!;
 #endif
         /// <summary>

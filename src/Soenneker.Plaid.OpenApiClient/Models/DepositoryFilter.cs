@@ -18,18 +18,20 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("account_subtypes") is { } nullNodeAccountSubtypes && nullNodeAccountSubtypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountSubtypes = null;
-            if (parseNode.GetChildNode("limited_purpose_types") is { } nullNodeLimitedPurposeTypes && nullNodeLimitedPurposeTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LimitedPurposeTypes = null;
+            if (parseNode.GetChildNode("account_subtypes") is null) { _explicitNullValueAccountSubtypes = default!; _explicitNullProperties?.Remove("account_subtypes"); }
+            else if (parseNode.GetChildNode("account_subtypes") is { } nullNodeAccountSubtypes && nullNodeAccountSubtypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountSubtypes = null;
+            if (parseNode.GetChildNode("limited_purpose_types") is null) { _explicitNullValueLimitedPurposeTypes = default!; _explicitNullProperties?.Remove("limited_purpose_types"); }
+            else if (parseNode.GetChildNode("limited_purpose_types") is { } nullNodeLimitedPurposeTypes && nullNodeLimitedPurposeTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LimitedPurposeTypes = null;
         }
 
         /// <summary>An array of account subtypes to display in Link. If not specified, all account subtypes will be shown. For a full list of valid types and subtypes, see the [Account schema](https://plaid.com/docs/api/accounts#account-type-schema). </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.DepositoryAccountSubtype?>? AccountSubtypes { get => _explicitNullValueAccountSubtypes; set { _explicitNullValueAccountSubtypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_subtypes"); else _explicitNullProperties?.Remove("account_subtypes"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.DepositoryAccountSubtype?>? AccountSubtypes { get => _explicitNullValueAccountSubtypes; set { _explicitNullValueAccountSubtypes = value; AdditionalData?.Remove("account_subtypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_subtypes"); else _explicitNullProperties?.Remove("account_subtypes"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.DepositoryAccountSubtype?>? _explicitNullValueAccountSubtypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.DepositoryAccountSubtype?> AccountSubtypes { get => _explicitNullValueAccountSubtypes; set { _explicitNullValueAccountSubtypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_subtypes"); else _explicitNullProperties?.Remove("account_subtypes"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.DepositoryAccountSubtype?> AccountSubtypes { get => _explicitNullValueAccountSubtypes; set { _explicitNullValueAccountSubtypes = value; AdditionalData?.Remove("account_subtypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_subtypes"); else _explicitNullProperties?.Remove("account_subtypes"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.DepositoryAccountSubtype?> _explicitNullValueAccountSubtypes = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -37,11 +39,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>An array of limited purpose types. Restricts which kinds of limited purpose checking accounts may be connected in Link to prevent users from connecting them for unsupported use cases. Required when &apos;limited purpose checking&apos; is in the subtypes filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.LimitedPurposeType?>? LimitedPurposeTypes { get => _explicitNullValueLimitedPurposeTypes; set { _explicitNullValueLimitedPurposeTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limited_purpose_types"); else _explicitNullProperties?.Remove("limited_purpose_types"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LimitedPurposeType?>? LimitedPurposeTypes { get => _explicitNullValueLimitedPurposeTypes; set { _explicitNullValueLimitedPurposeTypes = value; AdditionalData?.Remove("limited_purpose_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limited_purpose_types"); else _explicitNullProperties?.Remove("limited_purpose_types"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.LimitedPurposeType?>? _explicitNullValueLimitedPurposeTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.LimitedPurposeType?> LimitedPurposeTypes { get => _explicitNullValueLimitedPurposeTypes; set { _explicitNullValueLimitedPurposeTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limited_purpose_types"); else _explicitNullProperties?.Remove("limited_purpose_types"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LimitedPurposeType?> LimitedPurposeTypes { get => _explicitNullValueLimitedPurposeTypes; set { _explicitNullValueLimitedPurposeTypes = value; AdditionalData?.Remove("limited_purpose_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limited_purpose_types"); else _explicitNullProperties?.Remove("limited_purpose_types"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.LimitedPurposeType?> _explicitNullValueLimitedPurposeTypes = default!;
 #endif
         /// <summary>

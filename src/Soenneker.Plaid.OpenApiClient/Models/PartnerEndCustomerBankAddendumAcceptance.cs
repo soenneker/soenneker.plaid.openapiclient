@@ -18,27 +18,30 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("customer_accepted") is { } nullNodeCustomerAccepted && nullNodeCustomerAccepted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerAccepted = null;
-            if (parseNode.GetChildNode("customer_agreement_timestamp") is { } nullNodeCustomerAgreementTimestamp && nullNodeCustomerAgreementTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerAgreementTimestamp = null;
-            if (parseNode.GetChildNode("customer_ip_address") is { } nullNodeCustomerIpAddress && nullNodeCustomerIpAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerIpAddress = null;
+            if (parseNode.GetChildNode("customer_accepted") is null) { _explicitNullValueCustomerAccepted = default!; _explicitNullProperties?.Remove("customer_accepted"); }
+            else if (parseNode.GetChildNode("customer_accepted") is { } nullNodeCustomerAccepted && nullNodeCustomerAccepted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerAccepted = null;
+            if (parseNode.GetChildNode("customer_agreement_timestamp") is null) { _explicitNullValueCustomerAgreementTimestamp = default!; _explicitNullProperties?.Remove("customer_agreement_timestamp"); }
+            else if (parseNode.GetChildNode("customer_agreement_timestamp") is { } nullNodeCustomerAgreementTimestamp && nullNodeCustomerAgreementTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerAgreementTimestamp = null;
+            if (parseNode.GetChildNode("customer_ip_address") is null) { _explicitNullValueCustomerIpAddress = default!; _explicitNullProperties?.Remove("customer_ip_address"); }
+            else if (parseNode.GetChildNode("customer_ip_address") is { } nullNodeCustomerIpAddress && nullNodeCustomerIpAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerIpAddress = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Denotes whether the end customer has accepted the bank addendum terms.</summary>
-        public bool? CustomerAccepted { get => _explicitNullValueCustomerAccepted; set { _explicitNullValueCustomerAccepted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_accepted"); else _explicitNullProperties?.Remove("customer_accepted"); } }
+        public bool? CustomerAccepted { get => _explicitNullValueCustomerAccepted; set { _explicitNullValueCustomerAccepted = value; AdditionalData?.Remove("customer_accepted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_accepted"); else _explicitNullProperties?.Remove("customer_accepted"); } }
         private bool? _explicitNullValueCustomerAccepted = default!;
         /// <summary>The timestamp of when the end customer accepted the bank addendum in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (`YYYY-MM-DDTHH:mm:ssZ`).</summary>
-        public DateTimeOffset? CustomerAgreementTimestamp { get => _explicitNullValueCustomerAgreementTimestamp; set { _explicitNullValueCustomerAgreementTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_agreement_timestamp"); else _explicitNullProperties?.Remove("customer_agreement_timestamp"); } }
+        public DateTimeOffset? CustomerAgreementTimestamp { get => _explicitNullValueCustomerAgreementTimestamp; set { _explicitNullValueCustomerAgreementTimestamp = value; AdditionalData?.Remove("customer_agreement_timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_agreement_timestamp"); else _explicitNullProperties?.Remove("customer_agreement_timestamp"); } }
         private DateTimeOffset? _explicitNullValueCustomerAgreementTimestamp = default!;
         /// <summary>The IP address of the end customer when they accepted the bank addendum.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerIpAddress { get => _explicitNullValueCustomerIpAddress; set { _explicitNullValueCustomerIpAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_ip_address"); else _explicitNullProperties?.Remove("customer_ip_address"); } }
+        public string? CustomerIpAddress { get => _explicitNullValueCustomerIpAddress; set { _explicitNullValueCustomerIpAddress = value; AdditionalData?.Remove("customer_ip_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_ip_address"); else _explicitNullProperties?.Remove("customer_ip_address"); } }
         private string? _explicitNullValueCustomerIpAddress = default!;
 #nullable restore
 #else
-        public string CustomerIpAddress { get => _explicitNullValueCustomerIpAddress; set { _explicitNullValueCustomerIpAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_ip_address"); else _explicitNullProperties?.Remove("customer_ip_address"); } }
+        public string CustomerIpAddress { get => _explicitNullValueCustomerIpAddress; set { _explicitNullValueCustomerIpAddress = value; AdditionalData?.Remove("customer_ip_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_ip_address"); else _explicitNullProperties?.Remove("customer_ip_address"); } }
         private string _explicitNullValueCustomerIpAddress = default!;
 #endif
         /// <summary>

@@ -18,34 +18,37 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("generated_time") is { } nullNodeGeneratedTime && nullNodeGeneratedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeneratedTime = null;
-            if (parseNode.GetChildNode("lend_score") is { } nullNodeLendScore && nullNodeLendScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LendScore = null;
-            if (parseNode.GetChildNode("report_id") is { } nullNodeReportId && nullNodeReportId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportId = null;
+            if (parseNode.GetChildNode("generated_time") is null) { _explicitNullValueGeneratedTime = default!; _explicitNullProperties?.Remove("generated_time"); }
+            else if (parseNode.GetChildNode("generated_time") is { } nullNodeGeneratedTime && nullNodeGeneratedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeneratedTime = null;
+            if (parseNode.GetChildNode("lend_score") is null) { _explicitNullValueLendScore = default!; _explicitNullProperties?.Remove("lend_score"); }
+            else if (parseNode.GetChildNode("lend_score") is { } nullNodeLendScore && nullNodeLendScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LendScore = null;
+            if (parseNode.GetChildNode("report_id") is null) { _explicitNullValueReportId = default!; _explicitNullProperties?.Remove("report_id"); }
+            else if (parseNode.GetChildNode("report_id") is { } nullNodeReportId && nullNodeReportId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The time when the report was generated.</summary>
-        public DateTimeOffset? GeneratedTime { get => _explicitNullValueGeneratedTime; set { _explicitNullValueGeneratedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generated_time"); else _explicitNullProperties?.Remove("generated_time"); } }
+        public DateTimeOffset? GeneratedTime { get => _explicitNullValueGeneratedTime; set { _explicitNullValueGeneratedTime = value; AdditionalData?.Remove("generated_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generated_time"); else _explicitNullProperties?.Remove("generated_time"); } }
         private DateTimeOffset? _explicitNullValueGeneratedTime = default!;
         /// <summary>The results of the LendScore</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LendScore? LendScore { get => _explicitNullValueLendScore; set { _explicitNullValueLendScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lend_score"); else _explicitNullProperties?.Remove("lend_score"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LendScore? LendScore { get => _explicitNullValueLendScore; set { _explicitNullValueLendScore = value; AdditionalData?.Remove("lend_score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lend_score"); else _explicitNullProperties?.Remove("lend_score"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.LendScore? _explicitNullValueLendScore = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LendScore LendScore { get => _explicitNullValueLendScore; set { _explicitNullValueLendScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lend_score"); else _explicitNullProperties?.Remove("lend_score"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LendScore LendScore { get => _explicitNullValueLendScore; set { _explicitNullValueLendScore = value; AdditionalData?.Remove("lend_score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lend_score"); else _explicitNullProperties?.Remove("lend_score"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.LendScore _explicitNullValueLendScore = default!;
 #endif
         /// <summary>The unique identifier associated with the report object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReportId { get => _explicitNullValueReportId; set { _explicitNullValueReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_id"); else _explicitNullProperties?.Remove("report_id"); } }
+        public string? ReportId { get => _explicitNullValueReportId; set { _explicitNullValueReportId = value; AdditionalData?.Remove("report_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_id"); else _explicitNullProperties?.Remove("report_id"); } }
         private string? _explicitNullValueReportId = default!;
 #nullable restore
 #else
-        public string ReportId { get => _explicitNullValueReportId; set { _explicitNullValueReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_id"); else _explicitNullProperties?.Remove("report_id"); } }
+        public string ReportId { get => _explicitNullValueReportId; set { _explicitNullValueReportId = value; AdditionalData?.Remove("report_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_id"); else _explicitNullProperties?.Remove("report_id"); } }
         private string _explicitNullValueReportId = default!;
 #endif
         /// <summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("selfies") is { } nullNodeSelfies && nullNodeSelfies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Selfies = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("selfies") is null) { _explicitNullValueSelfies = default!; _explicitNullProperties?.Remove("selfies"); }
+            else if (parseNode.GetChildNode("selfies") is { } nullNodeSelfies && nullNodeSelfies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Selfies = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>An array of selfies submitted to the `selfie_check` step. Each entry represents one user submission.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.SelfieCheckSelfie>? Selfies { get => _explicitNullValueSelfies; set { _explicitNullValueSelfies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selfies"); else _explicitNullProperties?.Remove("selfies"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.SelfieCheckSelfie>? Selfies { get => _explicitNullValueSelfies; set { _explicitNullValueSelfies = value; AdditionalData?.Remove("selfies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selfies"); else _explicitNullProperties?.Remove("selfies"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.SelfieCheckSelfie>? _explicitNullValueSelfies = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.SelfieCheckSelfie> Selfies { get => _explicitNullValueSelfies; set { _explicitNullValueSelfies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selfies"); else _explicitNullProperties?.Remove("selfies"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.SelfieCheckSelfie> Selfies { get => _explicitNullValueSelfies; set { _explicitNullValueSelfies = value; AdditionalData?.Remove("selfies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selfies"); else _explicitNullProperties?.Remove("selfies"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.SelfieCheckSelfie> _explicitNullValueSelfies = default!;
 #endif
         /// <summary>The outcome status for the associated Identity Verification attempt&apos;s `selfie_check` step. This field will be `success` if `steps.selfie_check` is `success` or `manually_approved`, and `failed` if `steps.selfie_check` is `failed` or `manually_rejected`.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieCheckStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SelfieCheckStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.SelfieCheckStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.SelfieCheck"/> and sets the default values.
@@ -65,7 +67,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "selfies", n => { Selfies = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.SelfieCheckSelfie>(global::Soenneker.Plaid.OpenApiClient.Models.SelfieCheckSelfie.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SelfieCheckStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SelfieCheckStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
         /// <summary>

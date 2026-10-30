@@ -18,9 +18,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("max_payment_amount") is { } nullNodeMaxPaymentAmount && nullNodeMaxPaymentAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxPaymentAmount = null;
-            if (parseNode.GetChildNode("periodic_amounts") is { } nullNodePeriodicAmounts && nullNodePeriodicAmounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeriodicAmounts = null;
-            if (parseNode.GetChildNode("valid_date_time") is { } nullNodeValidDateTime && nullNodeValidDateTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidDateTime = null;
+            if (parseNode.GetChildNode("max_payment_amount") is null) { _explicitNullValueMaxPaymentAmount = default!; _explicitNullProperties?.Remove("max_payment_amount"); }
+            else if (parseNode.GetChildNode("max_payment_amount") is { } nullNodeMaxPaymentAmount && nullNodeMaxPaymentAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxPaymentAmount = null;
+            if (parseNode.GetChildNode("periodic_amounts") is null) { _explicitNullValuePeriodicAmounts = default!; _explicitNullProperties?.Remove("periodic_amounts"); }
+            else if (parseNode.GetChildNode("periodic_amounts") is { } nullNodePeriodicAmounts && nullNodePeriodicAmounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PeriodicAmounts = null;
+            if (parseNode.GetChildNode("valid_date_time") is null) { _explicitNullValueValidDateTime = default!; _explicitNullProperties?.Remove("valid_date_time"); }
+            else if (parseNode.GetChildNode("valid_date_time") is { } nullNodeValidDateTime && nullNodeValidDateTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidDateTime = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Maximum amount of a single payment initiated using the payment consent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentMaxPaymentAmount? MaxPaymentAmount { get => _explicitNullValueMaxPaymentAmount; set { _explicitNullValueMaxPaymentAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_payment_amount"); else _explicitNullProperties?.Remove("max_payment_amount"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentMaxPaymentAmount? MaxPaymentAmount { get => _explicitNullValueMaxPaymentAmount; set { _explicitNullValueMaxPaymentAmount = value; AdditionalData?.Remove("max_payment_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_payment_amount"); else _explicitNullProperties?.Remove("max_payment_amount"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentMaxPaymentAmount? _explicitNullValueMaxPaymentAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentMaxPaymentAmount MaxPaymentAmount { get => _explicitNullValueMaxPaymentAmount; set { _explicitNullValueMaxPaymentAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_payment_amount"); else _explicitNullProperties?.Remove("max_payment_amount"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentMaxPaymentAmount MaxPaymentAmount { get => _explicitNullValueMaxPaymentAmount; set { _explicitNullValueMaxPaymentAmount = value; AdditionalData?.Remove("max_payment_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_payment_amount"); else _explicitNullProperties?.Remove("max_payment_amount"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentMaxPaymentAmount _explicitNullValueMaxPaymentAmount = default!;
 #endif
         /// <summary>A list of amount limitations per period of time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentPeriodicAmount>? PeriodicAmounts { get => _explicitNullValuePeriodicAmounts; set { _explicitNullValuePeriodicAmounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("periodic_amounts"); else _explicitNullProperties?.Remove("periodic_amounts"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentPeriodicAmount>? PeriodicAmounts { get => _explicitNullValuePeriodicAmounts; set { _explicitNullValuePeriodicAmounts = value; AdditionalData?.Remove("periodic_amounts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("periodic_amounts"); else _explicitNullProperties?.Remove("periodic_amounts"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentPeriodicAmount>? _explicitNullValuePeriodicAmounts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentPeriodicAmount> PeriodicAmounts { get => _explicitNullValuePeriodicAmounts; set { _explicitNullValuePeriodicAmounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("periodic_amounts"); else _explicitNullProperties?.Remove("periodic_amounts"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentPeriodicAmount> PeriodicAmounts { get => _explicitNullValuePeriodicAmounts; set { _explicitNullValuePeriodicAmounts = value; AdditionalData?.Remove("periodic_amounts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("periodic_amounts"); else _explicitNullProperties?.Remove("periodic_amounts"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentPeriodicAmount> _explicitNullValuePeriodicAmounts = default!;
 #endif
         /// <summary>Life span for the payment consent. After the `to` date the payment consent expires and can no longer be used for payment initiation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentValidDateTime? ValidDateTime { get => _explicitNullValueValidDateTime; set { _explicitNullValueValidDateTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valid_date_time"); else _explicitNullProperties?.Remove("valid_date_time"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentValidDateTime? ValidDateTime { get => _explicitNullValueValidDateTime; set { _explicitNullValueValidDateTime = value; AdditionalData?.Remove("valid_date_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valid_date_time"); else _explicitNullProperties?.Remove("valid_date_time"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentValidDateTime? _explicitNullValueValidDateTime = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentValidDateTime ValidDateTime { get => _explicitNullValueValidDateTime; set { _explicitNullValueValidDateTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valid_date_time"); else _explicitNullProperties?.Remove("valid_date_time"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentValidDateTime ValidDateTime { get => _explicitNullValueValidDateTime; set { _explicitNullValueValidDateTime = value; AdditionalData?.Remove("valid_date_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valid_date_time"); else _explicitNullProperties?.Remove("valid_date_time"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PaymentConsentValidDateTime _explicitNullValueValidDateTime = default!;
 #endif
         /// <summary>

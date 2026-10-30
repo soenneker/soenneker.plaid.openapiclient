@@ -18,40 +18,46 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
-            if (parseNode.GetChildNode("employer") is { } nullNodeEmployer && nullNodeEmployer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Employer = null;
-            if (parseNode.GetChildNode("pay_annual") is { } nullNodePayAnnual && nullNodePayAnnual.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayAnnual = null;
-            if (parseNode.GetChildNode("pay_frequency") is { } nullNodePayFrequency && nullNodePayFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayFrequency = null;
-            if (parseNode.GetChildNode("pay_per_cycle") is { } nullNodePayPerCycle && nullNodePayPerCycle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayPerCycle = null;
-            if (parseNode.GetChildNode("pay_type") is { } nullNodePayType && nullNodePayType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayType = null;
+            if (parseNode.GetChildNode("category") is null) { _explicitNullValueCategory = default!; _explicitNullProperties?.Remove("category"); }
+            else if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
+            if (parseNode.GetChildNode("employer") is null) { _explicitNullValueEmployer = default!; _explicitNullProperties?.Remove("employer"); }
+            else if (parseNode.GetChildNode("employer") is { } nullNodeEmployer && nullNodeEmployer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Employer = null;
+            if (parseNode.GetChildNode("pay_annual") is null) { _explicitNullValuePayAnnual = default!; _explicitNullProperties?.Remove("pay_annual"); }
+            else if (parseNode.GetChildNode("pay_annual") is { } nullNodePayAnnual && nullNodePayAnnual.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayAnnual = null;
+            if (parseNode.GetChildNode("pay_frequency") is null) { _explicitNullValuePayFrequency = default!; _explicitNullProperties?.Remove("pay_frequency"); }
+            else if (parseNode.GetChildNode("pay_frequency") is { } nullNodePayFrequency && nullNodePayFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayFrequency = null;
+            if (parseNode.GetChildNode("pay_per_cycle") is null) { _explicitNullValuePayPerCycle = default!; _explicitNullProperties?.Remove("pay_per_cycle"); }
+            else if (parseNode.GetChildNode("pay_per_cycle") is { } nullNodePayPerCycle && nullNodePayPerCycle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayPerCycle = null;
+            if (parseNode.GetChildNode("pay_type") is null) { _explicitNullValuePayType = default!; _explicitNullProperties?.Remove("pay_type"); }
+            else if (parseNode.GetChildNode("pay_type") is { } nullNodePayType && nullNodePayType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The income category for a specified income source</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserStatedIncomeSourceCategory? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserStatedIncomeSourceCategory? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; AdditionalData?.Remove("category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.UserStatedIncomeSourceCategory? _explicitNullValueCategory = default!;
         /// <summary>The employer corresponding to an income source specified by the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Employer { get => _explicitNullValueEmployer; set { _explicitNullValueEmployer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employer"); else _explicitNullProperties?.Remove("employer"); } }
+        public string? Employer { get => _explicitNullValueEmployer; set { _explicitNullValueEmployer = value; AdditionalData?.Remove("employer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employer"); else _explicitNullProperties?.Remove("employer"); } }
         private string? _explicitNullValueEmployer = default!;
 #nullable restore
 #else
-        public string Employer { get => _explicitNullValueEmployer; set { _explicitNullValueEmployer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employer"); else _explicitNullProperties?.Remove("employer"); } }
+        public string Employer { get => _explicitNullValueEmployer; set { _explicitNullValueEmployer = value; AdditionalData?.Remove("employer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employer"); else _explicitNullProperties?.Remove("employer"); } }
         private string _explicitNullValueEmployer = default!;
 #endif
         /// <summary>The income amount paid annually for a specified income source</summary>
-        public double? PayAnnual { get => _explicitNullValuePayAnnual; set { _explicitNullValuePayAnnual = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_annual"); else _explicitNullProperties?.Remove("pay_annual"); } }
+        public double? PayAnnual { get => _explicitNullValuePayAnnual; set { _explicitNullValuePayAnnual = value; AdditionalData?.Remove("pay_annual"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_annual"); else _explicitNullProperties?.Remove("pay_annual"); } }
         private double? _explicitNullValuePayAnnual = default!;
         /// <summary>The pay frequency of a specified income source</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserStatedIncomeSourceFrequency? PayFrequency { get => _explicitNullValuePayFrequency; set { _explicitNullValuePayFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_frequency"); else _explicitNullProperties?.Remove("pay_frequency"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserStatedIncomeSourceFrequency? PayFrequency { get => _explicitNullValuePayFrequency; set { _explicitNullValuePayFrequency = value; AdditionalData?.Remove("pay_frequency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_frequency"); else _explicitNullProperties?.Remove("pay_frequency"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.UserStatedIncomeSourceFrequency? _explicitNullValuePayFrequency = default!;
         /// <summary>The income amount paid per cycle for a specified income source</summary>
-        public double? PayPerCycle { get => _explicitNullValuePayPerCycle; set { _explicitNullValuePayPerCycle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_per_cycle"); else _explicitNullProperties?.Remove("pay_per_cycle"); } }
+        public double? PayPerCycle { get => _explicitNullValuePayPerCycle; set { _explicitNullValuePayPerCycle = value; AdditionalData?.Remove("pay_per_cycle"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_per_cycle"); else _explicitNullProperties?.Remove("pay_per_cycle"); } }
         private double? _explicitNullValuePayPerCycle = default!;
         /// <summary>The pay type - `GROSS`, `NET`, or `UNKNOWN` for a specified income source</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserStatedIncomeSourcePayType? PayType { get => _explicitNullValuePayType; set { _explicitNullValuePayType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_type"); else _explicitNullProperties?.Remove("pay_type"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserStatedIncomeSourcePayType? PayType { get => _explicitNullValuePayType; set { _explicitNullValuePayType = value; AdditionalData?.Remove("pay_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_type"); else _explicitNullProperties?.Remove("pay_type"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.UserStatedIncomeSourcePayType? _explicitNullValuePayType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUserStatedIncomeSource"/> and sets the default values.
@@ -78,12 +84,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "category", n => { Category = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.UserStatedIncomeSourceCategory>(); } },
+                { "category", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.UserStatedIncomeSourceCategory>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCategory = default; _explicitNullProperties?.Remove("category"); AdditionalData["category"] = unknown; } else { Category = parsed; AdditionalData.Remove("category"); } } },
                 { "employer", n => { Employer = n.GetStringValue(); } },
                 { "pay_annual", n => { PayAnnual = n.GetDoubleValue(); } },
-                { "pay_frequency", n => { PayFrequency = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.UserStatedIncomeSourceFrequency>(); } },
+                { "pay_frequency", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.UserStatedIncomeSourceFrequency>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePayFrequency = default; _explicitNullProperties?.Remove("pay_frequency"); AdditionalData["pay_frequency"] = unknown; } else { PayFrequency = parsed; AdditionalData.Remove("pay_frequency"); } } },
                 { "pay_per_cycle", n => { PayPerCycle = n.GetDoubleValue(); } },
-                { "pay_type", n => { PayType = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.UserStatedIncomeSourcePayType>(); } },
+                { "pay_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.UserStatedIncomeSourcePayType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePayType = default; _explicitNullProperties?.Remove("pay_type"); AdditionalData["pay_type"] = unknown; } else { PayType = parsed; AdditionalData.Remove("pay_type"); } } },
             };
         }
         /// <summary>

@@ -18,9 +18,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("document_reference") is { } nullNodeDocumentReference && nullNodeDocumentReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentReference = null;
-            if (parseNode.GetChildNode("risk_signals") is { } nullNodeRiskSignals && nullNodeRiskSignals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskSignals = null;
-            if (parseNode.GetChildNode("risk_summary") is { } nullNodeRiskSummary && nullNodeRiskSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskSummary = null;
+            if (parseNode.GetChildNode("document_reference") is null) { _explicitNullValueDocumentReference = default!; _explicitNullProperties?.Remove("document_reference"); }
+            else if (parseNode.GetChildNode("document_reference") is { } nullNodeDocumentReference && nullNodeDocumentReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentReference = null;
+            if (parseNode.GetChildNode("risk_signals") is null) { _explicitNullValueRiskSignals = default!; _explicitNullProperties?.Remove("risk_signals"); }
+            else if (parseNode.GetChildNode("risk_signals") is { } nullNodeRiskSignals && nullNodeRiskSignals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskSignals = null;
+            if (parseNode.GetChildNode("risk_summary") is null) { _explicitNullValueRiskSummary = default!; _explicitNullProperties?.Remove("risk_summary"); }
+            else if (parseNode.GetChildNode("risk_summary") is { } nullNodeRiskSummary && nullNodeRiskSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskSummary = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Object containing metadata for the document</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskSignalDocumentReference? DocumentReference { get => _explicitNullValueDocumentReference; set { _explicitNullValueDocumentReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_reference"); else _explicitNullProperties?.Remove("document_reference"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskSignalDocumentReference? DocumentReference { get => _explicitNullValueDocumentReference; set { _explicitNullValueDocumentReference = value; AdditionalData?.Remove("document_reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_reference"); else _explicitNullProperties?.Remove("document_reference"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.RiskSignalDocumentReference? _explicitNullValueDocumentReference = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskSignalDocumentReference DocumentReference { get => _explicitNullValueDocumentReference; set { _explicitNullValueDocumentReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_reference"); else _explicitNullProperties?.Remove("document_reference"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskSignalDocumentReference DocumentReference { get => _explicitNullValueDocumentReference; set { _explicitNullValueDocumentReference = value; AdditionalData?.Remove("document_reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_reference"); else _explicitNullProperties?.Remove("document_reference"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.RiskSignalDocumentReference _explicitNullValueDocumentReference = default!;
 #endif
         /// <summary>Array of attributes that indicate whether or not there is fraud risk with a document</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.DocumentRiskSignal>? RiskSignals { get => _explicitNullValueRiskSignals; set { _explicitNullValueRiskSignals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_signals"); else _explicitNullProperties?.Remove("risk_signals"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.DocumentRiskSignal>? RiskSignals { get => _explicitNullValueRiskSignals; set { _explicitNullValueRiskSignals = value; AdditionalData?.Remove("risk_signals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_signals"); else _explicitNullProperties?.Remove("risk_signals"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.DocumentRiskSignal>? _explicitNullValueRiskSignals = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.DocumentRiskSignal> RiskSignals { get => _explicitNullValueRiskSignals; set { _explicitNullValueRiskSignals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_signals"); else _explicitNullProperties?.Remove("risk_signals"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.DocumentRiskSignal> RiskSignals { get => _explicitNullValueRiskSignals; set { _explicitNullValueRiskSignals = value; AdditionalData?.Remove("risk_signals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_signals"); else _explicitNullProperties?.Remove("risk_signals"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.DocumentRiskSignal> _explicitNullValueRiskSignals = default!;
 #endif
         /// <summary>A summary across all risk signals associated with a document</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.DocumentRiskSummary? RiskSummary { get => _explicitNullValueRiskSummary; set { _explicitNullValueRiskSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_summary"); else _explicitNullProperties?.Remove("risk_summary"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.DocumentRiskSummary? RiskSummary { get => _explicitNullValueRiskSummary; set { _explicitNullValueRiskSummary = value; AdditionalData?.Remove("risk_summary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_summary"); else _explicitNullProperties?.Remove("risk_summary"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.DocumentRiskSummary? _explicitNullValueRiskSummary = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.DocumentRiskSummary RiskSummary { get => _explicitNullValueRiskSummary; set { _explicitNullValueRiskSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_summary"); else _explicitNullProperties?.Remove("risk_summary"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.DocumentRiskSummary RiskSummary { get => _explicitNullValueRiskSummary; set { _explicitNullValueRiskSummary = value; AdditionalData?.Remove("risk_summary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_summary"); else _explicitNullProperties?.Remove("risk_summary"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.DocumentRiskSummary _explicitNullValueRiskSummary = default!;
 #endif
         /// <summary>

@@ -18,21 +18,24 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("account_data") is { } nullNodeAccountData && nullNodeAccountData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountData = null;
-            if (parseNode.GetChildNode("statements") is { } nullNodeStatements && nullNodeStatements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Statements = null;
-            if (parseNode.GetChildNode("tax_documents") is { } nullNodeTaxDocuments && nullNodeTaxDocuments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxDocuments = null;
+            if (parseNode.GetChildNode("account_data") is null) { _explicitNullValueAccountData = default!; _explicitNullProperties?.Remove("account_data"); }
+            else if (parseNode.GetChildNode("account_data") is { } nullNodeAccountData && nullNodeAccountData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountData = null;
+            if (parseNode.GetChildNode("statements") is null) { _explicitNullValueStatements = default!; _explicitNullProperties?.Remove("statements"); }
+            else if (parseNode.GetChildNode("statements") is { } nullNodeStatements && nullNodeStatements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Statements = null;
+            if (parseNode.GetChildNode("tax_documents") is null) { _explicitNullValueTaxDocuments = default!; _explicitNullProperties?.Remove("tax_documents"); }
+            else if (parseNode.GetChildNode("tax_documents") is { } nullNodeTaxDocuments && nullNodeTaxDocuments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxDocuments = null;
         }
 
         /// <summary>Allow the application to access account data. Only used by certain partners. If relevant to the partner and unset, defaults to `true`.</summary>
-        public bool? AccountData { get => _explicitNullValueAccountData; set { _explicitNullValueAccountData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_data"); else _explicitNullProperties?.Remove("account_data"); } }
+        public bool? AccountData { get => _explicitNullValueAccountData; set { _explicitNullValueAccountData = value; AdditionalData?.Remove("account_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_data"); else _explicitNullProperties?.Remove("account_data"); } }
         private bool? _explicitNullValueAccountData = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Allow the application to access bank statements. Only used by certain partners. If relevant to the partner and unset, defaults to `true`.</summary>
-        public bool? Statements { get => _explicitNullValueStatements; set { _explicitNullValueStatements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statements"); else _explicitNullProperties?.Remove("statements"); } }
+        public bool? Statements { get => _explicitNullValueStatements; set { _explicitNullValueStatements = value; AdditionalData?.Remove("statements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statements"); else _explicitNullProperties?.Remove("statements"); } }
         private bool? _explicitNullValueStatements = default!;
         /// <summary>Allow the application to access tax documents. Only used by certain partners. If relevant to the partner and unset, defaults to `true`.</summary>
-        public bool? TaxDocuments { get => _explicitNullValueTaxDocuments; set { _explicitNullValueTaxDocuments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax_documents"); else _explicitNullProperties?.Remove("tax_documents"); } }
+        public bool? TaxDocuments { get => _explicitNullValueTaxDocuments; set { _explicitNullValueTaxDocuments = value; AdditionalData?.Remove("tax_documents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax_documents"); else _explicitNullProperties?.Remove("tax_documents"); } }
         private bool? _explicitNullValueTaxDocuments = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.AccountProductAccessNullable"/> and sets the default values.

@@ -19,14 +19,22 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("application") is { } nullNodeApplication && nullNodeApplication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Application = null;
-            if (parseNode.GetChildNode("loan_amount") is { } nullNodeLoanAmount && nullNodeLoanAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoanAmount = null;
-            if (parseNode.GetChildNode("loan_id") is { } nullNodeLoanId && nullNodeLoanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoanId = null;
-            if (parseNode.GetChildNode("opened_date") is { } nullNodeOpenedDate && nullNodeOpenedDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpenedDate = null;
-            if (parseNode.GetChildNode("opened_with_status") is { } nullNodeOpenedWithStatus && nullNodeOpenedWithStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpenedWithStatus = null;
-            if (parseNode.GetChildNode("payment_schedule") is { } nullNodePaymentSchedule && nullNodePaymentSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentSchedule = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
-            if (parseNode.GetChildNode("user_token") is { } nullNodeUserToken && nullNodeUserToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserToken = null;
+            if (parseNode.GetChildNode("application") is null) { _explicitNullValueApplication = default!; _explicitNullProperties?.Remove("application"); }
+            else if (parseNode.GetChildNode("application") is { } nullNodeApplication && nullNodeApplication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Application = null;
+            if (parseNode.GetChildNode("loan_amount") is null) { _explicitNullValueLoanAmount = default!; _explicitNullProperties?.Remove("loan_amount"); }
+            else if (parseNode.GetChildNode("loan_amount") is { } nullNodeLoanAmount && nullNodeLoanAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoanAmount = null;
+            if (parseNode.GetChildNode("loan_id") is null) { _explicitNullValueLoanId = default!; _explicitNullProperties?.Remove("loan_id"); }
+            else if (parseNode.GetChildNode("loan_id") is { } nullNodeLoanId && nullNodeLoanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoanId = null;
+            if (parseNode.GetChildNode("opened_date") is null) { _explicitNullValueOpenedDate = default!; _explicitNullProperties?.Remove("opened_date"); }
+            else if (parseNode.GetChildNode("opened_date") is { } nullNodeOpenedDate && nullNodeOpenedDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpenedDate = null;
+            if (parseNode.GetChildNode("opened_with_status") is null) { _explicitNullValueOpenedWithStatus = default!; _explicitNullProperties?.Remove("opened_with_status"); }
+            else if (parseNode.GetChildNode("opened_with_status") is { } nullNodeOpenedWithStatus && nullNodeOpenedWithStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpenedWithStatus = null;
+            if (parseNode.GetChildNode("payment_schedule") is null) { _explicitNullValuePaymentSchedule = default!; _explicitNullProperties?.Remove("payment_schedule"); }
+            else if (parseNode.GetChildNode("payment_schedule") is { } nullNodePaymentSchedule && nullNodePaymentSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentSchedule = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("user_token") is null) { _explicitNullValueUserToken = default!; _explicitNullProperties?.Remove("user_token"); }
+            else if (parseNode.GetChildNode("user_token") is { } nullNodeUserToken && nullNodeUserToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserToken = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,53 +42,53 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Contains loan application data to register.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanRegisterApplication? Application { get => _explicitNullValueApplication; set { _explicitNullValueApplication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application"); else _explicitNullProperties?.Remove("application"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanRegisterApplication? Application { get => _explicitNullValueApplication; set { _explicitNullValueApplication = value; AdditionalData?.Remove("application"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application"); else _explicitNullProperties?.Remove("application"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraLoanRegisterApplication? _explicitNullValueApplication = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanRegisterApplication Application { get => _explicitNullValueApplication; set { _explicitNullValueApplication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application"); else _explicitNullProperties?.Remove("application"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanRegisterApplication Application { get => _explicitNullValueApplication; set { _explicitNullValueApplication = value; AdditionalData?.Remove("application"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application"); else _explicitNullProperties?.Remove("application"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraLoanRegisterApplication _explicitNullValueApplication = default!;
 #endif
         /// <summary>The total amount of the approved loan.</summary>
-        public double? LoanAmount { get => _explicitNullValueLoanAmount; set { _explicitNullValueLoanAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_amount"); else _explicitNullProperties?.Remove("loan_amount"); } }
+        public double? LoanAmount { get => _explicitNullValueLoanAmount; set { _explicitNullValueLoanAmount = value; AdditionalData?.Remove("loan_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_amount"); else _explicitNullProperties?.Remove("loan_amount"); } }
         private double? _explicitNullValueLoanAmount = default!;
         /// <summary>A unique identifier for the loan.Personally identifiable information, such as an email address or phone number, should not be used in the `loan_id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LoanId { get => _explicitNullValueLoanId; set { _explicitNullValueLoanId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_id"); else _explicitNullProperties?.Remove("loan_id"); } }
+        public string? LoanId { get => _explicitNullValueLoanId; set { _explicitNullValueLoanId = value; AdditionalData?.Remove("loan_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_id"); else _explicitNullProperties?.Remove("loan_id"); } }
         private string? _explicitNullValueLoanId = default!;
 #nullable restore
 #else
-        public string LoanId { get => _explicitNullValueLoanId; set { _explicitNullValueLoanId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_id"); else _explicitNullProperties?.Remove("loan_id"); } }
+        public string LoanId { get => _explicitNullValueLoanId; set { _explicitNullValueLoanId = value; AdditionalData?.Remove("loan_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_id"); else _explicitNullProperties?.Remove("loan_id"); } }
         private string _explicitNullValueLoanId = default!;
 #endif
         /// <summary>The date the loan account was opened. The date should be in ISO 8601 format (YYYY-MM-DD).</summary>
-        public Date? OpenedDate { get => _explicitNullValueOpenedDate; set { _explicitNullValueOpenedDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opened_date"); else _explicitNullProperties?.Remove("opened_date"); } }
+        public Date? OpenedDate { get => _explicitNullValueOpenedDate; set { _explicitNullValueOpenedDate = value; AdditionalData?.Remove("opened_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opened_date"); else _explicitNullProperties?.Remove("opened_date"); } }
         private Date? _explicitNullValueOpenedDate = default!;
         /// <summary>Contains the status and date information of the loan when registering.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanOpenedStatus? OpenedWithStatus { get => _explicitNullValueOpenedWithStatus; set { _explicitNullValueOpenedWithStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opened_with_status"); else _explicitNullProperties?.Remove("opened_with_status"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanOpenedStatus? OpenedWithStatus { get => _explicitNullValueOpenedWithStatus; set { _explicitNullValueOpenedWithStatus = value; AdditionalData?.Remove("opened_with_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opened_with_status"); else _explicitNullProperties?.Remove("opened_with_status"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraLoanOpenedStatus? _explicitNullValueOpenedWithStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanOpenedStatus OpenedWithStatus { get => _explicitNullValueOpenedWithStatus; set { _explicitNullValueOpenedWithStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opened_with_status"); else _explicitNullProperties?.Remove("opened_with_status"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanOpenedStatus OpenedWithStatus { get => _explicitNullValueOpenedWithStatus; set { _explicitNullValueOpenedWithStatus = value; AdditionalData?.Remove("opened_with_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opened_with_status"); else _explicitNullProperties?.Remove("opened_with_status"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraLoanOpenedStatus _explicitNullValueOpenedWithStatus = default!;
 #endif
         /// <summary>The frequency of a loan&apos;s payment schedule.`BIWEEKLY` represents one payment every two weeks.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanPaymentSchedule? PaymentSchedule { get => _explicitNullValuePaymentSchedule; set { _explicitNullValuePaymentSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_schedule"); else _explicitNullProperties?.Remove("payment_schedule"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanPaymentSchedule? PaymentSchedule { get => _explicitNullValuePaymentSchedule; set { _explicitNullValuePaymentSchedule = value; AdditionalData?.Remove("payment_schedule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_schedule"); else _explicitNullProperties?.Remove("payment_schedule"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraLoanPaymentSchedule? _explicitNullValuePaymentSchedule = default!;
         /// <summary>The type of loan the user applied for.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraLoanType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraLoanType? _explicitNullValueType = default!;
         /// <summary>The user token for the user associated with the loan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserToken { get => _explicitNullValueUserToken; set { _explicitNullValueUserToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_token"); else _explicitNullProperties?.Remove("user_token"); } }
+        public string? UserToken { get => _explicitNullValueUserToken; set { _explicitNullValueUserToken = value; AdditionalData?.Remove("user_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_token"); else _explicitNullProperties?.Remove("user_token"); } }
         private string? _explicitNullValueUserToken = default!;
 #nullable restore
 #else
-        public string UserToken { get => _explicitNullValueUserToken; set { _explicitNullValueUserToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_token"); else _explicitNullProperties?.Remove("user_token"); } }
+        public string UserToken { get => _explicitNullValueUserToken; set { _explicitNullValueUserToken = value; AdditionalData?.Remove("user_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_token"); else _explicitNullProperties?.Remove("user_token"); } }
         private string _explicitNullValueUserToken = default!;
 #endif
         /// <summary>
@@ -113,8 +121,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "loan_id", n => { LoanId = n.GetStringValue(); } },
                 { "opened_date", n => { OpenedDate = n.GetDateValue(); } },
                 { "opened_with_status", n => { OpenedWithStatus = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraLoanOpenedStatus>(global::Soenneker.Plaid.OpenApiClient.Models.CraLoanOpenedStatus.CreateFromDiscriminatorValue); } },
-                { "payment_schedule", n => { PaymentSchedule = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraLoanPaymentSchedule>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraLoanType>(); } },
+                { "payment_schedule", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraLoanPaymentSchedule>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePaymentSchedule = default; _explicitNullProperties?.Remove("payment_schedule"); AdditionalData["payment_schedule"] = unknown; } else { PaymentSchedule = parsed; AdditionalData.Remove("payment_schedule"); } } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraLoanType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "user_token", n => { UserToken = n.GetStringValue(); } },
             };
         }

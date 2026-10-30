@@ -18,23 +18,25 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("feedback_type") is { } nullNodeFeedbackType && nullNodeFeedbackType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeedbackType = null;
-            if (parseNode.GetChildNode("file") is { } nullNodeFile && nullNodeFile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) File = null;
+            if (parseNode.GetChildNode("feedback_type") is null) { _explicitNullValueFeedbackType = default!; _explicitNullProperties?.Remove("feedback_type"); }
+            else if (parseNode.GetChildNode("feedback_type") is { } nullNodeFeedbackType && nullNodeFeedbackType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeedbackType = null;
+            if (parseNode.GetChildNode("file") is null) { _explicitNullValueFile = default!; _explicitNullProperties?.Remove("file"); }
+            else if (parseNode.GetChildNode("file") is { } nullNodeFile && nullNodeFile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) File = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The kind of feedback rows the file contains.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceFeedbackType? FeedbackType { get => _explicitNullValueFeedbackType; set { _explicitNullValueFeedbackType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedback_type"); else _explicitNullProperties?.Remove("feedback_type"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceFeedbackType? FeedbackType { get => _explicitNullValueFeedbackType; set { _explicitNullValueFeedbackType = value; AdditionalData?.Remove("feedback_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedback_type"); else _explicitNullProperties?.Remove("feedback_type"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceFeedbackType? _explicitNullValueFeedbackType = default!;
         /// <summary>A CSV file of feedback rows. Maximum 20 MB.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? File { get => _explicitNullValueFile; set { _explicitNullValueFile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file"); else _explicitNullProperties?.Remove("file"); } }
+        public byte[]? File { get => _explicitNullValueFile; set { _explicitNullValueFile = value; AdditionalData?.Remove("file"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file"); else _explicitNullProperties?.Remove("file"); } }
         private byte[]? _explicitNullValueFile = default!;
 #nullable restore
 #else
-        public byte[] File { get => _explicitNullValueFile; set { _explicitNullValueFile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file"); else _explicitNullProperties?.Remove("file"); } }
+        public byte[] File { get => _explicitNullValueFile; set { _explicitNullValueFile = value; AdditionalData?.Remove("file"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file"); else _explicitNullProperties?.Remove("file"); } }
         private byte[] _explicitNullValueFile = default!;
 #endif
         /// <summary>
@@ -62,7 +64,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "feedback_type", n => { FeedbackType = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceFeedbackType>(); } },
+                { "feedback_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceFeedbackType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFeedbackType = default; _explicitNullProperties?.Remove("feedback_type"); AdditionalData["feedback_type"] = unknown; } else { FeedbackType = parsed; AdditionalData.Remove("feedback_type"); } } },
                 { "file", n => { File = n.GetByteArrayValue(); } },
             };
         }

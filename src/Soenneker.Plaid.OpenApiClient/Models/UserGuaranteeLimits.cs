@@ -18,10 +18,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("daily_limit") is { } nullNodeDailyLimit && nullNodeDailyLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DailyLimit = null;
-            if (parseNode.GetChildNode("monthly_limit") is { } nullNodeMonthlyLimit && nullNodeMonthlyLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonthlyLimit = null;
-            if (parseNode.GetChildNode("transaction_limit") is { } nullNodeTransactionLimit && nullNodeTransactionLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionLimit = null;
-            if (parseNode.GetChildNode("weekly_limit") is { } nullNodeWeeklyLimit && nullNodeWeeklyLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WeeklyLimit = null;
+            if (parseNode.GetChildNode("daily_limit") is null) { _explicitNullValueDailyLimit = default!; _explicitNullProperties?.Remove("daily_limit"); }
+            else if (parseNode.GetChildNode("daily_limit") is { } nullNodeDailyLimit && nullNodeDailyLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DailyLimit = null;
+            if (parseNode.GetChildNode("monthly_limit") is null) { _explicitNullValueMonthlyLimit = default!; _explicitNullProperties?.Remove("monthly_limit"); }
+            else if (parseNode.GetChildNode("monthly_limit") is { } nullNodeMonthlyLimit && nullNodeMonthlyLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonthlyLimit = null;
+            if (parseNode.GetChildNode("transaction_limit") is null) { _explicitNullValueTransactionLimit = default!; _explicitNullProperties?.Remove("transaction_limit"); }
+            else if (parseNode.GetChildNode("transaction_limit") is { } nullNodeTransactionLimit && nullNodeTransactionLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionLimit = null;
+            if (parseNode.GetChildNode("weekly_limit") is null) { _explicitNullValueWeeklyLimit = default!; _explicitNullProperties?.Remove("weekly_limit"); }
+            else if (parseNode.GetChildNode("weekly_limit") is { } nullNodeWeeklyLimit && nullNodeWeeklyLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WeeklyLimit = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>A transfer limit amount and its currency, or `null` when the limit is not configured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserTransferLimitAmountNullable? DailyLimit { get => _explicitNullValueDailyLimit; set { _explicitNullValueDailyLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_limit"); else _explicitNullProperties?.Remove("daily_limit"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserTransferLimitAmountNullable? DailyLimit { get => _explicitNullValueDailyLimit; set { _explicitNullValueDailyLimit = value; AdditionalData?.Remove("daily_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_limit"); else _explicitNullProperties?.Remove("daily_limit"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.UserTransferLimitAmountNullable? _explicitNullValueDailyLimit = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserTransferLimitAmountNullable DailyLimit { get => _explicitNullValueDailyLimit; set { _explicitNullValueDailyLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_limit"); else _explicitNullProperties?.Remove("daily_limit"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserTransferLimitAmountNullable DailyLimit { get => _explicitNullValueDailyLimit; set { _explicitNullValueDailyLimit = value; AdditionalData?.Remove("daily_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_limit"); else _explicitNullProperties?.Remove("daily_limit"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.UserTransferLimitAmountNullable _explicitNullValueDailyLimit = default!;
 #endif
         /// <summary>A transfer limit amount and its currency, or `null` when the limit is not configured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserTransferLimitAmountNullable? MonthlyLimit { get => _explicitNullValueMonthlyLimit; set { _explicitNullValueMonthlyLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_limit"); else _explicitNullProperties?.Remove("monthly_limit"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserTransferLimitAmountNullable? MonthlyLimit { get => _explicitNullValueMonthlyLimit; set { _explicitNullValueMonthlyLimit = value; AdditionalData?.Remove("monthly_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_limit"); else _explicitNullProperties?.Remove("monthly_limit"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.UserTransferLimitAmountNullable? _explicitNullValueMonthlyLimit = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserTransferLimitAmountNullable MonthlyLimit { get => _explicitNullValueMonthlyLimit; set { _explicitNullValueMonthlyLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_limit"); else _explicitNullProperties?.Remove("monthly_limit"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserTransferLimitAmountNullable MonthlyLimit { get => _explicitNullValueMonthlyLimit; set { _explicitNullValueMonthlyLimit = value; AdditionalData?.Remove("monthly_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_limit"); else _explicitNullProperties?.Remove("monthly_limit"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.UserTransferLimitAmountNullable _explicitNullValueMonthlyLimit = default!;
 #endif
         /// <summary>The user&apos;s persisted per-transaction guarantee limit. A zero-dollar limit is returned with a value of `&quot;0.00&quot;`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserGuaranteeLimitsTransactionLimit? TransactionLimit { get => _explicitNullValueTransactionLimit; set { _explicitNullValueTransactionLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_limit"); else _explicitNullProperties?.Remove("transaction_limit"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserGuaranteeLimitsTransactionLimit? TransactionLimit { get => _explicitNullValueTransactionLimit; set { _explicitNullValueTransactionLimit = value; AdditionalData?.Remove("transaction_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_limit"); else _explicitNullProperties?.Remove("transaction_limit"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.UserGuaranteeLimitsTransactionLimit? _explicitNullValueTransactionLimit = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserGuaranteeLimitsTransactionLimit TransactionLimit { get => _explicitNullValueTransactionLimit; set { _explicitNullValueTransactionLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_limit"); else _explicitNullProperties?.Remove("transaction_limit"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserGuaranteeLimitsTransactionLimit TransactionLimit { get => _explicitNullValueTransactionLimit; set { _explicitNullValueTransactionLimit = value; AdditionalData?.Remove("transaction_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_limit"); else _explicitNullProperties?.Remove("transaction_limit"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.UserGuaranteeLimitsTransactionLimit _explicitNullValueTransactionLimit = default!;
 #endif
         /// <summary>A transfer limit amount and its currency, or `null` when the limit is not configured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserTransferLimitAmountNullable? WeeklyLimit { get => _explicitNullValueWeeklyLimit; set { _explicitNullValueWeeklyLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("weekly_limit"); else _explicitNullProperties?.Remove("weekly_limit"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserTransferLimitAmountNullable? WeeklyLimit { get => _explicitNullValueWeeklyLimit; set { _explicitNullValueWeeklyLimit = value; AdditionalData?.Remove("weekly_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("weekly_limit"); else _explicitNullProperties?.Remove("weekly_limit"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.UserTransferLimitAmountNullable? _explicitNullValueWeeklyLimit = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserTransferLimitAmountNullable WeeklyLimit { get => _explicitNullValueWeeklyLimit; set { _explicitNullValueWeeklyLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("weekly_limit"); else _explicitNullProperties?.Remove("weekly_limit"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserTransferLimitAmountNullable WeeklyLimit { get => _explicitNullValueWeeklyLimit; set { _explicitNullValueWeeklyLimit = value; AdditionalData?.Remove("weekly_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("weekly_limit"); else _explicitNullProperties?.Remove("weekly_limit"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.UserTransferLimitAmountNullable _explicitNullValueWeeklyLimit = default!;
 #endif
         /// <summary>

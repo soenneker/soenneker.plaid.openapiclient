@@ -18,9 +18,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("payment_token") is { } nullNodePaymentToken && nullNodePaymentToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentToken = null;
-            if (parseNode.GetChildNode("payment_token_expiration_time") is { } nullNodePaymentTokenExpirationTime && nullNodePaymentTokenExpirationTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentTokenExpirationTime = null;
-            if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
+            if (parseNode.GetChildNode("payment_token") is null) { _explicitNullValuePaymentToken = default!; _explicitNullProperties?.Remove("payment_token"); }
+            else if (parseNode.GetChildNode("payment_token") is { } nullNodePaymentToken && nullNodePaymentToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentToken = null;
+            if (parseNode.GetChildNode("payment_token_expiration_time") is null) { _explicitNullValuePaymentTokenExpirationTime = default!; _explicitNullProperties?.Remove("payment_token_expiration_time"); }
+            else if (parseNode.GetChildNode("payment_token_expiration_time") is { } nullNodePaymentTokenExpirationTime && nullNodePaymentTokenExpirationTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentTokenExpirationTime = null;
+            if (parseNode.GetChildNode("request_id") is null) { _explicitNullValueRequestId = default!; _explicitNullProperties?.Remove("request_id"); }
+            else if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,24 +31,24 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>A `payment_token` that can be provided to Link initialization to enter the payment initiation flow</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentToken { get => _explicitNullValuePaymentToken; set { _explicitNullValuePaymentToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_token"); else _explicitNullProperties?.Remove("payment_token"); } }
+        public string? PaymentToken { get => _explicitNullValuePaymentToken; set { _explicitNullValuePaymentToken = value; AdditionalData?.Remove("payment_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_token"); else _explicitNullProperties?.Remove("payment_token"); } }
         private string? _explicitNullValuePaymentToken = default!;
 #nullable restore
 #else
-        public string PaymentToken { get => _explicitNullValuePaymentToken; set { _explicitNullValuePaymentToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_token"); else _explicitNullProperties?.Remove("payment_token"); } }
+        public string PaymentToken { get => _explicitNullValuePaymentToken; set { _explicitNullValuePaymentToken = value; AdditionalData?.Remove("payment_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_token"); else _explicitNullProperties?.Remove("payment_token"); } }
         private string _explicitNullValuePaymentToken = default!;
 #endif
         /// <summary>The date and time at which the token will expire, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format. A `payment_token` expires after 30 minutes.</summary>
-        public DateTimeOffset? PaymentTokenExpirationTime { get => _explicitNullValuePaymentTokenExpirationTime; set { _explicitNullValuePaymentTokenExpirationTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_token_expiration_time"); else _explicitNullProperties?.Remove("payment_token_expiration_time"); } }
+        public DateTimeOffset? PaymentTokenExpirationTime { get => _explicitNullValuePaymentTokenExpirationTime; set { _explicitNullValuePaymentTokenExpirationTime = value; AdditionalData?.Remove("payment_token_expiration_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_token_expiration_time"); else _explicitNullProperties?.Remove("payment_token_expiration_time"); } }
         private DateTimeOffset? _explicitNullValuePaymentTokenExpirationTime = default!;
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; AdditionalData?.Remove("request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
         private string? _explicitNullValueRequestId = default!;
 #nullable restore
 #else
-        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; AdditionalData?.Remove("request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
         private string _explicitNullValueRequestId = default!;
 #endif
         /// <summary>

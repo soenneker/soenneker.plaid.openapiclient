@@ -18,9 +18,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("loan_id") is { } nullNodeLoanId && nullNodeLoanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoanId = null;
-            if (parseNode.GetChildNode("payment_history") is { } nullNodePaymentHistory && nullNodePaymentHistory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentHistory = null;
-            if (parseNode.GetChildNode("status_history") is { } nullNodeStatusHistory && nullNodeStatusHistory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusHistory = null;
+            if (parseNode.GetChildNode("loan_id") is null) { _explicitNullValueLoanId = default!; _explicitNullProperties?.Remove("loan_id"); }
+            else if (parseNode.GetChildNode("loan_id") is { } nullNodeLoanId && nullNodeLoanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoanId = null;
+            if (parseNode.GetChildNode("payment_history") is null) { _explicitNullValuePaymentHistory = default!; _explicitNullProperties?.Remove("payment_history"); }
+            else if (parseNode.GetChildNode("payment_history") is { } nullNodePaymentHistory && nullNodePaymentHistory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentHistory = null;
+            if (parseNode.GetChildNode("status_history") is null) { _explicitNullValueStatusHistory = default!; _explicitNullProperties?.Remove("status_history"); }
+            else if (parseNode.GetChildNode("status_history") is { } nullNodeStatusHistory && nullNodeStatusHistory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusHistory = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>A unique identifier for the loan.Personally identifiable information, such as an email address or phone number, should not be used in the `loan_id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LoanId { get => _explicitNullValueLoanId; set { _explicitNullValueLoanId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_id"); else _explicitNullProperties?.Remove("loan_id"); } }
+        public string? LoanId { get => _explicitNullValueLoanId; set { _explicitNullValueLoanId = value; AdditionalData?.Remove("loan_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_id"); else _explicitNullProperties?.Remove("loan_id"); } }
         private string? _explicitNullValueLoanId = default!;
 #nullable restore
 #else
-        public string LoanId { get => _explicitNullValueLoanId; set { _explicitNullValueLoanId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_id"); else _explicitNullProperties?.Remove("loan_id"); } }
+        public string LoanId { get => _explicitNullValueLoanId; set { _explicitNullValueLoanId = value; AdditionalData?.Remove("loan_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan_id"); else _explicitNullProperties?.Remove("loan_id"); } }
         private string _explicitNullValueLoanId = default!;
 #endif
         /// <summary>The updates to the payment history for the loan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraLoanPaymentHistory>? PaymentHistory { get => _explicitNullValuePaymentHistory; set { _explicitNullValuePaymentHistory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_history"); else _explicitNullProperties?.Remove("payment_history"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraLoanPaymentHistory>? PaymentHistory { get => _explicitNullValuePaymentHistory; set { _explicitNullValuePaymentHistory = value; AdditionalData?.Remove("payment_history"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_history"); else _explicitNullProperties?.Remove("payment_history"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CraLoanPaymentHistory>? _explicitNullValuePaymentHistory = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraLoanPaymentHistory> PaymentHistory { get => _explicitNullValuePaymentHistory; set { _explicitNullValuePaymentHistory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_history"); else _explicitNullProperties?.Remove("payment_history"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraLoanPaymentHistory> PaymentHistory { get => _explicitNullValuePaymentHistory; set { _explicitNullValuePaymentHistory = value; AdditionalData?.Remove("payment_history"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_history"); else _explicitNullProperties?.Remove("payment_history"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CraLoanPaymentHistory> _explicitNullValuePaymentHistory = default!;
 #endif
         /// <summary>A list of status update history of the loan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraLoanStatusHistoryUpdate>? StatusHistory { get => _explicitNullValueStatusHistory; set { _explicitNullValueStatusHistory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_history"); else _explicitNullProperties?.Remove("status_history"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraLoanStatusHistoryUpdate>? StatusHistory { get => _explicitNullValueStatusHistory; set { _explicitNullValueStatusHistory = value; AdditionalData?.Remove("status_history"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_history"); else _explicitNullProperties?.Remove("status_history"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CraLoanStatusHistoryUpdate>? _explicitNullValueStatusHistory = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraLoanStatusHistoryUpdate> StatusHistory { get => _explicitNullValueStatusHistory; set { _explicitNullValueStatusHistory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_history"); else _explicitNullProperties?.Remove("status_history"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraLoanStatusHistoryUpdate> StatusHistory { get => _explicitNullValueStatusHistory; set { _explicitNullValueStatusHistory = value; AdditionalData?.Remove("status_history"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_history"); else _explicitNullProperties?.Remove("status_history"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CraLoanStatusHistoryUpdate> _explicitNullValueStatusHistory = default!;
 #endif
         /// <summary>

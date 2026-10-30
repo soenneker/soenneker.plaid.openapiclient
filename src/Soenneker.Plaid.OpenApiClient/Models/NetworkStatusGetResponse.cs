@@ -18,9 +18,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("layer") is { } nullNodeLayer && nullNodeLayer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Layer = null;
-            if (parseNode.GetChildNode("network_status") is { } nullNodeNetworkStatus && nullNodeNetworkStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkStatus = null;
-            if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
+            if (parseNode.GetChildNode("layer") is null) { _explicitNullValueLayer = default!; _explicitNullProperties?.Remove("layer"); }
+            else if (parseNode.GetChildNode("layer") is { } nullNodeLayer && nullNodeLayer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Layer = null;
+            if (parseNode.GetChildNode("network_status") is null) { _explicitNullValueNetworkStatus = default!; _explicitNullProperties?.Remove("network_status"); }
+            else if (parseNode.GetChildNode("network_status") is { } nullNodeNetworkStatus && nullNodeNetworkStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkStatus = null;
+            if (parseNode.GetChildNode("request_id") is null) { _explicitNullValueRequestId = default!; _explicitNullProperties?.Remove("request_id"); }
+            else if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,24 +31,24 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>An object representing Layer-related metadata for the requested user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.NetworkStatusGetResponseLayer? Layer { get => _explicitNullValueLayer; set { _explicitNullValueLayer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layer"); else _explicitNullProperties?.Remove("layer"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.NetworkStatusGetResponseLayer? Layer { get => _explicitNullValueLayer; set { _explicitNullValueLayer = value; AdditionalData?.Remove("layer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layer"); else _explicitNullProperties?.Remove("layer"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.NetworkStatusGetResponseLayer? _explicitNullValueLayer = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.NetworkStatusGetResponseLayer Layer { get => _explicitNullValueLayer; set { _explicitNullValueLayer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layer"); else _explicitNullProperties?.Remove("layer"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.NetworkStatusGetResponseLayer Layer { get => _explicitNullValueLayer; set { _explicitNullValueLayer = value; AdditionalData?.Remove("layer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layer"); else _explicitNullProperties?.Remove("layer"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.NetworkStatusGetResponseLayer _explicitNullValueLayer = default!;
 #endif
         /// <summary>Enum representing the overall network status of the user.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.NetworkStatusGetResponseNetworkStatus? NetworkStatus { get => _explicitNullValueNetworkStatus; set { _explicitNullValueNetworkStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_status"); else _explicitNullProperties?.Remove("network_status"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.NetworkStatusGetResponseNetworkStatus? NetworkStatus { get => _explicitNullValueNetworkStatus; set { _explicitNullValueNetworkStatus = value; AdditionalData?.Remove("network_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_status"); else _explicitNullProperties?.Remove("network_status"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.NetworkStatusGetResponseNetworkStatus? _explicitNullValueNetworkStatus = default!;
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; AdditionalData?.Remove("request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
         private string? _explicitNullValueRequestId = default!;
 #nullable restore
 #else
-        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; AdditionalData?.Remove("request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
         private string _explicitNullValueRequestId = default!;
 #endif
         /// <summary>
@@ -74,7 +77,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "layer", n => { Layer = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.NetworkStatusGetResponseLayer>(global::Soenneker.Plaid.OpenApiClient.Models.NetworkStatusGetResponseLayer.CreateFromDiscriminatorValue); } },
-                { "network_status", n => { NetworkStatus = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.NetworkStatusGetResponseNetworkStatus>(); } },
+                { "network_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.NetworkStatusGetResponseNetworkStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueNetworkStatus = default; _explicitNullProperties?.Remove("network_status"); AdditionalData["network_status"] = unknown; } else { NetworkStatus = parsed; AdditionalData.Remove("network_status"); } } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
             };
         }

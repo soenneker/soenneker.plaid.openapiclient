@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ASSET_TRANSACTION_DESCRIPTION") is { } nullNodeASSETTRANSACTIONDESCRIPTION && nullNodeASSETTRANSACTIONDESCRIPTION.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ASSETTRANSACTIONDESCRIPTION = null;
-            if (parseNode.GetChildNode("ASSET_TRANSACTION_DETAIL") is { } nullNodeASSETTRANSACTIONDETAIL && nullNodeASSETTRANSACTIONDETAIL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ASSETTRANSACTIONDETAIL = null;
+            if (parseNode.GetChildNode("ASSET_TRANSACTION_DESCRIPTION") is null) { _explicitNullValueASSETTRANSACTIONDESCRIPTION = default!; _explicitNullProperties?.Remove("ASSET_TRANSACTION_DESCRIPTION"); }
+            else if (parseNode.GetChildNode("ASSET_TRANSACTION_DESCRIPTION") is { } nullNodeASSETTRANSACTIONDESCRIPTION && nullNodeASSETTRANSACTIONDESCRIPTION.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ASSETTRANSACTIONDESCRIPTION = null;
+            if (parseNode.GetChildNode("ASSET_TRANSACTION_DETAIL") is null) { _explicitNullValueASSETTRANSACTIONDETAIL = default!; _explicitNullProperties?.Remove("ASSET_TRANSACTION_DETAIL"); }
+            else if (parseNode.GetChildNode("ASSET_TRANSACTION_DETAIL") is { } nullNodeASSETTRANSACTIONDETAIL && nullNodeASSETTRANSACTIONDETAIL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ASSETTRANSACTIONDETAIL = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Documentation not found in the MISMO model viewer and not provided by Freddie Mac.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactionDescription>? ASSETTRANSACTIONDESCRIPTION { get => _explicitNullValueASSETTRANSACTIONDESCRIPTION; set { _explicitNullValueASSETTRANSACTIONDESCRIPTION = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ASSET_TRANSACTION_DESCRIPTION"); else _explicitNullProperties?.Remove("ASSET_TRANSACTION_DESCRIPTION"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactionDescription>? ASSETTRANSACTIONDESCRIPTION { get => _explicitNullValueASSETTRANSACTIONDESCRIPTION; set { _explicitNullValueASSETTRANSACTIONDESCRIPTION = value; AdditionalData?.Remove("ASSET_TRANSACTION_DESCRIPTION"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ASSET_TRANSACTION_DESCRIPTION"); else _explicitNullProperties?.Remove("ASSET_TRANSACTION_DESCRIPTION"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactionDescription>? _explicitNullValueASSETTRANSACTIONDESCRIPTION = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactionDescription> ASSETTRANSACTIONDESCRIPTION { get => _explicitNullValueASSETTRANSACTIONDESCRIPTION; set { _explicitNullValueASSETTRANSACTIONDESCRIPTION = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ASSET_TRANSACTION_DESCRIPTION"); else _explicitNullProperties?.Remove("ASSET_TRANSACTION_DESCRIPTION"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactionDescription> ASSETTRANSACTIONDESCRIPTION { get => _explicitNullValueASSETTRANSACTIONDESCRIPTION; set { _explicitNullValueASSETTRANSACTIONDESCRIPTION = value; AdditionalData?.Remove("ASSET_TRANSACTION_DESCRIPTION"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ASSET_TRANSACTION_DESCRIPTION"); else _explicitNullProperties?.Remove("ASSET_TRANSACTION_DESCRIPTION"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactionDescription> _explicitNullValueASSETTRANSACTIONDESCRIPTION = default!;
 #endif
         /// <summary>Documentation not found in the MISMO model viewer and not provided by Freddie Mac.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactionDetail? ASSETTRANSACTIONDETAIL { get => _explicitNullValueASSETTRANSACTIONDETAIL; set { _explicitNullValueASSETTRANSACTIONDETAIL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ASSET_TRANSACTION_DETAIL"); else _explicitNullProperties?.Remove("ASSET_TRANSACTION_DETAIL"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactionDetail? ASSETTRANSACTIONDETAIL { get => _explicitNullValueASSETTRANSACTIONDETAIL; set { _explicitNullValueASSETTRANSACTIONDETAIL = value; AdditionalData?.Remove("ASSET_TRANSACTION_DETAIL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ASSET_TRANSACTION_DETAIL"); else _explicitNullProperties?.Remove("ASSET_TRANSACTION_DETAIL"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactionDetail? _explicitNullValueASSETTRANSACTIONDETAIL = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactionDetail ASSETTRANSACTIONDETAIL { get => _explicitNullValueASSETTRANSACTIONDETAIL; set { _explicitNullValueASSETTRANSACTIONDETAIL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ASSET_TRANSACTION_DETAIL"); else _explicitNullProperties?.Remove("ASSET_TRANSACTION_DETAIL"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactionDetail ASSETTRANSACTIONDETAIL { get => _explicitNullValueASSETTRANSACTIONDETAIL; set { _explicitNullValueASSETTRANSACTIONDETAIL = value; AdditionalData?.Remove("ASSET_TRANSACTION_DETAIL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ASSET_TRANSACTION_DETAIL"); else _explicitNullProperties?.Remove("ASSET_TRANSACTION_DETAIL"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.AssetTransactionDetail _explicitNullValueASSETTRANSACTIONDETAIL = default!;
 #endif
         /// <summary>

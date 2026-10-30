@@ -18,15 +18,24 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("auth") is { } nullNodeAuth && nullNodeAuth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Auth = null;
-            if (parseNode.GetChildNode("health_incidents") is { } nullNodeHealthIncidents && nullNodeHealthIncidents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HealthIncidents = null;
-            if (parseNode.GetChildNode("identity") is { } nullNodeIdentity && nullNodeIdentity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Identity = null;
-            if (parseNode.GetChildNode("investments") is { } nullNodeInvestments && nullNodeInvestments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Investments = null;
-            if (parseNode.GetChildNode("investments_updates") is { } nullNodeInvestmentsUpdates && nullNodeInvestmentsUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvestmentsUpdates = null;
-            if (parseNode.GetChildNode("item_logins") is { } nullNodeItemLogins && nullNodeItemLogins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemLogins = null;
-            if (parseNode.GetChildNode("liabilities") is { } nullNodeLiabilities && nullNodeLiabilities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Liabilities = null;
-            if (parseNode.GetChildNode("liabilities_updates") is { } nullNodeLiabilitiesUpdates && nullNodeLiabilitiesUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LiabilitiesUpdates = null;
-            if (parseNode.GetChildNode("transactions_updates") is { } nullNodeTransactionsUpdates && nullNodeTransactionsUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionsUpdates = null;
+            if (parseNode.GetChildNode("auth") is null) { _explicitNullValueAuth = default!; _explicitNullProperties?.Remove("auth"); }
+            else if (parseNode.GetChildNode("auth") is { } nullNodeAuth && nullNodeAuth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Auth = null;
+            if (parseNode.GetChildNode("health_incidents") is null) { _explicitNullValueHealthIncidents = default!; _explicitNullProperties?.Remove("health_incidents"); }
+            else if (parseNode.GetChildNode("health_incidents") is { } nullNodeHealthIncidents && nullNodeHealthIncidents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HealthIncidents = null;
+            if (parseNode.GetChildNode("identity") is null) { _explicitNullValueIdentity = default!; _explicitNullProperties?.Remove("identity"); }
+            else if (parseNode.GetChildNode("identity") is { } nullNodeIdentity && nullNodeIdentity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Identity = null;
+            if (parseNode.GetChildNode("investments") is null) { _explicitNullValueInvestments = default!; _explicitNullProperties?.Remove("investments"); }
+            else if (parseNode.GetChildNode("investments") is { } nullNodeInvestments && nullNodeInvestments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Investments = null;
+            if (parseNode.GetChildNode("investments_updates") is null) { _explicitNullValueInvestmentsUpdates = default!; _explicitNullProperties?.Remove("investments_updates"); }
+            else if (parseNode.GetChildNode("investments_updates") is { } nullNodeInvestmentsUpdates && nullNodeInvestmentsUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvestmentsUpdates = null;
+            if (parseNode.GetChildNode("item_logins") is null) { _explicitNullValueItemLogins = default!; _explicitNullProperties?.Remove("item_logins"); }
+            else if (parseNode.GetChildNode("item_logins") is { } nullNodeItemLogins && nullNodeItemLogins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemLogins = null;
+            if (parseNode.GetChildNode("liabilities") is null) { _explicitNullValueLiabilities = default!; _explicitNullProperties?.Remove("liabilities"); }
+            else if (parseNode.GetChildNode("liabilities") is { } nullNodeLiabilities && nullNodeLiabilities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Liabilities = null;
+            if (parseNode.GetChildNode("liabilities_updates") is null) { _explicitNullValueLiabilitiesUpdates = default!; _explicitNullProperties?.Remove("liabilities_updates"); }
+            else if (parseNode.GetChildNode("liabilities_updates") is { } nullNodeLiabilitiesUpdates && nullNodeLiabilitiesUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LiabilitiesUpdates = null;
+            if (parseNode.GetChildNode("transactions_updates") is null) { _explicitNullValueTransactionsUpdates = default!; _explicitNullProperties?.Remove("transactions_updates"); }
+            else if (parseNode.GetChildNode("transactions_updates") is { } nullNodeTransactionsUpdates && nullNodeTransactionsUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionsUpdates = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,91 +43,91 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>A representation of the status health of a request type. Auth requests, Balance requests, Identity requests, Investments requests, Liabilities requests, Transactions updates, Investments updates, Liabilities updates, and Item logins each have their own status object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus? Auth { get => _explicitNullValueAuth; set { _explicitNullValueAuth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth"); else _explicitNullProperties?.Remove("auth"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus? Auth { get => _explicitNullValueAuth; set { _explicitNullValueAuth = value; AdditionalData?.Remove("auth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth"); else _explicitNullProperties?.Remove("auth"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus? _explicitNullValueAuth = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus Auth { get => _explicitNullValueAuth; set { _explicitNullValueAuth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth"); else _explicitNullProperties?.Remove("auth"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus Auth { get => _explicitNullValueAuth; set { _explicitNullValueAuth = value; AdditionalData?.Remove("auth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth"); else _explicitNullProperties?.Remove("auth"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus _explicitNullValueAuth = default!;
 #endif
         /// <summary>Details of recent health incidents associated with the institution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.HealthIncident>? HealthIncidents { get => _explicitNullValueHealthIncidents; set { _explicitNullValueHealthIncidents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_incidents"); else _explicitNullProperties?.Remove("health_incidents"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.HealthIncident>? HealthIncidents { get => _explicitNullValueHealthIncidents; set { _explicitNullValueHealthIncidents = value; AdditionalData?.Remove("health_incidents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_incidents"); else _explicitNullProperties?.Remove("health_incidents"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.HealthIncident>? _explicitNullValueHealthIncidents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.HealthIncident> HealthIncidents { get => _explicitNullValueHealthIncidents; set { _explicitNullValueHealthIncidents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_incidents"); else _explicitNullProperties?.Remove("health_incidents"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.HealthIncident> HealthIncidents { get => _explicitNullValueHealthIncidents; set { _explicitNullValueHealthIncidents = value; AdditionalData?.Remove("health_incidents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health_incidents"); else _explicitNullProperties?.Remove("health_incidents"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.HealthIncident> _explicitNullValueHealthIncidents = default!;
 #endif
         /// <summary>A representation of the status health of a request type. Auth requests, Balance requests, Identity requests, Investments requests, Liabilities requests, Transactions updates, Investments updates, Liabilities updates, and Item logins each have their own status object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus? Identity { get => _explicitNullValueIdentity; set { _explicitNullValueIdentity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity"); else _explicitNullProperties?.Remove("identity"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus? Identity { get => _explicitNullValueIdentity; set { _explicitNullValueIdentity = value; AdditionalData?.Remove("identity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity"); else _explicitNullProperties?.Remove("identity"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus? _explicitNullValueIdentity = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus Identity { get => _explicitNullValueIdentity; set { _explicitNullValueIdentity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity"); else _explicitNullProperties?.Remove("identity"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus Identity { get => _explicitNullValueIdentity; set { _explicitNullValueIdentity = value; AdditionalData?.Remove("identity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity"); else _explicitNullProperties?.Remove("identity"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus _explicitNullValueIdentity = default!;
 #endif
         /// <summary>A representation of the status health of a request type. Auth requests, Balance requests, Identity requests, Investments requests, Liabilities requests, Transactions updates, Investments updates, Liabilities updates, and Item logins each have their own status object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus? Investments { get => _explicitNullValueInvestments; set { _explicitNullValueInvestments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investments"); else _explicitNullProperties?.Remove("investments"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus? Investments { get => _explicitNullValueInvestments; set { _explicitNullValueInvestments = value; AdditionalData?.Remove("investments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investments"); else _explicitNullProperties?.Remove("investments"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus? _explicitNullValueInvestments = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus Investments { get => _explicitNullValueInvestments; set { _explicitNullValueInvestments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investments"); else _explicitNullProperties?.Remove("investments"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus Investments { get => _explicitNullValueInvestments; set { _explicitNullValueInvestments = value; AdditionalData?.Remove("investments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investments"); else _explicitNullProperties?.Remove("investments"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus _explicitNullValueInvestments = default!;
 #endif
         /// <summary>A representation of the status health of a request type. Auth requests, Balance requests, Identity requests, Investments requests, Liabilities requests, Transactions updates, Investments updates, Liabilities updates, and Item logins each have their own status object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus? InvestmentsUpdates { get => _explicitNullValueInvestmentsUpdates; set { _explicitNullValueInvestmentsUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investments_updates"); else _explicitNullProperties?.Remove("investments_updates"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus? InvestmentsUpdates { get => _explicitNullValueInvestmentsUpdates; set { _explicitNullValueInvestmentsUpdates = value; AdditionalData?.Remove("investments_updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investments_updates"); else _explicitNullProperties?.Remove("investments_updates"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus? _explicitNullValueInvestmentsUpdates = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus InvestmentsUpdates { get => _explicitNullValueInvestmentsUpdates; set { _explicitNullValueInvestmentsUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investments_updates"); else _explicitNullProperties?.Remove("investments_updates"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus InvestmentsUpdates { get => _explicitNullValueInvestmentsUpdates; set { _explicitNullValueInvestmentsUpdates = value; AdditionalData?.Remove("investments_updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investments_updates"); else _explicitNullProperties?.Remove("investments_updates"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus _explicitNullValueInvestmentsUpdates = default!;
 #endif
         /// <summary>A representation of the status health of a request type. Auth requests, Balance requests, Identity requests, Investments requests, Liabilities requests, Transactions updates, Investments updates, Liabilities updates, and Item logins each have their own status object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus? ItemLogins { get => _explicitNullValueItemLogins; set { _explicitNullValueItemLogins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_logins"); else _explicitNullProperties?.Remove("item_logins"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus? ItemLogins { get => _explicitNullValueItemLogins; set { _explicitNullValueItemLogins = value; AdditionalData?.Remove("item_logins"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_logins"); else _explicitNullProperties?.Remove("item_logins"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus? _explicitNullValueItemLogins = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus ItemLogins { get => _explicitNullValueItemLogins; set { _explicitNullValueItemLogins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_logins"); else _explicitNullProperties?.Remove("item_logins"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus ItemLogins { get => _explicitNullValueItemLogins; set { _explicitNullValueItemLogins = value; AdditionalData?.Remove("item_logins"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_logins"); else _explicitNullProperties?.Remove("item_logins"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus _explicitNullValueItemLogins = default!;
 #endif
         /// <summary>A representation of the status health of a request type. Auth requests, Balance requests, Identity requests, Investments requests, Liabilities requests, Transactions updates, Investments updates, Liabilities updates, and Item logins each have their own status object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus? Liabilities { get => _explicitNullValueLiabilities; set { _explicitNullValueLiabilities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("liabilities"); else _explicitNullProperties?.Remove("liabilities"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus? Liabilities { get => _explicitNullValueLiabilities; set { _explicitNullValueLiabilities = value; AdditionalData?.Remove("liabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("liabilities"); else _explicitNullProperties?.Remove("liabilities"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus? _explicitNullValueLiabilities = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus Liabilities { get => _explicitNullValueLiabilities; set { _explicitNullValueLiabilities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("liabilities"); else _explicitNullProperties?.Remove("liabilities"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus Liabilities { get => _explicitNullValueLiabilities; set { _explicitNullValueLiabilities = value; AdditionalData?.Remove("liabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("liabilities"); else _explicitNullProperties?.Remove("liabilities"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus _explicitNullValueLiabilities = default!;
 #endif
         /// <summary>A representation of the status health of a request type. Auth requests, Balance requests, Identity requests, Investments requests, Liabilities requests, Transactions updates, Investments updates, Liabilities updates, and Item logins each have their own status object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus? LiabilitiesUpdates { get => _explicitNullValueLiabilitiesUpdates; set { _explicitNullValueLiabilitiesUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("liabilities_updates"); else _explicitNullProperties?.Remove("liabilities_updates"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus? LiabilitiesUpdates { get => _explicitNullValueLiabilitiesUpdates; set { _explicitNullValueLiabilitiesUpdates = value; AdditionalData?.Remove("liabilities_updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("liabilities_updates"); else _explicitNullProperties?.Remove("liabilities_updates"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus? _explicitNullValueLiabilitiesUpdates = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus LiabilitiesUpdates { get => _explicitNullValueLiabilitiesUpdates; set { _explicitNullValueLiabilitiesUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("liabilities_updates"); else _explicitNullProperties?.Remove("liabilities_updates"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus LiabilitiesUpdates { get => _explicitNullValueLiabilitiesUpdates; set { _explicitNullValueLiabilitiesUpdates = value; AdditionalData?.Remove("liabilities_updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("liabilities_updates"); else _explicitNullProperties?.Remove("liabilities_updates"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus _explicitNullValueLiabilitiesUpdates = default!;
 #endif
         /// <summary>A representation of the status health of a request type. Auth requests, Balance requests, Identity requests, Investments requests, Liabilities requests, Transactions updates, Investments updates, Liabilities updates, and Item logins each have their own status object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus? TransactionsUpdates { get => _explicitNullValueTransactionsUpdates; set { _explicitNullValueTransactionsUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactions_updates"); else _explicitNullProperties?.Remove("transactions_updates"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus? TransactionsUpdates { get => _explicitNullValueTransactionsUpdates; set { _explicitNullValueTransactionsUpdates = value; AdditionalData?.Remove("transactions_updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactions_updates"); else _explicitNullProperties?.Remove("transactions_updates"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus? _explicitNullValueTransactionsUpdates = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus TransactionsUpdates { get => _explicitNullValueTransactionsUpdates; set { _explicitNullValueTransactionsUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactions_updates"); else _explicitNullProperties?.Remove("transactions_updates"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus TransactionsUpdates { get => _explicitNullValueTransactionsUpdates; set { _explicitNullValueTransactionsUpdates = value; AdditionalData?.Remove("transactions_updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactions_updates"); else _explicitNullProperties?.Remove("transactions_updates"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ProductStatus _explicitNullValueTransactionsUpdates = default!;
 #endif
         /// <summary>

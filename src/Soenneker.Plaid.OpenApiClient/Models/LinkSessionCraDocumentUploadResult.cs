@@ -18,13 +18,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("num_bank_statements_uploaded") is { } nullNodeNumBankStatementsUploaded && nullNodeNumBankStatementsUploaded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumBankStatementsUploaded = null;
+            if (parseNode.GetChildNode("num_bank_statements_uploaded") is null) { _explicitNullValueNumBankStatementsUploaded = default!; _explicitNullProperties?.Remove("num_bank_statements_uploaded"); }
+            else if (parseNode.GetChildNode("num_bank_statements_uploaded") is { } nullNodeNumBankStatementsUploaded && nullNodeNumBankStatementsUploaded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumBankStatementsUploaded = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of bank statements uploaded by the user.</summary>
-        public int? NumBankStatementsUploaded { get => _explicitNullValueNumBankStatementsUploaded; set { _explicitNullValueNumBankStatementsUploaded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("num_bank_statements_uploaded"); else _explicitNullProperties?.Remove("num_bank_statements_uploaded"); } }
+        public int? NumBankStatementsUploaded { get => _explicitNullValueNumBankStatementsUploaded; set { _explicitNullValueNumBankStatementsUploaded = value; AdditionalData?.Remove("num_bank_statements_uploaded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("num_bank_statements_uploaded"); else _explicitNullProperties?.Remove("num_bank_statements_uploaded"); } }
         private int? _explicitNullValueNumBankStatementsUploaded = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraDocumentUploadResult"/> and sets the default values.

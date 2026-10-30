@@ -18,27 +18,30 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("agreement_accepted") is { } nullNodeAgreementAccepted && nullNodeAgreementAccepted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgreementAccepted = null;
-            if (parseNode.GetChildNode("agreement_accepted_at") is { } nullNodeAgreementAcceptedAt && nullNodeAgreementAcceptedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgreementAcceptedAt = null;
-            if (parseNode.GetChildNode("originator_ip_address") is { } nullNodeOriginatorIpAddress && nullNodeOriginatorIpAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginatorIpAddress = null;
+            if (parseNode.GetChildNode("agreement_accepted") is null) { _explicitNullValueAgreementAccepted = default!; _explicitNullProperties?.Remove("agreement_accepted"); }
+            else if (parseNode.GetChildNode("agreement_accepted") is { } nullNodeAgreementAccepted && nullNodeAgreementAccepted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgreementAccepted = null;
+            if (parseNode.GetChildNode("agreement_accepted_at") is null) { _explicitNullValueAgreementAcceptedAt = default!; _explicitNullProperties?.Remove("agreement_accepted_at"); }
+            else if (parseNode.GetChildNode("agreement_accepted_at") is { } nullNodeAgreementAcceptedAt && nullNodeAgreementAcceptedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgreementAcceptedAt = null;
+            if (parseNode.GetChildNode("originator_ip_address") is null) { _explicitNullValueOriginatorIpAddress = default!; _explicitNullProperties?.Remove("originator_ip_address"); }
+            else if (parseNode.GetChildNode("originator_ip_address") is { } nullNodeOriginatorIpAddress && nullNodeOriginatorIpAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginatorIpAddress = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the TOS agreement was accepted</summary>
-        public bool? AgreementAccepted { get => _explicitNullValueAgreementAccepted; set { _explicitNullValueAgreementAccepted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agreement_accepted"); else _explicitNullProperties?.Remove("agreement_accepted"); } }
+        public bool? AgreementAccepted { get => _explicitNullValueAgreementAccepted; set { _explicitNullValueAgreementAccepted = value; AdditionalData?.Remove("agreement_accepted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agreement_accepted"); else _explicitNullProperties?.Remove("agreement_accepted"); } }
         private bool? _explicitNullValueAgreementAccepted = default!;
         /// <summary>ISO8601 timestamp indicating when the originator accepted the TOS</summary>
-        public DateTimeOffset? AgreementAcceptedAt { get => _explicitNullValueAgreementAcceptedAt; set { _explicitNullValueAgreementAcceptedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agreement_accepted_at"); else _explicitNullProperties?.Remove("agreement_accepted_at"); } }
+        public DateTimeOffset? AgreementAcceptedAt { get => _explicitNullValueAgreementAcceptedAt; set { _explicitNullValueAgreementAcceptedAt = value; AdditionalData?.Remove("agreement_accepted_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agreement_accepted_at"); else _explicitNullProperties?.Remove("agreement_accepted_at"); } }
         private DateTimeOffset? _explicitNullValueAgreementAcceptedAt = default!;
         /// <summary>The IP address of the originator when they accepted the TOS. Formatted as an IPv4 or IPv6 IP address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginatorIpAddress { get => _explicitNullValueOriginatorIpAddress; set { _explicitNullValueOriginatorIpAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originator_ip_address"); else _explicitNullProperties?.Remove("originator_ip_address"); } }
+        public string? OriginatorIpAddress { get => _explicitNullValueOriginatorIpAddress; set { _explicitNullValueOriginatorIpAddress = value; AdditionalData?.Remove("originator_ip_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originator_ip_address"); else _explicitNullProperties?.Remove("originator_ip_address"); } }
         private string? _explicitNullValueOriginatorIpAddress = default!;
 #nullable restore
 #else
-        public string OriginatorIpAddress { get => _explicitNullValueOriginatorIpAddress; set { _explicitNullValueOriginatorIpAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originator_ip_address"); else _explicitNullProperties?.Remove("originator_ip_address"); } }
+        public string OriginatorIpAddress { get => _explicitNullValueOriginatorIpAddress; set { _explicitNullValueOriginatorIpAddress = value; AdditionalData?.Remove("originator_ip_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originator_ip_address"); else _explicitNullProperties?.Remove("originator_ip_address"); } }
         private string _explicitNullValueOriginatorIpAddress = default!;
 #endif
         /// <summary>

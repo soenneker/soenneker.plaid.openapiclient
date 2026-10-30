@@ -18,17 +18,19 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("has_numbers_match") is { } nullNodeHasNumbersMatch && nullNodeHasNumbersMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasNumbersMatch = null;
-            if (parseNode.GetChildNode("is_numbers_match_verified") is { } nullNodeIsNumbersMatchVerified && nullNodeIsNumbersMatchVerified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsNumbersMatchVerified = null;
+            if (parseNode.GetChildNode("has_numbers_match") is null) { _explicitNullValueHasNumbersMatch = default!; _explicitNullProperties?.Remove("has_numbers_match"); }
+            else if (parseNode.GetChildNode("has_numbers_match") is { } nullNodeHasNumbersMatch && nullNodeHasNumbersMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasNumbersMatch = null;
+            if (parseNode.GetChildNode("is_numbers_match_verified") is null) { _explicitNullValueIsNumbersMatchVerified = default!; _explicitNullProperties?.Remove("is_numbers_match_verified"); }
+            else if (parseNode.GetChildNode("is_numbers_match_verified") is { } nullNodeIsNumbersMatchVerified && nullNodeIsNumbersMatchVerified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsNumbersMatchVerified = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether we found at least one matching account for the ACH account and routing number.</summary>
-        public bool? HasNumbersMatch { get => _explicitNullValueHasNumbersMatch; set { _explicitNullValueHasNumbersMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_numbers_match"); else _explicitNullProperties?.Remove("has_numbers_match"); } }
+        public bool? HasNumbersMatch { get => _explicitNullValueHasNumbersMatch; set { _explicitNullValueHasNumbersMatch = value; AdditionalData?.Remove("has_numbers_match"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_numbers_match"); else _explicitNullProperties?.Remove("has_numbers_match"); } }
         private bool? _explicitNullValueHasNumbersMatch = default!;
         /// <summary>Indicates if at least one matching account for the ACH account and routing number is already verified.</summary>
-        public bool? IsNumbersMatchVerified { get => _explicitNullValueIsNumbersMatchVerified; set { _explicitNullValueIsNumbersMatchVerified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_numbers_match_verified"); else _explicitNullProperties?.Remove("is_numbers_match_verified"); } }
+        public bool? IsNumbersMatchVerified { get => _explicitNullValueIsNumbersMatchVerified; set { _explicitNullValueIsNumbersMatchVerified = value; AdditionalData?.Remove("is_numbers_match_verified"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_numbers_match_verified"); else _explicitNullProperties?.Remove("is_numbers_match_verified"); } }
         private bool? _explicitNullValueIsNumbersMatchVerified = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsNetworkStatus"/> and sets the default values.

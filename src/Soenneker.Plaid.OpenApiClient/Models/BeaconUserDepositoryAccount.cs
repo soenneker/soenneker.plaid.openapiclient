@@ -18,34 +18,37 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("account_mask") is { } nullNodeAccountMask && nullNodeAccountMask.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountMask = null;
-            if (parseNode.GetChildNode("added_at") is { } nullNodeAddedAt && nullNodeAddedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddedAt = null;
-            if (parseNode.GetChildNode("routing_number") is { } nullNodeRoutingNumber && nullNodeRoutingNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoutingNumber = null;
+            if (parseNode.GetChildNode("account_mask") is null) { _explicitNullValueAccountMask = default!; _explicitNullProperties?.Remove("account_mask"); }
+            else if (parseNode.GetChildNode("account_mask") is { } nullNodeAccountMask && nullNodeAccountMask.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountMask = null;
+            if (parseNode.GetChildNode("added_at") is null) { _explicitNullValueAddedAt = default!; _explicitNullProperties?.Remove("added_at"); }
+            else if (parseNode.GetChildNode("added_at") is { } nullNodeAddedAt && nullNodeAddedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddedAt = null;
+            if (parseNode.GetChildNode("routing_number") is null) { _explicitNullValueRoutingNumber = default!; _explicitNullProperties?.Remove("routing_number"); }
+            else if (parseNode.GetChildNode("routing_number") is { } nullNodeRoutingNumber && nullNodeRoutingNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoutingNumber = null;
         }
 
         /// <summary>The last 2-4 numeric characters of this account&apos;s account number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountMask { get => _explicitNullValueAccountMask; set { _explicitNullValueAccountMask = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_mask"); else _explicitNullProperties?.Remove("account_mask"); } }
+        public string? AccountMask { get => _explicitNullValueAccountMask; set { _explicitNullValueAccountMask = value; AdditionalData?.Remove("account_mask"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_mask"); else _explicitNullProperties?.Remove("account_mask"); } }
         private string? _explicitNullValueAccountMask = default!;
 #nullable restore
 #else
-        public string AccountMask { get => _explicitNullValueAccountMask; set { _explicitNullValueAccountMask = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_mask"); else _explicitNullProperties?.Remove("account_mask"); } }
+        public string AccountMask { get => _explicitNullValueAccountMask; set { _explicitNullValueAccountMask = value; AdditionalData?.Remove("account_mask"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_mask"); else _explicitNullProperties?.Remove("account_mask"); } }
         private string _explicitNullValueAccountMask = default!;
 #endif
         /// <summary>An ISO8601 formatted timestamp.</summary>
-        public DateTimeOffset? AddedAt { get => _explicitNullValueAddedAt; set { _explicitNullValueAddedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("added_at"); else _explicitNullProperties?.Remove("added_at"); } }
+        public DateTimeOffset? AddedAt { get => _explicitNullValueAddedAt; set { _explicitNullValueAddedAt = value; AdditionalData?.Remove("added_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("added_at"); else _explicitNullProperties?.Remove("added_at"); } }
         private DateTimeOffset? _explicitNullValueAddedAt = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The routing number of the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoutingNumber { get => _explicitNullValueRoutingNumber; set { _explicitNullValueRoutingNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routing_number"); else _explicitNullProperties?.Remove("routing_number"); } }
+        public string? RoutingNumber { get => _explicitNullValueRoutingNumber; set { _explicitNullValueRoutingNumber = value; AdditionalData?.Remove("routing_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routing_number"); else _explicitNullProperties?.Remove("routing_number"); } }
         private string? _explicitNullValueRoutingNumber = default!;
 #nullable restore
 #else
-        public string RoutingNumber { get => _explicitNullValueRoutingNumber; set { _explicitNullValueRoutingNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routing_number"); else _explicitNullProperties?.Remove("routing_number"); } }
+        public string RoutingNumber { get => _explicitNullValueRoutingNumber; set { _explicitNullValueRoutingNumber = value; AdditionalData?.Remove("routing_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routing_number"); else _explicitNullProperties?.Remove("routing_number"); } }
         private string _explicitNullValueRoutingNumber = default!;
 #endif
         /// <summary>

@@ -19,18 +19,30 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("causes") is { } nullNodeCauses && nullNodeCauses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Causes = null;
-            if (parseNode.GetChildNode("display_message") is { } nullNodeDisplayMessage && nullNodeDisplayMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayMessage = null;
-            if (parseNode.GetChildNode("documentation_url") is { } nullNodeDocumentationUrl && nullNodeDocumentationUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentationUrl = null;
-            if (parseNode.GetChildNode("error_code") is { } nullNodeErrorCode && nullNodeErrorCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorCode = null;
-            if (parseNode.GetChildNode("error_code_reason") is { } nullNodeErrorCodeReason && nullNodeErrorCodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorCodeReason = null;
-            if (parseNode.GetChildNode("error_message") is { } nullNodeErrorMessage && nullNodeErrorMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorMessage = null;
-            if (parseNode.GetChildNode("error_type") is { } nullNodeErrorType && nullNodeErrorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorType = null;
-            if (parseNode.GetChildNode("provided_account_subtypes") is { } nullNodeProvidedAccountSubtypes && nullNodeProvidedAccountSubtypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProvidedAccountSubtypes = null;
-            if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
-            if (parseNode.GetChildNode("required_account_subtypes") is { } nullNodeRequiredAccountSubtypes && nullNodeRequiredAccountSubtypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiredAccountSubtypes = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("suggested_action") is { } nullNodeSuggestedAction && nullNodeSuggestedAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuggestedAction = null;
+            if (parseNode.GetChildNode("causes") is null) { _explicitNullValueCauses = default!; _explicitNullProperties?.Remove("causes"); }
+            else if (parseNode.GetChildNode("causes") is { } nullNodeCauses && nullNodeCauses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Causes = null;
+            if (parseNode.GetChildNode("display_message") is null) { _explicitNullValueDisplayMessage = default!; _explicitNullProperties?.Remove("display_message"); }
+            else if (parseNode.GetChildNode("display_message") is { } nullNodeDisplayMessage && nullNodeDisplayMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayMessage = null;
+            if (parseNode.GetChildNode("documentation_url") is null) { _explicitNullValueDocumentationUrl = default!; _explicitNullProperties?.Remove("documentation_url"); }
+            else if (parseNode.GetChildNode("documentation_url") is { } nullNodeDocumentationUrl && nullNodeDocumentationUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentationUrl = null;
+            if (parseNode.GetChildNode("error_code") is null) { _explicitNullValueErrorCode = default!; _explicitNullProperties?.Remove("error_code"); }
+            else if (parseNode.GetChildNode("error_code") is { } nullNodeErrorCode && nullNodeErrorCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorCode = null;
+            if (parseNode.GetChildNode("error_code_reason") is null) { _explicitNullValueErrorCodeReason = default!; _explicitNullProperties?.Remove("error_code_reason"); }
+            else if (parseNode.GetChildNode("error_code_reason") is { } nullNodeErrorCodeReason && nullNodeErrorCodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorCodeReason = null;
+            if (parseNode.GetChildNode("error_message") is null) { _explicitNullValueErrorMessage = default!; _explicitNullProperties?.Remove("error_message"); }
+            else if (parseNode.GetChildNode("error_message") is { } nullNodeErrorMessage && nullNodeErrorMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorMessage = null;
+            if (parseNode.GetChildNode("error_type") is null) { _explicitNullValueErrorType = default!; _explicitNullProperties?.Remove("error_type"); }
+            else if (parseNode.GetChildNode("error_type") is { } nullNodeErrorType && nullNodeErrorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorType = null;
+            if (parseNode.GetChildNode("provided_account_subtypes") is null) { _explicitNullValueProvidedAccountSubtypes = default!; _explicitNullProperties?.Remove("provided_account_subtypes"); }
+            else if (parseNode.GetChildNode("provided_account_subtypes") is { } nullNodeProvidedAccountSubtypes && nullNodeProvidedAccountSubtypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProvidedAccountSubtypes = null;
+            if (parseNode.GetChildNode("request_id") is null) { _explicitNullValueRequestId = default!; _explicitNullProperties?.Remove("request_id"); }
+            else if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
+            if (parseNode.GetChildNode("required_account_subtypes") is null) { _explicitNullValueRequiredAccountSubtypes = default!; _explicitNullProperties?.Remove("required_account_subtypes"); }
+            else if (parseNode.GetChildNode("required_account_subtypes") is { } nullNodeRequiredAccountSubtypes && nullNodeRequiredAccountSubtypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiredAccountSubtypes = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("suggested_action") is null) { _explicitNullValueSuggestedAction = default!; _explicitNullProperties?.Remove("suggested_action"); }
+            else if (parseNode.GetChildNode("suggested_action") is { } nullNodeSuggestedAction && nullNodeSuggestedAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuggestedAction = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,109 +50,109 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>In this product, a request can pertain to more than one Item. If an error is returned for such a request, `causes` will return an array of errors containing a breakdown of these errors on the individual Item level, if any can be identified.`causes` will be provided for the `error_type` `ASSET_REPORT_ERROR` or `CHECK_REPORT_ERROR`, and for the `USER_ERROR` codes `USER_ITEM_ASSOCIATION_FAILED` and `USER_ITEM_REMOVAL_FAILED`. `causes` will also not be populated inside an error nested within a `warning` object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Causes { get => _explicitNullValueCauses; set { _explicitNullValueCauses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("causes"); else _explicitNullProperties?.Remove("causes"); } }
+        public UntypedNode? Causes { get => _explicitNullValueCauses; set { _explicitNullValueCauses = value; AdditionalData?.Remove("causes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("causes"); else _explicitNullProperties?.Remove("causes"); } }
         private UntypedNode? _explicitNullValueCauses = default!;
 #nullable restore
 #else
-        public UntypedNode Causes { get => _explicitNullValueCauses; set { _explicitNullValueCauses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("causes"); else _explicitNullProperties?.Remove("causes"); } }
+        public UntypedNode Causes { get => _explicitNullValueCauses; set { _explicitNullValueCauses = value; AdditionalData?.Remove("causes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("causes"); else _explicitNullProperties?.Remove("causes"); } }
         private UntypedNode _explicitNullValueCauses = default!;
 #endif
         /// <summary>A user-friendly representation of the error code. `null` if the error is not related to user action.This may change over time and is not safe for programmatic use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayMessage { get => _explicitNullValueDisplayMessage; set { _explicitNullValueDisplayMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_message"); else _explicitNullProperties?.Remove("display_message"); } }
+        public string? DisplayMessage { get => _explicitNullValueDisplayMessage; set { _explicitNullValueDisplayMessage = value; AdditionalData?.Remove("display_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_message"); else _explicitNullProperties?.Remove("display_message"); } }
         private string? _explicitNullValueDisplayMessage = default!;
 #nullable restore
 #else
-        public string DisplayMessage { get => _explicitNullValueDisplayMessage; set { _explicitNullValueDisplayMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_message"); else _explicitNullProperties?.Remove("display_message"); } }
+        public string DisplayMessage { get => _explicitNullValueDisplayMessage; set { _explicitNullValueDisplayMessage = value; AdditionalData?.Remove("display_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_message"); else _explicitNullProperties?.Remove("display_message"); } }
         private string _explicitNullValueDisplayMessage = default!;
 #endif
         /// <summary>The URL of a Plaid documentation page with more information about the error</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentationUrl { get => _explicitNullValueDocumentationUrl; set { _explicitNullValueDocumentationUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentation_url"); else _explicitNullProperties?.Remove("documentation_url"); } }
+        public string? DocumentationUrl { get => _explicitNullValueDocumentationUrl; set { _explicitNullValueDocumentationUrl = value; AdditionalData?.Remove("documentation_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentation_url"); else _explicitNullProperties?.Remove("documentation_url"); } }
         private string? _explicitNullValueDocumentationUrl = default!;
 #nullable restore
 #else
-        public string DocumentationUrl { get => _explicitNullValueDocumentationUrl; set { _explicitNullValueDocumentationUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentation_url"); else _explicitNullProperties?.Remove("documentation_url"); } }
+        public string DocumentationUrl { get => _explicitNullValueDocumentationUrl; set { _explicitNullValueDocumentationUrl = value; AdditionalData?.Remove("documentation_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentation_url"); else _explicitNullProperties?.Remove("documentation_url"); } }
         private string _explicitNullValueDocumentationUrl = default!;
 #endif
         /// <summary>The particular error code. Safe for programmatic use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_code"); else _explicitNullProperties?.Remove("error_code"); } }
+        public string? ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; AdditionalData?.Remove("error_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_code"); else _explicitNullProperties?.Remove("error_code"); } }
         private string? _explicitNullValueErrorCode = default!;
 #nullable restore
 #else
-        public string ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_code"); else _explicitNullProperties?.Remove("error_code"); } }
+        public string ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; AdditionalData?.Remove("error_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_code"); else _explicitNullProperties?.Remove("error_code"); } }
         private string _explicitNullValueErrorCode = default!;
 #endif
         /// <summary>The specific reason for the error code. Currently, reasons are only supported for OAuth-based item errors; the field is omitted otherwise. Safe for programmatic use.Possible values:`OAUTH_INVALID_TOKEN`: The user&apos;s OAuth connection to this institution has been invalidated.`OAUTH_CONSENT_EXPIRED`: The user&apos;s access consent for this OAuth connection to this institution has expired.`OAUTH_USER_REVOKED`: The user&apos;s OAuth connection to this institution is invalid because the user revoked their connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorCodeReason { get => _explicitNullValueErrorCodeReason; set { _explicitNullValueErrorCodeReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_code_reason"); else _explicitNullProperties?.Remove("error_code_reason"); } }
+        public string? ErrorCodeReason { get => _explicitNullValueErrorCodeReason; set { _explicitNullValueErrorCodeReason = value; AdditionalData?.Remove("error_code_reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_code_reason"); else _explicitNullProperties?.Remove("error_code_reason"); } }
         private string? _explicitNullValueErrorCodeReason = default!;
 #nullable restore
 #else
-        public string ErrorCodeReason { get => _explicitNullValueErrorCodeReason; set { _explicitNullValueErrorCodeReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_code_reason"); else _explicitNullProperties?.Remove("error_code_reason"); } }
+        public string ErrorCodeReason { get => _explicitNullValueErrorCodeReason; set { _explicitNullValueErrorCodeReason = value; AdditionalData?.Remove("error_code_reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_code_reason"); else _explicitNullProperties?.Remove("error_code_reason"); } }
         private string _explicitNullValueErrorCodeReason = default!;
 #endif
         /// <summary>A developer-friendly representation of the error code. This may change over time and is not safe for programmatic use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_message"); else _explicitNullProperties?.Remove("error_message"); } }
+        public string? ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; AdditionalData?.Remove("error_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_message"); else _explicitNullProperties?.Remove("error_message"); } }
         private string? _explicitNullValueErrorMessage = default!;
 #nullable restore
 #else
-        public string ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_message"); else _explicitNullProperties?.Remove("error_message"); } }
+        public string ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; AdditionalData?.Remove("error_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_message"); else _explicitNullProperties?.Remove("error_message"); } }
         private string _explicitNullValueErrorMessage = default!;
 #endif
         /// <summary>A broad categorization of the error. Safe for programmatic use.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PlaidErrorType? ErrorType { get => _explicitNullValueErrorType; set { _explicitNullValueErrorType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_type"); else _explicitNullProperties?.Remove("error_type"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PlaidErrorType? ErrorType { get => _explicitNullValueErrorType; set { _explicitNullValueErrorType = value; AdditionalData?.Remove("error_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_type"); else _explicitNullProperties?.Remove("error_type"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PlaidErrorType? _explicitNullValueErrorType = default!;
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
         /// <summary>A list of the account subtypes that were extracted but did not match the requested subtypes via the `account_filters` parameter in `/link/token/create`. Currently only populated for `NO_ACCOUNTS` errors from Items with `investments_auth` as an enabled product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ProvidedAccountSubtypes { get => _explicitNullValueProvidedAccountSubtypes; set { _explicitNullValueProvidedAccountSubtypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provided_account_subtypes"); else _explicitNullProperties?.Remove("provided_account_subtypes"); } }
+        public List<string>? ProvidedAccountSubtypes { get => _explicitNullValueProvidedAccountSubtypes; set { _explicitNullValueProvidedAccountSubtypes = value; AdditionalData?.Remove("provided_account_subtypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provided_account_subtypes"); else _explicitNullProperties?.Remove("provided_account_subtypes"); } }
         private List<string>? _explicitNullValueProvidedAccountSubtypes = default!;
 #nullable restore
 #else
-        public List<string> ProvidedAccountSubtypes { get => _explicitNullValueProvidedAccountSubtypes; set { _explicitNullValueProvidedAccountSubtypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provided_account_subtypes"); else _explicitNullProperties?.Remove("provided_account_subtypes"); } }
+        public List<string> ProvidedAccountSubtypes { get => _explicitNullValueProvidedAccountSubtypes; set { _explicitNullValueProvidedAccountSubtypes = value; AdditionalData?.Remove("provided_account_subtypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provided_account_subtypes"); else _explicitNullProperties?.Remove("provided_account_subtypes"); } }
         private List<string> _explicitNullValueProvidedAccountSubtypes = default!;
 #endif
         /// <summary>A unique ID identifying the request, to be used for troubleshooting purposes. This field will be omitted in errors provided by webhooks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; AdditionalData?.Remove("request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
         private string? _explicitNullValueRequestId = default!;
 #nullable restore
 #else
-        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; AdditionalData?.Remove("request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
         private string _explicitNullValueRequestId = default!;
 #endif
         /// <summary>A list of the account subtypes that were requested via the `account_filters` parameter in `/link/token/create`. Currently only populated for `NO_ACCOUNTS` errors from Items with `investments_auth` as an enabled product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RequiredAccountSubtypes { get => _explicitNullValueRequiredAccountSubtypes; set { _explicitNullValueRequiredAccountSubtypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("required_account_subtypes"); else _explicitNullProperties?.Remove("required_account_subtypes"); } }
+        public List<string>? RequiredAccountSubtypes { get => _explicitNullValueRequiredAccountSubtypes; set { _explicitNullValueRequiredAccountSubtypes = value; AdditionalData?.Remove("required_account_subtypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("required_account_subtypes"); else _explicitNullProperties?.Remove("required_account_subtypes"); } }
         private List<string>? _explicitNullValueRequiredAccountSubtypes = default!;
 #nullable restore
 #else
-        public List<string> RequiredAccountSubtypes { get => _explicitNullValueRequiredAccountSubtypes; set { _explicitNullValueRequiredAccountSubtypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("required_account_subtypes"); else _explicitNullProperties?.Remove("required_account_subtypes"); } }
+        public List<string> RequiredAccountSubtypes { get => _explicitNullValueRequiredAccountSubtypes; set { _explicitNullValueRequiredAccountSubtypes = value; AdditionalData?.Remove("required_account_subtypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("required_account_subtypes"); else _explicitNullProperties?.Remove("required_account_subtypes"); } }
         private List<string> _explicitNullValueRequiredAccountSubtypes = default!;
 #endif
         /// <summary>The HTTP status code associated with the error. This will only be returned in the response body when the error information is provided via a webhook.</summary>
-        public int? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public int? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private int? _explicitNullValueStatus = default!;
         /// <summary>Suggested steps for resolving the error</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SuggestedAction { get => _explicitNullValueSuggestedAction; set { _explicitNullValueSuggestedAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suggested_action"); else _explicitNullProperties?.Remove("suggested_action"); } }
+        public string? SuggestedAction { get => _explicitNullValueSuggestedAction; set { _explicitNullValueSuggestedAction = value; AdditionalData?.Remove("suggested_action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suggested_action"); else _explicitNullProperties?.Remove("suggested_action"); } }
         private string? _explicitNullValueSuggestedAction = default!;
 #nullable restore
 #else
-        public string SuggestedAction { get => _explicitNullValueSuggestedAction; set { _explicitNullValueSuggestedAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suggested_action"); else _explicitNullProperties?.Remove("suggested_action"); } }
+        public string SuggestedAction { get => _explicitNullValueSuggestedAction; set { _explicitNullValueSuggestedAction = value; AdditionalData?.Remove("suggested_action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suggested_action"); else _explicitNullProperties?.Remove("suggested_action"); } }
         private string _explicitNullValueSuggestedAction = default!;
 #endif
         /// <summary>
@@ -176,7 +188,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "error_code", n => { ErrorCode = n.GetStringValue(); } },
                 { "error_code_reason", n => { ErrorCodeReason = n.GetStringValue(); } },
                 { "error_message", n => { ErrorMessage = n.GetStringValue(); } },
-                { "error_type", n => { ErrorType = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PlaidErrorType>(); } },
+                { "error_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PlaidErrorType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueErrorType = default; _explicitNullProperties?.Remove("error_type"); AdditionalData["error_type"] = unknown; } else { ErrorType = parsed; AdditionalData.Remove("error_type"); } } },
                 { "provided_account_subtypes", n => { ProvidedAccountSubtypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
                 { "required_account_subtypes", n => { RequiredAccountSubtypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },

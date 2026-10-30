@@ -18,17 +18,19 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("development") is { } nullNodeDevelopment && nullNodeDevelopment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Development = null;
-            if (parseNode.GetChildNode("production") is { } nullNodeProduction && nullNodeProduction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Production = null;
+            if (parseNode.GetChildNode("development") is null) { _explicitNullValueDevelopment = default!; _explicitNullProperties?.Remove("development"); }
+            else if (parseNode.GetChildNode("development") is { } nullNodeDevelopment && nullNodeDevelopment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Development = null;
+            if (parseNode.GetChildNode("production") is null) { _explicitNullValueProduction = default!; _explicitNullProperties?.Remove("production"); }
+            else if (parseNode.GetChildNode("production") is { } nullNodeProduction && nullNodeProduction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Production = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The registration status for the end customer&apos;s application.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitutionApplicationStatus? Development { get => _explicitNullValueDevelopment; set { _explicitNullValueDevelopment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("development"); else _explicitNullProperties?.Remove("development"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitutionApplicationStatus? Development { get => _explicitNullValueDevelopment; set { _explicitNullValueDevelopment = value; AdditionalData?.Remove("development"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("development"); else _explicitNullProperties?.Remove("development"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitutionApplicationStatus? _explicitNullValueDevelopment = default!;
         /// <summary>The registration status for the end customer&apos;s application.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitutionApplicationStatus? Production { get => _explicitNullValueProduction; set { _explicitNullValueProduction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("production"); else _explicitNullProperties?.Remove("production"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitutionApplicationStatus? Production { get => _explicitNullValueProduction; set { _explicitNullValueProduction = value; AdditionalData?.Remove("production"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("production"); else _explicitNullProperties?.Remove("production"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitutionApplicationStatus? _explicitNullValueProduction = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitutionEnvironments"/> and sets the default values.
@@ -55,8 +57,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "development", n => { Development = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitutionApplicationStatus>(); } },
-                { "production", n => { Production = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitutionApplicationStatus>(); } },
+                { "development", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitutionApplicationStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDevelopment = default; _explicitNullProperties?.Remove("development"); AdditionalData["development"] = unknown; } else { Development = parsed; AdditionalData.Remove("development"); } } },
+                { "production", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitutionApplicationStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProduction = default; _explicitNullProperties?.Remove("production"); AdditionalData["production"] = unknown; } else { Production = parsed; AdditionalData.Remove("production"); } } },
             };
         }
         /// <summary>

@@ -18,17 +18,19 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("affected_existing_item_count") is { } nullNodeAffectedExistingItemCount && nullNodeAffectedExistingItemCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AffectedExistingItemCount = null;
-            if (parseNode.GetChildNode("affected_new_item_count") is { } nullNodeAffectedNewItemCount && nullNodeAffectedNewItemCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AffectedNewItemCount = null;
+            if (parseNode.GetChildNode("affected_existing_item_count") is null) { _explicitNullValueAffectedExistingItemCount = default!; _explicitNullProperties?.Remove("affected_existing_item_count"); }
+            else if (parseNode.GetChildNode("affected_existing_item_count") is { } nullNodeAffectedExistingItemCount && nullNodeAffectedExistingItemCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AffectedExistingItemCount = null;
+            if (parseNode.GetChildNode("affected_new_item_count") is null) { _explicitNullValueAffectedNewItemCount = default!; _explicitNullProperties?.Remove("affected_new_item_count"); }
+            else if (parseNode.GetChildNode("affected_new_item_count") is { } nullNodeAffectedNewItemCount && nullNodeAffectedNewItemCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AffectedNewItemCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The affected_existing_item_count property</summary>
-        public int? AffectedExistingItemCount { get => _explicitNullValueAffectedExistingItemCount; set { _explicitNullValueAffectedExistingItemCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("affected_existing_item_count"); else _explicitNullProperties?.Remove("affected_existing_item_count"); } }
+        public int? AffectedExistingItemCount { get => _explicitNullValueAffectedExistingItemCount; set { _explicitNullValueAffectedExistingItemCount = value; AdditionalData?.Remove("affected_existing_item_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("affected_existing_item_count"); else _explicitNullProperties?.Remove("affected_existing_item_count"); } }
         private int? _explicitNullValueAffectedExistingItemCount = default!;
         /// <summary>The affected_new_item_count property</summary>
-        public int? AffectedNewItemCount { get => _explicitNullValueAffectedNewItemCount; set { _explicitNullValueAffectedNewItemCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("affected_new_item_count"); else _explicitNullProperties?.Remove("affected_new_item_count"); } }
+        public int? AffectedNewItemCount { get => _explicitNullValueAffectedNewItemCount; set { _explicitNullValueAffectedNewItemCount = value; AdditionalData?.Remove("affected_new_item_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("affected_new_item_count"); else _explicitNullProperties?.Remove("affected_new_item_count"); } }
         private int? _explicitNullValueAffectedNewItemCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueImpact"/> and sets the default values.

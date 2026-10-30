@@ -74,7 +74,7 @@ namespace Soenneker.Plaid.OpenApiClient.Cra.Check_report.Verification.Pdf.Get
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://production.plaid.com", "/cra/check_report/verification/pdf/get", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/pdf, application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

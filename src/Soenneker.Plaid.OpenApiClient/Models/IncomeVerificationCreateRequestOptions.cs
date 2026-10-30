@@ -18,17 +18,18 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("access_tokens") is { } nullNodeAccessTokens && nullNodeAccessTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessTokens = null;
+            if (parseNode.GetChildNode("access_tokens") is null) { _explicitNullValueAccessTokens = default!; _explicitNullProperties?.Remove("access_tokens"); }
+            else if (parseNode.GetChildNode("access_tokens") is { } nullNodeAccessTokens && nullNodeAccessTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessTokens = null;
         }
 
         /// <summary>An array of access tokens corresponding to the Items that will be cross-referenced with the product data. Plaid will attempt to correlate transaction history from these Items with data from the user&apos;s paystub, such as date and amount. If the `transactions` product was not initialized for the Items during Link, it will be initialized after this Link session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AccessTokens { get => _explicitNullValueAccessTokens; set { _explicitNullValueAccessTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_tokens"); else _explicitNullProperties?.Remove("access_tokens"); } }
+        public List<string>? AccessTokens { get => _explicitNullValueAccessTokens; set { _explicitNullValueAccessTokens = value; AdditionalData?.Remove("access_tokens"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_tokens"); else _explicitNullProperties?.Remove("access_tokens"); } }
         private List<string>? _explicitNullValueAccessTokens = default!;
 #nullable restore
 #else
-        public List<string> AccessTokens { get => _explicitNullValueAccessTokens; set { _explicitNullValueAccessTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_tokens"); else _explicitNullProperties?.Remove("access_tokens"); } }
+        public List<string> AccessTokens { get => _explicitNullValueAccessTokens; set { _explicitNullValueAccessTokens = value; AdditionalData?.Remove("access_tokens"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_tokens"); else _explicitNullProperties?.Remove("access_tokens"); } }
         private List<string> _explicitNullValueAccessTokens = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

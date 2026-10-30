@@ -18,9 +18,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("fico_lender_id") is { } nullNodeFicoLenderId && nullNodeFicoLenderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FicoLenderId = null;
-            if (parseNode.GetChildNode("lender_application_id") is { } nullNodeLenderApplicationId && nullNodeLenderApplicationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LenderApplicationId = null;
-            if (parseNode.GetChildNode("ultrafico_score_requests") is { } nullNodeUltraficoScoreRequests && nullNodeUltraficoScoreRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UltraficoScoreRequests = null;
+            if (parseNode.GetChildNode("fico_lender_id") is null) { _explicitNullValueFicoLenderId = default!; _explicitNullProperties?.Remove("fico_lender_id"); }
+            else if (parseNode.GetChildNode("fico_lender_id") is { } nullNodeFicoLenderId && nullNodeFicoLenderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FicoLenderId = null;
+            if (parseNode.GetChildNode("lender_application_id") is null) { _explicitNullValueLenderApplicationId = default!; _explicitNullProperties?.Remove("lender_application_id"); }
+            else if (parseNode.GetChildNode("lender_application_id") is { } nullNodeLenderApplicationId && nullNodeLenderApplicationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LenderApplicationId = null;
+            if (parseNode.GetChildNode("ultrafico_score_requests") is null) { _explicitNullValueUltraficoScoreRequests = default!; _explicitNullProperties?.Remove("ultrafico_score_requests"); }
+            else if (parseNode.GetChildNode("ultrafico_score_requests") is { } nullNodeUltraficoScoreRequests && nullNodeUltraficoScoreRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UltraficoScoreRequests = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>ID provided by FICO that uniquely identifies the lender. Required for UltraFICO® score generation. Sometimes referred to as Lender Org ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FicoLenderId { get => _explicitNullValueFicoLenderId; set { _explicitNullValueFicoLenderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fico_lender_id"); else _explicitNullProperties?.Remove("fico_lender_id"); } }
+        public string? FicoLenderId { get => _explicitNullValueFicoLenderId; set { _explicitNullValueFicoLenderId = value; AdditionalData?.Remove("fico_lender_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fico_lender_id"); else _explicitNullProperties?.Remove("fico_lender_id"); } }
         private string? _explicitNullValueFicoLenderId = default!;
 #nullable restore
 #else
-        public string FicoLenderId { get => _explicitNullValueFicoLenderId; set { _explicitNullValueFicoLenderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fico_lender_id"); else _explicitNullProperties?.Remove("fico_lender_id"); } }
+        public string FicoLenderId { get => _explicitNullValueFicoLenderId; set { _explicitNullValueFicoLenderId = value; AdditionalData?.Remove("fico_lender_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fico_lender_id"); else _explicitNullProperties?.Remove("fico_lender_id"); } }
         private string _explicitNullValueFicoLenderId = default!;
 #endif
         /// <summary>Client-generated identifier that uniquely identifies the FICO Application across FICO systems.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LenderApplicationId { get => _explicitNullValueLenderApplicationId; set { _explicitNullValueLenderApplicationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lender_application_id"); else _explicitNullProperties?.Remove("lender_application_id"); } }
+        public string? LenderApplicationId { get => _explicitNullValueLenderApplicationId; set { _explicitNullValueLenderApplicationId = value; AdditionalData?.Remove("lender_application_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lender_application_id"); else _explicitNullProperties?.Remove("lender_application_id"); } }
         private string? _explicitNullValueLenderApplicationId = default!;
 #nullable restore
 #else
-        public string LenderApplicationId { get => _explicitNullValueLenderApplicationId; set { _explicitNullValueLenderApplicationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lender_application_id"); else _explicitNullProperties?.Remove("lender_application_id"); } }
+        public string LenderApplicationId { get => _explicitNullValueLenderApplicationId; set { _explicitNullValueLenderApplicationId = value; AdditionalData?.Remove("lender_application_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lender_application_id"); else _explicitNullProperties?.Remove("lender_application_id"); } }
         private string _explicitNullValueLenderApplicationId = default!;
 #endif
         /// <summary>A list of UltraFICO® scoring requests. Each request contains all configuration required to generate an UltraFICO score.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreRequest>? UltraficoScoreRequests { get => _explicitNullValueUltraficoScoreRequests; set { _explicitNullValueUltraficoScoreRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ultrafico_score_requests"); else _explicitNullProperties?.Remove("ultrafico_score_requests"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreRequest>? UltraficoScoreRequests { get => _explicitNullValueUltraficoScoreRequests; set { _explicitNullValueUltraficoScoreRequests = value; AdditionalData?.Remove("ultrafico_score_requests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ultrafico_score_requests"); else _explicitNullProperties?.Remove("ultrafico_score_requests"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreRequest>? _explicitNullValueUltraficoScoreRequests = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreRequest> UltraficoScoreRequests { get => _explicitNullValueUltraficoScoreRequests; set { _explicitNullValueUltraficoScoreRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ultrafico_score_requests"); else _explicitNullProperties?.Remove("ultrafico_score_requests"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreRequest> UltraficoScoreRequests { get => _explicitNullValueUltraficoScoreRequests; set { _explicitNullValueUltraficoScoreRequests = value; AdditionalData?.Remove("ultrafico_score_requests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ultrafico_score_requests"); else _explicitNullProperties?.Remove("ultrafico_score_requests"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsUltraFicoScoreRequest> _explicitNullValueUltraficoScoreRequests = default!;
 #endif
         /// <summary>

@@ -18,15 +18,24 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("attempt_id") is { } nullNodeAttemptId && nullNodeAttemptId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttemptId = null;
-            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
-            if (parseNode.GetChildNode("item_id") is { } nullNodeItemId && nullNodeItemId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemId = null;
-            if (parseNode.GetChildNode("link_customization_name") is { } nullNodeLinkCustomizationName && nullNodeLinkCustomizationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkCustomizationName = null;
-            if (parseNode.GetChildNode("link_session_id") is { } nullNodeLinkSessionId && nullNodeLinkSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkSessionId = null;
-            if (parseNode.GetChildNode("outcome") is { } nullNodeOutcome && nullNodeOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Outcome = null;
-            if (parseNode.GetChildNode("outcome_account_id") is { } nullNodeOutcomeAccountId && nullNodeOutcomeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutcomeAccountId = null;
-            if (parseNode.GetChildNode("ruleset_revision") is { } nullNodeRulesetRevision && nullNodeRulesetRevision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RulesetRevision = null;
-            if (parseNode.GetChildNode("scores") is { } nullNodeScores && nullNodeScores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scores = null;
+            if (parseNode.GetChildNode("attempt_id") is null) { _explicitNullValueAttemptId = default!; _explicitNullProperties?.Remove("attempt_id"); }
+            else if (parseNode.GetChildNode("attempt_id") is { } nullNodeAttemptId && nullNodeAttemptId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttemptId = null;
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("item_id") is null) { _explicitNullValueItemId = default!; _explicitNullProperties?.Remove("item_id"); }
+            else if (parseNode.GetChildNode("item_id") is { } nullNodeItemId && nullNodeItemId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemId = null;
+            if (parseNode.GetChildNode("link_customization_name") is null) { _explicitNullValueLinkCustomizationName = default!; _explicitNullProperties?.Remove("link_customization_name"); }
+            else if (parseNode.GetChildNode("link_customization_name") is { } nullNodeLinkCustomizationName && nullNodeLinkCustomizationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkCustomizationName = null;
+            if (parseNode.GetChildNode("link_session_id") is null) { _explicitNullValueLinkSessionId = default!; _explicitNullProperties?.Remove("link_session_id"); }
+            else if (parseNode.GetChildNode("link_session_id") is { } nullNodeLinkSessionId && nullNodeLinkSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkSessionId = null;
+            if (parseNode.GetChildNode("outcome") is null) { _explicitNullValueOutcome = default!; _explicitNullProperties?.Remove("outcome"); }
+            else if (parseNode.GetChildNode("outcome") is { } nullNodeOutcome && nullNodeOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Outcome = null;
+            if (parseNode.GetChildNode("outcome_account_id") is null) { _explicitNullValueOutcomeAccountId = default!; _explicitNullProperties?.Remove("outcome_account_id"); }
+            else if (parseNode.GetChildNode("outcome_account_id") is { } nullNodeOutcomeAccountId && nullNodeOutcomeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutcomeAccountId = null;
+            if (parseNode.GetChildNode("ruleset_revision") is null) { _explicitNullValueRulesetRevision = default!; _explicitNullProperties?.Remove("ruleset_revision"); }
+            else if (parseNode.GetChildNode("ruleset_revision") is { } nullNodeRulesetRevision && nullNodeRulesetRevision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RulesetRevision = null;
+            if (parseNode.GetChildNode("scores") is null) { _explicitNullValueScores = default!; _explicitNullProperties?.Remove("scores"); }
+            else if (parseNode.GetChildNode("scores") is { } nullNodeScores && nullNodeScores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scores = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,70 +43,70 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Identifier for the Identity Match attempt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AttemptId { get => _explicitNullValueAttemptId; set { _explicitNullValueAttemptId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attempt_id"); else _explicitNullProperties?.Remove("attempt_id"); } }
+        public string? AttemptId { get => _explicitNullValueAttemptId; set { _explicitNullValueAttemptId = value; AdditionalData?.Remove("attempt_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attempt_id"); else _explicitNullProperties?.Remove("attempt_id"); } }
         private string? _explicitNullValueAttemptId = default!;
 #nullable restore
 #else
-        public string AttemptId { get => _explicitNullValueAttemptId; set { _explicitNullValueAttemptId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attempt_id"); else _explicitNullProperties?.Remove("attempt_id"); } }
+        public string AttemptId { get => _explicitNullValueAttemptId; set { _explicitNullValueAttemptId = value; AdditionalData?.Remove("attempt_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attempt_id"); else _explicitNullProperties?.Remove("attempt_id"); } }
         private string _explicitNullValueAttemptId = default!;
 #endif
         /// <summary>Time at which the attempt was created.</summary>
-        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
         private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>Item ID associated with the attempt. Null if the ID is unavailable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
+        public string? ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; AdditionalData?.Remove("item_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
         private string? _explicitNullValueItemId = default!;
 #nullable restore
 #else
-        public string ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
+        public string ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; AdditionalData?.Remove("item_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
         private string _explicitNullValueItemId = default!;
 #endif
         /// <summary>Link customization that supplied the ruleset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LinkCustomizationName { get => _explicitNullValueLinkCustomizationName; set { _explicitNullValueLinkCustomizationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_customization_name"); else _explicitNullProperties?.Remove("link_customization_name"); } }
+        public string? LinkCustomizationName { get => _explicitNullValueLinkCustomizationName; set { _explicitNullValueLinkCustomizationName = value; AdditionalData?.Remove("link_customization_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_customization_name"); else _explicitNullProperties?.Remove("link_customization_name"); } }
         private string? _explicitNullValueLinkCustomizationName = default!;
 #nullable restore
 #else
-        public string LinkCustomizationName { get => _explicitNullValueLinkCustomizationName; set { _explicitNullValueLinkCustomizationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_customization_name"); else _explicitNullProperties?.Remove("link_customization_name"); } }
+        public string LinkCustomizationName { get => _explicitNullValueLinkCustomizationName; set { _explicitNullValueLinkCustomizationName = value; AdditionalData?.Remove("link_customization_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_customization_name"); else _explicitNullProperties?.Remove("link_customization_name"); } }
         private string _explicitNullValueLinkCustomizationName = default!;
 #endif
         /// <summary>Link session that produced the attempt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LinkSessionId { get => _explicitNullValueLinkSessionId; set { _explicitNullValueLinkSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_session_id"); else _explicitNullProperties?.Remove("link_session_id"); } }
+        public string? LinkSessionId { get => _explicitNullValueLinkSessionId; set { _explicitNullValueLinkSessionId = value; AdditionalData?.Remove("link_session_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_session_id"); else _explicitNullProperties?.Remove("link_session_id"); } }
         private string? _explicitNullValueLinkSessionId = default!;
 #nullable restore
 #else
-        public string LinkSessionId { get => _explicitNullValueLinkSessionId; set { _explicitNullValueLinkSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_session_id"); else _explicitNullProperties?.Remove("link_session_id"); } }
+        public string LinkSessionId { get => _explicitNullValueLinkSessionId; set { _explicitNullValueLinkSessionId = value; AdditionalData?.Remove("link_session_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_session_id"); else _explicitNullProperties?.Remove("link_session_id"); } }
         private string _explicitNullValueLinkSessionId = default!;
 #endif
         /// <summary>The Identity Match decision for the attempt.`PASS`: The decision was to allow the user to continue.`FAIL`: The decision was to block the user.`UNKNOWN`: The attempt&apos;s decision is unavailable or unrecognized.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListOutcome? Outcome { get => _explicitNullValueOutcome; set { _explicitNullValueOutcome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome"); else _explicitNullProperties?.Remove("outcome"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListOutcome? Outcome { get => _explicitNullValueOutcome; set { _explicitNullValueOutcome = value; AdditionalData?.Remove("outcome"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome"); else _explicitNullProperties?.Remove("outcome"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListOutcome? _explicitNullValueOutcome = default!;
         /// <summary>Account ID associated with a `PASS` outcome. Null for `FAIL` or `UNKNOWN` outcomes, or if the ID is unavailable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OutcomeAccountId { get => _explicitNullValueOutcomeAccountId; set { _explicitNullValueOutcomeAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome_account_id"); else _explicitNullProperties?.Remove("outcome_account_id"); } }
+        public string? OutcomeAccountId { get => _explicitNullValueOutcomeAccountId; set { _explicitNullValueOutcomeAccountId = value; AdditionalData?.Remove("outcome_account_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome_account_id"); else _explicitNullProperties?.Remove("outcome_account_id"); } }
         private string? _explicitNullValueOutcomeAccountId = default!;
 #nullable restore
 #else
-        public string OutcomeAccountId { get => _explicitNullValueOutcomeAccountId; set { _explicitNullValueOutcomeAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome_account_id"); else _explicitNullProperties?.Remove("outcome_account_id"); } }
+        public string OutcomeAccountId { get => _explicitNullValueOutcomeAccountId; set { _explicitNullValueOutcomeAccountId = value; AdditionalData?.Remove("outcome_account_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome_account_id"); else _explicitNullProperties?.Remove("outcome_account_id"); } }
         private string _explicitNullValueOutcomeAccountId = default!;
 #endif
         /// <summary>Revision of the Identity Match ruleset that was applied.</summary>
-        public int? RulesetRevision { get => _explicitNullValueRulesetRevision; set { _explicitNullValueRulesetRevision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleset_revision"); else _explicitNullProperties?.Remove("ruleset_revision"); } }
+        public int? RulesetRevision { get => _explicitNullValueRulesetRevision; set { _explicitNullValueRulesetRevision = value; AdditionalData?.Remove("ruleset_revision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleset_revision"); else _explicitNullProperties?.Remove("ruleset_revision"); } }
         private int? _explicitNullValueRulesetRevision = default!;
         /// <summary>Per-account match scores. Empty if the attempt data is unavailable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListAttemptScore>? Scores { get => _explicitNullValueScores; set { _explicitNullValueScores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores"); else _explicitNullProperties?.Remove("scores"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListAttemptScore>? Scores { get => _explicitNullValueScores; set { _explicitNullValueScores = value; AdditionalData?.Remove("scores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores"); else _explicitNullProperties?.Remove("scores"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListAttemptScore>? _explicitNullValueScores = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListAttemptScore> Scores { get => _explicitNullValueScores; set { _explicitNullValueScores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores"); else _explicitNullProperties?.Remove("scores"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListAttemptScore> Scores { get => _explicitNullValueScores; set { _explicitNullValueScores = value; AdditionalData?.Remove("scores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores"); else _explicitNullProperties?.Remove("scores"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListAttemptScore> _explicitNullValueScores = default!;
 #endif
         /// <summary>
@@ -130,7 +139,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "item_id", n => { ItemId = n.GetStringValue(); } },
                 { "link_customization_name", n => { LinkCustomizationName = n.GetStringValue(); } },
                 { "link_session_id", n => { LinkSessionId = n.GetStringValue(); } },
-                { "outcome", n => { Outcome = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListOutcome>(); } },
+                { "outcome", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListOutcome>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOutcome = default; _explicitNullProperties?.Remove("outcome"); AdditionalData["outcome"] = unknown; } else { Outcome = parsed; AdditionalData.Remove("outcome"); } } },
                 { "outcome_account_id", n => { OutcomeAccountId = n.GetStringValue(); } },
                 { "ruleset_revision", n => { RulesetRevision = n.GetIntValue(); } },
                 { "scores", n => { Scores = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListAttemptScore>(global::Soenneker.Plaid.OpenApiClient.Models.IdentityMatchListAttemptScore.CreateFromDiscriminatorValue)?.AsList(); } },

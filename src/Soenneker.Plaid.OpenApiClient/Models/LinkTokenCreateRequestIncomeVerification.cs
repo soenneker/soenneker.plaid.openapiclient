@@ -18,23 +18,30 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("access_tokens") is { } nullNodeAccessTokens && nullNodeAccessTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessTokens = null;
-            if (parseNode.GetChildNode("asset_report_id") is { } nullNodeAssetReportId && nullNodeAssetReportId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetReportId = null;
-            if (parseNode.GetChildNode("bank_income") is { } nullNodeBankIncome && nullNodeBankIncome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankIncome = null;
-            if (parseNode.GetChildNode("income_source_types") is { } nullNodeIncomeSourceTypes && nullNodeIncomeSourceTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeSourceTypes = null;
-            if (parseNode.GetChildNode("income_verification_id") is { } nullNodeIncomeVerificationId && nullNodeIncomeVerificationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeVerificationId = null;
-            if (parseNode.GetChildNode("payroll_income") is { } nullNodePayrollIncome && nullNodePayrollIncome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayrollIncome = null;
-            if (parseNode.GetChildNode("stated_income_sources") is { } nullNodeStatedIncomeSources && nullNodeStatedIncomeSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatedIncomeSources = null;
+            if (parseNode.GetChildNode("access_tokens") is null) { _explicitNullValueAccessTokens = default!; _explicitNullProperties?.Remove("access_tokens"); }
+            else if (parseNode.GetChildNode("access_tokens") is { } nullNodeAccessTokens && nullNodeAccessTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessTokens = null;
+            if (parseNode.GetChildNode("asset_report_id") is null) { _explicitNullValueAssetReportId = default!; _explicitNullProperties?.Remove("asset_report_id"); }
+            else if (parseNode.GetChildNode("asset_report_id") is { } nullNodeAssetReportId && nullNodeAssetReportId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetReportId = null;
+            if (parseNode.GetChildNode("bank_income") is null) { _explicitNullValueBankIncome = default!; _explicitNullProperties?.Remove("bank_income"); }
+            else if (parseNode.GetChildNode("bank_income") is { } nullNodeBankIncome && nullNodeBankIncome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankIncome = null;
+            if (parseNode.GetChildNode("income_source_types") is null) { _explicitNullValueIncomeSourceTypes = default!; _explicitNullProperties?.Remove("income_source_types"); }
+            else if (parseNode.GetChildNode("income_source_types") is { } nullNodeIncomeSourceTypes && nullNodeIncomeSourceTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeSourceTypes = null;
+            if (parseNode.GetChildNode("income_verification_id") is null) { _explicitNullValueIncomeVerificationId = default!; _explicitNullProperties?.Remove("income_verification_id"); }
+            else if (parseNode.GetChildNode("income_verification_id") is { } nullNodeIncomeVerificationId && nullNodeIncomeVerificationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeVerificationId = null;
+            if (parseNode.GetChildNode("payroll_income") is null) { _explicitNullValuePayrollIncome = default!; _explicitNullProperties?.Remove("payroll_income"); }
+            else if (parseNode.GetChildNode("payroll_income") is { } nullNodePayrollIncome && nullNodePayrollIncome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayrollIncome = null;
+            if (parseNode.GetChildNode("stated_income_sources") is null) { _explicitNullValueStatedIncomeSources = default!; _explicitNullProperties?.Remove("stated_income_sources"); }
+            else if (parseNode.GetChildNode("stated_income_sources") is { } nullNodeStatedIncomeSources && nullNodeStatedIncomeSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatedIncomeSources = null;
         }
 
         /// <summary>An array of access tokens corresponding to Items that a user has previously connected with. Data from these institutions will be cross-referenced with document data received during the Document Income flow to help verify that the uploaded documents are accurate. If the `transactions` product was not initialized for these Items during Link, it will be initialized after this Link session.This field should only be used with the `payroll` income source type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AccessTokens { get => _explicitNullValueAccessTokens; set { _explicitNullValueAccessTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_tokens"); else _explicitNullProperties?.Remove("access_tokens"); } }
+        public List<string>? AccessTokens { get => _explicitNullValueAccessTokens; set { _explicitNullValueAccessTokens = value; AdditionalData?.Remove("access_tokens"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_tokens"); else _explicitNullProperties?.Remove("access_tokens"); } }
         private List<string>? _explicitNullValueAccessTokens = default!;
 #nullable restore
 #else
-        public List<string> AccessTokens { get => _explicitNullValueAccessTokens; set { _explicitNullValueAccessTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_tokens"); else _explicitNullProperties?.Remove("access_tokens"); } }
+        public List<string> AccessTokens { get => _explicitNullValueAccessTokens; set { _explicitNullValueAccessTokens = value; AdditionalData?.Remove("access_tokens"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_tokens"); else _explicitNullProperties?.Remove("access_tokens"); } }
         private List<string> _explicitNullValueAccessTokens = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -42,62 +49,62 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The `asset_report_id` of an asset report associated with the user, as provided by `/asset_report/create`. Providing an `asset_report_id` is optional and can be used to verify the user through a streamlined flow. If provided, the bank linking flow will be skipped.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetReportId { get => _explicitNullValueAssetReportId; set { _explicitNullValueAssetReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_report_id"); else _explicitNullProperties?.Remove("asset_report_id"); } }
+        public string? AssetReportId { get => _explicitNullValueAssetReportId; set { _explicitNullValueAssetReportId = value; AdditionalData?.Remove("asset_report_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_report_id"); else _explicitNullProperties?.Remove("asset_report_id"); } }
         private string? _explicitNullValueAssetReportId = default!;
 #nullable restore
 #else
-        public string AssetReportId { get => _explicitNullValueAssetReportId; set { _explicitNullValueAssetReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_report_id"); else _explicitNullProperties?.Remove("asset_report_id"); } }
+        public string AssetReportId { get => _explicitNullValueAssetReportId; set { _explicitNullValueAssetReportId = value; AdditionalData?.Remove("asset_report_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_report_id"); else _explicitNullProperties?.Remove("asset_report_id"); } }
         private string _explicitNullValueAssetReportId = default!;
 #endif
         /// <summary>Specifies options for initializing Link for use with Bank Income. This field is required if `income_verification` is included in the `products` array and `bank` is specified in `income_source_types`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIncomeVerificationBankIncome? BankIncome { get => _explicitNullValueBankIncome; set { _explicitNullValueBankIncome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_income"); else _explicitNullProperties?.Remove("bank_income"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIncomeVerificationBankIncome? BankIncome { get => _explicitNullValueBankIncome; set { _explicitNullValueBankIncome = value; AdditionalData?.Remove("bank_income"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_income"); else _explicitNullProperties?.Remove("bank_income"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIncomeVerificationBankIncome? _explicitNullValueBankIncome = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIncomeVerificationBankIncome BankIncome { get => _explicitNullValueBankIncome; set { _explicitNullValueBankIncome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_income"); else _explicitNullProperties?.Remove("bank_income"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIncomeVerificationBankIncome BankIncome { get => _explicitNullValueBankIncome; set { _explicitNullValueBankIncome = value; AdditionalData?.Remove("bank_income"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_income"); else _explicitNullProperties?.Remove("bank_income"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIncomeVerificationBankIncome _explicitNullValueBankIncome = default!;
 #endif
         /// <summary>The types of source income data that users will be permitted to share. Options include `bank` and `payroll`. Currently you can only specify one of these options.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationSourceType?>? IncomeSourceTypes { get => _explicitNullValueIncomeSourceTypes; set { _explicitNullValueIncomeSourceTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_source_types"); else _explicitNullProperties?.Remove("income_source_types"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationSourceType?>? IncomeSourceTypes { get => _explicitNullValueIncomeSourceTypes; set { _explicitNullValueIncomeSourceTypes = value; AdditionalData?.Remove("income_source_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_source_types"); else _explicitNullProperties?.Remove("income_source_types"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationSourceType?>? _explicitNullValueIncomeSourceTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationSourceType?> IncomeSourceTypes { get => _explicitNullValueIncomeSourceTypes; set { _explicitNullValueIncomeSourceTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_source_types"); else _explicitNullProperties?.Remove("income_source_types"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationSourceType?> IncomeSourceTypes { get => _explicitNullValueIncomeSourceTypes; set { _explicitNullValueIncomeSourceTypes = value; AdditionalData?.Remove("income_source_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_source_types"); else _explicitNullProperties?.Remove("income_source_types"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationSourceType?> _explicitNullValueIncomeSourceTypes = default!;
 #endif
         /// <summary>The `income_verification_id` of the verification instance, as provided by `/income/verification/create`. Replaced by the user token.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IncomeVerificationId { get => _explicitNullValueIncomeVerificationId; set { _explicitNullValueIncomeVerificationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_verification_id"); else _explicitNullProperties?.Remove("income_verification_id"); } }
+        public string? IncomeVerificationId { get => _explicitNullValueIncomeVerificationId; set { _explicitNullValueIncomeVerificationId = value; AdditionalData?.Remove("income_verification_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_verification_id"); else _explicitNullProperties?.Remove("income_verification_id"); } }
         private string? _explicitNullValueIncomeVerificationId = default!;
 #nullable restore
 #else
-        public string IncomeVerificationId { get => _explicitNullValueIncomeVerificationId; set { _explicitNullValueIncomeVerificationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_verification_id"); else _explicitNullProperties?.Remove("income_verification_id"); } }
+        public string IncomeVerificationId { get => _explicitNullValueIncomeVerificationId; set { _explicitNullValueIncomeVerificationId = value; AdditionalData?.Remove("income_verification_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_verification_id"); else _explicitNullProperties?.Remove("income_verification_id"); } }
         private string _explicitNullValueIncomeVerificationId = default!;
 #endif
         /// <summary>Specifies options for initializing Link for use with Payroll Income (including Document Income). Further customization options for Document Income, such as customizing which document types may be uploaded, are also available via the [Link Customization pane](https://dashboard.plaid.com/link) in the Dashboard. (Requires Production enablement.)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIncomeVerificationPayrollIncome? PayrollIncome { get => _explicitNullValuePayrollIncome; set { _explicitNullValuePayrollIncome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payroll_income"); else _explicitNullProperties?.Remove("payroll_income"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIncomeVerificationPayrollIncome? PayrollIncome { get => _explicitNullValuePayrollIncome; set { _explicitNullValuePayrollIncome = value; AdditionalData?.Remove("payroll_income"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payroll_income"); else _explicitNullProperties?.Remove("payroll_income"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIncomeVerificationPayrollIncome? _explicitNullValuePayrollIncome = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIncomeVerificationPayrollIncome PayrollIncome { get => _explicitNullValuePayrollIncome; set { _explicitNullValuePayrollIncome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payroll_income"); else _explicitNullProperties?.Remove("payroll_income"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIncomeVerificationPayrollIncome PayrollIncome { get => _explicitNullValuePayrollIncome; set { _explicitNullValuePayrollIncome = value; AdditionalData?.Remove("payroll_income"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payroll_income"); else _explicitNullProperties?.Remove("payroll_income"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIncomeVerificationPayrollIncome _explicitNullValuePayrollIncome = default!;
 #endif
         /// <summary>A list of user stated income sources</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUserStatedIncomeSource>? StatedIncomeSources { get => _explicitNullValueStatedIncomeSources; set { _explicitNullValueStatedIncomeSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stated_income_sources"); else _explicitNullProperties?.Remove("stated_income_sources"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUserStatedIncomeSource>? StatedIncomeSources { get => _explicitNullValueStatedIncomeSources; set { _explicitNullValueStatedIncomeSources = value; AdditionalData?.Remove("stated_income_sources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stated_income_sources"); else _explicitNullProperties?.Remove("stated_income_sources"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUserStatedIncomeSource>? _explicitNullValueStatedIncomeSources = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUserStatedIncomeSource> StatedIncomeSources { get => _explicitNullValueStatedIncomeSources; set { _explicitNullValueStatedIncomeSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stated_income_sources"); else _explicitNullProperties?.Remove("stated_income_sources"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUserStatedIncomeSource> StatedIncomeSources { get => _explicitNullValueStatedIncomeSources; set { _explicitNullValueStatedIncomeSources = value; AdditionalData?.Remove("stated_income_sources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stated_income_sources"); else _explicitNullProperties?.Remove("stated_income_sources"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestUserStatedIncomeSource> _explicitNullValueStatedIncomeSources = default!;
 #endif
         /// <summary>

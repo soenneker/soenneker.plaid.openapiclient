@@ -18,13 +18,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("network_insights_version") is { } nullNodeNetworkInsightsVersion && nullNodeNetworkInsightsVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkInsightsVersion = null;
+            if (parseNode.GetChildNode("network_insights_version") is null) { _explicitNullValueNetworkInsightsVersion = default!; _explicitNullProperties?.Remove("network_insights_version"); }
+            else if (parseNode.GetChildNode("network_insights_version") is { } nullNodeNetworkInsightsVersion && nullNodeNetworkInsightsVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkInsightsVersion = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The version of Network Insights. Required if using Network Insights.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.NetworkInsightsVersion? NetworkInsightsVersion { get => _explicitNullValueNetworkInsightsVersion; set { _explicitNullValueNetworkInsightsVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_insights_version"); else _explicitNullProperties?.Remove("network_insights_version"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.NetworkInsightsVersion? NetworkInsightsVersion { get => _explicitNullValueNetworkInsightsVersion; set { _explicitNullValueNetworkInsightsVersion = value; AdditionalData?.Remove("network_insights_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_insights_version"); else _explicitNullProperties?.Remove("network_insights_version"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.NetworkInsightsVersion? _explicitNullValueNetworkInsightsVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateNetworkInsightsOptions"/> and sets the default values.
@@ -53,7 +54,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "network_insights_version", n => { NetworkInsightsVersion = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.NetworkInsightsVersion>(); } },
+                { "network_insights_version", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.NetworkInsightsVersion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueNetworkInsightsVersion = default; _explicitNullProperties?.Remove("network_insights_version"); AdditionalData["network_insights_version"] = unknown; } else { NetworkInsightsVersion = parsed; AdditionalData.Remove("network_insights_version"); } } },
             };
         }
         /// <summary>

@@ -18,7 +18,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("SERVICE_PRODUCT_FULFILLMENT_DETAIL") is { } nullNodeSERVICEPRODUCTFULFILLMENTDETAIL && nullNodeSERVICEPRODUCTFULFILLMENTDETAIL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SERVICEPRODUCTFULFILLMENTDETAIL = null;
+            if (parseNode.GetChildNode("SERVICE_PRODUCT_FULFILLMENT_DETAIL") is null) { _explicitNullValueSERVICEPRODUCTFULFILLMENTDETAIL = default!; _explicitNullProperties?.Remove("SERVICE_PRODUCT_FULFILLMENT_DETAIL"); }
+            else if (parseNode.GetChildNode("SERVICE_PRODUCT_FULFILLMENT_DETAIL") is { } nullNodeSERVICEPRODUCTFULFILLMENTDETAIL && nullNodeSERVICEPRODUCTFULFILLMENTDETAIL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SERVICEPRODUCTFULFILLMENTDETAIL = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Documentation not found in the MISMO model viewer and not provided by Freddie Mac.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillmentDetail? SERVICEPRODUCTFULFILLMENTDETAIL { get => _explicitNullValueSERVICEPRODUCTFULFILLMENTDETAIL; set { _explicitNullValueSERVICEPRODUCTFULFILLMENTDETAIL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SERVICE_PRODUCT_FULFILLMENT_DETAIL"); else _explicitNullProperties?.Remove("SERVICE_PRODUCT_FULFILLMENT_DETAIL"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillmentDetail? SERVICEPRODUCTFULFILLMENTDETAIL { get => _explicitNullValueSERVICEPRODUCTFULFILLMENTDETAIL; set { _explicitNullValueSERVICEPRODUCTFULFILLMENTDETAIL = value; AdditionalData?.Remove("SERVICE_PRODUCT_FULFILLMENT_DETAIL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SERVICE_PRODUCT_FULFILLMENT_DETAIL"); else _explicitNullProperties?.Remove("SERVICE_PRODUCT_FULFILLMENT_DETAIL"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillmentDetail? _explicitNullValueSERVICEPRODUCTFULFILLMENTDETAIL = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillmentDetail SERVICEPRODUCTFULFILLMENTDETAIL { get => _explicitNullValueSERVICEPRODUCTFULFILLMENTDETAIL; set { _explicitNullValueSERVICEPRODUCTFULFILLMENTDETAIL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SERVICE_PRODUCT_FULFILLMENT_DETAIL"); else _explicitNullProperties?.Remove("SERVICE_PRODUCT_FULFILLMENT_DETAIL"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillmentDetail SERVICEPRODUCTFULFILLMENTDETAIL { get => _explicitNullValueSERVICEPRODUCTFULFILLMENTDETAIL; set { _explicitNullValueSERVICEPRODUCTFULFILLMENTDETAIL = value; AdditionalData?.Remove("SERVICE_PRODUCT_FULFILLMENT_DETAIL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SERVICE_PRODUCT_FULFILLMENT_DETAIL"); else _explicitNullProperties?.Remove("SERVICE_PRODUCT_FULFILLMENT_DETAIL"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillmentDetail _explicitNullValueSERVICEPRODUCTFULFILLMENTDETAIL = default!;
 #endif
         /// <summary>

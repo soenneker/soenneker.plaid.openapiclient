@@ -18,45 +18,49 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("decision") is { } nullNodeDecision && nullNodeDecision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Decision = null;
-            if (parseNode.GetChildNode("decision_rationale") is { } nullNodeDecisionRationale && nullNodeDecisionRationale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DecisionRationale = null;
-            if (parseNode.GetChildNode("recurring_transfer") is { } nullNodeRecurringTransfer && nullNodeRecurringTransfer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecurringTransfer = null;
-            if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
+            if (parseNode.GetChildNode("decision") is null) { _explicitNullValueDecision = default!; _explicitNullProperties?.Remove("decision"); }
+            else if (parseNode.GetChildNode("decision") is { } nullNodeDecision && nullNodeDecision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Decision = null;
+            if (parseNode.GetChildNode("decision_rationale") is null) { _explicitNullValueDecisionRationale = default!; _explicitNullProperties?.Remove("decision_rationale"); }
+            else if (parseNode.GetChildNode("decision_rationale") is { } nullNodeDecisionRationale && nullNodeDecisionRationale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DecisionRationale = null;
+            if (parseNode.GetChildNode("recurring_transfer") is null) { _explicitNullValueRecurringTransfer = default!; _explicitNullProperties?.Remove("recurring_transfer"); }
+            else if (parseNode.GetChildNode("recurring_transfer") is { } nullNodeRecurringTransfer && nullNodeRecurringTransfer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecurringTransfer = null;
+            if (parseNode.GetChildNode("request_id") is null) { _explicitNullValueRequestId = default!; _explicitNullProperties?.Remove("request_id"); }
+            else if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A decision regarding the proposed transfer.`approved` - The proposed transfer has received the end user&apos;s consent and has been approved for processing by Plaid. The `decision_rationale` field is set if Plaid was unable to fetch the account information. You may proceed with the transfer, but further review is recommended. Refer to the `code` field in the `decision_rationale` object for details.`declined` - Plaid reviewed the proposed transfer and declined processing. Refer to the `code` field in the `decision_rationale` object for details.`user_action_required` - An action is required before Plaid can assess the transfer risk and make a decision. The most common scenario is to update authentication for an Item. To complete the required action, initialize Link by setting `transfer.authorization_id` in the request of `/link/token/create`. After Link flow is completed, you may re-attempt the authorization request.For `guarantee` requests, `approved` indicates the transfer is eligible for Plaid&apos;s guarantee, and `declined` indicates Plaid will not provide guarantee coverage for the transfer. `user_action_required` indicates you should follow the above guidance before re-attempting.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecision? Decision { get => _explicitNullValueDecision; set { _explicitNullValueDecision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decision"); else _explicitNullProperties?.Remove("decision"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecision? Decision { get => _explicitNullValueDecision; set { _explicitNullValueDecision = value; AdditionalData?.Remove("decision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decision"); else _explicitNullProperties?.Remove("decision"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecision? _explicitNullValueDecision = default!;
         /// <summary>The rationale for Plaid&apos;s decision regarding a proposed transfer. It is always set for `declined` decisions, and may or may not be null for `approved` decisions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale? DecisionRationale { get => _explicitNullValueDecisionRationale; set { _explicitNullValueDecisionRationale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decision_rationale"); else _explicitNullProperties?.Remove("decision_rationale"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale? DecisionRationale { get => _explicitNullValueDecisionRationale; set { _explicitNullValueDecisionRationale = value; AdditionalData?.Remove("decision_rationale"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decision_rationale"); else _explicitNullProperties?.Remove("decision_rationale"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale? _explicitNullValueDecisionRationale = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale DecisionRationale { get => _explicitNullValueDecisionRationale; set { _explicitNullValueDecisionRationale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decision_rationale"); else _explicitNullProperties?.Remove("decision_rationale"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale DecisionRationale { get => _explicitNullValueDecisionRationale; set { _explicitNullValueDecisionRationale = value; AdditionalData?.Remove("decision_rationale"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decision_rationale"); else _explicitNullProperties?.Remove("decision_rationale"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale _explicitNullValueDecisionRationale = default!;
 #endif
         /// <summary>Represents a recurring transfer within the Transfers API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.RecurringTransferNullable? RecurringTransfer { get => _explicitNullValueRecurringTransfer; set { _explicitNullValueRecurringTransfer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurring_transfer"); else _explicitNullProperties?.Remove("recurring_transfer"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RecurringTransferNullable? RecurringTransfer { get => _explicitNullValueRecurringTransfer; set { _explicitNullValueRecurringTransfer = value; AdditionalData?.Remove("recurring_transfer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurring_transfer"); else _explicitNullProperties?.Remove("recurring_transfer"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.RecurringTransferNullable? _explicitNullValueRecurringTransfer = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.RecurringTransferNullable RecurringTransfer { get => _explicitNullValueRecurringTransfer; set { _explicitNullValueRecurringTransfer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurring_transfer"); else _explicitNullProperties?.Remove("recurring_transfer"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RecurringTransferNullable RecurringTransfer { get => _explicitNullValueRecurringTransfer; set { _explicitNullValueRecurringTransfer = value; AdditionalData?.Remove("recurring_transfer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurring_transfer"); else _explicitNullProperties?.Remove("recurring_transfer"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.RecurringTransferNullable _explicitNullValueRecurringTransfer = default!;
 #endif
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; AdditionalData?.Remove("request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
         private string? _explicitNullValueRequestId = default!;
 #nullable restore
 #else
-        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; AdditionalData?.Remove("request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
         private string _explicitNullValueRequestId = default!;
 #endif
         /// <summary>
@@ -84,7 +88,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "decision", n => { Decision = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecision>(); } },
+                { "decision", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecision>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDecision = default; _explicitNullProperties?.Remove("decision"); AdditionalData["decision"] = unknown; } else { Decision = parsed; AdditionalData.Remove("decision"); } } },
                 { "decision_rationale", n => { DecisionRationale = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale>(global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale.CreateFromDiscriminatorValue); } },
                 { "recurring_transfer", n => { RecurringTransfer = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.RecurringTransferNullable>(global::Soenneker.Plaid.OpenApiClient.Models.RecurringTransferNullable.CreateFromDiscriminatorValue); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },

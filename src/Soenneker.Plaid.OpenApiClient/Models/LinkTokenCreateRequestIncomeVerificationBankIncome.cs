@@ -18,18 +18,20 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("days_requested") is { } nullNodeDaysRequested && nullNodeDaysRequested.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DaysRequested = null;
-            if (parseNode.GetChildNode("enable_multiple_items") is { } nullNodeEnableMultipleItems && nullNodeEnableMultipleItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableMultipleItems = null;
+            if (parseNode.GetChildNode("days_requested") is null) { _explicitNullValueDaysRequested = default!; _explicitNullProperties?.Remove("days_requested"); }
+            else if (parseNode.GetChildNode("days_requested") is { } nullNodeDaysRequested && nullNodeDaysRequested.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DaysRequested = null;
+            if (parseNode.GetChildNode("enable_multiple_items") is null) { _explicitNullValueEnableMultipleItems = default!; _explicitNullProperties?.Remove("enable_multiple_items"); }
+            else if (parseNode.GetChildNode("enable_multiple_items") is { } nullNodeEnableMultipleItems && nullNodeEnableMultipleItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableMultipleItems = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of days of data to request for the Bank Income product</summary>
-        public int? DaysRequested { get => _explicitNullValueDaysRequested; set { _explicitNullValueDaysRequested = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days_requested"); else _explicitNullProperties?.Remove("days_requested"); } }
+        public int? DaysRequested { get => _explicitNullValueDaysRequested; set { _explicitNullValueDaysRequested = value; AdditionalData?.Remove("days_requested"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days_requested"); else _explicitNullProperties?.Remove("days_requested"); } }
         private int? _explicitNullValueDaysRequested = default!;
         /// <summary>Whether to enable multiple Items to be added in the Link session. This setting is deprecated and has been replaced by the more general `enable_multi_item_link` setting, which supports all products.</summary>
         [Obsolete("")]
-        public bool? EnableMultipleItems { get => _explicitNullValueEnableMultipleItems; set { _explicitNullValueEnableMultipleItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_multiple_items"); else _explicitNullProperties?.Remove("enable_multiple_items"); } }
+        public bool? EnableMultipleItems { get => _explicitNullValueEnableMultipleItems; set { _explicitNullValueEnableMultipleItems = value; AdditionalData?.Remove("enable_multiple_items"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_multiple_items"); else _explicitNullProperties?.Remove("enable_multiple_items"); } }
         private bool? _explicitNullValueEnableMultipleItems = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestIncomeVerificationBankIncome"/> and sets the default values.

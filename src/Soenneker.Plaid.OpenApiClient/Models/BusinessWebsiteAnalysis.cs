@@ -18,42 +18,47 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("email_is_deliverable") is { } nullNodeEmailIsDeliverable && nullNodeEmailIsDeliverable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailIsDeliverable = null;
-            if (parseNode.GetChildNode("is_parked") is { } nullNodeIsParked && nullNodeIsParked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsParked = null;
-            if (parseNode.GetChildNode("ssl") is { } nullNodeSsl && nullNodeSsl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ssl = null;
-            if (parseNode.GetChildNode("website_build_status") is { } nullNodeWebsiteBuildStatus && nullNodeWebsiteBuildStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebsiteBuildStatus = null;
-            if (parseNode.GetChildNode("whois_record") is { } nullNodeWhoisRecord && nullNodeWhoisRecord.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhoisRecord = null;
+            if (parseNode.GetChildNode("email_is_deliverable") is null) { _explicitNullValueEmailIsDeliverable = default!; _explicitNullProperties?.Remove("email_is_deliverable"); }
+            else if (parseNode.GetChildNode("email_is_deliverable") is { } nullNodeEmailIsDeliverable && nullNodeEmailIsDeliverable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailIsDeliverable = null;
+            if (parseNode.GetChildNode("is_parked") is null) { _explicitNullValueIsParked = default!; _explicitNullProperties?.Remove("is_parked"); }
+            else if (parseNode.GetChildNode("is_parked") is { } nullNodeIsParked && nullNodeIsParked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsParked = null;
+            if (parseNode.GetChildNode("ssl") is null) { _explicitNullValueSsl = default!; _explicitNullProperties?.Remove("ssl"); }
+            else if (parseNode.GetChildNode("ssl") is { } nullNodeSsl && nullNodeSsl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ssl = null;
+            if (parseNode.GetChildNode("website_build_status") is null) { _explicitNullValueWebsiteBuildStatus = default!; _explicitNullProperties?.Remove("website_build_status"); }
+            else if (parseNode.GetChildNode("website_build_status") is { } nullNodeWebsiteBuildStatus && nullNodeWebsiteBuildStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebsiteBuildStatus = null;
+            if (parseNode.GetChildNode("whois_record") is null) { _explicitNullValueWhoisRecord = default!; _explicitNullProperties?.Remove("whois_record"); }
+            else if (parseNode.GetChildNode("whois_record") is { } nullNodeWhoisRecord && nullNodeWhoisRecord.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhoisRecord = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Tri-state boolean status, where `no_data` indicates the check could not determine a value.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus? EmailIsDeliverable { get => _explicitNullValueEmailIsDeliverable; set { _explicitNullValueEmailIsDeliverable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_is_deliverable"); else _explicitNullProperties?.Remove("email_is_deliverable"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus? EmailIsDeliverable { get => _explicitNullValueEmailIsDeliverable; set { _explicitNullValueEmailIsDeliverable = value; AdditionalData?.Remove("email_is_deliverable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_is_deliverable"); else _explicitNullProperties?.Remove("email_is_deliverable"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus? _explicitNullValueEmailIsDeliverable = default!;
         /// <summary>Tri-state boolean status, where `no_data` indicates the check could not determine a value.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus? IsParked { get => _explicitNullValueIsParked; set { _explicitNullValueIsParked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_parked"); else _explicitNullProperties?.Remove("is_parked"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus? IsParked { get => _explicitNullValueIsParked; set { _explicitNullValueIsParked = value; AdditionalData?.Remove("is_parked"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_parked"); else _explicitNullProperties?.Remove("is_parked"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus? _explicitNullValueIsParked = default!;
         /// <summary>SSL status for the business website.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSsl? Ssl { get => _explicitNullValueSsl; set { _explicitNullValueSsl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssl"); else _explicitNullProperties?.Remove("ssl"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSsl? Ssl { get => _explicitNullValueSsl; set { _explicitNullValueSsl = value; AdditionalData?.Remove("ssl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssl"); else _explicitNullProperties?.Remove("ssl"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSsl? _explicitNullValueSsl = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSsl Ssl { get => _explicitNullValueSsl; set { _explicitNullValueSsl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssl"); else _explicitNullProperties?.Remove("ssl"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSsl Ssl { get => _explicitNullValueSsl; set { _explicitNullValueSsl = value; AdditionalData?.Remove("ssl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssl"); else _explicitNullProperties?.Remove("ssl"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSsl _explicitNullValueSsl = default!;
 #endif
         /// <summary>Build status of the business website.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteBuildStatus? WebsiteBuildStatus { get => _explicitNullValueWebsiteBuildStatus; set { _explicitNullValueWebsiteBuildStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website_build_status"); else _explicitNullProperties?.Remove("website_build_status"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteBuildStatus? WebsiteBuildStatus { get => _explicitNullValueWebsiteBuildStatus; set { _explicitNullValueWebsiteBuildStatus = value; AdditionalData?.Remove("website_build_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website_build_status"); else _explicitNullProperties?.Remove("website_build_status"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteBuildStatus? _explicitNullValueWebsiteBuildStatus = default!;
         /// <summary>WHOIS metadata for the business website domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWhoisRecord? WhoisRecord { get => _explicitNullValueWhoisRecord; set { _explicitNullValueWhoisRecord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whois_record"); else _explicitNullProperties?.Remove("whois_record"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWhoisRecord? WhoisRecord { get => _explicitNullValueWhoisRecord; set { _explicitNullValueWhoisRecord = value; AdditionalData?.Remove("whois_record"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whois_record"); else _explicitNullProperties?.Remove("whois_record"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.BusinessWhoisRecord? _explicitNullValueWhoisRecord = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWhoisRecord WhoisRecord { get => _explicitNullValueWhoisRecord; set { _explicitNullValueWhoisRecord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whois_record"); else _explicitNullProperties?.Remove("whois_record"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWhoisRecord WhoisRecord { get => _explicitNullValueWhoisRecord; set { _explicitNullValueWhoisRecord = value; AdditionalData?.Remove("whois_record"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whois_record"); else _explicitNullProperties?.Remove("whois_record"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.BusinessWhoisRecord _explicitNullValueWhoisRecord = default!;
 #endif
         /// <summary>
@@ -83,10 +88,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "email_is_deliverable", n => { EmailIsDeliverable = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus>(); } },
-                { "is_parked", n => { IsParked = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus>(); } },
+                { "email_is_deliverable", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEmailIsDeliverable = default; _explicitNullProperties?.Remove("email_is_deliverable"); AdditionalData["email_is_deliverable"] = unknown; } else { EmailIsDeliverable = parsed; AdditionalData.Remove("email_is_deliverable"); } } },
+                { "is_parked", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIsParked = default; _explicitNullProperties?.Remove("is_parked"); AdditionalData["is_parked"] = unknown; } else { IsParked = parsed; AdditionalData.Remove("is_parked"); } } },
                 { "ssl", n => { Ssl = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSsl>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSsl.CreateFromDiscriminatorValue); } },
-                { "website_build_status", n => { WebsiteBuildStatus = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteBuildStatus>(); } },
+                { "website_build_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteBuildStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueWebsiteBuildStatus = default; _explicitNullProperties?.Remove("website_build_status"); AdditionalData["website_build_status"] = unknown; } else { WebsiteBuildStatus = parsed; AdditionalData.Remove("website_build_status"); } } },
                 { "whois_record", n => { WhoisRecord = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWhoisRecord>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessWhoisRecord.CreateFromDiscriminatorValue); } },
             };
         }

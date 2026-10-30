@@ -18,25 +18,29 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("apr_percentage") is { } nullNodeAprPercentage && nullNodeAprPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AprPercentage = null;
-            if (parseNode.GetChildNode("apr_type") is { } nullNodeAprType && nullNodeAprType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AprType = null;
-            if (parseNode.GetChildNode("balance_subject_to_apr") is { } nullNodeBalanceSubjectToApr && nullNodeBalanceSubjectToApr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceSubjectToApr = null;
-            if (parseNode.GetChildNode("interest_charge_amount") is { } nullNodeInterestChargeAmount && nullNodeInterestChargeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterestChargeAmount = null;
+            if (parseNode.GetChildNode("apr_percentage") is null) { _explicitNullValueAprPercentage = default!; _explicitNullProperties?.Remove("apr_percentage"); }
+            else if (parseNode.GetChildNode("apr_percentage") is { } nullNodeAprPercentage && nullNodeAprPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AprPercentage = null;
+            if (parseNode.GetChildNode("apr_type") is null) { _explicitNullValueAprType = default!; _explicitNullProperties?.Remove("apr_type"); }
+            else if (parseNode.GetChildNode("apr_type") is { } nullNodeAprType && nullNodeAprType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AprType = null;
+            if (parseNode.GetChildNode("balance_subject_to_apr") is null) { _explicitNullValueBalanceSubjectToApr = default!; _explicitNullProperties?.Remove("balance_subject_to_apr"); }
+            else if (parseNode.GetChildNode("balance_subject_to_apr") is { } nullNodeBalanceSubjectToApr && nullNodeBalanceSubjectToApr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceSubjectToApr = null;
+            if (parseNode.GetChildNode("interest_charge_amount") is null) { _explicitNullValueInterestChargeAmount = default!; _explicitNullProperties?.Remove("interest_charge_amount"); }
+            else if (parseNode.GetChildNode("interest_charge_amount") is { } nullNodeInterestChargeAmount && nullNodeInterestChargeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterestChargeAmount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Annual Percentage Rate applied.</summary>
-        public double? AprPercentage { get => _explicitNullValueAprPercentage; set { _explicitNullValueAprPercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apr_percentage"); else _explicitNullProperties?.Remove("apr_percentage"); } }
+        public double? AprPercentage { get => _explicitNullValueAprPercentage; set { _explicitNullValueAprPercentage = value; AdditionalData?.Remove("apr_percentage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apr_percentage"); else _explicitNullProperties?.Remove("apr_percentage"); } }
         private double? _explicitNullValueAprPercentage = default!;
         /// <summary>The type of balance to which the APR applies.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AprAprType? AprType { get => _explicitNullValueAprType; set { _explicitNullValueAprType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apr_type"); else _explicitNullProperties?.Remove("apr_type"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AprAprType? AprType { get => _explicitNullValueAprType; set { _explicitNullValueAprType = value; AdditionalData?.Remove("apr_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apr_type"); else _explicitNullProperties?.Remove("apr_type"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.AprAprType? _explicitNullValueAprType = default!;
         /// <summary>Amount of money that is subjected to the APR if a balance was carried beyond payment due date. How it is calculated can vary by card issuer. It is often calculated as an average daily balance.</summary>
-        public double? BalanceSubjectToApr { get => _explicitNullValueBalanceSubjectToApr; set { _explicitNullValueBalanceSubjectToApr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balance_subject_to_apr"); else _explicitNullProperties?.Remove("balance_subject_to_apr"); } }
+        public double? BalanceSubjectToApr { get => _explicitNullValueBalanceSubjectToApr; set { _explicitNullValueBalanceSubjectToApr = value; AdditionalData?.Remove("balance_subject_to_apr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balance_subject_to_apr"); else _explicitNullProperties?.Remove("balance_subject_to_apr"); } }
         private double? _explicitNullValueBalanceSubjectToApr = default!;
         /// <summary>Amount of money charged due to interest from last statement.</summary>
-        public double? InterestChargeAmount { get => _explicitNullValueInterestChargeAmount; set { _explicitNullValueInterestChargeAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interest_charge_amount"); else _explicitNullProperties?.Remove("interest_charge_amount"); } }
+        public double? InterestChargeAmount { get => _explicitNullValueInterestChargeAmount; set { _explicitNullValueInterestChargeAmount = value; AdditionalData?.Remove("interest_charge_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interest_charge_amount"); else _explicitNullProperties?.Remove("interest_charge_amount"); } }
         private double? _explicitNullValueInterestChargeAmount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.Apr"/> and sets the default values.
@@ -64,7 +68,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "apr_percentage", n => { AprPercentage = n.GetDoubleValue(); } },
-                { "apr_type", n => { AprType = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AprAprType>(); } },
+                { "apr_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AprAprType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAprType = default; _explicitNullProperties?.Remove("apr_type"); AdditionalData["apr_type"] = unknown; } else { AprType = parsed; AdditionalData.Remove("apr_type"); } } },
                 { "balance_subject_to_apr", n => { BalanceSubjectToApr = n.GetDoubleValue(); } },
                 { "interest_charge_amount", n => { InterestChargeAmount = n.GetDoubleValue(); } },
             };

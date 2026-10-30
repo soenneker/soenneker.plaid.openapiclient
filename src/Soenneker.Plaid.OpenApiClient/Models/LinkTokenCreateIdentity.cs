@@ -18,34 +18,37 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("account_ids") is { } nullNodeAccountIds && nullNodeAccountIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountIds = null;
-            if (parseNode.GetChildNode("is_document_upload") is { } nullNodeIsDocumentUpload && nullNodeIsDocumentUpload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDocumentUpload = null;
-            if (parseNode.GetChildNode("parsing_configs") is { } nullNodeParsingConfigs && nullNodeParsingConfigs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParsingConfigs = null;
+            if (parseNode.GetChildNode("account_ids") is null) { _explicitNullValueAccountIds = default!; _explicitNullProperties?.Remove("account_ids"); }
+            else if (parseNode.GetChildNode("account_ids") is { } nullNodeAccountIds && nullNodeAccountIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountIds = null;
+            if (parseNode.GetChildNode("is_document_upload") is null) { _explicitNullValueIsDocumentUpload = default!; _explicitNullProperties?.Remove("is_document_upload"); }
+            else if (parseNode.GetChildNode("is_document_upload") is { } nullNodeIsDocumentUpload && nullNodeIsDocumentUpload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDocumentUpload = null;
+            if (parseNode.GetChildNode("parsing_configs") is null) { _explicitNullValueParsingConfigs = default!; _explicitNullProperties?.Remove("parsing_configs"); }
+            else if (parseNode.GetChildNode("parsing_configs") is { } nullNodeParsingConfigs && nullNodeParsingConfigs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParsingConfigs = null;
         }
 
         /// <summary>An array of `account_ids`. Currently can only contain one `account_id`. Must be populated if using Document Upload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AccountIds { get => _explicitNullValueAccountIds; set { _explicitNullValueAccountIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_ids"); else _explicitNullProperties?.Remove("account_ids"); } }
+        public List<string>? AccountIds { get => _explicitNullValueAccountIds; set { _explicitNullValueAccountIds = value; AdditionalData?.Remove("account_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_ids"); else _explicitNullProperties?.Remove("account_ids"); } }
         private List<string>? _explicitNullValueAccountIds = default!;
 #nullable restore
 #else
-        public List<string> AccountIds { get => _explicitNullValueAccountIds; set { _explicitNullValueAccountIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_ids"); else _explicitNullProperties?.Remove("account_ids"); } }
+        public List<string> AccountIds { get => _explicitNullValueAccountIds; set { _explicitNullValueAccountIds = value; AdditionalData?.Remove("account_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_ids"); else _explicitNullProperties?.Remove("account_ids"); } }
         private List<string> _explicitNullValueAccountIds = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Used to specify whether the Link session is Identity Document Upload</summary>
-        public bool? IsDocumentUpload { get => _explicitNullValueIsDocumentUpload; set { _explicitNullValueIsDocumentUpload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_document_upload"); else _explicitNullProperties?.Remove("is_document_upload"); } }
+        public bool? IsDocumentUpload { get => _explicitNullValueIsDocumentUpload; set { _explicitNullValueIsDocumentUpload = value; AdditionalData?.Remove("is_document_upload"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_document_upload"); else _explicitNullProperties?.Remove("is_document_upload"); } }
         private bool? _explicitNullValueIsDocumentUpload = default!;
         /// <summary>An array of parsing configurations. Valid parsing configurations are `ocr` and `risk_signals`. If parsing configurations are omitted, defaults to `ocr`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationDocParsingConfig?>? ParsingConfigs { get => _explicitNullValueParsingConfigs; set { _explicitNullValueParsingConfigs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parsing_configs"); else _explicitNullProperties?.Remove("parsing_configs"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationDocParsingConfig?>? ParsingConfigs { get => _explicitNullValueParsingConfigs; set { _explicitNullValueParsingConfigs = value; AdditionalData?.Remove("parsing_configs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parsing_configs"); else _explicitNullProperties?.Remove("parsing_configs"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationDocParsingConfig?>? _explicitNullValueParsingConfigs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationDocParsingConfig?> ParsingConfigs { get => _explicitNullValueParsingConfigs; set { _explicitNullValueParsingConfigs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parsing_configs"); else _explicitNullProperties?.Remove("parsing_configs"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationDocParsingConfig?> ParsingConfigs { get => _explicitNullValueParsingConfigs; set { _explicitNullValueParsingConfigs = value; AdditionalData?.Remove("parsing_configs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parsing_configs"); else _explicitNullProperties?.Remove("parsing_configs"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationDocParsingConfig?> _explicitNullValueParsingConfigs = default!;
 #endif
         /// <summary>

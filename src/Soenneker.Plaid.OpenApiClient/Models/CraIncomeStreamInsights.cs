@@ -18,11 +18,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("income_category") is { } nullNodeIncomeCategory && nullNodeIncomeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeCategory = null;
-            if (parseNode.GetChildNode("income_provider") is { } nullNodeIncomeProvider && nullNodeIncomeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeProvider = null;
-            if (parseNode.GetChildNode("next_payment") is { } nullNodeNextPayment && nullNodeNextPayment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextPayment = null;
-            if (parseNode.GetChildNode("pay_frequency") is { } nullNodePayFrequency && nullNodePayFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayFrequency = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("income_category") is null) { _explicitNullValueIncomeCategory = default!; _explicitNullProperties?.Remove("income_category"); }
+            else if (parseNode.GetChildNode("income_category") is { } nullNodeIncomeCategory && nullNodeIncomeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeCategory = null;
+            if (parseNode.GetChildNode("income_provider") is null) { _explicitNullValueIncomeProvider = default!; _explicitNullProperties?.Remove("income_provider"); }
+            else if (parseNode.GetChildNode("income_provider") is { } nullNodeIncomeProvider && nullNodeIncomeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeProvider = null;
+            if (parseNode.GetChildNode("next_payment") is null) { _explicitNullValueNextPayment = default!; _explicitNullProperties?.Remove("next_payment"); }
+            else if (parseNode.GetChildNode("next_payment") is { } nullNodeNextPayment && nullNodeNextPayment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextPayment = null;
+            if (parseNode.GetChildNode("pay_frequency") is null) { _explicitNullValuePayFrequency = default!; _explicitNullProperties?.Remove("pay_frequency"); }
+            else if (parseNode.GetChildNode("pay_frequency") is { } nullNodePayFrequency && nullNodePayFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayFrequency = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,38 +35,38 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The income category for a given stream. The streams returned in the response will be filtered based on these primary and secondary income categories.See the [Income V2 Category Taxonomy](https://plaid.com/documents/income-v2-category-taxonomy.csv) for a full list of income categories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeCategory? IncomeCategory { get => _explicitNullValueIncomeCategory; set { _explicitNullValueIncomeCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_category"); else _explicitNullProperties?.Remove("income_category"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeCategory? IncomeCategory { get => _explicitNullValueIncomeCategory; set { _explicitNullValueIncomeCategory = value; AdditionalData?.Remove("income_category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_category"); else _explicitNullProperties?.Remove("income_category"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeCategory? _explicitNullValueIncomeCategory = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeCategory IncomeCategory { get => _explicitNullValueIncomeCategory; set { _explicitNullValueIncomeCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_category"); else _explicitNullProperties?.Remove("income_category"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeCategory IncomeCategory { get => _explicitNullValueIncomeCategory; set { _explicitNullValueIncomeCategory = value; AdditionalData?.Remove("income_category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_category"); else _explicitNullProperties?.Remove("income_category"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeCategory _explicitNullValueIncomeCategory = default!;
 #endif
         /// <summary>The object containing data about the income provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeIncomeProvider? IncomeProvider { get => _explicitNullValueIncomeProvider; set { _explicitNullValueIncomeProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_provider"); else _explicitNullProperties?.Remove("income_provider"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeIncomeProvider? IncomeProvider { get => _explicitNullValueIncomeProvider; set { _explicitNullValueIncomeProvider = value; AdditionalData?.Remove("income_provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_provider"); else _explicitNullProperties?.Remove("income_provider"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeIncomeProvider? _explicitNullValueIncomeProvider = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeIncomeProvider IncomeProvider { get => _explicitNullValueIncomeProvider; set { _explicitNullValueIncomeProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_provider"); else _explicitNullProperties?.Remove("income_provider"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeIncomeProvider IncomeProvider { get => _explicitNullValueIncomeProvider; set { _explicitNullValueIncomeProvider = value; AdditionalData?.Remove("income_provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_provider"); else _explicitNullProperties?.Remove("income_provider"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeIncomeProvider _explicitNullValueIncomeProvider = default!;
 #endif
         /// <summary>Metadata of the income stream&apos;s next payment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeNextPayment? NextPayment { get => _explicitNullValueNextPayment; set { _explicitNullValueNextPayment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_payment"); else _explicitNullProperties?.Remove("next_payment"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeNextPayment? NextPayment { get => _explicitNullValueNextPayment; set { _explicitNullValueNextPayment = value; AdditionalData?.Remove("next_payment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_payment"); else _explicitNullProperties?.Remove("next_payment"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeNextPayment? _explicitNullValueNextPayment = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeNextPayment NextPayment { get => _explicitNullValueNextPayment; set { _explicitNullValueNextPayment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_payment"); else _explicitNullProperties?.Remove("next_payment"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeNextPayment NextPayment { get => _explicitNullValueNextPayment; set { _explicitNullValueNextPayment = value; AdditionalData?.Remove("next_payment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_payment"); else _explicitNullProperties?.Remove("next_payment"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeNextPayment _explicitNullValueNextPayment = default!;
 #endif
         /// <summary>The income pay frequency.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomePayFrequency? PayFrequency { get => _explicitNullValuePayFrequency; set { _explicitNullValuePayFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_frequency"); else _explicitNullProperties?.Remove("pay_frequency"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomePayFrequency? PayFrequency { get => _explicitNullValuePayFrequency; set { _explicitNullValuePayFrequency = value; AdditionalData?.Remove("pay_frequency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_frequency"); else _explicitNullProperties?.Remove("pay_frequency"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomePayFrequency? _explicitNullValuePayFrequency = default!;
         /// <summary>The status of the income sources.`ACTIVE`: The income source is active.`INACTIVE`: The income source is inactive.`UNKNOWN`: The income source status is unknown.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeStreamInsights"/> and sets the default values.
@@ -91,8 +96,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "income_category", n => { IncomeCategory = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeCategory>(global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeCategory.CreateFromDiscriminatorValue); } },
                 { "income_provider", n => { IncomeProvider = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeIncomeProvider>(global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeIncomeProvider.CreateFromDiscriminatorValue); } },
                 { "next_payment", n => { NextPayment = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeNextPayment>(global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeNextPayment.CreateFromDiscriminatorValue); } },
-                { "pay_frequency", n => { PayFrequency = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomePayFrequency>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeStatus>(); } },
+                { "pay_frequency", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomePayFrequency>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePayFrequency = default; _explicitNullProperties?.Remove("pay_frequency"); AdditionalData["pay_frequency"] = unknown; } else { PayFrequency = parsed; AdditionalData.Remove("pay_frequency"); } } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
         /// <summary>

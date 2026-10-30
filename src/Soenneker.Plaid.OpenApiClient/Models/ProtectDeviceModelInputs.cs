@@ -18,7 +18,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("device_session_id") is { } nullNodeDeviceSessionId && nullNodeDeviceSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceSessionId = null;
+            if (parseNode.GetChildNode("device_session_id") is null) { _explicitNullValueDeviceSessionId = default!; _explicitNullProperties?.Remove("device_session_id"); }
+            else if (parseNode.GetChildNode("device_session_id") is { } nullNodeDeviceSessionId && nullNodeDeviceSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceSessionId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>A unique identifier for the device session started via the Protect SDK, used to compute a Trust Index score and fraud attributes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceSessionId { get => _explicitNullValueDeviceSessionId; set { _explicitNullValueDeviceSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_session_id"); else _explicitNullProperties?.Remove("device_session_id"); } }
+        public string? DeviceSessionId { get => _explicitNullValueDeviceSessionId; set { _explicitNullValueDeviceSessionId = value; AdditionalData?.Remove("device_session_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_session_id"); else _explicitNullProperties?.Remove("device_session_id"); } }
         private string? _explicitNullValueDeviceSessionId = default!;
 #nullable restore
 #else
-        public string DeviceSessionId { get => _explicitNullValueDeviceSessionId; set { _explicitNullValueDeviceSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_session_id"); else _explicitNullProperties?.Remove("device_session_id"); } }
+        public string DeviceSessionId { get => _explicitNullValueDeviceSessionId; set { _explicitNullValueDeviceSessionId = value; AdditionalData?.Remove("device_session_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_session_id"); else _explicitNullProperties?.Remove("device_session_id"); } }
         private string _explicitNullValueDeviceSessionId = default!;
 #endif
         /// <summary>

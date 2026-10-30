@@ -18,11 +18,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("credit") is { } nullNodeCredit && nullNodeCredit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Credit = null;
-            if (parseNode.GetChildNode("depository") is { } nullNodeDepository && nullNodeDepository.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Depository = null;
-            if (parseNode.GetChildNode("investment") is { } nullNodeInvestment && nullNodeInvestment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Investment = null;
-            if (parseNode.GetChildNode("loan") is { } nullNodeLoan && nullNodeLoan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Loan = null;
-            if (parseNode.GetChildNode("other") is { } nullNodeOther && nullNodeOther.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Other = null;
+            if (parseNode.GetChildNode("credit") is null) { _explicitNullValueCredit = default!; _explicitNullProperties?.Remove("credit"); }
+            else if (parseNode.GetChildNode("credit") is { } nullNodeCredit && nullNodeCredit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Credit = null;
+            if (parseNode.GetChildNode("depository") is null) { _explicitNullValueDepository = default!; _explicitNullProperties?.Remove("depository"); }
+            else if (parseNode.GetChildNode("depository") is { } nullNodeDepository && nullNodeDepository.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Depository = null;
+            if (parseNode.GetChildNode("investment") is null) { _explicitNullValueInvestment = default!; _explicitNullProperties?.Remove("investment"); }
+            else if (parseNode.GetChildNode("investment") is { } nullNodeInvestment && nullNodeInvestment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Investment = null;
+            if (parseNode.GetChildNode("loan") is null) { _explicitNullValueLoan = default!; _explicitNullProperties?.Remove("loan"); }
+            else if (parseNode.GetChildNode("loan") is { } nullNodeLoan && nullNodeLoan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Loan = null;
+            if (parseNode.GetChildNode("other") is null) { _explicitNullValueOther = default!; _explicitNullProperties?.Remove("other"); }
+            else if (parseNode.GetChildNode("other") is { } nullNodeOther && nullNodeOther.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Other = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,51 +35,51 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>A filter to apply to `credit`-type accounts</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditFilter? Credit { get => _explicitNullValueCredit; set { _explicitNullValueCredit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit"); else _explicitNullProperties?.Remove("credit"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditFilter? Credit { get => _explicitNullValueCredit; set { _explicitNullValueCredit = value; AdditionalData?.Remove("credit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit"); else _explicitNullProperties?.Remove("credit"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CreditFilter? _explicitNullValueCredit = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditFilter Credit { get => _explicitNullValueCredit; set { _explicitNullValueCredit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit"); else _explicitNullProperties?.Remove("credit"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditFilter Credit { get => _explicitNullValueCredit; set { _explicitNullValueCredit = value; AdditionalData?.Remove("credit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit"); else _explicitNullProperties?.Remove("credit"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CreditFilter _explicitNullValueCredit = default!;
 #endif
         /// <summary>A filter to apply to `depository`-type accounts</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.DepositoryFilter? Depository { get => _explicitNullValueDepository; set { _explicitNullValueDepository = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("depository"); else _explicitNullProperties?.Remove("depository"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.DepositoryFilter? Depository { get => _explicitNullValueDepository; set { _explicitNullValueDepository = value; AdditionalData?.Remove("depository"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("depository"); else _explicitNullProperties?.Remove("depository"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.DepositoryFilter? _explicitNullValueDepository = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.DepositoryFilter Depository { get => _explicitNullValueDepository; set { _explicitNullValueDepository = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("depository"); else _explicitNullProperties?.Remove("depository"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.DepositoryFilter Depository { get => _explicitNullValueDepository; set { _explicitNullValueDepository = value; AdditionalData?.Remove("depository"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("depository"); else _explicitNullProperties?.Remove("depository"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.DepositoryFilter _explicitNullValueDepository = default!;
 #endif
         /// <summary>A filter to apply to `investment`-type accounts (or `brokerage`-type accounts for API versions 2018-05-22 and earlier).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.InvestmentFilter? Investment { get => _explicitNullValueInvestment; set { _explicitNullValueInvestment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investment"); else _explicitNullProperties?.Remove("investment"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.InvestmentFilter? Investment { get => _explicitNullValueInvestment; set { _explicitNullValueInvestment = value; AdditionalData?.Remove("investment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investment"); else _explicitNullProperties?.Remove("investment"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.InvestmentFilter? _explicitNullValueInvestment = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.InvestmentFilter Investment { get => _explicitNullValueInvestment; set { _explicitNullValueInvestment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investment"); else _explicitNullProperties?.Remove("investment"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.InvestmentFilter Investment { get => _explicitNullValueInvestment; set { _explicitNullValueInvestment = value; AdditionalData?.Remove("investment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investment"); else _explicitNullProperties?.Remove("investment"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.InvestmentFilter _explicitNullValueInvestment = default!;
 #endif
         /// <summary>A filter to apply to `loan`-type accounts</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LoanFilter? Loan { get => _explicitNullValueLoan; set { _explicitNullValueLoan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan"); else _explicitNullProperties?.Remove("loan"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LoanFilter? Loan { get => _explicitNullValueLoan; set { _explicitNullValueLoan = value; AdditionalData?.Remove("loan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan"); else _explicitNullProperties?.Remove("loan"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.LoanFilter? _explicitNullValueLoan = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LoanFilter Loan { get => _explicitNullValueLoan; set { _explicitNullValueLoan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan"); else _explicitNullProperties?.Remove("loan"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LoanFilter Loan { get => _explicitNullValueLoan; set { _explicitNullValueLoan = value; AdditionalData?.Remove("loan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan"); else _explicitNullProperties?.Remove("loan"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.LoanFilter _explicitNullValueLoan = default!;
 #endif
         /// <summary>A filter to apply to `other`-type accounts</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.OtherFilter? Other { get => _explicitNullValueOther; set { _explicitNullValueOther = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other"); else _explicitNullProperties?.Remove("other"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.OtherFilter? Other { get => _explicitNullValueOther; set { _explicitNullValueOther = value; AdditionalData?.Remove("other"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other"); else _explicitNullProperties?.Remove("other"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.OtherFilter? _explicitNullValueOther = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.OtherFilter Other { get => _explicitNullValueOther; set { _explicitNullValueOther = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other"); else _explicitNullProperties?.Remove("other"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.OtherFilter Other { get => _explicitNullValueOther; set { _explicitNullValueOther = value; AdditionalData?.Remove("other"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other"); else _explicitNullProperties?.Remove("other"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.OtherFilter _explicitNullValueOther = default!;
 #endif
         /// <summary>

@@ -18,7 +18,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("revocations") is { } nullNodeRevocations && nullNodeRevocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Revocations = null;
+            if (parseNode.GetChildNode("revocations") is null) { _explicitNullValueRevocations = default!; _explicitNullProperties?.Remove("revocations"); }
+            else if (parseNode.GetChildNode("revocations") is { } nullNodeRevocations && nullNodeRevocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Revocations = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Revocation records for the consent grant, most recent first. Empty when the grant has never been revoked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentRevocationRecord>? Revocations { get => _explicitNullValueRevocations; set { _explicitNullValueRevocations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revocations"); else _explicitNullProperties?.Remove("revocations"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentRevocationRecord>? Revocations { get => _explicitNullValueRevocations; set { _explicitNullValueRevocations = value; AdditionalData?.Remove("revocations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revocations"); else _explicitNullProperties?.Remove("revocations"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentRevocationRecord>? _explicitNullValueRevocations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentRevocationRecord> Revocations { get => _explicitNullValueRevocations; set { _explicitNullValueRevocations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revocations"); else _explicitNullProperties?.Remove("revocations"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentRevocationRecord> Revocations { get => _explicitNullValueRevocations; set { _explicitNullValueRevocations = value; AdditionalData?.Remove("revocations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revocations"); else _explicitNullProperties?.Remove("revocations"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentRevocationRecord> _explicitNullValueRevocations = default!;
 #endif
         /// <summary>

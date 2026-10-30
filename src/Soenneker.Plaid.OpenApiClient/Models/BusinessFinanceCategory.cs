@@ -18,9 +18,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("confidence_level") is { } nullNodeConfidenceLevel && nullNodeConfidenceLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfidenceLevel = null;
-            if (parseNode.GetChildNode("detailed") is { } nullNodeDetailed && nullNodeDetailed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Detailed = null;
-            if (parseNode.GetChildNode("primary") is { } nullNodePrimary && nullNodePrimary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Primary = null;
+            if (parseNode.GetChildNode("confidence_level") is null) { _explicitNullValueConfidenceLevel = default!; _explicitNullProperties?.Remove("confidence_level"); }
+            else if (parseNode.GetChildNode("confidence_level") is { } nullNodeConfidenceLevel && nullNodeConfidenceLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfidenceLevel = null;
+            if (parseNode.GetChildNode("detailed") is null) { _explicitNullValueDetailed = default!; _explicitNullProperties?.Remove("detailed"); }
+            else if (parseNode.GetChildNode("detailed") is { } nullNodeDetailed && nullNodeDetailed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Detailed = null;
+            if (parseNode.GetChildNode("primary") is null) { _explicitNullValuePrimary = default!; _explicitNullProperties?.Remove("primary"); }
+            else if (parseNode.GetChildNode("primary") is { } nullNodePrimary && nullNodePrimary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Primary = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>A description of how confident we are that the provided categories accurately describe the transaction intent.`VERY_HIGH`: We are more than 98% confident that this category reflects the intent of the transaction.`HIGH`: We are more than 90% confident that this category reflects the intent of the transaction.`MEDIUM`: We are moderately confident that this category reflects the intent of the transaction.`LOW`: This category may reflect the intent, but there may be other categories that are more accurate.`UNKNOWN`: We don&apos;t know the confidence level for this category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConfidenceLevel { get => _explicitNullValueConfidenceLevel; set { _explicitNullValueConfidenceLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence_level"); else _explicitNullProperties?.Remove("confidence_level"); } }
+        public string? ConfidenceLevel { get => _explicitNullValueConfidenceLevel; set { _explicitNullValueConfidenceLevel = value; AdditionalData?.Remove("confidence_level"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence_level"); else _explicitNullProperties?.Remove("confidence_level"); } }
         private string? _explicitNullValueConfidenceLevel = default!;
 #nullable restore
 #else
-        public string ConfidenceLevel { get => _explicitNullValueConfidenceLevel; set { _explicitNullValueConfidenceLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence_level"); else _explicitNullProperties?.Remove("confidence_level"); } }
+        public string ConfidenceLevel { get => _explicitNullValueConfidenceLevel; set { _explicitNullValueConfidenceLevel = value; AdditionalData?.Remove("confidence_level"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence_level"); else _explicitNullProperties?.Remove("confidence_level"); } }
         private string _explicitNullValueConfidenceLevel = default!;
 #endif
         /// <summary>A granular category conveying the transaction&apos;s intent. This field can also be used as a unique identifier for the category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Detailed { get => _explicitNullValueDetailed; set { _explicitNullValueDetailed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detailed"); else _explicitNullProperties?.Remove("detailed"); } }
+        public string? Detailed { get => _explicitNullValueDetailed; set { _explicitNullValueDetailed = value; AdditionalData?.Remove("detailed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detailed"); else _explicitNullProperties?.Remove("detailed"); } }
         private string? _explicitNullValueDetailed = default!;
 #nullable restore
 #else
-        public string Detailed { get => _explicitNullValueDetailed; set { _explicitNullValueDetailed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detailed"); else _explicitNullProperties?.Remove("detailed"); } }
+        public string Detailed { get => _explicitNullValueDetailed; set { _explicitNullValueDetailed = value; AdditionalData?.Remove("detailed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detailed"); else _explicitNullProperties?.Remove("detailed"); } }
         private string _explicitNullValueDetailed = default!;
 #endif
         /// <summary>A high level category that communicates the broad category of the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Primary { get => _explicitNullValuePrimary; set { _explicitNullValuePrimary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary"); else _explicitNullProperties?.Remove("primary"); } }
+        public string? Primary { get => _explicitNullValuePrimary; set { _explicitNullValuePrimary = value; AdditionalData?.Remove("primary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary"); else _explicitNullProperties?.Remove("primary"); } }
         private string? _explicitNullValuePrimary = default!;
 #nullable restore
 #else
-        public string Primary { get => _explicitNullValuePrimary; set { _explicitNullValuePrimary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary"); else _explicitNullProperties?.Remove("primary"); } }
+        public string Primary { get => _explicitNullValuePrimary; set { _explicitNullValuePrimary = value; AdditionalData?.Remove("primary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary"); else _explicitNullProperties?.Remove("primary"); } }
         private string _explicitNullValuePrimary = default!;
 #endif
         /// <summary>

@@ -18,13 +18,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("new_transactions") is { } nullNodeNewTransactions && nullNodeNewTransactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewTransactions = null;
+            if (parseNode.GetChildNode("new_transactions") is null) { _explicitNullValueNewTransactions = default!; _explicitNullProperties?.Remove("new_transactions"); }
+            else if (parseNode.GetChildNode("new_transactions") is { } nullNodeNewTransactions && nullNodeNewTransactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewTransactions = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The value to send as `new_transactions` in a `TRANSACTIONS` `DEFAULT_UPDATE` webhook. Defaults to 0. Only valid when `webhook_type` is `TRANSACTIONS` and `webhook_code` is `DEFAULT_UPDATE`.</summary>
-        public int? NewTransactions { get => _explicitNullValueNewTransactions; set { _explicitNullValueNewTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_transactions"); else _explicitNullProperties?.Remove("new_transactions"); } }
+        public int? NewTransactions { get => _explicitNullValueNewTransactions; set { _explicitNullValueNewTransactions = value; AdditionalData?.Remove("new_transactions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_transactions"); else _explicitNullProperties?.Remove("new_transactions"); } }
         private int? _explicitNullValueNewTransactions = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.SandboxItemFireWebhookRequestOptions"/> and sets the default values.

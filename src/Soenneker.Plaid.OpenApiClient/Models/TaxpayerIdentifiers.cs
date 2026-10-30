@@ -18,7 +18,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("TAXPAYER_IDENTIFIER") is { } nullNodeTAXPAYERIDENTIFIER && nullNodeTAXPAYERIDENTIFIER.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TAXPAYERIDENTIFIER = null;
+            if (parseNode.GetChildNode("TAXPAYER_IDENTIFIER") is null) { _explicitNullValueTAXPAYERIDENTIFIER = default!; _explicitNullProperties?.Remove("TAXPAYER_IDENTIFIER"); }
+            else if (parseNode.GetChildNode("TAXPAYER_IDENTIFIER") is { } nullNodeTAXPAYERIDENTIFIER && nullNodeTAXPAYERIDENTIFIER.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TAXPAYERIDENTIFIER = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Information about the Taxpayer identification values assigned to the individual or legal entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TaxpayerIdentifier? TAXPAYERIDENTIFIER { get => _explicitNullValueTAXPAYERIDENTIFIER; set { _explicitNullValueTAXPAYERIDENTIFIER = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TAXPAYER_IDENTIFIER"); else _explicitNullProperties?.Remove("TAXPAYER_IDENTIFIER"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TaxpayerIdentifier? TAXPAYERIDENTIFIER { get => _explicitNullValueTAXPAYERIDENTIFIER; set { _explicitNullValueTAXPAYERIDENTIFIER = value; AdditionalData?.Remove("TAXPAYER_IDENTIFIER"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TAXPAYER_IDENTIFIER"); else _explicitNullProperties?.Remove("TAXPAYER_IDENTIFIER"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TaxpayerIdentifier? _explicitNullValueTAXPAYERIDENTIFIER = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TaxpayerIdentifier TAXPAYERIDENTIFIER { get => _explicitNullValueTAXPAYERIDENTIFIER; set { _explicitNullValueTAXPAYERIDENTIFIER = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TAXPAYER_IDENTIFIER"); else _explicitNullProperties?.Remove("TAXPAYER_IDENTIFIER"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TaxpayerIdentifier TAXPAYERIDENTIFIER { get => _explicitNullValueTAXPAYERIDENTIFIER; set { _explicitNullValueTAXPAYERIDENTIFIER = value; AdditionalData?.Remove("TAXPAYER_IDENTIFIER"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TAXPAYER_IDENTIFIER"); else _explicitNullProperties?.Remove("TAXPAYER_IDENTIFIER"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TaxpayerIdentifier _explicitNullValueTAXPAYERIDENTIFIER = default!;
 #endif
         /// <summary>

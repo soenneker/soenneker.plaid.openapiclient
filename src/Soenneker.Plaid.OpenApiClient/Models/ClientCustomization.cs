@@ -18,7 +18,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("custom_entity_id") is { } nullNodeCustomEntityId && nullNodeCustomEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomEntityId = null;
+            if (parseNode.GetChildNode("custom_entity_id") is null) { _explicitNullValueCustomEntityId = default!; _explicitNullProperties?.Remove("custom_entity_id"); }
+            else if (parseNode.GetChildNode("custom_entity_id") is { } nullNodeCustomEntityId && nullNodeCustomEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomEntityId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Custom entity ID that maps to a merchant or counterparty. This is different from the `merchant_entity_id` as well as the `entity_id` on the counterparties object to meet client specific needs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomEntityId { get => _explicitNullValueCustomEntityId; set { _explicitNullValueCustomEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_entity_id"); else _explicitNullProperties?.Remove("custom_entity_id"); } }
+        public string? CustomEntityId { get => _explicitNullValueCustomEntityId; set { _explicitNullValueCustomEntityId = value; AdditionalData?.Remove("custom_entity_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_entity_id"); else _explicitNullProperties?.Remove("custom_entity_id"); } }
         private string? _explicitNullValueCustomEntityId = default!;
 #nullable restore
 #else
-        public string CustomEntityId { get => _explicitNullValueCustomEntityId; set { _explicitNullValueCustomEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_entity_id"); else _explicitNullProperties?.Remove("custom_entity_id"); } }
+        public string CustomEntityId { get => _explicitNullValueCustomEntityId; set { _explicitNullValueCustomEntityId = value; AdditionalData?.Remove("custom_entity_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_entity_id"); else _explicitNullProperties?.Remove("custom_entity_id"); } }
         private string _explicitNullValueCustomEntityId = default!;
 #endif
         /// <summary>

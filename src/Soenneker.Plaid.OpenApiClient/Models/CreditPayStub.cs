@@ -18,14 +18,22 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("deductions") is { } nullNodeDeductions && nullNodeDeductions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deductions = null;
-            if (parseNode.GetChildNode("document_id") is { } nullNodeDocumentId && nullNodeDocumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentId = null;
-            if (parseNode.GetChildNode("document_metadata") is { } nullNodeDocumentMetadata && nullNodeDocumentMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentMetadata = null;
-            if (parseNode.GetChildNode("earnings") is { } nullNodeEarnings && nullNodeEarnings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Earnings = null;
-            if (parseNode.GetChildNode("employee") is { } nullNodeEmployee && nullNodeEmployee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Employee = null;
-            if (parseNode.GetChildNode("employer") is { } nullNodeEmployer && nullNodeEmployer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Employer = null;
-            if (parseNode.GetChildNode("net_pay") is { } nullNodeNetPay && nullNodeNetPay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetPay = null;
-            if (parseNode.GetChildNode("pay_period_details") is { } nullNodePayPeriodDetails && nullNodePayPeriodDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayPeriodDetails = null;
+            if (parseNode.GetChildNode("deductions") is null) { _explicitNullValueDeductions = default!; _explicitNullProperties?.Remove("deductions"); }
+            else if (parseNode.GetChildNode("deductions") is { } nullNodeDeductions && nullNodeDeductions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deductions = null;
+            if (parseNode.GetChildNode("document_id") is null) { _explicitNullValueDocumentId = default!; _explicitNullProperties?.Remove("document_id"); }
+            else if (parseNode.GetChildNode("document_id") is { } nullNodeDocumentId && nullNodeDocumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentId = null;
+            if (parseNode.GetChildNode("document_metadata") is null) { _explicitNullValueDocumentMetadata = default!; _explicitNullProperties?.Remove("document_metadata"); }
+            else if (parseNode.GetChildNode("document_metadata") is { } nullNodeDocumentMetadata && nullNodeDocumentMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentMetadata = null;
+            if (parseNode.GetChildNode("earnings") is null) { _explicitNullValueEarnings = default!; _explicitNullProperties?.Remove("earnings"); }
+            else if (parseNode.GetChildNode("earnings") is { } nullNodeEarnings && nullNodeEarnings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Earnings = null;
+            if (parseNode.GetChildNode("employee") is null) { _explicitNullValueEmployee = default!; _explicitNullProperties?.Remove("employee"); }
+            else if (parseNode.GetChildNode("employee") is { } nullNodeEmployee && nullNodeEmployee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Employee = null;
+            if (parseNode.GetChildNode("employer") is null) { _explicitNullValueEmployer = default!; _explicitNullProperties?.Remove("employer"); }
+            else if (parseNode.GetChildNode("employer") is { } nullNodeEmployer && nullNodeEmployer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Employer = null;
+            if (parseNode.GetChildNode("net_pay") is null) { _explicitNullValueNetPay = default!; _explicitNullProperties?.Remove("net_pay"); }
+            else if (parseNode.GetChildNode("net_pay") is { } nullNodeNetPay && nullNodeNetPay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetPay = null;
+            if (parseNode.GetChildNode("pay_period_details") is null) { _explicitNullValuePayPeriodDetails = default!; _explicitNullProperties?.Remove("pay_period_details"); }
+            else if (parseNode.GetChildNode("pay_period_details") is { } nullNodePayPeriodDetails && nullNodePayPeriodDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayPeriodDetails = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,81 +41,81 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>An object with the deduction information found on a pay stub.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubDeductions? Deductions { get => _explicitNullValueDeductions; set { _explicitNullValueDeductions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deductions"); else _explicitNullProperties?.Remove("deductions"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubDeductions? Deductions { get => _explicitNullValueDeductions; set { _explicitNullValueDeductions = value; AdditionalData?.Remove("deductions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deductions"); else _explicitNullProperties?.Remove("deductions"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubDeductions? _explicitNullValueDeductions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubDeductions Deductions { get => _explicitNullValueDeductions; set { _explicitNullValueDeductions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deductions"); else _explicitNullProperties?.Remove("deductions"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubDeductions Deductions { get => _explicitNullValueDeductions; set { _explicitNullValueDeductions = value; AdditionalData?.Remove("deductions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deductions"); else _explicitNullProperties?.Remove("deductions"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubDeductions _explicitNullValueDeductions = default!;
 #endif
         /// <summary>An identifier of the document referenced by the document metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentId { get => _explicitNullValueDocumentId; set { _explicitNullValueDocumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_id"); else _explicitNullProperties?.Remove("document_id"); } }
+        public string? DocumentId { get => _explicitNullValueDocumentId; set { _explicitNullValueDocumentId = value; AdditionalData?.Remove("document_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_id"); else _explicitNullProperties?.Remove("document_id"); } }
         private string? _explicitNullValueDocumentId = default!;
 #nullable restore
 #else
-        public string DocumentId { get => _explicitNullValueDocumentId; set { _explicitNullValueDocumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_id"); else _explicitNullProperties?.Remove("document_id"); } }
+        public string DocumentId { get => _explicitNullValueDocumentId; set { _explicitNullValueDocumentId = value; AdditionalData?.Remove("document_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_id"); else _explicitNullProperties?.Remove("document_id"); } }
         private string _explicitNullValueDocumentId = default!;
 #endif
         /// <summary>Object representing metadata pertaining to the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata? DocumentMetadata { get => _explicitNullValueDocumentMetadata; set { _explicitNullValueDocumentMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_metadata"); else _explicitNullProperties?.Remove("document_metadata"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata? DocumentMetadata { get => _explicitNullValueDocumentMetadata; set { _explicitNullValueDocumentMetadata = value; AdditionalData?.Remove("document_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_metadata"); else _explicitNullProperties?.Remove("document_metadata"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata? _explicitNullValueDocumentMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata DocumentMetadata { get => _explicitNullValueDocumentMetadata; set { _explicitNullValueDocumentMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_metadata"); else _explicitNullProperties?.Remove("document_metadata"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata DocumentMetadata { get => _explicitNullValueDocumentMetadata; set { _explicitNullValueDocumentMetadata = value; AdditionalData?.Remove("document_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_metadata"); else _explicitNullProperties?.Remove("document_metadata"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata _explicitNullValueDocumentMetadata = default!;
 #endif
         /// <summary>An object representing both a breakdown of earnings on a pay stub and the total earnings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEarnings? Earnings { get => _explicitNullValueEarnings; set { _explicitNullValueEarnings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("earnings"); else _explicitNullProperties?.Remove("earnings"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEarnings? Earnings { get => _explicitNullValueEarnings; set { _explicitNullValueEarnings = value; AdditionalData?.Remove("earnings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("earnings"); else _explicitNullProperties?.Remove("earnings"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEarnings? _explicitNullValueEarnings = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEarnings Earnings { get => _explicitNullValueEarnings; set { _explicitNullValueEarnings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("earnings"); else _explicitNullProperties?.Remove("earnings"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEarnings Earnings { get => _explicitNullValueEarnings; set { _explicitNullValueEarnings = value; AdditionalData?.Remove("earnings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("earnings"); else _explicitNullProperties?.Remove("earnings"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEarnings _explicitNullValueEarnings = default!;
 #endif
         /// <summary>Data about the employee.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEmployee? Employee { get => _explicitNullValueEmployee; set { _explicitNullValueEmployee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employee"); else _explicitNullProperties?.Remove("employee"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEmployee? Employee { get => _explicitNullValueEmployee; set { _explicitNullValueEmployee = value; AdditionalData?.Remove("employee"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employee"); else _explicitNullProperties?.Remove("employee"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEmployee? _explicitNullValueEmployee = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEmployee Employee { get => _explicitNullValueEmployee; set { _explicitNullValueEmployee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employee"); else _explicitNullProperties?.Remove("employee"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEmployee Employee { get => _explicitNullValueEmployee; set { _explicitNullValueEmployee = value; AdditionalData?.Remove("employee"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employee"); else _explicitNullProperties?.Remove("employee"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEmployee _explicitNullValueEmployee = default!;
 #endif
         /// <summary>Information about the employer on the pay stub.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEmployer? Employer { get => _explicitNullValueEmployer; set { _explicitNullValueEmployer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employer"); else _explicitNullProperties?.Remove("employer"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEmployer? Employer { get => _explicitNullValueEmployer; set { _explicitNullValueEmployer = value; AdditionalData?.Remove("employer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employer"); else _explicitNullProperties?.Remove("employer"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEmployer? _explicitNullValueEmployer = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEmployer Employer { get => _explicitNullValueEmployer; set { _explicitNullValueEmployer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employer"); else _explicitNullProperties?.Remove("employer"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEmployer Employer { get => _explicitNullValueEmployer; set { _explicitNullValueEmployer = value; AdditionalData?.Remove("employer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employer"); else _explicitNullProperties?.Remove("employer"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubEmployer _explicitNullValueEmployer = default!;
 #endif
         /// <summary>An object representing information about the net pay amount on the pay stub.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubNetPay? NetPay { get => _explicitNullValueNetPay; set { _explicitNullValueNetPay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("net_pay"); else _explicitNullProperties?.Remove("net_pay"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubNetPay? NetPay { get => _explicitNullValueNetPay; set { _explicitNullValueNetPay = value; AdditionalData?.Remove("net_pay"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("net_pay"); else _explicitNullProperties?.Remove("net_pay"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubNetPay? _explicitNullValueNetPay = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubNetPay NetPay { get => _explicitNullValueNetPay; set { _explicitNullValueNetPay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("net_pay"); else _explicitNullProperties?.Remove("net_pay"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubNetPay NetPay { get => _explicitNullValueNetPay; set { _explicitNullValueNetPay = value; AdditionalData?.Remove("net_pay"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("net_pay"); else _explicitNullProperties?.Remove("net_pay"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CreditPayStubNetPay _explicitNullValueNetPay = default!;
 #endif
         /// <summary>Details about the pay period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PayStubPayPeriodDetails? PayPeriodDetails { get => _explicitNullValuePayPeriodDetails; set { _explicitNullValuePayPeriodDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_period_details"); else _explicitNullProperties?.Remove("pay_period_details"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PayStubPayPeriodDetails? PayPeriodDetails { get => _explicitNullValuePayPeriodDetails; set { _explicitNullValuePayPeriodDetails = value; AdditionalData?.Remove("pay_period_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_period_details"); else _explicitNullProperties?.Remove("pay_period_details"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PayStubPayPeriodDetails? _explicitNullValuePayPeriodDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PayStubPayPeriodDetails PayPeriodDetails { get => _explicitNullValuePayPeriodDetails; set { _explicitNullValuePayPeriodDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_period_details"); else _explicitNullProperties?.Remove("pay_period_details"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PayStubPayPeriodDetails PayPeriodDetails { get => _explicitNullValuePayPeriodDetails; set { _explicitNullValuePayPeriodDetails = value; AdditionalData?.Remove("pay_period_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_period_details"); else _explicitNullProperties?.Remove("pay_period_details"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PayStubPayPeriodDetails _explicitNullValuePayPeriodDetails = default!;
 #endif
         /// <summary>

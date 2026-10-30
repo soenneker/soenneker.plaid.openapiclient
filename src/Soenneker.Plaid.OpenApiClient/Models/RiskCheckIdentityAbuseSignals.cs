@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("stolen_identity") is { } nullNodeStolenIdentity && nullNodeStolenIdentity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StolenIdentity = null;
-            if (parseNode.GetChildNode("synthetic_identity") is { } nullNodeSyntheticIdentity && nullNodeSyntheticIdentity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SyntheticIdentity = null;
+            if (parseNode.GetChildNode("stolen_identity") is null) { _explicitNullValueStolenIdentity = default!; _explicitNullProperties?.Remove("stolen_identity"); }
+            else if (parseNode.GetChildNode("stolen_identity") is { } nullNodeStolenIdentity && nullNodeStolenIdentity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StolenIdentity = null;
+            if (parseNode.GetChildNode("synthetic_identity") is null) { _explicitNullValueSyntheticIdentity = default!; _explicitNullProperties?.Remove("synthetic_identity"); }
+            else if (parseNode.GetChildNode("synthetic_identity") is { } nullNodeSyntheticIdentity && nullNodeSyntheticIdentity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SyntheticIdentity = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Field containing the data used in determining the outcome of the stolen identity risk check.Contains the following fields:`score` - A score from 0 to 100 indicating the likelihood that the user is a stolen identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckStolenIdentity? StolenIdentity { get => _explicitNullValueStolenIdentity; set { _explicitNullValueStolenIdentity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stolen_identity"); else _explicitNullProperties?.Remove("stolen_identity"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckStolenIdentity? StolenIdentity { get => _explicitNullValueStolenIdentity; set { _explicitNullValueStolenIdentity = value; AdditionalData?.Remove("stolen_identity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stolen_identity"); else _explicitNullProperties?.Remove("stolen_identity"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckStolenIdentity? _explicitNullValueStolenIdentity = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckStolenIdentity StolenIdentity { get => _explicitNullValueStolenIdentity; set { _explicitNullValueStolenIdentity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stolen_identity"); else _explicitNullProperties?.Remove("stolen_identity"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckStolenIdentity StolenIdentity { get => _explicitNullValueStolenIdentity; set { _explicitNullValueStolenIdentity = value; AdditionalData?.Remove("stolen_identity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stolen_identity"); else _explicitNullProperties?.Remove("stolen_identity"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckStolenIdentity _explicitNullValueStolenIdentity = default!;
 #endif
         /// <summary>Field containing the data used in determining the outcome of the synthetic identity risk check.Contains the following fields:`score` - A score from 0 to 100 indicating the likelihood that the user is a synthetic identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckSyntheticIdentity? SyntheticIdentity { get => _explicitNullValueSyntheticIdentity; set { _explicitNullValueSyntheticIdentity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("synthetic_identity"); else _explicitNullProperties?.Remove("synthetic_identity"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckSyntheticIdentity? SyntheticIdentity { get => _explicitNullValueSyntheticIdentity; set { _explicitNullValueSyntheticIdentity = value; AdditionalData?.Remove("synthetic_identity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("synthetic_identity"); else _explicitNullProperties?.Remove("synthetic_identity"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckSyntheticIdentity? _explicitNullValueSyntheticIdentity = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckSyntheticIdentity SyntheticIdentity { get => _explicitNullValueSyntheticIdentity; set { _explicitNullValueSyntheticIdentity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("synthetic_identity"); else _explicitNullProperties?.Remove("synthetic_identity"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckSyntheticIdentity SyntheticIdentity { get => _explicitNullValueSyntheticIdentity; set { _explicitNullValueSyntheticIdentity = value; AdditionalData?.Remove("synthetic_identity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("synthetic_identity"); else _explicitNullProperties?.Remove("synthetic_identity"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckSyntheticIdentity _explicitNullValueSyntheticIdentity = default!;
 #endif
         /// <summary>

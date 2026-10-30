@@ -19,31 +19,35 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("face_value") is { } nullNodeFaceValue && nullNodeFaceValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FaceValue = null;
-            if (parseNode.GetChildNode("issue_date") is { } nullNodeIssueDate && nullNodeIssueDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssueDate = null;
-            if (parseNode.GetChildNode("maturity_date") is { } nullNodeMaturityDate && nullNodeMaturityDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaturityDate = null;
-            if (parseNode.GetChildNode("yield_rate") is { } nullNodeYieldRate && nullNodeYieldRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) YieldRate = null;
+            if (parseNode.GetChildNode("face_value") is null) { _explicitNullValueFaceValue = default!; _explicitNullProperties?.Remove("face_value"); }
+            else if (parseNode.GetChildNode("face_value") is { } nullNodeFaceValue && nullNodeFaceValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FaceValue = null;
+            if (parseNode.GetChildNode("issue_date") is null) { _explicitNullValueIssueDate = default!; _explicitNullProperties?.Remove("issue_date"); }
+            else if (parseNode.GetChildNode("issue_date") is { } nullNodeIssueDate && nullNodeIssueDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssueDate = null;
+            if (parseNode.GetChildNode("maturity_date") is null) { _explicitNullValueMaturityDate = default!; _explicitNullProperties?.Remove("maturity_date"); }
+            else if (parseNode.GetChildNode("maturity_date") is { } nullNodeMaturityDate && nullNodeMaturityDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaturityDate = null;
+            if (parseNode.GetChildNode("yield_rate") is null) { _explicitNullValueYieldRate = default!; _explicitNullProperties?.Remove("yield_rate"); }
+            else if (parseNode.GetChildNode("yield_rate") is { } nullNodeYieldRate && nullNodeYieldRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) YieldRate = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The face value that is paid upon maturity of the fixed income security, per unit of security.</summary>
-        public double? FaceValue { get => _explicitNullValueFaceValue; set { _explicitNullValueFaceValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("face_value"); else _explicitNullProperties?.Remove("face_value"); } }
+        public double? FaceValue { get => _explicitNullValueFaceValue; set { _explicitNullValueFaceValue = value; AdditionalData?.Remove("face_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("face_value"); else _explicitNullProperties?.Remove("face_value"); } }
         private double? _explicitNullValueFaceValue = default!;
         /// <summary>The issue date for this fixed income security, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format.</summary>
-        public Date? IssueDate { get => _explicitNullValueIssueDate; set { _explicitNullValueIssueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_date"); else _explicitNullProperties?.Remove("issue_date"); } }
+        public Date? IssueDate { get => _explicitNullValueIssueDate; set { _explicitNullValueIssueDate = value; AdditionalData?.Remove("issue_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_date"); else _explicitNullProperties?.Remove("issue_date"); } }
         private Date? _explicitNullValueIssueDate = default!;
         /// <summary>The maturity date for this fixed income security, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format.</summary>
-        public Date? MaturityDate { get => _explicitNullValueMaturityDate; set { _explicitNullValueMaturityDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maturity_date"); else _explicitNullProperties?.Remove("maturity_date"); } }
+        public Date? MaturityDate { get => _explicitNullValueMaturityDate; set { _explicitNullValueMaturityDate = value; AdditionalData?.Remove("maturity_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maturity_date"); else _explicitNullProperties?.Remove("maturity_date"); } }
         private Date? _explicitNullValueMaturityDate = default!;
         /// <summary>Details about a fixed income security&apos;s expected rate of return.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.YieldRate? YieldRate { get => _explicitNullValueYieldRate; set { _explicitNullValueYieldRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("yield_rate"); else _explicitNullProperties?.Remove("yield_rate"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.YieldRate? YieldRate { get => _explicitNullValueYieldRate; set { _explicitNullValueYieldRate = value; AdditionalData?.Remove("yield_rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("yield_rate"); else _explicitNullProperties?.Remove("yield_rate"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.YieldRate? _explicitNullValueYieldRate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.YieldRate YieldRate { get => _explicitNullValueYieldRate; set { _explicitNullValueYieldRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("yield_rate"); else _explicitNullProperties?.Remove("yield_rate"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.YieldRate YieldRate { get => _explicitNullValueYieldRate; set { _explicitNullValueYieldRate = value; AdditionalData?.Remove("yield_rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("yield_rate"); else _explicitNullProperties?.Remove("yield_rate"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.YieldRate _explicitNullValueYieldRate = default!;
 #endif
         /// <summary>

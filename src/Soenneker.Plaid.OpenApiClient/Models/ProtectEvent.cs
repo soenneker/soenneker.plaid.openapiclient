@@ -18,11 +18,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("app_visit") is { } nullNodeAppVisit && nullNodeAppVisit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppVisit = null;
-            if (parseNode.GetChildNode("device_session_id") is { } nullNodeDeviceSessionId && nullNodeDeviceSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceSessionId = null;
-            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
-            if (parseNode.GetChildNode("user_sign_in") is { } nullNodeUserSignIn && nullNodeUserSignIn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserSignIn = null;
-            if (parseNode.GetChildNode("user_sign_up") is { } nullNodeUserSignUp && nullNodeUserSignUp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserSignUp = null;
+            if (parseNode.GetChildNode("app_visit") is null) { _explicitNullValueAppVisit = default!; _explicitNullProperties?.Remove("app_visit"); }
+            else if (parseNode.GetChildNode("app_visit") is { } nullNodeAppVisit && nullNodeAppVisit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppVisit = null;
+            if (parseNode.GetChildNode("device_session_id") is null) { _explicitNullValueDeviceSessionId = default!; _explicitNullProperties?.Remove("device_session_id"); }
+            else if (parseNode.GetChildNode("device_session_id") is { } nullNodeDeviceSessionId && nullNodeDeviceSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceSessionId = null;
+            if (parseNode.GetChildNode("timestamp") is null) { _explicitNullValueTimestamp = default!; _explicitNullProperties?.Remove("timestamp"); }
+            else if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+            if (parseNode.GetChildNode("user_sign_in") is null) { _explicitNullValueUserSignIn = default!; _explicitNullProperties?.Remove("user_sign_in"); }
+            else if (parseNode.GetChildNode("user_sign_in") is { } nullNodeUserSignIn && nullNodeUserSignIn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserSignIn = null;
+            if (parseNode.GetChildNode("user_sign_up") is null) { _explicitNullValueUserSignUp = default!; _explicitNullProperties?.Remove("user_sign_up"); }
+            else if (parseNode.GetChildNode("user_sign_up") is { } nullNodeUserSignUp && nullNodeUserSignUp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserSignUp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,44 +35,44 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>This event type represents a user visiting the client application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectEventAppVisit? AppVisit { get => _explicitNullValueAppVisit; set { _explicitNullValueAppVisit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_visit"); else _explicitNullProperties?.Remove("app_visit"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectEventAppVisit? AppVisit { get => _explicitNullValueAppVisit; set { _explicitNullValueAppVisit = value; AdditionalData?.Remove("app_visit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_visit"); else _explicitNullProperties?.Remove("app_visit"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ProtectEventAppVisit? _explicitNullValueAppVisit = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectEventAppVisit AppVisit { get => _explicitNullValueAppVisit; set { _explicitNullValueAppVisit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_visit"); else _explicitNullProperties?.Remove("app_visit"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectEventAppVisit AppVisit { get => _explicitNullValueAppVisit; set { _explicitNullValueAppVisit = value; AdditionalData?.Remove("app_visit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_visit"); else _explicitNullProperties?.Remove("app_visit"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ProtectEventAppVisit _explicitNullValueAppVisit = default!;
 #endif
         /// <summary>If present, contains the current Device Session ID from the Protect SDK.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceSessionId { get => _explicitNullValueDeviceSessionId; set { _explicitNullValueDeviceSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_session_id"); else _explicitNullProperties?.Remove("device_session_id"); } }
+        public string? DeviceSessionId { get => _explicitNullValueDeviceSessionId; set { _explicitNullValueDeviceSessionId = value; AdditionalData?.Remove("device_session_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_session_id"); else _explicitNullProperties?.Remove("device_session_id"); } }
         private string? _explicitNullValueDeviceSessionId = default!;
 #nullable restore
 #else
-        public string DeviceSessionId { get => _explicitNullValueDeviceSessionId; set { _explicitNullValueDeviceSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_session_id"); else _explicitNullProperties?.Remove("device_session_id"); } }
+        public string DeviceSessionId { get => _explicitNullValueDeviceSessionId; set { _explicitNullValueDeviceSessionId = value; AdditionalData?.Remove("device_session_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_session_id"); else _explicitNullProperties?.Remove("device_session_id"); } }
         private string _explicitNullValueDeviceSessionId = default!;
 #endif
         /// <summary>The timestamp of the event, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format, e.g. `&quot;2017-09-14T14:42:19.350Z&quot;`</summary>
-        public DateTimeOffset? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        public DateTimeOffset? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; AdditionalData?.Remove("timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
         private DateTimeOffset? _explicitNullValueTimestamp = default!;
         /// <summary>This event type represents a user signing in to the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectEventUserSignIn? UserSignIn { get => _explicitNullValueUserSignIn; set { _explicitNullValueUserSignIn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_sign_in"); else _explicitNullProperties?.Remove("user_sign_in"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectEventUserSignIn? UserSignIn { get => _explicitNullValueUserSignIn; set { _explicitNullValueUserSignIn = value; AdditionalData?.Remove("user_sign_in"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_sign_in"); else _explicitNullProperties?.Remove("user_sign_in"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ProtectEventUserSignIn? _explicitNullValueUserSignIn = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectEventUserSignIn UserSignIn { get => _explicitNullValueUserSignIn; set { _explicitNullValueUserSignIn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_sign_in"); else _explicitNullProperties?.Remove("user_sign_in"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectEventUserSignIn UserSignIn { get => _explicitNullValueUserSignIn; set { _explicitNullValueUserSignIn = value; AdditionalData?.Remove("user_sign_in"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_sign_in"); else _explicitNullProperties?.Remove("user_sign_in"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ProtectEventUserSignIn _explicitNullValueUserSignIn = default!;
 #endif
         /// <summary>This event type represents a user signing up for the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectEventUserSignUp? UserSignUp { get => _explicitNullValueUserSignUp; set { _explicitNullValueUserSignUp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_sign_up"); else _explicitNullProperties?.Remove("user_sign_up"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectEventUserSignUp? UserSignUp { get => _explicitNullValueUserSignUp; set { _explicitNullValueUserSignUp = value; AdditionalData?.Remove("user_sign_up"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_sign_up"); else _explicitNullProperties?.Remove("user_sign_up"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ProtectEventUserSignUp? _explicitNullValueUserSignUp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectEventUserSignUp UserSignUp { get => _explicitNullValueUserSignUp; set { _explicitNullValueUserSignUp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_sign_up"); else _explicitNullProperties?.Remove("user_sign_up"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ProtectEventUserSignUp UserSignUp { get => _explicitNullValueUserSignUp; set { _explicitNullValueUserSignUp = value; AdditionalData?.Remove("user_sign_up"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_sign_up"); else _explicitNullProperties?.Remove("user_sign_up"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ProtectEventUserSignUp _explicitNullValueUserSignUp = default!;
 #endif
         /// <summary>

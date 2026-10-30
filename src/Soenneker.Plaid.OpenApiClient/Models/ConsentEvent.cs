@@ -18,16 +18,26 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("consented_accounts") is { } nullNodeConsentedAccounts && nullNodeConsentedAccounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsentedAccounts = null;
-            if (parseNode.GetChildNode("consented_data_scopes") is { } nullNodeConsentedDataScopes && nullNodeConsentedDataScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsentedDataScopes = null;
-            if (parseNode.GetChildNode("consented_use_cases") is { } nullNodeConsentedUseCases && nullNodeConsentedUseCases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsentedUseCases = null;
-            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
-            if (parseNode.GetChildNode("event_code") is { } nullNodeEventCode && nullNodeEventCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventCode = null;
-            if (parseNode.GetChildNode("event_type") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
-            if (parseNode.GetChildNode("initiator") is { } nullNodeInitiator && nullNodeInitiator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Initiator = null;
-            if (parseNode.GetChildNode("institution_id") is { } nullNodeInstitutionId && nullNodeInstitutionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionId = null;
-            if (parseNode.GetChildNode("institution_name") is { } nullNodeInstitutionName && nullNodeInstitutionName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionName = null;
-            if (parseNode.GetChildNode("item_id") is { } nullNodeItemId && nullNodeItemId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemId = null;
+            if (parseNode.GetChildNode("consented_accounts") is null) { _explicitNullValueConsentedAccounts = default!; _explicitNullProperties?.Remove("consented_accounts"); }
+            else if (parseNode.GetChildNode("consented_accounts") is { } nullNodeConsentedAccounts && nullNodeConsentedAccounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsentedAccounts = null;
+            if (parseNode.GetChildNode("consented_data_scopes") is null) { _explicitNullValueConsentedDataScopes = default!; _explicitNullProperties?.Remove("consented_data_scopes"); }
+            else if (parseNode.GetChildNode("consented_data_scopes") is { } nullNodeConsentedDataScopes && nullNodeConsentedDataScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsentedDataScopes = null;
+            if (parseNode.GetChildNode("consented_use_cases") is null) { _explicitNullValueConsentedUseCases = default!; _explicitNullProperties?.Remove("consented_use_cases"); }
+            else if (parseNode.GetChildNode("consented_use_cases") is { } nullNodeConsentedUseCases && nullNodeConsentedUseCases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsentedUseCases = null;
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("event_code") is null) { _explicitNullValueEventCode = default!; _explicitNullProperties?.Remove("event_code"); }
+            else if (parseNode.GetChildNode("event_code") is { } nullNodeEventCode && nullNodeEventCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventCode = null;
+            if (parseNode.GetChildNode("event_type") is null) { _explicitNullValueEventType = default!; _explicitNullProperties?.Remove("event_type"); }
+            else if (parseNode.GetChildNode("event_type") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
+            if (parseNode.GetChildNode("initiator") is null) { _explicitNullValueInitiator = default!; _explicitNullProperties?.Remove("initiator"); }
+            else if (parseNode.GetChildNode("initiator") is { } nullNodeInitiator && nullNodeInitiator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Initiator = null;
+            if (parseNode.GetChildNode("institution_id") is null) { _explicitNullValueInstitutionId = default!; _explicitNullProperties?.Remove("institution_id"); }
+            else if (parseNode.GetChildNode("institution_id") is { } nullNodeInstitutionId && nullNodeInstitutionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionId = null;
+            if (parseNode.GetChildNode("institution_name") is null) { _explicitNullValueInstitutionName = default!; _explicitNullProperties?.Remove("institution_name"); }
+            else if (parseNode.GetChildNode("institution_name") is { } nullNodeInstitutionName && nullNodeInstitutionName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionName = null;
+            if (parseNode.GetChildNode("item_id") is null) { _explicitNullValueItemId = default!; _explicitNullProperties?.Remove("item_id"); }
+            else if (parseNode.GetChildNode("item_id") is { } nullNodeItemId && nullNodeItemId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -35,73 +45,73 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>An array containing the accounts associated with the Item for which authorizations are granted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.ConsentedAccount>? ConsentedAccounts { get => _explicitNullValueConsentedAccounts; set { _explicitNullValueConsentedAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consented_accounts"); else _explicitNullProperties?.Remove("consented_accounts"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.ConsentedAccount>? ConsentedAccounts { get => _explicitNullValueConsentedAccounts; set { _explicitNullValueConsentedAccounts = value; AdditionalData?.Remove("consented_accounts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consented_accounts"); else _explicitNullProperties?.Remove("consented_accounts"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.ConsentedAccount>? _explicitNullValueConsentedAccounts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.ConsentedAccount> ConsentedAccounts { get => _explicitNullValueConsentedAccounts; set { _explicitNullValueConsentedAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consented_accounts"); else _explicitNullProperties?.Remove("consented_accounts"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.ConsentedAccount> ConsentedAccounts { get => _explicitNullValueConsentedAccounts; set { _explicitNullValueConsentedAccounts = value; AdditionalData?.Remove("consented_accounts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consented_accounts"); else _explicitNullProperties?.Remove("consented_accounts"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.ConsentedAccount> _explicitNullValueConsentedAccounts = default!;
 #endif
         /// <summary>A list of strings containing the full list of data scopes the end user has consented to for the Item. Each value is the data scope&apos;s display name, as shown to the end user in Link (for example, `account and balance info`, `contact details`, or `transactions`); these differ from the values returned in `consented_data_scopes` by `/item/get`. The scopes correspond to consented products; see the [full mapping](https://plaid.com/docs/link/data-transparency-messaging-migration-guide/#data-scopes-by-product) of data scopes and products.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ConsentedDataScopes { get => _explicitNullValueConsentedDataScopes; set { _explicitNullValueConsentedDataScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consented_data_scopes"); else _explicitNullProperties?.Remove("consented_data_scopes"); } }
+        public List<string>? ConsentedDataScopes { get => _explicitNullValueConsentedDataScopes; set { _explicitNullValueConsentedDataScopes = value; AdditionalData?.Remove("consented_data_scopes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consented_data_scopes"); else _explicitNullProperties?.Remove("consented_data_scopes"); } }
         private List<string>? _explicitNullValueConsentedDataScopes = default!;
 #nullable restore
 #else
-        public List<string> ConsentedDataScopes { get => _explicitNullValueConsentedDataScopes; set { _explicitNullValueConsentedDataScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consented_data_scopes"); else _explicitNullProperties?.Remove("consented_data_scopes"); } }
+        public List<string> ConsentedDataScopes { get => _explicitNullValueConsentedDataScopes; set { _explicitNullValueConsentedDataScopes = value; AdditionalData?.Remove("consented_data_scopes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consented_data_scopes"); else _explicitNullProperties?.Remove("consented_data_scopes"); } }
         private List<string> _explicitNullValueConsentedDataScopes = default!;
 #endif
         /// <summary>A list of strings containing the full list of use cases the end user has consented to for the Item.See the [full list](https://plaid.com/docs/link/data-transparency-messaging-migration-guide/#updating-link-customizations) of use cases.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ConsentedUseCases { get => _explicitNullValueConsentedUseCases; set { _explicitNullValueConsentedUseCases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consented_use_cases"); else _explicitNullProperties?.Remove("consented_use_cases"); } }
+        public List<string>? ConsentedUseCases { get => _explicitNullValueConsentedUseCases; set { _explicitNullValueConsentedUseCases = value; AdditionalData?.Remove("consented_use_cases"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consented_use_cases"); else _explicitNullProperties?.Remove("consented_use_cases"); } }
         private List<string>? _explicitNullValueConsentedUseCases = default!;
 #nullable restore
 #else
-        public List<string> ConsentedUseCases { get => _explicitNullValueConsentedUseCases; set { _explicitNullValueConsentedUseCases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consented_use_cases"); else _explicitNullProperties?.Remove("consented_use_cases"); } }
+        public List<string> ConsentedUseCases { get => _explicitNullValueConsentedUseCases; set { _explicitNullValueConsentedUseCases = value; AdditionalData?.Remove("consented_use_cases"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consented_use_cases"); else _explicitNullProperties?.Remove("consented_use_cases"); } }
         private List<string> _explicitNullValueConsentedUseCases = default!;
 #endif
         /// <summary>The date and time when the consent event occurred, in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.</summary>
-        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
         private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>Codes describing the object of a consent event.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ConsentEventCode? EventCode { get => _explicitNullValueEventCode; set { _explicitNullValueEventCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_code"); else _explicitNullProperties?.Remove("event_code"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ConsentEventCode? EventCode { get => _explicitNullValueEventCode; set { _explicitNullValueEventCode = value; AdditionalData?.Remove("event_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_code"); else _explicitNullProperties?.Remove("event_code"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ConsentEventCode? _explicitNullValueEventCode = default!;
         /// <summary>A broad categorization of the consent event.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ConsentEventType? EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type"); else _explicitNullProperties?.Remove("event_type"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ConsentEventType? EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; AdditionalData?.Remove("event_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type"); else _explicitNullProperties?.Remove("event_type"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ConsentEventType? _explicitNullValueEventType = default!;
         /// <summary>The entity that initiated collection of consent.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ConsentEventInitiator? Initiator { get => _explicitNullValueInitiator; set { _explicitNullValueInitiator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initiator"); else _explicitNullProperties?.Remove("initiator"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ConsentEventInitiator? Initiator { get => _explicitNullValueInitiator; set { _explicitNullValueInitiator = value; AdditionalData?.Remove("initiator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initiator"); else _explicitNullProperties?.Remove("initiator"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ConsentEventInitiator? _explicitNullValueInitiator = default!;
         /// <summary>Unique identifier for the institution associated with the Item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstitutionId { get => _explicitNullValueInstitutionId; set { _explicitNullValueInstitutionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_id"); else _explicitNullProperties?.Remove("institution_id"); } }
+        public string? InstitutionId { get => _explicitNullValueInstitutionId; set { _explicitNullValueInstitutionId = value; AdditionalData?.Remove("institution_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_id"); else _explicitNullProperties?.Remove("institution_id"); } }
         private string? _explicitNullValueInstitutionId = default!;
 #nullable restore
 #else
-        public string InstitutionId { get => _explicitNullValueInstitutionId; set { _explicitNullValueInstitutionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_id"); else _explicitNullProperties?.Remove("institution_id"); } }
+        public string InstitutionId { get => _explicitNullValueInstitutionId; set { _explicitNullValueInstitutionId = value; AdditionalData?.Remove("institution_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_id"); else _explicitNullProperties?.Remove("institution_id"); } }
         private string _explicitNullValueInstitutionId = default!;
 #endif
         /// <summary>The full name of the institution associated with the Item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstitutionName { get => _explicitNullValueInstitutionName; set { _explicitNullValueInstitutionName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_name"); else _explicitNullProperties?.Remove("institution_name"); } }
+        public string? InstitutionName { get => _explicitNullValueInstitutionName; set { _explicitNullValueInstitutionName = value; AdditionalData?.Remove("institution_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_name"); else _explicitNullProperties?.Remove("institution_name"); } }
         private string? _explicitNullValueInstitutionName = default!;
 #nullable restore
 #else
-        public string InstitutionName { get => _explicitNullValueInstitutionName; set { _explicitNullValueInstitutionName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_name"); else _explicitNullProperties?.Remove("institution_name"); } }
+        public string InstitutionName { get => _explicitNullValueInstitutionName; set { _explicitNullValueInstitutionName = value; AdditionalData?.Remove("institution_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_name"); else _explicitNullProperties?.Remove("institution_name"); } }
         private string _explicitNullValueInstitutionName = default!;
 #endif
         /// <summary>The Plaid Item ID. The `item_id` is always unique; linking the same account at the same institution twice will result in two Items with different `item_id` values. Like all Plaid identifiers, the `item_id` is case-sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
+        public string? ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; AdditionalData?.Remove("item_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
         private string? _explicitNullValueItemId = default!;
 #nullable restore
 #else
-        public string ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
+        public string ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; AdditionalData?.Remove("item_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
         private string _explicitNullValueItemId = default!;
 #endif
         /// <summary>
@@ -133,9 +143,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "consented_data_scopes", n => { ConsentedDataScopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "consented_use_cases", n => { ConsentedUseCases = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "event_code", n => { EventCode = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ConsentEventCode>(); } },
-                { "event_type", n => { EventType = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ConsentEventType>(); } },
-                { "initiator", n => { Initiator = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ConsentEventInitiator>(); } },
+                { "event_code", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ConsentEventCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEventCode = default; _explicitNullProperties?.Remove("event_code"); AdditionalData["event_code"] = unknown; } else { EventCode = parsed; AdditionalData.Remove("event_code"); } } },
+                { "event_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ConsentEventType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEventType = default; _explicitNullProperties?.Remove("event_type"); AdditionalData["event_type"] = unknown; } else { EventType = parsed; AdditionalData.Remove("event_type"); } } },
+                { "initiator", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ConsentEventInitiator>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueInitiator = default; _explicitNullProperties?.Remove("initiator"); AdditionalData["initiator"] = unknown; } else { Initiator = parsed; AdditionalData.Remove("initiator"); } } },
                 { "institution_id", n => { InstitutionId = n.GetStringValue(); } },
                 { "institution_name", n => { InstitutionName = n.GetStringValue(); } },
                 { "item_id", n => { ItemId = n.GetStringValue(); } },

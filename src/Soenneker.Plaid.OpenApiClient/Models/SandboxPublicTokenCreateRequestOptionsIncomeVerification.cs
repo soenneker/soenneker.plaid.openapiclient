@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bank_income") is { } nullNodeBankIncome && nullNodeBankIncome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankIncome = null;
-            if (parseNode.GetChildNode("income_source_types") is { } nullNodeIncomeSourceTypes && nullNodeIncomeSourceTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeSourceTypes = null;
+            if (parseNode.GetChildNode("bank_income") is null) { _explicitNullValueBankIncome = default!; _explicitNullProperties?.Remove("bank_income"); }
+            else if (parseNode.GetChildNode("bank_income") is { } nullNodeBankIncome && nullNodeBankIncome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankIncome = null;
+            if (parseNode.GetChildNode("income_source_types") is null) { _explicitNullValueIncomeSourceTypes = default!; _explicitNullProperties?.Remove("income_source_types"); }
+            else if (parseNode.GetChildNode("income_source_types") is { } nullNodeIncomeSourceTypes && nullNodeIncomeSourceTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeSourceTypes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Specifies options for Bank Income. This field is required if `income_verification` is included in the `initial_products` array and `bank` is specified in `income_source_types`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxPublicTokenCreateRequestIncomeVerificationBankIncome? BankIncome { get => _explicitNullValueBankIncome; set { _explicitNullValueBankIncome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_income"); else _explicitNullProperties?.Remove("bank_income"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxPublicTokenCreateRequestIncomeVerificationBankIncome? BankIncome { get => _explicitNullValueBankIncome; set { _explicitNullValueBankIncome = value; AdditionalData?.Remove("bank_income"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_income"); else _explicitNullProperties?.Remove("bank_income"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.SandboxPublicTokenCreateRequestIncomeVerificationBankIncome? _explicitNullValueBankIncome = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxPublicTokenCreateRequestIncomeVerificationBankIncome BankIncome { get => _explicitNullValueBankIncome; set { _explicitNullValueBankIncome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_income"); else _explicitNullProperties?.Remove("bank_income"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxPublicTokenCreateRequestIncomeVerificationBankIncome BankIncome { get => _explicitNullValueBankIncome; set { _explicitNullValueBankIncome = value; AdditionalData?.Remove("bank_income"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_income"); else _explicitNullProperties?.Remove("bank_income"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.SandboxPublicTokenCreateRequestIncomeVerificationBankIncome _explicitNullValueBankIncome = default!;
 #endif
         /// <summary>The types of source income data that users will be permitted to share. Options include `bank` and `payroll`. Currently you can only specify one of these options.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationSourceType?>? IncomeSourceTypes { get => _explicitNullValueIncomeSourceTypes; set { _explicitNullValueIncomeSourceTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_source_types"); else _explicitNullProperties?.Remove("income_source_types"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationSourceType?>? IncomeSourceTypes { get => _explicitNullValueIncomeSourceTypes; set { _explicitNullValueIncomeSourceTypes = value; AdditionalData?.Remove("income_source_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_source_types"); else _explicitNullProperties?.Remove("income_source_types"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationSourceType?>? _explicitNullValueIncomeSourceTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationSourceType?> IncomeSourceTypes { get => _explicitNullValueIncomeSourceTypes; set { _explicitNullValueIncomeSourceTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_source_types"); else _explicitNullProperties?.Remove("income_source_types"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationSourceType?> IncomeSourceTypes { get => _explicitNullValueIncomeSourceTypes; set { _explicitNullValueIncomeSourceTypes = value; AdditionalData?.Remove("income_source_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_source_types"); else _explicitNullProperties?.Remove("income_source_types"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.IncomeVerificationSourceType?> _explicitNullValueIncomeSourceTypes = default!;
 #endif
         /// <summary>

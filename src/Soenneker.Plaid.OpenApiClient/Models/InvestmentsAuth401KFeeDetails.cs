@@ -18,15 +18,17 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("account_fee_amount_12m") is { } nullNodeAccountFeeAmount12m && nullNodeAccountFeeAmount12m.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountFeeAmount12m = null;
-            if (parseNode.GetChildNode("account_fee_count_12m") is { } nullNodeAccountFeeCount12m && nullNodeAccountFeeCount12m.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountFeeCount12m = null;
+            if (parseNode.GetChildNode("account_fee_amount_12m") is null) { _explicitNullValueAccountFeeAmount12m = default!; _explicitNullProperties?.Remove("account_fee_amount_12m"); }
+            else if (parseNode.GetChildNode("account_fee_amount_12m") is { } nullNodeAccountFeeAmount12m && nullNodeAccountFeeAmount12m.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountFeeAmount12m = null;
+            if (parseNode.GetChildNode("account_fee_count_12m") is null) { _explicitNullValueAccountFeeCount12m = default!; _explicitNullProperties?.Remove("account_fee_count_12m"); }
+            else if (parseNode.GetChildNode("account_fee_count_12m") is { } nullNodeAccountFeeCount12m && nullNodeAccountFeeCount12m.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountFeeCount12m = null;
         }
 
         /// <summary>Sum of account fee transactions on this account, for the past 12 months.</summary>
-        public float? AccountFeeAmount12m { get => _explicitNullValueAccountFeeAmount12m; set { _explicitNullValueAccountFeeAmount12m = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_fee_amount_12m"); else _explicitNullProperties?.Remove("account_fee_amount_12m"); } }
+        public float? AccountFeeAmount12m { get => _explicitNullValueAccountFeeAmount12m; set { _explicitNullValueAccountFeeAmount12m = value; AdditionalData?.Remove("account_fee_amount_12m"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_fee_amount_12m"); else _explicitNullProperties?.Remove("account_fee_amount_12m"); } }
         private float? _explicitNullValueAccountFeeAmount12m = default!;
         /// <summary>Number of account fee transactions on this account, for the past 12 months.</summary>
-        public int? AccountFeeCount12m { get => _explicitNullValueAccountFeeCount12m; set { _explicitNullValueAccountFeeCount12m = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_fee_count_12m"); else _explicitNullProperties?.Remove("account_fee_count_12m"); } }
+        public int? AccountFeeCount12m { get => _explicitNullValueAccountFeeCount12m; set { _explicitNullValueAccountFeeCount12m = value; AdditionalData?.Remove("account_fee_count_12m"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_fee_count_12m"); else _explicitNullProperties?.Remove("account_fee_count_12m"); } }
         private int? _explicitNullValueAccountFeeCount12m = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

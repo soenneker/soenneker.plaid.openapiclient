@@ -19,21 +19,24 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("date") is { } nullNodeDate && nullNodeDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Date = null;
-            if (parseNode.GetChildNode("rank") is { } nullNodeRank && nullNodeRank.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rank = null;
-            if (parseNode.GetChildNode("recommendation") is { } nullNodeRecommendation && nullNodeRecommendation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Recommendation = null;
+            if (parseNode.GetChildNode("date") is null) { _explicitNullValueDate = default!; _explicitNullProperties?.Remove("date"); }
+            else if (parseNode.GetChildNode("date") is { } nullNodeDate && nullNodeDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Date = null;
+            if (parseNode.GetChildNode("rank") is null) { _explicitNullValueRank = default!; _explicitNullProperties?.Remove("rank"); }
+            else if (parseNode.GetChildNode("rank") is { } nullNodeRank && nullNodeRank.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rank = null;
+            if (parseNode.GetChildNode("recommendation") is null) { _explicitNullValueRecommendation = default!; _explicitNullProperties?.Remove("recommendation"); }
+            else if (parseNode.GetChildNode("recommendation") is { } nullNodeRecommendation && nullNodeRecommendation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Recommendation = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The specific date for submitting the debit entry, formatted in ISO 8601 (e.g., &quot;2025-01-17&quot;).</summary>
-        public Date? Date { get => _explicitNullValueDate; set { _explicitNullValueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date"); else _explicitNullProperties?.Remove("date"); } }
+        public Date? Date { get => _explicitNullValueDate; set { _explicitNullValueDate = value; AdditionalData?.Remove("date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date"); else _explicitNullProperties?.Remove("date"); } }
         private Date? _explicitNullValueDate = default!;
         /// <summary>The rank of the recommendation based on the likelihood of debit success, with 1 representing the most optimal date. Dates with `NOT_RECOMMENDED` or `UNKNOWN` will have rank `null`.</summary>
-        public int? Rank { get => _explicitNullValueRank; set { _explicitNullValueRank = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rank"); else _explicitNullProperties?.Remove("rank"); } }
+        public int? Rank { get => _explicitNullValueRank; set { _explicitNullValueRank = value; AdditionalData?.Remove("rank"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rank"); else _explicitNullProperties?.Remove("rank"); } }
         private int? _explicitNullValueRank = default!;
         /// <summary>The recommendation result for that date.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.RecommendationString? Recommendation { get => _explicitNullValueRecommendation; set { _explicitNullValueRecommendation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recommendation"); else _explicitNullProperties?.Remove("recommendation"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RecommendationString? Recommendation { get => _explicitNullValueRecommendation; set { _explicitNullValueRecommendation = value; AdditionalData?.Remove("recommendation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recommendation"); else _explicitNullProperties?.Remove("recommendation"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.RecommendationString? _explicitNullValueRecommendation = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.SignalScheduleRecommendation"/> and sets the default values.
@@ -62,7 +65,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "date", n => { Date = n.GetDateValue(); } },
                 { "rank", n => { Rank = n.GetIntValue(); } },
-                { "recommendation", n => { Recommendation = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RecommendationString>(); } },
+                { "recommendation", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RecommendationString>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRecommendation = default; _explicitNullProperties?.Remove("recommendation"); AdditionalData["recommendation"] = unknown; } else { Recommendation = parsed; AdditionalData.Remove("recommendation"); } } },
             };
         }
         /// <summary>

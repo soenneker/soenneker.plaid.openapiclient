@@ -18,12 +18,18 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("client_id") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
-            if (parseNode.GetChildNode("client_user_id") is { } nullNodeClientUserId && nullNodeClientUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientUserId = null;
-            if (parseNode.GetChildNode("pfc_detailed_category") is { } nullNodePfcDetailedCategory && nullNodePfcDetailedCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PfcDetailedCategory = null;
-            if (parseNode.GetChildNode("pfc_primary_category") is { } nullNodePfcPrimaryCategory && nullNodePfcPrimaryCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PfcPrimaryCategory = null;
-            if (parseNode.GetChildNode("rule_details") is { } nullNodeRuleDetails && nullNodeRuleDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleDetails = null;
-            if (parseNode.GetChildNode("secret") is { } nullNodeSecret && nullNodeSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Secret = null;
+            if (parseNode.GetChildNode("client_id") is null) { _explicitNullValueClientId = default!; _explicitNullProperties?.Remove("client_id"); }
+            else if (parseNode.GetChildNode("client_id") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
+            if (parseNode.GetChildNode("client_user_id") is null) { _explicitNullValueClientUserId = default!; _explicitNullProperties?.Remove("client_user_id"); }
+            else if (parseNode.GetChildNode("client_user_id") is { } nullNodeClientUserId && nullNodeClientUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientUserId = null;
+            if (parseNode.GetChildNode("pfc_detailed_category") is null) { _explicitNullValuePfcDetailedCategory = default!; _explicitNullProperties?.Remove("pfc_detailed_category"); }
+            else if (parseNode.GetChildNode("pfc_detailed_category") is { } nullNodePfcDetailedCategory && nullNodePfcDetailedCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PfcDetailedCategory = null;
+            if (parseNode.GetChildNode("pfc_primary_category") is null) { _explicitNullValuePfcPrimaryCategory = default!; _explicitNullProperties?.Remove("pfc_primary_category"); }
+            else if (parseNode.GetChildNode("pfc_primary_category") is { } nullNodePfcPrimaryCategory && nullNodePfcPrimaryCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PfcPrimaryCategory = null;
+            if (parseNode.GetChildNode("rule_details") is null) { _explicitNullValueRuleDetails = default!; _explicitNullProperties?.Remove("rule_details"); }
+            else if (parseNode.GetChildNode("rule_details") is { } nullNodeRuleDetails && nullNodeRuleDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleDetails = null;
+            if (parseNode.GetChildNode("secret") is null) { _explicitNullValueSecret = default!; _explicitNullProperties?.Remove("secret"); }
+            else if (parseNode.GetChildNode("secret") is { } nullNodeSecret && nullNodeSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Secret = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,61 +37,61 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; AdditionalData?.Remove("client_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
         private string? _explicitNullValueClientId = default!;
 #nullable restore
 #else
-        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; AdditionalData?.Remove("client_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
         private string _explicitNullValueClientId = default!;
 #endif
         /// <summary>A unique ID representing the end user. This ID is used to associate rules with a specific user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientUserId { get => _explicitNullValueClientUserId; set { _explicitNullValueClientUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_user_id"); else _explicitNullProperties?.Remove("client_user_id"); } }
+        public string? ClientUserId { get => _explicitNullValueClientUserId; set { _explicitNullValueClientUserId = value; AdditionalData?.Remove("client_user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_user_id"); else _explicitNullProperties?.Remove("client_user_id"); } }
         private string? _explicitNullValueClientUserId = default!;
 #nullable restore
 #else
-        public string ClientUserId { get => _explicitNullValueClientUserId; set { _explicitNullValueClientUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_user_id"); else _explicitNullProperties?.Remove("client_user_id"); } }
+        public string ClientUserId { get => _explicitNullValueClientUserId; set { _explicitNullValueClientUserId = value; AdditionalData?.Remove("client_user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_user_id"); else _explicitNullProperties?.Remove("client_user_id"); } }
         private string _explicitNullValueClientUserId = default!;
 #endif
         /// <summary>A personal finance detailed category.See the [taxonomy csv file](https://plaid.com/documents/pfc-taxonomy-all.csv) for a full list of personal finance categories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PfcDetailedCategory { get => _explicitNullValuePfcDetailedCategory; set { _explicitNullValuePfcDetailedCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pfc_detailed_category"); else _explicitNullProperties?.Remove("pfc_detailed_category"); } }
+        public string? PfcDetailedCategory { get => _explicitNullValuePfcDetailedCategory; set { _explicitNullValuePfcDetailedCategory = value; AdditionalData?.Remove("pfc_detailed_category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pfc_detailed_category"); else _explicitNullProperties?.Remove("pfc_detailed_category"); } }
         private string? _explicitNullValuePfcDetailedCategory = default!;
 #nullable restore
 #else
-        public string PfcDetailedCategory { get => _explicitNullValuePfcDetailedCategory; set { _explicitNullValuePfcDetailedCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pfc_detailed_category"); else _explicitNullProperties?.Remove("pfc_detailed_category"); } }
+        public string PfcDetailedCategory { get => _explicitNullValuePfcDetailedCategory; set { _explicitNullValuePfcDetailedCategory = value; AdditionalData?.Remove("pfc_detailed_category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pfc_detailed_category"); else _explicitNullProperties?.Remove("pfc_detailed_category"); } }
         private string _explicitNullValuePfcDetailedCategory = default!;
 #endif
         /// <summary>A personal finance primary category.See the [taxonomy csv file](https://plaid.com/documents/pfc-taxonomy-all.csv) for a full list of personal finance categories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PfcPrimaryCategory { get => _explicitNullValuePfcPrimaryCategory; set { _explicitNullValuePfcPrimaryCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pfc_primary_category"); else _explicitNullProperties?.Remove("pfc_primary_category"); } }
+        public string? PfcPrimaryCategory { get => _explicitNullValuePfcPrimaryCategory; set { _explicitNullValuePfcPrimaryCategory = value; AdditionalData?.Remove("pfc_primary_category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pfc_primary_category"); else _explicitNullProperties?.Remove("pfc_primary_category"); } }
         private string? _explicitNullValuePfcPrimaryCategory = default!;
 #nullable restore
 #else
-        public string PfcPrimaryCategory { get => _explicitNullValuePfcPrimaryCategory; set { _explicitNullValuePfcPrimaryCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pfc_primary_category"); else _explicitNullProperties?.Remove("pfc_primary_category"); } }
+        public string PfcPrimaryCategory { get => _explicitNullValuePfcPrimaryCategory; set { _explicitNullValuePfcPrimaryCategory = value; AdditionalData?.Remove("pfc_primary_category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pfc_primary_category"); else _explicitNullProperties?.Remove("pfc_primary_category"); } }
         private string _explicitNullValuePfcPrimaryCategory = default!;
 #endif
         /// <summary>A representation of transactions rule details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransactionsRuleDetails? RuleDetails { get => _explicitNullValueRuleDetails; set { _explicitNullValueRuleDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rule_details"); else _explicitNullProperties?.Remove("rule_details"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransactionsRuleDetails? RuleDetails { get => _explicitNullValueRuleDetails; set { _explicitNullValueRuleDetails = value; AdditionalData?.Remove("rule_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rule_details"); else _explicitNullProperties?.Remove("rule_details"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransactionsRuleDetails? _explicitNullValueRuleDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransactionsRuleDetails RuleDetails { get => _explicitNullValueRuleDetails; set { _explicitNullValueRuleDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rule_details"); else _explicitNullProperties?.Remove("rule_details"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransactionsRuleDetails RuleDetails { get => _explicitNullValueRuleDetails; set { _explicitNullValueRuleDetails = value; AdditionalData?.Remove("rule_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rule_details"); else _explicitNullProperties?.Remove("rule_details"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransactionsRuleDetails _explicitNullValueRuleDetails = default!;
 #endif
         /// <summary>Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
+        public string? Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; AdditionalData?.Remove("secret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
         private string? _explicitNullValueSecret = default!;
 #nullable restore
 #else
-        public string Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
+        public string Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; AdditionalData?.Remove("secret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
         private string _explicitNullValueSecret = default!;
 #endif
         /// <summary>

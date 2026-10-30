@@ -18,7 +18,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cra") is { } nullNodeCra && nullNodeCra.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cra = null;
+            if (parseNode.GetChildNode("cra") is null) { _explicitNullValueCra = default!; _explicitNullProperties?.Remove("cra"); }
+            else if (parseNode.GetChildNode("cra") is { } nullNodeCra && nullNodeCra.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cra = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The CRA questionnaire for the end customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraQuestionnaire? Cra { get => _explicitNullValueCra; set { _explicitNullValueCra = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cra"); else _explicitNullProperties?.Remove("cra"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraQuestionnaire? Cra { get => _explicitNullValueCra; set { _explicitNullValueCra = value; AdditionalData?.Remove("cra"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cra"); else _explicitNullProperties?.Remove("cra"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraQuestionnaire? _explicitNullValueCra = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraQuestionnaire Cra { get => _explicitNullValueCra; set { _explicitNullValueCra = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cra"); else _explicitNullProperties?.Remove("cra"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraQuestionnaire Cra { get => _explicitNullValueCra; set { _explicitNullValueCra = value; AdditionalData?.Remove("cra"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cra"); else _explicitNullProperties?.Remove("cra"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraQuestionnaire _explicitNullValueCra = default!;
 #endif
         /// <summary>

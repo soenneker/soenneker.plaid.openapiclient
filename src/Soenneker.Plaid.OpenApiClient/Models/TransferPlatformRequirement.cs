@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("person_id") is { } nullNodePersonId && nullNodePersonId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonId = null;
-            if (parseNode.GetChildNode("requirement_type") is { } nullNodeRequirementType && nullNodeRequirementType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequirementType = null;
+            if (parseNode.GetChildNode("person_id") is null) { _explicitNullValuePersonId = default!; _explicitNullProperties?.Remove("person_id"); }
+            else if (parseNode.GetChildNode("person_id") is { } nullNodePersonId && nullNodePersonId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonId = null;
+            if (parseNode.GetChildNode("requirement_type") is null) { _explicitNullValueRequirementType = default!; _explicitNullProperties?.Remove("requirement_type"); }
+            else if (parseNode.GetChildNode("requirement_type") is { } nullNodeRequirementType && nullNodeRequirementType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequirementType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>UUID of the person associated with the requirement. Only present for individual-scoped requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PersonId { get => _explicitNullValuePersonId; set { _explicitNullValuePersonId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("person_id"); else _explicitNullProperties?.Remove("person_id"); } }
+        public string? PersonId { get => _explicitNullValuePersonId; set { _explicitNullValuePersonId = value; AdditionalData?.Remove("person_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("person_id"); else _explicitNullProperties?.Remove("person_id"); } }
         private string? _explicitNullValuePersonId = default!;
 #nullable restore
 #else
-        public string PersonId { get => _explicitNullValuePersonId; set { _explicitNullValuePersonId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("person_id"); else _explicitNullProperties?.Remove("person_id"); } }
+        public string PersonId { get => _explicitNullValuePersonId; set { _explicitNullValuePersonId = value; AdditionalData?.Remove("person_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("person_id"); else _explicitNullProperties?.Remove("person_id"); } }
         private string _explicitNullValuePersonId = default!;
 #endif
         /// <summary>The type of requirement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequirementType { get => _explicitNullValueRequirementType; set { _explicitNullValueRequirementType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requirement_type"); else _explicitNullProperties?.Remove("requirement_type"); } }
+        public string? RequirementType { get => _explicitNullValueRequirementType; set { _explicitNullValueRequirementType = value; AdditionalData?.Remove("requirement_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requirement_type"); else _explicitNullProperties?.Remove("requirement_type"); } }
         private string? _explicitNullValueRequirementType = default!;
 #nullable restore
 #else
-        public string RequirementType { get => _explicitNullValueRequirementType; set { _explicitNullValueRequirementType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requirement_type"); else _explicitNullProperties?.Remove("requirement_type"); } }
+        public string RequirementType { get => _explicitNullValueRequirementType; set { _explicitNullValueRequirementType = value; AdditionalData?.Remove("requirement_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requirement_type"); else _explicitNullProperties?.Remove("requirement_type"); } }
         private string _explicitNullValueRequirementType = default!;
 #endif
         /// <summary>

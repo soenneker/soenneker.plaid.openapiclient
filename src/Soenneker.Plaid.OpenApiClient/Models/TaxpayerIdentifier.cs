@@ -18,23 +18,25 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("TaxpayerIdentifierType") is { } nullNodeTaxpayerIdentifierType && nullNodeTaxpayerIdentifierType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxpayerIdentifierType = null;
-            if (parseNode.GetChildNode("TaxpayerIdentifierValue") is { } nullNodeTaxpayerIdentifierValue && nullNodeTaxpayerIdentifierValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxpayerIdentifierValue = null;
+            if (parseNode.GetChildNode("TaxpayerIdentifierType") is null) { _explicitNullValueTaxpayerIdentifierType = default!; _explicitNullProperties?.Remove("TaxpayerIdentifierType"); }
+            else if (parseNode.GetChildNode("TaxpayerIdentifierType") is { } nullNodeTaxpayerIdentifierType && nullNodeTaxpayerIdentifierType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxpayerIdentifierType = null;
+            if (parseNode.GetChildNode("TaxpayerIdentifierValue") is null) { _explicitNullValueTaxpayerIdentifierValue = default!; _explicitNullProperties?.Remove("TaxpayerIdentifierValue"); }
+            else if (parseNode.GetChildNode("TaxpayerIdentifierValue") is { } nullNodeTaxpayerIdentifierValue && nullNodeTaxpayerIdentifierValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxpayerIdentifierValue = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A value from a MISMO prescribed list that classifies identification numbers used by the Internal Revenue Service (IRS) in the administration of tax laws. A Social Security number (SSN) is issued by the SSA; all other taxpayer identification numbers are issued by the IRS.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.TaxpayerIdentifierType? TaxpayerIdentifierType { get => _explicitNullValueTaxpayerIdentifierType; set { _explicitNullValueTaxpayerIdentifierType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TaxpayerIdentifierType"); else _explicitNullProperties?.Remove("TaxpayerIdentifierType"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TaxpayerIdentifierType? TaxpayerIdentifierType { get => _explicitNullValueTaxpayerIdentifierType; set { _explicitNullValueTaxpayerIdentifierType = value; AdditionalData?.Remove("TaxpayerIdentifierType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TaxpayerIdentifierType"); else _explicitNullProperties?.Remove("TaxpayerIdentifierType"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TaxpayerIdentifierType? _explicitNullValueTaxpayerIdentifierType = default!;
         /// <summary>The value of the taxpayer identifier as assigned by the IRS to the individual or legal entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxpayerIdentifierValue { get => _explicitNullValueTaxpayerIdentifierValue; set { _explicitNullValueTaxpayerIdentifierValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TaxpayerIdentifierValue"); else _explicitNullProperties?.Remove("TaxpayerIdentifierValue"); } }
+        public string? TaxpayerIdentifierValue { get => _explicitNullValueTaxpayerIdentifierValue; set { _explicitNullValueTaxpayerIdentifierValue = value; AdditionalData?.Remove("TaxpayerIdentifierValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TaxpayerIdentifierValue"); else _explicitNullProperties?.Remove("TaxpayerIdentifierValue"); } }
         private string? _explicitNullValueTaxpayerIdentifierValue = default!;
 #nullable restore
 #else
-        public string TaxpayerIdentifierValue { get => _explicitNullValueTaxpayerIdentifierValue; set { _explicitNullValueTaxpayerIdentifierValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TaxpayerIdentifierValue"); else _explicitNullProperties?.Remove("TaxpayerIdentifierValue"); } }
+        public string TaxpayerIdentifierValue { get => _explicitNullValueTaxpayerIdentifierValue; set { _explicitNullValueTaxpayerIdentifierValue = value; AdditionalData?.Remove("TaxpayerIdentifierValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TaxpayerIdentifierValue"); else _explicitNullProperties?.Remove("TaxpayerIdentifierValue"); } }
         private string _explicitNullValueTaxpayerIdentifierValue = default!;
 #endif
         /// <summary>
@@ -62,7 +64,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "TaxpayerIdentifierType", n => { TaxpayerIdentifierType = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TaxpayerIdentifierType>(); } },
+                { "TaxpayerIdentifierType", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TaxpayerIdentifierType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTaxpayerIdentifierType = default; _explicitNullProperties?.Remove("TaxpayerIdentifierType"); AdditionalData["TaxpayerIdentifierType"] = unknown; } else { TaxpayerIdentifierType = parsed; AdditionalData.Remove("TaxpayerIdentifierType"); } } },
                 { "TaxpayerIdentifierValue", n => { TaxpayerIdentifierValue = n.GetStringValue(); } },
             };
         }

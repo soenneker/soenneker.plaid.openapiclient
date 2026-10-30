@@ -18,94 +18,105 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
-            if (parseNode.GetChildNode("notificationId") is { } nullNodeNotificationId && nullNodeNotificationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationId = null;
-            if (parseNode.GetChildNode("notificationPayload") is { } nullNodeNotificationPayload && nullNodeNotificationPayload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationPayload = null;
-            if (parseNode.GetChildNode("priority") is { } nullNodePriority && nullNodePriority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priority = null;
-            if (parseNode.GetChildNode("publisher") is { } nullNodePublisher && nullNodePublisher.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Publisher = null;
-            if (parseNode.GetChildNode("sentOn") is { } nullNodeSentOn && nullNodeSentOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentOn = null;
-            if (parseNode.GetChildNode("severity") is { } nullNodeSeverity && nullNodeSeverity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Severity = null;
-            if (parseNode.GetChildNode("subscriber") is { } nullNodeSubscriber && nullNodeSubscriber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subscriber = null;
-            if (parseNode.GetChildNode("subtype") is { } nullNodeSubtype && nullNodeSubtype.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subtype = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
-            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("category") is null) { _explicitNullValueCategory = default!; _explicitNullProperties?.Remove("category"); }
+            else if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
+            if (parseNode.GetChildNode("notificationId") is null) { _explicitNullValueNotificationId = default!; _explicitNullProperties?.Remove("notificationId"); }
+            else if (parseNode.GetChildNode("notificationId") is { } nullNodeNotificationId && nullNodeNotificationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationId = null;
+            if (parseNode.GetChildNode("notificationPayload") is null) { _explicitNullValueNotificationPayload = default!; _explicitNullProperties?.Remove("notificationPayload"); }
+            else if (parseNode.GetChildNode("notificationPayload") is { } nullNodeNotificationPayload && nullNodeNotificationPayload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationPayload = null;
+            if (parseNode.GetChildNode("priority") is null) { _explicitNullValuePriority = default!; _explicitNullProperties?.Remove("priority"); }
+            else if (parseNode.GetChildNode("priority") is { } nullNodePriority && nullNodePriority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priority = null;
+            if (parseNode.GetChildNode("publisher") is null) { _explicitNullValuePublisher = default!; _explicitNullProperties?.Remove("publisher"); }
+            else if (parseNode.GetChildNode("publisher") is { } nullNodePublisher && nullNodePublisher.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Publisher = null;
+            if (parseNode.GetChildNode("sentOn") is null) { _explicitNullValueSentOn = default!; _explicitNullProperties?.Remove("sentOn"); }
+            else if (parseNode.GetChildNode("sentOn") is { } nullNodeSentOn && nullNodeSentOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentOn = null;
+            if (parseNode.GetChildNode("severity") is null) { _explicitNullValueSeverity = default!; _explicitNullProperties?.Remove("severity"); }
+            else if (parseNode.GetChildNode("severity") is { } nullNodeSeverity && nullNodeSeverity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Severity = null;
+            if (parseNode.GetChildNode("subscriber") is null) { _explicitNullValueSubscriber = default!; _explicitNullProperties?.Remove("subscriber"); }
+            else if (parseNode.GetChildNode("subscriber") is { } nullNodeSubscriber && nullNodeSubscriber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subscriber = null;
+            if (parseNode.GetChildNode("subtype") is null) { _explicitNullValueSubtype = default!; _explicitNullProperties?.Remove("subtype"); }
+            else if (parseNode.GetChildNode("subtype") is { } nullNodeSubtype && nullNodeSubtype.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subtype = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Category of Notification</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationCategory? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationCategory? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; AdditionalData?.Remove("category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationCategory? _explicitNullValueCategory = default!;
         /// <summary>Id of notification</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotificationId { get => _explicitNullValueNotificationId; set { _explicitNullValueNotificationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationId"); else _explicitNullProperties?.Remove("notificationId"); } }
+        public string? NotificationId { get => _explicitNullValueNotificationId; set { _explicitNullValueNotificationId = value; AdditionalData?.Remove("notificationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationId"); else _explicitNullProperties?.Remove("notificationId"); } }
         private string? _explicitNullValueNotificationId = default!;
 #nullable restore
 #else
-        public string NotificationId { get => _explicitNullValueNotificationId; set { _explicitNullValueNotificationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationId"); else _explicitNullProperties?.Remove("notificationId"); } }
+        public string NotificationId { get => _explicitNullValueNotificationId; set { _explicitNullValueNotificationId = value; AdditionalData?.Remove("notificationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationId"); else _explicitNullProperties?.Remove("notificationId"); } }
         private string _explicitNullValueNotificationId = default!;
 #endif
         /// <summary>Custom key-value pairs payload for a notification</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationPayload? NotificationPayload { get => _explicitNullValueNotificationPayload; set { _explicitNullValueNotificationPayload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationPayload"); else _explicitNullProperties?.Remove("notificationPayload"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationPayload? NotificationPayload { get => _explicitNullValueNotificationPayload; set { _explicitNullValueNotificationPayload = value; AdditionalData?.Remove("notificationPayload"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationPayload"); else _explicitNullProperties?.Remove("notificationPayload"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationPayload? _explicitNullValueNotificationPayload = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationPayload NotificationPayload { get => _explicitNullValueNotificationPayload; set { _explicitNullValueNotificationPayload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationPayload"); else _explicitNullProperties?.Remove("notificationPayload"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationPayload NotificationPayload { get => _explicitNullValueNotificationPayload; set { _explicitNullValueNotificationPayload = value; AdditionalData?.Remove("notificationPayload"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationPayload"); else _explicitNullProperties?.Remove("notificationPayload"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationPayload _explicitNullValueNotificationPayload = default!;
 #endif
         /// <summary>Priority of notification</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationPriority? Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationPriority? Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; AdditionalData?.Remove("priority"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationPriority? _explicitNullValuePriority = default!;
         /// <summary>FDX Participant - an entity or person that is a part of a FDX API transaction</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.FdxParty? Publisher { get => _explicitNullValuePublisher; set { _explicitNullValuePublisher = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publisher"); else _explicitNullProperties?.Remove("publisher"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FdxParty? Publisher { get => _explicitNullValuePublisher; set { _explicitNullValuePublisher = value; AdditionalData?.Remove("publisher"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publisher"); else _explicitNullProperties?.Remove("publisher"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.FdxParty? _explicitNullValuePublisher = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.FdxParty Publisher { get => _explicitNullValuePublisher; set { _explicitNullValuePublisher = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publisher"); else _explicitNullProperties?.Remove("publisher"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FdxParty Publisher { get => _explicitNullValuePublisher; set { _explicitNullValuePublisher = value; AdditionalData?.Remove("publisher"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publisher"); else _explicitNullProperties?.Remove("publisher"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.FdxParty _explicitNullValuePublisher = default!;
 #endif
         /// <summary>ISO 8601 date-time in format &apos;YYYY-MM-DDThh:mm:ss.nnn[Z|[+|-]hh:mm]&apos; according to [IETF RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)</summary>
-        public DateTimeOffset? SentOn { get => _explicitNullValueSentOn; set { _explicitNullValueSentOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentOn"); else _explicitNullProperties?.Remove("sentOn"); } }
+        public DateTimeOffset? SentOn { get => _explicitNullValueSentOn; set { _explicitNullValueSentOn = value; AdditionalData?.Remove("sentOn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentOn"); else _explicitNullProperties?.Remove("sentOn"); } }
         private DateTimeOffset? _explicitNullValueSentOn = default!;
         /// <summary>Severity level of notification</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationSeverity? Severity { get => _explicitNullValueSeverity; set { _explicitNullValueSeverity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("severity"); else _explicitNullProperties?.Remove("severity"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationSeverity? Severity { get => _explicitNullValueSeverity; set { _explicitNullValueSeverity = value; AdditionalData?.Remove("severity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("severity"); else _explicitNullProperties?.Remove("severity"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationSeverity? _explicitNullValueSeverity = default!;
         /// <summary>FDX Participant - an entity or person that is a part of a FDX API transaction</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.FdxParty? Subscriber { get => _explicitNullValueSubscriber; set { _explicitNullValueSubscriber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriber"); else _explicitNullProperties?.Remove("subscriber"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FdxParty? Subscriber { get => _explicitNullValueSubscriber; set { _explicitNullValueSubscriber = value; AdditionalData?.Remove("subscriber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriber"); else _explicitNullProperties?.Remove("subscriber"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.FdxParty? _explicitNullValueSubscriber = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.FdxParty Subscriber { get => _explicitNullValueSubscriber; set { _explicitNullValueSubscriber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriber"); else _explicitNullProperties?.Remove("subscriber"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FdxParty Subscriber { get => _explicitNullValueSubscriber; set { _explicitNullValueSubscriber = value; AdditionalData?.Remove("subscriber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriber"); else _explicitNullProperties?.Remove("subscriber"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.FdxParty _explicitNullValueSubscriber = default!;
 #endif
         /// <summary>An optional initiator-defined event subtype code or description if the event type needs to be further categorized or described.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subtype { get => _explicitNullValueSubtype; set { _explicitNullValueSubtype = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtype"); else _explicitNullProperties?.Remove("subtype"); } }
+        public string? Subtype { get => _explicitNullValueSubtype; set { _explicitNullValueSubtype = value; AdditionalData?.Remove("subtype"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtype"); else _explicitNullProperties?.Remove("subtype"); } }
         private string? _explicitNullValueSubtype = default!;
 #nullable restore
 #else
-        public string Subtype { get => _explicitNullValueSubtype; set { _explicitNullValueSubtype = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtype"); else _explicitNullProperties?.Remove("subtype"); } }
+        public string Subtype { get => _explicitNullValueSubtype; set { _explicitNullValueSubtype = value; AdditionalData?.Remove("subtype"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtype"); else _explicitNullProperties?.Remove("subtype"); } }
         private string _explicitNullValueSubtype = default!;
 #endif
         /// <summary>Type of Notification</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationType? _explicitNullValueType = default!;
         /// <summary>REST application constraint (Hypermedia As The Engine Of Application State)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.FdxHateoasLink? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FdxHateoasLink? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.FdxHateoasLink? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.FdxHateoasLink Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FdxHateoasLink Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.FdxHateoasLink _explicitNullValueUrl = default!;
 #endif
         /// <summary>
@@ -133,16 +144,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "category", n => { Category = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationCategory>(); } },
+                { "category", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationCategory>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCategory = default; _explicitNullProperties?.Remove("category"); AdditionalData["category"] = unknown; } else { Category = parsed; AdditionalData.Remove("category"); } } },
                 { "notificationId", n => { NotificationId = n.GetStringValue(); } },
                 { "notificationPayload", n => { NotificationPayload = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationPayload>(global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationPayload.CreateFromDiscriminatorValue); } },
-                { "priority", n => { Priority = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationPriority>(); } },
+                { "priority", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationPriority>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePriority = default; _explicitNullProperties?.Remove("priority"); AdditionalData["priority"] = unknown; } else { Priority = parsed; AdditionalData.Remove("priority"); } } },
                 { "publisher", n => { Publisher = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.FdxParty>(global::Soenneker.Plaid.OpenApiClient.Models.FdxParty.CreateFromDiscriminatorValue); } },
                 { "sentOn", n => { SentOn = n.GetDateTimeOffsetValue(); } },
-                { "severity", n => { Severity = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationSeverity>(); } },
+                { "severity", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationSeverity>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSeverity = default; _explicitNullProperties?.Remove("severity"); AdditionalData["severity"] = unknown; } else { Severity = parsed; AdditionalData.Remove("severity"); } } },
                 { "subscriber", n => { Subscriber = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.FdxParty>(global::Soenneker.Plaid.OpenApiClient.Models.FdxParty.CreateFromDiscriminatorValue); } },
                 { "subtype", n => { Subtype = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FdxNotificationType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "url", n => { Url = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.FdxHateoasLink>(global::Soenneker.Plaid.OpenApiClient.Models.FdxHateoasLink.CreateFromDiscriminatorValue); } },
             };
         }

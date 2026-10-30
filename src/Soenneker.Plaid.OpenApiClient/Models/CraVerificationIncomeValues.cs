@@ -18,17 +18,19 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("gross_income") is { } nullNodeGrossIncome && nullNodeGrossIncome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrossIncome = null;
-            if (parseNode.GetChildNode("net_income") is { } nullNodeNetIncome && nullNodeNetIncome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetIncome = null;
+            if (parseNode.GetChildNode("gross_income") is null) { _explicitNullValueGrossIncome = default!; _explicitNullProperties?.Remove("gross_income"); }
+            else if (parseNode.GetChildNode("gross_income") is { } nullNodeGrossIncome && nullNodeGrossIncome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrossIncome = null;
+            if (parseNode.GetChildNode("net_income") is null) { _explicitNullValueNetIncome = default!; _explicitNullProperties?.Remove("net_income"); }
+            else if (parseNode.GetChildNode("net_income") is { } nullNodeNetIncome && nullNodeNetIncome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetIncome = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Gross Income modeled from trends of observed transactions.</summary>
-        public double? GrossIncome { get => _explicitNullValueGrossIncome; set { _explicitNullValueGrossIncome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gross_income"); else _explicitNullProperties?.Remove("gross_income"); } }
+        public double? GrossIncome { get => _explicitNullValueGrossIncome; set { _explicitNullValueGrossIncome = value; AdditionalData?.Remove("gross_income"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gross_income"); else _explicitNullProperties?.Remove("gross_income"); } }
         private double? _explicitNullValueGrossIncome = default!;
         /// <summary>Net Income estimated from observed transactions.</summary>
-        public double? NetIncome { get => _explicitNullValueNetIncome; set { _explicitNullValueNetIncome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("net_income"); else _explicitNullProperties?.Remove("net_income"); } }
+        public double? NetIncome { get => _explicitNullValueNetIncome; set { _explicitNullValueNetIncome = value; AdditionalData?.Remove("net_income"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("net_income"); else _explicitNullProperties?.Remove("net_income"); } }
         private double? _explicitNullValueNetIncome = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeValues"/> and sets the default values.

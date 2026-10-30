@@ -18,13 +18,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("is_valid") is { } nullNodeIsValid && nullNodeIsValid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsValid = null;
+            if (parseNode.GetChildNode("is_valid") is null) { _explicitNullValueIsValid = default!; _explicitNullProperties?.Remove("is_valid"); }
+            else if (parseNode.GetChildNode("is_valid") is { } nullNodeIsValid && nullNodeIsValid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsValid = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Tri-state boolean status, where `no_data` indicates the check could not determine a value.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus? IsValid { get => _explicitNullValueIsValid; set { _explicitNullValueIsValid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_valid"); else _explicitNullProperties?.Remove("is_valid"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus? IsValid { get => _explicitNullValueIsValid; set { _explicitNullValueIsValid = value; AdditionalData?.Remove("is_valid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_valid"); else _explicitNullProperties?.Remove("is_valid"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus? _explicitNullValueIsValid = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSsl"/> and sets the default values.
@@ -51,7 +52,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "is_valid", n => { IsValid = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus>(); } },
+                { "is_valid", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIsValid = default; _explicitNullProperties?.Remove("is_valid"); AdditionalData["is_valid"] = unknown; } else { IsValid = parsed; AdditionalData.Remove("is_valid"); } } },
             };
         }
         /// <summary>

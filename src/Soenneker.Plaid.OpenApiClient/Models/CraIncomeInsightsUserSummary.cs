@@ -18,7 +18,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("income_metrics") is { } nullNodeIncomeMetrics && nullNodeIncomeMetrics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeMetrics = null;
+            if (parseNode.GetChildNode("income_metrics") is null) { _explicitNullValueIncomeMetrics = default!; _explicitNullProperties?.Remove("income_metrics"); }
+            else if (parseNode.GetChildNode("income_metrics") is { } nullNodeIncomeMetrics && nullNodeIncomeMetrics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeMetrics = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>List of a user&apos;s aggregated income metrics for each currency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeMetrics>? IncomeMetrics { get => _explicitNullValueIncomeMetrics; set { _explicitNullValueIncomeMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_metrics"); else _explicitNullProperties?.Remove("income_metrics"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeMetrics>? IncomeMetrics { get => _explicitNullValueIncomeMetrics; set { _explicitNullValueIncomeMetrics = value; AdditionalData?.Remove("income_metrics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_metrics"); else _explicitNullProperties?.Remove("income_metrics"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeMetrics>? _explicitNullValueIncomeMetrics = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeMetrics> IncomeMetrics { get => _explicitNullValueIncomeMetrics; set { _explicitNullValueIncomeMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_metrics"); else _explicitNullProperties?.Remove("income_metrics"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeMetrics> IncomeMetrics { get => _explicitNullValueIncomeMetrics; set { _explicitNullValueIncomeMetrics = value; AdditionalData?.Remove("income_metrics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_metrics"); else _explicitNullProperties?.Remove("income_metrics"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeMetrics> _explicitNullValueIncomeMetrics = default!;
 #endif
         /// <summary>

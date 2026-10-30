@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("test_clock_id") is { } nullNodeTestClockId && nullNodeTestClockId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestClockId = null;
-            if (parseNode.GetChildNode("virtual_time") is { } nullNodeVirtualTime && nullNodeVirtualTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VirtualTime = null;
+            if (parseNode.GetChildNode("test_clock_id") is null) { _explicitNullValueTestClockId = default!; _explicitNullProperties?.Remove("test_clock_id"); }
+            else if (parseNode.GetChildNode("test_clock_id") is { } nullNodeTestClockId && nullNodeTestClockId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestClockId = null;
+            if (parseNode.GetChildNode("virtual_time") is null) { _explicitNullValueVirtualTime = default!; _explicitNullProperties?.Remove("virtual_time"); }
+            else if (parseNode.GetChildNode("virtual_time") is { } nullNodeVirtualTime && nullNodeVirtualTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VirtualTime = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Plaid&apos;s unique identifier for a test clock. For more details, see [Simulating recurring transfers](https://plaid.com/docs/transfer/sandbox/#simulating-recurring-transfers).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TestClockId { get => _explicitNullValueTestClockId; set { _explicitNullValueTestClockId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test_clock_id"); else _explicitNullProperties?.Remove("test_clock_id"); } }
+        public string? TestClockId { get => _explicitNullValueTestClockId; set { _explicitNullValueTestClockId = value; AdditionalData?.Remove("test_clock_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test_clock_id"); else _explicitNullProperties?.Remove("test_clock_id"); } }
         private string? _explicitNullValueTestClockId = default!;
 #nullable restore
 #else
-        public string TestClockId { get => _explicitNullValueTestClockId; set { _explicitNullValueTestClockId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test_clock_id"); else _explicitNullProperties?.Remove("test_clock_id"); } }
+        public string TestClockId { get => _explicitNullValueTestClockId; set { _explicitNullValueTestClockId = value; AdditionalData?.Remove("test_clock_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test_clock_id"); else _explicitNullProperties?.Remove("test_clock_id"); } }
         private string _explicitNullValueTestClockId = default!;
 #endif
         /// <summary>The virtual timestamp on the test clock. This will be of the form `2006-01-02T15:04:05Z`.</summary>
-        public DateTimeOffset? VirtualTime { get => _explicitNullValueVirtualTime; set { _explicitNullValueVirtualTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("virtual_time"); else _explicitNullProperties?.Remove("virtual_time"); } }
+        public DateTimeOffset? VirtualTime { get => _explicitNullValueVirtualTime; set { _explicitNullValueVirtualTime = value; AdditionalData?.Remove("virtual_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("virtual_time"); else _explicitNullProperties?.Remove("virtual_time"); } }
         private DateTimeOffset? _explicitNullValueVirtualTime = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransferTestClock"/> and sets the default values.

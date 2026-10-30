@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("historical_balances") is { } nullNodeHistoricalBalances && nullNodeHistoricalBalances.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HistoricalBalances = null;
-            if (parseNode.GetChildNode("monthly_summaries") is { } nullNodeMonthlySummaries && nullNodeMonthlySummaries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonthlySummaries = null;
+            if (parseNode.GetChildNode("historical_balances") is null) { _explicitNullValueHistoricalBalances = default!; _explicitNullProperties?.Remove("historical_balances"); }
+            else if (parseNode.GetChildNode("historical_balances") is { } nullNodeHistoricalBalances && nullNodeHistoricalBalances.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HistoricalBalances = null;
+            if (parseNode.GetChildNode("monthly_summaries") is null) { _explicitNullValueMonthlySummaries = default!; _explicitNullProperties?.Remove("monthly_summaries"); }
+            else if (parseNode.GetChildNode("monthly_summaries") is { } nullNodeMonthlySummaries && nullNodeMonthlySummaries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonthlySummaries = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Calculated data about the historical balances on the account.Available for `credit` and `depository` type accounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportHistoricalBalance>? HistoricalBalances { get => _explicitNullValueHistoricalBalances; set { _explicitNullValueHistoricalBalances = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("historical_balances"); else _explicitNullProperties?.Remove("historical_balances"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportHistoricalBalance>? HistoricalBalances { get => _explicitNullValueHistoricalBalances; set { _explicitNullValueHistoricalBalances = value; AdditionalData?.Remove("historical_balances"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("historical_balances"); else _explicitNullProperties?.Remove("historical_balances"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportHistoricalBalance>? _explicitNullValueHistoricalBalances = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportHistoricalBalance> HistoricalBalances { get => _explicitNullValueHistoricalBalances; set { _explicitNullValueHistoricalBalances = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("historical_balances"); else _explicitNullProperties?.Remove("historical_balances"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportHistoricalBalance> HistoricalBalances { get => _explicitNullValueHistoricalBalances; set { _explicitNullValueHistoricalBalances = value; AdditionalData?.Remove("historical_balances"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("historical_balances"); else _explicitNullProperties?.Remove("historical_balances"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportHistoricalBalance> _explicitNullValueHistoricalBalances = default!;
 #endif
         /// <summary>Monthly summary statistics derived from transaction-level data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummary>? MonthlySummaries { get => _explicitNullValueMonthlySummaries; set { _explicitNullValueMonthlySummaries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_summaries"); else _explicitNullProperties?.Remove("monthly_summaries"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummary>? MonthlySummaries { get => _explicitNullValueMonthlySummaries; set { _explicitNullValueMonthlySummaries = value; AdditionalData?.Remove("monthly_summaries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_summaries"); else _explicitNullProperties?.Remove("monthly_summaries"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummary>? _explicitNullValueMonthlySummaries = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummary> MonthlySummaries { get => _explicitNullValueMonthlySummaries; set { _explicitNullValueMonthlySummaries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_summaries"); else _explicitNullProperties?.Remove("monthly_summaries"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummary> MonthlySummaries { get => _explicitNullValueMonthlySummaries; set { _explicitNullValueMonthlySummaries = value; AdditionalData?.Remove("monthly_summaries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_summaries"); else _explicitNullProperties?.Remove("monthly_summaries"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummary> _explicitNullValueMonthlySummaries = default!;
 #endif
         /// <summary>

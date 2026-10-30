@@ -18,7 +18,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("use_cases") is { } nullNodeUseCases && nullNodeUseCases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseCases = null;
+            if (parseNode.GetChildNode("use_cases") is null) { _explicitNullValueUseCases = default!; _explicitNullProperties?.Remove("use_cases"); }
+            else if (parseNode.GetChildNode("use_cases") is { } nullNodeUseCases && nullNodeUseCases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseCases = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>List of use cases for the given permissible purpose.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCase?>? UseCases { get => _explicitNullValueUseCases; set { _explicitNullValueUseCases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_cases"); else _explicitNullProperties?.Remove("use_cases"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCase?>? UseCases { get => _explicitNullValueUseCases; set { _explicitNullValueUseCases = value; AdditionalData?.Remove("use_cases"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_cases"); else _explicitNullProperties?.Remove("use_cases"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCase?>? _explicitNullValueUseCases = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCase?> UseCases { get => _explicitNullValueUseCases; set { _explicitNullValueUseCases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_cases"); else _explicitNullProperties?.Remove("use_cases"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCase?> UseCases { get => _explicitNullValueUseCases; set { _explicitNullValueUseCases = value; AdditionalData?.Remove("use_cases"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_cases"); else _explicitNullProperties?.Remove("use_cases"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCase?> _explicitNullValueUseCases = default!;
 #endif
         /// <summary>

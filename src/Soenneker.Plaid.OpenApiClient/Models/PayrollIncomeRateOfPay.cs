@@ -18,23 +18,25 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("pay_amount") is { } nullNodePayAmount && nullNodePayAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayAmount = null;
-            if (parseNode.GetChildNode("pay_rate") is { } nullNodePayRate && nullNodePayRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayRate = null;
+            if (parseNode.GetChildNode("pay_amount") is null) { _explicitNullValuePayAmount = default!; _explicitNullProperties?.Remove("pay_amount"); }
+            else if (parseNode.GetChildNode("pay_amount") is { } nullNodePayAmount && nullNodePayAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayAmount = null;
+            if (parseNode.GetChildNode("pay_rate") is null) { _explicitNullValuePayRate = default!; _explicitNullProperties?.Remove("pay_rate"); }
+            else if (parseNode.GetChildNode("pay_rate") is { } nullNodePayRate && nullNodePayRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayRate = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount at which an employee is paid.</summary>
-        public double? PayAmount { get => _explicitNullValuePayAmount; set { _explicitNullValuePayAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_amount"); else _explicitNullProperties?.Remove("pay_amount"); } }
+        public double? PayAmount { get => _explicitNullValuePayAmount; set { _explicitNullValuePayAmount = value; AdditionalData?.Remove("pay_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_amount"); else _explicitNullProperties?.Remove("pay_amount"); } }
         private double? _explicitNullValuePayAmount = default!;
         /// <summary>The rate at which an employee is paid.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayRate { get => _explicitNullValuePayRate; set { _explicitNullValuePayRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_rate"); else _explicitNullProperties?.Remove("pay_rate"); } }
+        public string? PayRate { get => _explicitNullValuePayRate; set { _explicitNullValuePayRate = value; AdditionalData?.Remove("pay_rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_rate"); else _explicitNullProperties?.Remove("pay_rate"); } }
         private string? _explicitNullValuePayRate = default!;
 #nullable restore
 #else
-        public string PayRate { get => _explicitNullValuePayRate; set { _explicitNullValuePayRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_rate"); else _explicitNullProperties?.Remove("pay_rate"); } }
+        public string PayRate { get => _explicitNullValuePayRate; set { _explicitNullValuePayRate = value; AdditionalData?.Remove("pay_rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_rate"); else _explicitNullProperties?.Remove("pay_rate"); } }
         private string _explicitNullValuePayRate = default!;
 #endif
         /// <summary>

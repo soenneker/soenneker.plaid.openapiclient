@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("income_streams") is { } nullNodeIncomeStreams && nullNodeIncomeStreams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeStreams = null;
-            if (parseNode.GetChildNode("user_summary") is { } nullNodeUserSummary && nullNodeUserSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserSummary = null;
+            if (parseNode.GetChildNode("income_streams") is null) { _explicitNullValueIncomeStreams = default!; _explicitNullProperties?.Remove("income_streams"); }
+            else if (parseNode.GetChildNode("income_streams") is { } nullNodeIncomeStreams && nullNodeIncomeStreams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeStreams = null;
+            if (parseNode.GetChildNode("user_summary") is null) { _explicitNullValueUserSummary = default!; _explicitNullProperties?.Remove("user_summary"); }
+            else if (parseNode.GetChildNode("user_summary") is { } nullNodeUserSummary && nullNodeUserSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserSummary = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The income streams detected for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetIncomeInsightsStream>? IncomeStreams { get => _explicitNullValueIncomeStreams; set { _explicitNullValueIncomeStreams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_streams"); else _explicitNullProperties?.Remove("income_streams"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetIncomeInsightsStream>? IncomeStreams { get => _explicitNullValueIncomeStreams; set { _explicitNullValueIncomeStreams = value; AdditionalData?.Remove("income_streams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_streams"); else _explicitNullProperties?.Remove("income_streams"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetIncomeInsightsStream>? _explicitNullValueIncomeStreams = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetIncomeInsightsStream> IncomeStreams { get => _explicitNullValueIncomeStreams; set { _explicitNullValueIncomeStreams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_streams"); else _explicitNullProperties?.Remove("income_streams"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetIncomeInsightsStream> IncomeStreams { get => _explicitNullValueIncomeStreams; set { _explicitNullValueIncomeStreams = value; AdditionalData?.Remove("income_streams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_streams"); else _explicitNullProperties?.Remove("income_streams"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetIncomeInsightsStream> _explicitNullValueIncomeStreams = default!;
 #endif
         /// <summary>Aggregated summary of all income streams for this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeInsightsUserSummary? UserSummary { get => _explicitNullValueUserSummary; set { _explicitNullValueUserSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_summary"); else _explicitNullProperties?.Remove("user_summary"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeInsightsUserSummary? UserSummary { get => _explicitNullValueUserSummary; set { _explicitNullValueUserSummary = value; AdditionalData?.Remove("user_summary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_summary"); else _explicitNullProperties?.Remove("user_summary"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeInsightsUserSummary? _explicitNullValueUserSummary = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeInsightsUserSummary UserSummary { get => _explicitNullValueUserSummary; set { _explicitNullValueUserSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_summary"); else _explicitNullProperties?.Remove("user_summary"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeInsightsUserSummary UserSummary { get => _explicitNullValueUserSummary; set { _explicitNullValueUserSummary = value; AdditionalData?.Remove("user_summary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_summary"); else _explicitNullProperties?.Remove("user_summary"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraIncomeInsightsUserSummary _explicitNullValueUserSummary = default!;
 #endif
         /// <summary>

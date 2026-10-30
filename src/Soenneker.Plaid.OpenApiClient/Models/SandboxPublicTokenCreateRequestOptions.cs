@@ -18,12 +18,18 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("income_verification") is { } nullNodeIncomeVerification && nullNodeIncomeVerification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeVerification = null;
-            if (parseNode.GetChildNode("override_password") is { } nullNodeOverridePassword && nullNodeOverridePassword.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverridePassword = null;
-            if (parseNode.GetChildNode("override_username") is { } nullNodeOverrideUsername && nullNodeOverrideUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverrideUsername = null;
-            if (parseNode.GetChildNode("statements") is { } nullNodeStatements && nullNodeStatements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Statements = null;
-            if (parseNode.GetChildNode("transactions") is { } nullNodeTransactions && nullNodeTransactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transactions = null;
-            if (parseNode.GetChildNode("webhook") is { } nullNodeWebhook && nullNodeWebhook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webhook = null;
+            if (parseNode.GetChildNode("income_verification") is null) { _explicitNullValueIncomeVerification = default!; _explicitNullProperties?.Remove("income_verification"); }
+            else if (parseNode.GetChildNode("income_verification") is { } nullNodeIncomeVerification && nullNodeIncomeVerification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeVerification = null;
+            if (parseNode.GetChildNode("override_password") is null) { _explicitNullValueOverridePassword = default!; _explicitNullProperties?.Remove("override_password"); }
+            else if (parseNode.GetChildNode("override_password") is { } nullNodeOverridePassword && nullNodeOverridePassword.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverridePassword = null;
+            if (parseNode.GetChildNode("override_username") is null) { _explicitNullValueOverrideUsername = default!; _explicitNullProperties?.Remove("override_username"); }
+            else if (parseNode.GetChildNode("override_username") is { } nullNodeOverrideUsername && nullNodeOverrideUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverrideUsername = null;
+            if (parseNode.GetChildNode("statements") is null) { _explicitNullValueStatements = default!; _explicitNullProperties?.Remove("statements"); }
+            else if (parseNode.GetChildNode("statements") is { } nullNodeStatements && nullNodeStatements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Statements = null;
+            if (parseNode.GetChildNode("transactions") is null) { _explicitNullValueTransactions = default!; _explicitNullProperties?.Remove("transactions"); }
+            else if (parseNode.GetChildNode("transactions") is { } nullNodeTransactions && nullNodeTransactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transactions = null;
+            if (parseNode.GetChildNode("webhook") is null) { _explicitNullValueWebhook = default!; _explicitNullProperties?.Remove("webhook"); }
+            else if (parseNode.GetChildNode("webhook") is { } nullNodeWebhook && nullNodeWebhook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webhook = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,61 +37,61 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>A set of parameters for income verification options. This field is required if `income_verification` is included in the `initial_products` array.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxPublicTokenCreateRequestOptionsIncomeVerification? IncomeVerification { get => _explicitNullValueIncomeVerification; set { _explicitNullValueIncomeVerification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_verification"); else _explicitNullProperties?.Remove("income_verification"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxPublicTokenCreateRequestOptionsIncomeVerification? IncomeVerification { get => _explicitNullValueIncomeVerification; set { _explicitNullValueIncomeVerification = value; AdditionalData?.Remove("income_verification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_verification"); else _explicitNullProperties?.Remove("income_verification"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.SandboxPublicTokenCreateRequestOptionsIncomeVerification? _explicitNullValueIncomeVerification = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxPublicTokenCreateRequestOptionsIncomeVerification IncomeVerification { get => _explicitNullValueIncomeVerification; set { _explicitNullValueIncomeVerification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_verification"); else _explicitNullProperties?.Remove("income_verification"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxPublicTokenCreateRequestOptionsIncomeVerification IncomeVerification { get => _explicitNullValueIncomeVerification; set { _explicitNullValueIncomeVerification = value; AdditionalData?.Remove("income_verification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_verification"); else _explicitNullProperties?.Remove("income_verification"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.SandboxPublicTokenCreateRequestOptionsIncomeVerification _explicitNullValueIncomeVerification = default!;
 #endif
         /// <summary>Test password to use for the creation of the Sandbox Item. Default value is `pass_good`. You can also use a custom test user — reference one configured in the Dashboard via `override_username`, or set `override_username` to `user_custom` and pass the JSON-stringified custom user configuration object as this field to define one entirely via API. See [Sandbox Custom Users](https://plaid.com/docs/sandbox/user-custom) for more details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OverridePassword { get => _explicitNullValueOverridePassword; set { _explicitNullValueOverridePassword = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("override_password"); else _explicitNullProperties?.Remove("override_password"); } }
+        public string? OverridePassword { get => _explicitNullValueOverridePassword; set { _explicitNullValueOverridePassword = value; AdditionalData?.Remove("override_password"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("override_password"); else _explicitNullProperties?.Remove("override_password"); } }
         private string? _explicitNullValueOverridePassword = default!;
 #nullable restore
 #else
-        public string OverridePassword { get => _explicitNullValueOverridePassword; set { _explicitNullValueOverridePassword = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("override_password"); else _explicitNullProperties?.Remove("override_password"); } }
+        public string OverridePassword { get => _explicitNullValueOverridePassword; set { _explicitNullValueOverridePassword = value; AdditionalData?.Remove("override_password"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("override_password"); else _explicitNullProperties?.Remove("override_password"); } }
         private string _explicitNullValueOverridePassword = default!;
 #endif
         /// <summary>Test username to use for the creation of the Sandbox Item. Default value is `user_good`. You can also use a custom test user — either set this to the username of a custom user configured in the Dashboard, or set it to `user_custom` and pass the JSON-stringified custom user configuration object as `override_password` to define one entirely via API. See [Sandbox Custom Users](https://plaid.com/docs/sandbox/user-custom) for more details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OverrideUsername { get => _explicitNullValueOverrideUsername; set { _explicitNullValueOverrideUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("override_username"); else _explicitNullProperties?.Remove("override_username"); } }
+        public string? OverrideUsername { get => _explicitNullValueOverrideUsername; set { _explicitNullValueOverrideUsername = value; AdditionalData?.Remove("override_username"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("override_username"); else _explicitNullProperties?.Remove("override_username"); } }
         private string? _explicitNullValueOverrideUsername = default!;
 #nullable restore
 #else
-        public string OverrideUsername { get => _explicitNullValueOverrideUsername; set { _explicitNullValueOverrideUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("override_username"); else _explicitNullProperties?.Remove("override_username"); } }
+        public string OverrideUsername { get => _explicitNullValueOverrideUsername; set { _explicitNullValueOverrideUsername = value; AdditionalData?.Remove("override_username"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("override_username"); else _explicitNullProperties?.Remove("override_username"); } }
         private string _explicitNullValueOverrideUsername = default!;
 #endif
         /// <summary>An optional set of parameters corresponding to statements options.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxPublicTokenCreateRequestOptionsStatements? Statements { get => _explicitNullValueStatements; set { _explicitNullValueStatements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statements"); else _explicitNullProperties?.Remove("statements"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxPublicTokenCreateRequestOptionsStatements? Statements { get => _explicitNullValueStatements; set { _explicitNullValueStatements = value; AdditionalData?.Remove("statements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statements"); else _explicitNullProperties?.Remove("statements"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.SandboxPublicTokenCreateRequestOptionsStatements? _explicitNullValueStatements = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxPublicTokenCreateRequestOptionsStatements Statements { get => _explicitNullValueStatements; set { _explicitNullValueStatements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statements"); else _explicitNullProperties?.Remove("statements"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxPublicTokenCreateRequestOptionsStatements Statements { get => _explicitNullValueStatements; set { _explicitNullValueStatements = value; AdditionalData?.Remove("statements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statements"); else _explicitNullProperties?.Remove("statements"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.SandboxPublicTokenCreateRequestOptionsStatements _explicitNullValueStatements = default!;
 #endif
         /// <summary>An optional set of parameters corresponding to transactions options.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxPublicTokenCreateRequestOptionsTransactions? Transactions { get => _explicitNullValueTransactions; set { _explicitNullValueTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactions"); else _explicitNullProperties?.Remove("transactions"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxPublicTokenCreateRequestOptionsTransactions? Transactions { get => _explicitNullValueTransactions; set { _explicitNullValueTransactions = value; AdditionalData?.Remove("transactions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactions"); else _explicitNullProperties?.Remove("transactions"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.SandboxPublicTokenCreateRequestOptionsTransactions? _explicitNullValueTransactions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxPublicTokenCreateRequestOptionsTransactions Transactions { get => _explicitNullValueTransactions; set { _explicitNullValueTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactions"); else _explicitNullProperties?.Remove("transactions"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxPublicTokenCreateRequestOptionsTransactions Transactions { get => _explicitNullValueTransactions; set { _explicitNullValueTransactions = value; AdditionalData?.Remove("transactions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactions"); else _explicitNullProperties?.Remove("transactions"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.SandboxPublicTokenCreateRequestOptionsTransactions _explicitNullValueTransactions = default!;
 #endif
         /// <summary>Specify a webhook to associate with the new Item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        public string? Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; AdditionalData?.Remove("webhook"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
         private string? _explicitNullValueWebhook = default!;
 #nullable restore
 #else
-        public string Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        public string Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; AdditionalData?.Remove("webhook"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
         private string _explicitNullValueWebhook = default!;
 #endif
         /// <summary>

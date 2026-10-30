@@ -18,11 +18,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("client_id") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
-            if (parseNode.GetChildNode("company_name") is { } nullNodeCompanyName && nullNodeCompanyName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyName = null;
-            if (parseNode.GetChildNode("product_statuses") is { } nullNodeProductStatuses && nullNodeProductStatuses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductStatuses = null;
-            if (parseNode.GetChildNode("requirements_due") is { } nullNodeRequirementsDue && nullNodeRequirementsDue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequirementsDue = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("client_id") is null) { _explicitNullValueClientId = default!; _explicitNullProperties?.Remove("client_id"); }
+            else if (parseNode.GetChildNode("client_id") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
+            if (parseNode.GetChildNode("company_name") is null) { _explicitNullValueCompanyName = default!; _explicitNullProperties?.Remove("company_name"); }
+            else if (parseNode.GetChildNode("company_name") is { } nullNodeCompanyName && nullNodeCompanyName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyName = null;
+            if (parseNode.GetChildNode("product_statuses") is null) { _explicitNullValueProductStatuses = default!; _explicitNullProperties?.Remove("product_statuses"); }
+            else if (parseNode.GetChildNode("product_statuses") is { } nullNodeProductStatuses && nullNodeProductStatuses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductStatuses = null;
+            if (parseNode.GetChildNode("requirements_due") is null) { _explicitNullValueRequirementsDue = default!; _explicitNullProperties?.Remove("requirements_due"); }
+            else if (parseNode.GetChildNode("requirements_due") is { } nullNodeRequirementsDue && nullNodeRequirementsDue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequirementsDue = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,45 +35,45 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The `client_id` of the end customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; AdditionalData?.Remove("client_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
         private string? _explicitNullValueClientId = default!;
 #nullable restore
 #else
-        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; AdditionalData?.Remove("client_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
         private string _explicitNullValueClientId = default!;
 #endif
         /// <summary>The company name associated with the end customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompanyName { get => _explicitNullValueCompanyName; set { _explicitNullValueCompanyName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company_name"); else _explicitNullProperties?.Remove("company_name"); } }
+        public string? CompanyName { get => _explicitNullValueCompanyName; set { _explicitNullValueCompanyName = value; AdditionalData?.Remove("company_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company_name"); else _explicitNullProperties?.Remove("company_name"); } }
         private string? _explicitNullValueCompanyName = default!;
 #nullable restore
 #else
-        public string CompanyName { get => _explicitNullValueCompanyName; set { _explicitNullValueCompanyName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company_name"); else _explicitNullProperties?.Remove("company_name"); } }
+        public string CompanyName { get => _explicitNullValueCompanyName; set { _explicitNullValueCompanyName = value; AdditionalData?.Remove("company_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company_name"); else _explicitNullProperties?.Remove("company_name"); } }
         private string _explicitNullValueCompanyName = default!;
 #endif
         /// <summary>Mapping of product names to their current status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BetaPartnerEndCustomerProductStatuses? ProductStatuses { get => _explicitNullValueProductStatuses; set { _explicitNullValueProductStatuses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product_statuses"); else _explicitNullProperties?.Remove("product_statuses"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BetaPartnerEndCustomerProductStatuses? ProductStatuses { get => _explicitNullValueProductStatuses; set { _explicitNullValueProductStatuses = value; AdditionalData?.Remove("product_statuses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product_statuses"); else _explicitNullProperties?.Remove("product_statuses"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.BetaPartnerEndCustomerProductStatuses? _explicitNullValueProductStatuses = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BetaPartnerEndCustomerProductStatuses ProductStatuses { get => _explicitNullValueProductStatuses; set { _explicitNullValueProductStatuses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product_statuses"); else _explicitNullProperties?.Remove("product_statuses"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BetaPartnerEndCustomerProductStatuses ProductStatuses { get => _explicitNullValueProductStatuses; set { _explicitNullValueProductStatuses = value; AdditionalData?.Remove("product_statuses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product_statuses"); else _explicitNullProperties?.Remove("product_statuses"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.BetaPartnerEndCustomerProductStatuses _explicitNullValueProductStatuses = default!;
 #endif
         /// <summary>A list of fields that are still required to be submitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerRequirementDue?>? RequirementsDue { get => _explicitNullValueRequirementsDue; set { _explicitNullValueRequirementsDue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requirements_due"); else _explicitNullProperties?.Remove("requirements_due"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerRequirementDue?>? RequirementsDue { get => _explicitNullValueRequirementsDue; set { _explicitNullValueRequirementsDue = value; AdditionalData?.Remove("requirements_due"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requirements_due"); else _explicitNullProperties?.Remove("requirements_due"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerRequirementDue?>? _explicitNullValueRequirementsDue = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerRequirementDue?> RequirementsDue { get => _explicitNullValueRequirementsDue; set { _explicitNullValueRequirementsDue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requirements_due"); else _explicitNullProperties?.Remove("requirements_due"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerRequirementDue?> RequirementsDue { get => _explicitNullValueRequirementsDue; set { _explicitNullValueRequirementsDue = value; AdditionalData?.Remove("requirements_due"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requirements_due"); else _explicitNullProperties?.Remove("requirements_due"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerRequirementDue?> _explicitNullValueRequirementsDue = default!;
 #endif
         /// <summary>The status of the given end customer.`UNDER_REVIEW`: The end customer has been created and enabled in the Sandbox environment. The end customer must be manually reviewed by the Plaid team before it can be enabled in Production, at which point its status will automatically transition to `PENDING_ENABLEMENT` or `DENIED`.`PENDING_ENABLEMENT`: The end customer is ready to be fully enabled in the Production environment. Call the `/partner/customer/enable` endpoint to enable the end customer in full Production.`ACTIVE`: The end customer has been fully enabled in all environments.`DENIED`: The end customer has been created and enabled in the Sandbox environment, but it did not pass review by the Plaid team and therefore cannot be enabled for Production access. Talk to your account manager for more information.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.BetaPartnerEndCustomer"/> and sets the default values.
@@ -99,7 +104,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "company_name", n => { CompanyName = n.GetStringValue(); } },
                 { "product_statuses", n => { ProductStatuses = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BetaPartnerEndCustomerProductStatuses>(global::Soenneker.Plaid.OpenApiClient.Models.BetaPartnerEndCustomerProductStatuses.CreateFromDiscriminatorValue); } },
                 { "requirements_due", n => { RequirementsDue = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerRequirementDue>()?.AsList(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
         /// <summary>

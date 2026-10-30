@@ -18,7 +18,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("SERVICE") is { } nullNodeSERVICE && nullNodeSERVICE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SERVICE = null;
+            if (parseNode.GetChildNode("SERVICE") is null) { _explicitNullValueSERVICE = default!; _explicitNullProperties?.Remove("SERVICE"); }
+            else if (parseNode.GetChildNode("SERVICE") is { } nullNodeSERVICE && nullNodeSERVICE.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SERVICE = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>A collection of details related to a fulfillment service or product in terms of request, process and result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacService? SERVICE { get => _explicitNullValueSERVICE; set { _explicitNullValueSERVICE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SERVICE"); else _explicitNullProperties?.Remove("SERVICE"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacService? SERVICE { get => _explicitNullValueSERVICE; set { _explicitNullValueSERVICE = value; AdditionalData?.Remove("SERVICE"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SERVICE"); else _explicitNullProperties?.Remove("SERVICE"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacService? _explicitNullValueSERVICE = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacService SERVICE { get => _explicitNullValueSERVICE; set { _explicitNullValueSERVICE = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SERVICE"); else _explicitNullProperties?.Remove("SERVICE"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacService SERVICE { get => _explicitNullValueSERVICE; set { _explicitNullValueSERVICE = value; AdditionalData?.Remove("SERVICE"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SERVICE"); else _explicitNullProperties?.Remove("SERVICE"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacService _explicitNullValueSERVICE = default!;
 #endif
         /// <summary>

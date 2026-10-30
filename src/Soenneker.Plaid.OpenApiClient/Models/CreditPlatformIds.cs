@@ -18,9 +18,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("employee_id") is { } nullNodeEmployeeId && nullNodeEmployeeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmployeeId = null;
-            if (parseNode.GetChildNode("payroll_id") is { } nullNodePayrollId && nullNodePayrollId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayrollId = null;
-            if (parseNode.GetChildNode("position_id") is { } nullNodePositionId && nullNodePositionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PositionId = null;
+            if (parseNode.GetChildNode("employee_id") is null) { _explicitNullValueEmployeeId = default!; _explicitNullProperties?.Remove("employee_id"); }
+            else if (parseNode.GetChildNode("employee_id") is { } nullNodeEmployeeId && nullNodeEmployeeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmployeeId = null;
+            if (parseNode.GetChildNode("payroll_id") is null) { _explicitNullValuePayrollId = default!; _explicitNullProperties?.Remove("payroll_id"); }
+            else if (parseNode.GetChildNode("payroll_id") is { } nullNodePayrollId && nullNodePayrollId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayrollId = null;
+            if (parseNode.GetChildNode("position_id") is null) { _explicitNullValuePositionId = default!; _explicitNullProperties?.Remove("position_id"); }
+            else if (parseNode.GetChildNode("position_id") is { } nullNodePositionId && nullNodePositionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PositionId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The ID of an employee as given by their employer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmployeeId { get => _explicitNullValueEmployeeId; set { _explicitNullValueEmployeeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employee_id"); else _explicitNullProperties?.Remove("employee_id"); } }
+        public string? EmployeeId { get => _explicitNullValueEmployeeId; set { _explicitNullValueEmployeeId = value; AdditionalData?.Remove("employee_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employee_id"); else _explicitNullProperties?.Remove("employee_id"); } }
         private string? _explicitNullValueEmployeeId = default!;
 #nullable restore
 #else
-        public string EmployeeId { get => _explicitNullValueEmployeeId; set { _explicitNullValueEmployeeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employee_id"); else _explicitNullProperties?.Remove("employee_id"); } }
+        public string EmployeeId { get => _explicitNullValueEmployeeId; set { _explicitNullValueEmployeeId = value; AdditionalData?.Remove("employee_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employee_id"); else _explicitNullProperties?.Remove("employee_id"); } }
         private string _explicitNullValueEmployeeId = default!;
 #endif
         /// <summary>The ID of an employee as given by their payroll.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayrollId { get => _explicitNullValuePayrollId; set { _explicitNullValuePayrollId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payroll_id"); else _explicitNullProperties?.Remove("payroll_id"); } }
+        public string? PayrollId { get => _explicitNullValuePayrollId; set { _explicitNullValuePayrollId = value; AdditionalData?.Remove("payroll_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payroll_id"); else _explicitNullProperties?.Remove("payroll_id"); } }
         private string? _explicitNullValuePayrollId = default!;
 #nullable restore
 #else
-        public string PayrollId { get => _explicitNullValuePayrollId; set { _explicitNullValuePayrollId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payroll_id"); else _explicitNullProperties?.Remove("payroll_id"); } }
+        public string PayrollId { get => _explicitNullValuePayrollId; set { _explicitNullValuePayrollId = value; AdditionalData?.Remove("payroll_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payroll_id"); else _explicitNullProperties?.Remove("payroll_id"); } }
         private string _explicitNullValuePayrollId = default!;
 #endif
         /// <summary>The ID of the position of the employee.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PositionId { get => _explicitNullValuePositionId; set { _explicitNullValuePositionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("position_id"); else _explicitNullProperties?.Remove("position_id"); } }
+        public string? PositionId { get => _explicitNullValuePositionId; set { _explicitNullValuePositionId = value; AdditionalData?.Remove("position_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("position_id"); else _explicitNullProperties?.Remove("position_id"); } }
         private string? _explicitNullValuePositionId = default!;
 #nullable restore
 #else
-        public string PositionId { get => _explicitNullValuePositionId; set { _explicitNullValuePositionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("position_id"); else _explicitNullProperties?.Remove("position_id"); } }
+        public string PositionId { get => _explicitNullValuePositionId; set { _explicitNullValuePositionId = value; AdditionalData?.Remove("position_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("position_id"); else _explicitNullProperties?.Remove("position_id"); } }
         private string _explicitNullValuePositionId = default!;
 #endif
         /// <summary>

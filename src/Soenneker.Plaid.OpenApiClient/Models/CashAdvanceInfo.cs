@@ -19,9 +19,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("amount_approved") is { } nullNodeAmountApproved && nullNodeAmountApproved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountApproved = null;
-            if (parseNode.GetChildNode("amount_due") is { } nullNodeAmountDue && nullNodeAmountDue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountDue = null;
-            if (parseNode.GetChildNode("due_date") is { } nullNodeDueDate && nullNodeDueDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DueDate = null;
+            if (parseNode.GetChildNode("amount_approved") is null) { _explicitNullValueAmountApproved = default!; _explicitNullProperties?.Remove("amount_approved"); }
+            else if (parseNode.GetChildNode("amount_approved") is { } nullNodeAmountApproved && nullNodeAmountApproved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountApproved = null;
+            if (parseNode.GetChildNode("amount_due") is null) { _explicitNullValueAmountDue = default!; _explicitNullProperties?.Remove("amount_due"); }
+            else if (parseNode.GetChildNode("amount_due") is { } nullNodeAmountDue && nullNodeAmountDue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountDue = null;
+            if (parseNode.GetChildNode("due_date") is null) { _explicitNullValueDueDate = default!; _explicitNullProperties?.Remove("due_date"); }
+            else if (parseNode.GetChildNode("due_date") is { } nullNodeDueDate && nullNodeDueDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DueDate = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,25 +32,25 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The amount a user was approved for in a cash-advance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceInfoAmountApproved? AmountApproved { get => _explicitNullValueAmountApproved; set { _explicitNullValueAmountApproved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount_approved"); else _explicitNullProperties?.Remove("amount_approved"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceInfoAmountApproved? AmountApproved { get => _explicitNullValueAmountApproved; set { _explicitNullValueAmountApproved = value; AdditionalData?.Remove("amount_approved"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount_approved"); else _explicitNullProperties?.Remove("amount_approved"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceInfoAmountApproved? _explicitNullValueAmountApproved = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceInfoAmountApproved AmountApproved { get => _explicitNullValueAmountApproved; set { _explicitNullValueAmountApproved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount_approved"); else _explicitNullProperties?.Remove("amount_approved"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceInfoAmountApproved AmountApproved { get => _explicitNullValueAmountApproved; set { _explicitNullValueAmountApproved = value; AdditionalData?.Remove("amount_approved"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount_approved"); else _explicitNullProperties?.Remove("amount_approved"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceInfoAmountApproved _explicitNullValueAmountApproved = default!;
 #endif
         /// <summary>The amount a user is required to pay, including any fees or additional amounts. Required when `cash_advance` is provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceInfoAmountDue? AmountDue { get => _explicitNullValueAmountDue; set { _explicitNullValueAmountDue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount_due"); else _explicitNullProperties?.Remove("amount_due"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceInfoAmountDue? AmountDue { get => _explicitNullValueAmountDue; set { _explicitNullValueAmountDue = value; AdditionalData?.Remove("amount_due"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount_due"); else _explicitNullProperties?.Remove("amount_due"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceInfoAmountDue? _explicitNullValueAmountDue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceInfoAmountDue AmountDue { get => _explicitNullValueAmountDue; set { _explicitNullValueAmountDue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount_due"); else _explicitNullProperties?.Remove("amount_due"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceInfoAmountDue AmountDue { get => _explicitNullValueAmountDue; set { _explicitNullValueAmountDue = value; AdditionalData?.Remove("amount_due"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount_due"); else _explicitNullProperties?.Remove("amount_due"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceInfoAmountDue _explicitNullValueAmountDue = default!;
 #endif
         /// <summary>The date the cash-advance is due, in ISO 8601 format (`YYYY-MM-DD`). Required when `cash_advance` is provided.</summary>
-        public Date? DueDate { get => _explicitNullValueDueDate; set { _explicitNullValueDueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("due_date"); else _explicitNullProperties?.Remove("due_date"); } }
+        public Date? DueDate { get => _explicitNullValueDueDate; set { _explicitNullValueDueDate = value; AdditionalData?.Remove("due_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("due_date"); else _explicitNullProperties?.Remove("due_date"); } }
         private Date? _explicitNullValueDueDate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceInfo"/> and sets the default values.

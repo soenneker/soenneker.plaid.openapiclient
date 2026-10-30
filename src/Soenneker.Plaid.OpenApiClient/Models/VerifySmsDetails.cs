@@ -18,23 +18,25 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("verifications") is { } nullNodeVerifications && nullNodeVerifications.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Verifications = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("verifications") is null) { _explicitNullValueVerifications = default!; _explicitNullProperties?.Remove("verifications"); }
+            else if (parseNode.GetChildNode("verifications") is { } nullNodeVerifications && nullNodeVerifications.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Verifications = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The outcome status for the associated Identity Verification attempt&apos;s `verify_sms` step. This field will always have the same value as `steps.verify_sms`.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.VerifySmsDetailsStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.VerifySmsDetailsStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.VerifySmsDetailsStatus? _explicitNullValueStatus = default!;
         /// <summary>An array where each entry represents a verification attempt for the `verify_sms` step. Each entry represents one user-submitted phone number. Phone number edits, and in some cases error handling due to edge cases like rate limiting, may generate additional verifications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.SmsVerification>? Verifications { get => _explicitNullValueVerifications; set { _explicitNullValueVerifications = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verifications"); else _explicitNullProperties?.Remove("verifications"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.SmsVerification>? Verifications { get => _explicitNullValueVerifications; set { _explicitNullValueVerifications = value; AdditionalData?.Remove("verifications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verifications"); else _explicitNullProperties?.Remove("verifications"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.SmsVerification>? _explicitNullValueVerifications = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.SmsVerification> Verifications { get => _explicitNullValueVerifications; set { _explicitNullValueVerifications = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verifications"); else _explicitNullProperties?.Remove("verifications"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.SmsVerification> Verifications { get => _explicitNullValueVerifications; set { _explicitNullValueVerifications = value; AdditionalData?.Remove("verifications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verifications"); else _explicitNullProperties?.Remove("verifications"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.SmsVerification> _explicitNullValueVerifications = default!;
 #endif
         /// <summary>
@@ -64,7 +66,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.VerifySmsDetailsStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.VerifySmsDetailsStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "verifications", n => { Verifications = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.SmsVerification>(global::Soenneker.Plaid.OpenApiClient.Models.SmsVerification.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }

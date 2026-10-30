@@ -18,13 +18,20 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("homeUri") is { } nullNodeHomeUri && nullNodeHomeUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HomeUri = null;
-            if (parseNode.GetChildNode("logoUri") is { } nullNodeLogoUri && nullNodeLogoUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogoUri = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("registeredEntityId") is { } nullNodeRegisteredEntityId && nullNodeRegisteredEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegisteredEntityId = null;
-            if (parseNode.GetChildNode("registeredEntityName") is { } nullNodeRegisteredEntityName && nullNodeRegisteredEntityName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegisteredEntityName = null;
-            if (parseNode.GetChildNode("registry") is { } nullNodeRegistry && nullNodeRegistry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Registry = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("homeUri") is null) { _explicitNullValueHomeUri = default!; _explicitNullProperties?.Remove("homeUri"); }
+            else if (parseNode.GetChildNode("homeUri") is { } nullNodeHomeUri && nullNodeHomeUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HomeUri = null;
+            if (parseNode.GetChildNode("logoUri") is null) { _explicitNullValueLogoUri = default!; _explicitNullProperties?.Remove("logoUri"); }
+            else if (parseNode.GetChildNode("logoUri") is { } nullNodeLogoUri && nullNodeLogoUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogoUri = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("registeredEntityId") is null) { _explicitNullValueRegisteredEntityId = default!; _explicitNullProperties?.Remove("registeredEntityId"); }
+            else if (parseNode.GetChildNode("registeredEntityId") is { } nullNodeRegisteredEntityId && nullNodeRegisteredEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegisteredEntityId = null;
+            if (parseNode.GetChildNode("registeredEntityName") is null) { _explicitNullValueRegisteredEntityName = default!; _explicitNullProperties?.Remove("registeredEntityName"); }
+            else if (parseNode.GetChildNode("registeredEntityName") is { } nullNodeRegisteredEntityName && nullNodeRegisteredEntityName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegisteredEntityName = null;
+            if (parseNode.GetChildNode("registry") is null) { _explicitNullValueRegistry = default!; _explicitNullProperties?.Remove("registry"); }
+            else if (parseNode.GetChildNode("registry") is { } nullNodeRegistry && nullNodeRegistry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Registry = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,58 +39,58 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>URI for party, where an end user could learn more about the company or application involved in the data sharing chain</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HomeUri { get => _explicitNullValueHomeUri; set { _explicitNullValueHomeUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("homeUri"); else _explicitNullProperties?.Remove("homeUri"); } }
+        public string? HomeUri { get => _explicitNullValueHomeUri; set { _explicitNullValueHomeUri = value; AdditionalData?.Remove("homeUri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("homeUri"); else _explicitNullProperties?.Remove("homeUri"); } }
         private string? _explicitNullValueHomeUri = default!;
 #nullable restore
 #else
-        public string HomeUri { get => _explicitNullValueHomeUri; set { _explicitNullValueHomeUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("homeUri"); else _explicitNullProperties?.Remove("homeUri"); } }
+        public string HomeUri { get => _explicitNullValueHomeUri; set { _explicitNullValueHomeUri = value; AdditionalData?.Remove("homeUri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("homeUri"); else _explicitNullProperties?.Remove("homeUri"); } }
         private string _explicitNullValueHomeUri = default!;
 #endif
         /// <summary>URI for a logo asset to be displayed to the end user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LogoUri { get => _explicitNullValueLogoUri; set { _explicitNullValueLogoUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logoUri"); else _explicitNullProperties?.Remove("logoUri"); } }
+        public string? LogoUri { get => _explicitNullValueLogoUri; set { _explicitNullValueLogoUri = value; AdditionalData?.Remove("logoUri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logoUri"); else _explicitNullProperties?.Remove("logoUri"); } }
         private string? _explicitNullValueLogoUri = default!;
 #nullable restore
 #else
-        public string LogoUri { get => _explicitNullValueLogoUri; set { _explicitNullValueLogoUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logoUri"); else _explicitNullProperties?.Remove("logoUri"); } }
+        public string LogoUri { get => _explicitNullValueLogoUri; set { _explicitNullValueLogoUri = value; AdditionalData?.Remove("logoUri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logoUri"); else _explicitNullProperties?.Remove("logoUri"); } }
         private string _explicitNullValueLogoUri = default!;
 #endif
         /// <summary>Human recognizable common name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Registered id of party</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RegisteredEntityId { get => _explicitNullValueRegisteredEntityId; set { _explicitNullValueRegisteredEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registeredEntityId"); else _explicitNullProperties?.Remove("registeredEntityId"); } }
+        public string? RegisteredEntityId { get => _explicitNullValueRegisteredEntityId; set { _explicitNullValueRegisteredEntityId = value; AdditionalData?.Remove("registeredEntityId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registeredEntityId"); else _explicitNullProperties?.Remove("registeredEntityId"); } }
         private string? _explicitNullValueRegisteredEntityId = default!;
 #nullable restore
 #else
-        public string RegisteredEntityId { get => _explicitNullValueRegisteredEntityId; set { _explicitNullValueRegisteredEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registeredEntityId"); else _explicitNullProperties?.Remove("registeredEntityId"); } }
+        public string RegisteredEntityId { get => _explicitNullValueRegisteredEntityId; set { _explicitNullValueRegisteredEntityId = value; AdditionalData?.Remove("registeredEntityId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registeredEntityId"); else _explicitNullProperties?.Remove("registeredEntityId"); } }
         private string _explicitNullValueRegisteredEntityId = default!;
 #endif
         /// <summary>Registered name of party</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RegisteredEntityName { get => _explicitNullValueRegisteredEntityName; set { _explicitNullValueRegisteredEntityName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registeredEntityName"); else _explicitNullProperties?.Remove("registeredEntityName"); } }
+        public string? RegisteredEntityName { get => _explicitNullValueRegisteredEntityName; set { _explicitNullValueRegisteredEntityName = value; AdditionalData?.Remove("registeredEntityName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registeredEntityName"); else _explicitNullProperties?.Remove("registeredEntityName"); } }
         private string? _explicitNullValueRegisteredEntityName = default!;
 #nullable restore
 #else
-        public string RegisteredEntityName { get => _explicitNullValueRegisteredEntityName; set { _explicitNullValueRegisteredEntityName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registeredEntityName"); else _explicitNullProperties?.Remove("registeredEntityName"); } }
+        public string RegisteredEntityName { get => _explicitNullValueRegisteredEntityName; set { _explicitNullValueRegisteredEntityName = value; AdditionalData?.Remove("registeredEntityName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registeredEntityName"); else _explicitNullProperties?.Remove("registeredEntityName"); } }
         private string _explicitNullValueRegisteredEntityName = default!;
 #endif
         /// <summary>The registry containing the party&apos;s registration with name and id</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.FdxPartyRegistry? Registry { get => _explicitNullValueRegistry; set { _explicitNullValueRegistry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registry"); else _explicitNullProperties?.Remove("registry"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FdxPartyRegistry? Registry { get => _explicitNullValueRegistry; set { _explicitNullValueRegistry = value; AdditionalData?.Remove("registry"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registry"); else _explicitNullProperties?.Remove("registry"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.FdxPartyRegistry? _explicitNullValueRegistry = default!;
         /// <summary>Identifies the type of a party</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.FdxPartyType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FdxPartyType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.FdxPartyType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.FdxParty"/> and sets the default values.
@@ -115,8 +122,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "registeredEntityId", n => { RegisteredEntityId = n.GetStringValue(); } },
                 { "registeredEntityName", n => { RegisteredEntityName = n.GetStringValue(); } },
-                { "registry", n => { Registry = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FdxPartyRegistry>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FdxPartyType>(); } },
+                { "registry", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FdxPartyRegistry>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRegistry = default; _explicitNullProperties?.Remove("registry"); AdditionalData["registry"] = unknown; } else { Registry = parsed; AdditionalData.Remove("registry"); } } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FdxPartyType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

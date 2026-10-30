@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bank_employment") is { } nullNodeBankEmployment && nullNodeBankEmployment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankEmployment = null;
-            if (parseNode.GetChildNode("employment_source_types") is { } nullNodeEmploymentSourceTypes && nullNodeEmploymentSourceTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmploymentSourceTypes = null;
+            if (parseNode.GetChildNode("bank_employment") is null) { _explicitNullValueBankEmployment = default!; _explicitNullProperties?.Remove("bank_employment"); }
+            else if (parseNode.GetChildNode("bank_employment") is { } nullNodeBankEmployment && nullNodeBankEmployment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankEmployment = null;
+            if (parseNode.GetChildNode("employment_source_types") is null) { _explicitNullValueEmploymentSourceTypes = default!; _explicitNullProperties?.Remove("employment_source_types"); }
+            else if (parseNode.GetChildNode("employment_source_types") is { } nullNodeEmploymentSourceTypes && nullNodeEmploymentSourceTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmploymentSourceTypes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Specifies options for initializing Link for use with Bank Employment. This field is required if `employment` is included in the `products` array and `bank` is specified in `employment_source_types`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestEmploymentBankIncome? BankEmployment { get => _explicitNullValueBankEmployment; set { _explicitNullValueBankEmployment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_employment"); else _explicitNullProperties?.Remove("bank_employment"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestEmploymentBankIncome? BankEmployment { get => _explicitNullValueBankEmployment; set { _explicitNullValueBankEmployment = value; AdditionalData?.Remove("bank_employment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_employment"); else _explicitNullProperties?.Remove("bank_employment"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestEmploymentBankIncome? _explicitNullValueBankEmployment = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestEmploymentBankIncome BankEmployment { get => _explicitNullValueBankEmployment; set { _explicitNullValueBankEmployment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_employment"); else _explicitNullProperties?.Remove("bank_employment"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestEmploymentBankIncome BankEmployment { get => _explicitNullValueBankEmployment; set { _explicitNullValueBankEmployment = value; AdditionalData?.Remove("bank_employment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_employment"); else _explicitNullProperties?.Remove("bank_employment"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestEmploymentBankIncome _explicitNullValueBankEmployment = default!;
 #endif
         /// <summary>The types of source employment data that users will be permitted to share. Options include `bank` and `payroll`. Currently you can only specify one of these options.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.EmploymentSourceType?>? EmploymentSourceTypes { get => _explicitNullValueEmploymentSourceTypes; set { _explicitNullValueEmploymentSourceTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employment_source_types"); else _explicitNullProperties?.Remove("employment_source_types"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.EmploymentSourceType?>? EmploymentSourceTypes { get => _explicitNullValueEmploymentSourceTypes; set { _explicitNullValueEmploymentSourceTypes = value; AdditionalData?.Remove("employment_source_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employment_source_types"); else _explicitNullProperties?.Remove("employment_source_types"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.EmploymentSourceType?>? _explicitNullValueEmploymentSourceTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.EmploymentSourceType?> EmploymentSourceTypes { get => _explicitNullValueEmploymentSourceTypes; set { _explicitNullValueEmploymentSourceTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employment_source_types"); else _explicitNullProperties?.Remove("employment_source_types"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.EmploymentSourceType?> EmploymentSourceTypes { get => _explicitNullValueEmploymentSourceTypes; set { _explicitNullValueEmploymentSourceTypes = value; AdditionalData?.Remove("employment_source_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employment_source_types"); else _explicitNullProperties?.Remove("employment_source_types"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.EmploymentSourceType?> _explicitNullValueEmploymentSourceTypes = default!;
 #endif
         /// <summary>

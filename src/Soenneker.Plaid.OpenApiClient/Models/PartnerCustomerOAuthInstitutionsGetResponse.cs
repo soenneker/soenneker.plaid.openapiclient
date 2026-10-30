@@ -18,38 +18,42 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("flowdown_status") is { } nullNodeFlowdownStatus && nullNodeFlowdownStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlowdownStatus = null;
-            if (parseNode.GetChildNode("institutions") is { } nullNodeInstitutions && nullNodeInstitutions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Institutions = null;
-            if (parseNode.GetChildNode("questionnaire_status") is { } nullNodeQuestionnaireStatus && nullNodeQuestionnaireStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuestionnaireStatus = null;
-            if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
+            if (parseNode.GetChildNode("flowdown_status") is null) { _explicitNullValueFlowdownStatus = default!; _explicitNullProperties?.Remove("flowdown_status"); }
+            else if (parseNode.GetChildNode("flowdown_status") is { } nullNodeFlowdownStatus && nullNodeFlowdownStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlowdownStatus = null;
+            if (parseNode.GetChildNode("institutions") is null) { _explicitNullValueInstitutions = default!; _explicitNullProperties?.Remove("institutions"); }
+            else if (parseNode.GetChildNode("institutions") is { } nullNodeInstitutions && nullNodeInstitutions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Institutions = null;
+            if (parseNode.GetChildNode("questionnaire_status") is null) { _explicitNullValueQuestionnaireStatus = default!; _explicitNullProperties?.Remove("questionnaire_status"); }
+            else if (parseNode.GetChildNode("questionnaire_status") is { } nullNodeQuestionnaireStatus && nullNodeQuestionnaireStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuestionnaireStatus = null;
+            if (parseNode.GetChildNode("request_id") is null) { _explicitNullValueRequestId = default!; _explicitNullProperties?.Remove("request_id"); }
+            else if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The status of the addendum to the Plaid MSA (&quot;flowdown&quot;) for the end customer.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerFlowdownStatus? FlowdownStatus { get => _explicitNullValueFlowdownStatus; set { _explicitNullValueFlowdownStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flowdown_status"); else _explicitNullProperties?.Remove("flowdown_status"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerFlowdownStatus? FlowdownStatus { get => _explicitNullValueFlowdownStatus; set { _explicitNullValueFlowdownStatus = value; AdditionalData?.Remove("flowdown_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flowdown_status"); else _explicitNullProperties?.Remove("flowdown_status"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerFlowdownStatus? _explicitNullValueFlowdownStatus = default!;
         /// <summary>The OAuth institutions with which the end customer&apos;s application is being registered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitution>? Institutions { get => _explicitNullValueInstitutions; set { _explicitNullValueInstitutions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institutions"); else _explicitNullProperties?.Remove("institutions"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitution>? Institutions { get => _explicitNullValueInstitutions; set { _explicitNullValueInstitutions = value; AdditionalData?.Remove("institutions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institutions"); else _explicitNullProperties?.Remove("institutions"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitution>? _explicitNullValueInstitutions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitution> Institutions { get => _explicitNullValueInstitutions; set { _explicitNullValueInstitutions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institutions"); else _explicitNullProperties?.Remove("institutions"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitution> Institutions { get => _explicitNullValueInstitutions; set { _explicitNullValueInstitutions = value; AdditionalData?.Remove("institutions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institutions"); else _explicitNullProperties?.Remove("institutions"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitution> _explicitNullValueInstitutions = default!;
 #endif
         /// <summary>The status of the end customer&apos;s security questionnaire.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerQuestionnaireStatus? QuestionnaireStatus { get => _explicitNullValueQuestionnaireStatus; set { _explicitNullValueQuestionnaireStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("questionnaire_status"); else _explicitNullProperties?.Remove("questionnaire_status"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerQuestionnaireStatus? QuestionnaireStatus { get => _explicitNullValueQuestionnaireStatus; set { _explicitNullValueQuestionnaireStatus = value; AdditionalData?.Remove("questionnaire_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("questionnaire_status"); else _explicitNullProperties?.Remove("questionnaire_status"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerQuestionnaireStatus? _explicitNullValueQuestionnaireStatus = default!;
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; AdditionalData?.Remove("request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
         private string? _explicitNullValueRequestId = default!;
 #nullable restore
 #else
-        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; AdditionalData?.Remove("request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
         private string _explicitNullValueRequestId = default!;
 #endif
         /// <summary>
@@ -77,9 +81,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "flowdown_status", n => { FlowdownStatus = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerFlowdownStatus>(); } },
+                { "flowdown_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerFlowdownStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFlowdownStatus = default; _explicitNullProperties?.Remove("flowdown_status"); AdditionalData["flowdown_status"] = unknown; } else { FlowdownStatus = parsed; AdditionalData.Remove("flowdown_status"); } } },
                 { "institutions", n => { Institutions = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitution>(global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitution.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "questionnaire_status", n => { QuestionnaireStatus = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerQuestionnaireStatus>(); } },
+                { "questionnaire_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerQuestionnaireStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueQuestionnaireStatus = default; _explicitNullProperties?.Remove("questionnaire_status"); AdditionalData["questionnaire_status"] = unknown; } else { QuestionnaireStatus = parsed; AdditionalData.Remove("questionnaire_status"); } } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
             };
         }

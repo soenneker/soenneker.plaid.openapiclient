@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("rfp") is { } nullNodeRfp && nullNodeRfp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rfp = null;
-            if (parseNode.GetChildNode("rtp") is { } nullNodeRtp && nullNodeRtp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rtp = null;
+            if (parseNode.GetChildNode("rfp") is null) { _explicitNullValueRfp = default!; _explicitNullProperties?.Remove("rfp"); }
+            else if (parseNode.GetChildNode("rfp") is { } nullNodeRfp && nullNodeRfp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rfp = null;
+            if (parseNode.GetChildNode("rtp") is null) { _explicitNullValueRtp = default!; _explicitNullProperties?.Remove("rtp"); }
+            else if (parseNode.GetChildNode("rtp") is { } nullNodeRtp && nullNodeRtp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rtp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Contains the supported service types in RfP</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferCapabilitiesGetRfP? Rfp { get => _explicitNullValueRfp; set { _explicitNullValueRfp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rfp"); else _explicitNullProperties?.Remove("rfp"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferCapabilitiesGetRfP? Rfp { get => _explicitNullValueRfp; set { _explicitNullValueRfp = value; AdditionalData?.Remove("rfp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rfp"); else _explicitNullProperties?.Remove("rfp"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransferCapabilitiesGetRfP? _explicitNullValueRfp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferCapabilitiesGetRfP Rfp { get => _explicitNullValueRfp; set { _explicitNullValueRfp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rfp"); else _explicitNullProperties?.Remove("rfp"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferCapabilitiesGetRfP Rfp { get => _explicitNullValueRfp; set { _explicitNullValueRfp = value; AdditionalData?.Remove("rfp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rfp"); else _explicitNullProperties?.Remove("rfp"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransferCapabilitiesGetRfP _explicitNullValueRfp = default!;
 #endif
         /// <summary>Contains the supported service types in RTP</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferCapabilitiesGetRtp? Rtp { get => _explicitNullValueRtp; set { _explicitNullValueRtp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtp"); else _explicitNullProperties?.Remove("rtp"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferCapabilitiesGetRtp? Rtp { get => _explicitNullValueRtp; set { _explicitNullValueRtp = value; AdditionalData?.Remove("rtp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtp"); else _explicitNullProperties?.Remove("rtp"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransferCapabilitiesGetRtp? _explicitNullValueRtp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferCapabilitiesGetRtp Rtp { get => _explicitNullValueRtp; set { _explicitNullValueRtp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtp"); else _explicitNullProperties?.Remove("rtp"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferCapabilitiesGetRtp Rtp { get => _explicitNullValueRtp; set { _explicitNullValueRtp = value; AdditionalData?.Remove("rtp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtp"); else _explicitNullProperties?.Remove("rtp"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransferCapabilitiesGetRtp _explicitNullValueRtp = default!;
 #endif
         /// <summary>

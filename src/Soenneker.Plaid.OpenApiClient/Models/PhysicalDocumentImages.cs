@@ -18,11 +18,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cropped_back") is { } nullNodeCroppedBack && nullNodeCroppedBack.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CroppedBack = null;
-            if (parseNode.GetChildNode("cropped_front") is { } nullNodeCroppedFront && nullNodeCroppedFront.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CroppedFront = null;
-            if (parseNode.GetChildNode("face") is { } nullNodeFace && nullNodeFace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Face = null;
-            if (parseNode.GetChildNode("original_back") is { } nullNodeOriginalBack && nullNodeOriginalBack.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalBack = null;
-            if (parseNode.GetChildNode("original_front") is { } nullNodeOriginalFront && nullNodeOriginalFront.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalFront = null;
+            if (parseNode.GetChildNode("cropped_back") is null) { _explicitNullValueCroppedBack = default!; _explicitNullProperties?.Remove("cropped_back"); }
+            else if (parseNode.GetChildNode("cropped_back") is { } nullNodeCroppedBack && nullNodeCroppedBack.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CroppedBack = null;
+            if (parseNode.GetChildNode("cropped_front") is null) { _explicitNullValueCroppedFront = default!; _explicitNullProperties?.Remove("cropped_front"); }
+            else if (parseNode.GetChildNode("cropped_front") is { } nullNodeCroppedFront && nullNodeCroppedFront.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CroppedFront = null;
+            if (parseNode.GetChildNode("face") is null) { _explicitNullValueFace = default!; _explicitNullProperties?.Remove("face"); }
+            else if (parseNode.GetChildNode("face") is { } nullNodeFace && nullNodeFace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Face = null;
+            if (parseNode.GetChildNode("original_back") is null) { _explicitNullValueOriginalBack = default!; _explicitNullProperties?.Remove("original_back"); }
+            else if (parseNode.GetChildNode("original_back") is { } nullNodeOriginalBack && nullNodeOriginalBack.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalBack = null;
+            if (parseNode.GetChildNode("original_front") is null) { _explicitNullValueOriginalFront = default!; _explicitNullProperties?.Remove("original_front"); }
+            else if (parseNode.GetChildNode("original_front") is { } nullNodeOriginalFront && nullNodeOriginalFront.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalFront = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,51 +35,51 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Temporary URL that expires after 60 seconds for downloading a cropped image containing just the back of the document. Might be null if the back of the document was not collected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CroppedBack { get => _explicitNullValueCroppedBack; set { _explicitNullValueCroppedBack = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cropped_back"); else _explicitNullProperties?.Remove("cropped_back"); } }
+        public string? CroppedBack { get => _explicitNullValueCroppedBack; set { _explicitNullValueCroppedBack = value; AdditionalData?.Remove("cropped_back"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cropped_back"); else _explicitNullProperties?.Remove("cropped_back"); } }
         private string? _explicitNullValueCroppedBack = default!;
 #nullable restore
 #else
-        public string CroppedBack { get => _explicitNullValueCroppedBack; set { _explicitNullValueCroppedBack = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cropped_back"); else _explicitNullProperties?.Remove("cropped_back"); } }
+        public string CroppedBack { get => _explicitNullValueCroppedBack; set { _explicitNullValueCroppedBack = value; AdditionalData?.Remove("cropped_back"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cropped_back"); else _explicitNullProperties?.Remove("cropped_back"); } }
         private string _explicitNullValueCroppedBack = default!;
 #endif
         /// <summary>Temporary URL that expires after 60 seconds for downloading a cropped image containing just the front of the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CroppedFront { get => _explicitNullValueCroppedFront; set { _explicitNullValueCroppedFront = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cropped_front"); else _explicitNullProperties?.Remove("cropped_front"); } }
+        public string? CroppedFront { get => _explicitNullValueCroppedFront; set { _explicitNullValueCroppedFront = value; AdditionalData?.Remove("cropped_front"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cropped_front"); else _explicitNullProperties?.Remove("cropped_front"); } }
         private string? _explicitNullValueCroppedFront = default!;
 #nullable restore
 #else
-        public string CroppedFront { get => _explicitNullValueCroppedFront; set { _explicitNullValueCroppedFront = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cropped_front"); else _explicitNullProperties?.Remove("cropped_front"); } }
+        public string CroppedFront { get => _explicitNullValueCroppedFront; set { _explicitNullValueCroppedFront = value; AdditionalData?.Remove("cropped_front"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cropped_front"); else _explicitNullProperties?.Remove("cropped_front"); } }
         private string _explicitNullValueCroppedFront = default!;
 #endif
         /// <summary>Temporary URL that expires after 60 seconds for downloading a crop of just the user&apos;s face from the document image. Might be null if the document does not contain a face photo.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Face { get => _explicitNullValueFace; set { _explicitNullValueFace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("face"); else _explicitNullProperties?.Remove("face"); } }
+        public string? Face { get => _explicitNullValueFace; set { _explicitNullValueFace = value; AdditionalData?.Remove("face"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("face"); else _explicitNullProperties?.Remove("face"); } }
         private string? _explicitNullValueFace = default!;
 #nullable restore
 #else
-        public string Face { get => _explicitNullValueFace; set { _explicitNullValueFace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("face"); else _explicitNullProperties?.Remove("face"); } }
+        public string Face { get => _explicitNullValueFace; set { _explicitNullValueFace = value; AdditionalData?.Remove("face"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("face"); else _explicitNullProperties?.Remove("face"); } }
         private string _explicitNullValueFace = default!;
 #endif
         /// <summary>Temporary URL that expires after 60 seconds for downloading the original image of the back of the document. Might be null if the back of the document was not collected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginalBack { get => _explicitNullValueOriginalBack; set { _explicitNullValueOriginalBack = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_back"); else _explicitNullProperties?.Remove("original_back"); } }
+        public string? OriginalBack { get => _explicitNullValueOriginalBack; set { _explicitNullValueOriginalBack = value; AdditionalData?.Remove("original_back"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_back"); else _explicitNullProperties?.Remove("original_back"); } }
         private string? _explicitNullValueOriginalBack = default!;
 #nullable restore
 #else
-        public string OriginalBack { get => _explicitNullValueOriginalBack; set { _explicitNullValueOriginalBack = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_back"); else _explicitNullProperties?.Remove("original_back"); } }
+        public string OriginalBack { get => _explicitNullValueOriginalBack; set { _explicitNullValueOriginalBack = value; AdditionalData?.Remove("original_back"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_back"); else _explicitNullProperties?.Remove("original_back"); } }
         private string _explicitNullValueOriginalBack = default!;
 #endif
         /// <summary>Temporary URL that expires after 60 seconds for downloading the uncropped original image of the front of the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginalFront { get => _explicitNullValueOriginalFront; set { _explicitNullValueOriginalFront = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_front"); else _explicitNullProperties?.Remove("original_front"); } }
+        public string? OriginalFront { get => _explicitNullValueOriginalFront; set { _explicitNullValueOriginalFront = value; AdditionalData?.Remove("original_front"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_front"); else _explicitNullProperties?.Remove("original_front"); } }
         private string? _explicitNullValueOriginalFront = default!;
 #nullable restore
 #else
-        public string OriginalFront { get => _explicitNullValueOriginalFront; set { _explicitNullValueOriginalFront = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_front"); else _explicitNullProperties?.Remove("original_front"); } }
+        public string OriginalFront { get => _explicitNullValueOriginalFront; set { _explicitNullValueOriginalFront = value; AdditionalData?.Remove("original_front"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_front"); else _explicitNullProperties?.Remove("original_front"); } }
         private string _explicitNullValueOriginalFront = default!;
 #endif
         /// <summary>

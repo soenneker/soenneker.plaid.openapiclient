@@ -18,7 +18,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ROLE_DETAIL") is { } nullNodeROLEDETAIL && nullNodeROLEDETAIL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ROLEDETAIL = null;
+            if (parseNode.GetChildNode("ROLE_DETAIL") is null) { _explicitNullValueROLEDETAIL = default!; _explicitNullProperties?.Remove("ROLE_DETAIL"); }
+            else if (parseNode.GetChildNode("ROLE_DETAIL") is { } nullNodeROLEDETAIL && nullNodeROLEDETAIL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ROLEDETAIL = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Documentation not found in the MISMO model viewer and not provided by Freddie Mac.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.RoleDetail? ROLEDETAIL { get => _explicitNullValueROLEDETAIL; set { _explicitNullValueROLEDETAIL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ROLE_DETAIL"); else _explicitNullProperties?.Remove("ROLE_DETAIL"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RoleDetail? ROLEDETAIL { get => _explicitNullValueROLEDETAIL; set { _explicitNullValueROLEDETAIL = value; AdditionalData?.Remove("ROLE_DETAIL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ROLE_DETAIL"); else _explicitNullProperties?.Remove("ROLE_DETAIL"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.RoleDetail? _explicitNullValueROLEDETAIL = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.RoleDetail ROLEDETAIL { get => _explicitNullValueROLEDETAIL; set { _explicitNullValueROLEDETAIL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ROLE_DETAIL"); else _explicitNullProperties?.Remove("ROLE_DETAIL"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RoleDetail ROLEDETAIL { get => _explicitNullValueROLEDETAIL; set { _explicitNullValueROLEDETAIL = value; AdditionalData?.Remove("ROLE_DETAIL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ROLE_DETAIL"); else _explicitNullProperties?.Remove("ROLE_DETAIL"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.RoleDetail _explicitNullValueROLEDETAIL = default!;
 #endif
         /// <summary>

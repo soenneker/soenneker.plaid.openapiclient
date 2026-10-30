@@ -19,17 +19,19 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("error_webhook_code") is { } nullNodeErrorWebhookCode && nullNodeErrorWebhookCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorWebhookCode = null;
-            if (parseNode.GetChildNode("transactions_end_date") is { } nullNodeTransactionsEndDate && nullNodeTransactionsEndDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionsEndDate = null;
+            if (parseNode.GetChildNode("error_webhook_code") is null) { _explicitNullValueErrorWebhookCode = default!; _explicitNullProperties?.Remove("error_webhook_code"); }
+            else if (parseNode.GetChildNode("error_webhook_code") is { } nullNodeErrorWebhookCode && nullNodeErrorWebhookCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorWebhookCode = null;
+            if (parseNode.GetChildNode("transactions_end_date") is null) { _explicitNullValueTransactionsEndDate = default!; _explicitNullProperties?.Remove("transactions_end_date"); }
+            else if (parseNode.GetChildNode("transactions_end_date") is { } nullNodeTransactionsEndDate && nullNodeTransactionsEndDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionsEndDate = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If set, skip report generation and instead fire a `CRA_REPORT_UPDATED` error webhook carrying this code. The accepted values depend on the `scope` of the subscription being simulated, since a simulation can only fire a webhook that scope would send in Production. A `CLIENT_USER` subscription accepts `USER_NOT_FOUND` and `PRODUCT_GENERATION_FAILED`; a `PLAID_NETWORK` subscription accepts `UNMATCH`, `DATA_UNAVAILABLE`, `NO_ELIGIBLE_ITEMS_ON_PROFILE`, and `PRODUCT_GENERATION_FAILED`. Supplying a code that does not match the subscription&apos;s scope returns an `INVALID_FIELD` error.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxCraServicingSimulateErrorWebhookCode? ErrorWebhookCode { get => _explicitNullValueErrorWebhookCode; set { _explicitNullValueErrorWebhookCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_webhook_code"); else _explicitNullProperties?.Remove("error_webhook_code"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxCraServicingSimulateErrorWebhookCode? ErrorWebhookCode { get => _explicitNullValueErrorWebhookCode; set { _explicitNullValueErrorWebhookCode = value; AdditionalData?.Remove("error_webhook_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_webhook_code"); else _explicitNullProperties?.Remove("error_webhook_code"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.SandboxCraServicingSimulateErrorWebhookCode? _explicitNullValueErrorWebhookCode = default!;
         /// <summary>The end of the synthesized transaction window (&quot;the present&quot;), as a YYYY-MM-DD date. Accepts past or future dates up to 180 days ahead; defaults to today. A later value appends newer transactions without churning earlier ones.</summary>
-        public Date? TransactionsEndDate { get => _explicitNullValueTransactionsEndDate; set { _explicitNullValueTransactionsEndDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactions_end_date"); else _explicitNullProperties?.Remove("transactions_end_date"); } }
+        public Date? TransactionsEndDate { get => _explicitNullValueTransactionsEndDate; set { _explicitNullValueTransactionsEndDate = value; AdditionalData?.Remove("transactions_end_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactions_end_date"); else _explicitNullProperties?.Remove("transactions_end_date"); } }
         private Date? _explicitNullValueTransactionsEndDate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.SandboxCraServicingSimulateRequestOptions"/> and sets the default values.
@@ -58,7 +60,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "error_webhook_code", n => { ErrorWebhookCode = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SandboxCraServicingSimulateErrorWebhookCode>(); } },
+                { "error_webhook_code", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SandboxCraServicingSimulateErrorWebhookCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueErrorWebhookCode = default; _explicitNullProperties?.Remove("error_webhook_code"); AdditionalData["error_webhook_code"] = unknown; } else { ErrorWebhookCode = parsed; AdditionalData.Remove("error_webhook_code"); } } },
                 { "transactions_end_date", n => { TransactionsEndDate = n.GetDateValue(); } },
             };
         }

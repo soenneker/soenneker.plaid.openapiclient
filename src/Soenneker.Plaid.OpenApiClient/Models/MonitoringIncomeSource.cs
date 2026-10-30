@@ -19,39 +19,43 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("income_category") is { } nullNodeIncomeCategory && nullNodeIncomeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeCategory = null;
-            if (parseNode.GetChildNode("income_description") is { } nullNodeIncomeDescription && nullNodeIncomeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeDescription = null;
-            if (parseNode.GetChildNode("income_source_id") is { } nullNodeIncomeSourceId && nullNodeIncomeSourceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeSourceId = null;
-            if (parseNode.GetChildNode("last_transaction_date") is { } nullNodeLastTransactionDate && nullNodeLastTransactionDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastTransactionDate = null;
+            if (parseNode.GetChildNode("income_category") is null) { _explicitNullValueIncomeCategory = default!; _explicitNullProperties?.Remove("income_category"); }
+            else if (parseNode.GetChildNode("income_category") is { } nullNodeIncomeCategory && nullNodeIncomeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeCategory = null;
+            if (parseNode.GetChildNode("income_description") is null) { _explicitNullValueIncomeDescription = default!; _explicitNullProperties?.Remove("income_description"); }
+            else if (parseNode.GetChildNode("income_description") is { } nullNodeIncomeDescription && nullNodeIncomeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeDescription = null;
+            if (parseNode.GetChildNode("income_source_id") is null) { _explicitNullValueIncomeSourceId = default!; _explicitNullProperties?.Remove("income_source_id"); }
+            else if (parseNode.GetChildNode("income_source_id") is { } nullNodeIncomeSourceId && nullNodeIncomeSourceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeSourceId = null;
+            if (parseNode.GetChildNode("last_transaction_date") is null) { _explicitNullValueLastTransactionDate = default!; _explicitNullProperties?.Remove("last_transaction_date"); }
+            else if (parseNode.GetChildNode("last_transaction_date") is { } nullNodeLastTransactionDate && nullNodeLastTransactionDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastTransactionDate = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The income category.`BANK_INTEREST`: Interest earned from a bank account.`BENEFIT_OTHER`: Government benefits other than retirement, unemployment, child support, or disability. Currently used only in the UK, to represent benefits such as Cost of Living Payments.`CASH`: Deprecated and used only for existing legacy implementations. Has been replaced by `CASH_DEPOSIT` and `TRANSFER_FROM_APPLICATION`.`CASH_DEPOSIT`: A cash or check deposit.`CHILD_SUPPORT`: Child support payments received.`GIG_ECONOMY`: Income earned as a gig economy worker, e.g. driving for Uber, Lyft, Postmates, DoorDash, etc.`LONG_TERM_DISABILITY`: Disability payments, including Social Security disability benefits.`OTHER`: Income that could not be categorized as any other income category.`MILITARY`: Veterans benefits. Income earned as salary for serving in the military (e.g. through DFAS) will be classified as `SALARY` rather than `MILITARY`.`RENTAL`: Income earned from a rental property. Income may be identified as rental when the payment is received through a rental platform, e.g. Airbnb; rent paid directly by the tenant to the property owner (e.g. via cash, check, or ACH) will typically not be classified as rental income.`RETIREMENT`: Payments from private retirement systems, pensions, and government retirement programs, including Social Security retirement benefits.`SALARY`: Payment from an employer to an earner or other form of permanent employment.`TAX_REFUND`: A tax refund.`TRANSFER_FROM_APPLICATION`: Deposits from a money transfer app, such as Venmo, Cash App, or Zelle.`UNEMPLOYMENT`: Unemployment benefits. In the UK, includes certain low-income benefits such as the Universal Credit.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeCategory? IncomeCategory { get => _explicitNullValueIncomeCategory; set { _explicitNullValueIncomeCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_category"); else _explicitNullProperties?.Remove("income_category"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeCategory? IncomeCategory { get => _explicitNullValueIncomeCategory; set { _explicitNullValueIncomeCategory = value; AdditionalData?.Remove("income_category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_category"); else _explicitNullProperties?.Remove("income_category"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeCategory? _explicitNullValueIncomeCategory = default!;
         /// <summary>The most common name or original description for the underlying income transactions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IncomeDescription { get => _explicitNullValueIncomeDescription; set { _explicitNullValueIncomeDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_description"); else _explicitNullProperties?.Remove("income_description"); } }
+        public string? IncomeDescription { get => _explicitNullValueIncomeDescription; set { _explicitNullValueIncomeDescription = value; AdditionalData?.Remove("income_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_description"); else _explicitNullProperties?.Remove("income_description"); } }
         private string? _explicitNullValueIncomeDescription = default!;
 #nullable restore
 #else
-        public string IncomeDescription { get => _explicitNullValueIncomeDescription; set { _explicitNullValueIncomeDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_description"); else _explicitNullProperties?.Remove("income_description"); } }
+        public string IncomeDescription { get => _explicitNullValueIncomeDescription; set { _explicitNullValueIncomeDescription = value; AdditionalData?.Remove("income_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_description"); else _explicitNullProperties?.Remove("income_description"); } }
         private string _explicitNullValueIncomeDescription = default!;
 #endif
         /// <summary>A unique identifier for an income source</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IncomeSourceId { get => _explicitNullValueIncomeSourceId; set { _explicitNullValueIncomeSourceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_source_id"); else _explicitNullProperties?.Remove("income_source_id"); } }
+        public string? IncomeSourceId { get => _explicitNullValueIncomeSourceId; set { _explicitNullValueIncomeSourceId = value; AdditionalData?.Remove("income_source_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_source_id"); else _explicitNullProperties?.Remove("income_source_id"); } }
         private string? _explicitNullValueIncomeSourceId = default!;
 #nullable restore
 #else
-        public string IncomeSourceId { get => _explicitNullValueIncomeSourceId; set { _explicitNullValueIncomeSourceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_source_id"); else _explicitNullProperties?.Remove("income_source_id"); } }
+        public string IncomeSourceId { get => _explicitNullValueIncomeSourceId; set { _explicitNullValueIncomeSourceId = value; AdditionalData?.Remove("income_source_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_source_id"); else _explicitNullProperties?.Remove("income_source_id"); } }
         private string _explicitNullValueIncomeSourceId = default!;
 #endif
         /// <summary>The last detected transaction date for this income source</summary>
-        public Date? LastTransactionDate { get => _explicitNullValueLastTransactionDate; set { _explicitNullValueLastTransactionDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_transaction_date"); else _explicitNullProperties?.Remove("last_transaction_date"); } }
+        public Date? LastTransactionDate { get => _explicitNullValueLastTransactionDate; set { _explicitNullValueLastTransactionDate = value; AdditionalData?.Remove("last_transaction_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_transaction_date"); else _explicitNullProperties?.Remove("last_transaction_date"); } }
         private Date? _explicitNullValueLastTransactionDate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.MonitoringIncomeSource"/> and sets the default values.
@@ -78,7 +82,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "income_category", n => { IncomeCategory = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeCategory>(); } },
+                { "income_category", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeCategory>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIncomeCategory = default; _explicitNullProperties?.Remove("income_category"); AdditionalData["income_category"] = unknown; } else { IncomeCategory = parsed; AdditionalData.Remove("income_category"); } } },
                 { "income_description", n => { IncomeDescription = n.GetStringValue(); } },
                 { "income_source_id", n => { IncomeSourceId = n.GetStringValue(); } },
                 { "last_transaction_date", n => { LastTransactionDate = n.GetDateValue(); } },

@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("code_sent") is { } nullNodeCodeSent && nullNodeCodeSent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CodeSent = null;
-            if (parseNode.GetChildNode("sent_at") is { } nullNodeSentAt && nullNodeSentAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentAt = null;
+            if (parseNode.GetChildNode("code_sent") is null) { _explicitNullValueCodeSent = default!; _explicitNullProperties?.Remove("code_sent"); }
+            else if (parseNode.GetChildNode("code_sent") is { } nullNodeCodeSent && nullNodeCodeSent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CodeSent = null;
+            if (parseNode.GetChildNode("sent_at") is null) { _explicitNullValueSentAt = default!; _explicitNullProperties?.Remove("sent_at"); }
+            else if (parseNode.GetChildNode("sent_at") is { } nullNodeSentAt && nullNodeSentAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The last webhook code sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CodeSent { get => _explicitNullValueCodeSent; set { _explicitNullValueCodeSent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code_sent"); else _explicitNullProperties?.Remove("code_sent"); } }
+        public string? CodeSent { get => _explicitNullValueCodeSent; set { _explicitNullValueCodeSent = value; AdditionalData?.Remove("code_sent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code_sent"); else _explicitNullProperties?.Remove("code_sent"); } }
         private string? _explicitNullValueCodeSent = default!;
 #nullable restore
 #else
-        public string CodeSent { get => _explicitNullValueCodeSent; set { _explicitNullValueCodeSent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code_sent"); else _explicitNullProperties?.Remove("code_sent"); } }
+        public string CodeSent { get => _explicitNullValueCodeSent; set { _explicitNullValueCodeSent = value; AdditionalData?.Remove("code_sent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code_sent"); else _explicitNullProperties?.Remove("code_sent"); } }
         private string _explicitNullValueCodeSent = default!;
 #endif
         /// <summary>[ISO 8601](https://wikipedia.org/wiki/ISO_8601) timestamp of when the webhook was fired.</summary>
-        public DateTimeOffset? SentAt { get => _explicitNullValueSentAt; set { _explicitNullValueSentAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sent_at"); else _explicitNullProperties?.Remove("sent_at"); } }
+        public DateTimeOffset? SentAt { get => _explicitNullValueSentAt; set { _explicitNullValueSentAt = value; AdditionalData?.Remove("sent_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sent_at"); else _explicitNullProperties?.Remove("sent_at"); } }
         private DateTimeOffset? _explicitNullValueSentAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ItemStatusLastWebhook"/> and sets the default values.

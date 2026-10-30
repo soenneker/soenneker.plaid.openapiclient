@@ -18,23 +18,25 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ServiceProductFulfillmentIdentifier") is { } nullNodeServiceProductFulfillmentIdentifier && nullNodeServiceProductFulfillmentIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceProductFulfillmentIdentifier = null;
-            if (parseNode.GetChildNode("VendorOrderIdentifier") is { } nullNodeVendorOrderIdentifier && nullNodeVendorOrderIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VendorOrderIdentifier = null;
+            if (parseNode.GetChildNode("ServiceProductFulfillmentIdentifier") is null) { _explicitNullValueServiceProductFulfillmentIdentifier = default!; _explicitNullProperties?.Remove("ServiceProductFulfillmentIdentifier"); }
+            else if (parseNode.GetChildNode("ServiceProductFulfillmentIdentifier") is { } nullNodeServiceProductFulfillmentIdentifier && nullNodeServiceProductFulfillmentIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceProductFulfillmentIdentifier = null;
+            if (parseNode.GetChildNode("VendorOrderIdentifier") is null) { _explicitNullValueVendorOrderIdentifier = default!; _explicitNullProperties?.Remove("VendorOrderIdentifier"); }
+            else if (parseNode.GetChildNode("VendorOrderIdentifier") is { } nullNodeVendorOrderIdentifier && nullNodeVendorOrderIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VendorOrderIdentifier = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Documentation not found in the MISMO model viewer and not provided by Freddie Mac.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillmentIdentifier? ServiceProductFulfillmentIdentifier { get => _explicitNullValueServiceProductFulfillmentIdentifier; set { _explicitNullValueServiceProductFulfillmentIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ServiceProductFulfillmentIdentifier"); else _explicitNullProperties?.Remove("ServiceProductFulfillmentIdentifier"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillmentIdentifier? ServiceProductFulfillmentIdentifier { get => _explicitNullValueServiceProductFulfillmentIdentifier; set { _explicitNullValueServiceProductFulfillmentIdentifier = value; AdditionalData?.Remove("ServiceProductFulfillmentIdentifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ServiceProductFulfillmentIdentifier"); else _explicitNullProperties?.Remove("ServiceProductFulfillmentIdentifier"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillmentIdentifier? _explicitNullValueServiceProductFulfillmentIdentifier = default!;
         /// <summary>A string that uniquely identifies a type of order Verification of Asset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VendorOrderIdentifier { get => _explicitNullValueVendorOrderIdentifier; set { _explicitNullValueVendorOrderIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("VendorOrderIdentifier"); else _explicitNullProperties?.Remove("VendorOrderIdentifier"); } }
+        public string? VendorOrderIdentifier { get => _explicitNullValueVendorOrderIdentifier; set { _explicitNullValueVendorOrderIdentifier = value; AdditionalData?.Remove("VendorOrderIdentifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("VendorOrderIdentifier"); else _explicitNullProperties?.Remove("VendorOrderIdentifier"); } }
         private string? _explicitNullValueVendorOrderIdentifier = default!;
 #nullable restore
 #else
-        public string VendorOrderIdentifier { get => _explicitNullValueVendorOrderIdentifier; set { _explicitNullValueVendorOrderIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("VendorOrderIdentifier"); else _explicitNullProperties?.Remove("VendorOrderIdentifier"); } }
+        public string VendorOrderIdentifier { get => _explicitNullValueVendorOrderIdentifier; set { _explicitNullValueVendorOrderIdentifier = value; AdditionalData?.Remove("VendorOrderIdentifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("VendorOrderIdentifier"); else _explicitNullProperties?.Remove("VendorOrderIdentifier"); } }
         private string _explicitNullValueVendorOrderIdentifier = default!;
 #endif
         /// <summary>
@@ -62,7 +64,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ServiceProductFulfillmentIdentifier", n => { ServiceProductFulfillmentIdentifier = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillmentIdentifier>(); } },
+                { "ServiceProductFulfillmentIdentifier", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ServiceProductFulfillmentIdentifier>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueServiceProductFulfillmentIdentifier = default; _explicitNullProperties?.Remove("ServiceProductFulfillmentIdentifier"); AdditionalData["ServiceProductFulfillmentIdentifier"] = unknown; } else { ServiceProductFulfillmentIdentifier = parsed; AdditionalData.Remove("ServiceProductFulfillmentIdentifier"); } } },
                 { "VendorOrderIdentifier", n => { VendorOrderIdentifier = n.GetStringValue(); } },
             };
         }

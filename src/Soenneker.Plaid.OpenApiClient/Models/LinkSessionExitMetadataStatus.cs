@@ -18,15 +18,24 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("choose_device") is { } nullNodeChooseDevice && nullNodeChooseDevice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChooseDevice = null;
-            if (parseNode.GetChildNode("institution_not_found") is { } nullNodeInstitutionNotFound && nullNodeInstitutionNotFound.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionNotFound = null;
-            if (parseNode.GetChildNode("institution_not_supported") is { } nullNodeInstitutionNotSupported && nullNodeInstitutionNotSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionNotSupported = null;
-            if (parseNode.GetChildNode("requires_account_selection") is { } nullNodeRequiresAccountSelection && nullNodeRequiresAccountSelection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresAccountSelection = null;
-            if (parseNode.GetChildNode("requires_code") is { } nullNodeRequiresCode && nullNodeRequiresCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresCode = null;
-            if (parseNode.GetChildNode("requires_credentials") is { } nullNodeRequiresCredentials && nullNodeRequiresCredentials.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresCredentials = null;
-            if (parseNode.GetChildNode("requires_oauth") is { } nullNodeRequiresOauth && nullNodeRequiresOauth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresOauth = null;
-            if (parseNode.GetChildNode("requires_questions") is { } nullNodeRequiresQuestions && nullNodeRequiresQuestions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresQuestions = null;
-            if (parseNode.GetChildNode("requires_selections") is { } nullNodeRequiresSelections && nullNodeRequiresSelections.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresSelections = null;
+            if (parseNode.GetChildNode("choose_device") is null) { _explicitNullValueChooseDevice = default!; _explicitNullProperties?.Remove("choose_device"); }
+            else if (parseNode.GetChildNode("choose_device") is { } nullNodeChooseDevice && nullNodeChooseDevice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChooseDevice = null;
+            if (parseNode.GetChildNode("institution_not_found") is null) { _explicitNullValueInstitutionNotFound = default!; _explicitNullProperties?.Remove("institution_not_found"); }
+            else if (parseNode.GetChildNode("institution_not_found") is { } nullNodeInstitutionNotFound && nullNodeInstitutionNotFound.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionNotFound = null;
+            if (parseNode.GetChildNode("institution_not_supported") is null) { _explicitNullValueInstitutionNotSupported = default!; _explicitNullProperties?.Remove("institution_not_supported"); }
+            else if (parseNode.GetChildNode("institution_not_supported") is { } nullNodeInstitutionNotSupported && nullNodeInstitutionNotSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionNotSupported = null;
+            if (parseNode.GetChildNode("requires_account_selection") is null) { _explicitNullValueRequiresAccountSelection = default!; _explicitNullProperties?.Remove("requires_account_selection"); }
+            else if (parseNode.GetChildNode("requires_account_selection") is { } nullNodeRequiresAccountSelection && nullNodeRequiresAccountSelection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresAccountSelection = null;
+            if (parseNode.GetChildNode("requires_code") is null) { _explicitNullValueRequiresCode = default!; _explicitNullProperties?.Remove("requires_code"); }
+            else if (parseNode.GetChildNode("requires_code") is { } nullNodeRequiresCode && nullNodeRequiresCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresCode = null;
+            if (parseNode.GetChildNode("requires_credentials") is null) { _explicitNullValueRequiresCredentials = default!; _explicitNullProperties?.Remove("requires_credentials"); }
+            else if (parseNode.GetChildNode("requires_credentials") is { } nullNodeRequiresCredentials && nullNodeRequiresCredentials.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresCredentials = null;
+            if (parseNode.GetChildNode("requires_oauth") is null) { _explicitNullValueRequiresOauth = default!; _explicitNullProperties?.Remove("requires_oauth"); }
+            else if (parseNode.GetChildNode("requires_oauth") is { } nullNodeRequiresOauth && nullNodeRequiresOauth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresOauth = null;
+            if (parseNode.GetChildNode("requires_questions") is null) { _explicitNullValueRequiresQuestions = default!; _explicitNullProperties?.Remove("requires_questions"); }
+            else if (parseNode.GetChildNode("requires_questions") is { } nullNodeRequiresQuestions && nullNodeRequiresQuestions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresQuestions = null;
+            if (parseNode.GetChildNode("requires_selections") is null) { _explicitNullValueRequiresSelections = default!; _explicitNullProperties?.Remove("requires_selections"); }
+            else if (parseNode.GetChildNode("requires_selections") is { } nullNodeRequiresSelections && nullNodeRequiresSelections.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresSelections = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,91 +43,91 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>User prompted to select a device on which to receive a one-time passcode</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? ChooseDevice { get => _explicitNullValueChooseDevice; set { _explicitNullValueChooseDevice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("choose_device"); else _explicitNullProperties?.Remove("choose_device"); } }
+        public UntypedNode? ChooseDevice { get => _explicitNullValueChooseDevice; set { _explicitNullValueChooseDevice = value; AdditionalData?.Remove("choose_device"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("choose_device"); else _explicitNullProperties?.Remove("choose_device"); } }
         private UntypedNode? _explicitNullValueChooseDevice = default!;
 #nullable restore
 #else
-        public UntypedNode ChooseDevice { get => _explicitNullValueChooseDevice; set { _explicitNullValueChooseDevice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("choose_device"); else _explicitNullProperties?.Remove("choose_device"); } }
+        public UntypedNode ChooseDevice { get => _explicitNullValueChooseDevice; set { _explicitNullValueChooseDevice = value; AdditionalData?.Remove("choose_device"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("choose_device"); else _explicitNullProperties?.Remove("choose_device"); } }
         private UntypedNode _explicitNullValueChooseDevice = default!;
 #endif
         /// <summary>User exited the Link flow after unsuccessfully (no results returned) searching for a financial institution</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? InstitutionNotFound { get => _explicitNullValueInstitutionNotFound; set { _explicitNullValueInstitutionNotFound = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_not_found"); else _explicitNullProperties?.Remove("institution_not_found"); } }
+        public UntypedNode? InstitutionNotFound { get => _explicitNullValueInstitutionNotFound; set { _explicitNullValueInstitutionNotFound = value; AdditionalData?.Remove("institution_not_found"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_not_found"); else _explicitNullProperties?.Remove("institution_not_found"); } }
         private UntypedNode? _explicitNullValueInstitutionNotFound = default!;
 #nullable restore
 #else
-        public UntypedNode InstitutionNotFound { get => _explicitNullValueInstitutionNotFound; set { _explicitNullValueInstitutionNotFound = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_not_found"); else _explicitNullProperties?.Remove("institution_not_found"); } }
+        public UntypedNode InstitutionNotFound { get => _explicitNullValueInstitutionNotFound; set { _explicitNullValueInstitutionNotFound = value; AdditionalData?.Remove("institution_not_found"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_not_found"); else _explicitNullProperties?.Remove("institution_not_found"); } }
         private UntypedNode _explicitNullValueInstitutionNotFound = default!;
 #endif
         /// <summary>User exited the Link flow after discovering their selected institution is no longer supported by Plaid</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? InstitutionNotSupported { get => _explicitNullValueInstitutionNotSupported; set { _explicitNullValueInstitutionNotSupported = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_not_supported"); else _explicitNullProperties?.Remove("institution_not_supported"); } }
+        public UntypedNode? InstitutionNotSupported { get => _explicitNullValueInstitutionNotSupported; set { _explicitNullValueInstitutionNotSupported = value; AdditionalData?.Remove("institution_not_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_not_supported"); else _explicitNullProperties?.Remove("institution_not_supported"); } }
         private UntypedNode? _explicitNullValueInstitutionNotSupported = default!;
 #nullable restore
 #else
-        public UntypedNode InstitutionNotSupported { get => _explicitNullValueInstitutionNotSupported; set { _explicitNullValueInstitutionNotSupported = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_not_supported"); else _explicitNullProperties?.Remove("institution_not_supported"); } }
+        public UntypedNode InstitutionNotSupported { get => _explicitNullValueInstitutionNotSupported; set { _explicitNullValueInstitutionNotSupported = value; AdditionalData?.Remove("institution_not_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_not_supported"); else _explicitNullProperties?.Remove("institution_not_supported"); } }
         private UntypedNode _explicitNullValueInstitutionNotSupported = default!;
 #endif
         /// <summary>User prompted to select one or more financial accounts to share</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? RequiresAccountSelection { get => _explicitNullValueRequiresAccountSelection; set { _explicitNullValueRequiresAccountSelection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_account_selection"); else _explicitNullProperties?.Remove("requires_account_selection"); } }
+        public UntypedNode? RequiresAccountSelection { get => _explicitNullValueRequiresAccountSelection; set { _explicitNullValueRequiresAccountSelection = value; AdditionalData?.Remove("requires_account_selection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_account_selection"); else _explicitNullProperties?.Remove("requires_account_selection"); } }
         private UntypedNode? _explicitNullValueRequiresAccountSelection = default!;
 #nullable restore
 #else
-        public UntypedNode RequiresAccountSelection { get => _explicitNullValueRequiresAccountSelection; set { _explicitNullValueRequiresAccountSelection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_account_selection"); else _explicitNullProperties?.Remove("requires_account_selection"); } }
+        public UntypedNode RequiresAccountSelection { get => _explicitNullValueRequiresAccountSelection; set { _explicitNullValueRequiresAccountSelection = value; AdditionalData?.Remove("requires_account_selection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_account_selection"); else _explicitNullProperties?.Remove("requires_account_selection"); } }
         private UntypedNode _explicitNullValueRequiresAccountSelection = default!;
 #endif
         /// <summary>User prompted to provide a one-time passcode</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? RequiresCode { get => _explicitNullValueRequiresCode; set { _explicitNullValueRequiresCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_code"); else _explicitNullProperties?.Remove("requires_code"); } }
+        public UntypedNode? RequiresCode { get => _explicitNullValueRequiresCode; set { _explicitNullValueRequiresCode = value; AdditionalData?.Remove("requires_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_code"); else _explicitNullProperties?.Remove("requires_code"); } }
         private UntypedNode? _explicitNullValueRequiresCode = default!;
 #nullable restore
 #else
-        public UntypedNode RequiresCode { get => _explicitNullValueRequiresCode; set { _explicitNullValueRequiresCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_code"); else _explicitNullProperties?.Remove("requires_code"); } }
+        public UntypedNode RequiresCode { get => _explicitNullValueRequiresCode; set { _explicitNullValueRequiresCode = value; AdditionalData?.Remove("requires_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_code"); else _explicitNullProperties?.Remove("requires_code"); } }
         private UntypedNode _explicitNullValueRequiresCode = default!;
 #endif
         /// <summary>User prompted to provide credentials for the selected financial institution or has not yet selected a financial institution</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? RequiresCredentials { get => _explicitNullValueRequiresCredentials; set { _explicitNullValueRequiresCredentials = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_credentials"); else _explicitNullProperties?.Remove("requires_credentials"); } }
+        public UntypedNode? RequiresCredentials { get => _explicitNullValueRequiresCredentials; set { _explicitNullValueRequiresCredentials = value; AdditionalData?.Remove("requires_credentials"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_credentials"); else _explicitNullProperties?.Remove("requires_credentials"); } }
         private UntypedNode? _explicitNullValueRequiresCredentials = default!;
 #nullable restore
 #else
-        public UntypedNode RequiresCredentials { get => _explicitNullValueRequiresCredentials; set { _explicitNullValueRequiresCredentials = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_credentials"); else _explicitNullProperties?.Remove("requires_credentials"); } }
+        public UntypedNode RequiresCredentials { get => _explicitNullValueRequiresCredentials; set { _explicitNullValueRequiresCredentials = value; AdditionalData?.Remove("requires_credentials"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_credentials"); else _explicitNullProperties?.Remove("requires_credentials"); } }
         private UntypedNode _explicitNullValueRequiresCredentials = default!;
 #endif
         /// <summary>User prompted to enter an OAuth flow</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? RequiresOauth { get => _explicitNullValueRequiresOauth; set { _explicitNullValueRequiresOauth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_oauth"); else _explicitNullProperties?.Remove("requires_oauth"); } }
+        public UntypedNode? RequiresOauth { get => _explicitNullValueRequiresOauth; set { _explicitNullValueRequiresOauth = value; AdditionalData?.Remove("requires_oauth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_oauth"); else _explicitNullProperties?.Remove("requires_oauth"); } }
         private UntypedNode? _explicitNullValueRequiresOauth = default!;
 #nullable restore
 #else
-        public UntypedNode RequiresOauth { get => _explicitNullValueRequiresOauth; set { _explicitNullValueRequiresOauth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_oauth"); else _explicitNullProperties?.Remove("requires_oauth"); } }
+        public UntypedNode RequiresOauth { get => _explicitNullValueRequiresOauth; set { _explicitNullValueRequiresOauth = value; AdditionalData?.Remove("requires_oauth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_oauth"); else _explicitNullProperties?.Remove("requires_oauth"); } }
         private UntypedNode _explicitNullValueRequiresOauth = default!;
 #endif
         /// <summary>User prompted to answer security questions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? RequiresQuestions { get => _explicitNullValueRequiresQuestions; set { _explicitNullValueRequiresQuestions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_questions"); else _explicitNullProperties?.Remove("requires_questions"); } }
+        public UntypedNode? RequiresQuestions { get => _explicitNullValueRequiresQuestions; set { _explicitNullValueRequiresQuestions = value; AdditionalData?.Remove("requires_questions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_questions"); else _explicitNullProperties?.Remove("requires_questions"); } }
         private UntypedNode? _explicitNullValueRequiresQuestions = default!;
 #nullable restore
 #else
-        public UntypedNode RequiresQuestions { get => _explicitNullValueRequiresQuestions; set { _explicitNullValueRequiresQuestions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_questions"); else _explicitNullProperties?.Remove("requires_questions"); } }
+        public UntypedNode RequiresQuestions { get => _explicitNullValueRequiresQuestions; set { _explicitNullValueRequiresQuestions = value; AdditionalData?.Remove("requires_questions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_questions"); else _explicitNullProperties?.Remove("requires_questions"); } }
         private UntypedNode _explicitNullValueRequiresQuestions = default!;
 #endif
         /// <summary>User prompted to answer multiple choice question(s)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? RequiresSelections { get => _explicitNullValueRequiresSelections; set { _explicitNullValueRequiresSelections = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_selections"); else _explicitNullProperties?.Remove("requires_selections"); } }
+        public UntypedNode? RequiresSelections { get => _explicitNullValueRequiresSelections; set { _explicitNullValueRequiresSelections = value; AdditionalData?.Remove("requires_selections"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_selections"); else _explicitNullProperties?.Remove("requires_selections"); } }
         private UntypedNode? _explicitNullValueRequiresSelections = default!;
 #nullable restore
 #else
-        public UntypedNode RequiresSelections { get => _explicitNullValueRequiresSelections; set { _explicitNullValueRequiresSelections = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_selections"); else _explicitNullProperties?.Remove("requires_selections"); } }
+        public UntypedNode RequiresSelections { get => _explicitNullValueRequiresSelections; set { _explicitNullValueRequiresSelections = value; AdditionalData?.Remove("requires_selections"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_selections"); else _explicitNullProperties?.Remove("requires_selections"); } }
         private UntypedNode _explicitNullValueRequiresSelections = default!;
 #endif
         /// <summary>

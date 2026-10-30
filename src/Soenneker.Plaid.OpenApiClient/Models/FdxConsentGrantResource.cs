@@ -18,9 +18,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dataClusters") is { } nullNodeDataClusters && nullNodeDataClusters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataClusters = null;
-            if (parseNode.GetChildNode("resourceId") is { } nullNodeResourceId && nullNodeResourceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceId = null;
-            if (parseNode.GetChildNode("resourceType") is { } nullNodeResourceType && nullNodeResourceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceType = null;
+            if (parseNode.GetChildNode("dataClusters") is null) { _explicitNullValueDataClusters = default!; _explicitNullProperties?.Remove("dataClusters"); }
+            else if (parseNode.GetChildNode("dataClusters") is { } nullNodeDataClusters && nullNodeDataClusters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataClusters = null;
+            if (parseNode.GetChildNode("resourceId") is null) { _explicitNullValueResourceId = default!; _explicitNullProperties?.Remove("resourceId"); }
+            else if (parseNode.GetChildNode("resourceId") is { } nullNodeResourceId && nullNodeResourceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceId = null;
+            if (parseNode.GetChildNode("resourceType") is null) { _explicitNullValueResourceType = default!; _explicitNullProperties?.Remove("resourceType"); }
+            else if (parseNode.GetChildNode("resourceType") is { } nullNodeResourceType && nullNodeResourceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,25 +31,25 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Names of clusters of data elements permissioned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.FdxDataCluster?>? DataClusters { get => _explicitNullValueDataClusters; set { _explicitNullValueDataClusters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataClusters"); else _explicitNullProperties?.Remove("dataClusters"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.FdxDataCluster?>? DataClusters { get => _explicitNullValueDataClusters; set { _explicitNullValueDataClusters = value; AdditionalData?.Remove("dataClusters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataClusters"); else _explicitNullProperties?.Remove("dataClusters"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.FdxDataCluster?>? _explicitNullValueDataClusters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.FdxDataCluster?> DataClusters { get => _explicitNullValueDataClusters; set { _explicitNullValueDataClusters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataClusters"); else _explicitNullProperties?.Remove("dataClusters"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.FdxDataCluster?> DataClusters { get => _explicitNullValueDataClusters; set { _explicitNullValueDataClusters = value; AdditionalData?.Remove("dataClusters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataClusters"); else _explicitNullProperties?.Remove("dataClusters"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.FdxDataCluster?> _explicitNullValueDataClusters = default!;
 #endif
         /// <summary>Identifier of the resource permissioned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceId { get => _explicitNullValueResourceId; set { _explicitNullValueResourceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceId"); else _explicitNullProperties?.Remove("resourceId"); } }
+        public string? ResourceId { get => _explicitNullValueResourceId; set { _explicitNullValueResourceId = value; AdditionalData?.Remove("resourceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceId"); else _explicitNullProperties?.Remove("resourceId"); } }
         private string? _explicitNullValueResourceId = default!;
 #nullable restore
 #else
-        public string ResourceId { get => _explicitNullValueResourceId; set { _explicitNullValueResourceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceId"); else _explicitNullProperties?.Remove("resourceId"); } }
+        public string ResourceId { get => _explicitNullValueResourceId; set { _explicitNullValueResourceId = value; AdditionalData?.Remove("resourceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceId"); else _explicitNullProperties?.Remove("resourceId"); } }
         private string _explicitNullValueResourceId = default!;
 #endif
         /// <summary>Type of resource permissioned on a consent grant.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentResourceType? ResourceType { get => _explicitNullValueResourceType; set { _explicitNullValueResourceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceType"); else _explicitNullProperties?.Remove("resourceType"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentResourceType? ResourceType { get => _explicitNullValueResourceType; set { _explicitNullValueResourceType = value; AdditionalData?.Remove("resourceType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceType"); else _explicitNullProperties?.Remove("resourceType"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentResourceType? _explicitNullValueResourceType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentGrantResource"/> and sets the default values.
@@ -75,7 +78,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "dataClusters", n => { DataClusters = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.FdxDataCluster>()?.AsList(); } },
                 { "resourceId", n => { ResourceId = n.GetStringValue(); } },
-                { "resourceType", n => { ResourceType = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentResourceType>(); } },
+                { "resourceType", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FdxConsentResourceType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueResourceType = default; _explicitNullProperties?.Remove("resourceType"); AdditionalData["resourceType"] = unknown; } else { ResourceType = parsed; AdditionalData.Remove("resourceType"); } } },
             };
         }
         /// <summary>

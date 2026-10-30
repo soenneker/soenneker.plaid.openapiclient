@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("annual") is { } nullNodeAnnual && nullNodeAnnual.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Annual = null;
-            if (parseNode.GetChildNode("monthly") is { } nullNodeMonthly && nullNodeMonthly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Monthly = null;
+            if (parseNode.GetChildNode("annual") is null) { _explicitNullValueAnnual = default!; _explicitNullProperties?.Remove("annual"); }
+            else if (parseNode.GetChildNode("annual") is { } nullNodeAnnual && nullNodeAnnual.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Annual = null;
+            if (parseNode.GetChildNode("monthly") is null) { _explicitNullValueMonthly = default!; _explicitNullProperties?.Remove("monthly"); }
+            else if (parseNode.GetChildNode("monthly") is { } nullNodeMonthly && nullNodeMonthly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Monthly = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Modeled income values for a given time period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeValues? Annual { get => _explicitNullValueAnnual; set { _explicitNullValueAnnual = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annual"); else _explicitNullProperties?.Remove("annual"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeValues? Annual { get => _explicitNullValueAnnual; set { _explicitNullValueAnnual = value; AdditionalData?.Remove("annual"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annual"); else _explicitNullProperties?.Remove("annual"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeValues? _explicitNullValueAnnual = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeValues Annual { get => _explicitNullValueAnnual; set { _explicitNullValueAnnual = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annual"); else _explicitNullProperties?.Remove("annual"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeValues Annual { get => _explicitNullValueAnnual; set { _explicitNullValueAnnual = value; AdditionalData?.Remove("annual"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annual"); else _explicitNullProperties?.Remove("annual"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeValues _explicitNullValueAnnual = default!;
 #endif
         /// <summary>Modeled income values for a given time period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeValues? Monthly { get => _explicitNullValueMonthly; set { _explicitNullValueMonthly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly"); else _explicitNullProperties?.Remove("monthly"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeValues? Monthly { get => _explicitNullValueMonthly; set { _explicitNullValueMonthly = value; AdditionalData?.Remove("monthly"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly"); else _explicitNullProperties?.Remove("monthly"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeValues? _explicitNullValueMonthly = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeValues Monthly { get => _explicitNullValueMonthly; set { _explicitNullValueMonthly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly"); else _explicitNullProperties?.Remove("monthly"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeValues Monthly { get => _explicitNullValueMonthly; set { _explicitNullValueMonthly = value; AdditionalData?.Remove("monthly"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly"); else _explicitNullProperties?.Remove("monthly"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeValues _explicitNullValueMonthly = default!;
 #endif
         /// <summary>

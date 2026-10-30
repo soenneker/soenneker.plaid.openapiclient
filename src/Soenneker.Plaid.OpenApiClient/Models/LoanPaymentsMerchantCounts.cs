@@ -18,18 +18,20 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("baseline_count") is { } nullNodeBaselineCount && nullNodeBaselineCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaselineCount = null;
-            if (parseNode.GetChildNode("current_count") is { } nullNodeCurrentCount && nullNodeCurrentCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentCount = null;
+            if (parseNode.GetChildNode("baseline_count") is null) { _explicitNullValueBaselineCount = default!; _explicitNullProperties?.Remove("baseline_count"); }
+            else if (parseNode.GetChildNode("baseline_count") is { } nullNodeBaselineCount && nullNodeBaselineCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaselineCount = null;
+            if (parseNode.GetChildNode("current_count") is null) { _explicitNullValueCurrentCount = default!; _explicitNullProperties?.Remove("current_count"); }
+            else if (parseNode.GetChildNode("current_count") is { } nullNodeCurrentCount && nullNodeCurrentCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of unique loan payment merchants detected in the 30 days before the subscription date</summary>
         [Obsolete("")]
-        public double? BaselineCount { get => _explicitNullValueBaselineCount; set { _explicitNullValueBaselineCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseline_count"); else _explicitNullProperties?.Remove("baseline_count"); } }
+        public double? BaselineCount { get => _explicitNullValueBaselineCount; set { _explicitNullValueBaselineCount = value; AdditionalData?.Remove("baseline_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseline_count"); else _explicitNullProperties?.Remove("baseline_count"); } }
         private double? _explicitNullValueBaselineCount = default!;
         /// <summary>The current number of unique loan payment merchants detected in the last 30 days</summary>
-        public double? CurrentCount { get => _explicitNullValueCurrentCount; set { _explicitNullValueCurrentCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_count"); else _explicitNullProperties?.Remove("current_count"); } }
+        public double? CurrentCount { get => _explicitNullValueCurrentCount; set { _explicitNullValueCurrentCount = value; AdditionalData?.Remove("current_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_count"); else _explicitNullProperties?.Remove("current_count"); } }
         private double? _explicitNullValueCurrentCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LoanPaymentsMerchantCounts"/> and sets the default values.

@@ -18,11 +18,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ewa_attributes") is { } nullNodeEwaAttributes && nullNodeEwaAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EwaAttributes = null;
-            if (parseNode.GetChildNode("ewa_report_id") is { } nullNodeEwaReportId && nullNodeEwaReportId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EwaReportId = null;
-            if (parseNode.GetChildNode("ewa_scores") is { } nullNodeEwaScores && nullNodeEwaScores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EwaScores = null;
-            if (parseNode.GetChildNode("generation_time") is { } nullNodeGenerationTime && nullNodeGenerationTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GenerationTime = null;
-            if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
+            if (parseNode.GetChildNode("ewa_attributes") is null) { _explicitNullValueEwaAttributes = default!; _explicitNullProperties?.Remove("ewa_attributes"); }
+            else if (parseNode.GetChildNode("ewa_attributes") is { } nullNodeEwaAttributes && nullNodeEwaAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EwaAttributes = null;
+            if (parseNode.GetChildNode("ewa_report_id") is null) { _explicitNullValueEwaReportId = default!; _explicitNullProperties?.Remove("ewa_report_id"); }
+            else if (parseNode.GetChildNode("ewa_report_id") is { } nullNodeEwaReportId && nullNodeEwaReportId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EwaReportId = null;
+            if (parseNode.GetChildNode("ewa_scores") is null) { _explicitNullValueEwaScores = default!; _explicitNullProperties?.Remove("ewa_scores"); }
+            else if (parseNode.GetChildNode("ewa_scores") is { } nullNodeEwaScores && nullNodeEwaScores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EwaScores = null;
+            if (parseNode.GetChildNode("generation_time") is null) { _explicitNullValueGenerationTime = default!; _explicitNullProperties?.Remove("generation_time"); }
+            else if (parseNode.GetChildNode("generation_time") is { } nullNodeGenerationTime && nullNodeGenerationTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GenerationTime = null;
+            if (parseNode.GetChildNode("request_id") is null) { _explicitNullValueRequestId = default!; _explicitNullProperties?.Remove("request_id"); }
+            else if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,44 +35,44 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>A set of attributes providing context about the factors that contributed to the EWA scores. Each key is the attribute name and the value is its numeric score, or null if the attribute could not be computed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BetaEwaReportV1GetResponseEwaAttributes? EwaAttributes { get => _explicitNullValueEwaAttributes; set { _explicitNullValueEwaAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ewa_attributes"); else _explicitNullProperties?.Remove("ewa_attributes"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BetaEwaReportV1GetResponseEwaAttributes? EwaAttributes { get => _explicitNullValueEwaAttributes; set { _explicitNullValueEwaAttributes = value; AdditionalData?.Remove("ewa_attributes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ewa_attributes"); else _explicitNullProperties?.Remove("ewa_attributes"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.BetaEwaReportV1GetResponseEwaAttributes? _explicitNullValueEwaAttributes = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BetaEwaReportV1GetResponseEwaAttributes EwaAttributes { get => _explicitNullValueEwaAttributes; set { _explicitNullValueEwaAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ewa_attributes"); else _explicitNullProperties?.Remove("ewa_attributes"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.BetaEwaReportV1GetResponseEwaAttributes EwaAttributes { get => _explicitNullValueEwaAttributes; set { _explicitNullValueEwaAttributes = value; AdditionalData?.Remove("ewa_attributes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ewa_attributes"); else _explicitNullProperties?.Remove("ewa_attributes"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.BetaEwaReportV1GetResponseEwaAttributes _explicitNullValueEwaAttributes = default!;
 #endif
         /// <summary>Unique identifier for the generated EWA score group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EwaReportId { get => _explicitNullValueEwaReportId; set { _explicitNullValueEwaReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ewa_report_id"); else _explicitNullProperties?.Remove("ewa_report_id"); } }
+        public string? EwaReportId { get => _explicitNullValueEwaReportId; set { _explicitNullValueEwaReportId = value; AdditionalData?.Remove("ewa_report_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ewa_report_id"); else _explicitNullProperties?.Remove("ewa_report_id"); } }
         private string? _explicitNullValueEwaReportId = default!;
 #nullable restore
 #else
-        public string EwaReportId { get => _explicitNullValueEwaReportId; set { _explicitNullValueEwaReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ewa_report_id"); else _explicitNullProperties?.Remove("ewa_report_id"); } }
+        public string EwaReportId { get => _explicitNullValueEwaReportId; set { _explicitNullValueEwaReportId = value; AdditionalData?.Remove("ewa_report_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ewa_report_id"); else _explicitNullProperties?.Remove("ewa_report_id"); } }
         private string _explicitNullValueEwaReportId = default!;
 #endif
         /// <summary>A list of earned wage access (EWA) scoring entries that map potential advance amounts to repayment likelihood scores. The predefined advance amount ranges are `[0, 25)`, `[25, 50)`, `[50, 100)`, `[100, 200)`, `[200, 300)`, `[300, 400)`, and `[400, 500)`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.EwaScore>? EwaScores { get => _explicitNullValueEwaScores; set { _explicitNullValueEwaScores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ewa_scores"); else _explicitNullProperties?.Remove("ewa_scores"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.EwaScore>? EwaScores { get => _explicitNullValueEwaScores; set { _explicitNullValueEwaScores = value; AdditionalData?.Remove("ewa_scores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ewa_scores"); else _explicitNullProperties?.Remove("ewa_scores"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.EwaScore>? _explicitNullValueEwaScores = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.EwaScore> EwaScores { get => _explicitNullValueEwaScores; set { _explicitNullValueEwaScores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ewa_scores"); else _explicitNullProperties?.Remove("ewa_scores"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.EwaScore> EwaScores { get => _explicitNullValueEwaScores; set { _explicitNullValueEwaScores = value; AdditionalData?.Remove("ewa_scores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ewa_scores"); else _explicitNullProperties?.Remove("ewa_scores"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.EwaScore> _explicitNullValueEwaScores = default!;
 #endif
         /// <summary>The date and time when `ewa_scores` was generated, in ISO 8601 format (e.g. &quot;2018-04-12T03:32:11Z&quot;).</summary>
-        public DateTimeOffset? GenerationTime { get => _explicitNullValueGenerationTime; set { _explicitNullValueGenerationTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generation_time"); else _explicitNullProperties?.Remove("generation_time"); } }
+        public DateTimeOffset? GenerationTime { get => _explicitNullValueGenerationTime; set { _explicitNullValueGenerationTime = value; AdditionalData?.Remove("generation_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generation_time"); else _explicitNullProperties?.Remove("generation_time"); } }
         private DateTimeOffset? _explicitNullValueGenerationTime = default!;
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; AdditionalData?.Remove("request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
         private string? _explicitNullValueRequestId = default!;
 #nullable restore
 #else
-        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; AdditionalData?.Remove("request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
         private string _explicitNullValueRequestId = default!;
 #endif
         /// <summary>

@@ -18,17 +18,28 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("analysis") is { } nullNodeAnalysis && nullNodeAnalysis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Analysis = null;
-            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
-            if (parseNode.GetChildNode("first_active") is { } nullNodeFirstActive && nullNodeFirstActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstActive = null;
-            if (parseNode.GetChildNode("historical_since") is { } nullNodeHistoricalSince && nullNodeHistoricalSince.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HistoricalSince = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("inactive_since") is { } nullNodeInactiveSince && nullNodeInactiveSince.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InactiveSince = null;
-            if (parseNode.GetChildNode("list_code") is { } nullNodeListCode && nullNodeListCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ListCode = null;
-            if (parseNode.GetChildNode("plaid_uid") is { } nullNodePlaidUid && nullNodePlaidUid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlaidUid = null;
-            if (parseNode.GetChildNode("review_status") is { } nullNodeReviewStatus && nullNodeReviewStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReviewStatus = null;
-            if (parseNode.GetChildNode("source_uid") is { } nullNodeSourceUid && nullNodeSourceUid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceUid = null;
-            if (parseNode.GetChildNode("sub_programs") is { } nullNodeSubPrograms && nullNodeSubPrograms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubPrograms = null;
+            if (parseNode.GetChildNode("analysis") is null) { _explicitNullValueAnalysis = default!; _explicitNullProperties?.Remove("analysis"); }
+            else if (parseNode.GetChildNode("analysis") is { } nullNodeAnalysis && nullNodeAnalysis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Analysis = null;
+            if (parseNode.GetChildNode("data") is null) { _explicitNullValueData = default!; _explicitNullProperties?.Remove("data"); }
+            else if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("first_active") is null) { _explicitNullValueFirstActive = default!; _explicitNullProperties?.Remove("first_active"); }
+            else if (parseNode.GetChildNode("first_active") is { } nullNodeFirstActive && nullNodeFirstActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstActive = null;
+            if (parseNode.GetChildNode("historical_since") is null) { _explicitNullValueHistoricalSince = default!; _explicitNullProperties?.Remove("historical_since"); }
+            else if (parseNode.GetChildNode("historical_since") is { } nullNodeHistoricalSince && nullNodeHistoricalSince.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HistoricalSince = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("inactive_since") is null) { _explicitNullValueInactiveSince = default!; _explicitNullProperties?.Remove("inactive_since"); }
+            else if (parseNode.GetChildNode("inactive_since") is { } nullNodeInactiveSince && nullNodeInactiveSince.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InactiveSince = null;
+            if (parseNode.GetChildNode("list_code") is null) { _explicitNullValueListCode = default!; _explicitNullProperties?.Remove("list_code"); }
+            else if (parseNode.GetChildNode("list_code") is { } nullNodeListCode && nullNodeListCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ListCode = null;
+            if (parseNode.GetChildNode("plaid_uid") is null) { _explicitNullValuePlaidUid = default!; _explicitNullProperties?.Remove("plaid_uid"); }
+            else if (parseNode.GetChildNode("plaid_uid") is { } nullNodePlaidUid && nullNodePlaidUid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlaidUid = null;
+            if (parseNode.GetChildNode("review_status") is null) { _explicitNullValueReviewStatus = default!; _explicitNullProperties?.Remove("review_status"); }
+            else if (parseNode.GetChildNode("review_status") is { } nullNodeReviewStatus && nullNodeReviewStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReviewStatus = null;
+            if (parseNode.GetChildNode("source_uid") is null) { _explicitNullValueSourceUid = default!; _explicitNullProperties?.Remove("source_uid"); }
+            else if (parseNode.GetChildNode("source_uid") is { } nullNodeSourceUid && nullNodeSourceUid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceUid = null;
+            if (parseNode.GetChildNode("sub_programs") is null) { _explicitNullValueSubPrograms = default!; _explicitNullProperties?.Remove("sub_programs"); }
+            else if (parseNode.GetChildNode("sub_programs") is { } nullNodeSubPrograms && nullNodeSubPrograms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubPrograms = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -36,76 +47,76 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Analysis information describing why a screening hit matched the provided entity information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitAnalysis? Analysis { get => _explicitNullValueAnalysis; set { _explicitNullValueAnalysis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysis"); else _explicitNullProperties?.Remove("analysis"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitAnalysis? Analysis { get => _explicitNullValueAnalysis; set { _explicitNullValueAnalysis = value; AdditionalData?.Remove("analysis"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysis"); else _explicitNullProperties?.Remove("analysis"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitAnalysis? _explicitNullValueAnalysis = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitAnalysis Analysis { get => _explicitNullValueAnalysis; set { _explicitNullValueAnalysis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysis"); else _explicitNullProperties?.Remove("analysis"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitAnalysis Analysis { get => _explicitNullValueAnalysis; set { _explicitNullValueAnalysis = value; AdditionalData?.Remove("analysis"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysis"); else _explicitNullProperties?.Remove("analysis"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitAnalysis _explicitNullValueAnalysis = default!;
 #endif
         /// <summary>Information associated with the entity watchlist hit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitData? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitData? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitData? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitData Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitData Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitData _explicitNullValueData = default!;
 #endif
         /// <summary>An ISO8601 formatted timestamp.</summary>
-        public DateTimeOffset? FirstActive { get => _explicitNullValueFirstActive; set { _explicitNullValueFirstActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_active"); else _explicitNullProperties?.Remove("first_active"); } }
+        public DateTimeOffset? FirstActive { get => _explicitNullValueFirstActive; set { _explicitNullValueFirstActive = value; AdditionalData?.Remove("first_active"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_active"); else _explicitNullProperties?.Remove("first_active"); } }
         private DateTimeOffset? _explicitNullValueFirstActive = default!;
         /// <summary>An ISO8601 formatted timestamp.</summary>
-        public DateTimeOffset? HistoricalSince { get => _explicitNullValueHistoricalSince; set { _explicitNullValueHistoricalSince = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("historical_since"); else _explicitNullProperties?.Remove("historical_since"); } }
+        public DateTimeOffset? HistoricalSince { get => _explicitNullValueHistoricalSince; set { _explicitNullValueHistoricalSince = value; AdditionalData?.Remove("historical_since"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("historical_since"); else _explicitNullProperties?.Remove("historical_since"); } }
         private DateTimeOffset? _explicitNullValueHistoricalSince = default!;
         /// <summary>ID of the associated entity screening hit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>An ISO8601 formatted timestamp.</summary>
-        public DateTimeOffset? InactiveSince { get => _explicitNullValueInactiveSince; set { _explicitNullValueInactiveSince = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inactive_since"); else _explicitNullProperties?.Remove("inactive_since"); } }
+        public DateTimeOffset? InactiveSince { get => _explicitNullValueInactiveSince; set { _explicitNullValueInactiveSince = value; AdditionalData?.Remove("inactive_since"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inactive_since"); else _explicitNullProperties?.Remove("inactive_since"); } }
         private DateTimeOffset? _explicitNullValueInactiveSince = default!;
         /// <summary>Shorthand identifier for a specific screening list for entities. `AU_CON`: Australia Department of Foreign Affairs and Trade Consolidated List `CA_CON`: Government of Canada Consolidated List of Sanctions `EU_CON`: European External Action Service Consolidated List `IZ_SOE`: State Owned Enterprise List `IZ_UNC`: United Nations Consolidated Sanctions `IZ_WBK`: World Bank Listing of Ineligible Firms and Individuals `US_CAP`: US OFAC Correspondent Account or Payable-Through Account Sanctions `US_FSE`: US OFAC Foreign Sanctions Evaders `US_MBS`: US Non-SDN Menu-Based Sanctions `US_SDN`: US OFAC Specially Designated Nationals List `US_SSI`: US OFAC Sectoral Sanctions Identifications `US_CMC`: US OFAC Non-SDN Chinese Military-Industrial Complex List `US_UVL`: Bureau of Industry and Security Unverified List `US_SAM`: US System for Award Management Exclusion List `US_TEL`: US Terrorist Exclusion List `UK_HMC`: Foreign, Commonwealth &amp; Development Office UK Sanctions List</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.EntityWatchlistCode? ListCode { get => _explicitNullValueListCode; set { _explicitNullValueListCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_code"); else _explicitNullProperties?.Remove("list_code"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.EntityWatchlistCode? ListCode { get => _explicitNullValueListCode; set { _explicitNullValueListCode = value; AdditionalData?.Remove("list_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list_code"); else _explicitNullProperties?.Remove("list_code"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.EntityWatchlistCode? _explicitNullValueListCode = default!;
         /// <summary>A universal identifier for a watchlist individual that is stable across searches and updates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlaidUid { get => _explicitNullValuePlaidUid; set { _explicitNullValuePlaidUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plaid_uid"); else _explicitNullProperties?.Remove("plaid_uid"); } }
+        public string? PlaidUid { get => _explicitNullValuePlaidUid; set { _explicitNullValuePlaidUid = value; AdditionalData?.Remove("plaid_uid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plaid_uid"); else _explicitNullProperties?.Remove("plaid_uid"); } }
         private string? _explicitNullValuePlaidUid = default!;
 #nullable restore
 #else
-        public string PlaidUid { get => _explicitNullValuePlaidUid; set { _explicitNullValuePlaidUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plaid_uid"); else _explicitNullProperties?.Remove("plaid_uid"); } }
+        public string PlaidUid { get => _explicitNullValuePlaidUid; set { _explicitNullValuePlaidUid = value; AdditionalData?.Remove("plaid_uid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plaid_uid"); else _explicitNullProperties?.Remove("plaid_uid"); } }
         private string _explicitNullValuePlaidUid = default!;
 #endif
         /// <summary>The current state of review. All watchlist screening hits begin in a `pending_review` state but can be changed by creating a review. When a hit is in the `pending_review` state, it will always show the latest version of the watchlist data Plaid has available and be compared against the latest customer information saved in the watchlist screening. Once a hit has been marked as `confirmed` or `dismissed` it will no longer be updated so that the state is as it was when the review was first conducted.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningHitStatus? ReviewStatus { get => _explicitNullValueReviewStatus; set { _explicitNullValueReviewStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("review_status"); else _explicitNullProperties?.Remove("review_status"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningHitStatus? ReviewStatus { get => _explicitNullValueReviewStatus; set { _explicitNullValueReviewStatus = value; AdditionalData?.Remove("review_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("review_status"); else _explicitNullProperties?.Remove("review_status"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningHitStatus? _explicitNullValueReviewStatus = default!;
         /// <summary>The identifier provided by the source sanction or watchlist. When one is not provided by the source, this is `null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceUid { get => _explicitNullValueSourceUid; set { _explicitNullValueSourceUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_uid"); else _explicitNullProperties?.Remove("source_uid"); } }
+        public string? SourceUid { get => _explicitNullValueSourceUid; set { _explicitNullValueSourceUid = value; AdditionalData?.Remove("source_uid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_uid"); else _explicitNullProperties?.Remove("source_uid"); } }
         private string? _explicitNullValueSourceUid = default!;
 #nullable restore
 #else
-        public string SourceUid { get => _explicitNullValueSourceUid; set { _explicitNullValueSourceUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_uid"); else _explicitNullProperties?.Remove("source_uid"); } }
+        public string SourceUid { get => _explicitNullValueSourceUid; set { _explicitNullValueSourceUid = value; AdditionalData?.Remove("source_uid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_uid"); else _explicitNullProperties?.Remove("source_uid"); } }
         private string _explicitNullValueSourceUid = default!;
 #endif
         /// <summary>Sub-program designations that may be attached to the watchlist entry by the issuing authority. For OFAC SDNentries these are the program codes published in the SDN list (for example `SDGT` for SpeciallyDesignated Global Terrorists, `SDNTK` for Specially Designated Narcotics Trafficking Kingpins,`IRAN`, `RUSSIA-EO14024`). New codes are added by sanctioning authorities without prior notice,so callers should treat unknown values as opaque strings rather than enum members.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SubPrograms { get => _explicitNullValueSubPrograms; set { _explicitNullValueSubPrograms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_programs"); else _explicitNullProperties?.Remove("sub_programs"); } }
+        public List<string>? SubPrograms { get => _explicitNullValueSubPrograms; set { _explicitNullValueSubPrograms = value; AdditionalData?.Remove("sub_programs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_programs"); else _explicitNullProperties?.Remove("sub_programs"); } }
         private List<string>? _explicitNullValueSubPrograms = default!;
 #nullable restore
 #else
-        public List<string> SubPrograms { get => _explicitNullValueSubPrograms; set { _explicitNullValueSubPrograms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_programs"); else _explicitNullProperties?.Remove("sub_programs"); } }
+        public List<string> SubPrograms { get => _explicitNullValueSubPrograms; set { _explicitNullValueSubPrograms = value; AdditionalData?.Remove("sub_programs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_programs"); else _explicitNullProperties?.Remove("sub_programs"); } }
         private List<string> _explicitNullValueSubPrograms = default!;
 #endif
         /// <summary>
@@ -139,9 +150,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "historical_since", n => { HistoricalSince = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "inactive_since", n => { InactiveSince = n.GetDateTimeOffsetValue(); } },
-                { "list_code", n => { ListCode = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.EntityWatchlistCode>(); } },
+                { "list_code", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.EntityWatchlistCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueListCode = default; _explicitNullProperties?.Remove("list_code"); AdditionalData["list_code"] = unknown; } else { ListCode = parsed; AdditionalData.Remove("list_code"); } } },
                 { "plaid_uid", n => { PlaidUid = n.GetStringValue(); } },
-                { "review_status", n => { ReviewStatus = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningHitStatus>(); } },
+                { "review_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WatchlistScreeningHitStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueReviewStatus = default; _explicitNullProperties?.Remove("review_status"); AdditionalData["review_status"] = unknown; } else { ReviewStatus = parsed; AdditionalData.Remove("review_status"); } } },
                 { "source_uid", n => { SourceUid = n.GetStringValue(); } },
                 { "sub_programs", n => { SubPrograms = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };

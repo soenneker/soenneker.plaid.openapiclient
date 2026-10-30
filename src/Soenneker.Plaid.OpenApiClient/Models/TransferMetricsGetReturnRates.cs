@@ -18,7 +18,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("last_60d") is { } nullNodeLast60d && nullNodeLast60d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Last60d = null;
+            if (parseNode.GetChildNode("last_60d") is null) { _explicitNullValueLast60d = default!; _explicitNullProperties?.Remove("last_60d"); }
+            else if (parseNode.GetChildNode("last_60d") is { } nullNodeLast60d && nullNodeLast60d.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Last60d = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Details regarding return rates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetReturnRatesOverInterval? Last60d { get => _explicitNullValueLast60d; set { _explicitNullValueLast60d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_60d"); else _explicitNullProperties?.Remove("last_60d"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetReturnRatesOverInterval? Last60d { get => _explicitNullValueLast60d; set { _explicitNullValueLast60d = value; AdditionalData?.Remove("last_60d"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_60d"); else _explicitNullProperties?.Remove("last_60d"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetReturnRatesOverInterval? _explicitNullValueLast60d = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetReturnRatesOverInterval Last60d { get => _explicitNullValueLast60d; set { _explicitNullValueLast60d = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_60d"); else _explicitNullProperties?.Remove("last_60d"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetReturnRatesOverInterval Last60d { get => _explicitNullValueLast60d; set { _explicitNullValueLast60d = value; AdditionalData?.Remove("last_60d"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_60d"); else _explicitNullProperties?.Remove("last_60d"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransferMetricsGetReturnRatesOverInterval _explicitNullValueLast60d = default!;
 #endif
         /// <summary>

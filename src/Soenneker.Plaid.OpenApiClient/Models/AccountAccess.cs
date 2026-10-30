@@ -18,34 +18,37 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("account_product_access") is { } nullNodeAccountProductAccess && nullNodeAccountProductAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountProductAccess = null;
-            if (parseNode.GetChildNode("authorized") is { } nullNodeAuthorized && nullNodeAuthorized.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Authorized = null;
-            if (parseNode.GetChildNode("unique_id") is { } nullNodeUniqueId && nullNodeUniqueId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueId = null;
+            if (parseNode.GetChildNode("account_product_access") is null) { _explicitNullValueAccountProductAccess = default!; _explicitNullProperties?.Remove("account_product_access"); }
+            else if (parseNode.GetChildNode("account_product_access") is { } nullNodeAccountProductAccess && nullNodeAccountProductAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountProductAccess = null;
+            if (parseNode.GetChildNode("authorized") is null) { _explicitNullValueAuthorized = default!; _explicitNullProperties?.Remove("authorized"); }
+            else if (parseNode.GetChildNode("authorized") is { } nullNodeAuthorized && nullNodeAuthorized.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Authorized = null;
+            if (parseNode.GetChildNode("unique_id") is null) { _explicitNullValueUniqueId = default!; _explicitNullProperties?.Remove("unique_id"); }
+            else if (parseNode.GetChildNode("unique_id") is { } nullNodeUniqueId && nullNodeUniqueId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueId = null;
         }
 
         /// <summary>Allow the application to access specific products on this account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountProductAccessNullable? AccountProductAccess { get => _explicitNullValueAccountProductAccess; set { _explicitNullValueAccountProductAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_product_access"); else _explicitNullProperties?.Remove("account_product_access"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AccountProductAccessNullable? AccountProductAccess { get => _explicitNullValueAccountProductAccess; set { _explicitNullValueAccountProductAccess = value; AdditionalData?.Remove("account_product_access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_product_access"); else _explicitNullProperties?.Remove("account_product_access"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.AccountProductAccessNullable? _explicitNullValueAccountProductAccess = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountProductAccessNullable AccountProductAccess { get => _explicitNullValueAccountProductAccess; set { _explicitNullValueAccountProductAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_product_access"); else _explicitNullProperties?.Remove("account_product_access"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AccountProductAccessNullable AccountProductAccess { get => _explicitNullValueAccountProductAccess; set { _explicitNullValueAccountProductAccess = value; AdditionalData?.Remove("account_product_access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_product_access"); else _explicitNullProperties?.Remove("account_product_access"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.AccountProductAccessNullable _explicitNullValueAccountProductAccess = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Allow the application to see this account (and associated details, including balance) in the list of accounts. If unset, defaults to `true`.</summary>
-        public bool? Authorized { get => _explicitNullValueAuthorized; set { _explicitNullValueAuthorized = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorized"); else _explicitNullProperties?.Remove("authorized"); } }
+        public bool? Authorized { get => _explicitNullValueAuthorized; set { _explicitNullValueAuthorized = value; AdditionalData?.Remove("authorized"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorized"); else _explicitNullProperties?.Remove("authorized"); } }
         private bool? _explicitNullValueAuthorized = default!;
         /// <summary>The unique account identifier for this account. This value must match that returned by the data access API for this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UniqueId { get => _explicitNullValueUniqueId; set { _explicitNullValueUniqueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unique_id"); else _explicitNullProperties?.Remove("unique_id"); } }
+        public string? UniqueId { get => _explicitNullValueUniqueId; set { _explicitNullValueUniqueId = value; AdditionalData?.Remove("unique_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unique_id"); else _explicitNullProperties?.Remove("unique_id"); } }
         private string? _explicitNullValueUniqueId = default!;
 #nullable restore
 #else
-        public string UniqueId { get => _explicitNullValueUniqueId; set { _explicitNullValueUniqueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unique_id"); else _explicitNullProperties?.Remove("unique_id"); } }
+        public string UniqueId { get => _explicitNullValueUniqueId; set { _explicitNullValueUniqueId = value; AdditionalData?.Remove("unique_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unique_id"); else _explicitNullProperties?.Remove("unique_id"); } }
         private string _explicitNullValueUniqueId = default!;
 #endif
         /// <summary>

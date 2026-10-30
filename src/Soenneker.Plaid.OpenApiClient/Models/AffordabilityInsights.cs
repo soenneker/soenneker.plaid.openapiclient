@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("expenditure") is { } nullNodeExpenditure && nullNodeExpenditure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expenditure = null;
-            if (parseNode.GetChildNode("income") is { } nullNodeIncome && nullNodeIncome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Income = null;
+            if (parseNode.GetChildNode("expenditure") is null) { _explicitNullValueExpenditure = default!; _explicitNullProperties?.Remove("expenditure"); }
+            else if (parseNode.GetChildNode("expenditure") is { } nullNodeExpenditure && nullNodeExpenditure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expenditure = null;
+            if (parseNode.GetChildNode("income") is null) { _explicitNullValueIncome = default!; _explicitNullProperties?.Remove("income"); }
+            else if (parseNode.GetChildNode("income") is { } nullNodeIncome && nullNodeIncome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Income = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Comprehensive analysis of spending patterns, categorizing expenses into essential, non-essential, and other categories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureInsights? Expenditure { get => _explicitNullValueExpenditure; set { _explicitNullValueExpenditure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expenditure"); else _explicitNullProperties?.Remove("expenditure"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureInsights? Expenditure { get => _explicitNullValueExpenditure; set { _explicitNullValueExpenditure = value; AdditionalData?.Remove("expenditure"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expenditure"); else _explicitNullProperties?.Remove("expenditure"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureInsights? _explicitNullValueExpenditure = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureInsights Expenditure { get => _explicitNullValueExpenditure; set { _explicitNullValueExpenditure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expenditure"); else _explicitNullProperties?.Remove("expenditure"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureInsights Expenditure { get => _explicitNullValueExpenditure; set { _explicitNullValueExpenditure = value; AdditionalData?.Remove("expenditure"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expenditure"); else _explicitNullProperties?.Remove("expenditure"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureInsights _explicitNullValueExpenditure = default!;
 #endif
         /// <summary>Comprehensive income analysis including total income, income excluding transfers, and inbound transfer amounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsights? Income { get => _explicitNullValueIncome; set { _explicitNullValueIncome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income"); else _explicitNullProperties?.Remove("income"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsights? Income { get => _explicitNullValueIncome; set { _explicitNullValueIncome = value; AdditionalData?.Remove("income"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income"); else _explicitNullProperties?.Remove("income"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsights? _explicitNullValueIncome = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsights Income { get => _explicitNullValueIncome; set { _explicitNullValueIncome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income"); else _explicitNullProperties?.Remove("income"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsights Income { get => _explicitNullValueIncome; set { _explicitNullValueIncome = value; AdditionalData?.Remove("income"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income"); else _explicitNullProperties?.Remove("income"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsights _explicitNullValueIncome = default!;
 #endif
         /// <summary>

@@ -18,11 +18,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("client_id") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
-            if (parseNode.GetChildNode("secret") is { } nullNodeSecret && nullNodeSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Secret = null;
-            if (parseNode.GetChildNode("webhook_code") is { } nullNodeWebhookCode && nullNodeWebhookCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookCode = null;
-            if (parseNode.GetChildNode("webhook_fields") is { } nullNodeWebhookFields && nullNodeWebhookFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookFields = null;
-            if (parseNode.GetChildNode("webhook_override") is { } nullNodeWebhookOverride && nullNodeWebhookOverride.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookOverride = null;
+            if (parseNode.GetChildNode("client_id") is null) { _explicitNullValueClientId = default!; _explicitNullProperties?.Remove("client_id"); }
+            else if (parseNode.GetChildNode("client_id") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
+            if (parseNode.GetChildNode("secret") is null) { _explicitNullValueSecret = default!; _explicitNullProperties?.Remove("secret"); }
+            else if (parseNode.GetChildNode("secret") is { } nullNodeSecret && nullNodeSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Secret = null;
+            if (parseNode.GetChildNode("webhook_code") is null) { _explicitNullValueWebhookCode = default!; _explicitNullProperties?.Remove("webhook_code"); }
+            else if (parseNode.GetChildNode("webhook_code") is { } nullNodeWebhookCode && nullNodeWebhookCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookCode = null;
+            if (parseNode.GetChildNode("webhook_fields") is null) { _explicitNullValueWebhookFields = default!; _explicitNullProperties?.Remove("webhook_fields"); }
+            else if (parseNode.GetChildNode("webhook_fields") is { } nullNodeWebhookFields && nullNodeWebhookFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookFields = null;
+            if (parseNode.GetChildNode("webhook_override") is null) { _explicitNullValueWebhookOverride = default!; _explicitNullProperties?.Remove("webhook_override"); }
+            else if (parseNode.GetChildNode("webhook_override") is { } nullNodeWebhookOverride && nullNodeWebhookOverride.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookOverride = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,44 +35,44 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; AdditionalData?.Remove("client_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
         private string? _explicitNullValueClientId = default!;
 #nullable restore
 #else
-        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; AdditionalData?.Remove("client_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
         private string _explicitNullValueClientId = default!;
 #endif
         /// <summary>Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
+        public string? Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; AdditionalData?.Remove("secret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
         private string? _explicitNullValueSecret = default!;
 #nullable restore
 #else
-        public string Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
+        public string Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; AdditionalData?.Remove("secret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
         private string _explicitNullValueSecret = default!;
 #endif
         /// <summary>The webhook codes this endpoint can be used to test</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxBankIncomeWebhookFireRequestWebhookCode? WebhookCode { get => _explicitNullValueWebhookCode; set { _explicitNullValueWebhookCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_code"); else _explicitNullProperties?.Remove("webhook_code"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxBankIncomeWebhookFireRequestWebhookCode? WebhookCode { get => _explicitNullValueWebhookCode; set { _explicitNullValueWebhookCode = value; AdditionalData?.Remove("webhook_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_code"); else _explicitNullProperties?.Remove("webhook_code"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.SandboxBankIncomeWebhookFireRequestWebhookCode? _explicitNullValueWebhookCode = default!;
         /// <summary>Optional fields which will be populated in the simulated webhook</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxBankIncomeWebhookFireRequestWebhookFields? WebhookFields { get => _explicitNullValueWebhookFields; set { _explicitNullValueWebhookFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_fields"); else _explicitNullProperties?.Remove("webhook_fields"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxBankIncomeWebhookFireRequestWebhookFields? WebhookFields { get => _explicitNullValueWebhookFields; set { _explicitNullValueWebhookFields = value; AdditionalData?.Remove("webhook_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_fields"); else _explicitNullProperties?.Remove("webhook_fields"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.SandboxBankIncomeWebhookFireRequestWebhookFields? _explicitNullValueWebhookFields = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxBankIncomeWebhookFireRequestWebhookFields WebhookFields { get => _explicitNullValueWebhookFields; set { _explicitNullValueWebhookFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_fields"); else _explicitNullProperties?.Remove("webhook_fields"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.SandboxBankIncomeWebhookFireRequestWebhookFields WebhookFields { get => _explicitNullValueWebhookFields; set { _explicitNullValueWebhookFields = value; AdditionalData?.Remove("webhook_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_fields"); else _explicitNullProperties?.Remove("webhook_fields"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.SandboxBankIncomeWebhookFireRequestWebhookFields _explicitNullValueWebhookFields = default!;
 #endif
         /// <summary>The URL to which the webhook should be sent. If provided, this will override the URL set in the dashboard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebhookOverride { get => _explicitNullValueWebhookOverride; set { _explicitNullValueWebhookOverride = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_override"); else _explicitNullProperties?.Remove("webhook_override"); } }
+        public string? WebhookOverride { get => _explicitNullValueWebhookOverride; set { _explicitNullValueWebhookOverride = value; AdditionalData?.Remove("webhook_override"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_override"); else _explicitNullProperties?.Remove("webhook_override"); } }
         private string? _explicitNullValueWebhookOverride = default!;
 #nullable restore
 #else
-        public string WebhookOverride { get => _explicitNullValueWebhookOverride; set { _explicitNullValueWebhookOverride = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_override"); else _explicitNullProperties?.Remove("webhook_override"); } }
+        public string WebhookOverride { get => _explicitNullValueWebhookOverride; set { _explicitNullValueWebhookOverride = value; AdditionalData?.Remove("webhook_override"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_override"); else _explicitNullProperties?.Remove("webhook_override"); } }
         private string _explicitNullValueWebhookOverride = default!;
 #endif
         /// <summary>
@@ -97,7 +102,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
-                { "webhook_code", n => { WebhookCode = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SandboxBankIncomeWebhookFireRequestWebhookCode>(); } },
+                { "webhook_code", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SandboxBankIncomeWebhookFireRequestWebhookCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueWebhookCode = default; _explicitNullProperties?.Remove("webhook_code"); AdditionalData["webhook_code"] = unknown; } else { WebhookCode = parsed; AdditionalData.Remove("webhook_code"); } } },
                 { "webhook_fields", n => { WebhookFields = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.SandboxBankIncomeWebhookFireRequestWebhookFields>(global::Soenneker.Plaid.OpenApiClient.Models.SandboxBankIncomeWebhookFireRequestWebhookFields.CreateFromDiscriminatorValue); } },
                 { "webhook_override", n => { WebhookOverride = n.GetStringValue(); } },
             };

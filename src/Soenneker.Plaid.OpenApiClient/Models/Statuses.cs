@@ -18,7 +18,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("STATUS") is { } nullNodeSTATUS && nullNodeSTATUS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) STATUS = null;
+            if (parseNode.GetChildNode("STATUS") is null) { _explicitNullValueSTATUS = default!; _explicitNullProperties?.Remove("STATUS"); }
+            else if (parseNode.GetChildNode("STATUS") is { } nullNodeSTATUS && nullNodeSTATUS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) STATUS = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Documentation not found in the MISMO model viewer and not provided by Freddie Mac.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.Status? STATUS { get => _explicitNullValueSTATUS; set { _explicitNullValueSTATUS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("STATUS"); else _explicitNullProperties?.Remove("STATUS"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Status? STATUS { get => _explicitNullValueSTATUS; set { _explicitNullValueSTATUS = value; AdditionalData?.Remove("STATUS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("STATUS"); else _explicitNullProperties?.Remove("STATUS"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.Status? _explicitNullValueSTATUS = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.Status STATUS { get => _explicitNullValueSTATUS; set { _explicitNullValueSTATUS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("STATUS"); else _explicitNullProperties?.Remove("STATUS"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Status STATUS { get => _explicitNullValueSTATUS; set { _explicitNullValueSTATUS = value; AdditionalData?.Remove("STATUS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("STATUS"); else _explicitNullProperties?.Remove("STATUS"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.Status _explicitNullValueSTATUS = default!;
 #endif
         /// <summary>

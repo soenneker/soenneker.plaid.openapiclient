@@ -18,7 +18,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("supported_methods") is { } nullNodeSupportedMethods && nullNodeSupportedMethods.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportedMethods = null;
+            if (parseNode.GetChildNode("supported_methods") is null) { _explicitNullValueSupportedMethods = default!; _explicitNullProperties?.Remove("supported_methods"); }
+            else if (parseNode.GetChildNode("supported_methods") is { } nullNodeSupportedMethods && nullNodeSupportedMethods.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportedMethods = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Metadata specifically related to which auth methods an institution supports.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AuthSupportedMethods? SupportedMethods { get => _explicitNullValueSupportedMethods; set { _explicitNullValueSupportedMethods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported_methods"); else _explicitNullProperties?.Remove("supported_methods"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AuthSupportedMethods? SupportedMethods { get => _explicitNullValueSupportedMethods; set { _explicitNullValueSupportedMethods = value; AdditionalData?.Remove("supported_methods"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported_methods"); else _explicitNullProperties?.Remove("supported_methods"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.AuthSupportedMethods? _explicitNullValueSupportedMethods = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AuthSupportedMethods SupportedMethods { get => _explicitNullValueSupportedMethods; set { _explicitNullValueSupportedMethods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported_methods"); else _explicitNullProperties?.Remove("supported_methods"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.AuthSupportedMethods SupportedMethods { get => _explicitNullValueSupportedMethods; set { _explicitNullValueSupportedMethods = value; AdditionalData?.Remove("supported_methods"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported_methods"); else _explicitNullProperties?.Remove("supported_methods"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.AuthSupportedMethods _explicitNullValueSupportedMethods = default!;
 #endif
         /// <summary>

@@ -18,9 +18,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("employment_report_token") is { } nullNodeEmploymentReportToken && nullNodeEmploymentReportToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmploymentReportToken = null;
-            if (parseNode.GetChildNode("employments") is { } nullNodeEmployments && nullNodeEmployments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Employments = null;
-            if (parseNode.GetChildNode("item_id") is { } nullNodeItemId && nullNodeItemId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemId = null;
+            if (parseNode.GetChildNode("employment_report_token") is null) { _explicitNullValueEmploymentReportToken = default!; _explicitNullProperties?.Remove("employment_report_token"); }
+            else if (parseNode.GetChildNode("employment_report_token") is { } nullNodeEmploymentReportToken && nullNodeEmploymentReportToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmploymentReportToken = null;
+            if (parseNode.GetChildNode("employments") is null) { _explicitNullValueEmployments = default!; _explicitNullProperties?.Remove("employments"); }
+            else if (parseNode.GetChildNode("employments") is { } nullNodeEmployments && nullNodeEmployments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Employments = null;
+            if (parseNode.GetChildNode("item_id") is null) { _explicitNullValueItemId = default!; _explicitNullProperties?.Remove("item_id"); }
+            else if (parseNode.GetChildNode("item_id") is { } nullNodeItemId && nullNodeItemId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Token to represent the underlying Employment data</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmploymentReportToken { get => _explicitNullValueEmploymentReportToken; set { _explicitNullValueEmploymentReportToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employment_report_token"); else _explicitNullProperties?.Remove("employment_report_token"); } }
+        public string? EmploymentReportToken { get => _explicitNullValueEmploymentReportToken; set { _explicitNullValueEmploymentReportToken = value; AdditionalData?.Remove("employment_report_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employment_report_token"); else _explicitNullProperties?.Remove("employment_report_token"); } }
         private string? _explicitNullValueEmploymentReportToken = default!;
 #nullable restore
 #else
-        public string EmploymentReportToken { get => _explicitNullValueEmploymentReportToken; set { _explicitNullValueEmploymentReportToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employment_report_token"); else _explicitNullProperties?.Remove("employment_report_token"); } }
+        public string EmploymentReportToken { get => _explicitNullValueEmploymentReportToken; set { _explicitNullValueEmploymentReportToken = value; AdditionalData?.Remove("employment_report_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employment_report_token"); else _explicitNullProperties?.Remove("employment_report_token"); } }
         private string _explicitNullValueEmploymentReportToken = default!;
 #endif
         /// <summary>The employments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditEmploymentVerification>? Employments { get => _explicitNullValueEmployments; set { _explicitNullValueEmployments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employments"); else _explicitNullProperties?.Remove("employments"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditEmploymentVerification>? Employments { get => _explicitNullValueEmployments; set { _explicitNullValueEmployments = value; AdditionalData?.Remove("employments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employments"); else _explicitNullProperties?.Remove("employments"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CreditEmploymentVerification>? _explicitNullValueEmployments = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditEmploymentVerification> Employments { get => _explicitNullValueEmployments; set { _explicitNullValueEmployments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employments"); else _explicitNullProperties?.Remove("employments"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditEmploymentVerification> Employments { get => _explicitNullValueEmployments; set { _explicitNullValueEmployments = value; AdditionalData?.Remove("employments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employments"); else _explicitNullProperties?.Remove("employments"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CreditEmploymentVerification> _explicitNullValueEmployments = default!;
 #endif
         /// <summary>The `item_id` of the Item associated with this webhook, warning, or error</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
+        public string? ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; AdditionalData?.Remove("item_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
         private string? _explicitNullValueItemId = default!;
 #nullable restore
 #else
-        public string ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
+        public string ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; AdditionalData?.Remove("item_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
         private string _explicitNullValueItemId = default!;
 #endif
         /// <summary>

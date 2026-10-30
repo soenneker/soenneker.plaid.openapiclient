@@ -18,32 +18,36 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("account_count") is { } nullNodeAccountCount && nullNodeAccountCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountCount = null;
-            if (parseNode.GetChildNode("generated_time") is { } nullNodeGeneratedTime && nullNodeGeneratedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeneratedTime = null;
-            if (parseNode.GetChildNode("institution_ids") is { } nullNodeInstitutionIds && nullNodeInstitutionIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionIds = null;
-            if (parseNode.GetChildNode("item_count") is { } nullNodeItemCount && nullNodeItemCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemCount = null;
+            if (parseNode.GetChildNode("account_count") is null) { _explicitNullValueAccountCount = default!; _explicitNullProperties?.Remove("account_count"); }
+            else if (parseNode.GetChildNode("account_count") is { } nullNodeAccountCount && nullNodeAccountCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountCount = null;
+            if (parseNode.GetChildNode("generated_time") is null) { _explicitNullValueGeneratedTime = default!; _explicitNullProperties?.Remove("generated_time"); }
+            else if (parseNode.GetChildNode("generated_time") is { } nullNodeGeneratedTime && nullNodeGeneratedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeneratedTime = null;
+            if (parseNode.GetChildNode("institution_ids") is null) { _explicitNullValueInstitutionIds = default!; _explicitNullProperties?.Remove("institution_ids"); }
+            else if (parseNode.GetChildNode("institution_ids") is { } nullNodeInstitutionIds && nullNodeInstitutionIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionIds = null;
+            if (parseNode.GetChildNode("item_count") is null) { _explicitNullValueItemCount = default!; _explicitNullProperties?.Remove("item_count"); }
+            else if (parseNode.GetChildNode("item_count") is { } nullNodeItemCount && nullNodeItemCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemCount = null;
         }
 
         /// <summary>The number of accounts used to generate the report.</summary>
-        public int? AccountCount { get => _explicitNullValueAccountCount; set { _explicitNullValueAccountCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_count"); else _explicitNullProperties?.Remove("account_count"); } }
+        public int? AccountCount { get => _explicitNullValueAccountCount; set { _explicitNullValueAccountCount = value; AdditionalData?.Remove("account_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_count"); else _explicitNullProperties?.Remove("account_count"); } }
         private int? _explicitNullValueAccountCount = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The time the report was generated. May be `null` if unavailable.</summary>
-        public DateTimeOffset? GeneratedTime { get => _explicitNullValueGeneratedTime; set { _explicitNullValueGeneratedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generated_time"); else _explicitNullProperties?.Remove("generated_time"); } }
+        public DateTimeOffset? GeneratedTime { get => _explicitNullValueGeneratedTime; set { _explicitNullValueGeneratedTime = value; AdditionalData?.Remove("generated_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generated_time"); else _explicitNullProperties?.Remove("generated_time"); } }
         private DateTimeOffset? _explicitNullValueGeneratedTime = default!;
         /// <summary>The institution IDs of the Items used to generate the report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? InstitutionIds { get => _explicitNullValueInstitutionIds; set { _explicitNullValueInstitutionIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_ids"); else _explicitNullProperties?.Remove("institution_ids"); } }
+        public List<string>? InstitutionIds { get => _explicitNullValueInstitutionIds; set { _explicitNullValueInstitutionIds = value; AdditionalData?.Remove("institution_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_ids"); else _explicitNullProperties?.Remove("institution_ids"); } }
         private List<string>? _explicitNullValueInstitutionIds = default!;
 #nullable restore
 #else
-        public List<string> InstitutionIds { get => _explicitNullValueInstitutionIds; set { _explicitNullValueInstitutionIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_ids"); else _explicitNullProperties?.Remove("institution_ids"); } }
+        public List<string> InstitutionIds { get => _explicitNullValueInstitutionIds; set { _explicitNullValueInstitutionIds = value; AdditionalData?.Remove("institution_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_ids"); else _explicitNullProperties?.Remove("institution_ids"); } }
         private List<string> _explicitNullValueInstitutionIds = default!;
 #endif
         /// <summary>The number of Items used to generate the report.</summary>
-        public int? ItemCount { get => _explicitNullValueItemCount; set { _explicitNullValueItemCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_count"); else _explicitNullProperties?.Remove("item_count"); } }
+        public int? ItemCount { get => _explicitNullValueItemCount; set { _explicitNullValueItemCount = value; AdditionalData?.Remove("item_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_count"); else _explicitNullProperties?.Remove("item_count"); } }
         private int? _explicitNullValueItemCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingMetadata"/> and sets the default values.

@@ -18,18 +18,20 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("baseline_amount") is { } nullNodeBaselineAmount && nullNodeBaselineAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaselineAmount = null;
-            if (parseNode.GetChildNode("current_amount") is { } nullNodeCurrentAmount && nullNodeCurrentAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentAmount = null;
+            if (parseNode.GetChildNode("baseline_amount") is null) { _explicitNullValueBaselineAmount = default!; _explicitNullProperties?.Remove("baseline_amount"); }
+            else if (parseNode.GetChildNode("baseline_amount") is { } nullNodeBaselineAmount && nullNodeBaselineAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaselineAmount = null;
+            if (parseNode.GetChildNode("current_amount") is null) { _explicitNullValueCurrentAmount = default!; _explicitNullProperties?.Remove("current_amount"); }
+            else if (parseNode.GetChildNode("current_amount") is { } nullNodeCurrentAmount && nullNodeCurrentAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentAmount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The forecasted monthly income at the time of subscription</summary>
         [Obsolete("")]
-        public double? BaselineAmount { get => _explicitNullValueBaselineAmount; set { _explicitNullValueBaselineAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseline_amount"); else _explicitNullProperties?.Remove("baseline_amount"); } }
+        public double? BaselineAmount { get => _explicitNullValueBaselineAmount; set { _explicitNullValueBaselineAmount = value; AdditionalData?.Remove("baseline_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseline_amount"); else _explicitNullProperties?.Remove("baseline_amount"); } }
         private double? _explicitNullValueBaselineAmount = default!;
         /// <summary>The current forecasted monthly income</summary>
-        public double? CurrentAmount { get => _explicitNullValueCurrentAmount; set { _explicitNullValueCurrentAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_amount"); else _explicitNullProperties?.Remove("current_amount"); } }
+        public double? CurrentAmount { get => _explicitNullValueCurrentAmount; set { _explicitNullValueCurrentAmount = value; AdditionalData?.Remove("current_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_amount"); else _explicitNullProperties?.Remove("current_amount"); } }
         private double? _explicitNullValueCurrentAmount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ForecastedMonthlyIncome"/> and sets the default values.

@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("override_password") is { } nullNodeOverridePassword && nullNodeOverridePassword.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverridePassword = null;
-            if (parseNode.GetChildNode("override_username") is { } nullNodeOverrideUsername && nullNodeOverrideUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverrideUsername = null;
+            if (parseNode.GetChildNode("override_password") is null) { _explicitNullValueOverridePassword = default!; _explicitNullProperties?.Remove("override_password"); }
+            else if (parseNode.GetChildNode("override_password") is { } nullNodeOverridePassword && nullNodeOverridePassword.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverridePassword = null;
+            if (parseNode.GetChildNode("override_username") is null) { _explicitNullValueOverrideUsername = default!; _explicitNullProperties?.Remove("override_username"); }
+            else if (parseNode.GetChildNode("override_username") is { } nullNodeOverrideUsername && nullNodeOverrideUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverrideUsername = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Test password to use for the creation of the Sandbox Item. Default value is `pass_good`. You can also use a custom test user — reference one configured in the Dashboard via `override_username`, or set `override_username` to `user_custom` and pass the JSON-stringified custom user configuration object as this field to define one entirely via API. See [Sandbox Custom Users](https://plaid.com/docs/sandbox/user-custom) for more details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OverridePassword { get => _explicitNullValueOverridePassword; set { _explicitNullValueOverridePassword = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("override_password"); else _explicitNullProperties?.Remove("override_password"); } }
+        public string? OverridePassword { get => _explicitNullValueOverridePassword; set { _explicitNullValueOverridePassword = value; AdditionalData?.Remove("override_password"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("override_password"); else _explicitNullProperties?.Remove("override_password"); } }
         private string? _explicitNullValueOverridePassword = default!;
 #nullable restore
 #else
-        public string OverridePassword { get => _explicitNullValueOverridePassword; set { _explicitNullValueOverridePassword = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("override_password"); else _explicitNullProperties?.Remove("override_password"); } }
+        public string OverridePassword { get => _explicitNullValueOverridePassword; set { _explicitNullValueOverridePassword = value; AdditionalData?.Remove("override_password"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("override_password"); else _explicitNullProperties?.Remove("override_password"); } }
         private string _explicitNullValueOverridePassword = default!;
 #endif
         /// <summary>Test username to use for the creation of the Sandbox Item. Default value is `user_good`. You can also use a custom test user — either set this to the username of a custom user configured in the Dashboard, or set it to `user_custom` and pass the JSON-stringified custom user configuration object as `override_password` to define one entirely via API. See [Sandbox Custom Users](https://plaid.com/docs/sandbox/user-custom) for more details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OverrideUsername { get => _explicitNullValueOverrideUsername; set { _explicitNullValueOverrideUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("override_username"); else _explicitNullProperties?.Remove("override_username"); } }
+        public string? OverrideUsername { get => _explicitNullValueOverrideUsername; set { _explicitNullValueOverrideUsername = value; AdditionalData?.Remove("override_username"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("override_username"); else _explicitNullProperties?.Remove("override_username"); } }
         private string? _explicitNullValueOverrideUsername = default!;
 #nullable restore
 #else
-        public string OverrideUsername { get => _explicitNullValueOverrideUsername; set { _explicitNullValueOverrideUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("override_username"); else _explicitNullProperties?.Remove("override_username"); } }
+        public string OverrideUsername { get => _explicitNullValueOverrideUsername; set { _explicitNullValueOverrideUsername = value; AdditionalData?.Remove("override_username"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("override_username"); else _explicitNullProperties?.Remove("override_username"); } }
         private string _explicitNullValueOverrideUsername = default!;
 #endif
         /// <summary>

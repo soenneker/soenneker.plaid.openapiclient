@@ -18,14 +18,22 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("entity_id") is { } nullNodeEntityId && nullNodeEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityId = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("personal_finance_category_detailed") is { } nullNodePersonalFinanceCategoryDetailed && nullNodePersonalFinanceCategoryDetailed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalFinanceCategoryDetailed = null;
-            if (parseNode.GetChildNode("personal_finance_category_primary") is { } nullNodePersonalFinanceCategoryPrimary && nullNodePersonalFinanceCategoryPrimary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalFinanceCategoryPrimary = null;
-            if (parseNode.GetChildNode("total_inflows") is { } nullNodeTotalInflows && nullNodeTotalInflows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalInflows = null;
-            if (parseNode.GetChildNode("total_outflows") is { } nullNodeTotalOutflows && nullNodeTotalOutflows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalOutflows = null;
-            if (parseNode.GetChildNode("transaction_count") is { } nullNodeTransactionCount && nullNodeTransactionCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionCount = null;
-            if (parseNode.GetChildNode("website") is { } nullNodeWebsite && nullNodeWebsite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Website = null;
+            if (parseNode.GetChildNode("entity_id") is null) { _explicitNullValueEntityId = default!; _explicitNullProperties?.Remove("entity_id"); }
+            else if (parseNode.GetChildNode("entity_id") is { } nullNodeEntityId && nullNodeEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityId = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("personal_finance_category_detailed") is null) { _explicitNullValuePersonalFinanceCategoryDetailed = default!; _explicitNullProperties?.Remove("personal_finance_category_detailed"); }
+            else if (parseNode.GetChildNode("personal_finance_category_detailed") is { } nullNodePersonalFinanceCategoryDetailed && nullNodePersonalFinanceCategoryDetailed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalFinanceCategoryDetailed = null;
+            if (parseNode.GetChildNode("personal_finance_category_primary") is null) { _explicitNullValuePersonalFinanceCategoryPrimary = default!; _explicitNullProperties?.Remove("personal_finance_category_primary"); }
+            else if (parseNode.GetChildNode("personal_finance_category_primary") is { } nullNodePersonalFinanceCategoryPrimary && nullNodePersonalFinanceCategoryPrimary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalFinanceCategoryPrimary = null;
+            if (parseNode.GetChildNode("total_inflows") is null) { _explicitNullValueTotalInflows = default!; _explicitNullProperties?.Remove("total_inflows"); }
+            else if (parseNode.GetChildNode("total_inflows") is { } nullNodeTotalInflows && nullNodeTotalInflows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalInflows = null;
+            if (parseNode.GetChildNode("total_outflows") is null) { _explicitNullValueTotalOutflows = default!; _explicitNullProperties?.Remove("total_outflows"); }
+            else if (parseNode.GetChildNode("total_outflows") is { } nullNodeTotalOutflows && nullNodeTotalOutflows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalOutflows = null;
+            if (parseNode.GetChildNode("transaction_count") is null) { _explicitNullValueTransactionCount = default!; _explicitNullProperties?.Remove("transaction_count"); }
+            else if (parseNode.GetChildNode("transaction_count") is { } nullNodeTransactionCount && nullNodeTransactionCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionCount = null;
+            if (parseNode.GetChildNode("website") is null) { _explicitNullValueWebsite = default!; _explicitNullProperties?.Remove("website"); }
+            else if (parseNode.GetChildNode("website") is { } nullNodeWebsite && nullNodeWebsite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Website = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,60 +41,60 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>A unique, stable, Plaid-generated id that maps to the merchant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EntityId { get => _explicitNullValueEntityId; set { _explicitNullValueEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_id"); else _explicitNullProperties?.Remove("entity_id"); } }
+        public string? EntityId { get => _explicitNullValueEntityId; set { _explicitNullValueEntityId = value; AdditionalData?.Remove("entity_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_id"); else _explicitNullProperties?.Remove("entity_id"); } }
         private string? _explicitNullValueEntityId = default!;
 #nullable restore
 #else
-        public string EntityId { get => _explicitNullValueEntityId; set { _explicitNullValueEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_id"); else _explicitNullProperties?.Remove("entity_id"); } }
+        public string EntityId { get => _explicitNullValueEntityId; set { _explicitNullValueEntityId = value; AdditionalData?.Remove("entity_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_id"); else _explicitNullProperties?.Remove("entity_id"); } }
         private string _explicitNullValueEntityId = default!;
 #endif
         /// <summary>The counterparty name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The detailed personal finance category associated with this merchant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PersonalFinanceCategoryDetailed { get => _explicitNullValuePersonalFinanceCategoryDetailed; set { _explicitNullValuePersonalFinanceCategoryDetailed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category_detailed"); else _explicitNullProperties?.Remove("personal_finance_category_detailed"); } }
+        public string? PersonalFinanceCategoryDetailed { get => _explicitNullValuePersonalFinanceCategoryDetailed; set { _explicitNullValuePersonalFinanceCategoryDetailed = value; AdditionalData?.Remove("personal_finance_category_detailed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category_detailed"); else _explicitNullProperties?.Remove("personal_finance_category_detailed"); } }
         private string? _explicitNullValuePersonalFinanceCategoryDetailed = default!;
 #nullable restore
 #else
-        public string PersonalFinanceCategoryDetailed { get => _explicitNullValuePersonalFinanceCategoryDetailed; set { _explicitNullValuePersonalFinanceCategoryDetailed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category_detailed"); else _explicitNullProperties?.Remove("personal_finance_category_detailed"); } }
+        public string PersonalFinanceCategoryDetailed { get => _explicitNullValuePersonalFinanceCategoryDetailed; set { _explicitNullValuePersonalFinanceCategoryDetailed = value; AdditionalData?.Remove("personal_finance_category_detailed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category_detailed"); else _explicitNullProperties?.Remove("personal_finance_category_detailed"); } }
         private string _explicitNullValuePersonalFinanceCategoryDetailed = default!;
 #endif
         /// <summary>The primary personal finance category associated with this merchant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PersonalFinanceCategoryPrimary { get => _explicitNullValuePersonalFinanceCategoryPrimary; set { _explicitNullValuePersonalFinanceCategoryPrimary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category_primary"); else _explicitNullProperties?.Remove("personal_finance_category_primary"); } }
+        public string? PersonalFinanceCategoryPrimary { get => _explicitNullValuePersonalFinanceCategoryPrimary; set { _explicitNullValuePersonalFinanceCategoryPrimary = value; AdditionalData?.Remove("personal_finance_category_primary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category_primary"); else _explicitNullProperties?.Remove("personal_finance_category_primary"); } }
         private string? _explicitNullValuePersonalFinanceCategoryPrimary = default!;
 #nullable restore
 #else
-        public string PersonalFinanceCategoryPrimary { get => _explicitNullValuePersonalFinanceCategoryPrimary; set { _explicitNullValuePersonalFinanceCategoryPrimary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category_primary"); else _explicitNullProperties?.Remove("personal_finance_category_primary"); } }
+        public string PersonalFinanceCategoryPrimary { get => _explicitNullValuePersonalFinanceCategoryPrimary; set { _explicitNullValuePersonalFinanceCategoryPrimary = value; AdditionalData?.Remove("personal_finance_category_primary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category_primary"); else _explicitNullProperties?.Remove("personal_finance_category_primary"); } }
         private string _explicitNullValuePersonalFinanceCategoryPrimary = default!;
 #endif
         /// <summary>Sum of inflow amounts.</summary>
-        public double? TotalInflows { get => _explicitNullValueTotalInflows; set { _explicitNullValueTotalInflows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_inflows"); else _explicitNullProperties?.Remove("total_inflows"); } }
+        public double? TotalInflows { get => _explicitNullValueTotalInflows; set { _explicitNullValueTotalInflows = value; AdditionalData?.Remove("total_inflows"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_inflows"); else _explicitNullProperties?.Remove("total_inflows"); } }
         private double? _explicitNullValueTotalInflows = default!;
         /// <summary>Sum of outflow amounts.</summary>
-        public double? TotalOutflows { get => _explicitNullValueTotalOutflows; set { _explicitNullValueTotalOutflows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_outflows"); else _explicitNullProperties?.Remove("total_outflows"); } }
+        public double? TotalOutflows { get => _explicitNullValueTotalOutflows; set { _explicitNullValueTotalOutflows = value; AdditionalData?.Remove("total_outflows"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_outflows"); else _explicitNullProperties?.Remove("total_outflows"); } }
         private double? _explicitNullValueTotalOutflows = default!;
         /// <summary>The number of transactions associated with merchant of this type.</summary>
-        public int? TransactionCount { get => _explicitNullValueTransactionCount; set { _explicitNullValueTransactionCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_count"); else _explicitNullProperties?.Remove("transaction_count"); } }
+        public int? TransactionCount { get => _explicitNullValueTransactionCount; set { _explicitNullValueTransactionCount = value; AdditionalData?.Remove("transaction_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_count"); else _explicitNullProperties?.Remove("transaction_count"); } }
         private int? _explicitNullValueTransactionCount = default!;
         /// <summary>The website associated with the merchant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
+        public string? Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; AdditionalData?.Remove("website"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
         private string? _explicitNullValueWebsite = default!;
 #nullable restore
 #else
-        public string Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
+        public string Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; AdditionalData?.Remove("website"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
         private string _explicitNullValueWebsite = default!;
 #endif
         /// <summary>

@@ -18,21 +18,24 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("lower_bound") is { } nullNodeLowerBound && nullNodeLowerBound.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LowerBound = null;
-            if (parseNode.GetChildNode("probability") is { } nullNodeProbability && nullNodeProbability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Probability = null;
-            if (parseNode.GetChildNode("upper_bound") is { } nullNodeUpperBound && nullNodeUpperBound.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpperBound = null;
+            if (parseNode.GetChildNode("lower_bound") is null) { _explicitNullValueLowerBound = default!; _explicitNullProperties?.Remove("lower_bound"); }
+            else if (parseNode.GetChildNode("lower_bound") is { } nullNodeLowerBound && nullNodeLowerBound.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LowerBound = null;
+            if (parseNode.GetChildNode("probability") is null) { _explicitNullValueProbability = default!; _explicitNullProperties?.Remove("probability"); }
+            else if (parseNode.GetChildNode("probability") is { } nullNodeProbability && nullNodeProbability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Probability = null;
+            if (parseNode.GetChildNode("upper_bound") is null) { _explicitNullValueUpperBound = default!; _explicitNullProperties?.Remove("upper_bound"); }
+            else if (parseNode.GetChildNode("upper_bound") is { } nullNodeUpperBound && nullNodeUpperBound.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpperBound = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The lower bound of the predicted attribute for the given probability.</summary>
-        public double? LowerBound { get => _explicitNullValueLowerBound; set { _explicitNullValueLowerBound = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lower_bound"); else _explicitNullProperties?.Remove("lower_bound"); } }
+        public double? LowerBound { get => _explicitNullValueLowerBound; set { _explicitNullValueLowerBound = value; AdditionalData?.Remove("lower_bound"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lower_bound"); else _explicitNullProperties?.Remove("lower_bound"); } }
         private double? _explicitNullValueLowerBound = default!;
         /// <summary>The probability of the actual value of the attribute falling within the upper and lower bound.This is a percentage represented as a value between 0 and 1.</summary>
-        public double? Probability { get => _explicitNullValueProbability; set { _explicitNullValueProbability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("probability"); else _explicitNullProperties?.Remove("probability"); } }
+        public double? Probability { get => _explicitNullValueProbability; set { _explicitNullValueProbability = value; AdditionalData?.Remove("probability"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("probability"); else _explicitNullProperties?.Remove("probability"); } }
         private double? _explicitNullValueProbability = default!;
         /// <summary>The upper bound of the predicted attribute for the given probability.</summary>
-        public double? UpperBound { get => _explicitNullValueUpperBound; set { _explicitNullValueUpperBound = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upper_bound"); else _explicitNullProperties?.Remove("upper_bound"); } }
+        public double? UpperBound { get => _explicitNullValueUpperBound; set { _explicitNullValueUpperBound = value; AdditionalData?.Remove("upper_bound"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upper_bound"); else _explicitNullProperties?.Remove("upper_bound"); } }
         private double? _explicitNullValueUpperBound = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraPredictionInterval"/> and sets the default values.

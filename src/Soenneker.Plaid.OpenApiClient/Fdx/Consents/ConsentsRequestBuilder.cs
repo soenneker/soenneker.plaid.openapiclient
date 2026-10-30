@@ -83,7 +83,7 @@ namespace Soenneker.Plaid.OpenApiClient.Fdx.Consents
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Plaid.OpenApiClient.Fdx.Consents.ConsentsRequestBuilder.ConsentsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://production.plaid.com", "/fdx/consents", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

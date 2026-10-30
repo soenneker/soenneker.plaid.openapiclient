@@ -18,7 +18,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("LOAN") is { } nullNodeLOAN && nullNodeLOAN.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LOAN = null;
+            if (parseNode.GetChildNode("LOAN") is null) { _explicitNullValueLOAN = default!; _explicitNullProperties?.Remove("LOAN"); }
+            else if (parseNode.GetChildNode("LOAN") is { } nullNodeLOAN && nullNodeLOAN.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LOAN = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Information specific to a mortgage loan agreement between one or more borrowers and a mortgage lender.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacLoan? LOAN { get => _explicitNullValueLOAN; set { _explicitNullValueLOAN = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LOAN"); else _explicitNullProperties?.Remove("LOAN"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacLoan? LOAN { get => _explicitNullValueLOAN; set { _explicitNullValueLOAN = value; AdditionalData?.Remove("LOAN"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LOAN"); else _explicitNullProperties?.Remove("LOAN"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacLoan? _explicitNullValueLOAN = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacLoan LOAN { get => _explicitNullValueLOAN; set { _explicitNullValueLOAN = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LOAN"); else _explicitNullProperties?.Remove("LOAN"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacLoan LOAN { get => _explicitNullValueLOAN; set { _explicitNullValueLOAN = value; AdditionalData?.Remove("LOAN"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LOAN"); else _explicitNullProperties?.Remove("LOAN"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacLoan _explicitNullValueLOAN = default!;
 #endif
         /// <summary>

@@ -18,21 +18,26 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accounts") is { } nullNodeAccounts && nullNodeAccounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Accounts = null;
-            if (parseNode.GetChildNode("institution") is { } nullNodeInstitution && nullNodeInstitution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Institution = null;
-            if (parseNode.GetChildNode("link_session_id") is { } nullNodeLinkSessionId && nullNodeLinkSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkSessionId = null;
-            if (parseNode.GetChildNode("session_group_id") is { } nullNodeSessionGroupId && nullNodeSessionGroupId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionGroupId = null;
-            if (parseNode.GetChildNode("transfer_status") is { } nullNodeTransferStatus && nullNodeTransferStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferStatus = null;
+            if (parseNode.GetChildNode("accounts") is null) { _explicitNullValueAccounts = default!; _explicitNullProperties?.Remove("accounts"); }
+            else if (parseNode.GetChildNode("accounts") is { } nullNodeAccounts && nullNodeAccounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Accounts = null;
+            if (parseNode.GetChildNode("institution") is null) { _explicitNullValueInstitution = default!; _explicitNullProperties?.Remove("institution"); }
+            else if (parseNode.GetChildNode("institution") is { } nullNodeInstitution && nullNodeInstitution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Institution = null;
+            if (parseNode.GetChildNode("link_session_id") is null) { _explicitNullValueLinkSessionId = default!; _explicitNullProperties?.Remove("link_session_id"); }
+            else if (parseNode.GetChildNode("link_session_id") is { } nullNodeLinkSessionId && nullNodeLinkSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkSessionId = null;
+            if (parseNode.GetChildNode("session_group_id") is null) { _explicitNullValueSessionGroupId = default!; _explicitNullProperties?.Remove("session_group_id"); }
+            else if (parseNode.GetChildNode("session_group_id") is { } nullNodeSessionGroupId && nullNodeSessionGroupId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionGroupId = null;
+            if (parseNode.GetChildNode("transfer_status") is null) { _explicitNullValueTransferStatus = default!; _explicitNullProperties?.Remove("transfer_status"); }
+            else if (parseNode.GetChildNode("transfer_status") is { } nullNodeTransferStatus && nullNodeTransferStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferStatus = null;
         }
 
         /// <summary>A list of accounts attached to the connected Item. If Account Select is enabled via the developer dashboard, `accounts` will only include selected accounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataAccount>? Accounts { get => _explicitNullValueAccounts; set { _explicitNullValueAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accounts"); else _explicitNullProperties?.Remove("accounts"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataAccount>? Accounts { get => _explicitNullValueAccounts; set { _explicitNullValueAccounts = value; AdditionalData?.Remove("accounts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accounts"); else _explicitNullProperties?.Remove("accounts"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataAccount>? _explicitNullValueAccounts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataAccount> Accounts { get => _explicitNullValueAccounts; set { _explicitNullValueAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accounts"); else _explicitNullProperties?.Remove("accounts"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataAccount> Accounts { get => _explicitNullValueAccounts; set { _explicitNullValueAccounts = value; AdditionalData?.Remove("accounts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accounts"); else _explicitNullProperties?.Remove("accounts"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataAccount> _explicitNullValueAccounts = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -40,35 +45,35 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>An institution object. If the Item was created via Same-Day or Instant micro-deposit verification, `name` and `institution_id` will be omitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataInstitution? Institution { get => _explicitNullValueInstitution; set { _explicitNullValueInstitution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution"); else _explicitNullProperties?.Remove("institution"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataInstitution? Institution { get => _explicitNullValueInstitution; set { _explicitNullValueInstitution = value; AdditionalData?.Remove("institution"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution"); else _explicitNullProperties?.Remove("institution"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataInstitution? _explicitNullValueInstitution = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataInstitution Institution { get => _explicitNullValueInstitution; set { _explicitNullValueInstitution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution"); else _explicitNullProperties?.Remove("institution"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataInstitution Institution { get => _explicitNullValueInstitution; set { _explicitNullValueInstitution = value; AdditionalData?.Remove("institution"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution"); else _explicitNullProperties?.Remove("institution"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataInstitution _explicitNullValueInstitution = default!;
 #endif
         /// <summary>A unique identifier associated with a user&apos;s actions and events through the Link flow. Include this identifier when opening a support ticket for faster turnaround.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LinkSessionId { get => _explicitNullValueLinkSessionId; set { _explicitNullValueLinkSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_session_id"); else _explicitNullProperties?.Remove("link_session_id"); } }
+        public string? LinkSessionId { get => _explicitNullValueLinkSessionId; set { _explicitNullValueLinkSessionId = value; AdditionalData?.Remove("link_session_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_session_id"); else _explicitNullProperties?.Remove("link_session_id"); } }
         private string? _explicitNullValueLinkSessionId = default!;
 #nullable restore
 #else
-        public string LinkSessionId { get => _explicitNullValueLinkSessionId; set { _explicitNullValueLinkSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_session_id"); else _explicitNullProperties?.Remove("link_session_id"); } }
+        public string LinkSessionId { get => _explicitNullValueLinkSessionId; set { _explicitNullValueLinkSessionId = value; AdditionalData?.Remove("link_session_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_session_id"); else _explicitNullProperties?.Remove("link_session_id"); } }
         private string _explicitNullValueLinkSessionId = default!;
 #endif
         /// <summary>An identifier used to group related Layer sessions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionGroupId { get => _explicitNullValueSessionGroupId; set { _explicitNullValueSessionGroupId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_group_id"); else _explicitNullProperties?.Remove("session_group_id"); } }
+        public string? SessionGroupId { get => _explicitNullValueSessionGroupId; set { _explicitNullValueSessionGroupId = value; AdditionalData?.Remove("session_group_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_group_id"); else _explicitNullProperties?.Remove("session_group_id"); } }
         private string? _explicitNullValueSessionGroupId = default!;
 #nullable restore
 #else
-        public string SessionGroupId { get => _explicitNullValueSessionGroupId; set { _explicitNullValueSessionGroupId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_group_id"); else _explicitNullProperties?.Remove("session_group_id"); } }
+        public string SessionGroupId { get => _explicitNullValueSessionGroupId; set { _explicitNullValueSessionGroupId = value; AdditionalData?.Remove("session_group_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_group_id"); else _explicitNullProperties?.Remove("session_group_id"); } }
         private string _explicitNullValueSessionGroupId = default!;
 #endif
         /// <summary>The status of a transfer. Returned only when [Transfer UI](https://plaid.com/docs/transfer/using-transfer-ui) is implemented.- `COMPLETE` - The transfer was completed.- `INCOMPLETE` - The transfer could not be completed. For help, see [Troubleshooting transfers](https://plaid.com/docs/transfer/using-transfer-ui/#troubleshooting-transfer-ui).</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataTransferStatus? TransferStatus { get => _explicitNullValueTransferStatus; set { _explicitNullValueTransferStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_status"); else _explicitNullProperties?.Remove("transfer_status"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataTransferStatus? TransferStatus { get => _explicitNullValueTransferStatus; set { _explicitNullValueTransferStatus = value; AdditionalData?.Remove("transfer_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_status"); else _explicitNullProperties?.Remove("transfer_status"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataTransferStatus? _explicitNullValueTransferStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadata"/> and sets the default values.
@@ -101,7 +106,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "institution", n => { Institution = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataInstitution>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataInstitution.CreateFromDiscriminatorValue); } },
                 { "link_session_id", n => { LinkSessionId = n.GetStringValue(); } },
                 { "session_group_id", n => { SessionGroupId = n.GetStringValue(); } },
-                { "transfer_status", n => { TransferStatus = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataTransferStatus>(); } },
+                { "transfer_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataTransferStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTransferStatus = default; _explicitNullProperties?.Remove("transfer_status"); AdditionalData["transfer_status"] = unknown; } else { TransferStatus = parsed; AdditionalData.Remove("transfer_status"); } } },
             };
         }
         /// <summary>

@@ -19,7 +19,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("prism_versions") is { } nullNodePrismVersions && nullNodePrismVersions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrismVersions = null;
+            if (parseNode.GetChildNode("prism_versions") is null) { _explicitNullValuePrismVersions = default!; _explicitNullProperties?.Remove("prism_versions"); }
+            else if (parseNode.GetChildNode("prism_versions") is { } nullNodePrismVersions && nullNodePrismVersions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrismVersions = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,11 +29,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismVersionsDeprecated? PrismVersions { get => _explicitNullValuePrismVersions; set { _explicitNullValuePrismVersions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prism_versions"); else _explicitNullProperties?.Remove("prism_versions"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismVersionsDeprecated? PrismVersions { get => _explicitNullValuePrismVersions; set { _explicitNullValuePrismVersions = value; AdditionalData?.Remove("prism_versions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prism_versions"); else _explicitNullProperties?.Remove("prism_versions"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PrismVersionsDeprecated? _explicitNullValuePrismVersions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PrismVersionsDeprecated PrismVersions { get => _explicitNullValuePrismVersions; set { _explicitNullValuePrismVersions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prism_versions"); else _explicitNullProperties?.Remove("prism_versions"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismVersionsDeprecated PrismVersions { get => _explicitNullValuePrismVersions; set { _explicitNullValuePrismVersions = value; AdditionalData?.Remove("prism_versions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prism_versions"); else _explicitNullProperties?.Remove("prism_versions"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PrismVersionsDeprecated _explicitNullValuePrismVersions = default!;
 #endif
         /// <summary>

@@ -19,34 +19,52 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("account_id") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
-            if (parseNode.GetChildNode("average_amount") is { } nullNodeAverageAmount && nullNodeAverageAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageAmount = null;
-            if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
-            if (parseNode.GetChildNode("category_id") is { } nullNodeCategoryId && nullNodeCategoryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CategoryId = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("first_date") is { } nullNodeFirstDate && nullNodeFirstDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstDate = null;
-            if (parseNode.GetChildNode("frequency") is { } nullNodeFrequency && nullNodeFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Frequency = null;
-            if (parseNode.GetChildNode("is_active") is { } nullNodeIsActive && nullNodeIsActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsActive = null;
-            if (parseNode.GetChildNode("is_user_modified") is { } nullNodeIsUserModified && nullNodeIsUserModified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsUserModified = null;
-            if (parseNode.GetChildNode("last_amount") is { } nullNodeLastAmount && nullNodeLastAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastAmount = null;
-            if (parseNode.GetChildNode("last_date") is { } nullNodeLastDate && nullNodeLastDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastDate = null;
-            if (parseNode.GetChildNode("last_user_modified_datetime") is { } nullNodeLastUserModifiedDatetime && nullNodeLastUserModifiedDatetime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUserModifiedDatetime = null;
-            if (parseNode.GetChildNode("merchant_name") is { } nullNodeMerchantName && nullNodeMerchantName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantName = null;
-            if (parseNode.GetChildNode("personal_finance_category") is { } nullNodePersonalFinanceCategory && nullNodePersonalFinanceCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalFinanceCategory = null;
-            if (parseNode.GetChildNode("predicted_next_date") is { } nullNodePredictedNextDate && nullNodePredictedNextDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PredictedNextDate = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("stream_id") is { } nullNodeStreamId && nullNodeStreamId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StreamId = null;
-            if (parseNode.GetChildNode("transaction_ids") is { } nullNodeTransactionIds && nullNodeTransactionIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionIds = null;
+            if (parseNode.GetChildNode("account_id") is null) { _explicitNullValueAccountId = default!; _explicitNullProperties?.Remove("account_id"); }
+            else if (parseNode.GetChildNode("account_id") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
+            if (parseNode.GetChildNode("average_amount") is null) { _explicitNullValueAverageAmount = default!; _explicitNullProperties?.Remove("average_amount"); }
+            else if (parseNode.GetChildNode("average_amount") is { } nullNodeAverageAmount && nullNodeAverageAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageAmount = null;
+            if (parseNode.GetChildNode("category") is null) { _explicitNullValueCategory = default!; _explicitNullProperties?.Remove("category"); }
+            else if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
+            if (parseNode.GetChildNode("category_id") is null) { _explicitNullValueCategoryId = default!; _explicitNullProperties?.Remove("category_id"); }
+            else if (parseNode.GetChildNode("category_id") is { } nullNodeCategoryId && nullNodeCategoryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CategoryId = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("first_date") is null) { _explicitNullValueFirstDate = default!; _explicitNullProperties?.Remove("first_date"); }
+            else if (parseNode.GetChildNode("first_date") is { } nullNodeFirstDate && nullNodeFirstDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstDate = null;
+            if (parseNode.GetChildNode("frequency") is null) { _explicitNullValueFrequency = default!; _explicitNullProperties?.Remove("frequency"); }
+            else if (parseNode.GetChildNode("frequency") is { } nullNodeFrequency && nullNodeFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Frequency = null;
+            if (parseNode.GetChildNode("is_active") is null) { _explicitNullValueIsActive = default!; _explicitNullProperties?.Remove("is_active"); }
+            else if (parseNode.GetChildNode("is_active") is { } nullNodeIsActive && nullNodeIsActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsActive = null;
+            if (parseNode.GetChildNode("is_user_modified") is null) { _explicitNullValueIsUserModified = default!; _explicitNullProperties?.Remove("is_user_modified"); }
+            else if (parseNode.GetChildNode("is_user_modified") is { } nullNodeIsUserModified && nullNodeIsUserModified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsUserModified = null;
+            if (parseNode.GetChildNode("last_amount") is null) { _explicitNullValueLastAmount = default!; _explicitNullProperties?.Remove("last_amount"); }
+            else if (parseNode.GetChildNode("last_amount") is { } nullNodeLastAmount && nullNodeLastAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastAmount = null;
+            if (parseNode.GetChildNode("last_date") is null) { _explicitNullValueLastDate = default!; _explicitNullProperties?.Remove("last_date"); }
+            else if (parseNode.GetChildNode("last_date") is { } nullNodeLastDate && nullNodeLastDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastDate = null;
+            if (parseNode.GetChildNode("last_user_modified_datetime") is null) { _explicitNullValueLastUserModifiedDatetime = default!; _explicitNullProperties?.Remove("last_user_modified_datetime"); }
+            else if (parseNode.GetChildNode("last_user_modified_datetime") is { } nullNodeLastUserModifiedDatetime && nullNodeLastUserModifiedDatetime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUserModifiedDatetime = null;
+            if (parseNode.GetChildNode("merchant_name") is null) { _explicitNullValueMerchantName = default!; _explicitNullProperties?.Remove("merchant_name"); }
+            else if (parseNode.GetChildNode("merchant_name") is { } nullNodeMerchantName && nullNodeMerchantName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantName = null;
+            if (parseNode.GetChildNode("personal_finance_category") is null) { _explicitNullValuePersonalFinanceCategory = default!; _explicitNullProperties?.Remove("personal_finance_category"); }
+            else if (parseNode.GetChildNode("personal_finance_category") is { } nullNodePersonalFinanceCategory && nullNodePersonalFinanceCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalFinanceCategory = null;
+            if (parseNode.GetChildNode("predicted_next_date") is null) { _explicitNullValuePredictedNextDate = default!; _explicitNullProperties?.Remove("predicted_next_date"); }
+            else if (parseNode.GetChildNode("predicted_next_date") is { } nullNodePredictedNextDate && nullNodePredictedNextDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PredictedNextDate = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("stream_id") is null) { _explicitNullValueStreamId = default!; _explicitNullProperties?.Remove("stream_id"); }
+            else if (parseNode.GetChildNode("stream_id") is { } nullNodeStreamId && nullNodeStreamId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StreamId = null;
+            if (parseNode.GetChildNode("transaction_ids") is null) { _explicitNullValueTransactionIds = default!; _explicitNullProperties?.Remove("transaction_ids"); }
+            else if (parseNode.GetChildNode("transaction_ids") is { } nullNodeTransactionIds && nullNodeTransactionIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionIds = null;
         }
 
         /// <summary>The ID of the account to which the stream belongs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        public string? AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; AdditionalData?.Remove("account_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
         private string? _explicitNullValueAccountId = default!;
 #nullable restore
 #else
-        public string AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
+        public string AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; AdditionalData?.Remove("account_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_id"); else _explicitNullProperties?.Remove("account_id"); } }
         private string _explicitNullValueAccountId = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -54,119 +72,119 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Object with data pertaining to an amount on the transaction stream.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransactionStreamAmount? AverageAmount { get => _explicitNullValueAverageAmount; set { _explicitNullValueAverageAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_amount"); else _explicitNullProperties?.Remove("average_amount"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransactionStreamAmount? AverageAmount { get => _explicitNullValueAverageAmount; set { _explicitNullValueAverageAmount = value; AdditionalData?.Remove("average_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_amount"); else _explicitNullProperties?.Remove("average_amount"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransactionStreamAmount? _explicitNullValueAverageAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransactionStreamAmount AverageAmount { get => _explicitNullValueAverageAmount; set { _explicitNullValueAverageAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_amount"); else _explicitNullProperties?.Remove("average_amount"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransactionStreamAmount AverageAmount { get => _explicitNullValueAverageAmount; set { _explicitNullValueAverageAmount = value; AdditionalData?.Remove("average_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_amount"); else _explicitNullProperties?.Remove("average_amount"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransactionStreamAmount _explicitNullValueAverageAmount = default!;
 #endif
         /// <summary>A hierarchical array of the categories to which this transaction belongs. See [Categories](https://plaid.com/docs/api/products/transactions/#categoriesget).All implementations are encouraged to use the new `personal_finance_category` instead of `category`. `personal_finance_category` provides more meaningful categorization and greater accuracy.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
+        public List<string>? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; AdditionalData?.Remove("category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
         private List<string>? _explicitNullValueCategory = default!;
 #nullable restore
 #else
-        public List<string> Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
+        public List<string> Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; AdditionalData?.Remove("category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
         private List<string> _explicitNullValueCategory = default!;
 #endif
         /// <summary>The ID of the category to which this transaction belongs. See [Categories](https://plaid.com/docs/api/products/transactions/#categoriesget).All implementations are encouraged to use the new `personal_finance_category` instead of `category`. `personal_finance_category` provides more meaningful categorization and greater accuracy.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CategoryId { get => _explicitNullValueCategoryId; set { _explicitNullValueCategoryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_id"); else _explicitNullProperties?.Remove("category_id"); } }
+        public string? CategoryId { get => _explicitNullValueCategoryId; set { _explicitNullValueCategoryId = value; AdditionalData?.Remove("category_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_id"); else _explicitNullProperties?.Remove("category_id"); } }
         private string? _explicitNullValueCategoryId = default!;
 #nullable restore
 #else
-        public string CategoryId { get => _explicitNullValueCategoryId; set { _explicitNullValueCategoryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_id"); else _explicitNullProperties?.Remove("category_id"); } }
+        public string CategoryId { get => _explicitNullValueCategoryId; set { _explicitNullValueCategoryId = value; AdditionalData?.Remove("category_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_id"); else _explicitNullProperties?.Remove("category_id"); } }
         private string _explicitNullValueCategoryId = default!;
 #endif
         /// <summary>A description of the transaction stream.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The posted date of the earliest transaction in the stream.</summary>
-        public Date? FirstDate { get => _explicitNullValueFirstDate; set { _explicitNullValueFirstDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_date"); else _explicitNullProperties?.Remove("first_date"); } }
+        public Date? FirstDate { get => _explicitNullValueFirstDate; set { _explicitNullValueFirstDate = value; AdditionalData?.Remove("first_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_date"); else _explicitNullProperties?.Remove("first_date"); } }
         private Date? _explicitNullValueFirstDate = default!;
         /// <summary>Describes the frequency of the transaction stream.`WEEKLY`: Assigned to a transaction stream that occurs approximately every week.`BIWEEKLY`: Assigned to a transaction stream that occurs approximately every 2 weeks.`SEMI_MONTHLY`: Assigned to a transaction stream that occurs approximately twice per month. This frequency is typically seen for inflow transaction streams.`MONTHLY`: Assigned to a transaction stream that occurs approximately every month.`ANNUALLY`: Assigned to a transaction stream that occurs approximately every year.`UNKNOWN`: Assigned to a transaction stream that does not fit any of the pre-defined frequencies.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.RecurringTransactionFrequency? Frequency { get => _explicitNullValueFrequency; set { _explicitNullValueFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequency"); else _explicitNullProperties?.Remove("frequency"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RecurringTransactionFrequency? Frequency { get => _explicitNullValueFrequency; set { _explicitNullValueFrequency = value; AdditionalData?.Remove("frequency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequency"); else _explicitNullProperties?.Remove("frequency"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.RecurringTransactionFrequency? _explicitNullValueFrequency = default!;
         /// <summary>Indicates whether the transaction stream is still live.</summary>
-        public bool? IsActive { get => _explicitNullValueIsActive; set { _explicitNullValueIsActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_active"); else _explicitNullProperties?.Remove("is_active"); } }
+        public bool? IsActive { get => _explicitNullValueIsActive; set { _explicitNullValueIsActive = value; AdditionalData?.Remove("is_active"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_active"); else _explicitNullProperties?.Remove("is_active"); } }
         private bool? _explicitNullValueIsActive = default!;
         /// <summary>As the ability to modify transactions streams has been discontinued, this field will always be `false`.</summary>
         [Obsolete("")]
-        public bool? IsUserModified { get => _explicitNullValueIsUserModified; set { _explicitNullValueIsUserModified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_user_modified"); else _explicitNullProperties?.Remove("is_user_modified"); } }
+        public bool? IsUserModified { get => _explicitNullValueIsUserModified; set { _explicitNullValueIsUserModified = value; AdditionalData?.Remove("is_user_modified"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_user_modified"); else _explicitNullProperties?.Remove("is_user_modified"); } }
         private bool? _explicitNullValueIsUserModified = default!;
         /// <summary>Object with data pertaining to an amount on the transaction stream.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransactionStreamAmount? LastAmount { get => _explicitNullValueLastAmount; set { _explicitNullValueLastAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_amount"); else _explicitNullProperties?.Remove("last_amount"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransactionStreamAmount? LastAmount { get => _explicitNullValueLastAmount; set { _explicitNullValueLastAmount = value; AdditionalData?.Remove("last_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_amount"); else _explicitNullProperties?.Remove("last_amount"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransactionStreamAmount? _explicitNullValueLastAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransactionStreamAmount LastAmount { get => _explicitNullValueLastAmount; set { _explicitNullValueLastAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_amount"); else _explicitNullProperties?.Remove("last_amount"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransactionStreamAmount LastAmount { get => _explicitNullValueLastAmount; set { _explicitNullValueLastAmount = value; AdditionalData?.Remove("last_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_amount"); else _explicitNullProperties?.Remove("last_amount"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransactionStreamAmount _explicitNullValueLastAmount = default!;
 #endif
         /// <summary>The posted date of the latest transaction in the stream.</summary>
-        public Date? LastDate { get => _explicitNullValueLastDate; set { _explicitNullValueLastDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_date"); else _explicitNullProperties?.Remove("last_date"); } }
+        public Date? LastDate { get => _explicitNullValueLastDate; set { _explicitNullValueLastDate = value; AdditionalData?.Remove("last_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_date"); else _explicitNullProperties?.Remove("last_date"); } }
         private Date? _explicitNullValueLastDate = default!;
         /// <summary>The date and time of the most recent user modification. This will only be set if `is_user_modified` is `true`.</summary>
         [Obsolete("")]
-        public DateTimeOffset? LastUserModifiedDatetime { get => _explicitNullValueLastUserModifiedDatetime; set { _explicitNullValueLastUserModifiedDatetime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_user_modified_datetime"); else _explicitNullProperties?.Remove("last_user_modified_datetime"); } }
+        public DateTimeOffset? LastUserModifiedDatetime { get => _explicitNullValueLastUserModifiedDatetime; set { _explicitNullValueLastUserModifiedDatetime = value; AdditionalData?.Remove("last_user_modified_datetime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_user_modified_datetime"); else _explicitNullProperties?.Remove("last_user_modified_datetime"); } }
         private DateTimeOffset? _explicitNullValueLastUserModifiedDatetime = default!;
         /// <summary>The merchant associated with the transaction stream.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantName { get => _explicitNullValueMerchantName; set { _explicitNullValueMerchantName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant_name"); else _explicitNullProperties?.Remove("merchant_name"); } }
+        public string? MerchantName { get => _explicitNullValueMerchantName; set { _explicitNullValueMerchantName = value; AdditionalData?.Remove("merchant_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant_name"); else _explicitNullProperties?.Remove("merchant_name"); } }
         private string? _explicitNullValueMerchantName = default!;
 #nullable restore
 #else
-        public string MerchantName { get => _explicitNullValueMerchantName; set { _explicitNullValueMerchantName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant_name"); else _explicitNullProperties?.Remove("merchant_name"); } }
+        public string MerchantName { get => _explicitNullValueMerchantName; set { _explicitNullValueMerchantName = value; AdditionalData?.Remove("merchant_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant_name"); else _explicitNullProperties?.Remove("merchant_name"); } }
         private string _explicitNullValueMerchantName = default!;
 #endif
         /// <summary>Information describing the intent of the transaction. Most relevant for personal finance use cases, but not limited to such use cases.See the [taxonomy CSV file](https://plaid.com/documents/pfc-taxonomy-all.csv) for a full list of personal finance categories. If you are migrating to personal finance categories from the legacy categories, also refer to the [migration guide](https://plaid.com/docs/transactions/pfc-migration/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory? PersonalFinanceCategory { get => _explicitNullValuePersonalFinanceCategory; set { _explicitNullValuePersonalFinanceCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category"); else _explicitNullProperties?.Remove("personal_finance_category"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory? PersonalFinanceCategory { get => _explicitNullValuePersonalFinanceCategory; set { _explicitNullValuePersonalFinanceCategory = value; AdditionalData?.Remove("personal_finance_category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category"); else _explicitNullProperties?.Remove("personal_finance_category"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory? _explicitNullValuePersonalFinanceCategory = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory PersonalFinanceCategory { get => _explicitNullValuePersonalFinanceCategory; set { _explicitNullValuePersonalFinanceCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category"); else _explicitNullProperties?.Remove("personal_finance_category"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory PersonalFinanceCategory { get => _explicitNullValuePersonalFinanceCategory; set { _explicitNullValuePersonalFinanceCategory = value; AdditionalData?.Remove("personal_finance_category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category"); else _explicitNullProperties?.Remove("personal_finance_category"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory _explicitNullValuePersonalFinanceCategory = default!;
 #endif
         /// <summary>The predicted date of the next payment. This will only be set if the next payment date can be predicted.</summary>
-        public Date? PredictedNextDate { get => _explicitNullValuePredictedNextDate; set { _explicitNullValuePredictedNextDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("predicted_next_date"); else _explicitNullProperties?.Remove("predicted_next_date"); } }
+        public Date? PredictedNextDate { get => _explicitNullValuePredictedNextDate; set { _explicitNullValuePredictedNextDate = value; AdditionalData?.Remove("predicted_next_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("predicted_next_date"); else _explicitNullProperties?.Remove("predicted_next_date"); } }
         private Date? _explicitNullValuePredictedNextDate = default!;
         /// <summary>The current status of the transaction stream.`MATURE`: A `MATURE` recurring stream should have at least 3 transactions and happen on a regular cadence (For Annual recurring stream, we will mark it `MATURE` after 2 instances).`EARLY_DETECTION`: When a recurring transaction first appears in the transaction history and before it fulfills the requirement of a mature stream, the status will be `EARLY_DETECTION`.`TOMBSTONED`: A stream that was previously in the `EARLY_DETECTION` status will move to the `TOMBSTONED` status when no further transactions were found at the next expected date.`UNKNOWN`: A stream is assigned an `UNKNOWN` status when none of the other statuses are applicable.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransactionStreamStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransactionStreamStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransactionStreamStatus? _explicitNullValueStatus = default!;
         /// <summary>A unique id for the stream</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StreamId { get => _explicitNullValueStreamId; set { _explicitNullValueStreamId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stream_id"); else _explicitNullProperties?.Remove("stream_id"); } }
+        public string? StreamId { get => _explicitNullValueStreamId; set { _explicitNullValueStreamId = value; AdditionalData?.Remove("stream_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stream_id"); else _explicitNullProperties?.Remove("stream_id"); } }
         private string? _explicitNullValueStreamId = default!;
 #nullable restore
 #else
-        public string StreamId { get => _explicitNullValueStreamId; set { _explicitNullValueStreamId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stream_id"); else _explicitNullProperties?.Remove("stream_id"); } }
+        public string StreamId { get => _explicitNullValueStreamId; set { _explicitNullValueStreamId = value; AdditionalData?.Remove("stream_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stream_id"); else _explicitNullProperties?.Remove("stream_id"); } }
         private string _explicitNullValueStreamId = default!;
 #endif
         /// <summary>An array of Plaid transaction IDs belonging to the stream, sorted by posted date.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TransactionIds { get => _explicitNullValueTransactionIds; set { _explicitNullValueTransactionIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_ids"); else _explicitNullProperties?.Remove("transaction_ids"); } }
+        public List<string>? TransactionIds { get => _explicitNullValueTransactionIds; set { _explicitNullValueTransactionIds = value; AdditionalData?.Remove("transaction_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_ids"); else _explicitNullProperties?.Remove("transaction_ids"); } }
         private List<string>? _explicitNullValueTransactionIds = default!;
 #nullable restore
 #else
-        public List<string> TransactionIds { get => _explicitNullValueTransactionIds; set { _explicitNullValueTransactionIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_ids"); else _explicitNullProperties?.Remove("transaction_ids"); } }
+        public List<string> TransactionIds { get => _explicitNullValueTransactionIds; set { _explicitNullValueTransactionIds = value; AdditionalData?.Remove("transaction_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_ids"); else _explicitNullProperties?.Remove("transaction_ids"); } }
         private List<string> _explicitNullValueTransactionIds = default!;
 #endif
         /// <summary>
@@ -200,7 +218,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "category_id", n => { CategoryId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "first_date", n => { FirstDate = n.GetDateValue(); } },
-                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RecurringTransactionFrequency>(); } },
+                { "frequency", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RecurringTransactionFrequency>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFrequency = default; _explicitNullProperties?.Remove("frequency"); AdditionalData["frequency"] = unknown; } else { Frequency = parsed; AdditionalData.Remove("frequency"); } } },
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "is_user_modified", n => { IsUserModified = n.GetBoolValue(); } },
                 { "last_amount", n => { LastAmount = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransactionStreamAmount>(global::Soenneker.Plaid.OpenApiClient.Models.TransactionStreamAmount.CreateFromDiscriminatorValue); } },
@@ -209,7 +227,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "merchant_name", n => { MerchantName = n.GetStringValue(); } },
                 { "personal_finance_category", n => { PersonalFinanceCategory = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory>(global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory.CreateFromDiscriminatorValue); } },
                 { "predicted_next_date", n => { PredictedNextDate = n.GetDateValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransactionStreamStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransactionStreamStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "stream_id", n => { StreamId = n.GetStringValue(); } },
                 { "transaction_ids", n => { TransactionIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };

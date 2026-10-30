@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("employment_refresh_options") is { } nullNodeEmploymentRefreshOptions && nullNodeEmploymentRefreshOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmploymentRefreshOptions = null;
-            if (parseNode.GetChildNode("reports_requested") is { } nullNodeReportsRequested && nullNodeReportsRequested.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportsRequested = null;
+            if (parseNode.GetChildNode("employment_refresh_options") is null) { _explicitNullValueEmploymentRefreshOptions = default!; _explicitNullProperties?.Remove("employment_refresh_options"); }
+            else if (parseNode.GetChildNode("employment_refresh_options") is { } nullNodeEmploymentRefreshOptions && nullNodeEmploymentRefreshOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmploymentRefreshOptions = null;
+            if (parseNode.GetChildNode("reports_requested") is null) { _explicitNullValueReportsRequested = default!; _explicitNullProperties?.Remove("reports_requested"); }
+            else if (parseNode.GetChildNode("reports_requested") is { } nullNodeReportsRequested && nullNodeReportsRequested.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportsRequested = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Defines configuration options for the Employment Refresh Report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateEmploymentRefreshOptions? EmploymentRefreshOptions { get => _explicitNullValueEmploymentRefreshOptions; set { _explicitNullValueEmploymentRefreshOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employment_refresh_options"); else _explicitNullProperties?.Remove("employment_refresh_options"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateEmploymentRefreshOptions? EmploymentRefreshOptions { get => _explicitNullValueEmploymentRefreshOptions; set { _explicitNullValueEmploymentRefreshOptions = value; AdditionalData?.Remove("employment_refresh_options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employment_refresh_options"); else _explicitNullProperties?.Remove("employment_refresh_options"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateEmploymentRefreshOptions? _explicitNullValueEmploymentRefreshOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateEmploymentRefreshOptions EmploymentRefreshOptions { get => _explicitNullValueEmploymentRefreshOptions; set { _explicitNullValueEmploymentRefreshOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employment_refresh_options"); else _explicitNullProperties?.Remove("employment_refresh_options"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateEmploymentRefreshOptions EmploymentRefreshOptions { get => _explicitNullValueEmploymentRefreshOptions; set { _explicitNullValueEmploymentRefreshOptions = value; AdditionalData?.Remove("employment_refresh_options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employment_refresh_options"); else _explicitNullProperties?.Remove("employment_refresh_options"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateEmploymentRefreshOptions _explicitNullValueEmploymentRefreshOptions = default!;
 #endif
         /// <summary>Specifies which types of home lending reports to generate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportVerificationGetReportType?>? ReportsRequested { get => _explicitNullValueReportsRequested; set { _explicitNullValueReportsRequested = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reports_requested"); else _explicitNullProperties?.Remove("reports_requested"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportVerificationGetReportType?>? ReportsRequested { get => _explicitNullValueReportsRequested; set { _explicitNullValueReportsRequested = value; AdditionalData?.Remove("reports_requested"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reports_requested"); else _explicitNullProperties?.Remove("reports_requested"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportVerificationGetReportType?>? _explicitNullValueReportsRequested = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportVerificationGetReportType?> ReportsRequested { get => _explicitNullValueReportsRequested; set { _explicitNullValueReportsRequested = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reports_requested"); else _explicitNullProperties?.Remove("reports_requested"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportVerificationGetReportType?> ReportsRequested { get => _explicitNullValueReportsRequested; set { _explicitNullValueReportsRequested = value; AdditionalData?.Remove("reports_requested"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reports_requested"); else _explicitNullProperties?.Remove("reports_requested"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportVerificationGetReportType?> _explicitNullValueReportsRequested = default!;
 #endif
         /// <summary>

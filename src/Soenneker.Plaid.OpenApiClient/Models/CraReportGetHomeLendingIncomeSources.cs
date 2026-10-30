@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("income_providers") is { } nullNodeIncomeProviders && nullNodeIncomeProviders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeProviders = null;
-            if (parseNode.GetChildNode("income_stream_count") is { } nullNodeIncomeStreamCount && nullNodeIncomeStreamCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeStreamCount = null;
+            if (parseNode.GetChildNode("income_providers") is null) { _explicitNullValueIncomeProviders = default!; _explicitNullProperties?.Remove("income_providers"); }
+            else if (parseNode.GetChildNode("income_providers") is { } nullNodeIncomeProviders && nullNodeIncomeProviders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeProviders = null;
+            if (parseNode.GetChildNode("income_stream_count") is null) { _explicitNullValueIncomeStreamCount = default!; _explicitNullProperties?.Remove("income_stream_count"); }
+            else if (parseNode.GetChildNode("income_stream_count") is { } nullNodeIncomeStreamCount && nullNodeIncomeStreamCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeStreamCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The income providers observed across the user&apos;s income streams, ordered by provider name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeIncomeProvider>? IncomeProviders { get => _explicitNullValueIncomeProviders; set { _explicitNullValueIncomeProviders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_providers"); else _explicitNullProperties?.Remove("income_providers"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeIncomeProvider>? IncomeProviders { get => _explicitNullValueIncomeProviders; set { _explicitNullValueIncomeProviders = value; AdditionalData?.Remove("income_providers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_providers"); else _explicitNullProperties?.Remove("income_providers"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeIncomeProvider>? _explicitNullValueIncomeProviders = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeIncomeProvider> IncomeProviders { get => _explicitNullValueIncomeProviders; set { _explicitNullValueIncomeProviders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_providers"); else _explicitNullProperties?.Remove("income_providers"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeIncomeProvider> IncomeProviders { get => _explicitNullValueIncomeProviders; set { _explicitNullValueIncomeProviders = value; AdditionalData?.Remove("income_providers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_providers"); else _explicitNullProperties?.Remove("income_providers"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeIncomeProvider> _explicitNullValueIncomeProviders = default!;
 #endif
         /// <summary>The number of income streams detected for the user.</summary>
-        public int? IncomeStreamCount { get => _explicitNullValueIncomeStreamCount; set { _explicitNullValueIncomeStreamCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_stream_count"); else _explicitNullProperties?.Remove("income_stream_count"); } }
+        public int? IncomeStreamCount { get => _explicitNullValueIncomeStreamCount; set { _explicitNullValueIncomeStreamCount = value; AdditionalData?.Remove("income_stream_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_stream_count"); else _explicitNullProperties?.Remove("income_stream_count"); } }
         private int? _explicitNullValueIncomeStreamCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetHomeLendingIncomeSources"/> and sets the default values.

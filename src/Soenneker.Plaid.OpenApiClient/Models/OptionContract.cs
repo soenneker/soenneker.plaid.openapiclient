@@ -19,10 +19,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("contract_type") is { } nullNodeContractType && nullNodeContractType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContractType = null;
-            if (parseNode.GetChildNode("expiration_date") is { } nullNodeExpirationDate && nullNodeExpirationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationDate = null;
-            if (parseNode.GetChildNode("strike_price") is { } nullNodeStrikePrice && nullNodeStrikePrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StrikePrice = null;
-            if (parseNode.GetChildNode("underlying_security_ticker") is { } nullNodeUnderlyingSecurityTicker && nullNodeUnderlyingSecurityTicker.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnderlyingSecurityTicker = null;
+            if (parseNode.GetChildNode("contract_type") is null) { _explicitNullValueContractType = default!; _explicitNullProperties?.Remove("contract_type"); }
+            else if (parseNode.GetChildNode("contract_type") is { } nullNodeContractType && nullNodeContractType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContractType = null;
+            if (parseNode.GetChildNode("expiration_date") is null) { _explicitNullValueExpirationDate = default!; _explicitNullProperties?.Remove("expiration_date"); }
+            else if (parseNode.GetChildNode("expiration_date") is { } nullNodeExpirationDate && nullNodeExpirationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationDate = null;
+            if (parseNode.GetChildNode("strike_price") is null) { _explicitNullValueStrikePrice = default!; _explicitNullProperties?.Remove("strike_price"); }
+            else if (parseNode.GetChildNode("strike_price") is { } nullNodeStrikePrice && nullNodeStrikePrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StrikePrice = null;
+            if (parseNode.GetChildNode("underlying_security_ticker") is null) { _explicitNullValueUnderlyingSecurityTicker = default!; _explicitNullProperties?.Remove("underlying_security_ticker"); }
+            else if (parseNode.GetChildNode("underlying_security_ticker") is { } nullNodeUnderlyingSecurityTicker && nullNodeUnderlyingSecurityTicker.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnderlyingSecurityTicker = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,27 +34,27 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The type of this option contract. It is one of:`put`: for Put option contracts`call`: for Call option contracts</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContractType { get => _explicitNullValueContractType; set { _explicitNullValueContractType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contract_type"); else _explicitNullProperties?.Remove("contract_type"); } }
+        public string? ContractType { get => _explicitNullValueContractType; set { _explicitNullValueContractType = value; AdditionalData?.Remove("contract_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contract_type"); else _explicitNullProperties?.Remove("contract_type"); } }
         private string? _explicitNullValueContractType = default!;
 #nullable restore
 #else
-        public string ContractType { get => _explicitNullValueContractType; set { _explicitNullValueContractType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contract_type"); else _explicitNullProperties?.Remove("contract_type"); } }
+        public string ContractType { get => _explicitNullValueContractType; set { _explicitNullValueContractType = value; AdditionalData?.Remove("contract_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contract_type"); else _explicitNullProperties?.Remove("contract_type"); } }
         private string _explicitNullValueContractType = default!;
 #endif
         /// <summary>The expiration date for this option contract, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format.</summary>
-        public Date? ExpirationDate { get => _explicitNullValueExpirationDate; set { _explicitNullValueExpirationDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration_date"); else _explicitNullProperties?.Remove("expiration_date"); } }
+        public Date? ExpirationDate { get => _explicitNullValueExpirationDate; set { _explicitNullValueExpirationDate = value; AdditionalData?.Remove("expiration_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration_date"); else _explicitNullProperties?.Remove("expiration_date"); } }
         private Date? _explicitNullValueExpirationDate = default!;
         /// <summary>The strike price for this option contract, per share of security.</summary>
-        public double? StrikePrice { get => _explicitNullValueStrikePrice; set { _explicitNullValueStrikePrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("strike_price"); else _explicitNullProperties?.Remove("strike_price"); } }
+        public double? StrikePrice { get => _explicitNullValueStrikePrice; set { _explicitNullValueStrikePrice = value; AdditionalData?.Remove("strike_price"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("strike_price"); else _explicitNullProperties?.Remove("strike_price"); } }
         private double? _explicitNullValueStrikePrice = default!;
         /// <summary>The ticker of the underlying security for this option contract.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnderlyingSecurityTicker { get => _explicitNullValueUnderlyingSecurityTicker; set { _explicitNullValueUnderlyingSecurityTicker = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("underlying_security_ticker"); else _explicitNullProperties?.Remove("underlying_security_ticker"); } }
+        public string? UnderlyingSecurityTicker { get => _explicitNullValueUnderlyingSecurityTicker; set { _explicitNullValueUnderlyingSecurityTicker = value; AdditionalData?.Remove("underlying_security_ticker"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("underlying_security_ticker"); else _explicitNullProperties?.Remove("underlying_security_ticker"); } }
         private string? _explicitNullValueUnderlyingSecurityTicker = default!;
 #nullable restore
 #else
-        public string UnderlyingSecurityTicker { get => _explicitNullValueUnderlyingSecurityTicker; set { _explicitNullValueUnderlyingSecurityTicker = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("underlying_security_ticker"); else _explicitNullProperties?.Remove("underlying_security_ticker"); } }
+        public string UnderlyingSecurityTicker { get => _explicitNullValueUnderlyingSecurityTicker; set { _explicitNullValueUnderlyingSecurityTicker = value; AdditionalData?.Remove("underlying_security_ticker"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("underlying_security_ticker"); else _explicitNullProperties?.Remove("underlying_security_ticker"); } }
         private string _explicitNullValueUnderlyingSecurityTicker = default!;
 #endif
         /// <summary>

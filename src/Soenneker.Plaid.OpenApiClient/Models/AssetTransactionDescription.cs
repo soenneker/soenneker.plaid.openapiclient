@@ -18,7 +18,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("AssetTransactionDescription") is { } nullNodeAssetTransactionDescriptionProp && nullNodeAssetTransactionDescriptionProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetTransactionDescriptionProp = null;
+            if (parseNode.GetChildNode("AssetTransactionDescription") is null) { _explicitNullValueAssetTransactionDescriptionProp = default!; _explicitNullProperties?.Remove("AssetTransactionDescription"); }
+            else if (parseNode.GetChildNode("AssetTransactionDescription") is { } nullNodeAssetTransactionDescriptionProp && nullNodeAssetTransactionDescriptionProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetTransactionDescriptionProp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Asset Transaction Description String up to 3 occurrences 1 required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetTransactionDescriptionProp { get => _explicitNullValueAssetTransactionDescriptionProp; set { _explicitNullValueAssetTransactionDescriptionProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetTransactionDescription"); else _explicitNullProperties?.Remove("AssetTransactionDescription"); } }
+        public string? AssetTransactionDescriptionProp { get => _explicitNullValueAssetTransactionDescriptionProp; set { _explicitNullValueAssetTransactionDescriptionProp = value; AdditionalData?.Remove("AssetTransactionDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetTransactionDescription"); else _explicitNullProperties?.Remove("AssetTransactionDescription"); } }
         private string? _explicitNullValueAssetTransactionDescriptionProp = default!;
 #nullable restore
 #else
-        public string AssetTransactionDescriptionProp { get => _explicitNullValueAssetTransactionDescriptionProp; set { _explicitNullValueAssetTransactionDescriptionProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetTransactionDescription"); else _explicitNullProperties?.Remove("AssetTransactionDescription"); } }
+        public string AssetTransactionDescriptionProp { get => _explicitNullValueAssetTransactionDescriptionProp; set { _explicitNullValueAssetTransactionDescriptionProp = value; AdditionalData?.Remove("AssetTransactionDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetTransactionDescription"); else _explicitNullProperties?.Remove("AssetTransactionDescription"); } }
         private string _explicitNullValueAssetTransactionDescriptionProp = default!;
 #endif
         /// <summary>

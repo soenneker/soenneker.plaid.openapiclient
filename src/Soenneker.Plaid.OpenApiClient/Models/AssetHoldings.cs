@@ -18,7 +18,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ASSET_HOLDING") is { } nullNodeASSETHOLDING && nullNodeASSETHOLDING.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ASSETHOLDING = null;
+            if (parseNode.GetChildNode("ASSET_HOLDING") is null) { _explicitNullValueASSETHOLDING = default!; _explicitNullProperties?.Remove("ASSET_HOLDING"); }
+            else if (parseNode.GetChildNode("ASSET_HOLDING") is { } nullNodeASSETHOLDING && nullNodeASSETHOLDING.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ASSETHOLDING = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The holdings associated with the account. In CRA reports, this array may be empty when recent investment data was unavailable at report generation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.AssetHolding>? ASSETHOLDING { get => _explicitNullValueASSETHOLDING; set { _explicitNullValueASSETHOLDING = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ASSET_HOLDING"); else _explicitNullProperties?.Remove("ASSET_HOLDING"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.AssetHolding>? ASSETHOLDING { get => _explicitNullValueASSETHOLDING; set { _explicitNullValueASSETHOLDING = value; AdditionalData?.Remove("ASSET_HOLDING"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ASSET_HOLDING"); else _explicitNullProperties?.Remove("ASSET_HOLDING"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.AssetHolding>? _explicitNullValueASSETHOLDING = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.AssetHolding> ASSETHOLDING { get => _explicitNullValueASSETHOLDING; set { _explicitNullValueASSETHOLDING = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ASSET_HOLDING"); else _explicitNullProperties?.Remove("ASSET_HOLDING"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.AssetHolding> ASSETHOLDING { get => _explicitNullValueASSETHOLDING; set { _explicitNullValueASSETHOLDING = value; AdditionalData?.Remove("ASSET_HOLDING"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ASSET_HOLDING"); else _explicitNullProperties?.Remove("ASSET_HOLDING"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.AssetHolding> _explicitNullValueASSETHOLDING = default!;
 #endif
         /// <summary>

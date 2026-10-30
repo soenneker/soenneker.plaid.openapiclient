@@ -18,10 +18,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("outcome") is { } nullNodeOutcome && nullNodeOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Outcome = null;
-            if (parseNode.GetChildNode("result") is { } nullNodeResult && nullNodeResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Result = null;
-            if (parseNode.GetChildNode("ruleset_key") is { } nullNodeRulesetKey && nullNodeRulesetKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RulesetKey = null;
-            if (parseNode.GetChildNode("triggered_rule_details") is { } nullNodeTriggeredRuleDetails && nullNodeTriggeredRuleDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggeredRuleDetails = null;
+            if (parseNode.GetChildNode("outcome") is null) { _explicitNullValueOutcome = default!; _explicitNullProperties?.Remove("outcome"); }
+            else if (parseNode.GetChildNode("outcome") is { } nullNodeOutcome && nullNodeOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Outcome = null;
+            if (parseNode.GetChildNode("result") is null) { _explicitNullValueResult = default!; _explicitNullProperties?.Remove("result"); }
+            else if (parseNode.GetChildNode("result") is { } nullNodeResult && nullNodeResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Result = null;
+            if (parseNode.GetChildNode("ruleset_key") is null) { _explicitNullValueRulesetKey = default!; _explicitNullProperties?.Remove("ruleset_key"); }
+            else if (parseNode.GetChildNode("ruleset_key") is { } nullNodeRulesetKey && nullNodeRulesetKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RulesetKey = null;
+            if (parseNode.GetChildNode("triggered_rule_details") is null) { _explicitNullValueTriggeredRuleDetails = default!; _explicitNullProperties?.Remove("triggered_rule_details"); }
+            else if (parseNode.GetChildNode("triggered_rule_details") is { } nullNodeTriggeredRuleDetails && nullNodeTriggeredRuleDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggeredRuleDetails = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,34 +34,34 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Outcome { get => _explicitNullValueOutcome; set { _explicitNullValueOutcome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome"); else _explicitNullProperties?.Remove("outcome"); } }
+        public string? Outcome { get => _explicitNullValueOutcome; set { _explicitNullValueOutcome = value; AdditionalData?.Remove("outcome"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome"); else _explicitNullProperties?.Remove("outcome"); } }
         private string? _explicitNullValueOutcome = default!;
 #nullable restore
 #else
-        public string Outcome { get => _explicitNullValueOutcome; set { _explicitNullValueOutcome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome"); else _explicitNullProperties?.Remove("outcome"); } }
+        public string Outcome { get => _explicitNullValueOutcome; set { _explicitNullValueOutcome = value; AdditionalData?.Remove("outcome"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome"); else _explicitNullProperties?.Remove("outcome"); } }
         private string _explicitNullValueOutcome = default!;
 #endif
         /// <summary>The result of the rule that was triggered for this transaction.`ACCEPT`: Accept the transaction for processing.`REROUTE`: Reroute the transaction to a different payment method, as this transaction is too risky.`REVIEW`: Review the transaction before proceeding.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.RuleResult? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RuleResult? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.RuleResult? _explicitNullValueResult = default!;
         /// <summary>The key of the Ruleset used for this transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RulesetKey { get => _explicitNullValueRulesetKey; set { _explicitNullValueRulesetKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleset_key"); else _explicitNullProperties?.Remove("ruleset_key"); } }
+        public string? RulesetKey { get => _explicitNullValueRulesetKey; set { _explicitNullValueRulesetKey = value; AdditionalData?.Remove("ruleset_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleset_key"); else _explicitNullProperties?.Remove("ruleset_key"); } }
         private string? _explicitNullValueRulesetKey = default!;
 #nullable restore
 #else
-        public string RulesetKey { get => _explicitNullValueRulesetKey; set { _explicitNullValueRulesetKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleset_key"); else _explicitNullProperties?.Remove("ruleset_key"); } }
+        public string RulesetKey { get => _explicitNullValueRulesetKey; set { _explicitNullValueRulesetKey = value; AdditionalData?.Remove("ruleset_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleset_key"); else _explicitNullProperties?.Remove("ruleset_key"); } }
         private string _explicitNullValueRulesetKey = default!;
 #endif
         /// <summary>Rules are run in numerical order. The first rule with a logic match is triggered. These are the details of that rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.RuleDetails? TriggeredRuleDetails { get => _explicitNullValueTriggeredRuleDetails; set { _explicitNullValueTriggeredRuleDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggered_rule_details"); else _explicitNullProperties?.Remove("triggered_rule_details"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RuleDetails? TriggeredRuleDetails { get => _explicitNullValueTriggeredRuleDetails; set { _explicitNullValueTriggeredRuleDetails = value; AdditionalData?.Remove("triggered_rule_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggered_rule_details"); else _explicitNullProperties?.Remove("triggered_rule_details"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.RuleDetails? _explicitNullValueTriggeredRuleDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.RuleDetails TriggeredRuleDetails { get => _explicitNullValueTriggeredRuleDetails; set { _explicitNullValueTriggeredRuleDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggered_rule_details"); else _explicitNullProperties?.Remove("triggered_rule_details"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RuleDetails TriggeredRuleDetails { get => _explicitNullValueTriggeredRuleDetails; set { _explicitNullValueTriggeredRuleDetails = value; AdditionalData?.Remove("triggered_rule_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggered_rule_details"); else _explicitNullProperties?.Remove("triggered_rule_details"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.RuleDetails _explicitNullValueTriggeredRuleDetails = default!;
 #endif
         /// <summary>
@@ -88,7 +92,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "outcome", n => { Outcome = n.GetStringValue(); } },
-                { "result", n => { Result = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RuleResult>(); } },
+                { "result", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RuleResult>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueResult = default; _explicitNullProperties?.Remove("result"); AdditionalData["result"] = unknown; } else { Result = parsed; AdditionalData.Remove("result"); } } },
                 { "ruleset_key", n => { RulesetKey = n.GetStringValue(); } },
                 { "triggered_rule_details", n => { TriggeredRuleDetails = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.RuleDetails>(global::Soenneker.Plaid.OpenApiClient.Models.RuleDetails.CreateFromDiscriminatorValue); } },
             };

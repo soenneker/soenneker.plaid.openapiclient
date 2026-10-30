@@ -18,21 +18,24 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("highest_amount") is { } nullNodeHighestAmount && nullNodeHighestAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HighestAmount = null;
-            if (parseNode.GetChildNode("lowest_amount") is { } nullNodeLowestAmount && nullNodeLowestAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LowestAmount = null;
-            if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
+            if (parseNode.GetChildNode("highest_amount") is null) { _explicitNullValueHighestAmount = default!; _explicitNullProperties?.Remove("highest_amount"); }
+            else if (parseNode.GetChildNode("highest_amount") is { } nullNodeHighestAmount && nullNodeHighestAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HighestAmount = null;
+            if (parseNode.GetChildNode("lowest_amount") is null) { _explicitNullValueLowestAmount = default!; _explicitNullProperties?.Remove("lowest_amount"); }
+            else if (parseNode.GetChildNode("lowest_amount") is { } nullNodeLowestAmount && nullNodeLowestAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LowestAmount = null;
+            if (parseNode.GetChildNode("score") is null) { _explicitNullValueScore = default!; _explicitNullProperties?.Remove("score"); }
+            else if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Float value representing the upper bound (exclusive) of the advance amount range associated with a specific EWA score.</summary>
-        public float? HighestAmount { get => _explicitNullValueHighestAmount; set { _explicitNullValueHighestAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("highest_amount"); else _explicitNullProperties?.Remove("highest_amount"); } }
+        public float? HighestAmount { get => _explicitNullValueHighestAmount; set { _explicitNullValueHighestAmount = value; AdditionalData?.Remove("highest_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("highest_amount"); else _explicitNullProperties?.Remove("highest_amount"); } }
         private float? _explicitNullValueHighestAmount = default!;
         /// <summary>Float value representing the lower bound (inclusive) of the advance amount range associated with a specific EWA score.</summary>
-        public float? LowestAmount { get => _explicitNullValueLowestAmount; set { _explicitNullValueLowestAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lowest_amount"); else _explicitNullProperties?.Remove("lowest_amount"); } }
+        public float? LowestAmount { get => _explicitNullValueLowestAmount; set { _explicitNullValueLowestAmount = value; AdditionalData?.Remove("lowest_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lowest_amount"); else _explicitNullProperties?.Remove("lowest_amount"); } }
         private float? _explicitNullValueLowestAmount = default!;
         /// <summary>EWA score for the corresponding amount bucket. Scores range from 1-99, where a higher score indicates a higher likelihood of repayment.</summary>
-        public int? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
+        public int? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; AdditionalData?.Remove("score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
         private int? _explicitNullValueScore = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.EwaScore"/> and sets the default values.

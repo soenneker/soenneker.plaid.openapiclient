@@ -18,7 +18,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("report_types") is { } nullNodeReportTypes && nullNodeReportTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportTypes = null;
+            if (parseNode.GetChildNode("report_types") is null) { _explicitNullValueReportTypes = default!; _explicitNullProperties?.Remove("report_types"); }
+            else if (parseNode.GetChildNode("report_types") is { } nullNodeReportTypes && nullNodeReportTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportTypes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Specifies which types of reports should be made available to GSEs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.GseReportType?>? ReportTypes { get => _explicitNullValueReportTypes; set { _explicitNullValueReportTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_types"); else _explicitNullProperties?.Remove("report_types"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.GseReportType?>? ReportTypes { get => _explicitNullValueReportTypes; set { _explicitNullValueReportTypes = value; AdditionalData?.Remove("report_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_types"); else _explicitNullProperties?.Remove("report_types"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.GseReportType?>? _explicitNullValueReportTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.GseReportType?> ReportTypes { get => _explicitNullValueReportTypes; set { _explicitNullValueReportTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_types"); else _explicitNullProperties?.Remove("report_types"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.GseReportType?> ReportTypes { get => _explicitNullValueReportTypes; set { _explicitNullValueReportTypes = value; AdditionalData?.Remove("report_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_types"); else _explicitNullProperties?.Remove("report_types"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.GseReportType?> _explicitNullValueReportTypes = default!;
 #endif
         /// <summary>

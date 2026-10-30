@@ -18,9 +18,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("income_excluding_transfers") is { } nullNodeIncomeExcludingTransfers && nullNodeIncomeExcludingTransfers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeExcludingTransfers = null;
-            if (parseNode.GetChildNode("total_income") is { } nullNodeTotalIncome && nullNodeTotalIncome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalIncome = null;
-            if (parseNode.GetChildNode("transfers_in") is { } nullNodeTransfersIn && nullNodeTransfersIn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransfersIn = null;
+            if (parseNode.GetChildNode("income_excluding_transfers") is null) { _explicitNullValueIncomeExcludingTransfers = default!; _explicitNullProperties?.Remove("income_excluding_transfers"); }
+            else if (parseNode.GetChildNode("income_excluding_transfers") is { } nullNodeIncomeExcludingTransfers && nullNodeIncomeExcludingTransfers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncomeExcludingTransfers = null;
+            if (parseNode.GetChildNode("total_income") is null) { _explicitNullValueTotalIncome = default!; _explicitNullProperties?.Remove("total_income"); }
+            else if (parseNode.GetChildNode("total_income") is { } nullNodeTotalIncome && nullNodeTotalIncome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalIncome = null;
+            if (parseNode.GetChildNode("transfers_in") is null) { _explicitNullValueTransfersIn = default!; _explicitNullProperties?.Remove("transfers_in"); }
+            else if (parseNode.GetChildNode("transfers_in") is { } nullNodeTransfersIn && nullNodeTransfersIn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransfersIn = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Income excluding account transfer transactions for the period, including a monthly average.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsightsIncomeExcludingTransfers? IncomeExcludingTransfers { get => _explicitNullValueIncomeExcludingTransfers; set { _explicitNullValueIncomeExcludingTransfers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_excluding_transfers"); else _explicitNullProperties?.Remove("income_excluding_transfers"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsightsIncomeExcludingTransfers? IncomeExcludingTransfers { get => _explicitNullValueIncomeExcludingTransfers; set { _explicitNullValueIncomeExcludingTransfers = value; AdditionalData?.Remove("income_excluding_transfers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_excluding_transfers"); else _explicitNullProperties?.Remove("income_excluding_transfers"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsightsIncomeExcludingTransfers? _explicitNullValueIncomeExcludingTransfers = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsightsIncomeExcludingTransfers IncomeExcludingTransfers { get => _explicitNullValueIncomeExcludingTransfers; set { _explicitNullValueIncomeExcludingTransfers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_excluding_transfers"); else _explicitNullProperties?.Remove("income_excluding_transfers"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsightsIncomeExcludingTransfers IncomeExcludingTransfers { get => _explicitNullValueIncomeExcludingTransfers; set { _explicitNullValueIncomeExcludingTransfers = value; AdditionalData?.Remove("income_excluding_transfers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("income_excluding_transfers"); else _explicitNullProperties?.Remove("income_excluding_transfers"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsightsIncomeExcludingTransfers _explicitNullValueIncomeExcludingTransfers = default!;
 #endif
         /// <summary>The total amount of all income transactions in the given time period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsightsTotalIncome? TotalIncome { get => _explicitNullValueTotalIncome; set { _explicitNullValueTotalIncome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_income"); else _explicitNullProperties?.Remove("total_income"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsightsTotalIncome? TotalIncome { get => _explicitNullValueTotalIncome; set { _explicitNullValueTotalIncome = value; AdditionalData?.Remove("total_income"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_income"); else _explicitNullProperties?.Remove("total_income"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsightsTotalIncome? _explicitNullValueTotalIncome = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsightsTotalIncome TotalIncome { get => _explicitNullValueTotalIncome; set { _explicitNullValueTotalIncome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_income"); else _explicitNullProperties?.Remove("total_income"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsightsTotalIncome TotalIncome { get => _explicitNullValueTotalIncome; set { _explicitNullValueTotalIncome = value; AdditionalData?.Remove("total_income"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_income"); else _explicitNullProperties?.Remove("total_income"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsightsTotalIncome _explicitNullValueTotalIncome = default!;
 #endif
         /// <summary>Sum of inbound transfer transactions for the period, including a monthly average.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsightsTransfersIn? TransfersIn { get => _explicitNullValueTransfersIn; set { _explicitNullValueTransfersIn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfers_in"); else _explicitNullProperties?.Remove("transfers_in"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsightsTransfersIn? TransfersIn { get => _explicitNullValueTransfersIn; set { _explicitNullValueTransfersIn = value; AdditionalData?.Remove("transfers_in"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfers_in"); else _explicitNullProperties?.Remove("transfers_in"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsightsTransfersIn? _explicitNullValueTransfersIn = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsightsTransfersIn TransfersIn { get => _explicitNullValueTransfersIn; set { _explicitNullValueTransfersIn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfers_in"); else _explicitNullProperties?.Remove("transfers_in"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsightsTransfersIn TransfersIn { get => _explicitNullValueTransfersIn; set { _explicitNullValueTransfersIn = value; AdditionalData?.Remove("transfers_in"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfers_in"); else _explicitNullProperties?.Remove("transfers_in"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.IncomeInsightsTransfersIn _explicitNullValueTransfersIn = default!;
 #endif
         /// <summary>

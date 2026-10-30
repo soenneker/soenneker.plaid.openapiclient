@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("client_id") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
-            if (parseNode.GetChildNode("transfer_diligence_status") is { } nullNodeTransferDiligenceStatus && nullNodeTransferDiligenceStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferDiligenceStatus = null;
+            if (parseNode.GetChildNode("client_id") is null) { _explicitNullValueClientId = default!; _explicitNullProperties?.Remove("client_id"); }
+            else if (parseNode.GetChildNode("client_id") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
+            if (parseNode.GetChildNode("transfer_diligence_status") is null) { _explicitNullValueTransferDiligenceStatus = default!; _explicitNullProperties?.Remove("transfer_diligence_status"); }
+            else if (parseNode.GetChildNode("transfer_diligence_status") is { } nullNodeTransferDiligenceStatus && nullNodeTransferDiligenceStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferDiligenceStatus = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Originator&apos;s client ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; AdditionalData?.Remove("client_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
         private string? _explicitNullValueClientId = default!;
 #nullable restore
 #else
-        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; AdditionalData?.Remove("client_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
         private string _explicitNullValueClientId = default!;
 #endif
         /// <summary>Originator&apos;s diligence status.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferDiligenceStatus? TransferDiligenceStatus { get => _explicitNullValueTransferDiligenceStatus; set { _explicitNullValueTransferDiligenceStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_diligence_status"); else _explicitNullProperties?.Remove("transfer_diligence_status"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferDiligenceStatus? TransferDiligenceStatus { get => _explicitNullValueTransferDiligenceStatus; set { _explicitNullValueTransferDiligenceStatus = value; AdditionalData?.Remove("transfer_diligence_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_diligence_status"); else _explicitNullProperties?.Remove("transfer_diligence_status"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransferDiligenceStatus? _explicitNullValueTransferDiligenceStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.Originator"/> and sets the default values.
@@ -63,7 +65,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
-                { "transfer_diligence_status", n => { TransferDiligenceStatus = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferDiligenceStatus>(); } },
+                { "transfer_diligence_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferDiligenceStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTransferDiligenceStatus = default; _explicitNullProperties?.Remove("transfer_diligence_status"); AdditionalData["transfer_diligence_status"] = unknown; } else { TransferDiligenceStatus = parsed; AdditionalData.Remove("transfer_diligence_status"); } } },
             };
         }
         /// <summary>

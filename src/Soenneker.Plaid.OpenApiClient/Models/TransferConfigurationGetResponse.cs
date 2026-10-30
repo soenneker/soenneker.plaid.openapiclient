@@ -18,16 +18,26 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("iso_currency_code") is { } nullNodeIsoCurrencyCode && nullNodeIsoCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsoCurrencyCode = null;
-            if (parseNode.GetChildNode("max_daily_credit_amount") is { } nullNodeMaxDailyCreditAmount && nullNodeMaxDailyCreditAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxDailyCreditAmount = null;
-            if (parseNode.GetChildNode("max_daily_debit_amount") is { } nullNodeMaxDailyDebitAmount && nullNodeMaxDailyDebitAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxDailyDebitAmount = null;
-            if (parseNode.GetChildNode("max_monthly_amount") is { } nullNodeMaxMonthlyAmount && nullNodeMaxMonthlyAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxMonthlyAmount = null;
-            if (parseNode.GetChildNode("max_monthly_credit_amount") is { } nullNodeMaxMonthlyCreditAmount && nullNodeMaxMonthlyCreditAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxMonthlyCreditAmount = null;
-            if (parseNode.GetChildNode("max_monthly_debit_amount") is { } nullNodeMaxMonthlyDebitAmount && nullNodeMaxMonthlyDebitAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxMonthlyDebitAmount = null;
-            if (parseNode.GetChildNode("max_single_transfer_amount") is { } nullNodeMaxSingleTransferAmount && nullNodeMaxSingleTransferAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxSingleTransferAmount = null;
-            if (parseNode.GetChildNode("max_single_transfer_credit_amount") is { } nullNodeMaxSingleTransferCreditAmount && nullNodeMaxSingleTransferCreditAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxSingleTransferCreditAmount = null;
-            if (parseNode.GetChildNode("max_single_transfer_debit_amount") is { } nullNodeMaxSingleTransferDebitAmount && nullNodeMaxSingleTransferDebitAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxSingleTransferDebitAmount = null;
-            if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
+            if (parseNode.GetChildNode("iso_currency_code") is null) { _explicitNullValueIsoCurrencyCode = default!; _explicitNullProperties?.Remove("iso_currency_code"); }
+            else if (parseNode.GetChildNode("iso_currency_code") is { } nullNodeIsoCurrencyCode && nullNodeIsoCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsoCurrencyCode = null;
+            if (parseNode.GetChildNode("max_daily_credit_amount") is null) { _explicitNullValueMaxDailyCreditAmount = default!; _explicitNullProperties?.Remove("max_daily_credit_amount"); }
+            else if (parseNode.GetChildNode("max_daily_credit_amount") is { } nullNodeMaxDailyCreditAmount && nullNodeMaxDailyCreditAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxDailyCreditAmount = null;
+            if (parseNode.GetChildNode("max_daily_debit_amount") is null) { _explicitNullValueMaxDailyDebitAmount = default!; _explicitNullProperties?.Remove("max_daily_debit_amount"); }
+            else if (parseNode.GetChildNode("max_daily_debit_amount") is { } nullNodeMaxDailyDebitAmount && nullNodeMaxDailyDebitAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxDailyDebitAmount = null;
+            if (parseNode.GetChildNode("max_monthly_amount") is null) { _explicitNullValueMaxMonthlyAmount = default!; _explicitNullProperties?.Remove("max_monthly_amount"); }
+            else if (parseNode.GetChildNode("max_monthly_amount") is { } nullNodeMaxMonthlyAmount && nullNodeMaxMonthlyAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxMonthlyAmount = null;
+            if (parseNode.GetChildNode("max_monthly_credit_amount") is null) { _explicitNullValueMaxMonthlyCreditAmount = default!; _explicitNullProperties?.Remove("max_monthly_credit_amount"); }
+            else if (parseNode.GetChildNode("max_monthly_credit_amount") is { } nullNodeMaxMonthlyCreditAmount && nullNodeMaxMonthlyCreditAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxMonthlyCreditAmount = null;
+            if (parseNode.GetChildNode("max_monthly_debit_amount") is null) { _explicitNullValueMaxMonthlyDebitAmount = default!; _explicitNullProperties?.Remove("max_monthly_debit_amount"); }
+            else if (parseNode.GetChildNode("max_monthly_debit_amount") is { } nullNodeMaxMonthlyDebitAmount && nullNodeMaxMonthlyDebitAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxMonthlyDebitAmount = null;
+            if (parseNode.GetChildNode("max_single_transfer_amount") is null) { _explicitNullValueMaxSingleTransferAmount = default!; _explicitNullProperties?.Remove("max_single_transfer_amount"); }
+            else if (parseNode.GetChildNode("max_single_transfer_amount") is { } nullNodeMaxSingleTransferAmount && nullNodeMaxSingleTransferAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxSingleTransferAmount = null;
+            if (parseNode.GetChildNode("max_single_transfer_credit_amount") is null) { _explicitNullValueMaxSingleTransferCreditAmount = default!; _explicitNullProperties?.Remove("max_single_transfer_credit_amount"); }
+            else if (parseNode.GetChildNode("max_single_transfer_credit_amount") is { } nullNodeMaxSingleTransferCreditAmount && nullNodeMaxSingleTransferCreditAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxSingleTransferCreditAmount = null;
+            if (parseNode.GetChildNode("max_single_transfer_debit_amount") is null) { _explicitNullValueMaxSingleTransferDebitAmount = default!; _explicitNullProperties?.Remove("max_single_transfer_debit_amount"); }
+            else if (parseNode.GetChildNode("max_single_transfer_debit_amount") is { } nullNodeMaxSingleTransferDebitAmount && nullNodeMaxSingleTransferDebitAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxSingleTransferDebitAmount = null;
+            if (parseNode.GetChildNode("request_id") is null) { _explicitNullValueRequestId = default!; _explicitNullProperties?.Remove("request_id"); }
+            else if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -35,103 +45,103 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The currency of the dollar amount, e.g. &quot;USD&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
+        public string? IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; AdditionalData?.Remove("iso_currency_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
         private string? _explicitNullValueIsoCurrencyCode = default!;
 #nullable restore
 #else
-        public string IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
+        public string IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; AdditionalData?.Remove("iso_currency_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
         private string _explicitNullValueIsoCurrencyCode = default!;
 #endif
         /// <summary>The max limit of sum of dollar amount of credit transfers in last 24 hours (decimal string with two digits of precision e.g. &quot;10.00&quot;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaxDailyCreditAmount { get => _explicitNullValueMaxDailyCreditAmount; set { _explicitNullValueMaxDailyCreditAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_daily_credit_amount"); else _explicitNullProperties?.Remove("max_daily_credit_amount"); } }
+        public string? MaxDailyCreditAmount { get => _explicitNullValueMaxDailyCreditAmount; set { _explicitNullValueMaxDailyCreditAmount = value; AdditionalData?.Remove("max_daily_credit_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_daily_credit_amount"); else _explicitNullProperties?.Remove("max_daily_credit_amount"); } }
         private string? _explicitNullValueMaxDailyCreditAmount = default!;
 #nullable restore
 #else
-        public string MaxDailyCreditAmount { get => _explicitNullValueMaxDailyCreditAmount; set { _explicitNullValueMaxDailyCreditAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_daily_credit_amount"); else _explicitNullProperties?.Remove("max_daily_credit_amount"); } }
+        public string MaxDailyCreditAmount { get => _explicitNullValueMaxDailyCreditAmount; set { _explicitNullValueMaxDailyCreditAmount = value; AdditionalData?.Remove("max_daily_credit_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_daily_credit_amount"); else _explicitNullProperties?.Remove("max_daily_credit_amount"); } }
         private string _explicitNullValueMaxDailyCreditAmount = default!;
 #endif
         /// <summary>The max limit of sum of dollar amount of debit transfers in last 24 hours (decimal string with two digits of precision e.g. &quot;10.00&quot;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaxDailyDebitAmount { get => _explicitNullValueMaxDailyDebitAmount; set { _explicitNullValueMaxDailyDebitAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_daily_debit_amount"); else _explicitNullProperties?.Remove("max_daily_debit_amount"); } }
+        public string? MaxDailyDebitAmount { get => _explicitNullValueMaxDailyDebitAmount; set { _explicitNullValueMaxDailyDebitAmount = value; AdditionalData?.Remove("max_daily_debit_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_daily_debit_amount"); else _explicitNullProperties?.Remove("max_daily_debit_amount"); } }
         private string? _explicitNullValueMaxDailyDebitAmount = default!;
 #nullable restore
 #else
-        public string MaxDailyDebitAmount { get => _explicitNullValueMaxDailyDebitAmount; set { _explicitNullValueMaxDailyDebitAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_daily_debit_amount"); else _explicitNullProperties?.Remove("max_daily_debit_amount"); } }
+        public string MaxDailyDebitAmount { get => _explicitNullValueMaxDailyDebitAmount; set { _explicitNullValueMaxDailyDebitAmount = value; AdditionalData?.Remove("max_daily_debit_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_daily_debit_amount"); else _explicitNullProperties?.Remove("max_daily_debit_amount"); } }
         private string _explicitNullValueMaxDailyDebitAmount = default!;
 #endif
         /// <summary>The max limit of sum of dollar amount of credit and debit transfers in one calendar month (decimal string with two digits of precision e.g. &quot;10.00&quot;).</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaxMonthlyAmount { get => _explicitNullValueMaxMonthlyAmount; set { _explicitNullValueMaxMonthlyAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_monthly_amount"); else _explicitNullProperties?.Remove("max_monthly_amount"); } }
+        public string? MaxMonthlyAmount { get => _explicitNullValueMaxMonthlyAmount; set { _explicitNullValueMaxMonthlyAmount = value; AdditionalData?.Remove("max_monthly_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_monthly_amount"); else _explicitNullProperties?.Remove("max_monthly_amount"); } }
         private string? _explicitNullValueMaxMonthlyAmount = default!;
 #nullable restore
 #else
-        public string MaxMonthlyAmount { get => _explicitNullValueMaxMonthlyAmount; set { _explicitNullValueMaxMonthlyAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_monthly_amount"); else _explicitNullProperties?.Remove("max_monthly_amount"); } }
+        public string MaxMonthlyAmount { get => _explicitNullValueMaxMonthlyAmount; set { _explicitNullValueMaxMonthlyAmount = value; AdditionalData?.Remove("max_monthly_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_monthly_amount"); else _explicitNullProperties?.Remove("max_monthly_amount"); } }
         private string _explicitNullValueMaxMonthlyAmount = default!;
 #endif
         /// <summary>The max limit of sum of dollar amount of credit transfers in one calendar month (decimal string with two digits of precision e.g. &quot;10.00&quot;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaxMonthlyCreditAmount { get => _explicitNullValueMaxMonthlyCreditAmount; set { _explicitNullValueMaxMonthlyCreditAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_monthly_credit_amount"); else _explicitNullProperties?.Remove("max_monthly_credit_amount"); } }
+        public string? MaxMonthlyCreditAmount { get => _explicitNullValueMaxMonthlyCreditAmount; set { _explicitNullValueMaxMonthlyCreditAmount = value; AdditionalData?.Remove("max_monthly_credit_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_monthly_credit_amount"); else _explicitNullProperties?.Remove("max_monthly_credit_amount"); } }
         private string? _explicitNullValueMaxMonthlyCreditAmount = default!;
 #nullable restore
 #else
-        public string MaxMonthlyCreditAmount { get => _explicitNullValueMaxMonthlyCreditAmount; set { _explicitNullValueMaxMonthlyCreditAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_monthly_credit_amount"); else _explicitNullProperties?.Remove("max_monthly_credit_amount"); } }
+        public string MaxMonthlyCreditAmount { get => _explicitNullValueMaxMonthlyCreditAmount; set { _explicitNullValueMaxMonthlyCreditAmount = value; AdditionalData?.Remove("max_monthly_credit_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_monthly_credit_amount"); else _explicitNullProperties?.Remove("max_monthly_credit_amount"); } }
         private string _explicitNullValueMaxMonthlyCreditAmount = default!;
 #endif
         /// <summary>The max limit of sum of dollar amount of debit transfers in one calendar month (decimal string with two digits of precision e.g. &quot;10.00&quot;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaxMonthlyDebitAmount { get => _explicitNullValueMaxMonthlyDebitAmount; set { _explicitNullValueMaxMonthlyDebitAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_monthly_debit_amount"); else _explicitNullProperties?.Remove("max_monthly_debit_amount"); } }
+        public string? MaxMonthlyDebitAmount { get => _explicitNullValueMaxMonthlyDebitAmount; set { _explicitNullValueMaxMonthlyDebitAmount = value; AdditionalData?.Remove("max_monthly_debit_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_monthly_debit_amount"); else _explicitNullProperties?.Remove("max_monthly_debit_amount"); } }
         private string? _explicitNullValueMaxMonthlyDebitAmount = default!;
 #nullable restore
 #else
-        public string MaxMonthlyDebitAmount { get => _explicitNullValueMaxMonthlyDebitAmount; set { _explicitNullValueMaxMonthlyDebitAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_monthly_debit_amount"); else _explicitNullProperties?.Remove("max_monthly_debit_amount"); } }
+        public string MaxMonthlyDebitAmount { get => _explicitNullValueMaxMonthlyDebitAmount; set { _explicitNullValueMaxMonthlyDebitAmount = value; AdditionalData?.Remove("max_monthly_debit_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_monthly_debit_amount"); else _explicitNullProperties?.Remove("max_monthly_debit_amount"); } }
         private string _explicitNullValueMaxMonthlyDebitAmount = default!;
 #endif
         /// <summary>The max limit of dollar amount of a single transfer (decimal string with two digits of precision e.g. &quot;10.00&quot;).</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaxSingleTransferAmount { get => _explicitNullValueMaxSingleTransferAmount; set { _explicitNullValueMaxSingleTransferAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_single_transfer_amount"); else _explicitNullProperties?.Remove("max_single_transfer_amount"); } }
+        public string? MaxSingleTransferAmount { get => _explicitNullValueMaxSingleTransferAmount; set { _explicitNullValueMaxSingleTransferAmount = value; AdditionalData?.Remove("max_single_transfer_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_single_transfer_amount"); else _explicitNullProperties?.Remove("max_single_transfer_amount"); } }
         private string? _explicitNullValueMaxSingleTransferAmount = default!;
 #nullable restore
 #else
-        public string MaxSingleTransferAmount { get => _explicitNullValueMaxSingleTransferAmount; set { _explicitNullValueMaxSingleTransferAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_single_transfer_amount"); else _explicitNullProperties?.Remove("max_single_transfer_amount"); } }
+        public string MaxSingleTransferAmount { get => _explicitNullValueMaxSingleTransferAmount; set { _explicitNullValueMaxSingleTransferAmount = value; AdditionalData?.Remove("max_single_transfer_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_single_transfer_amount"); else _explicitNullProperties?.Remove("max_single_transfer_amount"); } }
         private string _explicitNullValueMaxSingleTransferAmount = default!;
 #endif
         /// <summary>The max limit of dollar amount of a single credit transfer (decimal string with two digits of precision e.g. &quot;10.00&quot;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaxSingleTransferCreditAmount { get => _explicitNullValueMaxSingleTransferCreditAmount; set { _explicitNullValueMaxSingleTransferCreditAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_single_transfer_credit_amount"); else _explicitNullProperties?.Remove("max_single_transfer_credit_amount"); } }
+        public string? MaxSingleTransferCreditAmount { get => _explicitNullValueMaxSingleTransferCreditAmount; set { _explicitNullValueMaxSingleTransferCreditAmount = value; AdditionalData?.Remove("max_single_transfer_credit_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_single_transfer_credit_amount"); else _explicitNullProperties?.Remove("max_single_transfer_credit_amount"); } }
         private string? _explicitNullValueMaxSingleTransferCreditAmount = default!;
 #nullable restore
 #else
-        public string MaxSingleTransferCreditAmount { get => _explicitNullValueMaxSingleTransferCreditAmount; set { _explicitNullValueMaxSingleTransferCreditAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_single_transfer_credit_amount"); else _explicitNullProperties?.Remove("max_single_transfer_credit_amount"); } }
+        public string MaxSingleTransferCreditAmount { get => _explicitNullValueMaxSingleTransferCreditAmount; set { _explicitNullValueMaxSingleTransferCreditAmount = value; AdditionalData?.Remove("max_single_transfer_credit_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_single_transfer_credit_amount"); else _explicitNullProperties?.Remove("max_single_transfer_credit_amount"); } }
         private string _explicitNullValueMaxSingleTransferCreditAmount = default!;
 #endif
         /// <summary>The max limit of dollar amount of a single debit transfer (decimal string with two digits of precision e.g. &quot;10.00&quot;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaxSingleTransferDebitAmount { get => _explicitNullValueMaxSingleTransferDebitAmount; set { _explicitNullValueMaxSingleTransferDebitAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_single_transfer_debit_amount"); else _explicitNullProperties?.Remove("max_single_transfer_debit_amount"); } }
+        public string? MaxSingleTransferDebitAmount { get => _explicitNullValueMaxSingleTransferDebitAmount; set { _explicitNullValueMaxSingleTransferDebitAmount = value; AdditionalData?.Remove("max_single_transfer_debit_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_single_transfer_debit_amount"); else _explicitNullProperties?.Remove("max_single_transfer_debit_amount"); } }
         private string? _explicitNullValueMaxSingleTransferDebitAmount = default!;
 #nullable restore
 #else
-        public string MaxSingleTransferDebitAmount { get => _explicitNullValueMaxSingleTransferDebitAmount; set { _explicitNullValueMaxSingleTransferDebitAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_single_transfer_debit_amount"); else _explicitNullProperties?.Remove("max_single_transfer_debit_amount"); } }
+        public string MaxSingleTransferDebitAmount { get => _explicitNullValueMaxSingleTransferDebitAmount; set { _explicitNullValueMaxSingleTransferDebitAmount = value; AdditionalData?.Remove("max_single_transfer_debit_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_single_transfer_debit_amount"); else _explicitNullProperties?.Remove("max_single_transfer_debit_amount"); } }
         private string _explicitNullValueMaxSingleTransferDebitAmount = default!;
 #endif
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; AdditionalData?.Remove("request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
         private string? _explicitNullValueRequestId = default!;
 #nullable restore
 #else
-        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; AdditionalData?.Remove("request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
         private string _explicitNullValueRequestId = default!;
 #endif
         /// <summary>

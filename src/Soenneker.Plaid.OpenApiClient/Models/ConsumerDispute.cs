@@ -19,39 +19,43 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
-            if (parseNode.GetChildNode("consumer_dispute_id") is { } nullNodeConsumerDisputeId && nullNodeConsumerDisputeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsumerDisputeId = null;
-            if (parseNode.GetChildNode("dispute_field_create_date") is { } nullNodeDisputeFieldCreateDate && nullNodeDisputeFieldCreateDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisputeFieldCreateDate = null;
-            if (parseNode.GetChildNode("statement") is { } nullNodeStatement && nullNodeStatement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Statement = null;
+            if (parseNode.GetChildNode("category") is null) { _explicitNullValueCategory = default!; _explicitNullProperties?.Remove("category"); }
+            else if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
+            if (parseNode.GetChildNode("consumer_dispute_id") is null) { _explicitNullValueConsumerDisputeId = default!; _explicitNullProperties?.Remove("consumer_dispute_id"); }
+            else if (parseNode.GetChildNode("consumer_dispute_id") is { } nullNodeConsumerDisputeId && nullNodeConsumerDisputeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsumerDisputeId = null;
+            if (parseNode.GetChildNode("dispute_field_create_date") is null) { _explicitNullValueDisputeFieldCreateDate = default!; _explicitNullProperties?.Remove("dispute_field_create_date"); }
+            else if (parseNode.GetChildNode("dispute_field_create_date") is { } nullNodeDisputeFieldCreateDate && nullNodeDisputeFieldCreateDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisputeFieldCreateDate = null;
+            if (parseNode.GetChildNode("statement") is null) { _explicitNullValueStatement = default!; _explicitNullProperties?.Remove("statement"); }
+            else if (parseNode.GetChildNode("statement") is { } nullNodeStatement && nullNodeStatement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Statement = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Type of data being disputed by the consumer</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDisputeCategory? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDisputeCategory? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; AdditionalData?.Remove("category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDisputeCategory? _explicitNullValueCategory = default!;
         /// <summary>(Deprecated) A unique identifier (UUID) of the consumer dispute that can be used for troubleshooting</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConsumerDisputeId { get => _explicitNullValueConsumerDisputeId; set { _explicitNullValueConsumerDisputeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumer_dispute_id"); else _explicitNullProperties?.Remove("consumer_dispute_id"); } }
+        public string? ConsumerDisputeId { get => _explicitNullValueConsumerDisputeId; set { _explicitNullValueConsumerDisputeId = value; AdditionalData?.Remove("consumer_dispute_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumer_dispute_id"); else _explicitNullProperties?.Remove("consumer_dispute_id"); } }
         private string? _explicitNullValueConsumerDisputeId = default!;
 #nullable restore
 #else
-        public string ConsumerDisputeId { get => _explicitNullValueConsumerDisputeId; set { _explicitNullValueConsumerDisputeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumer_dispute_id"); else _explicitNullProperties?.Remove("consumer_dispute_id"); } }
+        public string ConsumerDisputeId { get => _explicitNullValueConsumerDisputeId; set { _explicitNullValueConsumerDisputeId = value; AdditionalData?.Remove("consumer_dispute_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumer_dispute_id"); else _explicitNullProperties?.Remove("consumer_dispute_id"); } }
         private string _explicitNullValueConsumerDisputeId = default!;
 #endif
         /// <summary>Date of the disputed field (e.g. transaction date), in an ISO 8601 format (YYYY-MM-DD)</summary>
-        public Date? DisputeFieldCreateDate { get => _explicitNullValueDisputeFieldCreateDate; set { _explicitNullValueDisputeFieldCreateDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dispute_field_create_date"); else _explicitNullProperties?.Remove("dispute_field_create_date"); } }
+        public Date? DisputeFieldCreateDate { get => _explicitNullValueDisputeFieldCreateDate; set { _explicitNullValueDisputeFieldCreateDate = value; AdditionalData?.Remove("dispute_field_create_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dispute_field_create_date"); else _explicitNullProperties?.Remove("dispute_field_create_date"); } }
         private Date? _explicitNullValueDisputeFieldCreateDate = default!;
         /// <summary>Text content of dispute</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Statement { get => _explicitNullValueStatement; set { _explicitNullValueStatement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statement"); else _explicitNullProperties?.Remove("statement"); } }
+        public string? Statement { get => _explicitNullValueStatement; set { _explicitNullValueStatement = value; AdditionalData?.Remove("statement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statement"); else _explicitNullProperties?.Remove("statement"); } }
         private string? _explicitNullValueStatement = default!;
 #nullable restore
 #else
-        public string Statement { get => _explicitNullValueStatement; set { _explicitNullValueStatement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statement"); else _explicitNullProperties?.Remove("statement"); } }
+        public string Statement { get => _explicitNullValueStatement; set { _explicitNullValueStatement = value; AdditionalData?.Remove("statement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statement"); else _explicitNullProperties?.Remove("statement"); } }
         private string _explicitNullValueStatement = default!;
 #endif
         /// <summary>
@@ -79,7 +83,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "category", n => { Category = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDisputeCategory>(); } },
+                { "category", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDisputeCategory>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCategory = default; _explicitNullProperties?.Remove("category"); AdditionalData["category"] = unknown; } else { Category = parsed; AdditionalData.Remove("category"); } } },
                 { "consumer_dispute_id", n => { ConsumerDisputeId = n.GetStringValue(); } },
                 { "dispute_field_create_date", n => { DisputeFieldCreateDate = n.GetDateValue(); } },
                 { "statement", n => { Statement = n.GetStringValue(); } },

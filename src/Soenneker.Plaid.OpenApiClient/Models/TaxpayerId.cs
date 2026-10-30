@@ -18,9 +18,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("id_mask") is { } nullNodeIdMask && nullNodeIdMask.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdMask = null;
-            if (parseNode.GetChildNode("id_type") is { } nullNodeIdType && nullNodeIdType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdType = null;
-            if (parseNode.GetChildNode("last_4_digits") is { } nullNodeLast4Digits && nullNodeLast4Digits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Last4Digits = null;
+            if (parseNode.GetChildNode("id_mask") is null) { _explicitNullValueIdMask = default!; _explicitNullProperties?.Remove("id_mask"); }
+            else if (parseNode.GetChildNode("id_mask") is { } nullNodeIdMask && nullNodeIdMask.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdMask = null;
+            if (parseNode.GetChildNode("id_type") is null) { _explicitNullValueIdType = default!; _explicitNullProperties?.Remove("id_type"); }
+            else if (parseNode.GetChildNode("id_type") is { } nullNodeIdType && nullNodeIdType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdType = null;
+            if (parseNode.GetChildNode("last_4_digits") is null) { _explicitNullValueLast4Digits = default!; _explicitNullProperties?.Remove("last_4_digits"); }
+            else if (parseNode.GetChildNode("last_4_digits") is { } nullNodeLast4Digits && nullNodeLast4Digits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Last4Digits = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,32 +31,32 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>ID mask; i.e. last 4 digits of the taxpayer ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdMask { get => _explicitNullValueIdMask; set { _explicitNullValueIdMask = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id_mask"); else _explicitNullProperties?.Remove("id_mask"); } }
+        public string? IdMask { get => _explicitNullValueIdMask; set { _explicitNullValueIdMask = value; AdditionalData?.Remove("id_mask"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id_mask"); else _explicitNullProperties?.Remove("id_mask"); } }
         private string? _explicitNullValueIdMask = default!;
 #nullable restore
 #else
-        public string IdMask { get => _explicitNullValueIdMask; set { _explicitNullValueIdMask = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id_mask"); else _explicitNullProperties?.Remove("id_mask"); } }
+        public string IdMask { get => _explicitNullValueIdMask; set { _explicitNullValueIdMask = value; AdditionalData?.Remove("id_mask"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id_mask"); else _explicitNullProperties?.Remove("id_mask"); } }
         private string _explicitNullValueIdMask = default!;
 #endif
         /// <summary>Type of ID, e.g. &apos;SSN&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdType { get => _explicitNullValueIdType; set { _explicitNullValueIdType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id_type"); else _explicitNullProperties?.Remove("id_type"); } }
+        public string? IdType { get => _explicitNullValueIdType; set { _explicitNullValueIdType = value; AdditionalData?.Remove("id_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id_type"); else _explicitNullProperties?.Remove("id_type"); } }
         private string? _explicitNullValueIdType = default!;
 #nullable restore
 #else
-        public string IdType { get => _explicitNullValueIdType; set { _explicitNullValueIdType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id_type"); else _explicitNullProperties?.Remove("id_type"); } }
+        public string IdType { get => _explicitNullValueIdType; set { _explicitNullValueIdType = value; AdditionalData?.Remove("id_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id_type"); else _explicitNullProperties?.Remove("id_type"); } }
         private string _explicitNullValueIdType = default!;
 #endif
         /// <summary>Last 4 digits of unique number of ID.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Last4Digits { get => _explicitNullValueLast4Digits; set { _explicitNullValueLast4Digits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_4_digits"); else _explicitNullProperties?.Remove("last_4_digits"); } }
+        public string? Last4Digits { get => _explicitNullValueLast4Digits; set { _explicitNullValueLast4Digits = value; AdditionalData?.Remove("last_4_digits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_4_digits"); else _explicitNullProperties?.Remove("last_4_digits"); } }
         private string? _explicitNullValueLast4Digits = default!;
 #nullable restore
 #else
-        public string Last4Digits { get => _explicitNullValueLast4Digits; set { _explicitNullValueLast4Digits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_4_digits"); else _explicitNullProperties?.Remove("last_4_digits"); } }
+        public string Last4Digits { get => _explicitNullValueLast4Digits; set { _explicitNullValueLast4Digits = value; AdditionalData?.Remove("last_4_digits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_4_digits"); else _explicitNullProperties?.Remove("last_4_digits"); } }
         private string _explicitNullValueLast4Digits = default!;
 #endif
         /// <summary>

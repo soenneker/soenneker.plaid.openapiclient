@@ -18,9 +18,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("administrative_return_rate") is { } nullNodeAdministrativeReturnRate && nullNodeAdministrativeReturnRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdministrativeReturnRate = null;
-            if (parseNode.GetChildNode("overall_return_rate") is { } nullNodeOverallReturnRate && nullNodeOverallReturnRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverallReturnRate = null;
-            if (parseNode.GetChildNode("unauthorized_return_rate") is { } nullNodeUnauthorizedReturnRate && nullNodeUnauthorizedReturnRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnauthorizedReturnRate = null;
+            if (parseNode.GetChildNode("administrative_return_rate") is null) { _explicitNullValueAdministrativeReturnRate = default!; _explicitNullProperties?.Remove("administrative_return_rate"); }
+            else if (parseNode.GetChildNode("administrative_return_rate") is { } nullNodeAdministrativeReturnRate && nullNodeAdministrativeReturnRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdministrativeReturnRate = null;
+            if (parseNode.GetChildNode("overall_return_rate") is null) { _explicitNullValueOverallReturnRate = default!; _explicitNullProperties?.Remove("overall_return_rate"); }
+            else if (parseNode.GetChildNode("overall_return_rate") is { } nullNodeOverallReturnRate && nullNodeOverallReturnRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverallReturnRate = null;
+            if (parseNode.GetChildNode("unauthorized_return_rate") is null) { _explicitNullValueUnauthorizedReturnRate = default!; _explicitNullProperties?.Remove("unauthorized_return_rate"); }
+            else if (parseNode.GetChildNode("unauthorized_return_rate") is { } nullNodeUnauthorizedReturnRate && nullNodeUnauthorizedReturnRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnauthorizedReturnRate = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The administrative return rate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdministrativeReturnRate { get => _explicitNullValueAdministrativeReturnRate; set { _explicitNullValueAdministrativeReturnRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("administrative_return_rate"); else _explicitNullProperties?.Remove("administrative_return_rate"); } }
+        public string? AdministrativeReturnRate { get => _explicitNullValueAdministrativeReturnRate; set { _explicitNullValueAdministrativeReturnRate = value; AdditionalData?.Remove("administrative_return_rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("administrative_return_rate"); else _explicitNullProperties?.Remove("administrative_return_rate"); } }
         private string? _explicitNullValueAdministrativeReturnRate = default!;
 #nullable restore
 #else
-        public string AdministrativeReturnRate { get => _explicitNullValueAdministrativeReturnRate; set { _explicitNullValueAdministrativeReturnRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("administrative_return_rate"); else _explicitNullProperties?.Remove("administrative_return_rate"); } }
+        public string AdministrativeReturnRate { get => _explicitNullValueAdministrativeReturnRate; set { _explicitNullValueAdministrativeReturnRate = value; AdditionalData?.Remove("administrative_return_rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("administrative_return_rate"); else _explicitNullProperties?.Remove("administrative_return_rate"); } }
         private string _explicitNullValueAdministrativeReturnRate = default!;
 #endif
         /// <summary>The overall return rate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OverallReturnRate { get => _explicitNullValueOverallReturnRate; set { _explicitNullValueOverallReturnRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overall_return_rate"); else _explicitNullProperties?.Remove("overall_return_rate"); } }
+        public string? OverallReturnRate { get => _explicitNullValueOverallReturnRate; set { _explicitNullValueOverallReturnRate = value; AdditionalData?.Remove("overall_return_rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overall_return_rate"); else _explicitNullProperties?.Remove("overall_return_rate"); } }
         private string? _explicitNullValueOverallReturnRate = default!;
 #nullable restore
 #else
-        public string OverallReturnRate { get => _explicitNullValueOverallReturnRate; set { _explicitNullValueOverallReturnRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overall_return_rate"); else _explicitNullProperties?.Remove("overall_return_rate"); } }
+        public string OverallReturnRate { get => _explicitNullValueOverallReturnRate; set { _explicitNullValueOverallReturnRate = value; AdditionalData?.Remove("overall_return_rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overall_return_rate"); else _explicitNullProperties?.Remove("overall_return_rate"); } }
         private string _explicitNullValueOverallReturnRate = default!;
 #endif
         /// <summary>The unauthorized return rate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnauthorizedReturnRate { get => _explicitNullValueUnauthorizedReturnRate; set { _explicitNullValueUnauthorizedReturnRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unauthorized_return_rate"); else _explicitNullProperties?.Remove("unauthorized_return_rate"); } }
+        public string? UnauthorizedReturnRate { get => _explicitNullValueUnauthorizedReturnRate; set { _explicitNullValueUnauthorizedReturnRate = value; AdditionalData?.Remove("unauthorized_return_rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unauthorized_return_rate"); else _explicitNullProperties?.Remove("unauthorized_return_rate"); } }
         private string? _explicitNullValueUnauthorizedReturnRate = default!;
 #nullable restore
 #else
-        public string UnauthorizedReturnRate { get => _explicitNullValueUnauthorizedReturnRate; set { _explicitNullValueUnauthorizedReturnRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unauthorized_return_rate"); else _explicitNullProperties?.Remove("unauthorized_return_rate"); } }
+        public string UnauthorizedReturnRate { get => _explicitNullValueUnauthorizedReturnRate; set { _explicitNullValueUnauthorizedReturnRate = value; AdditionalData?.Remove("unauthorized_return_rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unauthorized_return_rate"); else _explicitNullProperties?.Remove("unauthorized_return_rate"); } }
         private string _explicitNullValueUnauthorizedReturnRate = default!;
 #endif
         /// <summary>

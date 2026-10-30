@@ -18,24 +18,26 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("account_ids") is { } nullNodeAccountIds && nullNodeAccountIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountIds = null;
-            if (parseNode.GetChildNode("min_last_updated_datetime") is { } nullNodeMinLastUpdatedDatetime && nullNodeMinLastUpdatedDatetime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinLastUpdatedDatetime = null;
+            if (parseNode.GetChildNode("account_ids") is null) { _explicitNullValueAccountIds = default!; _explicitNullProperties?.Remove("account_ids"); }
+            else if (parseNode.GetChildNode("account_ids") is { } nullNodeAccountIds && nullNodeAccountIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountIds = null;
+            if (parseNode.GetChildNode("min_last_updated_datetime") is null) { _explicitNullValueMinLastUpdatedDatetime = default!; _explicitNullProperties?.Remove("min_last_updated_datetime"); }
+            else if (parseNode.GetChildNode("min_last_updated_datetime") is { } nullNodeMinLastUpdatedDatetime && nullNodeMinLastUpdatedDatetime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinLastUpdatedDatetime = null;
         }
 
         /// <summary>A list of `account_ids` to retrieve for the Item. The default value is `null`.Note: An error will be returned if a provided `account_id` is not associated with the Item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AccountIds { get => _explicitNullValueAccountIds; set { _explicitNullValueAccountIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_ids"); else _explicitNullProperties?.Remove("account_ids"); } }
+        public List<string>? AccountIds { get => _explicitNullValueAccountIds; set { _explicitNullValueAccountIds = value; AdditionalData?.Remove("account_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_ids"); else _explicitNullProperties?.Remove("account_ids"); } }
         private List<string>? _explicitNullValueAccountIds = default!;
 #nullable restore
 #else
-        public List<string> AccountIds { get => _explicitNullValueAccountIds; set { _explicitNullValueAccountIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_ids"); else _explicitNullProperties?.Remove("account_ids"); } }
+        public List<string> AccountIds { get => _explicitNullValueAccountIds; set { _explicitNullValueAccountIds = value; AdditionalData?.Remove("account_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_ids"); else _explicitNullProperties?.Remove("account_ids"); } }
         private List<string> _explicitNullValueAccountIds = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Timestamp in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (`YYYY-MM-DDTHH:mm:ssZ`) indicating the oldest acceptable balance when making a request to `/accounts/balance/get`.This field is only necessary when the institution is `ins_128026` (Capital One), *and* the Item has one or more non-depository accounts (such as a credit card), even if `account_ids` requests only depository accounts, as Capital One does not provide real-time balance for non-depository accounts. It is also necessary for all accounts when the institution is `ins_136439` (Apple Card), which provides only cached balances. In these cases, a value must be provided or an `INVALID_REQUEST` error with the code of `INVALID_FIELD` will be returned. For all other institutions, as well as for depository accounts at Capital One (including all checking and savings accounts) this field is ignored and real-time balance information will be fetched.If this field is not ignored, and no acceptable balance is available, an `INVALID_RESULT` error with the code `LAST_UPDATED_DATETIME_OUT_OF_RANGE` will be returned.</summary>
-        public DateTimeOffset? MinLastUpdatedDatetime { get => _explicitNullValueMinLastUpdatedDatetime; set { _explicitNullValueMinLastUpdatedDatetime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_last_updated_datetime"); else _explicitNullProperties?.Remove("min_last_updated_datetime"); } }
+        public DateTimeOffset? MinLastUpdatedDatetime { get => _explicitNullValueMinLastUpdatedDatetime; set { _explicitNullValueMinLastUpdatedDatetime = value; AdditionalData?.Remove("min_last_updated_datetime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_last_updated_datetime"); else _explicitNullProperties?.Remove("min_last_updated_datetime"); } }
         private DateTimeOffset? _explicitNullValueMinLastUpdatedDatetime = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.AccountsBalanceGetRequestOptions"/> and sets the default values.

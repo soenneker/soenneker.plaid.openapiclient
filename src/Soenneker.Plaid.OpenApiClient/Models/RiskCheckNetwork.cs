@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("factors") is { } nullNodeFactors && nullNodeFactors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Factors = null;
-            if (parseNode.GetChildNode("risk_level") is { } nullNodeRiskLevel && nullNodeRiskLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskLevel = null;
+            if (parseNode.GetChildNode("factors") is null) { _explicitNullValueFactors = default!; _explicitNullProperties?.Remove("factors"); }
+            else if (parseNode.GetChildNode("factors") is { } nullNodeFactors && nullNodeFactors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Factors = null;
+            if (parseNode.GetChildNode("risk_level") is null) { _explicitNullValueRiskLevel = default!; _explicitNullProperties?.Remove("risk_level"); }
+            else if (parseNode.GetChildNode("risk_level") is { } nullNodeRiskLevel && nullNodeRiskLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskLevel = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>List of factors, when available, that contribute towards the risk level of the given risk check type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Factors { get => _explicitNullValueFactors; set { _explicitNullValueFactors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("factors"); else _explicitNullProperties?.Remove("factors"); } }
+        public List<string>? Factors { get => _explicitNullValueFactors; set { _explicitNullValueFactors = value; AdditionalData?.Remove("factors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("factors"); else _explicitNullProperties?.Remove("factors"); } }
         private List<string>? _explicitNullValueFactors = default!;
 #nullable restore
 #else
-        public List<string> Factors { get => _explicitNullValueFactors; set { _explicitNullValueFactors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("factors"); else _explicitNullProperties?.Remove("factors"); } }
+        public List<string> Factors { get => _explicitNullValueFactors; set { _explicitNullValueFactors = value; AdditionalData?.Remove("factors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("factors"); else _explicitNullProperties?.Remove("factors"); } }
         private List<string> _explicitNullValueFactors = default!;
 #endif
         /// <summary>Risk level for the given risk check type.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.RiskLevel? RiskLevel { get => _explicitNullValueRiskLevel; set { _explicitNullValueRiskLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_level"); else _explicitNullProperties?.Remove("risk_level"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RiskLevel? RiskLevel { get => _explicitNullValueRiskLevel; set { _explicitNullValueRiskLevel = value; AdditionalData?.Remove("risk_level"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_level"); else _explicitNullProperties?.Remove("risk_level"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.RiskLevel? _explicitNullValueRiskLevel = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckNetwork"/> and sets the default values.
@@ -65,7 +67,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "factors", n => { Factors = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "risk_level", n => { RiskLevel = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskLevel>(); } },
+                { "risk_level", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskLevel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRiskLevel = default; _explicitNullProperties?.Remove("risk_level"); AdditionalData["risk_level"] = unknown; } else { RiskLevel = parsed; AdditionalData.Remove("risk_level"); } } },
             };
         }
         /// <summary>

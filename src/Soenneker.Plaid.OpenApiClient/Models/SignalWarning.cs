@@ -18,9 +18,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("warning_code") is { } nullNodeWarningCode && nullNodeWarningCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WarningCode = null;
-            if (parseNode.GetChildNode("warning_message") is { } nullNodeWarningMessage && nullNodeWarningMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WarningMessage = null;
-            if (parseNode.GetChildNode("warning_type") is { } nullNodeWarningType && nullNodeWarningType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WarningType = null;
+            if (parseNode.GetChildNode("warning_code") is null) { _explicitNullValueWarningCode = default!; _explicitNullProperties?.Remove("warning_code"); }
+            else if (parseNode.GetChildNode("warning_code") is { } nullNodeWarningCode && nullNodeWarningCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WarningCode = null;
+            if (parseNode.GetChildNode("warning_message") is null) { _explicitNullValueWarningMessage = default!; _explicitNullProperties?.Remove("warning_message"); }
+            else if (parseNode.GetChildNode("warning_message") is { } nullNodeWarningMessage && nullNodeWarningMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WarningMessage = null;
+            if (parseNode.GetChildNode("warning_type") is null) { _explicitNullValueWarningType = default!; _explicitNullProperties?.Remove("warning_type"); }
+            else if (parseNode.GetChildNode("warning_type") is { } nullNodeWarningType && nullNodeWarningType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WarningType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The warning code identifies a specific kind of warning that pertains to the error causing bank data to be missing. Safe for programmatic use. For more details on warning codes, please refer to Plaid standard error codes documentation. If you receive the `ITEM_LOGIN_REQUIRED` warning, we recommend re-authenticating your user by implementing Link&apos;s update mode. This will guide your user to fix their credentials, allowing Plaid to start fetching data again for future requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WarningCode { get => _explicitNullValueWarningCode; set { _explicitNullValueWarningCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_code"); else _explicitNullProperties?.Remove("warning_code"); } }
+        public string? WarningCode { get => _explicitNullValueWarningCode; set { _explicitNullValueWarningCode = value; AdditionalData?.Remove("warning_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_code"); else _explicitNullProperties?.Remove("warning_code"); } }
         private string? _explicitNullValueWarningCode = default!;
 #nullable restore
 #else
-        public string WarningCode { get => _explicitNullValueWarningCode; set { _explicitNullValueWarningCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_code"); else _explicitNullProperties?.Remove("warning_code"); } }
+        public string WarningCode { get => _explicitNullValueWarningCode; set { _explicitNullValueWarningCode = value; AdditionalData?.Remove("warning_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_code"); else _explicitNullProperties?.Remove("warning_code"); } }
         private string _explicitNullValueWarningCode = default!;
 #endif
         /// <summary>A developer-friendly representation of the warning type. This may change over time and is not safe for programmatic use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WarningMessage { get => _explicitNullValueWarningMessage; set { _explicitNullValueWarningMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_message"); else _explicitNullProperties?.Remove("warning_message"); } }
+        public string? WarningMessage { get => _explicitNullValueWarningMessage; set { _explicitNullValueWarningMessage = value; AdditionalData?.Remove("warning_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_message"); else _explicitNullProperties?.Remove("warning_message"); } }
         private string? _explicitNullValueWarningMessage = default!;
 #nullable restore
 #else
-        public string WarningMessage { get => _explicitNullValueWarningMessage; set { _explicitNullValueWarningMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_message"); else _explicitNullProperties?.Remove("warning_message"); } }
+        public string WarningMessage { get => _explicitNullValueWarningMessage; set { _explicitNullValueWarningMessage = value; AdditionalData?.Remove("warning_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_message"); else _explicitNullProperties?.Remove("warning_message"); } }
         private string _explicitNullValueWarningMessage = default!;
 #endif
         /// <summary>A broad categorization of the warning. Safe for programmatic use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WarningType { get => _explicitNullValueWarningType; set { _explicitNullValueWarningType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_type"); else _explicitNullProperties?.Remove("warning_type"); } }
+        public string? WarningType { get => _explicitNullValueWarningType; set { _explicitNullValueWarningType = value; AdditionalData?.Remove("warning_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_type"); else _explicitNullProperties?.Remove("warning_type"); } }
         private string? _explicitNullValueWarningType = default!;
 #nullable restore
 #else
-        public string WarningType { get => _explicitNullValueWarningType; set { _explicitNullValueWarningType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_type"); else _explicitNullProperties?.Remove("warning_type"); } }
+        public string WarningType { get => _explicitNullValueWarningType; set { _explicitNullValueWarningType = value; AdditionalData?.Remove("warning_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_type"); else _explicitNullProperties?.Remove("warning_type"); } }
         private string _explicitNullValueWarningType = default!;
 #endif
         /// <summary>

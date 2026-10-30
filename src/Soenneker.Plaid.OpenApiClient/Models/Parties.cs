@@ -18,7 +18,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("PARTY") is { } nullNodePARTY && nullNodePARTY.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PARTY = null;
+            if (parseNode.GetChildNode("PARTY") is null) { _explicitNullValuePARTY = default!; _explicitNullProperties?.Remove("PARTY"); }
+            else if (parseNode.GetChildNode("PARTY") is { } nullNodePARTY && nullNodePARTY.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PARTY = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The PARTY property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Party>? PARTY { get => _explicitNullValuePARTY; set { _explicitNullValuePARTY = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PARTY"); else _explicitNullProperties?.Remove("PARTY"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Party>? PARTY { get => _explicitNullValuePARTY; set { _explicitNullValuePARTY = value; AdditionalData?.Remove("PARTY"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PARTY"); else _explicitNullProperties?.Remove("PARTY"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.Party>? _explicitNullValuePARTY = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.Party> PARTY { get => _explicitNullValuePARTY; set { _explicitNullValuePARTY = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PARTY"); else _explicitNullProperties?.Remove("PARTY"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.Party> PARTY { get => _explicitNullValuePARTY; set { _explicitNullValuePARTY = value; AdditionalData?.Remove("PARTY"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PARTY"); else _explicitNullProperties?.Remove("PARTY"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.Party> _explicitNullValuePARTY = default!;
 #endif
         /// <summary>

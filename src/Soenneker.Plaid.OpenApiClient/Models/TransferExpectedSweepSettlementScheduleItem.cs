@@ -19,23 +19,25 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("sweep_settlement_date") is { } nullNodeSweepSettlementDate && nullNodeSweepSettlementDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SweepSettlementDate = null;
-            if (parseNode.GetChildNode("swept_settled_amount") is { } nullNodeSweptSettledAmount && nullNodeSweptSettledAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SweptSettledAmount = null;
+            if (parseNode.GetChildNode("sweep_settlement_date") is null) { _explicitNullValueSweepSettlementDate = default!; _explicitNullProperties?.Remove("sweep_settlement_date"); }
+            else if (parseNode.GetChildNode("sweep_settlement_date") is { } nullNodeSweepSettlementDate && nullNodeSweepSettlementDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SweepSettlementDate = null;
+            if (parseNode.GetChildNode("swept_settled_amount") is null) { _explicitNullValueSweptSettledAmount = default!; _explicitNullProperties?.Remove("swept_settled_amount"); }
+            else if (parseNode.GetChildNode("swept_settled_amount") is { } nullNodeSweptSettledAmount && nullNodeSweptSettledAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SweptSettledAmount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The settlement date of a sweep for this transfer.</summary>
-        public Date? SweepSettlementDate { get => _explicitNullValueSweepSettlementDate; set { _explicitNullValueSweepSettlementDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sweep_settlement_date"); else _explicitNullProperties?.Remove("sweep_settlement_date"); } }
+        public Date? SweepSettlementDate { get => _explicitNullValueSweepSettlementDate; set { _explicitNullValueSweepSettlementDate = value; AdditionalData?.Remove("sweep_settlement_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sweep_settlement_date"); else _explicitNullProperties?.Remove("sweep_settlement_date"); } }
         private Date? _explicitNullValueSweepSettlementDate = default!;
         /// <summary>The accumulated amount that has been swept by `sweep_settlement_date`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SweptSettledAmount { get => _explicitNullValueSweptSettledAmount; set { _explicitNullValueSweptSettledAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("swept_settled_amount"); else _explicitNullProperties?.Remove("swept_settled_amount"); } }
+        public string? SweptSettledAmount { get => _explicitNullValueSweptSettledAmount; set { _explicitNullValueSweptSettledAmount = value; AdditionalData?.Remove("swept_settled_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("swept_settled_amount"); else _explicitNullProperties?.Remove("swept_settled_amount"); } }
         private string? _explicitNullValueSweptSettledAmount = default!;
 #nullable restore
 #else
-        public string SweptSettledAmount { get => _explicitNullValueSweptSettledAmount; set { _explicitNullValueSweptSettledAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("swept_settled_amount"); else _explicitNullProperties?.Remove("swept_settled_amount"); } }
+        public string SweptSettledAmount { get => _explicitNullValueSweptSettledAmount; set { _explicitNullValueSweptSettledAmount = value; AdditionalData?.Remove("swept_settled_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("swept_settled_amount"); else _explicitNullProperties?.Remove("swept_settled_amount"); } }
         private string _explicitNullValueSweptSettledAmount = default!;
 #endif
         /// <summary>

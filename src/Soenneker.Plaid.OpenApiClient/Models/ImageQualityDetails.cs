@@ -18,21 +18,24 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("blur_check") is { } nullNodeBlurCheck && nullNodeBlurCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlurCheck = null;
-            if (parseNode.GetChildNode("dimensions_check") is { } nullNodeDimensionsCheck && nullNodeDimensionsCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DimensionsCheck = null;
-            if (parseNode.GetChildNode("glare_check") is { } nullNodeGlareCheck && nullNodeGlareCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GlareCheck = null;
+            if (parseNode.GetChildNode("blur_check") is null) { _explicitNullValueBlurCheck = default!; _explicitNullProperties?.Remove("blur_check"); }
+            else if (parseNode.GetChildNode("blur_check") is { } nullNodeBlurCheck && nullNodeBlurCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlurCheck = null;
+            if (parseNode.GetChildNode("dimensions_check") is null) { _explicitNullValueDimensionsCheck = default!; _explicitNullProperties?.Remove("dimensions_check"); }
+            else if (parseNode.GetChildNode("dimensions_check") is { } nullNodeDimensionsCheck && nullNodeDimensionsCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DimensionsCheck = null;
+            if (parseNode.GetChildNode("glare_check") is null) { _explicitNullValueGlareCheck = default!; _explicitNullProperties?.Remove("glare_check"); }
+            else if (parseNode.GetChildNode("glare_check") is { } nullNodeGlareCheck && nullNodeGlareCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GlareCheck = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The outcome of the image quality check.`success` - The check passed.`failed` - The check did not pass.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsBlurCheck? BlurCheck { get => _explicitNullValueBlurCheck; set { _explicitNullValueBlurCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blur_check"); else _explicitNullProperties?.Remove("blur_check"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsBlurCheck? BlurCheck { get => _explicitNullValueBlurCheck; set { _explicitNullValueBlurCheck = value; AdditionalData?.Remove("blur_check"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blur_check"); else _explicitNullProperties?.Remove("blur_check"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsBlurCheck? _explicitNullValueBlurCheck = default!;
         /// <summary>The outcome of the image quality check.`success` - The check passed.`failed` - The check did not pass.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsDimensionsCheck? DimensionsCheck { get => _explicitNullValueDimensionsCheck; set { _explicitNullValueDimensionsCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions_check"); else _explicitNullProperties?.Remove("dimensions_check"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsDimensionsCheck? DimensionsCheck { get => _explicitNullValueDimensionsCheck; set { _explicitNullValueDimensionsCheck = value; AdditionalData?.Remove("dimensions_check"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions_check"); else _explicitNullProperties?.Remove("dimensions_check"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsDimensionsCheck? _explicitNullValueDimensionsCheck = default!;
         /// <summary>The outcome of the image quality check.`success` - The check passed.`failed` - The check did not pass.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsGlareCheck? GlareCheck { get => _explicitNullValueGlareCheck; set { _explicitNullValueGlareCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("glare_check"); else _explicitNullProperties?.Remove("glare_check"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsGlareCheck? GlareCheck { get => _explicitNullValueGlareCheck; set { _explicitNullValueGlareCheck = value; AdditionalData?.Remove("glare_check"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("glare_check"); else _explicitNullProperties?.Remove("glare_check"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsGlareCheck? _explicitNullValueGlareCheck = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetails"/> and sets the default values.
@@ -61,9 +64,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "blur_check", n => { BlurCheck = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsBlurCheck>(); } },
-                { "dimensions_check", n => { DimensionsCheck = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsDimensionsCheck>(); } },
-                { "glare_check", n => { GlareCheck = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsGlareCheck>(); } },
+                { "blur_check", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsBlurCheck>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBlurCheck = default; _explicitNullProperties?.Remove("blur_check"); AdditionalData["blur_check"] = unknown; } else { BlurCheck = parsed; AdditionalData.Remove("blur_check"); } } },
+                { "dimensions_check", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsDimensionsCheck>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDimensionsCheck = default; _explicitNullProperties?.Remove("dimensions_check"); AdditionalData["dimensions_check"] = unknown; } else { DimensionsCheck = parsed; AdditionalData.Remove("dimensions_check"); } } },
+                { "glare_check", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ImageQualityDetailsGlareCheck>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueGlareCheck = default; _explicitNullProperties?.Remove("glare_check"); AdditionalData["glare_check"] = unknown; } else { GlareCheck = parsed; AdditionalData.Remove("glare_check"); } } },
             };
         }
         /// <summary>

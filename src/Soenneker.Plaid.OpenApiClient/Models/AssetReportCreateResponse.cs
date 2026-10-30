@@ -18,9 +18,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("asset_report_id") is { } nullNodeAssetReportId && nullNodeAssetReportId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetReportId = null;
-            if (parseNode.GetChildNode("asset_report_token") is { } nullNodeAssetReportToken && nullNodeAssetReportToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetReportToken = null;
-            if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
+            if (parseNode.GetChildNode("asset_report_id") is null) { _explicitNullValueAssetReportId = default!; _explicitNullProperties?.Remove("asset_report_id"); }
+            else if (parseNode.GetChildNode("asset_report_id") is { } nullNodeAssetReportId && nullNodeAssetReportId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetReportId = null;
+            if (parseNode.GetChildNode("asset_report_token") is null) { _explicitNullValueAssetReportToken = default!; _explicitNullProperties?.Remove("asset_report_token"); }
+            else if (parseNode.GetChildNode("asset_report_token") is { } nullNodeAssetReportToken && nullNodeAssetReportToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetReportToken = null;
+            if (parseNode.GetChildNode("request_id") is null) { _explicitNullValueRequestId = default!; _explicitNullProperties?.Remove("request_id"); }
+            else if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>A unique ID identifying an Asset Report. Like all Plaid identifiers, this ID is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetReportId { get => _explicitNullValueAssetReportId; set { _explicitNullValueAssetReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_report_id"); else _explicitNullProperties?.Remove("asset_report_id"); } }
+        public string? AssetReportId { get => _explicitNullValueAssetReportId; set { _explicitNullValueAssetReportId = value; AdditionalData?.Remove("asset_report_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_report_id"); else _explicitNullProperties?.Remove("asset_report_id"); } }
         private string? _explicitNullValueAssetReportId = default!;
 #nullable restore
 #else
-        public string AssetReportId { get => _explicitNullValueAssetReportId; set { _explicitNullValueAssetReportId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_report_id"); else _explicitNullProperties?.Remove("asset_report_id"); } }
+        public string AssetReportId { get => _explicitNullValueAssetReportId; set { _explicitNullValueAssetReportId = value; AdditionalData?.Remove("asset_report_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_report_id"); else _explicitNullProperties?.Remove("asset_report_id"); } }
         private string _explicitNullValueAssetReportId = default!;
 #endif
         /// <summary>A token that can be provided to endpoints such as `/asset_report/get` or `/asset_report/pdf/get` to fetch or update an Asset Report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetReportToken { get => _explicitNullValueAssetReportToken; set { _explicitNullValueAssetReportToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_report_token"); else _explicitNullProperties?.Remove("asset_report_token"); } }
+        public string? AssetReportToken { get => _explicitNullValueAssetReportToken; set { _explicitNullValueAssetReportToken = value; AdditionalData?.Remove("asset_report_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_report_token"); else _explicitNullProperties?.Remove("asset_report_token"); } }
         private string? _explicitNullValueAssetReportToken = default!;
 #nullable restore
 #else
-        public string AssetReportToken { get => _explicitNullValueAssetReportToken; set { _explicitNullValueAssetReportToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_report_token"); else _explicitNullProperties?.Remove("asset_report_token"); } }
+        public string AssetReportToken { get => _explicitNullValueAssetReportToken; set { _explicitNullValueAssetReportToken = value; AdditionalData?.Remove("asset_report_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_report_token"); else _explicitNullProperties?.Remove("asset_report_token"); } }
         private string _explicitNullValueAssetReportToken = default!;
 #endif
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; AdditionalData?.Remove("request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
         private string? _explicitNullValueRequestId = default!;
 #nullable restore
 #else
-        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; AdditionalData?.Remove("request_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
         private string _explicitNullValueRequestId = default!;
 #endif
         /// <summary>

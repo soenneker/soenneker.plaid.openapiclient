@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("STATUSES") is { } nullNodeSTATUSES && nullNodeSTATUSES.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) STATUSES = null;
-            if (parseNode.GetChildNode("VERIFICATION_OF_ASSET") is { } nullNodeVERIFICATIONOFASSET && nullNodeVERIFICATIONOFASSET.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VERIFICATIONOFASSET = null;
+            if (parseNode.GetChildNode("STATUSES") is null) { _explicitNullValueSTATUSES = default!; _explicitNullProperties?.Remove("STATUSES"); }
+            else if (parseNode.GetChildNode("STATUSES") is { } nullNodeSTATUSES && nullNodeSTATUSES.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) STATUSES = null;
+            if (parseNode.GetChildNode("VERIFICATION_OF_ASSET") is null) { _explicitNullValueVERIFICATIONOFASSET = default!; _explicitNullProperties?.Remove("VERIFICATION_OF_ASSET"); }
+            else if (parseNode.GetChildNode("VERIFICATION_OF_ASSET") is { } nullNodeVERIFICATIONOFASSET && nullNodeVERIFICATIONOFASSET.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VERIFICATIONOFASSET = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>A collection of STATUS containers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.Statuses? STATUSES { get => _explicitNullValueSTATUSES; set { _explicitNullValueSTATUSES = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("STATUSES"); else _explicitNullProperties?.Remove("STATUSES"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Statuses? STATUSES { get => _explicitNullValueSTATUSES; set { _explicitNullValueSTATUSES = value; AdditionalData?.Remove("STATUSES"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("STATUSES"); else _explicitNullProperties?.Remove("STATUSES"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.Statuses? _explicitNullValueSTATUSES = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.Statuses STATUSES { get => _explicitNullValueSTATUSES; set { _explicitNullValueSTATUSES = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("STATUSES"); else _explicitNullProperties?.Remove("STATUSES"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.Statuses STATUSES { get => _explicitNullValueSTATUSES; set { _explicitNullValueSTATUSES = value; AdditionalData?.Remove("STATUSES"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("STATUSES"); else _explicitNullProperties?.Remove("STATUSES"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.Statuses _explicitNullValueSTATUSES = default!;
 #endif
         /// <summary>The VERIFICATION_OF_ASSET property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacVerificationOfAsset>? VERIFICATIONOFASSET { get => _explicitNullValueVERIFICATIONOFASSET; set { _explicitNullValueVERIFICATIONOFASSET = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("VERIFICATION_OF_ASSET"); else _explicitNullProperties?.Remove("VERIFICATION_OF_ASSET"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacVerificationOfAsset>? VERIFICATIONOFASSET { get => _explicitNullValueVERIFICATIONOFASSET; set { _explicitNullValueVERIFICATIONOFASSET = value; AdditionalData?.Remove("VERIFICATION_OF_ASSET"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("VERIFICATION_OF_ASSET"); else _explicitNullProperties?.Remove("VERIFICATION_OF_ASSET"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacVerificationOfAsset>? _explicitNullValueVERIFICATIONOFASSET = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacVerificationOfAsset> VERIFICATIONOFASSET { get => _explicitNullValueVERIFICATIONOFASSET; set { _explicitNullValueVERIFICATIONOFASSET = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("VERIFICATION_OF_ASSET"); else _explicitNullProperties?.Remove("VERIFICATION_OF_ASSET"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacVerificationOfAsset> VERIFICATIONOFASSET { get => _explicitNullValueVERIFICATIONOFASSET; set { _explicitNullValueVERIFICATIONOFASSET = value; AdditionalData?.Remove("VERIFICATION_OF_ASSET"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("VERIFICATION_OF_ASSET"); else _explicitNullProperties?.Remove("VERIFICATION_OF_ASSET"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CreditFreddieMacVerificationOfAsset> _explicitNullValueVERIFICATIONOFASSET = default!;
 #endif
         /// <summary>

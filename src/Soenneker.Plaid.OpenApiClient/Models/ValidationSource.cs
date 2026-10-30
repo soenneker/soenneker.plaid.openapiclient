@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ValidationSourceName") is { } nullNodeValidationSourceName && nullNodeValidationSourceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidationSourceName = null;
-            if (parseNode.GetChildNode("ValidationSourceReferenceIdentifier") is { } nullNodeValidationSourceReferenceIdentifier && nullNodeValidationSourceReferenceIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidationSourceReferenceIdentifier = null;
+            if (parseNode.GetChildNode("ValidationSourceName") is null) { _explicitNullValueValidationSourceName = default!; _explicitNullProperties?.Remove("ValidationSourceName"); }
+            else if (parseNode.GetChildNode("ValidationSourceName") is { } nullNodeValidationSourceName && nullNodeValidationSourceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidationSourceName = null;
+            if (parseNode.GetChildNode("ValidationSourceReferenceIdentifier") is null) { _explicitNullValueValidationSourceReferenceIdentifier = default!; _explicitNullProperties?.Remove("ValidationSourceReferenceIdentifier"); }
+            else if (parseNode.GetChildNode("ValidationSourceReferenceIdentifier") is { } nullNodeValidationSourceReferenceIdentifier && nullNodeValidationSourceReferenceIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidationSourceReferenceIdentifier = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Documentation not found in the MISMO model viewer and not provided by Freddie Mac.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ValidationSourceName { get => _explicitNullValueValidationSourceName; set { _explicitNullValueValidationSourceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ValidationSourceName"); else _explicitNullProperties?.Remove("ValidationSourceName"); } }
+        public string? ValidationSourceName { get => _explicitNullValueValidationSourceName; set { _explicitNullValueValidationSourceName = value; AdditionalData?.Remove("ValidationSourceName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ValidationSourceName"); else _explicitNullProperties?.Remove("ValidationSourceName"); } }
         private string? _explicitNullValueValidationSourceName = default!;
 #nullable restore
 #else
-        public string ValidationSourceName { get => _explicitNullValueValidationSourceName; set { _explicitNullValueValidationSourceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ValidationSourceName"); else _explicitNullProperties?.Remove("ValidationSourceName"); } }
+        public string ValidationSourceName { get => _explicitNullValueValidationSourceName; set { _explicitNullValueValidationSourceName = value; AdditionalData?.Remove("ValidationSourceName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ValidationSourceName"); else _explicitNullProperties?.Remove("ValidationSourceName"); } }
         private string _explicitNullValueValidationSourceName = default!;
 #endif
         /// <summary>Documentation not found in the MISMO model viewer and not provided by Freddie Mac.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ValidationSourceReferenceIdentifier { get => _explicitNullValueValidationSourceReferenceIdentifier; set { _explicitNullValueValidationSourceReferenceIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ValidationSourceReferenceIdentifier"); else _explicitNullProperties?.Remove("ValidationSourceReferenceIdentifier"); } }
+        public string? ValidationSourceReferenceIdentifier { get => _explicitNullValueValidationSourceReferenceIdentifier; set { _explicitNullValueValidationSourceReferenceIdentifier = value; AdditionalData?.Remove("ValidationSourceReferenceIdentifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ValidationSourceReferenceIdentifier"); else _explicitNullProperties?.Remove("ValidationSourceReferenceIdentifier"); } }
         private string? _explicitNullValueValidationSourceReferenceIdentifier = default!;
 #nullable restore
 #else
-        public string ValidationSourceReferenceIdentifier { get => _explicitNullValueValidationSourceReferenceIdentifier; set { _explicitNullValueValidationSourceReferenceIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ValidationSourceReferenceIdentifier"); else _explicitNullProperties?.Remove("ValidationSourceReferenceIdentifier"); } }
+        public string ValidationSourceReferenceIdentifier { get => _explicitNullValueValidationSourceReferenceIdentifier; set { _explicitNullValueValidationSourceReferenceIdentifier = value; AdditionalData?.Remove("ValidationSourceReferenceIdentifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ValidationSourceReferenceIdentifier"); else _explicitNullProperties?.Remove("ValidationSourceReferenceIdentifier"); } }
         private string _explicitNullValueValidationSourceReferenceIdentifier = default!;
 #endif
         /// <summary>

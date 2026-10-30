@@ -19,13 +19,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("headless") is { } nullNodeHeadless && nullNodeHeadless.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headless = null;
+            if (parseNode.GetChildNode("headless") is null) { _explicitNullValueHeadless = default!; _explicitNullProperties?.Remove("headless"); }
+            else if (parseNode.GetChildNode("headless") is { } nullNodeHeadless && nullNodeHeadless.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headless = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If `true`, open Link without an initial UI. Defaults to `false`.</summary>
-        public bool? Headless { get => _explicitNullValueHeadless; set { _explicitNullValueHeadless = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headless"); else _explicitNullProperties?.Remove("headless"); } }
+        public bool? Headless { get => _explicitNullValueHeadless; set { _explicitNullValueHeadless = value; AdditionalData?.Remove("headless"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headless"); else _explicitNullProperties?.Remove("headless"); } }
         private bool? _explicitNullValueHeadless = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenEuConfig"/> and sets the default values.

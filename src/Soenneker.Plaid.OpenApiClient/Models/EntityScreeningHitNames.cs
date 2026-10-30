@@ -18,9 +18,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("full") is { } nullNodeFull && nullNodeFull.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Full = null;
-            if (parseNode.GetChildNode("is_primary") is { } nullNodeIsPrimary && nullNodeIsPrimary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsPrimary = null;
-            if (parseNode.GetChildNode("weak_alias_determination") is { } nullNodeWeakAliasDetermination && nullNodeWeakAliasDetermination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WeakAliasDetermination = null;
+            if (parseNode.GetChildNode("full") is null) { _explicitNullValueFull = default!; _explicitNullProperties?.Remove("full"); }
+            else if (parseNode.GetChildNode("full") is { } nullNodeFull && nullNodeFull.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Full = null;
+            if (parseNode.GetChildNode("is_primary") is null) { _explicitNullValueIsPrimary = default!; _explicitNullProperties?.Remove("is_primary"); }
+            else if (parseNode.GetChildNode("is_primary") is { } nullNodeIsPrimary && nullNodeIsPrimary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsPrimary = null;
+            if (parseNode.GetChildNode("weak_alias_determination") is null) { _explicitNullValueWeakAliasDetermination = default!; _explicitNullProperties?.Remove("weak_alias_determination"); }
+            else if (parseNode.GetChildNode("weak_alias_determination") is { } nullNodeWeakAliasDetermination && nullNodeWeakAliasDetermination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WeakAliasDetermination = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,18 +31,18 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The full name of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Full { get => _explicitNullValueFull; set { _explicitNullValueFull = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("full"); else _explicitNullProperties?.Remove("full"); } }
+        public string? Full { get => _explicitNullValueFull; set { _explicitNullValueFull = value; AdditionalData?.Remove("full"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("full"); else _explicitNullProperties?.Remove("full"); } }
         private string? _explicitNullValueFull = default!;
 #nullable restore
 #else
-        public string Full { get => _explicitNullValueFull; set { _explicitNullValueFull = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("full"); else _explicitNullProperties?.Remove("full"); } }
+        public string Full { get => _explicitNullValueFull; set { _explicitNullValueFull = value; AdditionalData?.Remove("full"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("full"); else _explicitNullProperties?.Remove("full"); } }
         private string _explicitNullValueFull = default!;
 #endif
         /// <summary>Primary names are those most commonly used to refer to this entity. Only one name will ever be marked as primary.</summary>
-        public bool? IsPrimary { get => _explicitNullValueIsPrimary; set { _explicitNullValueIsPrimary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_primary"); else _explicitNullProperties?.Remove("is_primary"); } }
+        public bool? IsPrimary { get => _explicitNullValueIsPrimary; set { _explicitNullValueIsPrimary = value; AdditionalData?.Remove("is_primary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_primary"); else _explicitNullProperties?.Remove("is_primary"); } }
         private bool? _explicitNullValueIsPrimary = default!;
         /// <summary>Names that are explicitly marked as low quality either by their `source` list, or by `plaid` by a series of additional checks done by Plaid. Plaid does not ever surface a hit as a result of a weak name alone. If a name has no quality issues, this value will be `none`.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.WeakAliasDetermination? WeakAliasDetermination { get => _explicitNullValueWeakAliasDetermination; set { _explicitNullValueWeakAliasDetermination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("weak_alias_determination"); else _explicitNullProperties?.Remove("weak_alias_determination"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.WeakAliasDetermination? WeakAliasDetermination { get => _explicitNullValueWeakAliasDetermination; set { _explicitNullValueWeakAliasDetermination = value; AdditionalData?.Remove("weak_alias_determination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("weak_alias_determination"); else _explicitNullProperties?.Remove("weak_alias_determination"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.WeakAliasDetermination? _explicitNullValueWeakAliasDetermination = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitNames"/> and sets the default values.
@@ -68,7 +71,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "full", n => { Full = n.GetStringValue(); } },
                 { "is_primary", n => { IsPrimary = n.GetBoolValue(); } },
-                { "weak_alias_determination", n => { WeakAliasDetermination = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WeakAliasDetermination>(); } },
+                { "weak_alias_determination", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WeakAliasDetermination>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueWeakAliasDetermination = default; _explicitNullProperties?.Remove("weak_alias_determination"); AdditionalData["weak_alias_determination"] = unknown; } else { WeakAliasDetermination = parsed; AdditionalData.Remove("weak_alias_determination"); } } },
             };
         }
         /// <summary>

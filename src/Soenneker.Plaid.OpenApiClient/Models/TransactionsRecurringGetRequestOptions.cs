@@ -18,18 +18,20 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("include_personal_finance_category") is { } nullNodeIncludePersonalFinanceCategory && nullNodeIncludePersonalFinanceCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludePersonalFinanceCategory = null;
-            if (parseNode.GetChildNode("personal_finance_category_version") is { } nullNodePersonalFinanceCategoryVersion && nullNodePersonalFinanceCategoryVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalFinanceCategoryVersion = null;
+            if (parseNode.GetChildNode("include_personal_finance_category") is null) { _explicitNullValueIncludePersonalFinanceCategory = default!; _explicitNullProperties?.Remove("include_personal_finance_category"); }
+            else if (parseNode.GetChildNode("include_personal_finance_category") is { } nullNodeIncludePersonalFinanceCategory && nullNodeIncludePersonalFinanceCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludePersonalFinanceCategory = null;
+            if (parseNode.GetChildNode("personal_finance_category_version") is null) { _explicitNullValuePersonalFinanceCategoryVersion = default!; _explicitNullProperties?.Remove("personal_finance_category_version"); }
+            else if (parseNode.GetChildNode("personal_finance_category_version") is { } nullNodePersonalFinanceCategoryVersion && nullNodePersonalFinanceCategoryVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalFinanceCategoryVersion = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Personal finance categories are now returned by default.</summary>
         [Obsolete("")]
-        public bool? IncludePersonalFinanceCategory { get => _explicitNullValueIncludePersonalFinanceCategory; set { _explicitNullValueIncludePersonalFinanceCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_personal_finance_category"); else _explicitNullProperties?.Remove("include_personal_finance_category"); } }
+        public bool? IncludePersonalFinanceCategory { get => _explicitNullValueIncludePersonalFinanceCategory; set { _explicitNullValueIncludePersonalFinanceCategory = value; AdditionalData?.Remove("include_personal_finance_category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_personal_finance_category"); else _explicitNullProperties?.Remove("include_personal_finance_category"); } }
         private bool? _explicitNullValueIncludePersonalFinanceCategory = default!;
         /// <summary>Indicates which version of the personal finance category taxonomy is being used. [View PFCv2 and PFCv1 taxonomies](https://plaid.com/documents/pfc-taxonomy-all.csv).If you enabled Transactions or Enrich before December 3, 2025 you will receive the `v1` taxonomy by default and may request `v2` by explicitly setting this field to `v2` in the request.If you enabled Transactions or Enrich on or after December 3, 2025, you may only receive the `v2` taxonomy.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategoryVersion? PersonalFinanceCategoryVersion { get => _explicitNullValuePersonalFinanceCategoryVersion; set { _explicitNullValuePersonalFinanceCategoryVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category_version"); else _explicitNullProperties?.Remove("personal_finance_category_version"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategoryVersion? PersonalFinanceCategoryVersion { get => _explicitNullValuePersonalFinanceCategoryVersion; set { _explicitNullValuePersonalFinanceCategoryVersion = value; AdditionalData?.Remove("personal_finance_category_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_finance_category_version"); else _explicitNullProperties?.Remove("personal_finance_category_version"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategoryVersion? _explicitNullValuePersonalFinanceCategoryVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransactionsRecurringGetRequestOptions"/> and sets the default values.
@@ -58,7 +60,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "include_personal_finance_category", n => { IncludePersonalFinanceCategory = n.GetBoolValue(); } },
-                { "personal_finance_category_version", n => { PersonalFinanceCategoryVersion = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategoryVersion>(); } },
+                { "personal_finance_category_version", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategoryVersion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePersonalFinanceCategoryVersion = default; _explicitNullProperties?.Remove("personal_finance_category_version"); AdditionalData["personal_finance_category_version"] = unknown; } else { PersonalFinanceCategoryVersion = parsed; AdditionalData.Remove("personal_finance_category_version"); } } },
             };
         }
         /// <summary>

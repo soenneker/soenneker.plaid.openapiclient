@@ -18,7 +18,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("AssetOwnerText") is { } nullNodeAssetOwnerText && nullNodeAssetOwnerText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetOwnerText = null;
+            if (parseNode.GetChildNode("AssetOwnerText") is null) { _explicitNullValueAssetOwnerText = default!; _explicitNullProperties?.Remove("AssetOwnerText"); }
+            else if (parseNode.GetChildNode("AssetOwnerText") is { } nullNodeAssetOwnerText && nullNodeAssetOwnerText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetOwnerText = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Account Owner Full Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetOwnerText { get => _explicitNullValueAssetOwnerText; set { _explicitNullValueAssetOwnerText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetOwnerText"); else _explicitNullProperties?.Remove("AssetOwnerText"); } }
+        public string? AssetOwnerText { get => _explicitNullValueAssetOwnerText; set { _explicitNullValueAssetOwnerText = value; AdditionalData?.Remove("AssetOwnerText"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetOwnerText"); else _explicitNullProperties?.Remove("AssetOwnerText"); } }
         private string? _explicitNullValueAssetOwnerText = default!;
 #nullable restore
 #else
-        public string AssetOwnerText { get => _explicitNullValueAssetOwnerText; set { _explicitNullValueAssetOwnerText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetOwnerText"); else _explicitNullProperties?.Remove("AssetOwnerText"); } }
+        public string AssetOwnerText { get => _explicitNullValueAssetOwnerText; set { _explicitNullValueAssetOwnerText = value; AdditionalData?.Remove("AssetOwnerText"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AssetOwnerText"); else _explicitNullProperties?.Remove("AssetOwnerText"); } }
         private string _explicitNullValueAssetOwnerText = default!;
 #endif
         /// <summary>

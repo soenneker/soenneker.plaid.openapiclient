@@ -18,13 +18,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("lend_score_version") is { } nullNodeLendScoreVersion && nullNodeLendScoreVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LendScoreVersion = null;
+            if (parseNode.GetChildNode("lend_score_version") is null) { _explicitNullValueLendScoreVersion = default!; _explicitNullProperties?.Remove("lend_score_version"); }
+            else if (parseNode.GetChildNode("lend_score_version") is { } nullNodeLendScoreVersion && nullNodeLendScoreVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LendScoreVersion = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The version of the LendScore to use. Required if using LendScore.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.PlaidLendScoreVersion? LendScoreVersion { get => _explicitNullValueLendScoreVersion; set { _explicitNullValueLendScoreVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lend_score_version"); else _explicitNullProperties?.Remove("lend_score_version"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.PlaidLendScoreVersion? LendScoreVersion { get => _explicitNullValueLendScoreVersion; set { _explicitNullValueLendScoreVersion = value; AdditionalData?.Remove("lend_score_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lend_score_version"); else _explicitNullProperties?.Remove("lend_score_version"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PlaidLendScoreVersion? _explicitNullValueLendScoreVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateLendScoreOptions"/> and sets the default values.
@@ -53,7 +54,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "lend_score_version", n => { LendScoreVersion = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PlaidLendScoreVersion>(); } },
+                { "lend_score_version", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PlaidLendScoreVersion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLendScoreVersion = default; _explicitNullProperties?.Remove("lend_score_version"); AdditionalData["lend_score_version"] = unknown; } else { LendScoreVersion = parsed; AdditionalData.Remove("lend_score_version"); } } },
             };
         }
         /// <summary>

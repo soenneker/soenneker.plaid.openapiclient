@@ -18,10 +18,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("category_insights") is { } nullNodeCategoryInsights && nullNodeCategoryInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CategoryInsights = null;
-            if (parseNode.GetChildNode("counterparty_insights") is { } nullNodeCounterpartyInsights && nullNodeCounterpartyInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CounterpartyInsights = null;
-            if (parseNode.GetChildNode("recurring_transactions") is { } nullNodeRecurringTransactions && nullNodeRecurringTransactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecurringTransactions = null;
-            if (parseNode.GetChildNode("user_data_overview") is { } nullNodeUserDataOverview && nullNodeUserDataOverview.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserDataOverview = null;
+            if (parseNode.GetChildNode("category_insights") is null) { _explicitNullValueCategoryInsights = default!; _explicitNullProperties?.Remove("category_insights"); }
+            else if (parseNode.GetChildNode("category_insights") is { } nullNodeCategoryInsights && nullNodeCategoryInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CategoryInsights = null;
+            if (parseNode.GetChildNode("counterparty_insights") is null) { _explicitNullValueCounterpartyInsights = default!; _explicitNullProperties?.Remove("counterparty_insights"); }
+            else if (parseNode.GetChildNode("counterparty_insights") is { } nullNodeCounterpartyInsights && nullNodeCounterpartyInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CounterpartyInsights = null;
+            if (parseNode.GetChildNode("recurring_transactions") is null) { _explicitNullValueRecurringTransactions = default!; _explicitNullProperties?.Remove("recurring_transactions"); }
+            else if (parseNode.GetChildNode("recurring_transactions") is { } nullNodeRecurringTransactions && nullNodeRecurringTransactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecurringTransactions = null;
+            if (parseNode.GetChildNode("user_data_overview") is null) { _explicitNullValueUserDataOverview = default!; _explicitNullProperties?.Remove("user_data_overview"); }
+            else if (parseNode.GetChildNode("user_data_overview") is { } nullNodeUserDataOverview && nullNodeUserDataOverview.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserDataOverview = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Insights on a user&apos;s top personal finance categories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CategoryInsights? CategoryInsights { get => _explicitNullValueCategoryInsights; set { _explicitNullValueCategoryInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_insights"); else _explicitNullProperties?.Remove("category_insights"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CategoryInsights? CategoryInsights { get => _explicitNullValueCategoryInsights; set { _explicitNullValueCategoryInsights = value; AdditionalData?.Remove("category_insights"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_insights"); else _explicitNullProperties?.Remove("category_insights"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CategoryInsights? _explicitNullValueCategoryInsights = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CategoryInsights CategoryInsights { get => _explicitNullValueCategoryInsights; set { _explicitNullValueCategoryInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_insights"); else _explicitNullProperties?.Remove("category_insights"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CategoryInsights CategoryInsights { get => _explicitNullValueCategoryInsights; set { _explicitNullValueCategoryInsights = value; AdditionalData?.Remove("category_insights"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_insights"); else _explicitNullProperties?.Remove("category_insights"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CategoryInsights _explicitNullValueCategoryInsights = default!;
 #endif
         /// <summary>Insights around a user&apos;s counterparties</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CounterpartyInsights? CounterpartyInsights { get => _explicitNullValueCounterpartyInsights; set { _explicitNullValueCounterpartyInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparty_insights"); else _explicitNullProperties?.Remove("counterparty_insights"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CounterpartyInsights? CounterpartyInsights { get => _explicitNullValueCounterpartyInsights; set { _explicitNullValueCounterpartyInsights = value; AdditionalData?.Remove("counterparty_insights"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparty_insights"); else _explicitNullProperties?.Remove("counterparty_insights"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CounterpartyInsights? _explicitNullValueCounterpartyInsights = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CounterpartyInsights CounterpartyInsights { get => _explicitNullValueCounterpartyInsights; set { _explicitNullValueCounterpartyInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparty_insights"); else _explicitNullProperties?.Remove("counterparty_insights"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CounterpartyInsights CounterpartyInsights { get => _explicitNullValueCounterpartyInsights; set { _explicitNullValueCounterpartyInsights = value; AdditionalData?.Remove("counterparty_insights"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparty_insights"); else _explicitNullProperties?.Remove("counterparty_insights"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CounterpartyInsights _explicitNullValueCounterpartyInsights = default!;
 #endif
         /// <summary>Insights object for recurring transactions for `/beta/transactions/user_insights/v1/get` endpoint</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.RecurringTransactions? RecurringTransactions { get => _explicitNullValueRecurringTransactions; set { _explicitNullValueRecurringTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurring_transactions"); else _explicitNullProperties?.Remove("recurring_transactions"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RecurringTransactions? RecurringTransactions { get => _explicitNullValueRecurringTransactions; set { _explicitNullValueRecurringTransactions = value; AdditionalData?.Remove("recurring_transactions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurring_transactions"); else _explicitNullProperties?.Remove("recurring_transactions"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.RecurringTransactions? _explicitNullValueRecurringTransactions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.RecurringTransactions RecurringTransactions { get => _explicitNullValueRecurringTransactions; set { _explicitNullValueRecurringTransactions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurring_transactions"); else _explicitNullProperties?.Remove("recurring_transactions"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.RecurringTransactions RecurringTransactions { get => _explicitNullValueRecurringTransactions; set { _explicitNullValueRecurringTransactions = value; AdditionalData?.Remove("recurring_transactions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurring_transactions"); else _explicitNullProperties?.Remove("recurring_transactions"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.RecurringTransactions _explicitNullValueRecurringTransactions = default!;
 #endif
         /// <summary>metadata for the set of insights provided in `TransactionsUserInsightsGetResponse`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserDataOverview? UserDataOverview { get => _explicitNullValueUserDataOverview; set { _explicitNullValueUserDataOverview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_data_overview"); else _explicitNullProperties?.Remove("user_data_overview"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserDataOverview? UserDataOverview { get => _explicitNullValueUserDataOverview; set { _explicitNullValueUserDataOverview = value; AdditionalData?.Remove("user_data_overview"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_data_overview"); else _explicitNullProperties?.Remove("user_data_overview"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.UserDataOverview? _explicitNullValueUserDataOverview = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.UserDataOverview UserDataOverview { get => _explicitNullValueUserDataOverview; set { _explicitNullValueUserDataOverview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_data_overview"); else _explicitNullProperties?.Remove("user_data_overview"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.UserDataOverview UserDataOverview { get => _explicitNullValueUserDataOverview; set { _explicitNullValueUserDataOverview = value; AdditionalData?.Remove("user_data_overview"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_data_overview"); else _explicitNullProperties?.Remove("user_data_overview"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.UserDataOverview _explicitNullValueUserDataOverview = default!;
 #endif
         /// <summary>

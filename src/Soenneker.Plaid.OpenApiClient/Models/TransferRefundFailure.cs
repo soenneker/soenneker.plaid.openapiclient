@@ -18,20 +18,23 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ach_return_code") is { } nullNodeAchReturnCode && nullNodeAchReturnCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AchReturnCode = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("failure_code") is { } nullNodeFailureCode && nullNodeFailureCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureCode = null;
+            if (parseNode.GetChildNode("ach_return_code") is null) { _explicitNullValueAchReturnCode = default!; _explicitNullProperties?.Remove("ach_return_code"); }
+            else if (parseNode.GetChildNode("ach_return_code") is { } nullNodeAchReturnCode && nullNodeAchReturnCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AchReturnCode = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("failure_code") is null) { _explicitNullValueFailureCode = default!; _explicitNullProperties?.Remove("failure_code"); }
+            else if (parseNode.GetChildNode("failure_code") is { } nullNodeFailureCode && nullNodeFailureCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureCode = null;
         }
 
         /// <summary>The ACH return code, e.g. `R01`.  A return code will be provided if and only if the refund status is `returned`. For a full listing of ACH return codes, see [Transfer errors](https://plaid.com/docs/errors/transfer/#ach-return-codes). This field is deprecated in favor of the more versatile `failure_code`, which encompasses non-ACH failure codes as well.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AchReturnCode { get => _explicitNullValueAchReturnCode; set { _explicitNullValueAchReturnCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ach_return_code"); else _explicitNullProperties?.Remove("ach_return_code"); } }
+        public string? AchReturnCode { get => _explicitNullValueAchReturnCode; set { _explicitNullValueAchReturnCode = value; AdditionalData?.Remove("ach_return_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ach_return_code"); else _explicitNullProperties?.Remove("ach_return_code"); } }
         private string? _explicitNullValueAchReturnCode = default!;
 #nullable restore
 #else
-        public string AchReturnCode { get => _explicitNullValueAchReturnCode; set { _explicitNullValueAchReturnCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ach_return_code"); else _explicitNullProperties?.Remove("ach_return_code"); } }
+        public string AchReturnCode { get => _explicitNullValueAchReturnCode; set { _explicitNullValueAchReturnCode = value; AdditionalData?.Remove("ach_return_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ach_return_code"); else _explicitNullProperties?.Remove("ach_return_code"); } }
         private string _explicitNullValueAchReturnCode = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -39,21 +42,21 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>A human-readable description of the reason for the failure or reversal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The failure code, e.g. `R01`.  A failure code will be provided if and only if the refund status is `returned`. See [ACH return codes](https://plaid.com/docs/errors/transfer/#ach-return-codes) for a full listing of ACH return codes and [RTP/RfP error codes](https://plaid.com/docs/errors/transfer/#rtprfp-error-codes) for RTP error codes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FailureCode { get => _explicitNullValueFailureCode; set { _explicitNullValueFailureCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_code"); else _explicitNullProperties?.Remove("failure_code"); } }
+        public string? FailureCode { get => _explicitNullValueFailureCode; set { _explicitNullValueFailureCode = value; AdditionalData?.Remove("failure_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_code"); else _explicitNullProperties?.Remove("failure_code"); } }
         private string? _explicitNullValueFailureCode = default!;
 #nullable restore
 #else
-        public string FailureCode { get => _explicitNullValueFailureCode; set { _explicitNullValueFailureCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_code"); else _explicitNullProperties?.Remove("failure_code"); } }
+        public string FailureCode { get => _explicitNullValueFailureCode; set { _explicitNullValueFailureCode = value; AdditionalData?.Remove("failure_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_code"); else _explicitNullProperties?.Remove("failure_code"); } }
         private string _explicitNullValueFailureCode = default!;
 #endif
         /// <summary>

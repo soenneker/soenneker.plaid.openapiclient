@@ -18,11 +18,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("credit") is { } nullNodeCredit && nullNodeCredit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Credit = null;
-            if (parseNode.GetChildNode("line_of_credit") is { } nullNodeLineOfCredit && nullNodeLineOfCredit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LineOfCredit = null;
-            if (parseNode.GetChildNode("loan") is { } nullNodeLoan && nullNodeLoan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Loan = null;
-            if (parseNode.GetChildNode("mortgage") is { } nullNodeMortgage && nullNodeMortgage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mortgage = null;
-            if (parseNode.GetChildNode("student") is { } nullNodeStudent && nullNodeStudent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Student = null;
+            if (parseNode.GetChildNode("credit") is null) { _explicitNullValueCredit = default!; _explicitNullProperties?.Remove("credit"); }
+            else if (parseNode.GetChildNode("credit") is { } nullNodeCredit && nullNodeCredit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Credit = null;
+            if (parseNode.GetChildNode("line_of_credit") is null) { _explicitNullValueLineOfCredit = default!; _explicitNullProperties?.Remove("line_of_credit"); }
+            else if (parseNode.GetChildNode("line_of_credit") is { } nullNodeLineOfCredit && nullNodeLineOfCredit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LineOfCredit = null;
+            if (parseNode.GetChildNode("loan") is null) { _explicitNullValueLoan = default!; _explicitNullProperties?.Remove("loan"); }
+            else if (parseNode.GetChildNode("loan") is { } nullNodeLoan && nullNodeLoan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Loan = null;
+            if (parseNode.GetChildNode("mortgage") is null) { _explicitNullValueMortgage = default!; _explicitNullProperties?.Remove("mortgage"); }
+            else if (parseNode.GetChildNode("mortgage") is { } nullNodeMortgage && nullNodeMortgage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mortgage = null;
+            if (parseNode.GetChildNode("student") is null) { _explicitNullValueStudent = default!; _explicitNullProperties?.Remove("student"); }
+            else if (parseNode.GetChildNode("student") is { } nullNodeStudent && nullNodeStudent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Student = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,51 +35,51 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The credit accounts returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditCardLiability>? Credit { get => _explicitNullValueCredit; set { _explicitNullValueCredit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit"); else _explicitNullProperties?.Remove("credit"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditCardLiability>? Credit { get => _explicitNullValueCredit; set { _explicitNullValueCredit = value; AdditionalData?.Remove("credit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit"); else _explicitNullProperties?.Remove("credit"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CreditCardLiability>? _explicitNullValueCredit = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditCardLiability> Credit { get => _explicitNullValueCredit; set { _explicitNullValueCredit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit"); else _explicitNullProperties?.Remove("credit"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CreditCardLiability> Credit { get => _explicitNullValueCredit; set { _explicitNullValueCredit = value; AdditionalData?.Remove("credit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit"); else _explicitNullProperties?.Remove("credit"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CreditCardLiability> _explicitNullValueCredit = default!;
 #endif
         /// <summary>The line of credit accounts returned. This field is omitted when using plaid-python earlier than 13.0.0 or plaid-ruby earlier than 50.0.0.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.LineOfCreditLiability>? LineOfCredit { get => _explicitNullValueLineOfCredit; set { _explicitNullValueLineOfCredit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("line_of_credit"); else _explicitNullProperties?.Remove("line_of_credit"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LineOfCreditLiability>? LineOfCredit { get => _explicitNullValueLineOfCredit; set { _explicitNullValueLineOfCredit = value; AdditionalData?.Remove("line_of_credit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("line_of_credit"); else _explicitNullProperties?.Remove("line_of_credit"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.LineOfCreditLiability>? _explicitNullValueLineOfCredit = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.LineOfCreditLiability> LineOfCredit { get => _explicitNullValueLineOfCredit; set { _explicitNullValueLineOfCredit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("line_of_credit"); else _explicitNullProperties?.Remove("line_of_credit"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LineOfCreditLiability> LineOfCredit { get => _explicitNullValueLineOfCredit; set { _explicitNullValueLineOfCredit = value; AdditionalData?.Remove("line_of_credit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("line_of_credit"); else _explicitNullProperties?.Remove("line_of_credit"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.LineOfCreditLiability> _explicitNullValueLineOfCredit = default!;
 #endif
         /// <summary>The closed-end loan accounts returned. This field is omitted when using plaid-python earlier than 13.0.0 or plaid-ruby earlier than 50.0.0.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.LoanLiability>? Loan { get => _explicitNullValueLoan; set { _explicitNullValueLoan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan"); else _explicitNullProperties?.Remove("loan"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LoanLiability>? Loan { get => _explicitNullValueLoan; set { _explicitNullValueLoan = value; AdditionalData?.Remove("loan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan"); else _explicitNullProperties?.Remove("loan"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.LoanLiability>? _explicitNullValueLoan = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.LoanLiability> Loan { get => _explicitNullValueLoan; set { _explicitNullValueLoan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan"); else _explicitNullProperties?.Remove("loan"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.LoanLiability> Loan { get => _explicitNullValueLoan; set { _explicitNullValueLoan = value; AdditionalData?.Remove("loan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loan"); else _explicitNullProperties?.Remove("loan"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.LoanLiability> _explicitNullValueLoan = default!;
 #endif
         /// <summary>The mortgage accounts returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.MortgageLiability>? Mortgage { get => _explicitNullValueMortgage; set { _explicitNullValueMortgage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mortgage"); else _explicitNullProperties?.Remove("mortgage"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.MortgageLiability>? Mortgage { get => _explicitNullValueMortgage; set { _explicitNullValueMortgage = value; AdditionalData?.Remove("mortgage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mortgage"); else _explicitNullProperties?.Remove("mortgage"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.MortgageLiability>? _explicitNullValueMortgage = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.MortgageLiability> Mortgage { get => _explicitNullValueMortgage; set { _explicitNullValueMortgage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mortgage"); else _explicitNullProperties?.Remove("mortgage"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.MortgageLiability> Mortgage { get => _explicitNullValueMortgage; set { _explicitNullValueMortgage = value; AdditionalData?.Remove("mortgage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mortgage"); else _explicitNullProperties?.Remove("mortgage"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.MortgageLiability> _explicitNullValueMortgage = default!;
 #endif
         /// <summary>The student loan accounts returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.StudentLoan>? Student { get => _explicitNullValueStudent; set { _explicitNullValueStudent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("student"); else _explicitNullProperties?.Remove("student"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.StudentLoan>? Student { get => _explicitNullValueStudent; set { _explicitNullValueStudent = value; AdditionalData?.Remove("student"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("student"); else _explicitNullProperties?.Remove("student"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.StudentLoan>? _explicitNullValueStudent = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.StudentLoan> Student { get => _explicitNullValueStudent; set { _explicitNullValueStudent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("student"); else _explicitNullProperties?.Remove("student"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.StudentLoan> Student { get => _explicitNullValueStudent; set { _explicitNullValueStudent = value; AdditionalData?.Remove("student"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("student"); else _explicitNullProperties?.Remove("student"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.StudentLoan> _explicitNullValueStudent = default!;
 #endif
         /// <summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("risk_signals") is { } nullNodeRiskSignals && nullNodeRiskSignals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskSignals = null;
-            if (parseNode.GetChildNode("risk_summary") is { } nullNodeRiskSummary && nullNodeRiskSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskSummary = null;
+            if (parseNode.GetChildNode("risk_signals") is null) { _explicitNullValueRiskSignals = default!; _explicitNullProperties?.Remove("risk_signals"); }
+            else if (parseNode.GetChildNode("risk_signals") is { } nullNodeRiskSignals && nullNodeRiskSignals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskSignals = null;
+            if (parseNode.GetChildNode("risk_summary") is null) { _explicitNullValueRiskSummary = default!; _explicitNullProperties?.Remove("risk_summary"); }
+            else if (parseNode.GetChildNode("risk_summary") is { } nullNodeRiskSummary && nullNodeRiskSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskSummary = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>An array of risk signals.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUploadRiskSignal>? RiskSignals { get => _explicitNullValueRiskSignals; set { _explicitNullValueRiskSignals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_signals"); else _explicitNullProperties?.Remove("risk_signals"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUploadRiskSignal>? RiskSignals { get => _explicitNullValueRiskSignals; set { _explicitNullValueRiskSignals = value; AdditionalData?.Remove("risk_signals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_signals"); else _explicitNullProperties?.Remove("risk_signals"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUploadRiskSignal>? _explicitNullValueRiskSignals = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUploadRiskSignal> RiskSignals { get => _explicitNullValueRiskSignals; set { _explicitNullValueRiskSignals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_signals"); else _explicitNullProperties?.Remove("risk_signals"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUploadRiskSignal> RiskSignals { get => _explicitNullValueRiskSignals; set { _explicitNullValueRiskSignals = value; AdditionalData?.Remove("risk_signals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_signals"); else _explicitNullProperties?.Remove("risk_signals"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUploadRiskSignal> _explicitNullValueRiskSignals = default!;
 #endif
         /// <summary>Risk summary of an uploaded document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUploadRiskSummary? RiskSummary { get => _explicitNullValueRiskSummary; set { _explicitNullValueRiskSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_summary"); else _explicitNullProperties?.Remove("risk_summary"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUploadRiskSummary? RiskSummary { get => _explicitNullValueRiskSummary; set { _explicitNullValueRiskSummary = value; AdditionalData?.Remove("risk_summary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_summary"); else _explicitNullProperties?.Remove("risk_summary"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUploadRiskSummary? _explicitNullValueRiskSummary = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUploadRiskSummary RiskSummary { get => _explicitNullValueRiskSummary; set { _explicitNullValueRiskSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_summary"); else _explicitNullProperties?.Remove("risk_summary"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUploadRiskSummary RiskSummary { get => _explicitNullValueRiskSummary; set { _explicitNullValueRiskSummary = value; AdditionalData?.Remove("risk_summary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_summary"); else _explicitNullProperties?.Remove("risk_summary"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.IdentityDocumentUploadRiskSummary _explicitNullValueRiskSummary = default!;
 #endif
         /// <summary>

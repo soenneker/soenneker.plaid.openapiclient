@@ -74,7 +74,7 @@ namespace Soenneker.Plaid.OpenApiClient.Sandbox.Transfer.Sweep.Simulate
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://production.plaid.com", "/sandbox/transfer/sweep/simulate", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

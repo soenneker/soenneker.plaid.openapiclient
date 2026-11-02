@@ -62,8 +62,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public Date? StartDate { get => _explicitNullValueStartDate; set { _explicitNullValueStartDate = value; AdditionalData?.Remove("start_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_date"); else _explicitNullProperties?.Remove("start_date"); } }
         private Date? _explicitNullValueStartDate = default!;
         /// <summary>Current employment status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.EmploymentVerificationStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.EmploymentVerificationStatus? _explicitNullValueStatus = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.EmploymentVerificationStatus Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.EmploymentVerificationStatus _explicitNullValueStatus = default!;
+#endif
         /// <summary>Current title of employee.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,7 +110,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "end_date", n => { EndDate = n.GetDateValue(); } },
                 { "platform_ids", n => { PlatformIds = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PlatformIds>(global::Soenneker.Plaid.OpenApiClient.Models.PlatformIds.CreateFromDiscriminatorValue); } },
                 { "start_date", n => { StartDate = n.GetDateValue(); } },
-                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.EmploymentVerificationStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.EmploymentVerificationStatus>(global::Soenneker.Plaid.OpenApiClient.Models.EmploymentVerificationStatus.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
         }
@@ -118,7 +125,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDateValue("end_date", EndDate);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PlatformIds>("platform_ids", PlatformIds);
             writer.WriteDateValue("start_date", StartDate);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.EmploymentVerificationStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.EmploymentVerificationStatus>("status", Status);
             writer.WriteStringValue("title", Title);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

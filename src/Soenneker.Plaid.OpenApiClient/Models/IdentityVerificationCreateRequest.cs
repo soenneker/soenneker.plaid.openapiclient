@@ -72,8 +72,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public bool? IsShareable { get => _explicitNullValueIsShareable; set { _explicitNullValueIsShareable = value; AdditionalData?.Remove("is_shareable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_shareable"); else _explicitNullProperties?.Remove("is_shareable"); } }
         private bool? _explicitNullValueIsShareable = default!;
         /// <summary>The language shown when the user starts this identity verification. If omitted or null, the language is detected from the user&apos;s browser settings, with English as the fallback. The user can select a different language during the session. An idempotent request that returns an existing identity verification does not change its language.Use a supported BCP 47 language tag, such as `fr-CA`. Unlike `/link/token/create`, this field requires a region-specific value rather than a two-letter language code such as `fr`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationLanguage? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; AdditionalData?.Remove("language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationLanguage? _explicitNullValueLanguage = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationLanguage Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; AdditionalData?.Remove("language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationLanguage _explicitNullValueLanguage = default!;
+#endif
         /// <summary>Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -145,7 +152,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "gave_consent", n => { GaveConsent = n.GetBoolValue(); } },
                 { "is_idempotent", n => { IsIdempotent = n.GetBoolValue(); } },
                 { "is_shareable", n => { IsShareable = n.GetBoolValue(); } },
-                { "language", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationLanguage>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLanguage = default; _explicitNullProperties?.Remove("language"); AdditionalData["language"] = unknown; } else { Language = parsed; AdditionalData.Remove("language"); } } },
+                { "language", n => { Language = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationLanguage>(global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationLanguage.CreateFromDiscriminatorValue); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
                 { "template_id", n => { TemplateId = n.GetStringValue(); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationCreateRequestUser>(global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationCreateRequestUser.CreateFromDiscriminatorValue); } },
@@ -164,7 +171,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteBoolValue("gave_consent", GaveConsent);
             writer.WriteBoolValue("is_idempotent", IsIdempotent);
             writer.WriteBoolValue("is_shareable", IsShareable);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationLanguage>("language", Language);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationLanguage>("language", Language);
             writer.WriteStringValue("secret", Secret);
             writer.WriteStringValue("template_id", TemplateId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationCreateRequestUser>("user", User);

@@ -66,8 +66,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public Date? PayDay { get => _explicitNullValuePayDay; set { _explicitNullValuePayDay = value; AdditionalData?.Remove("pay_day"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_day"); else _explicitNullProperties?.Remove("pay_day"); } }
         private Date? _explicitNullValuePayDay = default!;
         /// <summary>The frequency at which an individual is paid.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.PayPeriodDetailsPayFrequency? PayFrequency { get => _explicitNullValuePayFrequency; set { _explicitNullValuePayFrequency = value; AdditionalData?.Remove("pay_frequency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_frequency"); else _explicitNullProperties?.Remove("pay_frequency"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PayPeriodDetailsPayFrequency? _explicitNullValuePayFrequency = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.PayPeriodDetailsPayFrequency PayFrequency { get => _explicitNullValuePayFrequency; set { _explicitNullValuePayFrequency = value; AdditionalData?.Remove("pay_frequency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_frequency"); else _explicitNullProperties?.Remove("pay_frequency"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PayPeriodDetailsPayFrequency _explicitNullValuePayFrequency = default!;
+#endif
         /// <summary>The pay period start date, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format: &quot;yyyy-mm-dd&quot;.</summary>
         public Date? StartDate { get => _explicitNullValueStartDate; set { _explicitNullValueStartDate = value; AdditionalData?.Remove("start_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_date"); else _explicitNullProperties?.Remove("start_date"); } }
         private Date? _explicitNullValueStartDate = default!;
@@ -102,7 +109,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "gross_earnings", n => { GrossEarnings = n.GetDoubleValue(); } },
                 { "pay_date", n => { PayDate = n.GetDateValue(); } },
                 { "pay_day", n => { PayDay = n.GetDateValue(); } },
-                { "pay_frequency", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PayPeriodDetailsPayFrequency>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePayFrequency = default; _explicitNullProperties?.Remove("pay_frequency"); AdditionalData["pay_frequency"] = unknown; } else { PayFrequency = parsed; AdditionalData.Remove("pay_frequency"); } } },
+                { "pay_frequency", n => { PayFrequency = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PayPeriodDetailsPayFrequency>(global::Soenneker.Plaid.OpenApiClient.Models.PayPeriodDetailsPayFrequency.CreateFromDiscriminatorValue); } },
                 { "start_date", n => { StartDate = n.GetDateValue(); } },
             };
         }
@@ -119,7 +126,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDoubleValue("gross_earnings", GrossEarnings);
             writer.WriteDateValue("pay_date", PayDate);
             writer.WriteDateValue("pay_day", PayDay);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PayPeriodDetailsPayFrequency>("pay_frequency", PayFrequency);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PayPeriodDetailsPayFrequency>("pay_frequency", PayFrequency);
             writer.WriteDateValue("start_date", StartDate);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

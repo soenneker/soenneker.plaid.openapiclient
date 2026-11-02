@@ -41,8 +41,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public double? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; AdditionalData?.Remove("total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
         private double? _explicitNullValueTotal = default!;
         /// <summary>The type of income. Possible values include:  `&quot;regular&quot;`: regular income  `&quot;overtime&quot;`: overtime income  `&quot;bonus&quot;`: bonus income</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.IncomeBreakdownType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.IncomeBreakdownType? _explicitNullValueType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.IncomeBreakdownType Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.IncomeBreakdownType _explicitNullValueType = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.IncomeBreakdown"/> and sets the default values.
         /// </summary>
@@ -71,7 +78,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "hours", n => { Hours = n.GetDoubleValue(); } },
                 { "rate", n => { Rate = n.GetDoubleValue(); } },
                 { "total", n => { Total = n.GetDoubleValue(); } },
-                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.IncomeBreakdownType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IncomeBreakdownType>(global::Soenneker.Plaid.OpenApiClient.Models.IncomeBreakdownType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -84,7 +91,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDoubleValue("hours", Hours);
             writer.WriteDoubleValue("rate", Rate);
             writer.WriteDoubleValue("total", Total);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.IncomeBreakdownType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.IncomeBreakdownType>("type", Type);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

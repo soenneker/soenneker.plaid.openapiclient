@@ -47,8 +47,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public double? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; AdditionalData?.Remove("amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
         private double? _explicitNullValueAmount = default!;
         /// <summary>The type of bonus that this transaction represents, if it is a bonus.`BONUS_INCLUDED`: Bonus is included in this transaction along with the normal pay`BONUS_ONLY`: This transaction is a standalone bonus</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeBonusType? BonusType { get => _explicitNullValueBonusType; set { _explicitNullValueBonusType = value; AdditionalData?.Remove("bonus_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bonus_type"); else _explicitNullProperties?.Remove("bonus_type"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeBonusType? _explicitNullValueBonusType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeBonusType BonusType { get => _explicitNullValueBonusType; set { _explicitNullValueBonusType = value; AdditionalData?.Remove("bonus_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bonus_type"); else _explicitNullProperties?.Remove("bonus_type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeBonusType _explicitNullValueBonusType = default!;
+#endif
         /// <summary>The check number of the transaction. This field is only populated for check transactions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -142,7 +149,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "amount", n => { Amount = n.GetDoubleValue(); } },
-                { "bonus_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeBonusType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBonusType = default; _explicitNullProperties?.Remove("bonus_type"); AdditionalData["bonus_type"] = unknown; } else { BonusType = parsed; AdditionalData.Remove("bonus_type"); } } },
+                { "bonus_type", n => { BonusType = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeBonusType>(global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeBonusType.CreateFromDiscriminatorValue); } },
                 { "check_number", n => { CheckNumber = n.GetStringValue(); } },
                 { "date", n => { Date = n.GetDateValue(); } },
                 { "iso_currency_code", n => { IsoCurrencyCode = n.GetStringValue(); } },
@@ -161,7 +168,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("amount", Amount);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeBonusType>("bonus_type", BonusType);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeBonusType>("bonus_type", BonusType);
             writer.WriteStringValue("check_number", CheckNumber);
             writer.WriteDateValue("date", Date);
             writer.WriteStringValue("iso_currency_code", IsoCurrencyCode);

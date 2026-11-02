@@ -73,8 +73,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public bool? Initiated { get => _explicitNullValueInitiated; set { _explicitNullValueInitiated = value; AdditionalData?.Remove("initiated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initiated"); else _explicitNullProperties?.Remove("initiated"); } }
         private bool? _explicitNullValueInitiated = default!;
         /// <summary>The payment method to complete the transaction after the risk assessment. It may be different from the default payment method.`SAME_DAY_ACH`: Same Day ACH by Nacha. The debit transaction is processed and settled on the same day.`STANDARD_ACH`: Standard ACH by Nacha.`MULTIPLE_PAYMENT_METHODS`: if there is no default debit rail or there are multiple payment methods.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.SignalPaymentMethod? PaymentMethod { get => _explicitNullValuePaymentMethod; set { _explicitNullValuePaymentMethod = value; AdditionalData?.Remove("payment_method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_method"); else _explicitNullProperties?.Remove("payment_method"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.SignalPaymentMethod? _explicitNullValuePaymentMethod = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.SignalPaymentMethod PaymentMethod { get => _explicitNullValuePaymentMethod; set { _explicitNullValuePaymentMethod = value; AdditionalData?.Remove("payment_method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_method"); else _explicitNullProperties?.Remove("payment_method"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SignalPaymentMethod _explicitNullValuePaymentMethod = default!;
+#endif
         /// <summary>The processor token obtained from the Plaid integration partner. Processor tokens are in the format: `processor-&lt;environment&gt;-&lt;identifier&gt;`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -126,7 +133,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "days_funds_on_hold", n => { DaysFundsOnHold = n.GetIntValue(); } },
                 { "decision_outcome", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SignalDecisionOutcome>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDecisionOutcome = default; _explicitNullProperties?.Remove("decision_outcome"); AdditionalData["decision_outcome"] = unknown; } else { DecisionOutcome = parsed; AdditionalData.Remove("decision_outcome"); } } },
                 { "initiated", n => { Initiated = n.GetBoolValue(); } },
-                { "payment_method", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SignalPaymentMethod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePaymentMethod = default; _explicitNullProperties?.Remove("payment_method"); AdditionalData["payment_method"] = unknown; } else { PaymentMethod = parsed; AdditionalData.Remove("payment_method"); } } },
+                { "payment_method", n => { PaymentMethod = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.SignalPaymentMethod>(global::Soenneker.Plaid.OpenApiClient.Models.SignalPaymentMethod.CreateFromDiscriminatorValue); } },
                 { "processor_token", n => { ProcessorToken = n.GetStringValue(); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
             };
@@ -144,7 +151,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteIntValue("days_funds_on_hold", DaysFundsOnHold);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SignalDecisionOutcome>("decision_outcome", DecisionOutcome);
             writer.WriteBoolValue("initiated", Initiated);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SignalPaymentMethod>("payment_method", PaymentMethod);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.SignalPaymentMethod>("payment_method", PaymentMethod);
             writer.WriteStringValue("processor_token", ProcessorToken);
             writer.WriteStringValue("secret", Secret);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

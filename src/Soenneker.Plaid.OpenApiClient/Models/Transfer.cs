@@ -132,8 +132,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         private DateTimeOffset? _explicitNullValueCreated = default!;
         /// <summary>This field is now deprecated. You may ignore it for transfers created on and after 12/01/2023.Specifies the source of funds for the transfer. Only valid for `credit` transfers, and defaults to `sweep` if not specified. This field is not specified for `debit` transfers.`sweep` - Sweep funds from your funding account`prefunded_rtp_credits` - Use your prefunded RTP credit balance with Plaid`prefunded_ach_credits` - Use your prefunded ACH credit balance with Plaid</summary>
         [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferCreditFundsSourceComposed? CreditFundsSource { get => _explicitNullValueCreditFundsSource; set { _explicitNullValueCreditFundsSource = value; AdditionalData?.Remove("credit_funds_source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit_funds_source"); else _explicitNullProperties?.Remove("credit_funds_source"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransferCreditFundsSourceComposed? _explicitNullValueCreditFundsSource = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferCreditFundsSourceComposed CreditFundsSource { get => _explicitNullValueCreditFundsSource; set { _explicitNullValueCreditFundsSource = value; AdditionalData?.Remove("credit_funds_source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit_funds_source"); else _explicitNullProperties?.Remove("credit_funds_source"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferCreditFundsSourceComposed _explicitNullValueCreditFundsSource = default!;
+#endif
         /// <summary>The description of the transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -193,8 +200,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether the transfer is guaranteed by Plaid (Guarantee customers only). This field will contain either `GUARANTEED` or `NOT_GUARANTEED` indicating whether Plaid will guarantee the transfer.</summary>
         [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeDecision? GuaranteeDecision { get => _explicitNullValueGuaranteeDecision; set { _explicitNullValueGuaranteeDecision = value; AdditionalData?.Remove("guarantee_decision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guarantee_decision"); else _explicitNullProperties?.Remove("guarantee_decision"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeDecision? _explicitNullValueGuaranteeDecision = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeDecision GuaranteeDecision { get => _explicitNullValueGuaranteeDecision; set { _explicitNullValueGuaranteeDecision = value; AdditionalData?.Remove("guarantee_decision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guarantee_decision"); else _explicitNullProperties?.Remove("guarantee_decision"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeDecision _explicitNullValueGuaranteeDecision = default!;
+#endif
         /// <summary>The rationale for Plaid&apos;s decision to not guarantee a transfer. Will be `null` unless `guarantee_decision` is `NOT_GUARANTEED`.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -317,8 +331,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransferStatus? _explicitNullValueStatus = default!;
         /// <summary>The status of the sweep for the transfer.`unswept`: The transfer hasn&apos;t been swept yet. Transfers that are cancelled, fail, or are returned before being swept remain `unswept`.`swept`: The transfer was swept to the sweep account.`swept_settled`: Credits are available to be withdrawn or debits have been deducted from the customer&apos;s business checking account.`return_swept`: The transfer was returned, funds were pulled back or pushed back to the sweep account.`null`: The transfer will never be swept because it is a credit funded from a prefunded balance.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferSweepStatus? SweepStatus { get => _explicitNullValueSweepStatus; set { _explicitNullValueSweepStatus = value; AdditionalData?.Remove("sweep_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sweep_status"); else _explicitNullProperties?.Remove("sweep_status"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransferSweepStatus? _explicitNullValueSweepStatus = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferSweepStatus SweepStatus { get => _explicitNullValueSweepStatus; set { _explicitNullValueSweepStatus = value; AdditionalData?.Remove("sweep_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sweep_status"); else _explicitNullProperties?.Remove("sweep_status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferSweepStatus _explicitNullValueSweepStatus = default!;
+#endif
         /// <summary>The type of transfer. This will be either `debit` or `credit`.  A `debit` indicates a transfer of money into the origination account; a `credit` indicates a transfer of money out of the origination account.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransferType? _explicitNullValueType = default!;
@@ -376,7 +397,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "authorization_id", n => { AuthorizationId = n.GetStringValue(); } },
                 { "cancellable", n => { Cancellable = n.GetBoolValue(); } },
                 { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "credit_funds_source", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferCreditFundsSourceComposed>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCreditFundsSource = default; _explicitNullProperties?.Remove("credit_funds_source"); AdditionalData["credit_funds_source"] = unknown; } else { CreditFundsSource = parsed; AdditionalData.Remove("credit_funds_source"); } } },
+                { "credit_funds_source", n => { CreditFundsSource = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferCreditFundsSourceComposed>(global::Soenneker.Plaid.OpenApiClient.Models.TransferCreditFundsSourceComposed.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "expected_funds_available_date", n => { ExpectedFundsAvailableDate = n.GetDateValue(); } },
                 { "expected_settlement_date", n => { ExpectedSettlementDate = n.GetDateValue(); } },
@@ -384,7 +405,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "facilitator_fee", n => { FacilitatorFee = n.GetStringValue(); } },
                 { "failure_reason", n => { FailureReason = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferFailure>(global::Soenneker.Plaid.OpenApiClient.Models.TransferFailure.CreateFromDiscriminatorValue); } },
                 { "funding_account_id", n => { FundingAccountId = n.GetStringValue(); } },
-                { "guarantee_decision", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeDecision>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueGuaranteeDecision = default; _explicitNullProperties?.Remove("guarantee_decision"); AdditionalData["guarantee_decision"] = unknown; } else { GuaranteeDecision = parsed; AdditionalData.Remove("guarantee_decision"); } } },
+                { "guarantee_decision", n => { GuaranteeDecision = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeDecision>(global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeDecision.CreateFromDiscriminatorValue); } },
                 { "guarantee_decision_rationale", n => { GuaranteeDecisionRationale = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale>(global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale.CreateFromDiscriminatorValue); } },
                 { "guarantee_details", n => { GuaranteeDetails = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeDetails>(global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeDetails.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -399,7 +420,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "refunds", n => { Refunds = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.TransferRefund>(global::Soenneker.Plaid.OpenApiClient.Models.TransferRefund.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "standard_return_window", n => { StandardReturnWindow = n.GetDateValue(); } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
-                { "sweep_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferSweepStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSweepStatus = default; _explicitNullProperties?.Remove("sweep_status"); AdditionalData["sweep_status"] = unknown; } else { SweepStatus = parsed; AdditionalData.Remove("sweep_status"); } } },
+                { "sweep_status", n => { SweepStatus = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferSweepStatus>(global::Soenneker.Plaid.OpenApiClient.Models.TransferSweepStatus.CreateFromDiscriminatorValue); } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "unauthorized_return_window", n => { UnauthorizedReturnWindow = n.GetDateValue(); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferUserInResponse>(global::Soenneker.Plaid.OpenApiClient.Models.TransferUserInResponse.CreateFromDiscriminatorValue); } },
@@ -419,7 +440,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("authorization_id", AuthorizationId);
             writer.WriteBoolValue("cancellable", Cancellable);
             writer.WriteDateTimeOffsetValue("created", Created);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferCreditFundsSourceComposed>("credit_funds_source", CreditFundsSource);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferCreditFundsSourceComposed>("credit_funds_source", CreditFundsSource);
             writer.WriteStringValue("description", Description);
             writer.WriteDateValue("expected_funds_available_date", ExpectedFundsAvailableDate);
             writer.WriteDateValue("expected_settlement_date", ExpectedSettlementDate);
@@ -427,7 +448,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("facilitator_fee", FacilitatorFee);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferFailure>("failure_reason", FailureReason);
             writer.WriteStringValue("funding_account_id", FundingAccountId);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeDecision>("guarantee_decision", GuaranteeDecision);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeDecision>("guarantee_decision", GuaranteeDecision);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale>("guarantee_decision_rationale", GuaranteeDecisionRationale);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferGuaranteeDetails>("guarantee_details", GuaranteeDetails);
             writer.WriteStringValue("id", Id);
@@ -442,7 +463,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.TransferRefund>("refunds", Refunds);
             writer.WriteDateValue("standard_return_window", StandardReturnWindow);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferStatus>("status", Status);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferSweepStatus>("sweep_status", SweepStatus);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferSweepStatus>("sweep_status", SweepStatus);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferType>("type", Type);
             writer.WriteDateValue("unauthorized_return_window", UnauthorizedReturnWindow);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferUserInResponse>("user", User);

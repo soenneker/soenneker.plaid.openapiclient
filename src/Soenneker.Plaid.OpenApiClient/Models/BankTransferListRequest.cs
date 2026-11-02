@@ -52,8 +52,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
         private int? _explicitNullValueCount = default!;
         /// <summary>Indicates the direction of the transfer: `outbound` for API-initiated transfers, or `inbound` for payments received by the FBO account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferDirection? Direction { get => _explicitNullValueDirection; set { _explicitNullValueDirection = value; AdditionalData?.Remove("direction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direction"); else _explicitNullProperties?.Remove("direction"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.BankTransferDirection? _explicitNullValueDirection = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferDirection Direction { get => _explicitNullValueDirection; set { _explicitNullValueDirection = value; AdditionalData?.Remove("direction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direction"); else _explicitNullProperties?.Remove("direction"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BankTransferDirection _explicitNullValueDirection = default!;
+#endif
         /// <summary>The end datetime of bank transfers to list. This should be in RFC 3339 format (i.e. `2019-12-06T22:35:49Z`)</summary>
         public DateTimeOffset? EndDate { get => _explicitNullValueEndDate; set { _explicitNullValueEndDate = value; AdditionalData?.Remove("end_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_date"); else _explicitNullProperties?.Remove("end_date"); } }
         private DateTimeOffset? _explicitNullValueEndDate = default!;
@@ -112,7 +119,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
                 { "count", n => { Count = n.GetIntValue(); } },
-                { "direction", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferDirection>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDirection = default; _explicitNullProperties?.Remove("direction"); AdditionalData["direction"] = unknown; } else { Direction = parsed; AdditionalData.Remove("direction"); } } },
+                { "direction", n => { Direction = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferDirection>(global::Soenneker.Plaid.OpenApiClient.Models.BankTransferDirection.CreateFromDiscriminatorValue); } },
                 { "end_date", n => { EndDate = n.GetDateTimeOffsetValue(); } },
                 { "offset", n => { Offset = n.GetIntValue(); } },
                 { "origination_account_id", n => { OriginationAccountId = n.GetStringValue(); } },
@@ -129,7 +136,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("client_id", ClientId);
             writer.WriteIntValue("count", Count);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferDirection>("direction", Direction);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferDirection>("direction", Direction);
             writer.WriteDateTimeOffsetValue("end_date", EndDate);
             writer.WriteIntValue("offset", Offset);
             writer.WriteStringValue("origination_account_id", OriginationAccountId);

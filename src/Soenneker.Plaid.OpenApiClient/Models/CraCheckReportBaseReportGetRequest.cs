@@ -104,8 +104,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         private string _explicitNullValueUserId = default!;
 #endif
         /// <summary>The tier of the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.CraUserTier? UserTier { get => _explicitNullValueUserTier; set { _explicitNullValueUserTier = value; AdditionalData?.Remove("user_tier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_tier"); else _explicitNullProperties?.Remove("user_tier"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraUserTier? _explicitNullValueUserTier = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraUserTier UserTier { get => _explicitNullValueUserTier; set { _explicitNullValueUserTier = value; AdditionalData?.Remove("user_tier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_tier"); else _explicitNullProperties?.Remove("user_tier"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraUserTier _explicitNullValueUserTier = default!;
+#endif
         /// <summary>The user token associated with the user for which data is being requested. This field is used only by customers with pre-existing integrations that already use the `user_token` field. All other customers should use the `user_id` instead. For more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -148,7 +155,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "secret", n => { Secret = n.GetStringValue(); } },
                 { "third_party_user_token", n => { ThirdPartyUserToken = n.GetStringValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
-                { "user_tier", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraUserTier>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueUserTier = default; _explicitNullProperties?.Remove("user_tier"); AdditionalData["user_tier"] = unknown; } else { UserTier = parsed; AdditionalData.Remove("user_tier"); } } },
+                { "user_tier", n => { UserTier = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraUserTier>(global::Soenneker.Plaid.OpenApiClient.Models.CraUserTier.CreateFromDiscriminatorValue); } },
                 { "user_token", n => { UserToken = n.GetStringValue(); } },
             };
         }
@@ -166,7 +173,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("secret", Secret);
             writer.WriteStringValue("third_party_user_token", ThirdPartyUserToken);
             writer.WriteStringValue("user_id", UserId);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraUserTier>("user_tier", UserTier);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraUserTier>("user_tier", UserTier);
             writer.WriteStringValue("user_token", UserToken);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

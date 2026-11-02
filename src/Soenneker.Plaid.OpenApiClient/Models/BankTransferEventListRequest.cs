@@ -67,8 +67,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         private string _explicitNullValueBankTransferId = default!;
 #endif
         /// <summary>The type of bank transfer. This will be either `debit` or `credit`.  A `debit` indicates a transfer of money into your origination account; a `credit` indicates a transfer of money out of your origination account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventListBankTransferType? BankTransferType { get => _explicitNullValueBankTransferType; set { _explicitNullValueBankTransferType = value; AdditionalData?.Remove("bank_transfer_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_transfer_type"); else _explicitNullProperties?.Remove("bank_transfer_type"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventListBankTransferType? _explicitNullValueBankTransferType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventListBankTransferType BankTransferType { get => _explicitNullValueBankTransferType; set { _explicitNullValueBankTransferType = value; AdditionalData?.Remove("bank_transfer_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_transfer_type"); else _explicitNullProperties?.Remove("bank_transfer_type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventListBankTransferType _explicitNullValueBankTransferType = default!;
+#endif
         /// <summary>Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,8 +90,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
         private int? _explicitNullValueCount = default!;
         /// <summary>Indicates the direction of the transfer:`outbound`: for API-initiated transfers`inbound`: for payments received by the FBO account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventListDirection? Direction { get => _explicitNullValueDirection; set { _explicitNullValueDirection = value; AdditionalData?.Remove("direction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direction"); else _explicitNullProperties?.Remove("direction"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventListDirection? _explicitNullValueDirection = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventListDirection Direction { get => _explicitNullValueDirection; set { _explicitNullValueDirection = value; AdditionalData?.Remove("direction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direction"); else _explicitNullProperties?.Remove("direction"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventListDirection _explicitNullValueDirection = default!;
+#endif
         /// <summary>The end datetime of bank transfers to list. This should be in RFC 3339 format (i.e. `2019-12-06T22:35:49Z`)</summary>
         public DateTimeOffset? EndDate { get => _explicitNullValueEndDate; set { _explicitNullValueEndDate = value; AdditionalData?.Remove("end_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_date"); else _explicitNullProperties?.Remove("end_date"); } }
         private DateTimeOffset? _explicitNullValueEndDate = default!;
@@ -153,10 +167,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
                 { "bank_transfer_id", n => { BankTransferId = n.GetStringValue(); } },
-                { "bank_transfer_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventListBankTransferType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBankTransferType = default; _explicitNullProperties?.Remove("bank_transfer_type"); AdditionalData["bank_transfer_type"] = unknown; } else { BankTransferType = parsed; AdditionalData.Remove("bank_transfer_type"); } } },
+                { "bank_transfer_type", n => { BankTransferType = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventListBankTransferType>(global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventListBankTransferType.CreateFromDiscriminatorValue); } },
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
                 { "count", n => { Count = n.GetIntValue(); } },
-                { "direction", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventListDirection>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDirection = default; _explicitNullProperties?.Remove("direction"); AdditionalData["direction"] = unknown; } else { Direction = parsed; AdditionalData.Remove("direction"); } } },
+                { "direction", n => { Direction = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventListDirection>(global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventListDirection.CreateFromDiscriminatorValue); } },
                 { "end_date", n => { EndDate = n.GetDateTimeOffsetValue(); } },
                 { "event_types", n => { EventTypes = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventType>()?.AsList(); } },
                 { "offset", n => { Offset = n.GetIntValue(); } },
@@ -174,10 +188,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
             writer.WriteStringValue("bank_transfer_id", BankTransferId);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventListBankTransferType>("bank_transfer_type", BankTransferType);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventListBankTransferType>("bank_transfer_type", BankTransferType);
             writer.WriteStringValue("client_id", ClientId);
             writer.WriteIntValue("count", Count);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventListDirection>("direction", Direction);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventListDirection>("direction", Direction);
             writer.WriteDateTimeOffsetValue("end_date", EndDate);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferEventType>("event_types", EventTypes);
             writer.WriteIntValue("offset", Offset);

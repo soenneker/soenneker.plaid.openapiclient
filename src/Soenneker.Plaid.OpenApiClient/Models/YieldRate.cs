@@ -30,8 +30,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public double? Percentage { get => _explicitNullValuePercentage; set { _explicitNullValuePercentage = value; AdditionalData?.Remove("percentage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("percentage"); else _explicitNullProperties?.Remove("percentage"); } }
         private double? _explicitNullValuePercentage = default!;
         /// <summary>The type of rate which indicates how the predicted yield was calculated. It is one of:`coupon`: the annualized interest rate for securities with a one-year term or longer, such as treasury notes and bonds.`coupon_equivalent`: the calculated equivalent for the annualized interest rate factoring in the discount rate and time to maturity, for shorter term, non-interest-bearing securities such as treasury bills.`discount`: the rate at which the present value or cost is discounted from the future value upon maturity, also known as the face value.`yield`: the total predicted rate of return factoring in both the discount rate and the coupon rate, applicable to securities such as exchange-traded bonds which can both be interest-bearing as well as sold at a discount off their face value.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.YieldRateType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.YieldRateType? _explicitNullValueType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.YieldRateType Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.YieldRateType _explicitNullValueType = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.YieldRate"/> and sets the default values.
         /// </summary>
@@ -60,7 +67,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "percentage", n => { Percentage = n.GetDoubleValue(); } },
-                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.YieldRateType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.YieldRateType>(global::Soenneker.Plaid.OpenApiClient.Models.YieldRateType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -71,7 +78,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("percentage", Percentage);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.YieldRateType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.YieldRateType>("type", Type);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -34,20 +34,55 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The version of Prism CashScore. If `prism_versions` is omitted entirely, your client&apos;s configured default Prism version is used (v3 if none is configured). If other Prism versions are specified but this one is not, this product is not generated.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScoreVersion? Cashscore { get => _explicitNullValueCashscore; set { _explicitNullValueCashscore = value; AdditionalData?.Remove("cashscore"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cashscore"); else _explicitNullProperties?.Remove("cashscore"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScoreVersion? _explicitNullValueCashscore = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScoreVersion Cashscore { get => _explicitNullValueCashscore; set { _explicitNullValueCashscore = value; AdditionalData?.Remove("cashscore"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cashscore"); else _explicitNullProperties?.Remove("cashscore"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScoreVersion _explicitNullValueCashscore = default!;
+#endif
         /// <summary>The version of Prism Detect</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.PrismDetectVersion? Detect { get => _explicitNullValueDetect; set { _explicitNullValueDetect = value; AdditionalData?.Remove("detect"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detect"); else _explicitNullProperties?.Remove("detect"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PrismDetectVersion? _explicitNullValueDetect = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismDetectVersion Detect { get => _explicitNullValueDetect; set { _explicitNullValueDetect = value; AdditionalData?.Remove("detect"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detect"); else _explicitNullProperties?.Remove("detect"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PrismDetectVersion _explicitNullValueDetect = default!;
+#endif
         /// <summary>The version of Prism Extend</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.PrismExtendVersion? Extend { get => _explicitNullValueExtend; set { _explicitNullValueExtend = value; AdditionalData?.Remove("extend"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extend"); else _explicitNullProperties?.Remove("extend"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PrismExtendVersion? _explicitNullValueExtend = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismExtendVersion Extend { get => _explicitNullValueExtend; set { _explicitNullValueExtend = value; AdditionalData?.Remove("extend"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extend"); else _explicitNullProperties?.Remove("extend"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PrismExtendVersion _explicitNullValueExtend = default!;
+#endif
         /// <summary>The version of Prism FirstDetect. If `prism_versions` is omitted entirely, FirstDetect v3 is generated when your client&apos;s configured default Prism version is v3 or no default is configured; it is not generated if the default is v4 or v4.1. If other Prism versions are specified but this one is not, this product is not generated.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.PrismFirstDetectVersion? Firstdetect { get => _explicitNullValueFirstdetect; set { _explicitNullValueFirstdetect = value; AdditionalData?.Remove("firstdetect"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstdetect"); else _explicitNullProperties?.Remove("firstdetect"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PrismFirstDetectVersion? _explicitNullValueFirstdetect = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismFirstDetectVersion Firstdetect { get => _explicitNullValueFirstdetect; set { _explicitNullValueFirstdetect = value; AdditionalData?.Remove("firstdetect"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstdetect"); else _explicitNullProperties?.Remove("firstdetect"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PrismFirstDetectVersion _explicitNullValueFirstdetect = default!;
+#endif
         /// <summary>The version of Prism Insights. If `prism_versions` is omitted entirely, your client&apos;s configured default Prism version is used (v3 if none is configured). If other Prism versions are specified but this one is not, this product is not generated.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsVersion? Insights { get => _explicitNullValueInsights; set { _explicitNullValueInsights = value; AdditionalData?.Remove("insights"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insights"); else _explicitNullProperties?.Remove("insights"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsVersion? _explicitNullValueInsights = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsVersion Insights { get => _explicitNullValueInsights; set { _explicitNullValueInsights = value; AdditionalData?.Remove("insights"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insights"); else _explicitNullProperties?.Remove("insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsVersion _explicitNullValueInsights = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.PrismVersionsDeprecated"/> and sets the default values.
         /// </summary>
@@ -75,11 +110,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cashscore", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScoreVersion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCashscore = default; _explicitNullProperties?.Remove("cashscore"); AdditionalData["cashscore"] = unknown; } else { Cashscore = parsed; AdditionalData.Remove("cashscore"); } } },
-                { "detect", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismDetectVersion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDetect = default; _explicitNullProperties?.Remove("detect"); AdditionalData["detect"] = unknown; } else { Detect = parsed; AdditionalData.Remove("detect"); } } },
-                { "extend", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismExtendVersion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueExtend = default; _explicitNullProperties?.Remove("extend"); AdditionalData["extend"] = unknown; } else { Extend = parsed; AdditionalData.Remove("extend"); } } },
-                { "firstdetect", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismFirstDetectVersion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFirstdetect = default; _explicitNullProperties?.Remove("firstdetect"); AdditionalData["firstdetect"] = unknown; } else { Firstdetect = parsed; AdditionalData.Remove("firstdetect"); } } },
-                { "insights", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsVersion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueInsights = default; _explicitNullProperties?.Remove("insights"); AdditionalData["insights"] = unknown; } else { Insights = parsed; AdditionalData.Remove("insights"); } } },
+                { "cashscore", n => { Cashscore = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScoreVersion>(global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScoreVersion.CreateFromDiscriminatorValue); } },
+                { "detect", n => { Detect = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismDetectVersion>(global::Soenneker.Plaid.OpenApiClient.Models.PrismDetectVersion.CreateFromDiscriminatorValue); } },
+                { "extend", n => { Extend = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismExtendVersion>(global::Soenneker.Plaid.OpenApiClient.Models.PrismExtendVersion.CreateFromDiscriminatorValue); } },
+                { "firstdetect", n => { Firstdetect = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismFirstDetectVersion>(global::Soenneker.Plaid.OpenApiClient.Models.PrismFirstDetectVersion.CreateFromDiscriminatorValue); } },
+                { "insights", n => { Insights = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsVersion>(global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsVersion.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,11 +124,11 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScoreVersion>("cashscore", Cashscore);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismDetectVersion>("detect", Detect);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismExtendVersion>("extend", Extend);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismFirstDetectVersion>("firstdetect", Firstdetect);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsVersion>("insights", Insights);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismCashScoreVersion>("cashscore", Cashscore);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismDetectVersion>("detect", Detect);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismExtendVersion>("extend", Extend);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismFirstDetectVersion>("firstdetect", Firstdetect);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PrismInsightsVersion>("insights", Insights);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

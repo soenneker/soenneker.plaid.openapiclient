@@ -75,8 +75,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>This field is now deprecated. You may ignore it for transfers created on and after 12/01/2023.Specifies the source of funds for the transfer. Only valid for `credit` transfers, and defaults to `sweep` if not specified. This field is not specified for `debit` transfers.`sweep` - Sweep funds from your funding account`prefunded_rtp_credits` - Use your prefunded RTP credit balance with Plaid`prefunded_ach_credits` - Use your prefunded ACH credit balance with Plaid</summary>
         [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransferCreditFundsSource? CreditFundsSource { get => _explicitNullValueCreditFundsSource; set { _explicitNullValueCreditFundsSource = value; AdditionalData?.Remove("credit_funds_source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit_funds_source"); else _explicitNullProperties?.Remove("credit_funds_source"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransferCreditFundsSource? _explicitNullValueCreditFundsSource = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransferCreditFundsSource CreditFundsSource { get => _explicitNullValueCreditFundsSource; set { _explicitNullValueCreditFundsSource = value; AdditionalData?.Remove("credit_funds_source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit_funds_source"); else _explicitNullProperties?.Remove("credit_funds_source"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransferCreditFundsSource _explicitNullValueCreditFundsSource = default!;
+#endif
         /// <summary>The id of the associated funding account, available in the Plaid Dashboard. If present, this indicates which of your business checking accounts will be credited or debited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -199,7 +206,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
                 { "ach_class", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AchClass>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAchClass = default; _explicitNullProperties?.Remove("ach_class"); AdditionalData["ach_class"] = unknown; } else { AchClass = parsed; AdditionalData.Remove("ach_class"); } } },
                 { "amount", n => { Amount = n.GetStringValue(); } },
-                { "credit_funds_source", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransferCreditFundsSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCreditFundsSource = default; _explicitNullProperties?.Remove("credit_funds_source"); AdditionalData["credit_funds_source"] = unknown; } else { CreditFundsSource = parsed; AdditionalData.Remove("credit_funds_source"); } } },
+                { "credit_funds_source", n => { CreditFundsSource = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransferCreditFundsSource>(global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransferCreditFundsSource.CreateFromDiscriminatorValue); } },
                 { "funding_account_id", n => { FundingAccountId = n.GetStringValue(); } },
                 { "iso_currency_code", n => { IsoCurrencyCode = n.GetStringValue(); } },
                 { "ledger_id", n => { LedgerId = n.GetStringValue(); } },
@@ -222,7 +229,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("account_id", AccountId);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AchClass>("ach_class", AchClass);
             writer.WriteStringValue("amount", Amount);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransferCreditFundsSource>("credit_funds_source", CreditFundsSource);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationProposedTransferCreditFundsSource>("credit_funds_source", CreditFundsSource);
             writer.WriteStringValue("funding_account_id", FundingAccountId);
             writer.WriteStringValue("iso_currency_code", IsoCurrencyCode);
             writer.WriteStringValue("ledger_id", LedgerId);

@@ -37,8 +37,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cadence at which products are generated and webhooks are fired. Required when `scope` is `CLIENT_USER`; must be null or omitted when `scope` is `PLAID_NETWORK`. If the Qualify product is requested, cadence must be null or omitted, because Qualify&apos;s generation cadence is controlled by Plaid.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.CraSubscriptionCadence? Cadence { get => _explicitNullValueCadence; set { _explicitNullValueCadence = value; AdditionalData?.Remove("cadence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cadence"); else _explicitNullProperties?.Remove("cadence"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraSubscriptionCadence? _explicitNullValueCadence = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraSubscriptionCadence Cadence { get => _explicitNullValueCadence; set { _explicitNullValueCadence = value; AdditionalData?.Remove("cadence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cadence"); else _explicitNullProperties?.Remove("cadence"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraSubscriptionCadence _explicitNullValueCadence = default!;
+#endif
         /// <summary>Your Plaid API `client_id`. The `client_id` is required and may be provided either in the `PLAID-CLIENT-ID` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,7 +124,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cadence", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraSubscriptionCadence>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCadence = default; _explicitNullProperties?.Remove("cadence"); AdditionalData["cadence"] = unknown; } else { Cadence = parsed; AdditionalData.Remove("cadence"); } } },
+                { "cadence", n => { Cadence = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraSubscriptionCadence>(global::Soenneker.Plaid.OpenApiClient.Models.CraSubscriptionCadence.CreateFromDiscriminatorValue); } },
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
                 { "products", n => { Products = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraSubscriptionProductConfig>(global::Soenneker.Plaid.OpenApiClient.Models.CraSubscriptionProductConfig.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "scope", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraServicingSubscriptionCreateRequestScope>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScope = default; _explicitNullProperties?.Remove("scope"); AdditionalData["scope"] = unknown; } else { Scope = parsed; AdditionalData.Remove("scope"); } } },
@@ -133,7 +140,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraSubscriptionCadence>("cadence", Cadence);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraSubscriptionCadence>("cadence", Cadence);
             writer.WriteStringValue("client_id", ClientId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraSubscriptionProductConfig>("products", Products);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraServicingSubscriptionCreateRequestScope>("scope", Scope);

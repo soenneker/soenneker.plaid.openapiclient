@@ -154,8 +154,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         private string _explicitNullValueTransferId = default!;
 #endif
         /// <summary>The type of transfer. This will be either `debit` or `credit`.  A `debit` indicates a transfer of money into your origination account; a `credit` indicates a transfer of money out of your origination account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferEventListTransferType? TransferType { get => _explicitNullValueTransferType; set { _explicitNullValueTransferType = value; AdditionalData?.Remove("transfer_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_type"); else _explicitNullProperties?.Remove("transfer_type"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransferEventListTransferType? _explicitNullValueTransferType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferEventListTransferType TransferType { get => _explicitNullValueTransferType; set { _explicitNullValueTransferType = value; AdditionalData?.Remove("transfer_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_type"); else _explicitNullProperties?.Remove("transfer_type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferEventListTransferType _explicitNullValueTransferType = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.TransferEventListRequest"/> and sets the default values.
         /// </summary>
@@ -196,7 +203,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "start_date", n => { StartDate = n.GetDateTimeOffsetValue(); } },
                 { "sweep_id", n => { SweepId = n.GetStringValue(); } },
                 { "transfer_id", n => { TransferId = n.GetStringValue(); } },
-                { "transfer_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferEventListTransferType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTransferType = default; _explicitNullProperties?.Remove("transfer_type"); AdditionalData["transfer_type"] = unknown; } else { TransferType = parsed; AdditionalData.Remove("transfer_type"); } } },
+                { "transfer_type", n => { TransferType = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferEventListTransferType>(global::Soenneker.Plaid.OpenApiClient.Models.TransferEventListTransferType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -219,7 +226,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("start_date", StartDate);
             writer.WriteStringValue("sweep_id", SweepId);
             writer.WriteStringValue("transfer_id", TransferId);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferEventListTransferType>("transfer_type", TransferType);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferEventListTransferType>("transfer_type", TransferType);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

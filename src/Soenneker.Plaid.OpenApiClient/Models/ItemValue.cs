@@ -49,8 +49,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The method used to populate Auth data for the Item. This field is only populated for Items that have had Auth numbers data set on at least one of their accounts, and will be omitted otherwise. For info about the various flows, see our [Auth coverage documentation](https://plaid.com/docs/auth/coverage/).`INSTANT_AUTH`: The Item&apos;s Auth data was provided directly by the user&apos;s institution connection.`INSTANT_MATCH`: The Item&apos;s Auth data was provided via the Instant Match fallback flow.`AUTOMATED_MICRODEPOSITS`: The Item&apos;s Auth data was provided via the Automated Micro-deposits flow.`SAME_DAY_MICRODEPOSITS`: The Item&apos;s Auth data was provided via the Same-Day Micro-deposits flow.`INSTANT_MICRODEPOSITS`: The Item&apos;s Auth data was provided via the Instant Micro-deposits flow.`DATABASE_MATCH`: The Item&apos;s Auth data was provided via the Database Match flow.`DATABASE_INSIGHTS`: The Item&apos;s Auth data was provided via the Database Insights flow.`TRANSFER_MIGRATED`: The Item&apos;s Auth data was provided via [`/transfer/migrate_account`](https://plaid.com/docs/api/products/transfer/account-linking/#migrate-account-into-transfers).`INVESTMENTS_FALLBACK`: The Item&apos;s Auth data for Investments Move was provided via a [fallback flow](https://plaid.com/docs/investments-move/#fallback-flows).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.ItemAuthMethod? AuthMethod { get => _explicitNullValueAuthMethod; set { _explicitNullValueAuthMethod = value; AdditionalData?.Remove("auth_method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_method"); else _explicitNullProperties?.Remove("auth_method"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.ItemAuthMethod? _explicitNullValueAuthMethod = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.ItemAuthMethod AuthMethod { get => _explicitNullValueAuthMethod; set { _explicitNullValueAuthMethod = value; AdditionalData?.Remove("auth_method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_method"); else _explicitNullProperties?.Remove("auth_method"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ItemAuthMethod _explicitNullValueAuthMethod = default!;
+#endif
         /// <summary>A list of products available for the Item that have not yet been accessed. The contents of this array will be mutually exclusive with `billed_products`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -182,7 +189,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "auth_method", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ItemAuthMethod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAuthMethod = default; _explicitNullProperties?.Remove("auth_method"); AdditionalData["auth_method"] = unknown; } else { AuthMethod = parsed; AdditionalData.Remove("auth_method"); } } },
+                { "auth_method", n => { AuthMethod = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ItemAuthMethod>(global::Soenneker.Plaid.OpenApiClient.Models.ItemAuthMethod.CreateFromDiscriminatorValue); } },
                 { "available_products", n => { AvailableProducts = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.Products>()?.AsList(); } },
                 { "billed_products", n => { BilledProducts = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.Products>()?.AsList(); } },
                 { "consent_expiration_time", n => { ConsentExpirationTime = n.GetDateTimeOffsetValue(); } },
@@ -204,7 +211,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ItemAuthMethod>("auth_method", AuthMethod);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ItemAuthMethod>("auth_method", AuthMethod);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.Products>("available_products", AvailableProducts);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.Products>("billed_products", BilledProducts);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.Products>("consented_products", ConsentedProducts);

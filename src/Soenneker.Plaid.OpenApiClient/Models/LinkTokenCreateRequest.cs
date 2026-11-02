@@ -169,8 +169,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         private string _explicitNullValueAndroidPackageName = default!;
 #endif
         /// <summary>Enum representing the desired appearance mode for Link, used to force light or dark modes or set Link to change depending on user system settings. Currently in closed beta.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAppearanceMode? AppearanceMode { get => _explicitNullValueAppearanceMode; set { _explicitNullValueAppearanceMode = value; AdditionalData?.Remove("appearance_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appearance_mode"); else _explicitNullProperties?.Remove("appearance_mode"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAppearanceMode? _explicitNullValueAppearanceMode = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAppearanceMode AppearanceMode { get => _explicitNullValueAppearanceMode; set { _explicitNullValueAppearanceMode = value; AdditionalData?.Remove("appearance_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appearance_mode"); else _explicitNullProperties?.Remove("appearance_mode"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAppearanceMode _explicitNullValueAppearanceMode = default!;
+#endif
         /// <summary>Specifies options for initializing Link for use with the Auth product. This field can be used to enable or disable extended Auth flows for the resulting Link session. Omitting any field will result in a default that can be configured by your account manager. The default behavior described in the documentation is the default behavior that will apply if you have not requested your account manager to apply a different default. If you have enabled the [Dashboard Account Verification pane](https://dashboard.plaid.com/account-verification), the settings enabled there will override any settings in this object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -595,7 +602,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "account_filters", n => { AccountFilters = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenAccountFilters>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenAccountFilters.CreateFromDiscriminatorValue); } },
                 { "additional_consented_products", n => { AdditionalConsentedProducts = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.Products>()?.AsList(); } },
                 { "android_package_name", n => { AndroidPackageName = n.GetStringValue(); } },
-                { "appearance_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAppearanceMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAppearanceMode = default; _explicitNullProperties?.Remove("appearance_mode"); AdditionalData["appearance_mode"] = unknown; } else { AppearanceMode = parsed; AdditionalData.Remove("appearance_mode"); } } },
+                { "appearance_mode", n => { AppearanceMode = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAppearanceMode>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAppearanceMode.CreateFromDiscriminatorValue); } },
                 { "auth", n => { Auth = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuth>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuth.CreateFromDiscriminatorValue); } },
                 { "base_report", n => { BaseReport = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestBaseReport>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestBaseReport.CreateFromDiscriminatorValue); } },
                 { "card_switch", n => { CardSwitch = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateCardSwitch>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateCardSwitch.CreateFromDiscriminatorValue); } },
@@ -652,7 +659,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenAccountFilters>("account_filters", AccountFilters);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.Products>("additional_consented_products", AdditionalConsentedProducts);
             writer.WriteStringValue("android_package_name", AndroidPackageName);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAppearanceMode>("appearance_mode", AppearanceMode);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAppearanceMode>("appearance_mode", AppearanceMode);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestAuth>("auth", Auth);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestBaseReport>("base_report", BaseReport);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateCardSwitch>("card_switch", CardSwitch);

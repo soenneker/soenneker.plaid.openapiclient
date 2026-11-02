@@ -125,8 +125,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         private List<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionRelation> _explicitNullValueRelatedTransactions = default!;
 #endif
         /// <summary>The payment scheme used to execute this transaction. This is present only for transaction types `PAYOUT` and `REFUND`.`FASTER_PAYMENTS`: The standard payment scheme within the UK.`SEPA_CREDIT_TRANSFER`: The standard payment to a beneficiary within the SEPA area.`SEPA_CREDIT_TRANSFER_INSTANT`: Instant payment to a beneficiary within the SEPA area.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.WalletPaymentScheme? Scheme { get => _explicitNullValueScheme; set { _explicitNullValueScheme = value; AdditionalData?.Remove("scheme"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheme"); else _explicitNullProperties?.Remove("scheme"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.WalletPaymentScheme? _explicitNullValueScheme = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletPaymentScheme Scheme { get => _explicitNullValueScheme; set { _explicitNullValueScheme = value; AdditionalData?.Remove("scheme"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheme"); else _explicitNullProperties?.Remove("scheme"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.WalletPaymentScheme _explicitNullValueScheme = default!;
+#endif
         /// <summary>The status of the transaction.`AUTHORISING`: The transaction is being processed for validation and compliance.`INITIATED`: The transaction has been initiated and is currently being processed.`EXECUTED`: The transaction has been successfully executed and is considered complete. This is only applicable for debit transactions.`SETTLED`: The transaction has settled and funds are available for use. This is only applicable for credit transactions. A transaction will typically settle within seconds to several days, depending on which payment rail is used.`FAILED`: The transaction failed to process successfully. This is a terminal status.`BLOCKED`: The transaction has been blocked for violating compliance rules. This is a terminal status.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionStatus? _explicitNullValueStatus = default!;
@@ -188,7 +195,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "payment_id", n => { PaymentId = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "related_transactions", n => { RelatedTransactions = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionRelation>(global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionRelation.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "scheme", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletPaymentScheme>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScheme = default; _explicitNullProperties?.Remove("scheme"); AdditionalData["scheme"] = unknown; } else { Scheme = parsed; AdditionalData.Remove("scheme"); } } },
+                { "scheme", n => { Scheme = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletPaymentScheme>(global::Soenneker.Plaid.OpenApiClient.Models.WalletPaymentScheme.CreateFromDiscriminatorValue); } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "transaction_id", n => { TransactionId = n.GetStringValue(); } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionGetResponseType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
@@ -212,7 +219,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("payment_id", PaymentId);
             writer.WriteStringValue("reference", Reference);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionRelation>("related_transactions", RelatedTransactions);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletPaymentScheme>("scheme", Scheme);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletPaymentScheme>("scheme", Scheme);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionStatus>("status", Status);
             writer.WriteStringValue("transaction_id", TransactionId);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionGetResponseType>("type", Type);

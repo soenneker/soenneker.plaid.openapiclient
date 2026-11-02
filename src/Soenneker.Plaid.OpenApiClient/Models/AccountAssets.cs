@@ -148,8 +148,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         private List<global::Soenneker.Plaid.OpenApiClient.Models.Owner> _explicitNullValueOwners = default!;
 #endif
         /// <summary>How an asset is owned.`association`: Ownership by a corporation, partnership, or unincorporated association, including for-profit and not-for-profit organizations.`individual`: Ownership by an individual.`joint`: Joint ownership by multiple parties.`trust`: Ownership by a revocable or irrevocable trust.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.OwnershipType? OwnershipType { get => _explicitNullValueOwnershipType; set { _explicitNullValueOwnershipType = value; AdditionalData?.Remove("ownership_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownership_type"); else _explicitNullProperties?.Remove("ownership_type"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.OwnershipType? _explicitNullValueOwnershipType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.OwnershipType OwnershipType { get => _explicitNullValueOwnershipType; set { _explicitNullValueOwnershipType = value; AdditionalData?.Remove("ownership_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownership_type"); else _explicitNullProperties?.Remove("ownership_type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.OwnershipType _explicitNullValueOwnershipType = default!;
+#endif
         /// <summary>A unique and persistent identifier for accounts that can be used to trace multiple instances of the same account across different Items for depository accounts. This is currently an opt-in field and only supported for Chase Items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -214,7 +221,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "official_name", n => { OfficialName = n.GetStringValue(); } },
                 { "owners", n => { Owners = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.Owner>(global::Soenneker.Plaid.OpenApiClient.Models.Owner.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "ownership_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.OwnershipType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOwnershipType = default; _explicitNullProperties?.Remove("ownership_type"); AdditionalData["ownership_type"] = unknown; } else { OwnershipType = parsed; AdditionalData.Remove("ownership_type"); } } },
+                { "ownership_type", n => { OwnershipType = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.OwnershipType>(global::Soenneker.Plaid.OpenApiClient.Models.OwnershipType.CreateFromDiscriminatorValue); } },
                 { "persistent_account_id", n => { PersistentAccountId = n.GetStringValue(); } },
                 { "subtype", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountSubtype>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSubtype = default; _explicitNullProperties?.Remove("subtype"); AdditionalData["subtype"] = unknown; } else { Subtype = parsed; AdditionalData.Remove("subtype"); } } },
                 { "transactions", n => { Transactions = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransaction>(global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransaction.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -239,7 +246,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("official_name", OfficialName);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.Owner>("owners", Owners);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.OwnershipType>("ownership_type", OwnershipType);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.OwnershipType>("ownership_type", OwnershipType);
             writer.WriteStringValue("persistent_account_id", PersistentAccountId);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountSubtype>("subtype", Subtype);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransaction>("transactions", Transactions);

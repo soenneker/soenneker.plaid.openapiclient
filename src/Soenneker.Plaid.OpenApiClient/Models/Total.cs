@@ -32,8 +32,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Commonly used term to describe the line item.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.TotalCanonicalDescription? CanonicalDescription { get => _explicitNullValueCanonicalDescription; set { _explicitNullValueCanonicalDescription = value; AdditionalData?.Remove("canonical_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canonical_description"); else _explicitNullProperties?.Remove("canonical_description"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TotalCanonicalDescription? _explicitNullValueCanonicalDescription = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.TotalCanonicalDescription CanonicalDescription { get => _explicitNullValueCanonicalDescription; set { _explicitNullValueCanonicalDescription = value; AdditionalData?.Remove("canonical_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canonical_description"); else _explicitNullProperties?.Remove("canonical_description"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TotalCanonicalDescription _explicitNullValueCanonicalDescription = default!;
+#endif
         /// <summary>An object representing a monetary amount.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,7 +98,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "canonical_description", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalCanonicalDescription>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCanonicalDescription = default; _explicitNullProperties?.Remove("canonical_description"); AdditionalData["canonical_description"] = unknown; } else { CanonicalDescription = parsed; AdditionalData.Remove("canonical_description"); } } },
+                { "canonical_description", n => { CanonicalDescription = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalCanonicalDescription>(global::Soenneker.Plaid.OpenApiClient.Models.TotalCanonicalDescription.CreateFromDiscriminatorValue); } },
                 { "current_pay", n => { CurrentPay = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Pay>(global::Soenneker.Plaid.OpenApiClient.Models.Pay.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "ytd_pay", n => { YtdPay = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Pay>(global::Soenneker.Plaid.OpenApiClient.Models.Pay.CreateFromDiscriminatorValue); } },
@@ -104,7 +111,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalCanonicalDescription>("canonical_description", CanonicalDescription);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TotalCanonicalDescription>("canonical_description", CanonicalDescription);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Pay>("current_pay", CurrentPay);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Pay>("ytd_pay", YtdPay);

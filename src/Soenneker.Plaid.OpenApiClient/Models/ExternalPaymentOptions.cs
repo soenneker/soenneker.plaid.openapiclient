@@ -54,8 +54,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public bool? RequestRefundDetails { get => _explicitNullValueRequestRefundDetails; set { _explicitNullValueRequestRefundDetails = value; AdditionalData?.Remove("request_refund_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_refund_details"); else _explicitNullProperties?.Remove("request_refund_details"); } }
         private bool? _explicitNullValueRequestRefundDetails = default!;
         /// <summary>Payment scheme. If not specified - the default in the region will be used (e.g. `SEPA_CREDIT_TRANSFER` for EU). In responses, if the scheme is not explicitly specified in the request, this field is omitted. Using unsupported values will result in a failed payment.`LOCAL_DEFAULT`: The default payment scheme for the selected market and currency will be used.`LOCAL_INSTANT`: The instant payment scheme for the selected market and currency will be used (if applicable). Fees may be applied by the institution.`SEPA_CREDIT_TRANSFER`: The standard payment to a beneficiary within the SEPA area.`SEPA_CREDIT_TRANSFER_INSTANT`: Instant payment within the SEPA area. May involve additional fees and may not be available at some banks.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme? Scheme { get => _explicitNullValueScheme; set { _explicitNullValueScheme = value; AdditionalData?.Remove("scheme"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheme"); else _explicitNullProperties?.Remove("scheme"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme? _explicitNullValueScheme = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme Scheme { get => _explicitNullValueScheme; set { _explicitNullValueScheme = value; AdditionalData?.Remove("scheme"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheme"); else _explicitNullProperties?.Remove("scheme"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme _explicitNullValueScheme = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentOptions"/> and sets the default values.
         /// </summary>
@@ -86,7 +93,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "bacs", n => { Bacs = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationOptionalRestrictionBacs>(global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationOptionalRestrictionBacs.CreateFromDiscriminatorValue); } },
                 { "iban", n => { Iban = n.GetStringValue(); } },
                 { "request_refund_details", n => { RequestRefundDetails = n.GetBoolValue(); } },
-                { "scheme", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScheme = default; _explicitNullProperties?.Remove("scheme"); AdditionalData["scheme"] = unknown; } else { Scheme = parsed; AdditionalData.Remove("scheme"); } } },
+                { "scheme", n => { Scheme = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme>(global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -99,7 +106,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationOptionalRestrictionBacs>("bacs", Bacs);
             writer.WriteStringValue("iban", Iban);
             writer.WriteBoolValue("request_refund_details", RequestRefundDetails);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme>("scheme", Scheme);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme>("scheme", Scheme);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

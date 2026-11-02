@@ -11,13 +11,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
     /// LendScore Complete data returned by `/cra/report/get`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CraReportGetLendScoreCompleteResponseProduct : IAdditionalDataHolder, IParsable
-    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+    public partial class CraReportGetResponseProductCraReportGetLendScoreCompleteResponseProduct : global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetResponseProduct, IParsable
+    {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
 
-        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        public override void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            base.CaptureExplicitNulls(parseNode);
             if (parseNode.GetChildNode("attributes") is null) { _explicitNullValueAttributes = default!; _explicitNullProperties?.Remove("attributes"); }
             else if (parseNode.GetChildNode("attributes") is { } nullNodeAttributes && nullNodeAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attributes = null;
             if (parseNode.GetChildNode("errors") is null) { _explicitNullValueErrors = default!; _explicitNullProperties?.Remove("errors"); }
@@ -26,97 +27,82 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             else if (parseNode.GetChildNode("items") is { } nullNodeItems && nullNodeItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Items = null;
             if (parseNode.GetChildNode("metadata") is null) { _explicitNullValueMetadata = default!; _explicitNullProperties?.Remove("metadata"); }
             else if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
-            if (parseNode.GetChildNode("product") is null) { _explicitNullValueProduct = default!; _explicitNullProperties?.Remove("product"); }
-            else if (parseNode.GetChildNode("product") is { } nullNodeProduct && nullNodeProduct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Product = null;
             if (parseNode.GetChildNode("version") is null) { _explicitNullValueVersion = default!; _explicitNullProperties?.Remove("version"); }
             else if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
         }
 
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>LendScore Complete attribute data returned by `/cra/report/get`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributes? Attributes { get => _explicitNullValueAttributes; set { _explicitNullValueAttributes = value; AdditionalData?.Remove("attributes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributes"); else _explicitNullProperties?.Remove("attributes"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributes? Attributes { get => _explicitNullValueAttributes; set { _explicitNullValueAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributes"); else _explicitNullProperties?.Remove("attributes"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributes? _explicitNullValueAttributes = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributes Attributes { get => _explicitNullValueAttributes; set { _explicitNullValueAttributes = value; AdditionalData?.Remove("attributes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributes"); else _explicitNullProperties?.Remove("attributes"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributes Attributes { get => _explicitNullValueAttributes; set { _explicitNullValueAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributes"); else _explicitNullProperties?.Remove("attributes"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributes _explicitNullValueAttributes = default!;
 #endif
         /// <summary>Product-level errors. Non-empty when this product failed to generate; empty on success.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.PlaidError>? Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; AdditionalData?.Remove("errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.PlaidError>? Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.PlaidError>? _explicitNullValueErrors = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.PlaidError> Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; AdditionalData?.Remove("errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.PlaidError> Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.PlaidError> _explicitNullValueErrors = default!;
 #endif
         /// <summary>The Items, and their accounts, used to generate this product. Always empty when `scope` is `PLAID_NETWORK`, or if this product failed to generate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetEnrichedItem>? Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; AdditionalData?.Remove("items"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetEnrichedItem>? Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetEnrichedItem>? _explicitNullValueItems = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetEnrichedItem> Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; AdditionalData?.Remove("items"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetEnrichedItem> Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetEnrichedItem> _explicitNullValueItems = default!;
 #endif
         /// <summary>LendScore Complete report metadata returned by `/cra/report/get`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteMetadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteMetadata _explicitNullValueMetadata = default!;
 #endif
-        /// <summary>The LendScore Complete product discriminator.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.CraLendScoreCompleteProduct? Product { get => _explicitNullValueProduct; set { _explicitNullValueProduct = value; AdditionalData?.Remove("product"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product"); else _explicitNullProperties?.Remove("product"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.CraLendScoreCompleteProduct? _explicitNullValueProduct = default!;
         /// <summary>A string that specifies a particular version of a CRA product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; AdditionalData?.Remove("version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        public string? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
         private string? _explicitNullValueVersion = default!;
 #nullable restore
 #else
-        public string Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; AdditionalData?.Remove("version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        public string Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
         private string _explicitNullValueVersion = default!;
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteResponseProduct"/> and sets the default values.
-        /// </summary>
-        public CraReportGetLendScoreCompleteResponseProduct()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteResponseProduct"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetResponseProductCraReportGetLendScoreCompleteResponseProduct"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteResponseProduct CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetResponseProductCraReportGetLendScoreCompleteResponseProduct CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteResponseProduct(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetResponseProductCraReportGetLendScoreCompleteResponseProduct(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "attributes", n => { Attributes = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributes>(global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributes.CreateFromDiscriminatorValue); } },
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.PlaidError>(global::Soenneker.Plaid.OpenApiClient.Models.PlaidError.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetEnrichedItem>(global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetEnrichedItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteMetadata>(global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteMetadata.CreateFromDiscriminatorValue); } },
-                { "product", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraLendScoreCompleteProduct>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProduct = default; _explicitNullProperties?.Remove("product"); AdditionalData["product"] = unknown; } else { Product = parsed; AdditionalData.Remove("product"); } } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
         }
@@ -124,17 +110,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer)
+        public override void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            base.Serialize(writer);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteAttributes>("attributes", Attributes);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.PlaidError>("errors", Errors);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetEnrichedItem>("items", Items);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetLendScoreCompleteMetadata>("metadata", Metadata);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraLendScoreCompleteProduct>("product", Product);
-            writer.WriteStringValue("version", Version);
-            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteStringValue("version", Version);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

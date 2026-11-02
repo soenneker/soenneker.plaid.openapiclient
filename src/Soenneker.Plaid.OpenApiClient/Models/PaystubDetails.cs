@@ -38,8 +38,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public Date? PayDate { get => _explicitNullValuePayDate; set { _explicitNullValuePayDate = value; AdditionalData?.Remove("pay_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_date"); else _explicitNullProperties?.Remove("pay_date"); } }
         private Date? _explicitNullValuePayDate = default!;
         /// <summary>The frequency at which the employee is paid. Possible values: `MONTHLY`, `BI-WEEKLY`, `WEEKLY`, `SEMI-MONTHLY`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.PaystubPayFrequency? PayFrequency { get => _explicitNullValuePayFrequency; set { _explicitNullValuePayFrequency = value; AdditionalData?.Remove("pay_frequency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_frequency"); else _explicitNullProperties?.Remove("pay_frequency"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PaystubPayFrequency? _explicitNullValuePayFrequency = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaystubPayFrequency PayFrequency { get => _explicitNullValuePayFrequency; set { _explicitNullValuePayFrequency = value; AdditionalData?.Remove("pay_frequency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_frequency"); else _explicitNullProperties?.Remove("pay_frequency"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PaystubPayFrequency _explicitNullValuePayFrequency = default!;
+#endif
         /// <summary>Ending date of the pay period on the paystub in the &apos;YYYY-MM-DD&apos; format.</summary>
         public Date? PayPeriodEndDate { get => _explicitNullValuePayPeriodEndDate; set { _explicitNullValuePayPeriodEndDate = value; AdditionalData?.Remove("pay_period_end_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_period_end_date"); else _explicitNullProperties?.Remove("pay_period_end_date"); } }
         private Date? _explicitNullValuePayPeriodEndDate = default!;
@@ -82,7 +89,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "pay_date", n => { PayDate = n.GetDateValue(); } },
-                { "pay_frequency", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PaystubPayFrequency>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePayFrequency = default; _explicitNullProperties?.Remove("pay_frequency"); AdditionalData["pay_frequency"] = unknown; } else { PayFrequency = parsed; AdditionalData.Remove("pay_frequency"); } } },
+                { "pay_frequency", n => { PayFrequency = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaystubPayFrequency>(global::Soenneker.Plaid.OpenApiClient.Models.PaystubPayFrequency.CreateFromDiscriminatorValue); } },
                 { "pay_period_end_date", n => { PayPeriodEndDate = n.GetDateValue(); } },
                 { "pay_period_start_date", n => { PayPeriodStartDate = n.GetDateValue(); } },
                 { "paystub_provider", n => { PaystubProvider = n.GetStringValue(); } },
@@ -96,7 +103,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateValue("pay_date", PayDate);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PaystubPayFrequency>("pay_frequency", PayFrequency);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaystubPayFrequency>("pay_frequency", PayFrequency);
             writer.WriteDateValue("pay_period_end_date", PayPeriodEndDate);
             writer.WriteDateValue("pay_period_start_date", PayPeriodStartDate);
             writer.WriteStringValue("paystub_provider", PaystubProvider);

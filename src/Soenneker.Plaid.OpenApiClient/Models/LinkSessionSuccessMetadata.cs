@@ -73,8 +73,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         private string _explicitNullValueSessionGroupId = default!;
 #endif
         /// <summary>The status of a transfer. Returned only when [Transfer UI](https://plaid.com/docs/transfer/using-transfer-ui) is implemented.- `COMPLETE` - The transfer was completed.- `INCOMPLETE` - The transfer could not be completed. For help, see [Troubleshooting transfers](https://plaid.com/docs/transfer/using-transfer-ui/#troubleshooting-transfer-ui).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataTransferStatus? TransferStatus { get => _explicitNullValueTransferStatus; set { _explicitNullValueTransferStatus = value; AdditionalData?.Remove("transfer_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_status"); else _explicitNullProperties?.Remove("transfer_status"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataTransferStatus? _explicitNullValueTransferStatus = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataTransferStatus TransferStatus { get => _explicitNullValueTransferStatus; set { _explicitNullValueTransferStatus = value; AdditionalData?.Remove("transfer_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_status"); else _explicitNullProperties?.Remove("transfer_status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataTransferStatus _explicitNullValueTransferStatus = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadata"/> and sets the default values.
         /// </summary>
@@ -106,7 +113,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "institution", n => { Institution = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataInstitution>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataInstitution.CreateFromDiscriminatorValue); } },
                 { "link_session_id", n => { LinkSessionId = n.GetStringValue(); } },
                 { "session_group_id", n => { SessionGroupId = n.GetStringValue(); } },
-                { "transfer_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataTransferStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTransferStatus = default; _explicitNullProperties?.Remove("transfer_status"); AdditionalData["transfer_status"] = unknown; } else { TransferStatus = parsed; AdditionalData.Remove("transfer_status"); } } },
+                { "transfer_status", n => { TransferStatus = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataTransferStatus>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataTransferStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -120,7 +127,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataInstitution>("institution", Institution);
             writer.WriteStringValue("link_session_id", LinkSessionId);
             writer.WriteStringValue("session_group_id", SessionGroupId);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataTransferStatus>("transfer_status", TransferStatus);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionSuccessMetadataTransferStatus>("transfer_status", TransferStatus);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

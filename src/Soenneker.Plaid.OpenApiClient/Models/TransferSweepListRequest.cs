@@ -109,8 +109,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public DateTimeOffset? StartDate { get => _explicitNullValueStartDate; set { _explicitNullValueStartDate = value; AdditionalData?.Remove("start_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_date"); else _explicitNullProperties?.Remove("start_date"); } }
         private DateTimeOffset? _explicitNullValueStartDate = default!;
         /// <summary>The status of a sweep transfer`&quot;pending&quot;` - The sweep is currently pending`&quot;posted&quot;` - The sweep has been posted`&quot;settled&quot;` - The sweep has settled. This is the terminal state of a successful credit sweep.`&quot;returned&quot;` - The sweep has been returned. This is the terminal state of a returned sweep. Returns of a sweep are extremely rare, since sweeps are money movement between your own bank account and your own Ledger.`&quot;funds_available&quot;` - Funds from the sweep have been released from hold and applied to the ledger&apos;s available balance. (Only applicable to deposits.) This is the terminal state of a successful deposit sweep.`&quot;failed&quot;` - The sweep has failed. This is the terminal state of a failed sweep.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.SweepStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.SweepStatus? _explicitNullValueStatus = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.SweepStatus Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.SweepStatus _explicitNullValueStatus = default!;
+#endif
         /// <summary>Filter sweeps to only those with the included `transfer_id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -160,7 +167,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "originator_client_id", n => { OriginatorClientId = n.GetStringValue(); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
                 { "start_date", n => { StartDate = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SweepStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.SweepStatus>(global::Soenneker.Plaid.OpenApiClient.Models.SweepStatus.CreateFromDiscriminatorValue); } },
                 { "transfer_id", n => { TransferId = n.GetStringValue(); } },
                 { "trigger", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SweepTrigger>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTrigger = default; _explicitNullProperties?.Remove("trigger"); AdditionalData["trigger"] = unknown; } else { Trigger = parsed; AdditionalData.Remove("trigger"); } } },
             };
@@ -181,7 +188,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("originator_client_id", OriginatorClientId);
             writer.WriteStringValue("secret", Secret);
             writer.WriteDateTimeOffsetValue("start_date", StartDate);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SweepStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.SweepStatus>("status", Status);
             writer.WriteStringValue("transfer_id", TransferId);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SweepTrigger>("trigger", Trigger);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

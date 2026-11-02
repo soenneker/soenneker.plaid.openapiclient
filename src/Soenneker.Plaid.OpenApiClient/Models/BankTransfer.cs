@@ -106,8 +106,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Indicates the direction of the transfer: `outbound` for API-initiated transfers, or `inbound` for payments received by the FBO account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferDirection? Direction { get => _explicitNullValueDirection; set { _explicitNullValueDirection = value; AdditionalData?.Remove("direction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direction"); else _explicitNullProperties?.Remove("direction"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.BankTransferDirection? _explicitNullValueDirection = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.BankTransferDirection Direction { get => _explicitNullValueDirection; set { _explicitNullValueDirection = value; AdditionalData?.Remove("direction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direction"); else _explicitNullProperties?.Remove("direction"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BankTransferDirection _explicitNullValueDirection = default!;
+#endif
         /// <summary>The failure reason if the type of this transfer is `&quot;failed&quot;` or `&quot;reversed&quot;`. Null value otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -209,7 +216,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
                 { "custom_tag", n => { CustomTag = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "direction", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferDirection>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDirection = default; _explicitNullProperties?.Remove("direction"); AdditionalData["direction"] = unknown; } else { Direction = parsed; AdditionalData.Remove("direction"); } } },
+                { "direction", n => { Direction = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferDirection>(global::Soenneker.Plaid.OpenApiClient.Models.BankTransferDirection.CreateFromDiscriminatorValue); } },
                 { "failure_reason", n => { FailureReason = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferFailure>(global::Soenneker.Plaid.OpenApiClient.Models.BankTransferFailure.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "iso_currency_code", n => { IsoCurrencyCode = n.GetStringValue(); } },
@@ -235,7 +242,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created", Created);
             writer.WriteStringValue("custom_tag", CustomTag);
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferDirection>("direction", Direction);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferDirection>("direction", Direction);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BankTransferFailure>("failure_reason", FailureReason);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("iso_currency_code", IsoCurrencyCode);

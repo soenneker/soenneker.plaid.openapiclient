@@ -73,8 +73,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         private string _explicitNullValueAdjustedReference = default!;
 #endif
         /// <summary>Payment scheme. If not specified - the default in the region will be used (e.g. `SEPA_CREDIT_TRANSFER` for EU). In responses, if the scheme is not explicitly specified in the request, this field is omitted. Using unsupported values will result in a failed payment.`LOCAL_DEFAULT`: The default payment scheme for the selected market and currency will be used.`LOCAL_INSTANT`: The instant payment scheme for the selected market and currency will be used (if applicable). Fees may be applied by the institution.`SEPA_CREDIT_TRANSFER`: The standard payment to a beneficiary within the SEPA area.`SEPA_CREDIT_TRANSFER_INSTANT`: Instant payment within the SEPA area. May involve additional fees and may not be available at some banks.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme? AdjustedScheme { get => _explicitNullValueAdjustedScheme; set { _explicitNullValueAdjustedScheme = value; AdditionalData?.Remove("adjusted_scheme"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adjusted_scheme"); else _explicitNullProperties?.Remove("adjusted_scheme"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme? _explicitNullValueAdjustedScheme = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme AdjustedScheme { get => _explicitNullValueAdjustedScheme; set { _explicitNullValueAdjustedScheme = value; AdditionalData?.Remove("adjusted_scheme"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adjusted_scheme"); else _explicitNullProperties?.Remove("adjusted_scheme"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme _explicitNullValueAdjustedScheme = default!;
+#endif
         /// <summary>The amount and currency of a payment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -209,8 +216,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         private global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentScheduleGet _explicitNullValueSchedule = default!;
 #endif
         /// <summary>Payment scheme. If not specified - the default in the region will be used (e.g. `SEPA_CREDIT_TRANSFER` for EU). In responses, if the scheme is not explicitly specified in the request, this field is omitted. Using unsupported values will result in a failed payment.`LOCAL_DEFAULT`: The default payment scheme for the selected market and currency will be used.`LOCAL_INSTANT`: The instant payment scheme for the selected market and currency will be used (if applicable). Fees may be applied by the institution.`SEPA_CREDIT_TRANSFER`: The standard payment to a beneficiary within the SEPA area.`SEPA_CREDIT_TRANSFER_INSTANT`: Instant payment within the SEPA area. May involve additional fees and may not be available at some banks.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme? Scheme { get => _explicitNullValueScheme; set { _explicitNullValueScheme = value; AdditionalData?.Remove("scheme"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheme"); else _explicitNullProperties?.Remove("scheme"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme? _explicitNullValueScheme = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme Scheme { get => _explicitNullValueScheme; set { _explicitNullValueScheme = value; AdditionalData?.Remove("scheme"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheme"); else _explicitNullProperties?.Remove("scheme"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme _explicitNullValueScheme = default!;
+#endif
         /// <summary>The status of the payment.Core lifecycle statuses:**`PAYMENT_STATUS_INPUT_NEEDED`**: Transitional. The payment is awaiting user input to continue processing. It may re-enter this state if additional input is required.**`PAYMENT_STATUS_AUTHORISING`:** Transitional. The payment is being authorised by the financial institution. It will automatically move on once authorisation completes.**`PAYMENT_STATUS_INITIATED`:** The payment has been authorised and accepted by the financial institution. In many EU markets, `PAYMENT_STATUS_EXECUTED` is not supported, and a payment will remain in `PAYMENT_STATUS_INITIATED` until the funds settle, making this a terminal success state in those cases. A payment in `PAYMENT_STATUS_INITIATED` should be treated as a successfully submitted payment; do not gate downstream processing on reaching `PAYMENT_STATUS_EXECUTED`. For a full explanation of payment statuses and how to handle each, see the [Payment Status guide](https://plaid.com/docs/payment-initiation/payment-status/).**`PAYMENT_STATUS_EXECUTED`: Terminal.** The funds have left the payer&apos;s account and the payment is en route to settlement. Note that this status does not confirm that funds have arrived in the recipient&apos;s account; do not use it as proof of fund receipt. Support is more common in the UK than in the EU; where unsupported, a successful payment remains in `PAYMENT_STATUS_INITIATED` before settling. When using Plaid Virtual Accounts, `PAYMENT_STATUS_EXECUTED` is not terminal -- the payment will continue to `PAYMENT_STATUS_SETTLED` once funds are available.**`PAYMENT_STATUS_SETTLED`: Terminal.** The funds are available in the recipient&apos;s account. Only available to customers using [Plaid Virtual Accounts](https://plaid.com/docs/payment-initiation/virtual-accounts/).Failure statuses:**`PAYMENT_STATUS_INSUFFICIENT_FUNDS`: Terminal.** The payment failed due to insufficient funds. No further retries will succeed until the payer&apos;s balance is replenished.**`PAYMENT_STATUS_FAILED`: Terminal (retryable).** The payment could not be initiated due to a system error or outage. Retry once the root cause is resolved.**`PAYMENT_STATUS_BLOCKED`: Terminal (retryable).** The payment was blocked by Plaid (e.g., flagged as risky). Resolve any compliance or risk issues and retry.**`PAYMENT_STATUS_REJECTED`: Terminal.** The payment was rejected by the financial institution. No automatic retry is possible.**`PAYMENT_STATUS_CANCELLED`: Terminal.** The end user cancelled the payment during authorisation.Standing-order statuses:**`PAYMENT_STATUS_ESTABLISHED`: Terminal.** A recurring/standing order has been successfully created.Deprecated (to be removed in a future release):`PAYMENT_STATUS_UNKNOWN`: The payment status is unknown.`PAYMENT_STATUS_PROCESSING`: The payment is currently being processed.`PAYMENT_STATUS_COMPLETED`: Indicates that the standing order has been successfully established.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationPaymentStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationPaymentStatus? _explicitNullValueStatus = default!;
@@ -260,7 +274,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "adjusted_reference", n => { AdjustedReference = n.GetStringValue(); } },
-                { "adjusted_scheme", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAdjustedScheme = default; _explicitNullProperties?.Remove("adjusted_scheme"); AdditionalData["adjusted_scheme"] = unknown; } else { AdjustedScheme = parsed; AdditionalData.Remove("adjusted_scheme"); } } },
+                { "adjusted_scheme", n => { AdjustedScheme = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme>(global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme.CreateFromDiscriminatorValue); } },
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentAmount>(global::Soenneker.Plaid.OpenApiClient.Models.PaymentAmount.CreateFromDiscriminatorValue); } },
                 { "amount_refunded", n => { AmountRefunded = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentAmountRefunded>(global::Soenneker.Plaid.OpenApiClient.Models.PaymentAmountRefunded.CreateFromDiscriminatorValue); } },
                 { "bacs", n => { Bacs = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.SenderBacsNullable>(global::Soenneker.Plaid.OpenApiClient.Models.SenderBacsNullable.CreateFromDiscriminatorValue); } },
@@ -275,7 +289,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "refund_details", n => { RefundDetails = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentRefundDetails>(global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentRefundDetails.CreateFromDiscriminatorValue); } },
                 { "refund_ids", n => { RefundIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "schedule", n => { Schedule = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentScheduleGet>(global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentScheduleGet.CreateFromDiscriminatorValue); } },
-                { "scheme", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScheme = default; _explicitNullProperties?.Remove("scheme"); AdditionalData["scheme"] = unknown; } else { Scheme = parsed; AdditionalData.Remove("scheme"); } } },
+                { "scheme", n => { Scheme = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme>(global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme.CreateFromDiscriminatorValue); } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationPaymentStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "transaction_id", n => { TransactionId = n.GetStringValue(); } },
                 { "wallet_id", n => { WalletId = n.GetStringValue(); } },
@@ -289,7 +303,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("adjusted_reference", AdjustedReference);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme>("adjusted_scheme", AdjustedScheme);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme>("adjusted_scheme", AdjustedScheme);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentAmount>("amount", Amount);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentAmountRefunded>("amount_refunded", AmountRefunded);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.SenderBacsNullable>("bacs", Bacs);
@@ -304,7 +318,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentRefundDetails>("refund_details", RefundDetails);
             writer.WriteCollectionOfPrimitiveValues<string>("refund_ids", RefundIds);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExternalPaymentScheduleGet>("schedule", Schedule);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme>("scheme", Scheme);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme>("scheme", Scheme);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationPaymentStatus>("status", Status);
             writer.WriteStringValue("transaction_id", TransactionId);
             writer.WriteStringValue("wallet_id", WalletId);

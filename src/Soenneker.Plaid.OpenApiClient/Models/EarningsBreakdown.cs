@@ -39,8 +39,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Commonly used term to describe the earning line item.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.EarningsBreakdownCanonicalDescription? CanonicalDescription { get => _explicitNullValueCanonicalDescription; set { _explicitNullValueCanonicalDescription = value; AdditionalData?.Remove("canonical_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canonical_description"); else _explicitNullProperties?.Remove("canonical_description"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.EarningsBreakdownCanonicalDescription? _explicitNullValueCanonicalDescription = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.EarningsBreakdownCanonicalDescription CanonicalDescription { get => _explicitNullValueCanonicalDescription; set { _explicitNullValueCanonicalDescription = value; AdditionalData?.Remove("canonical_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canonical_description"); else _explicitNullProperties?.Remove("canonical_description"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.EarningsBreakdownCanonicalDescription _explicitNullValueCanonicalDescription = default!;
+#endif
         /// <summary>Raw amount of the earning line item.</summary>
         public double? CurrentAmount { get => _explicitNullValueCurrentAmount; set { _explicitNullValueCurrentAmount = value; AdditionalData?.Remove("current_amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_amount"); else _explicitNullProperties?.Remove("current_amount"); } }
         private double? _explicitNullValueCurrentAmount = default!;
@@ -108,7 +115,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "canonical_description", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.EarningsBreakdownCanonicalDescription>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCanonicalDescription = default; _explicitNullProperties?.Remove("canonical_description"); AdditionalData["canonical_description"] = unknown; } else { CanonicalDescription = parsed; AdditionalData.Remove("canonical_description"); } } },
+                { "canonical_description", n => { CanonicalDescription = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.EarningsBreakdownCanonicalDescription>(global::Soenneker.Plaid.OpenApiClient.Models.EarningsBreakdownCanonicalDescription.CreateFromDiscriminatorValue); } },
                 { "current_amount", n => { CurrentAmount = n.GetDoubleValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "hours", n => { Hours = n.GetDoubleValue(); } },
@@ -125,7 +132,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.EarningsBreakdownCanonicalDescription>("canonical_description", CanonicalDescription);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.EarningsBreakdownCanonicalDescription>("canonical_description", CanonicalDescription);
             writer.WriteDoubleValue("current_amount", CurrentAmount);
             writer.WriteStringValue("description", Description);
             writer.WriteDoubleValue("hours", Hours);

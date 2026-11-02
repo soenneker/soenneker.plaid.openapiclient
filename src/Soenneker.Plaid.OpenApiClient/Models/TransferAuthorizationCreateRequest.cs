@@ -134,8 +134,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>This field is now deprecated. You may ignore it for transfers created on and after 12/01/2023.Specifies the source of funds for the transfer. Only valid for `credit` transfers, and defaults to `sweep` if not specified. This field is not specified for `debit` transfers.`sweep` - Sweep funds from your funding account`prefunded_rtp_credits` - Use your prefunded RTP credit balance with Plaid`prefunded_ach_credits` - Use your prefunded ACH credit balance with Plaid</summary>
         [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationCreateRequestCreditFundsSource? CreditFundsSource { get => _explicitNullValueCreditFundsSource; set { _explicitNullValueCreditFundsSource = value; AdditionalData?.Remove("credit_funds_source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit_funds_source"); else _explicitNullProperties?.Remove("credit_funds_source"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationCreateRequestCreditFundsSource? _explicitNullValueCreditFundsSource = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationCreateRequestCreditFundsSource CreditFundsSource { get => _explicitNullValueCreditFundsSource; set { _explicitNullValueCreditFundsSource = value; AdditionalData?.Remove("credit_funds_source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit_funds_source"); else _explicitNullProperties?.Remove("credit_funds_source"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationCreateRequestCreditFundsSource _explicitNullValueCreditFundsSource = default!;
+#endif
         /// <summary>A free-form map of client-supplied risk-relevant context for this authorization. Plaid may use these attributes to inform future versions of our risk models.The following limitations apply:Keys must match the regular expression `^[A-Za-z0-9_.-]{1,40}$`Values must be strings (no nested objects, arrays, numbers, or booleans allowed; stringify non-string values client-side)Maximum of 50 key/value pairsMaximum value length of 500 charactersDo not include personally identifiable information or other sensitive data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -345,7 +352,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "amount", n => { Amount = n.GetStringValue(); } },
                 { "beacon_session_id", n => { BeaconSessionId = n.GetStringValue(); } },
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
-                { "credit_funds_source", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationCreateRequestCreditFundsSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCreditFundsSource = default; _explicitNullProperties?.Remove("credit_funds_source"); AdditionalData["credit_funds_source"] = unknown; } else { CreditFundsSource = parsed; AdditionalData.Remove("credit_funds_source"); } } },
+                { "credit_funds_source", n => { CreditFundsSource = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationCreateRequestCreditFundsSource>(global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationCreateRequestCreditFundsSource.CreateFromDiscriminatorValue); } },
                 { "custom_attributes", n => { CustomAttributes = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationCreateRequestCustomAttributes>(global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationCreateRequestCustomAttributes.CreateFromDiscriminatorValue); } },
                 { "device", n => { Device = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDevice>(global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDevice.CreateFromDiscriminatorValue); } },
                 { "funding_account_id", n => { FundingAccountId = n.GetStringValue(); } },
@@ -382,7 +389,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("amount", Amount);
             writer.WriteStringValue("beacon_session_id", BeaconSessionId);
             writer.WriteStringValue("client_id", ClientId);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationCreateRequestCreditFundsSource>("credit_funds_source", CreditFundsSource);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationCreateRequestCreditFundsSource>("credit_funds_source", CreditFundsSource);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationCreateRequestCustomAttributes>("custom_attributes", CustomAttributes);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDevice>("device", Device);
             writer.WriteStringValue("funding_account_id", FundingAccountId);

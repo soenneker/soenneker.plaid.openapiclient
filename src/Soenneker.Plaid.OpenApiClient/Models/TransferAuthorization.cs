@@ -58,8 +58,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether the transfer is guaranteed by Plaid (Guarantee customers only). This field will contain either `GUARANTEED` or `NOT_GUARANTEED` indicating whether Plaid will guarantee the transfer.</summary>
         [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionComposed? GuaranteeDecision { get => _explicitNullValueGuaranteeDecision; set { _explicitNullValueGuaranteeDecision = value; AdditionalData?.Remove("guarantee_decision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guarantee_decision"); else _explicitNullProperties?.Remove("guarantee_decision"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionComposed? _explicitNullValueGuaranteeDecision = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionComposed GuaranteeDecision { get => _explicitNullValueGuaranteeDecision; set { _explicitNullValueGuaranteeDecision = value; AdditionalData?.Remove("guarantee_decision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guarantee_decision"); else _explicitNullProperties?.Remove("guarantee_decision"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionComposed _explicitNullValueGuaranteeDecision = default!;
+#endif
         /// <summary>The rationale for Plaid&apos;s decision to not guarantee a transfer. Will be `null` unless `guarantee_decision` is `NOT_GUARANTEED`.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +147,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
                 { "decision", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecision>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDecision = default; _explicitNullProperties?.Remove("decision"); AdditionalData["decision"] = unknown; } else { Decision = parsed; AdditionalData.Remove("decision"); } } },
                 { "decision_rationale", n => { DecisionRationale = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale>(global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale.CreateFromDiscriminatorValue); } },
-                { "guarantee_decision", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionComposed>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueGuaranteeDecision = default; _explicitNullProperties?.Remove("guarantee_decision"); AdditionalData["guarantee_decision"] = unknown; } else { GuaranteeDecision = parsed; AdditionalData.Remove("guarantee_decision"); } } },
+                { "guarantee_decision", n => { GuaranteeDecision = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionComposed>(global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionComposed.CreateFromDiscriminatorValue); } },
                 { "guarantee_decision_rationale", n => { GuaranteeDecisionRationale = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale>(global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale.CreateFromDiscriminatorValue); } },
                 { "guarantee_details", n => { GuaranteeDetails = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AuthorizationGuaranteeDetails>(global::Soenneker.Plaid.OpenApiClient.Models.AuthorizationGuaranteeDetails.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -158,7 +165,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created", Created);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecision>("decision", Decision);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale>("decision_rationale", DecisionRationale);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionComposed>("guarantee_decision", GuaranteeDecision);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionComposed>("guarantee_decision", GuaranteeDecision);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationGuaranteeDecisionRationale>("guarantee_decision_rationale", GuaranteeDecisionRationale);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AuthorizationGuaranteeDetails>("guarantee_details", GuaranteeDetails);
             writer.WriteStringValue("id", Id);

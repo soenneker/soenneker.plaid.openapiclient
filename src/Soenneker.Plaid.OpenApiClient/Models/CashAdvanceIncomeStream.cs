@@ -51,8 +51,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         private string _explicitNullValueIsoCurrencyCode = default!;
 #endif
         /// <summary>The pay cadence of an income stream. `DYNAMIC` means the income recurs, but not on a regular schedule. `null` if the pay frequency could not be determined.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvancePayFrequency? PayFrequency { get => _explicitNullValuePayFrequency; set { _explicitNullValuePayFrequency = value; AdditionalData?.Remove("pay_frequency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_frequency"); else _explicitNullProperties?.Remove("pay_frequency"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CashAdvancePayFrequency? _explicitNullValuePayFrequency = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.CashAdvancePayFrequency PayFrequency { get => _explicitNullValuePayFrequency; set { _explicitNullValuePayFrequency = value; AdditionalData?.Remove("pay_frequency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pay_frequency"); else _explicitNullProperties?.Remove("pay_frequency"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CashAdvancePayFrequency _explicitNullValuePayFrequency = default!;
+#endif
         /// <summary>The name of the income provider, such as an employer or benefits agency. `null` if the provider could not be identified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,7 +97,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "category", n => { Category = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceIncomeCategory>(global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceIncomeCategory.CreateFromDiscriminatorValue); } },
                 { "iso_currency_code", n => { IsoCurrencyCode = n.GetStringValue(); } },
-                { "pay_frequency", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CashAdvancePayFrequency>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePayFrequency = default; _explicitNullProperties?.Remove("pay_frequency"); AdditionalData["pay_frequency"] = unknown; } else { PayFrequency = parsed; AdditionalData.Remove("pay_frequency"); } } },
+                { "pay_frequency", n => { PayFrequency = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CashAdvancePayFrequency>(global::Soenneker.Plaid.OpenApiClient.Models.CashAdvancePayFrequency.CreateFromDiscriminatorValue); } },
                 { "provider_name", n => { ProviderName = n.GetStringValue(); } },
             };
         }
@@ -103,7 +110,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceIncomeCategory>("category", Category);
             writer.WriteStringValue("iso_currency_code", IsoCurrencyCode);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CashAdvancePayFrequency>("pay_frequency", PayFrequency);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CashAdvancePayFrequency>("pay_frequency", PayFrequency);
             writer.WriteStringValue("provider_name", ProviderName);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

@@ -271,8 +271,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         private string _explicitNullValuePersonalFinanceCategoryIconUrl = default!;
 #endif
         /// <summary>An identifier classifying the transaction type.This field is populated for European institutions, as well as certain institutions in the United States. For institutions where this classification is not available, this field is set to `null`.`adjustment:` Bank adjustment`atm:` Cash deposit or withdrawal via an automated teller machine`bank charge:` Charge or fee levied by the institution`bill payment`: Payment of a bill`cash:` Cash deposit or withdrawal`cash advance:` Cash advance drawn against a credit card or line of credit`cashback:` Cash withdrawal while making a debit card purchase`cheque:` Document ordering the payment of money to another person or organization`direct debit:` Automatic withdrawal of funds initiated by a third party at a regular interval`interest:` Interest earned or incurred`late fee:` Fee associated with a late or past-due payment`membership fee:` Annual or recurring membership fee`payment:` One-off outbound payment not classified as a bill payment, direct debit, or standing order`purchase:` Purchase made with a debit or credit card`refund:` Merchant credit or return, such as a refund of a prior purchase`returned item fee:` Fee for a returned item, such as a returned check or stop payment`standing order:` Payment instructed by the account holder to a third party at a regular interval`transfer:` Transfer of money between accounts</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.TransactionCode? TransactionCode { get => _explicitNullValueTransactionCode; set { _explicitNullValueTransactionCode = value; AdditionalData?.Remove("transaction_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_code"); else _explicitNullProperties?.Remove("transaction_code"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.TransactionCode? _explicitNullValueTransactionCode = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransactionCode TransactionCode { get => _explicitNullValueTransactionCode; set { _explicitNullValueTransactionCode = value; AdditionalData?.Remove("transaction_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_code"); else _explicitNullProperties?.Remove("transaction_code"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransactionCode _explicitNullValueTransactionCode = default!;
+#endif
         /// <summary>The unique ID of the transaction. Like all Plaid identifiers, the `transaction_id` is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -352,7 +359,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "pending_transaction_id", n => { PendingTransactionId = n.GetStringValue(); } },
                 { "personal_finance_category", n => { PersonalFinanceCategory = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory>(global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory.CreateFromDiscriminatorValue); } },
                 { "personal_finance_category_icon_url", n => { PersonalFinanceCategoryIconUrl = n.GetStringValue(); } },
-                { "transaction_code", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransactionCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTransactionCode = default; _explicitNullProperties?.Remove("transaction_code"); AdditionalData["transaction_code"] = unknown; } else { TransactionCode = parsed; AdditionalData.Remove("transaction_code"); } } },
+                { "transaction_code", n => { TransactionCode = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransactionCode>(global::Soenneker.Plaid.OpenApiClient.Models.TransactionCode.CreateFromDiscriminatorValue); } },
                 { "transaction_id", n => { TransactionId = n.GetStringValue(); } },
                 { "unofficial_currency_code", n => { UnofficialCurrencyCode = n.GetStringValue(); } },
                 { "website", n => { Website = n.GetStringValue(); } },
@@ -389,7 +396,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("pending_transaction_id", PendingTransactionId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PersonalFinanceCategory>("personal_finance_category", PersonalFinanceCategory);
             writer.WriteStringValue("personal_finance_category_icon_url", PersonalFinanceCategoryIconUrl);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransactionCode>("transaction_code", TransactionCode);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransactionCode>("transaction_code", TransactionCode);
             writer.WriteStringValue("transaction_id", TransactionId);
             writer.WriteStringValue("unofficial_currency_code", UnofficialCurrencyCode);
             writer.WriteStringValue("website", Website);

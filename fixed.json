@@ -38756,7 +38756,8 @@
           }
         },
         "description": "A transfer limit amount and its currency, or \u0060null\u0060 when the limit is not configured.",
-        "x-hidden-from-docs": true
+        "x-hidden-from-docs": true,
+        "nullable": true
       },
       "UserItemsGetRequest": {
         "type": "object",
@@ -39528,7 +39529,8 @@
           "report_id": {
             "title": "CraReportId",
             "type": "string",
-            "description": "A unique ID identifying a Consumer Report. Like all Plaid identifiers, this ID is case sensitive."
+            "description": "A unique ID identifying a Consumer Report. Like all Plaid identifiers, this ID is case sensitive.",
+            "nullable": true
           }
         },
         "description": "Plaid Check report details for the Link session.",
@@ -44628,7 +44630,8 @@
             "x-hidden-from-docs": true
           }
         },
-        "description": "Identifying information for transferring money to or from a US account via ACH or wire transfer."
+        "description": "Identifying information for transferring money to or from a US account via ACH or wire transfer.",
+        "nullable": true
       },
       "NumbersEft": {
         "title": "NumbersEFT",
@@ -44685,7 +44688,8 @@
             "description": "The EFT branch number for the account"
           }
         },
-        "description": "Identifying information for transferring money to or from a Canadian bank account via EFT."
+        "description": "Identifying information for transferring money to or from a Canadian bank account via EFT.",
+        "nullable": true
       },
       "NumbersInternational": {
         "title": "NumbersInternational",
@@ -44732,7 +44736,8 @@
             "description": "The Business Identifier Code (BIC) for the account"
           }
         },
-        "description": "Identifying information for transferring money to or from an international bank account via wire transfer."
+        "description": "Identifying information for transferring money to or from an international bank account via wire transfer.",
+        "nullable": true
       },
       "NumbersBacs": {
         "title": "NumbersBACS",
@@ -44779,7 +44784,8 @@
             "description": "The Bacs sort code for the account"
           }
         },
-        "description": "Identifying information for transferring money to or from a UK bank account via Bacs."
+        "description": "Identifying information for transferring money to or from a UK bank account via Bacs.",
+        "nullable": true
       },
       "NumbersInternationalIban": {
         "required": [
@@ -44946,7 +44952,8 @@
             "description": "The 6-character sort code of the account."
           }
         },
-        "description": "An object containing a Bacs account number and sort code. If an IBAN is not provided or if this recipient needs to accept domestic GBP-denominated payments, Bacs data is required."
+        "description": "An object containing a Bacs account number and sort code. If an IBAN is not provided or if this recipient needs to accept domestic GBP-denominated payments, Bacs data is required.",
+        "nullable": true
       },
       "SenderBacsNullable": {
         "title": "RecipientBACS",
@@ -44965,7 +44972,8 @@
             "description": "The 6-character sort code of the account."
           }
         },
-        "description": "An object containing a Bacs account number and sort code. If an IBAN is not provided or if this recipient needs to accept domestic GBP-denominated payments, Bacs data is required."
+        "description": "An object containing a Bacs account number and sort code. If an IBAN is not provided or if this recipient needs to accept domestic GBP-denominated payments, Bacs data is required.",
+        "nullable": true
       },
       "PaymentInitiationOptionalRestrictionBacs": {
         "title": "RecipientBACS",
@@ -44984,7 +44992,8 @@
             "description": "The 6-character sort code of the account."
           }
         },
-        "description": "An optional object used to restrict the accounts used for payments. If provided, the end user will be able to send payments only from the specified bank account."
+        "description": "An optional object used to restrict the accounts used for payments. If provided, the end user will be able to send payments only from the specified bank account.",
+        "nullable": true
       },
       "TransactionsUpdateStatus": {
         "title": "TransactionsUpdateStatus",
@@ -48227,7 +48236,8 @@
             "description": "When \u0060true\u0060, identifies the address as the primary address on an account."
           }
         },
-        "description": "A physical mailing address."
+        "description": "A physical mailing address.",
+        "nullable": true
       },
       "AddressDataNullable": {
         "required": [
@@ -48265,7 +48275,8 @@
             "nullable": true
           }
         },
-        "description": "Data about the components comprising an address."
+        "description": "Data about the components comprising an address.",
+        "nullable": true
       },
       "AddressDataNullableNoRequiredFields": {
         "type": "object",
@@ -48296,7 +48307,8 @@
             "nullable": true
           }
         },
-        "description": "Data about the components comprising an address."
+        "description": "Data about the components comprising an address.",
+        "nullable": true
       },
       "AddressData": {
         "title": "AddressData",
@@ -50092,33 +50104,13 @@
           "start_date"
         ],
         "type": "object",
-        "description": "The schedule that the payment will be executed on. If a schedule is provided, the payment is automatically set up as a standing order. If no schedule is specified, the payment will be executed only once.",
-        "properties": {
-          "interval": {
-            "$ref": "#/components/schemas/PaymentScheduleInterval"
-          },
-          "interval_execution_day": {
-            "type": "integer",
-            "description": "The day of the interval on which to schedule the payment.\n\nIf the payment interval is weekly, \u0060interval_execution_day\u0060 should be an integer from 1 (Monday) to 7 (Sunday).\n\nIf the payment interval is monthly, \u0060interval_execution_day\u0060 should be an integer indicating which day of the month to make the payment on. Integers from 1 to 28 can be used to make a payment on that day of the month. Negative integers from -1 to -5 can be used to make a payment relative to the end of the month. To make a payment on the last day of the month, use -1; to make the payment on the second-to-last day, use -2, and so on."
-          },
-          "start_date": {
-            "type": "string",
-            "description": "A date in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD). Standing order payments will begin on the first \u0060interval_execution_day\u0060 on or after the \u0060start_date\u0060.\n\nIf the first \u0060interval_execution_day\u0060 on or after the start date is also the same day that \u0060/payment_initiation/payment/create\u0060 was called, the bank *may* make the first payment on that day, but it is not guaranteed to do so.",
-            "format": "date"
-          },
-          "end_date": {
-            "type": "string",
-            "description": "A date in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD). Standing order payments will end on the last \u0060interval_execution_day\u0060 on or before the \u0060end_date\u0060.\nIf the only \u0060interval_execution_day\u0060 between the start date and the end date (inclusive) is also the same day that \u0060/payment_initiation/payment/create\u0060 was called, the bank *may* make a payment on that day, but it is not guaranteed to do so.",
-            "format": "date",
-            "nullable": true
-          },
-          "adjusted_start_date": {
-            "type": "string",
-            "description": "The start date sent to the bank after adjusting for holidays or weekends.  Will be provided in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (YYYY-MM-DD). If the start date did not require adjustment, this field will be \u0060null\u0060.",
-            "format": "date",
-            "nullable": true
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ExternalPaymentScheduleBase"
           }
-        }
+        ],
+        "description": "The schedule that the payment will be executed on. If a schedule is provided, the payment is automatically set up as a standing order. If no schedule is specified, the payment will be executed only once.",
+        "nullable": true
       },
       "Products": {
         "title": "Products",
@@ -72319,7 +72311,8 @@
             "nullable": true
           }
         },
-        "description": "Allow the application to access specific products on this account"
+        "description": "Allow the application to access specific products on this account",
+        "nullable": true
       },
       "AccountProductAccess": {
         "type": "object",
@@ -72364,7 +72357,8 @@
             "nullable": true
           }
         },
-        "description": "The scopes object"
+        "description": "The scopes object",
+        "nullable": true
       },
       "Scopes": {
         "type": "object",
@@ -79446,7 +79440,8 @@
           "report_id": {
             "title": "CraReportId",
             "type": "string",
-            "description": "A unique ID identifying a Consumer Report. Like all Plaid identifiers, this ID is case sensitive."
+            "description": "A unique ID identifying a Consumer Report. Like all Plaid identifiers, this ID is case sensitive.",
+            "nullable": true
           },
           "client_report_id": {
             "type": "string",
@@ -90640,7 +90635,8 @@
             "title": "PlaidUserID",
             "type": "string",
             "description": "Unique user identifier, created by calling \u0060/user/create\u0060. Either a \u0060user_id\u0060 or the \u0060client_user_id\u0060 must be provided. The \u0060user_id\u0060 may only be used instead of the \u0060client_user_id\u0060 if you were not a pre-existing user of \u0060/user/create\u0060 as of December 10, 2025, or if you have since [migrated to the new User APIs](https://plaid.com/docs/api/users/migrate-to-new-user-apis); for more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis). If both this field and a \u0060client_user_id\u0060 are present in a request, the \u0060user_id\u0060 must have been created from the provided \u0060client_user_id\u0060.",
-            "example": "usr_dddAs9ewdcDQQQ"
+            "example": "usr_dddAs9ewdcDQQQ",
+            "nullable": true
           },
           "cursor": {
             "$ref": "#/components/schemas/Cursor"
@@ -102262,7 +102258,8 @@
           "report_id": {
             "title": "CraReportId",
             "type": "string",
-            "description": "A unique ID identifying a Consumer Report. Like all Plaid identifiers, this ID is case sensitive."
+            "description": "A unique ID identifying a Consumer Report. Like all Plaid identifiers, this ID is case sensitive.",
+            "nullable": true
           },
           "client_report_id": {
             "type": "string",
@@ -108894,6 +108891,7 @@
           }
         },
         "description": "An object with information about the status of the Item.",
+        "nullable": true,
         "x-examples": {
           "example-1": {}
         }
@@ -113722,7 +113720,8 @@
       "LinkSessionCraReportResultReportId": {
         "title": "CraReportId",
         "type": "string",
-        "description": "A unique ID identifying a Consumer Report. Like all Plaid identifiers, this ID is case sensitive."
+        "description": "A unique ID identifying a Consumer Report. Like all Plaid identifiers, this ID is case sensitive.",
+        "nullable": true
       },
       "PaymentInitiationPaymentGetResponseAllOf2": {
         "type": "object",
@@ -114638,7 +114637,8 @@
       "CraReportReadyWebhookReportId": {
         "title": "CraReportId",
         "type": "string",
-        "description": "A unique ID identifying a Consumer Report. Like all Plaid identifiers, this ID is case sensitive."
+        "description": "A unique ID identifying a Consumer Report. Like all Plaid identifiers, this ID is case sensitive.",
+        "nullable": true
       },
       "CraCheckReportBaseReportGetRequestConsumerReportPermissiblePurpose": {
         "title": "CraCheckReportPermissiblePurpose",
@@ -115062,7 +115062,8 @@
         "title": "PlaidUserID",
         "type": "string",
         "description": "Unique user identifier, created by calling \u0060/user/create\u0060. Either a \u0060user_id\u0060 or the \u0060client_user_id\u0060 must be provided. The \u0060user_id\u0060 may only be used instead of the \u0060client_user_id\u0060 if you were not a pre-existing user of \u0060/user/create\u0060 as of December 10, 2025, or if you have since [migrated to the new User APIs](https://plaid.com/docs/api/users/migrate-to-new-user-apis); for more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis). If both this field and a \u0060client_user_id\u0060 are present in a request, the \u0060user_id\u0060 must have been created from the provided \u0060client_user_id\u0060.",
-        "example": "usr_dddAs9ewdcDQQQ"
+        "example": "usr_dddAs9ewdcDQQQ",
+        "nullable": true
       },
       "ImageQualityDetailsGlareCheck": {
         "enum": [
@@ -115488,7 +115489,8 @@
       "CraReportGetReportReportId": {
         "title": "CraReportId",
         "type": "string",
-        "description": "A unique ID identifying a Consumer Report. Like all Plaid identifiers, this ID is case sensitive."
+        "description": "A unique ID identifying a Consumer Report. Like all Plaid identifiers, this ID is case sensitive.",
+        "nullable": true
       },
       "CraReportGetReportConsumerReportPermissiblePurpose": {
         "title": "ConsumerReportPermissiblePurpose",
@@ -116943,7 +116945,8 @@
             "format": "double"
           }
         },
-        "description": "The amount a user paid. Required if there was a payment made."
+        "description": "The amount a user paid. Required if there was a payment made.",
+        "nullable": true
       },
       "CashAdvanceRepaymentAmountDue": {
         "required": [

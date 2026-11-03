@@ -2,7 +2,7 @@
   "descriptionHash": "1F972CB766CB8C1F49828D6283A31DE053BEA54F77D948244A640A8017F1C79F2C79B7749F0CAC45BC2B8E45FF5CB5880C4F256F17B83169F1C145487FA92DA4",
   "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.37.0",
+  "kiotaVersion": "1.38.0",
   "clientClassName": "PlaidOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Plaid.OpenApiClient",

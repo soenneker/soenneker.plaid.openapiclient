@@ -18,6 +18,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("business_verification") is null) { _explicitNullValueBusinessVerification = default!; _explicitNullProperties?.Remove("business_verification"); }
+            else if (parseNode.GetChildNode("business_verification") is { } nullNodeBusinessVerification && nullNodeBusinessVerification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessVerification = null;
             if (parseNode.GetChildNode("client_user_id") is null) { _explicitNullValueClientUserId = default!; _explicitNullProperties?.Remove("client_user_id"); }
             else if (parseNode.GetChildNode("client_user_id") is { } nullNodeClientUserId && nullNodeClientUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientUserId = null;
             if (parseNode.GetChildNode("completed_at") is null) { _explicitNullValueCompletedAt = default!; _explicitNullProperties?.Remove("completed_at"); }
@@ -28,8 +30,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             else if (parseNode.GetChildNode("digital_presence_check") is { } nullNodeDigitalPresenceCheck && nullNodeDigitalPresenceCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DigitalPresenceCheck = null;
             if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
             else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("kyb_check") is null) { _explicitNullValueKybCheck = default!; _explicitNullProperties?.Remove("kyb_check"); }
-            else if (parseNode.GetChildNode("kyb_check") is { } nullNodeKybCheck && nullNodeKybCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KybCheck = null;
             if (parseNode.GetChildNode("redacted_at") is null) { _explicitNullValueRedactedAt = default!; _explicitNullProperties?.Remove("redacted_at"); }
             else if (parseNode.GetChildNode("redacted_at") is { } nullNodeRedactedAt && nullNodeRedactedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedactedAt = null;
             if (parseNode.GetChildNode("request_id") is null) { _explicitNullValueRequestId = default!; _explicitNullProperties?.Remove("request_id"); }
@@ -46,6 +46,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Results from the business identity verification check, which matches the submitted business information against data provider records. `officers` is one result for all submitted officers, as reported by the data provider. `registered_agent` compares the submitted officer names against the business&apos;s registered agent. Both are `no_input` when no officers were submitted.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationCheck? BusinessVerification { get => _explicitNullValueBusinessVerification; set { _explicitNullValueBusinessVerification = value; AdditionalData?.Remove("business_verification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_verification"); else _explicitNullProperties?.Remove("business_verification"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationCheck? _explicitNullValueBusinessVerification = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationCheck BusinessVerification { get => _explicitNullValueBusinessVerification; set { _explicitNullValueBusinessVerification = value; AdditionalData?.Remove("business_verification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_verification"); else _explicitNullProperties?.Remove("business_verification"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationCheck _explicitNullValueBusinessVerification = default!;
+#endif
         /// <summary>A unique ID that identifies the end user in your system. Either a `user_id` or the `client_user_id` must be provided. This ID can also be used to associate user-specific data from other Plaid products. Financial Account Matching requires this field and the `/link/token/create` `client_user_id` to be consistent. Personally identifiable information, such as an email address or phone number, should not be used in the `client_user_id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,16 +91,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
-#endif
-        /// <summary>Results from the KYB (Know Your Business) identity verification check</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybCheck? KybCheck { get => _explicitNullValueKybCheck; set { _explicitNullValueKybCheck = value; AdditionalData?.Remove("kyb_check"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kyb_check"); else _explicitNullProperties?.Remove("kyb_check"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybCheck? _explicitNullValueKybCheck = default!;
-#nullable restore
-#else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybCheck KybCheck { get => _explicitNullValueKybCheck; set { _explicitNullValueKybCheck = value; AdditionalData?.Remove("kyb_check"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kyb_check"); else _explicitNullProperties?.Remove("kyb_check"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybCheck _explicitNullValueKybCheck = default!;
 #endif
         /// <summary>An ISO8601 formatted timestamp.</summary>
         public DateTimeOffset? RedactedAt { get => _explicitNullValueRedactedAt; set { _explicitNullValueRedactedAt = value; AdditionalData?.Remove("redacted_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redacted_at"); else _explicitNullProperties?.Remove("redacted_at"); } }
@@ -163,12 +163,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "business_verification", n => { BusinessVerification = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationCheck>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationCheck.CreateFromDiscriminatorValue); } },
                 { "client_user_id", n => { ClientUserId = n.GetStringValue(); } },
                 { "completed_at", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "digital_presence_check", n => { DigitalPresenceCheck = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessDigitalPresenceCheck>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessDigitalPresenceCheck.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "kyb_check", n => { KybCheck = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybCheck>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybCheck.CreateFromDiscriminatorValue); } },
                 { "redacted_at", n => { RedactedAt = n.GetDateTimeOffsetValue(); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
                 { "risk_check", n => { RiskCheck = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessRiskCheck>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessRiskCheck.CreateFromDiscriminatorValue); } },
@@ -184,12 +184,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationCheck>("business_verification", BusinessVerification);
             writer.WriteStringValue("client_user_id", ClientUserId);
             writer.WriteDateTimeOffsetValue("completed_at", CompletedAt);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessDigitalPresenceCheck>("digital_presence_check", DigitalPresenceCheck);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybCheck>("kyb_check", KybCheck);
             writer.WriteDateTimeOffsetValue("redacted_at", RedactedAt);
             writer.WriteStringValue("request_id", RequestId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessRiskCheck>("risk_check", RiskCheck);

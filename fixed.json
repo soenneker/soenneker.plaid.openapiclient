@@ -8,7 +8,7 @@
       "name": "Plaid Developer Team",
       "url": "https://plaid.com"
     },
-    "version": "2020-09-14_1.792.1"
+    "version": "2020-09-14_1.799.0"
   },
   "servers": [
     {
@@ -14720,9 +14720,15 @@
                         },
                         "website": "https://example.com",
                         "phone_number": "\u002B14025671234",
-                        "email_address": "user@example.com"
+                        "email_address": "user@example.com",
+                        "tin": "123456789",
+                        "officers": [
+                          {
+                            "name": "Leslie Knope"
+                          }
+                        ]
                       },
-                      "kyb_check": {
+                      "business_verification": {
                         "status": "success",
                         "score": 85,
                         "name": {
@@ -14733,6 +14739,16 @@
                         },
                         "website": {
                           "summary": "match"
+                        },
+                        "tin": {
+                          "summary": "match",
+                          "tin_type": "ein"
+                        },
+                        "officers": {
+                          "summary": "match"
+                        },
+                        "registered_agent": {
+                          "summary": "no_match"
                         },
                         "match_details": {
                           "names": [
@@ -14878,9 +14894,15 @@
                         },
                         "website": "https://example.com",
                         "phone_number": "\u002B14025671234",
-                        "email_address": "user@example.com"
+                        "email_address": "user@example.com",
+                        "tin": "123456789",
+                        "officers": [
+                          {
+                            "name": "Leslie Knope"
+                          }
+                        ]
                       },
-                      "kyb_check": {
+                      "business_verification": {
                         "status": "success",
                         "score": 85,
                         "name": {
@@ -14891,6 +14913,16 @@
                         },
                         "website": {
                           "summary": "match"
+                        },
+                        "tin": {
+                          "summary": "match",
+                          "tin_type": "ein"
+                        },
+                        "officers": {
+                          "summary": "match"
+                        },
+                        "registered_agent": {
+                          "summary": "no_match"
                         },
                         "match_details": {
                           "names": [
@@ -19089,7 +19121,7 @@
           "plaid"
         ],
         "summary": "Retrieve a user\u0027s transfer limits",
-        "description": "Retrieve the user\u0027s persisted Guaranteed ACH transaction limit and configured daily, weekly, and monthly ceilings. Amounts are returned as decimal strings in dollars with two digits of precision and an ISO currency code. A transaction limit is computed when no active limit exists.",
+        "description": "Retrieve the user\u0027s current Guaranteed ACH per-transaction limit and configured daily, weekly, and monthly ceilings. Amounts are returned as decimal strings in dollars with two decimal places and an ISO currency code. Access to this endpoint must be enabled for your client.",
         "externalDocs": {
           "url": "/api/users/#usertransferlimitsget"
         },
@@ -19147,10 +19179,8 @@
               }
             }
           }
-        },
-        "x-hidden-from-docs": true
-      },
-      "x-hidden-from-docs": true
+        }
+      }
     },
     "/user/items/get": {
       "post": {
@@ -38363,8 +38393,7 @@
             "description": "A unique user identifier, created by \u0060/user/create\u0060. Integrations that began using \u0060/user/create\u0060 after December 10, 2025 use this field to identify a user instead of the \u0060user_token\u0060. For more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis)."
           }
         },
-        "description": "UserTransferLimitsGetRequest defines the request schema for \u0060/user/transfer/limits/get\u0060.",
-        "x-hidden-from-docs": true
+        "description": "UserTransferLimitsGetRequest defines the request schema for \u0060/user/transfer/limits/get\u0060."
       },
       "UserTransferLimitsGetResponse": {
         "required": [
@@ -38382,8 +38411,7 @@
             "description": "A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive."
           }
         },
-        "description": "UserTransferLimitsGetResponse defines the response schema for \u0060/user/transfer/limits/get\u0060.",
-        "x-hidden-from-docs": true
+        "description": "UserTransferLimitsGetResponse defines the response schema for \u0060/user/transfer/limits/get\u0060."
       },
       "UserGuaranteeLimits": {
         "required": [
@@ -38407,8 +38435,7 @@
             "$ref": "#/components/schemas/UserTransferLimitAmountNullable"
           }
         },
-        "description": "The user\u0027s Guaranteed ACH debit limits. Daily, weekly, and monthly limits are configured ceilings, not remaining capacity. Each rolling limit is \u0060null\u0060 when no ceiling is enabled for that window.",
-        "x-hidden-from-docs": true
+        "description": "The user\u0027s Guaranteed ACH debit limits. Daily, weekly, and monthly limits are configured ceilings, not remaining capacity. Each rolling limit is \u0060null\u0060 when no ceiling is enabled for that window."
       },
       "UserTransferLimitAmountNullable": {
         "required": [
@@ -38429,7 +38456,6 @@
           }
         },
         "description": "A transfer limit amount and its currency, or \u0060null\u0060 when the limit is not configured.",
-        "x-hidden-from-docs": true,
         "nullable": true
       },
       "UserItemsGetRequest": {
@@ -42318,10 +42344,10 @@
             "nullable": true
           },
           "institution_data": {
-            "$ref": "#/components/schemas/LinkTokenCreateInstitutionData"
+            "$ref": "#/components/schemas/LinkTokenGetMetadataResponseInstitutionData"
           },
           "account_filters": {
-            "$ref": "#/components/schemas/AccountFiltersResponse"
+            "$ref": "#/components/schemas/LinkTokenGetMetadataResponseAccountFilters"
           },
           "redirect_uri": {
             "type": "string",
@@ -45028,6 +45054,9 @@
       },
       "InstitutionStatus": {
         "title": "InstitutionStatus",
+        "required": [
+          "item_logins"
+        ],
         "type": "object",
         "properties": {
           "item_logins": {
@@ -49773,7 +49802,8 @@
           },
           "origination_account_id": {
             "type": "string",
-            "description": "Plaid\u0027s unique identifier for the origination account that was used for this transfer."
+            "description": "Plaid\u0027s unique identifier for the origination account that was used for this transfer.",
+            "nullable": true
           },
           "direction": {
             "$ref": "#/components/schemas/BankTransferDirection"
@@ -51118,7 +51148,8 @@
           },
           "description": {
             "type": "string",
-            "description": "A human-readable description of the reason for the failure or reversal."
+            "description": "A human-readable description of the reason for the failure or reversal.",
+            "nullable": true
           }
         },
         "description": "The failure reason if the type of this transfer is \u0060\u0022failed\u0022\u0060 or \u0060\u0022reversed\u0022\u0060. Null value otherwise.",
@@ -56940,25 +56971,6 @@
         },
         "description": "Defines the response schema for \u0060/sandbox/transfer/test_clock/list\u0060"
       },
-      "AccountFiltersResponse": {
-        "title": "AccountFiltersResponse",
-        "type": "object",
-        "properties": {
-          "depository": {
-            "$ref": "#/components/schemas/DepositoryFilter"
-          },
-          "credit": {
-            "$ref": "#/components/schemas/CreditFilter"
-          },
-          "loan": {
-            "$ref": "#/components/schemas/LoanFilter"
-          },
-          "investment": {
-            "$ref": "#/components/schemas/InvestmentFilter"
-          }
-        },
-        "description": "The \u0060account_filters\u0060 specified in the original call to \u0060/link/token/create\u0060.\n"
-      },
       "AccountIdentity": {
         "title": "AccountIdentity",
         "required": [
@@ -60253,7 +60265,8 @@
             "items": {
               "$ref": "#/components/schemas/IncidentUpdate"
             },
-            "description": "Updates on the health incident."
+            "description": "Updates on the health incident.",
+            "nullable": true
           }
         },
         "description": "A status health incident"
@@ -70227,11 +70240,13 @@
         "properties": {
           "primary": {
             "type": "string",
-            "description": "A high level category that communicates the broad category of the transaction."
+            "description": "A high level category that communicates the broad category of the transaction. Can be \u0060null\u0060 when no credit category is available.",
+            "nullable": true
           },
           "detailed": {
             "type": "string",
-            "description": "A granular category conveying the transaction\u0027s intent. This field can also be used as a unique identifier for the category."
+            "description": "A granular category conveying the transaction\u0027s intent. This field can also be used as a unique identifier for the category. Can be \u0060null\u0060 when no credit category is available.",
+            "nullable": true
           }
         },
         "description": "Information describing the intent of the transaction. Most relevant for credit use cases, but not limited to such use cases.\n\nSee the [\u0060taxonomy csv file\u0060](https://plaid.com/documents/credit-category-taxonomy.csv) for a full list of credit categories.",
@@ -73502,9 +73517,6 @@
           },
           "ownership_type": {
             "$ref": "#/components/schemas/OwnershipType"
-          },
-          "investments": {
-            "$ref": "#/components/schemas/BaseReportAccountInvestments"
           },
           "historical_balances": {
             "type": "array",
@@ -77158,23 +77170,26 @@
         },
         "description": "Summary of how a specific business field matched against data provider results"
       },
-      "BusinessKybCheck": {
+      "BusinessVerificationCheck": {
         "required": [
           "status",
           "score",
           "name",
           "address",
           "website",
+          "tin",
+          "officers",
+          "registered_agent",
           "match_details"
         ],
         "type": "object",
         "properties": {
           "status": {
-            "$ref": "#/components/schemas/BusinessVerificationStatusKybCheck"
+            "$ref": "#/components/schemas/BusinessVerificationStatusBusinessVerificationCheck"
           },
           "score": {
             "type": "integer",
-            "description": "A score from 0 to 100 indicating the confidence in KYB (Know Your Business) identity assessment for the business",
+            "description": "A score from 0 to 100 indicating the confidence in the identity verification of the business.",
             "example": 85
           },
           "name": {
@@ -77186,12 +77201,88 @@
           "website": {
             "$ref": "#/components/schemas/BusinessFieldMatchSummary"
           },
+          "tin": {
+            "$ref": "#/components/schemas/BusinessTinMatch"
+          },
+          "officers": {
+            "$ref": "#/components/schemas/BusinessFieldMatchSummary"
+          },
+          "registered_agent": {
+            "$ref": "#/components/schemas/BusinessFieldMatchSummary"
+          },
           "match_details": {
             "$ref": "#/components/schemas/BusinessKybMatchDetails"
           }
         },
-        "description": "Results from the KYB (Know Your Business) identity verification check",
+        "description": "Results from the business identity verification check, which matches the submitted business information against data provider records. \u0060officers\u0060 is one result for all submitted officers, as reported by the data provider. \u0060registered_agent\u0060 compares the submitted officer names against the business\u0027s registered agent. Both are \u0060no_input\u0060 when no officers were submitted.",
         "nullable": true
+      },
+      "BusinessTinMatch": {
+        "required": [
+          "summary",
+          "tin_type"
+        ],
+        "type": "object",
+        "properties": {
+          "summary": {
+            "$ref": "#/components/schemas/MatchSummaryCode"
+          },
+          "tin_type": {
+            "$ref": "#/components/schemas/BusinessTinType"
+          }
+        },
+        "description": "How the submitted TIN matched IRS records."
+      },
+      "BusinessTinType": {
+        "description": "The kind of TIN the IRS reported. \u0060unknown\u0060 means the IRS did not say which kind it is. \u0060null\u0060 when no TIN was submitted (\u0060summary\u0060 is \u0060no_input\u0060) or the IRS did not report a type, as when the check could not run (\u0060summary\u0060 is \u0060no_data\u0060). A non-null \u0060tin_type\u0060 does not mean the TIN matched; read \u0060summary\u0060 for that.",
+        "example": "ein",
+        "anyOf": [
+          {
+            "enum": [
+              "ein",
+              "ssn",
+              "unknown"
+            ],
+            "type": "string",
+            "description": "The kind of TIN the IRS reported. \u0060unknown\u0060 means the IRS did not say which kind it is. \u0060null\u0060 when no TIN was submitted (\u0060summary\u0060 is \u0060no_input\u0060) or the IRS did not report a type, as when the check could not run (\u0060summary\u0060 is \u0060no_data\u0060). A non-null \u0060tin_type\u0060 does not mean the TIN matched; read \u0060summary\u0060 for that.",
+            "example": "ein",
+            "x-ms-enum": {
+              "name": "BusinessTinType",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "ein",
+                  "name": "Ein"
+                },
+                {
+                  "value": "ssn",
+                  "name": "Ssn"
+                },
+                {
+                  "value": "unknown",
+                  "name": "Unknown"
+                }
+              ]
+            }
+          },
+          {
+            "$ref": "#/components/schemas/OpenApiNullValue"
+          }
+        ]
+      },
+      "BusinessOfficer": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The officer\u0027s full name. Must have at least one character and a maximum length of 500 characters.",
+            "example": "Leslie Knope"
+          }
+        },
+        "description": "An officer of the business."
       },
       "BusinessKybMatchDetails": {
         "required": [
@@ -77348,7 +77439,9 @@
           "address",
           "website",
           "phone_number",
-          "email_address"
+          "email_address",
+          "tin",
+          "officers"
         ],
         "type": "object",
         "properties": {
@@ -77376,13 +77469,27 @@
           },
           "email_address": {
             "$ref": "#/components/schemas/EmailAddressNullable"
+          },
+          "tin": {
+            "type": "string",
+            "description": "The TIN that was submitted, as 9 digits without a dash. \u0060null\u0060 if no TIN was submitted.",
+            "nullable": true,
+            "example": "123456789"
+          },
+          "officers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BusinessOfficer"
+            },
+            "description": "The officers that were submitted."
           }
         },
         "description": "The business information that was used to perform the verification search"
       },
       "BusinessVerificationCreateRequest": {
         "required": [
-          "client_user_id"
+          "client_user_id",
+          "business"
         ],
         "type": "object",
         "properties": {
@@ -77409,6 +77516,10 @@
         "description": "Request input for creating a business verification"
       },
       "BusinessVerificationCreateRequestBusiness": {
+        "required": [
+          "name",
+          "address"
+        ],
         "type": "object",
         "properties": {
           "name": {
@@ -77442,10 +77553,24 @@
             "description": "A valid email address. Must not have leading or trailing spaces and address must be RFC compliant. For more information, see [RFC 3696](https://datatracker.ietf.org/doc/html/rfc3696).",
             "example": "user@example.com",
             "x-client-original-format": "email"
+          },
+          "tin": {
+            "type": "string",
+            "description": "The business\u0027s Taxpayer Identification Number (TIN), such as an Employer Identification Number (EIN), as 9 digits. An EIN may include a dash after the first two digits, such as \u006012-3456789\u0060.",
+            "nullable": true,
+            "example": "12-3456789"
+          },
+          "officers": {
+            "maxItems": 10,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BusinessOfficer"
+            },
+            "description": "Officers of the business, used to check that the people listed match public records. At most 10.",
+            "nullable": true
           }
         },
-        "description": "Business information provided in the verification request",
-        "nullable": true
+        "description": "Business information provided in the verification request"
       },
       "BusinessVerificationCreateResponse": {
         "required": [
@@ -77456,7 +77581,7 @@
           "redacted_at",
           "status",
           "search_terms",
-          "kyb_check",
+          "business_verification",
           "risk_check",
           "digital_presence_check",
           "request_id",
@@ -77496,8 +77621,8 @@
           "search_terms": {
             "$ref": "#/components/schemas/BusinessSearchTerms"
           },
-          "kyb_check": {
-            "$ref": "#/components/schemas/BusinessKybCheck"
+          "business_verification": {
+            "$ref": "#/components/schemas/BusinessVerificationCheck"
           },
           "risk_check": {
             "$ref": "#/components/schemas/BusinessRiskCheck"
@@ -77551,7 +77676,7 @@
           "redacted_at",
           "status",
           "search_terms",
-          "kyb_check",
+          "business_verification",
           "risk_check",
           "digital_presence_check",
           "request_id",
@@ -77591,8 +77716,8 @@
           "search_terms": {
             "$ref": "#/components/schemas/BusinessSearchTerms"
           },
-          "kyb_check": {
-            "$ref": "#/components/schemas/BusinessKybCheck"
+          "business_verification": {
+            "$ref": "#/components/schemas/BusinessVerificationCheck"
           },
           "risk_check": {
             "$ref": "#/components/schemas/BusinessRiskCheck"
@@ -77611,7 +77736,7 @@
         },
         "description": "A business verification represents a check of a business\u0027s identity and risk profile, including information collected about the business and results from third-party data providers."
       },
-      "BusinessVerificationStatusKybCheck": {
+      "BusinessVerificationStatusBusinessVerificationCheck": {
         "title": "BusinessVerificationStatus",
         "enum": [
           "active",
@@ -77619,10 +77744,10 @@
           "failed"
         ],
         "type": "string",
-        "description": "Status of the KYB (Know Your Business) identity assessment check",
+        "description": "Status of the business identity verification check",
         "example": "success",
         "x-ms-enum": {
-          "name": "BusinessVerificationStatusKybCheck",
+          "name": "BusinessVerificationStatusBusinessVerificationCheck",
           "modelAsString": false,
           "values": [
             {
@@ -77836,32 +77961,41 @@
         "nullable": true
       },
       "BusinessWebsiteBuildStatus": {
-        "enum": [
-          "coming_soon",
-          "active",
-          "inactive"
-        ],
-        "type": "string",
-        "description": "Build status of the business website.",
+        "description": "Build status of the business website. \u0060null\u0060 if the build status could not be determined.",
         "example": "active",
-        "x-ms-enum": {
-          "name": "BusinessWebsiteBuildStatus",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "coming_soon",
-              "name": "ComingSoon"
-            },
-            {
-              "value": "active",
-              "name": "Active"
-            },
-            {
-              "value": "inactive",
-              "name": "Inactive"
+        "anyOf": [
+          {
+            "enum": [
+              "coming_soon",
+              "active",
+              "inactive"
+            ],
+            "type": "string",
+            "description": "Build status of the business website. \u0060null\u0060 if the build status could not be determined.",
+            "example": "active",
+            "x-ms-enum": {
+              "name": "BusinessWebsiteBuildStatus",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "coming_soon",
+                  "name": "ComingSoon"
+                },
+                {
+                  "value": "active",
+                  "name": "Active"
+                },
+                {
+                  "value": "inactive",
+                  "name": "Inactive"
+                }
+              ]
             }
-          ]
-        }
+          },
+          {
+            "$ref": "#/components/schemas/OpenApiNullValue"
+          }
+        ]
       },
       "BusinessWhoisRecord": {
         "required": [
@@ -100861,7 +100995,7 @@
             "example": "USD"
           }
         },
-        "description": "The user\u0027s persisted per-transaction guarantee limit. A zero-dollar limit is returned with a value of \u0060\u00220.00\u0022\u0060."
+        "description": "The user\u0027s current per-transaction guarantee limit. A zero-dollar limit is returned with a value of \u0060\u00220.00\u0022\u0060."
       },
       "PaymentInitiationConsentPaymentExecuteRequestScope": {
         "title": "PaymentInitiationConsentScope",
@@ -100957,6 +101091,39 @@
           }
         },
         "description": "The user\u0027s ID number. Used only for Identity Verification. If provided, the user will not be shown fields to enter their ID number in the Identity Verification flow. May be omitted, but if not omitted, all fields marked as required must be provided."
+      },
+      "LinkTokenGetMetadataResponseInstitutionData": {
+        "type": "object",
+        "properties": {
+          "routing_number": {
+            "type": "string",
+            "description": "The routing number of the bank to highlight in Link. Note: in rare cases, a single routing number can be associated with multiple institutions, e.g. due to a brokerage using another institution to manage ACH on its sweep accounts. If this happens, the bank will not be highlighted in Link even if the routing number is provided."
+          },
+          "institution_id": {
+            "type": "string",
+            "description": "The Plaid institution ID of the institution to highlight in Link, such as \u0060ins_56\u0060. Takes precedence over \u0060routing_number\u0060; will fall back to \u0060routing_number\u0060 (if provided) if the institution ID is unknown or unavailable for this Link session. This feature is in closed beta, please contact your account manager for more info.",
+            "x-hidden-from-docs": true
+          }
+        },
+        "nullable": true
+      },
+      "LinkTokenGetMetadataResponseAccountFilters": {
+        "type": "object",
+        "properties": {
+          "depository": {
+            "$ref": "#/components/schemas/AccountFiltersResponseDepository"
+          },
+          "credit": {
+            "$ref": "#/components/schemas/AccountFiltersResponseCredit"
+          },
+          "loan": {
+            "$ref": "#/components/schemas/AccountFiltersResponseLoan"
+          },
+          "investment": {
+            "$ref": "#/components/schemas/AccountFiltersResponseInvestment"
+          }
+        },
+        "nullable": true
       },
       "TransferGuaranteeDecision": {
         "description": "Indicates whether the transfer is guaranteed by Plaid (Guarantee customers only). This field will contain either \u0060GUARANTEED\u0060 or \u0060NOT_GUARANTEED\u0060 indicating whether Plaid will guarantee the transfer.",
@@ -101075,8 +101242,7 @@
         "type": "string",
         "description": "A unique user identifier, created by \u0060/user/create\u0060. Integrations that began using \u0060/user/create\u0060 after December 10, 2025 use this field to identify a user instead of the \u0060user_token\u0060. For more details, see [New User APIs](https://plaid.com/docs/api/users/user-apis).",
         "nullable": true,
-        "example": "usr_9nSp2KuZ2x4JDw",
-        "x-hidden-from-docs": true
+        "example": "usr_9nSp2KuZ2x4JDw"
       },
       "TransferAuthorizationCreateRequestCreditFundsSource": {
         "title": "TransferCreditFundsSource",
@@ -101272,6 +101438,82 @@
             "$ref": "#/components/schemas/OpenApiNullValue"
           }
         ]
+      },
+      "AccountFiltersResponseDepository": {
+        "required": [
+          "account_subtypes"
+        ],
+        "type": "object",
+        "properties": {
+          "account_subtypes": {
+            "title": "DepositoryAccountSubtypes",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DepositoryAccountSubtype"
+            },
+            "description": "An array of account subtypes to display in Link. If not specified, all account subtypes will be shown. For a full list of valid types and subtypes, see the [Account schema](https://plaid.com/docs/api/accounts#account-type-schema). "
+          },
+          "limited_purpose_types": {
+            "title": "LimitedPurposeTypes",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LimitedPurposeType"
+            },
+            "description": "An array of limited purpose types. Restricts which kinds of limited purpose checking accounts may be connected in Link to prevent users from connecting them for unsupported use cases. Required when \u0027limited purpose checking\u0027 is in the subtypes filter."
+          }
+        },
+        "nullable": true
+      },
+      "AccountFiltersResponseCredit": {
+        "required": [
+          "account_subtypes"
+        ],
+        "type": "object",
+        "properties": {
+          "account_subtypes": {
+            "title": "CreditAccountSubtypes",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreditAccountSubtype"
+            },
+            "description": "An array of account subtypes to display in Link. If not specified, all account subtypes will be shown. For a full list of valid types and subtypes, see the [Account schema](https://plaid.com/docs/api/accounts#account-type-schema). "
+          }
+        },
+        "nullable": true
+      },
+      "AccountFiltersResponseLoan": {
+        "required": [
+          "account_subtypes"
+        ],
+        "type": "object",
+        "properties": {
+          "account_subtypes": {
+            "title": "LoanAccountSubtypes",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LoanAccountSubtype"
+            },
+            "description": "An array of account subtypes to display in Link. If not specified, all account subtypes will be shown. For a full list of valid types and subtypes, see the [Account schema](https://plaid.com/docs/api/accounts#account-type-schema). "
+          }
+        },
+        "nullable": true
+      },
+      "AccountFiltersResponseInvestment": {
+        "required": [
+          "account_subtypes"
+        ],
+        "type": "object",
+        "properties": {
+          "account_subtypes": {
+            "title": "InvestmentAccountSubtypes",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InvestmentAccountSubtype"
+            },
+            "description": "An array of account subtypes to display in Link. If not specified, all account subtypes will be shown. For a full list of valid types and subtypes, see the [Account schema](https://plaid.com/docs/api/accounts#account-type-schema). "
+          }
+        },
+        "nullable": true
       },
       "IncomeVerificationPrecheckRequestTransactionsAccessToken": {
         "type": "string",
@@ -101525,40 +101767,6 @@
             }
           ]
         }
-      },
-      "BaseReportAccountInvestments": {
-        "title": "BaseReportInvestments",
-        "required": [
-          "holdings",
-          "securities",
-          "investment_transactions"
-        ],
-        "type": "object",
-        "properties": {
-          "holdings": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BaseReportInvestmentHolding"
-            },
-            "description": "Quantities and values of securities held in the investment account. Map to the \u0060securities\u0060 array for security details."
-          },
-          "securities": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BaseReportInvestmentSecurity"
-            },
-            "description": "Details of specific securities held in the investment account."
-          },
-          "investment_transactions": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BaseReportInvestmentTransaction"
-            },
-            "description": "Transaction history on the investment account."
-          }
-        },
-        "description": "This field contains investment data only for investment accounts when \u0060include_investments\u0060 in \u0060/cra/check_report/create\u0060 or \u0060cra_options.include_investments\u0060 in \u0060/link/token/create\u0060 is set to \u0060true\u0060. This field may be omitted if recent investment data was unavailable at report generation. The account remains in the report when this field is omitted.",
-        "x-hidden-from-docs": true
       },
       "BaseReportTransactionPersonalFinanceCategory": {
         "title": "PersonalFinanceCategory",
@@ -107790,8 +107998,7 @@
           "example": "USD"
         }
       },
-      "description": "A transfer limit amount and its currency.",
-      "x-hidden-from-docs": true
+      "description": "A transfer limit amount and its currency."
     },
     "PaymentInitiationConsent": {
       "required": [
@@ -110060,6 +110267,11 @@
           "description": "When \u0060true\u0060, every date in this configuration is shifted at Item creation so that the most recent activity date falls on the day the Item is created, keeping the spacing between dates. Activity dates are transaction and investment transaction dates, pay period end dates and pay days, holding \u0060institution_price_as_of\u0060 dates, and a loan\u0027s \u0060last_payment_date\u0060 or \u0060last_statement_issue_date\u0060. Scheduled loan dates such as \u0060origination_date\u0060, \u0060maturity_date\u0060, and \u0060next_payment_due_date\u0060 move by the same amount but are never the anchor. This lets a saved configuration keep producing recent data without being edited.\n\nA \u0060date_posted\u0060 later than its \u0060date_transacted\u0060 stays later, so the most recent transaction can still be pending. Dates are UTC calendar dates. The shift happens once, when the Item is created; the Item keeps the shifted dates afterwards. Defaults to \u0060false\u0060.",
           "default": false
         },
+        "has_perpetual_otp": {
+          "type": "boolean",
+          "description": "When \u0060true\u0060, the Item behaves like an Item at an institution that requires a one-time passcode (OTP) or other multi-factor authentication at every login, so it can be updated only while the user is present. \u0060/item/get\u0060 returns an \u0060update_type\u0060 of \u0060user_present_required\u0060. Endpoints that fetch new data from the institution, such as \u0060/transactions/refresh\u0060 and \u0060/accounts/balance/get\u0060, return \u0060ITEM_LOGIN_REQUIRED\u0060. If your integration isn\u0027t enabled for this kind of institution, they return [\u0060MFA_NOT_SUPPORTED\u0060](https://plaid.com/docs/errors/item/#mfa_not_supported) instead. Endpoints that return data Plaid already has, such as \u0060/transactions/sync\u0060 and \u0060/accounts/get\u0060, still work. Defaults to \u0060false\u0060.",
+          "default": false
+        },
         "override_accounts": {
           "type": "array",
           "items": {
@@ -110210,7 +110422,7 @@
         },
         "apy": {
           "type": "number",
-          "description": "The annual percentage yield (APY) to report on the account, expressed as a percentage (e.g. \u00604.25\u0060 means 4.25%). Applies to interest-bearing depository accounts; if omitted, the account reports no APY.",
+          "description": "The annual percentage yield (APY) to report on the account, expressed as a percentage (e.g. \u00604.25\u0060 means 4.25%). Applies to interest-bearing depository accounts. If omitted, savings, money market, CD, cash management, and HSA accounts report a generated APY, and other accounts report none.",
           "format": "double"
         }
       },
@@ -110820,14 +111032,14 @@
           "format": "double"
         },
         "payment_day_of_month": {
-          "description": "Either a whole number between 1 and 28 or the string \u0060last\u0060, meaning the last day of the month. The day of the month on which the income transaction will appear. This field is required if \u0060type\u0060 is \u0060monthly-income\u0060, \u0060monthly-balance-payment\u0060 or \u0060monthly-interest-only-payment\u0060."
+          "description": "The day of the month on which the income transaction will appear: a whole number between 1 and 28, or the string \u0060last\u0060 for the last day of the month. This field is required if \u0060type\u0060 is \u0060monthly-income\u0060, \u0060monthly-balance-payment\u0060 or \u0060monthly-interest-only-payment\u0060."
         },
         "transaction_name": {
           "type": "string",
           "description": "The name of the income transaction. This field is required if \u0060type\u0060 is \u0060monthly-income\u0060, \u0060monthly-balance-payment\u0060 or \u0060monthly-interest-only-payment\u0060."
         },
         "statement_day_of_month": {
-          "description": "Either a whole number between 1 and 28 or the string \u0060last\u0060, meaning the last day of the month. The day of the month on which the balance is calculated for the next payment. This field is required if \u0060type\u0060 is \u0060monthly-balance-payment\u0060 or \u0060monthly-interest-only-payment\u0060."
+          "description": "The day of the month on which the balance is calculated for the next payment: a whole number between 1 and 28, or the string \u0060last\u0060 for the last day of the month. For compatibility with client libraries generated before 1.776.0, which typed this field as a string, a quoted number such as \u0060\u002215\u0022\u0060 is also accepted. This field is required if \u0060type\u0060 is \u0060monthly-balance-payment\u0060 or \u0060monthly-interest-only-payment\u0060."
         }
       },
       "description": "The \u0060inflow_model\u0060 allows you to model a test account that receives regular income or makes regular payments on a loan. Any transactions generated by the \u0060inflow_model\u0060 will appear in addition to randomly generated test data or transactions specified by \u0060override_accounts\u0060."
@@ -114424,6 +114636,25 @@
         }
       },
       "description": "Defines the response schema for \u0060/sandbox/transfer/rfp/simulate\u0060"
+    },
+    "AccountFiltersResponse": {
+      "title": "AccountFiltersResponse",
+      "type": "object",
+      "properties": {
+        "depository": {
+          "$ref": "#/components/schemas/AccountFiltersResponseDepository"
+        },
+        "credit": {
+          "$ref": "#/components/schemas/AccountFiltersResponseCredit"
+        },
+        "loan": {
+          "$ref": "#/components/schemas/AccountFiltersResponseLoan"
+        },
+        "investment": {
+          "$ref": "#/components/schemas/AccountFiltersResponseInvestment"
+        }
+      },
+      "description": "The \u0060account_filters\u0060 specified in the original call to \u0060/link/token/create\u0060.\n"
     },
     "InstitutionsSearchAccountFilter": {
       "title": "InstitutionsSearchAccountFilter",

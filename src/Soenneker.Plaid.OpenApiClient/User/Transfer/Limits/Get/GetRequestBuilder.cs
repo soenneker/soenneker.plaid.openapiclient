@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.User.Transfer.Limits.Get
         {
         }
         /// <summary>
-        /// Retrieve the user&apos;s persisted Guaranteed ACH transaction limit and configured daily, weekly, and monthly ceilings. Amounts are returned as decimal strings in dollars with two digits of precision and an ISO currency code. A transaction limit is computed when no active limit exists.
+        /// Retrieve the user&apos;s current Guaranteed ACH per-transaction limit and configured daily, weekly, and monthly ceilings. Amounts are returned as decimal strings in dollars with two decimal places and an ISO currency code. Access to this endpoint must be enabled for your client.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Plaid.OpenApiClient.Models.UserTransferLimitsGetResponse"/></returns>
         /// <param name="body">UserTransferLimitsGetRequest defines the request schema for `/user/transfer/limits/get`.</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Plaid.OpenApiClient.User.Transfer.Limits.Get
             return await RequestAdapter.SendAsync<global::Soenneker.Plaid.OpenApiClient.Models.UserTransferLimitsGetResponse>(requestInfo, global::Soenneker.Plaid.OpenApiClient.Models.UserTransferLimitsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the user&apos;s persisted Guaranteed ACH transaction limit and configured daily, weekly, and monthly ceilings. Amounts are returned as decimal strings in dollars with two digits of precision and an ISO currency code. A transaction limit is computed when no active limit exists.
+        /// Retrieve the user&apos;s current Guaranteed ACH per-transaction limit and configured daily, weekly, and monthly ceilings. Amounts are returned as decimal strings in dollars with two decimal places and an ISO currency code. Access to this endpoint must be enabled for your client.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">UserTransferLimitsGetRequest defines the request schema for `/user/transfer/limits/get`.</param>

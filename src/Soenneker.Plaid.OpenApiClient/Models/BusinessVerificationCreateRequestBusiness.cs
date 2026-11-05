@@ -26,8 +26,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             else if (parseNode.GetChildNode("email_address") is { } nullNodeEmailAddress && nullNodeEmailAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailAddress = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("officers") is null) { _explicitNullValueOfficers = default!; _explicitNullProperties?.Remove("officers"); }
+            else if (parseNode.GetChildNode("officers") is { } nullNodeOfficers && nullNodeOfficers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Officers = null;
             if (parseNode.GetChildNode("phone_number") is null) { _explicitNullValuePhoneNumber = default!; _explicitNullProperties?.Remove("phone_number"); }
             else if (parseNode.GetChildNode("phone_number") is { } nullNodePhoneNumber && nullNodePhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumber = null;
+            if (parseNode.GetChildNode("tin") is null) { _explicitNullValueTin = default!; _explicitNullProperties?.Remove("tin"); }
+            else if (parseNode.GetChildNode("tin") is { } nullNodeTin && nullNodeTin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tin = null;
             if (parseNode.GetChildNode("website") is null) { _explicitNullValueWebsite = default!; _explicitNullProperties?.Remove("website"); }
             else if (parseNode.GetChildNode("website") is { } nullNodeWebsite && nullNodeWebsite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Website = null;
         }
@@ -74,6 +78,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
+        /// <summary>Officers of the business, used to check that the people listed match public records. At most 10.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.BusinessOfficer>? Officers { get => _explicitNullValueOfficers; set { _explicitNullValueOfficers = value; AdditionalData?.Remove("officers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("officers"); else _explicitNullProperties?.Remove("officers"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.BusinessOfficer>? _explicitNullValueOfficers = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.BusinessOfficer> Officers { get => _explicitNullValueOfficers; set { _explicitNullValueOfficers = value; AdditionalData?.Remove("officers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("officers"); else _explicitNullProperties?.Remove("officers"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.BusinessOfficer> _explicitNullValueOfficers = default!;
+#endif
         /// <summary>A phone number in E.164 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,6 +97,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; AdditionalData?.Remove("phone_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number"); else _explicitNullProperties?.Remove("phone_number"); } }
         private string _explicitNullValuePhoneNumber = default!;
+#endif
+        /// <summary>The business&apos;s Taxpayer Identification Number (TIN), such as an Employer Identification Number (EIN), as 9 digits. An EIN may include a dash after the first two digits, such as `12-3456789`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Tin { get => _explicitNullValueTin; set { _explicitNullValueTin = value; AdditionalData?.Remove("tin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tin"); else _explicitNullProperties?.Remove("tin"); } }
+        private string? _explicitNullValueTin = default!;
+#nullable restore
+#else
+        public string Tin { get => _explicitNullValueTin; set { _explicitNullValueTin = value; AdditionalData?.Remove("tin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tin"); else _explicitNullProperties?.Remove("tin"); } }
+        private string _explicitNullValueTin = default!;
 #endif
         /// <summary>An &apos;http&apos; or &apos;https&apos; URL (must begin with either of those).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -109,8 +133,6 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public static global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationCreateRequestBusiness CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            // Preserve a nullable root response.
-            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
             return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationCreateRequestBusiness(), parseNode);
         }
         /// <summary>
@@ -125,7 +147,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "alternative_name", n => { AlternativeName = n.GetStringValue(); } },
                 { "email_address", n => { EmailAddress = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "officers", n => { Officers = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.BusinessOfficer>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessOfficer.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
+                { "tin", n => { Tin = n.GetStringValue(); } },
                 { "website", n => { Website = n.GetStringValue(); } },
             };
         }
@@ -140,7 +164,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("alternative_name", AlternativeName);
             writer.WriteStringValue("email_address", EmailAddress);
             writer.WriteStringValue("name", Name);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.BusinessOfficer>("officers", Officers);
             writer.WriteStringValue("phone_number", PhoneNumber);
+            writer.WriteStringValue("tin", Tin);
             writer.WriteStringValue("website", Website);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

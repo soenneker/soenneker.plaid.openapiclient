@@ -3,9 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>Status of the KYB (Know Your Business) identity assessment check</summary>
+    /// <summary>Status of the business identity verification check</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum BusinessVerificationStatusKybCheck
+    public enum BusinessVerificationStatusBusinessVerificationCheck
     {
         [EnumMember(Value = "active")]
         #pragma warning disable CS1591

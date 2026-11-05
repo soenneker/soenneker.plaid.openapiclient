@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
     /// <summary>
-    /// The user&apos;s persisted per-transaction guarantee limit. A zero-dollar limit is returned with a value of `&quot;0.00&quot;`.
+    /// The user&apos;s current per-transaction guarantee limit. A zero-dollar limit is returned with a value of `&quot;0.00&quot;`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserGuaranteeLimitsTransactionLimit : IAdditionalDataHolder, IParsable

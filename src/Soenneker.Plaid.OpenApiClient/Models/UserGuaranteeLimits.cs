@@ -50,7 +50,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public global::Soenneker.Plaid.OpenApiClient.Models.UserTransferLimitAmountNullable MonthlyLimit { get => _explicitNullValueMonthlyLimit; set { _explicitNullValueMonthlyLimit = value; AdditionalData?.Remove("monthly_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_limit"); else _explicitNullProperties?.Remove("monthly_limit"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.UserTransferLimitAmountNullable _explicitNullValueMonthlyLimit = default!;
 #endif
-        /// <summary>The user&apos;s persisted per-transaction guarantee limit. A zero-dollar limit is returned with a value of `&quot;0.00&quot;`.</summary>
+        /// <summary>The user&apos;s current per-transaction guarantee limit. A zero-dollar limit is returned with a value of `&quot;0.00&quot;`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.UserGuaranteeLimitsTransactionLimit? TransactionLimit { get => _explicitNullValueTransactionLimit; set { _explicitNullValueTransactionLimit = value; AdditionalData?.Remove("transaction_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_limit"); else _explicitNullProperties?.Remove("transaction_limit"); } }

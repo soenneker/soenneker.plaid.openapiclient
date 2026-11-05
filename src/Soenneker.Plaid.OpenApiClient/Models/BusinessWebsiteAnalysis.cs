@@ -48,9 +48,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSsl Ssl { get => _explicitNullValueSsl; set { _explicitNullValueSsl = value; AdditionalData?.Remove("ssl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssl"); else _explicitNullProperties?.Remove("ssl"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSsl _explicitNullValueSsl = default!;
 #endif
-        /// <summary>Build status of the business website.</summary>
+        /// <summary>Build status of the business website. `null` if the build status could not be determined.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteBuildStatus? WebsiteBuildStatus { get => _explicitNullValueWebsiteBuildStatus; set { _explicitNullValueWebsiteBuildStatus = value; AdditionalData?.Remove("website_build_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website_build_status"); else _explicitNullProperties?.Remove("website_build_status"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteBuildStatus? _explicitNullValueWebsiteBuildStatus = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteBuildStatus WebsiteBuildStatus { get => _explicitNullValueWebsiteBuildStatus; set { _explicitNullValueWebsiteBuildStatus = value; AdditionalData?.Remove("website_build_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website_build_status"); else _explicitNullProperties?.Remove("website_build_status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteBuildStatus _explicitNullValueWebsiteBuildStatus = default!;
+#endif
         /// <summary>WHOIS metadata for the business website domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,7 +98,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "email_is_deliverable", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEmailIsDeliverable = default; _explicitNullProperties?.Remove("email_is_deliverable"); AdditionalData["email_is_deliverable"] = unknown; } else { EmailIsDeliverable = parsed; AdditionalData.Remove("email_is_deliverable"); } } },
                 { "is_parked", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIsParked = default; _explicitNullProperties?.Remove("is_parked"); AdditionalData["is_parked"] = unknown; } else { IsParked = parsed; AdditionalData.Remove("is_parked"); } } },
                 { "ssl", n => { Ssl = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSsl>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSsl.CreateFromDiscriminatorValue); } },
-                { "website_build_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteBuildStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueWebsiteBuildStatus = default; _explicitNullProperties?.Remove("website_build_status"); AdditionalData["website_build_status"] = unknown; } else { WebsiteBuildStatus = parsed; AdditionalData.Remove("website_build_status"); } } },
+                { "website_build_status", n => { WebsiteBuildStatus = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteBuildStatus>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteBuildStatus.CreateFromDiscriminatorValue); } },
                 { "whois_record", n => { WhoisRecord = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWhoisRecord>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessWhoisRecord.CreateFromDiscriminatorValue); } },
             };
         }
@@ -105,7 +112,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus>("email_is_deliverable", EmailIsDeliverable);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus>("is_parked", IsParked);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteSsl>("ssl", Ssl);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteBuildStatus>("website_build_status", WebsiteBuildStatus);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWebsiteBuildStatus>("website_build_status", WebsiteBuildStatus);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessWhoisRecord>("whois_record", WhoisRecord);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

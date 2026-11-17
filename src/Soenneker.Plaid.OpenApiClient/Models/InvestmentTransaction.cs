@@ -63,7 +63,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The complete value of the transaction. Positive values when cash is debited, e.g. purchases of stock; negative values when cash is credited, e.g. sales of stock. Treatment remains the same for cash-only movements unassociated with securities. For transactions representing a simultaneous cash contribution and purchase of a security, the portion of the transaction representing the purchase takes precedence, and the `amount` is represented as positive.</summary>
+        /// <summary>The complete value of the transaction. Positive values when cash is debited, e.g. purchases of stock; negative values when cash is credited, e.g. sales of stock. Treatment remains the same for cash-only movements unassociated with securities. For transactions representing a simultaneous cash contribution and purchase of a security, the portion of the transaction representing the purchase takes precedence, and the `amount` is represented as positive. `null` if the institution does not provide the amount.</summary>
         public double? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; AdditionalData?.Remove("amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
         private double? _explicitNullValueAmount = default!;
         /// <summary>A legacy field formerly used internally by Plaid to identify certain canceled transactions.</summary>
@@ -103,7 +103,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public string IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; AdditionalData?.Remove("iso_currency_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
         private string _explicitNullValueIsoCurrencyCode = default!;
 #endif
-        /// <summary>The institution&apos;s description of the transaction.</summary>
+        /// <summary>The institution&apos;s description of the transaction. `null` if the institution does not provide a description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -113,10 +113,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The price of the security at which this transaction occurred.</summary>
+        /// <summary>The price of the security at which this transaction occurred. `null` if the institution does not provide the price.</summary>
         public double? Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; AdditionalData?.Remove("price"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price"); else _explicitNullProperties?.Remove("price"); } }
         private double? _explicitNullValuePrice = default!;
-        /// <summary>The number of units of the security involved in this transaction. Positive for buy transactions; negative for sell transactions.</summary>
+        /// <summary>The number of units of the security involved in this transaction. Positive for buy transactions; negative for sell transactions. `null` if the institution does not provide the quantity.</summary>
         public double? Quantity { get => _explicitNullValueQuantity; set { _explicitNullValueQuantity = value; AdditionalData?.Remove("quantity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quantity"); else _explicitNullProperties?.Remove("quantity"); } }
         private double? _explicitNullValueQuantity = default!;
         /// <summary>The `security_id` to which this transaction is related.</summary>
@@ -130,14 +130,14 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         private string _explicitNullValueSecurityId = default!;
 #endif
         /// <summary>For descriptions of possible transaction types and subtypes, see the [Investment transaction types schema](https://plaid.com/docs/api/accounts/#investment-transaction-types-schema).</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransactionSubtype? Subtype { get => _explicitNullValueSubtype; set { _explicitNullValueSubtype = value; AdditionalData?.Remove("subtype"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtype"); else _explicitNullProperties?.Remove("subtype"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransactionSubtype? _explicitNullValueSubtype = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransactionSubtypeComposed? Subtype { get => _explicitNullValueSubtype; set { _explicitNullValueSubtype = value; AdditionalData?.Remove("subtype"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtype"); else _explicitNullProperties?.Remove("subtype"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransactionSubtypeComposed? _explicitNullValueSubtype = default!;
         /// <summary>Timestamp in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format (`YYYY-MM-DDTHH:mm:ssZ`) representing when the order was initiated. This field is returned for select financial institutions and reflects the value provided by the institution. When the institution only provides a date without time-of-day information, this field will reflect the date that the order was initiated with a time component that defaults to `T00:00:00Z`. This does not indicate that the order was initiated at midnight UTC.</summary>
         public DateTimeOffset? TransactionDatetime { get => _explicitNullValueTransactionDatetime; set { _explicitNullValueTransactionDatetime = value; AdditionalData?.Remove("transaction_datetime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_datetime"); else _explicitNullProperties?.Remove("transaction_datetime"); } }
         private DateTimeOffset? _explicitNullValueTransactionDatetime = default!;
         /// <summary>Value is one of the following:`buy`: Buying an investment`sell`: Selling an investment`cancel`: A cancellation of a pending transaction`cash`: Activity that modifies a cash position`fee`: A fee on the account`transfer`: Activity which modifies a position, but not through buy/sell activity e.g. options exercise, portfolio transferFor descriptions of possible transaction types and subtypes, see the [Investment transaction types schema](https://plaid.com/docs/api/accounts/#investment-transaction-types-schema).</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransactionType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransactionType? _explicitNullValueType = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransactionTypeComposed? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransactionTypeComposed? _explicitNullValueType = default!;
         /// <summary>The unofficial currency code associated with the transaction. Always `null` if `iso_currency_code` is non-`null`. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `unofficial_currency_code`s.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -184,9 +184,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "price", n => { Price = n.GetDoubleValue(); } },
                 { "quantity", n => { Quantity = n.GetDoubleValue(); } },
                 { "security_id", n => { SecurityId = n.GetStringValue(); } },
-                { "subtype", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransactionSubtype>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSubtype = default; _explicitNullProperties?.Remove("subtype"); AdditionalData["subtype"] = unknown; } else { Subtype = parsed; AdditionalData.Remove("subtype"); } } },
+                { "subtype", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransactionSubtypeComposed>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSubtype = default; _explicitNullProperties?.Remove("subtype"); AdditionalData["subtype"] = unknown; } else { Subtype = parsed; AdditionalData.Remove("subtype"); } } },
                 { "transaction_datetime", n => { TransactionDatetime = n.GetDateTimeOffsetValue(); } },
-                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransactionType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransactionTypeComposed>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "unofficial_currency_code", n => { UnofficialCurrencyCode = n.GetStringValue(); } },
             };
         }
@@ -208,9 +208,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDoubleValue("price", Price);
             writer.WriteDoubleValue("quantity", Quantity);
             writer.WriteStringValue("security_id", SecurityId);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransactionSubtype>("subtype", Subtype);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransactionSubtypeComposed>("subtype", Subtype);
             writer.WriteDateTimeOffsetValue("transaction_datetime", TransactionDatetime);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransactionType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.InvestmentTransactionTypeComposed>("type", Type);
             writer.WriteStringValue("unofficial_currency_code", UnofficialCurrencyCode);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

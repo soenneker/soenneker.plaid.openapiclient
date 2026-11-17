@@ -101,8 +101,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         private string _explicitNullValueLedgerId = default!;
 #endif
         /// <summary>The network or rails used for the transfer.For transfers submitted as `ach` or `same-day-ach`, the Standard ACH cutoff is 8:30 PM Eastern Time.For transfers submitted as `same-day-ach`, the Same Day ACH cutoff is 3:00 PM Eastern Time.  It is recommended to send the request 15 minutes prior to the cutoff to ensure that it will be processed in time for submission before the cutoff. If the transfer is processed after this cutoff but before the Standard ACH cutoff, it will be sent over Standard ACH rails and will not incur same-day charges; this will apply to both legs of the transfer if applicable. The transaction limit for a Same Day ACH transfer is $1,000,000. Authorization requests sent with an amount greater than $1,000,000 will fail.For transfers submitted as `rtp`, Plaid will automatically route between the Real-Time Payments (RTP) rail by TCH or FedNow rails as necessary. If a transfer is submitted as `rtp` and the counterparty account is not eligible for RTP, the `/transfer/authorization/create` request will fail with an `INVALID_FIELD` error code. To pre-check to determine whether a counterparty account can support RTP, call `/transfer/capabilities/get` before calling `/transfer/authorization/create`.Wire transfers are currently in early availability. To request access to `wire` as a payment network, contact your account manager. For transfers submitted as `wire`, the `type` must be `credit`; wire debits are not supported. The cutoff to submit a wire payment is 6:30 PM Eastern Time on a business day; wires submitted after that time will be processed on the next business day. The transaction limit for a wire is $999,999.99. Authorization requests sent with an amount greater than $999,999.99 will fail.Support for `rfp` (request for payment) is currently in closed beta. To learn more, contact your Plaid account manager. For transfers submitted as `rfp`, the `type` must be `debit`.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.TransferNetwork? Network { get => _explicitNullValueNetwork; set { _explicitNullValueNetwork = value; AdditionalData?.Remove("network"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network"); else _explicitNullProperties?.Remove("network"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.TransferNetwork? _explicitNullValueNetwork = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.TransferLedgerWithdrawRequestNetwork? Network { get => _explicitNullValueNetwork; set { _explicitNullValueNetwork = value; AdditionalData?.Remove("network"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network"); else _explicitNullProperties?.Remove("network"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.TransferLedgerWithdrawRequestNetwork? _explicitNullValueNetwork = default!;
         /// <summary>Client ID of the customer that owns the Ledger balance. This is so Plaid knows which of your customers to pay out to or collect funds from. Only applicable for [Platform customers](https://plaid.com/docs/transfer/application/#originators-vs-platforms). Do not include if you&apos;re paying out to yourself.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -154,7 +154,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "funding_account_id", n => { FundingAccountId = n.GetStringValue(); } },
                 { "idempotency_key", n => { IdempotencyKey = n.GetStringValue(); } },
                 { "ledger_id", n => { LedgerId = n.GetStringValue(); } },
-                { "network", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferNetwork>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueNetwork = default; _explicitNullProperties?.Remove("network"); AdditionalData["network"] = unknown; } else { Network = parsed; AdditionalData.Remove("network"); } } },
+                { "network", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferLedgerWithdrawRequestNetwork>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueNetwork = default; _explicitNullProperties?.Remove("network"); AdditionalData["network"] = unknown; } else { Network = parsed; AdditionalData.Remove("network"); } } },
                 { "originator_client_id", n => { OriginatorClientId = n.GetStringValue(); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
             };
@@ -172,7 +172,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("funding_account_id", FundingAccountId);
             writer.WriteStringValue("idempotency_key", IdempotencyKey);
             writer.WriteStringValue("ledger_id", LedgerId);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferNetwork>("network", Network);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferLedgerWithdrawRequestNetwork>("network", Network);
             writer.WriteStringValue("originator_client_id", OriginatorClientId);
             writer.WriteStringValue("secret", Secret);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

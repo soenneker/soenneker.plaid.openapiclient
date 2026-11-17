@@ -161,15 +161,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public string IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; AdditionalData?.Remove("iso_currency_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
         private string _explicitNullValueIsoCurrencyCode = default!;
 #endif
-        /// <summary>A representation of where a transaction took place. Location data is provided only for transactions at physical locations, not for online transactions. Location data availability depends primarily on the merchant and is most likely to be populated for transactions at large retail chains; small, local businesses are less likely to have location data available.</summary>
+        /// <summary>The location property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.Location? Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; AdditionalData?.Remove("location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.Location? _explicitNullValueLocation = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransactionLocation? Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; AdditionalData?.Remove("location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransactionLocation? _explicitNullValueLocation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.Location Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; AdditionalData?.Remove("location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.Location _explicitNullValueLocation = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransactionLocation Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; AdditionalData?.Remove("location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransactionLocation _explicitNullValueLocation = default!;
 #endif
         /// <summary>The merchant name, as enriched by Plaid. This is typically a more human-readable version of the merchant counterparty in the transaction. For some bank transactions (such as checks or account transfers) where there is no meaningful merchant name, this value will be `null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -202,15 +202,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public string OriginalDescription { get => _explicitNullValueOriginalDescription; set { _explicitNullValueOriginalDescription = value; AdditionalData?.Remove("original_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_description"); else _explicitNullProperties?.Remove("original_description"); } }
         private string _explicitNullValueOriginalDescription = default!;
 #endif
-        /// <summary>Transaction information specific to inter-bank transfers. If the transaction was not an inter-bank transfer, all fields will be `null`.If the `transactions` object was returned by a Transactions endpoint such as `/transactions/sync` or `/transactions/get`, the `payment_meta` key will always appear, but no data elements are guaranteed. If the `transactions` object was returned by an Assets endpoint such as `/asset_report/get` or `/asset_report/pdf/get`, this field will only appear in an Asset Report with Insights.</summary>
+        /// <summary>The payment_meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentMeta? PaymentMeta { get => _explicitNullValuePaymentMeta; set { _explicitNullValuePaymentMeta = value; AdditionalData?.Remove("payment_meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_meta"); else _explicitNullProperties?.Remove("payment_meta"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.PaymentMeta? _explicitNullValuePaymentMeta = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransactionPaymentMeta? PaymentMeta { get => _explicitNullValuePaymentMeta; set { _explicitNullValuePaymentMeta = value; AdditionalData?.Remove("payment_meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_meta"); else _explicitNullProperties?.Remove("payment_meta"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransactionPaymentMeta? _explicitNullValuePaymentMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.PaymentMeta PaymentMeta { get => _explicitNullValuePaymentMeta; set { _explicitNullValuePaymentMeta = value; AdditionalData?.Remove("payment_meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_meta"); else _explicitNullProperties?.Remove("payment_meta"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.PaymentMeta _explicitNullValuePaymentMeta = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransactionPaymentMeta PaymentMeta { get => _explicitNullValuePaymentMeta; set { _explicitNullValuePaymentMeta = value; AdditionalData?.Remove("payment_meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_meta"); else _explicitNullProperties?.Remove("payment_meta"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransactionPaymentMeta _explicitNullValuePaymentMeta = default!;
 #endif
         /// <summary>When `true`, identifies the transaction as pending or unsettled. Pending transaction details (name, type, amount, category ID) may change before they are settled.</summary>
         public bool? Pending { get => _explicitNullValuePending; set { _explicitNullValuePending = value; AdditionalData?.Remove("pending"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pending"); else _explicitNullProperties?.Remove("pending"); } }
@@ -236,8 +236,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         private string _explicitNullValueTransactionId = default!;
 #endif
         /// <summary>`digital:` transactions that took place online.`place:` transactions that were made at a physical location.`special:` transactions that relate to banks, e.g. fees or deposits.`unresolved:` transactions that do not fit into the other three types.</summary>
-        public global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransactionType? TransactionType { get => _explicitNullValueTransactionType; set { _explicitNullValueTransactionType = value; AdditionalData?.Remove("transaction_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_type"); else _explicitNullProperties?.Remove("transaction_type"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransactionType? _explicitNullValueTransactionType = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransactionTransactionType? TransactionType { get => _explicitNullValueTransactionType; set { _explicitNullValueTransactionType = value; AdditionalData?.Remove("transaction_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_type"); else _explicitNullProperties?.Remove("transaction_type"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransactionTransactionType? _explicitNullValueTransactionType = default!;
         /// <summary>The unofficial currency code associated with the transaction. Always `null` if `iso_currency_code` is non-`null`. Unofficial currency codes are used for currencies that do not have official ISO currency codes, such as cryptocurrencies and the currencies of certain countries.See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `unofficial_currency_code`s.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -284,15 +284,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "date_transacted", n => { DateTransacted = n.GetStringValue(); } },
                 { "income_source_id", n => { IncomeSourceId = n.GetStringValue(); } },
                 { "iso_currency_code", n => { IsoCurrencyCode = n.GetStringValue(); } },
-                { "location", n => { Location = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Location>(global::Soenneker.Plaid.OpenApiClient.Models.Location.CreateFromDiscriminatorValue); } },
+                { "location", n => { Location = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransactionLocation>(global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransactionLocation.CreateFromDiscriminatorValue); } },
                 { "merchant_name", n => { MerchantName = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "original_description", n => { OriginalDescription = n.GetStringValue(); } },
-                { "payment_meta", n => { PaymentMeta = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentMeta>(global::Soenneker.Plaid.OpenApiClient.Models.PaymentMeta.CreateFromDiscriminatorValue); } },
+                { "payment_meta", n => { PaymentMeta = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransactionPaymentMeta>(global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransactionPaymentMeta.CreateFromDiscriminatorValue); } },
                 { "pending", n => { Pending = n.GetBoolValue(); } },
                 { "pending_transaction_id", n => { PendingTransactionId = n.GetStringValue(); } },
                 { "transaction_id", n => { TransactionId = n.GetStringValue(); } },
-                { "transaction_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransactionType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTransactionType = default; _explicitNullProperties?.Remove("transaction_type"); AdditionalData["transaction_type"] = unknown; } else { TransactionType = parsed; AdditionalData.Remove("transaction_type"); } } },
+                { "transaction_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransactionTransactionType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTransactionType = default; _explicitNullProperties?.Remove("transaction_type"); AdditionalData["transaction_type"] = unknown; } else { TransactionType = parsed; AdditionalData.Remove("transaction_type"); } } },
                 { "unofficial_currency_code", n => { UnofficialCurrencyCode = n.GetStringValue(); } },
             };
         }
@@ -314,15 +314,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("date_transacted", DateTransacted);
             writer.WriteStringValue("income_source_id", IncomeSourceId);
             writer.WriteStringValue("iso_currency_code", IsoCurrencyCode);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Location>("location", Location);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransactionLocation>("location", Location);
             writer.WriteStringValue("merchant_name", MerchantName);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("original_description", OriginalDescription);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentMeta>("payment_meta", PaymentMeta);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransactionPaymentMeta>("payment_meta", PaymentMeta);
             writer.WriteBoolValue("pending", Pending);
             writer.WriteStringValue("pending_transaction_id", PendingTransactionId);
             writer.WriteStringValue("transaction_id", TransactionId);
-            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransactionType>("transaction_type", TransactionType);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransactionTransactionType>("transaction_type", TransactionType);
             writer.WriteStringValue("unofficial_currency_code", UnofficialCurrencyCode);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

@@ -55,12 +55,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 "cra_base_report" => new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetResponseProductCraReportGetBaseReportResponseProduct(),
                 "cra_cashflow_insights" => new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetResponseProductCraReportGetCashflowInsightsResponseProduct(),
                 "cra_home_lending" => new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetResponseProductCraReportGetHomeLendingResponseProduct(),
+                "cra_home_lending_voa" => new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetResponseProductCraReportGetHomeLendingVoaResponseProduct(),
                 "cra_income_complete" => new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetResponseProductCraReportGetIncomeCompleteResponseProduct(),
                 "cra_income_insights" => new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetResponseProductCraReportGetIncomeInsightsResponseProduct(),
                 "cra_lend_score" => new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetResponseProductCraReportGetLendScoreResponseProduct(),
                 "cra_lend_score_complete" => new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetResponseProductCraReportGetLendScoreCompleteResponseProduct(),
                 "cra_network_insights" => new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetResponseProductCraReportGetNetworkInsightsResponseProduct(),
+                "cra_prism" => new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetResponseProductCraReportGetPrismResponseProduct(),
                 "cra_qualify" => new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetResponseProductCraReportGetQualifyResponseProduct(),
+                "cra_ultrafico" => new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetResponseProductCraReportGetUltraFicoResponseProduct(),
                 _ => new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetResponseProduct(),
             };
         }

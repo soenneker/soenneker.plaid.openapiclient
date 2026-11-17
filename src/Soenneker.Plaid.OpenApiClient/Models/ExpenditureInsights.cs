@@ -24,8 +24,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             else if (parseNode.GetChildNode("essential_expenditure") is { } nullNodeEssentialExpenditure && nullNodeEssentialExpenditure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EssentialExpenditure = null;
             if (parseNode.GetChildNode("non_essential_expenditure") is null) { _explicitNullValueNonEssentialExpenditure = default!; _explicitNullProperties?.Remove("non_essential_expenditure"); }
             else if (parseNode.GetChildNode("non_essential_expenditure") is { } nullNodeNonEssentialExpenditure && nullNodeNonEssentialExpenditure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NonEssentialExpenditure = null;
-            if (parseNode.GetChildNode("other") is null) { _explicitNullValueOther = default!; _explicitNullProperties?.Remove("other"); }
-            else if (parseNode.GetChildNode("other") is { } nullNodeOther && nullNodeOther.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Other = null;
+            if (parseNode.GetChildNode("other_expenditure") is null) { _explicitNullValueOtherExpenditure = default!; _explicitNullProperties?.Remove("other_expenditure"); }
+            else if (parseNode.GetChildNode("other_expenditure") is { } nullNodeOtherExpenditure && nullNodeOtherExpenditure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OtherExpenditure = null;
             if (parseNode.GetChildNode("outlier_transactions") is null) { _explicitNullValueOutlierTransactions = default!; _explicitNullProperties?.Remove("outlier_transactions"); }
             else if (parseNode.GetChildNode("outlier_transactions") is { } nullNodeOutlierTransactions && nullNodeOutlierTransactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutlierTransactions = null;
             if (parseNode.GetChildNode("total_expenditure") is null) { _explicitNullValueTotalExpenditure = default!; _explicitNullProperties?.Remove("total_expenditure"); }
@@ -69,12 +69,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Summary statistics for a specific expenditure category, including total amount, monthly average, and percentage of income.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary? Other { get => _explicitNullValueOther; set { _explicitNullValueOther = value; AdditionalData?.Remove("other"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other"); else _explicitNullProperties?.Remove("other"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary? _explicitNullValueOther = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary? OtherExpenditure { get => _explicitNullValueOtherExpenditure; set { _explicitNullValueOtherExpenditure = value; AdditionalData?.Remove("other_expenditure"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other_expenditure"); else _explicitNullProperties?.Remove("other_expenditure"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary? _explicitNullValueOtherExpenditure = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary Other { get => _explicitNullValueOther; set { _explicitNullValueOther = value; AdditionalData?.Remove("other"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other"); else _explicitNullProperties?.Remove("other"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary _explicitNullValueOther = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary OtherExpenditure { get => _explicitNullValueOtherExpenditure; set { _explicitNullValueOtherExpenditure = value; AdditionalData?.Remove("other_expenditure"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other_expenditure"); else _explicitNullProperties?.Remove("other_expenditure"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary _explicitNullValueOtherExpenditure = default!;
 #endif
         /// <summary>Insights into unusually large transactions that exceed typical spending patterns for the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -136,7 +136,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "cash_flow", n => { CashFlow = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureInsightsCashFlow>(global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureInsightsCashFlow.CreateFromDiscriminatorValue); } },
                 { "essential_expenditure", n => { EssentialExpenditure = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary>(global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary.CreateFromDiscriminatorValue); } },
                 { "non_essential_expenditure", n => { NonEssentialExpenditure = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary>(global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary.CreateFromDiscriminatorValue); } },
-                { "other", n => { Other = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary>(global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary.CreateFromDiscriminatorValue); } },
+                { "other_expenditure", n => { OtherExpenditure = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary>(global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary.CreateFromDiscriminatorValue); } },
                 { "outlier_transactions", n => { OutlierTransactions = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.OutlierTransactionsInsights>(global::Soenneker.Plaid.OpenApiClient.Models.OutlierTransactionsInsights.CreateFromDiscriminatorValue); } },
                 { "total_expenditure", n => { TotalExpenditure = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary>(global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary.CreateFromDiscriminatorValue); } },
                 { "transfers_out", n => { TransfersOut = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary>(global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary.CreateFromDiscriminatorValue); } },
@@ -152,7 +152,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureInsightsCashFlow>("cash_flow", CashFlow);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary>("essential_expenditure", EssentialExpenditure);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary>("non_essential_expenditure", NonEssentialExpenditure);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary>("other", Other);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary>("other_expenditure", OtherExpenditure);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.OutlierTransactionsInsights>("outlier_transactions", OutlierTransactions);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary>("total_expenditure", TotalExpenditure);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureSummary>("transfers_out", TransfersOut);

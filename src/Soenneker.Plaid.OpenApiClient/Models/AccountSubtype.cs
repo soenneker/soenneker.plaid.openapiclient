@@ -27,6 +27,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning disable CS1591
         Value529,
         #pragma warning restore CS1591
+        [EnumMember(Value = "530a")]
+        #pragma warning disable CS1591
+        Value530A,
+        #pragma warning restore CS1591
         [EnumMember(Value = "auto")]
         #pragma warning disable CS1591
         Auto,

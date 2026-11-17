@@ -20,6 +20,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("account_id") is null) { _explicitNullValueAccountId = default!; _explicitNullProperties?.Remove("account_id"); }
             else if (parseNode.GetChildNode("account_id") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
+            if (parseNode.GetChildNode("consumer_disputes") is null) { _explicitNullValueConsumerDisputes = default!; _explicitNullProperties?.Remove("consumer_disputes"); }
+            else if (parseNode.GetChildNode("consumer_disputes") is { } nullNodeConsumerDisputes && nullNodeConsumerDisputes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsumerDisputes = null;
             if (parseNode.GetChildNode("mask") is null) { _explicitNullValueMask = default!; _explicitNullProperties?.Remove("mask"); }
             else if (parseNode.GetChildNode("mask") is { } nullNodeMask && nullNodeMask.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mask = null;
             if (parseNode.GetChildNode("metadata") is null) { _explicitNullValueMetadata = default!; _explicitNullProperties?.Remove("metadata"); }
@@ -48,6 +50,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The valid dispute statements previously submitted by the consumer for this account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDispute>? ConsumerDisputes { get => _explicitNullValueConsumerDisputes; set { _explicitNullValueConsumerDisputes = value; AdditionalData?.Remove("consumer_disputes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumer_disputes"); else _explicitNullProperties?.Remove("consumer_disputes"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDispute>? _explicitNullValueConsumerDisputes = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDispute> ConsumerDisputes { get => _explicitNullValueConsumerDisputes; set { _explicitNullValueConsumerDisputes = value; AdditionalData?.Remove("consumer_disputes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumer_disputes"); else _explicitNullProperties?.Remove("consumer_disputes"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDispute> _explicitNullValueConsumerDisputes = default!;
+#endif
         /// <summary>The last 2-4 alphanumeric characters of an account&apos;s official account number.Note that the mask may be non-unique between an Item&apos;s accounts, and it may also not match the mask that the bank displays to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -130,6 +142,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
+                { "consumer_disputes", n => { ConsumerDisputes = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDispute>(global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDispute.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mask", n => { Mask = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeAccountMetadata>(global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeAccountMetadata.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -147,6 +160,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDispute>("consumer_disputes", ConsumerDisputes);
             writer.WriteStringValue("mask", Mask);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraBankIncomeAccountMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);

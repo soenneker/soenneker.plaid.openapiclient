@@ -52,7 +52,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public string InstitutionLotId { get => _explicitNullValueInstitutionLotId; set { _explicitNullValueInstitutionLotId = value; AdditionalData?.Remove("institution_lot_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution_lot_id"); else _explicitNullProperties?.Remove("institution_lot_id"); } }
         private string _explicitNullValueInstitutionLotId = default!;
 #endif
-        /// <summary>The date and time this lot was acquired, in ISO 8601 format. Null if the institution does not provide acquisition datetime data.</summary>
+        /// <summary>The date and time this lot was acquired, in ISO 8601 format. Null if the institution does not provide acquisition datetime data. When the institution only provides a date, the time defaults to `T00:00:00Z`; this does not mean the lot was acquired at midnight UTC.</summary>
         public DateTimeOffset? OriginalPurchaseDatetime { get => _explicitNullValueOriginalPurchaseDatetime; set { _explicitNullValueOriginalPurchaseDatetime = value; AdditionalData?.Remove("original_purchase_datetime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_purchase_datetime"); else _explicitNullProperties?.Remove("original_purchase_datetime"); } }
         private DateTimeOffset? _explicitNullValueOriginalPurchaseDatetime = default!;
         /// <summary>Indicates whether a holding lot position is long or short. Possible values are `LONG` and `SHORT`.</summary>

@@ -55,12 +55,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 "cra_base_report" => new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetRequestProductCraBaseReportProduct(),
                 "cra_cashflow_insights" => new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetRequestProductCraCashflowInsightsProduct(),
                 "cra_home_lending" => new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetRequestProductCraHomeLendingProduct(),
+                "cra_home_lending_voa" => new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetRequestProductCraHomeLendingVoaProduct(),
                 "cra_income_complete" => new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetRequestProductCraIncomeCompleteBundleProduct(),
                 "cra_income_insights" => new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetRequestProductCraIncomeInsightsProduct(),
                 "cra_lend_score" => new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetRequestProductCraLendScoreProduct(),
                 "cra_lend_score_complete" => new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetRequestProductCraLendScoreCompleteBundleProduct(),
                 "cra_network_insights" => new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetRequestProductCraNetworkInsightsProduct(),
+                "cra_prism" => new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetRequestProductCraPrismProduct(),
                 "cra_qualify" => new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetRequestProductCraQualifyProduct(),
+                "cra_ultrafico" => new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetRequestProductCraUltraFicoProduct(),
                 _ => new global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetRequestProduct(),
             };
         }

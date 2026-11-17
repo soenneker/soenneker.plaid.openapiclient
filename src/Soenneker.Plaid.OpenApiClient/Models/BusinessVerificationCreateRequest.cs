@@ -24,6 +24,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             else if (parseNode.GetChildNode("client_id") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
             if (parseNode.GetChildNode("client_user_id") is null) { _explicitNullValueClientUserId = default!; _explicitNullProperties?.Remove("client_user_id"); }
             else if (parseNode.GetChildNode("client_user_id") is { } nullNodeClientUserId && nullNodeClientUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientUserId = null;
+            if (parseNode.GetChildNode("options") is null) { _explicitNullValueOptions = default!; _explicitNullProperties?.Remove("options"); }
+            else if (parseNode.GetChildNode("options") is { } nullNodeOptions && nullNodeOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Options = null;
             if (parseNode.GetChildNode("secret") is null) { _explicitNullValueSecret = default!; _explicitNullProperties?.Remove("secret"); }
             else if (parseNode.GetChildNode("secret") is { } nullNodeSecret && nullNodeSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Secret = null;
         }
@@ -59,6 +61,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string ClientUserId { get => _explicitNullValueClientUserId; set { _explicitNullValueClientUserId = value; AdditionalData?.Remove("client_user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_user_id"); else _explicitNullProperties?.Remove("client_user_id"); } }
         private string _explicitNullValueClientUserId = default!;
+#endif
+        /// <summary>Optional checks to run for this verification. Omit or set to null to run Business Search only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationCreateRequestOptions? Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; AdditionalData?.Remove("options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationCreateRequestOptions? _explicitNullValueOptions = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationCreateRequestOptions Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; AdditionalData?.Remove("options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationCreateRequestOptions _explicitNullValueOptions = default!;
 #endif
         /// <summary>Your Plaid API `secret`. The `secret` is required and may be provided either in the `PLAID-SECRET` header or as part of a request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -98,6 +110,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "business", n => { Business = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationCreateRequestBusiness>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationCreateRequestBusiness.CreateFromDiscriminatorValue); } },
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
                 { "client_user_id", n => { ClientUserId = n.GetStringValue(); } },
+                { "options", n => { Options = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationCreateRequestOptions>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationCreateRequestOptions.CreateFromDiscriminatorValue); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
             };
         }
@@ -111,6 +124,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationCreateRequestBusiness>("business", Business);
             writer.WriteStringValue("client_id", ClientId);
             writer.WriteStringValue("client_user_id", ClientUserId);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationCreateRequestOptions>("options", Options);
             writer.WriteStringValue("secret", Secret);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

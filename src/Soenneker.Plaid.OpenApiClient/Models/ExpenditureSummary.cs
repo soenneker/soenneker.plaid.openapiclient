@@ -24,6 +24,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             else if (parseNode.GetChildNode("iso_currency_code") is { } nullNodeIsoCurrencyCode && nullNodeIsoCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsoCurrencyCode = null;
             if (parseNode.GetChildNode("monthly_average") is null) { _explicitNullValueMonthlyAverage = default!; _explicitNullProperties?.Remove("monthly_average"); }
             else if (parseNode.GetChildNode("monthly_average") is { } nullNodeMonthlyAverage && nullNodeMonthlyAverage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonthlyAverage = null;
+            if (parseNode.GetChildNode("monthly_summaries") is null) { _explicitNullValueMonthlySummaries = default!; _explicitNullProperties?.Remove("monthly_summaries"); }
+            else if (parseNode.GetChildNode("monthly_summaries") is { } nullNodeMonthlySummaries && nullNodeMonthlySummaries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonthlySummaries = null;
             if (parseNode.GetChildNode("percentage_of_income") is null) { _explicitNullValuePercentageOfIncome = default!; _explicitNullProperties?.Remove("percentage_of_income"); }
             else if (parseNode.GetChildNode("percentage_of_income") is { } nullNodePercentageOfIncome && nullNodePercentageOfIncome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PercentageOfIncome = null;
             if (parseNode.GetChildNode("top_categories") is null) { _explicitNullValueTopCategories = default!; _explicitNullProperties?.Remove("top_categories"); }
@@ -58,6 +60,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.MonthlyAverage MonthlyAverage { get => _explicitNullValueMonthlyAverage; set { _explicitNullValueMonthlyAverage = value; AdditionalData?.Remove("monthly_average"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_average"); else _explicitNullProperties?.Remove("monthly_average"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.MonthlyAverage _explicitNullValueMonthlyAverage = default!;
+#endif
+        /// <summary>The monthly summaries of transactions in this expenditure group.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.MonthlySummary>? MonthlySummaries { get => _explicitNullValueMonthlySummaries; set { _explicitNullValueMonthlySummaries = value; AdditionalData?.Remove("monthly_summaries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_summaries"); else _explicitNullProperties?.Remove("monthly_summaries"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.MonthlySummary>? _explicitNullValueMonthlySummaries = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.MonthlySummary> MonthlySummaries { get => _explicitNullValueMonthlySummaries; set { _explicitNullValueMonthlySummaries = value; AdditionalData?.Remove("monthly_summaries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_summaries"); else _explicitNullProperties?.Remove("monthly_summaries"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.MonthlySummary> _explicitNullValueMonthlySummaries = default!;
 #endif
         /// <summary>The percentage of the total inflows that was spent in this expenses group, within the given time window across all the accounts in the report.For example, a value of 100 represents that 100% of the inflows were spent on transactions that fall into this expenditure group.If there&apos;s no available income for the given time period, this field value will be `-1`.</summary>
         public double? PercentageOfIncome { get => _explicitNullValuePercentageOfIncome; set { _explicitNullValuePercentageOfIncome = value; AdditionalData?.Remove("percentage_of_income"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("percentage_of_income"); else _explicitNullProperties?.Remove("percentage_of_income"); } }
@@ -115,6 +127,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "amount", n => { Amount = n.GetDoubleValue(); } },
                 { "iso_currency_code", n => { IsoCurrencyCode = n.GetStringValue(); } },
                 { "monthly_average", n => { MonthlyAverage = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.MonthlyAverage>(global::Soenneker.Plaid.OpenApiClient.Models.MonthlyAverage.CreateFromDiscriminatorValue); } },
+                { "monthly_summaries", n => { MonthlySummaries = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.MonthlySummary>(global::Soenneker.Plaid.OpenApiClient.Models.MonthlySummary.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "percentage_of_income", n => { PercentageOfIncome = n.GetDoubleValue(); } },
                 { "top_categories", n => { TopCategories = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CategoryExpenses>(global::Soenneker.Plaid.OpenApiClient.Models.CategoryExpenses.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "transactions_count", n => { TransactionsCount = n.GetIntValue(); } },
@@ -131,6 +144,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDoubleValue("amount", Amount);
             writer.WriteStringValue("iso_currency_code", IsoCurrencyCode);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.MonthlyAverage>("monthly_average", MonthlyAverage);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.MonthlySummary>("monthly_summaries", MonthlySummaries);
             writer.WriteDoubleValue("percentage_of_income", PercentageOfIncome);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CategoryExpenses>("top_categories", TopCategories);
             writer.WriteIntValue("transactions_count", TransactionsCount);

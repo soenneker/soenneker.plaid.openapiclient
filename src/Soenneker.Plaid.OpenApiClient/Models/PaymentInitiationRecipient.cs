@@ -42,15 +42,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationAddress Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationAddress _explicitNullValueAddress = default!;
 #endif
-        /// <summary>An object containing a Bacs account number and sort code. If an IBAN is not provided or if this recipient needs to accept domestic GBP-denominated payments, Bacs data is required.</summary>
+        /// <summary>An object containing a Bacs account number and sort code. If either value isn&apos;t available, it&apos;s returned as an empty string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.RecipientBacsNullable? Bacs { get => _explicitNullValueBacs; set { _explicitNullValueBacs = value; AdditionalData?.Remove("bacs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bacs"); else _explicitNullProperties?.Remove("bacs"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.RecipientBacsNullable? _explicitNullValueBacs = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.RecipientBacsNullableInResponse? Bacs { get => _explicitNullValueBacs; set { _explicitNullValueBacs = value; AdditionalData?.Remove("bacs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bacs"); else _explicitNullProperties?.Remove("bacs"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RecipientBacsNullableInResponse? _explicitNullValueBacs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.RecipientBacsNullable Bacs { get => _explicitNullValueBacs; set { _explicitNullValueBacs = value; AdditionalData?.Remove("bacs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bacs"); else _explicitNullProperties?.Remove("bacs"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.RecipientBacsNullable _explicitNullValueBacs = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.RecipientBacsNullableInResponse Bacs { get => _explicitNullValueBacs; set { _explicitNullValueBacs = value; AdditionalData?.Remove("bacs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bacs"); else _explicitNullProperties?.Remove("bacs"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.RecipientBacsNullableInResponse _explicitNullValueBacs = default!;
 #endif
         /// <summary>The International Bank Account Number (IBAN) for the recipient.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +108,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationAddress>(global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationAddress.CreateFromDiscriminatorValue); } },
-                { "bacs", n => { Bacs = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.RecipientBacsNullable>(global::Soenneker.Plaid.OpenApiClient.Models.RecipientBacsNullable.CreateFromDiscriminatorValue); } },
+                { "bacs", n => { Bacs = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.RecipientBacsNullableInResponse>(global::Soenneker.Plaid.OpenApiClient.Models.RecipientBacsNullableInResponse.CreateFromDiscriminatorValue); } },
                 { "iban", n => { Iban = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "recipient_id", n => { RecipientId = n.GetStringValue(); } },
@@ -122,7 +122,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentInitiationAddress>("address", Address);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.RecipientBacsNullable>("bacs", Bacs);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.RecipientBacsNullableInResponse>("bacs", Bacs);
             writer.WriteStringValue("iban", Iban);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("recipient_id", RecipientId);

@@ -65,12 +65,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>An object representing the e-wallet transaction&apos;s counterparty</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterparty? Counterparty { get => _explicitNullValueCounterparty; set { _explicitNullValueCounterparty = value; AdditionalData?.Remove("counterparty"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparty"); else _explicitNullProperties?.Remove("counterparty"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterparty? _explicitNullValueCounterparty = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyInResponse? Counterparty { get => _explicitNullValueCounterparty; set { _explicitNullValueCounterparty = value; AdditionalData?.Remove("counterparty"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparty"); else _explicitNullProperties?.Remove("counterparty"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyInResponse? _explicitNullValueCounterparty = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterparty Counterparty { get => _explicitNullValueCounterparty; set { _explicitNullValueCounterparty = value; AdditionalData?.Remove("counterparty"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparty"); else _explicitNullProperties?.Remove("counterparty"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterparty _explicitNullValueCounterparty = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyInResponse Counterparty { get => _explicitNullValueCounterparty; set { _explicitNullValueCounterparty = value; AdditionalData?.Remove("counterparty"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparty"); else _explicitNullProperties?.Remove("counterparty"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyInResponse _explicitNullValueCounterparty = default!;
 #endif
         /// <summary>Timestamp when the transaction was created, in [ISO 8601](https://wikipedia.org/wiki/ISO_8601) format.</summary>
         public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
@@ -186,7 +186,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionAmount>(global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionAmount.CreateFromDiscriminatorValue); } },
-                { "counterparty", n => { Counterparty = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterparty>(global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterparty.CreateFromDiscriminatorValue); } },
+                { "counterparty", n => { Counterparty = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyInResponse>(global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyInResponse.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "error", n => { Error = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PlaidError>(global::Soenneker.Plaid.OpenApiClient.Models.PlaidError.CreateFromDiscriminatorValue); } },
                 { "failure_reason", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionFailureReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFailureReason = default; _explicitNullProperties?.Remove("failure_reason"); AdditionalData["failure_reason"] = unknown; } else { FailureReason = parsed; AdditionalData.Remove("failure_reason"); } } },
@@ -210,7 +210,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionAmount>("amount", Amount);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterparty>("counterparty", Counterparty);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionCounterpartyInResponse>("counterparty", Counterparty);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PlaidError>("error", Error);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletTransactionFailureReason>("failure_reason", FailureReason);

@@ -97,7 +97,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public string SecurityId { get => _explicitNullValueSecurityId; set { _explicitNullValueSecurityId = value; AdditionalData?.Remove("security_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("security_id"); else _explicitNullProperties?.Remove("security_id"); } }
         private string _explicitNullValueSecurityId = default!;
 #endif
-        /// <summary>Per-lot acquisition data for this holding. An empty array indicates the institution does not provide lot-level data.</summary>
+        /// <summary>Per-lot acquisition data for this holding. An empty array indicates that lot-level data is unavailable for this response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLot>? TaxLots { get => _explicitNullValueTaxLots; set { _explicitNullValueTaxLots = value; AdditionalData?.Remove("tax_lots"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax_lots"); else _explicitNullProperties?.Remove("tax_lots"); } }

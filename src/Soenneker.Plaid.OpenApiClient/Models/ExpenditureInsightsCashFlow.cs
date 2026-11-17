@@ -22,22 +22,17 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             else if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
             if (parseNode.GetChildNode("iso_currency_code") is null) { _explicitNullValueIsoCurrencyCode = default!; _explicitNullProperties?.Remove("iso_currency_code"); }
             else if (parseNode.GetChildNode("iso_currency_code") is { } nullNodeIsoCurrencyCode && nullNodeIsoCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsoCurrencyCode = null;
+            if (parseNode.GetChildNode("monthly_average") is null) { _explicitNullValueMonthlyAverage = default!; _explicitNullProperties?.Remove("monthly_average"); }
+            else if (parseNode.GetChildNode("monthly_average") is { } nullNodeMonthlyAverage && nullNodeMonthlyAverage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonthlyAverage = null;
             if (parseNode.GetChildNode("unofficial_currency_code") is null) { _explicitNullValueUnofficialCurrencyCode = default!; _explicitNullProperties?.Remove("unofficial_currency_code"); }
             else if (parseNode.GetChildNode("unofficial_currency_code") is { } nullNodeUnofficialCurrencyCode && nullNodeUnofficialCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnofficialCurrencyCode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureInsightsCashFlow_amount? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; AdditionalData?.Remove("amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureInsightsCashFlow_amount? _explicitNullValueAmount = default!;
-#nullable restore
-#else
-        public global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureInsightsCashFlow_amount Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; AdditionalData?.Remove("amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureInsightsCashFlow_amount _explicitNullValueAmount = default!;
-#endif
+        /// <summary>If the parent object represents a category of transactions, such as `total_amount`, `transfers_in`, `total_income`, etc. the `amount` represents the sum of all of the transactions in the group.If the parent object is `cash_flow`, the `amount` represents the total value of all the inflows minus all the outflows across all the accounts in the report in the given time window.If the parent object is `minimum_balance`, the `amount` represents the lowest balance of the account during the given time window.</summary>
+        public double? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; AdditionalData?.Remove("amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private double? _explicitNullValueAmount = default!;
         /// <summary>The ISO-4217 currency code of the amount. Always `null` if `unofficial_currency_code` is non-`null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +42,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; AdditionalData?.Remove("iso_currency_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
         private string _explicitNullValueIsoCurrencyCode = default!;
+#endif
+        /// <summary>The monthly average amount calculated by dividing the total by the number of calendar months in the time period.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.MonthlyAverage? MonthlyAverage { get => _explicitNullValueMonthlyAverage; set { _explicitNullValueMonthlyAverage = value; AdditionalData?.Remove("monthly_average"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_average"); else _explicitNullProperties?.Remove("monthly_average"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.MonthlyAverage? _explicitNullValueMonthlyAverage = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.MonthlyAverage MonthlyAverage { get => _explicitNullValueMonthlyAverage; set { _explicitNullValueMonthlyAverage = value; AdditionalData?.Remove("monthly_average"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_average"); else _explicitNullProperties?.Remove("monthly_average"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.MonthlyAverage _explicitNullValueMonthlyAverage = default!;
 #endif
         /// <summary>The unofficial currency code associated with the amount. Always `null` if `iso_currency_code` is non-`null`.See the [currency code schema](https://plaid.com/docs/api/accounts#currency-code-schema) for a full listing of supported `unofficial_currency_code`s.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,8 +88,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureInsightsCashFlow_amount>(global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureInsightsCashFlow_amount.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetDoubleValue(); } },
                 { "iso_currency_code", n => { IsoCurrencyCode = n.GetStringValue(); } },
+                { "monthly_average", n => { MonthlyAverage = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.MonthlyAverage>(global::Soenneker.Plaid.OpenApiClient.Models.MonthlyAverage.CreateFromDiscriminatorValue); } },
                 { "unofficial_currency_code", n => { UnofficialCurrencyCode = n.GetStringValue(); } },
             };
         }
@@ -95,8 +101,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ExpenditureInsightsCashFlow_amount>("amount", Amount);
+            writer.WriteDoubleValue("amount", Amount);
             writer.WriteStringValue("iso_currency_code", IsoCurrencyCode);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.MonthlyAverage>("monthly_average", MonthlyAverage);
             writer.WriteStringValue("unofficial_currency_code", UnofficialCurrencyCode);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

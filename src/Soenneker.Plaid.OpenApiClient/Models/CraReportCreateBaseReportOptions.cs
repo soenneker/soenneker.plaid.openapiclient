@@ -18,12 +18,17 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("exclude_transactions") is null) { _explicitNullValueExcludeTransactions = default!; _explicitNullProperties?.Remove("exclude_transactions"); }
+            else if (parseNode.GetChildNode("exclude_transactions") is { } nullNodeExcludeTransactions && nullNodeExcludeTransactions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeTransactions = null;
             if (parseNode.GetChildNode("require_identity") is null) { _explicitNullValueRequireIdentity = default!; _explicitNullProperties?.Remove("require_identity"); }
             else if (parseNode.GetChildNode("require_identity") is { } nullNodeRequireIdentity && nullNodeRequireIdentity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireIdentity = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Exclude transactions from the Base Report. Each account&apos;s `transactions` field is returned as an empty array. Insights and other products in the report are not affected.</summary>
+        public bool? ExcludeTransactions { get => _explicitNullValueExcludeTransactions; set { _explicitNullValueExcludeTransactions = value; AdditionalData?.Remove("exclude_transactions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude_transactions"); else _explicitNullProperties?.Remove("exclude_transactions"); } }
+        private bool? _explicitNullValueExcludeTransactions = default!;
         /// <summary>Require the report to include identity information. If identity information is not available, report generation fails.</summary>
         public bool? RequireIdentity { get => _explicitNullValueRequireIdentity; set { _explicitNullValueRequireIdentity = value; AdditionalData?.Remove("require_identity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require_identity"); else _explicitNullProperties?.Remove("require_identity"); } }
         private bool? _explicitNullValueRequireIdentity = default!;
@@ -33,6 +38,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public CraReportCreateBaseReportOptions()
         {
             AdditionalData = new Dictionary<string, object>();
+            ExcludeTransactions = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -54,6 +60,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "exclude_transactions", n => { ExcludeTransactions = n.GetBoolValue(); } },
                 { "require_identity", n => { RequireIdentity = n.GetBoolValue(); } },
             };
         }
@@ -64,6 +71,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("exclude_transactions", ExcludeTransactions);
             writer.WriteBoolValue("require_identity", RequireIdentity);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

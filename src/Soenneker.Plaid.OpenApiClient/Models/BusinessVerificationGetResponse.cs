@@ -32,6 +32,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
             if (parseNode.GetChildNode("redacted_at") is null) { _explicitNullValueRedactedAt = default!; _explicitNullProperties?.Remove("redacted_at"); }
             else if (parseNode.GetChildNode("redacted_at") is { } nullNodeRedactedAt && nullNodeRedactedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedactedAt = null;
+            if (parseNode.GetChildNode("requested_checks") is null) { _explicitNullValueRequestedChecks = default!; _explicitNullProperties?.Remove("requested_checks"); }
+            else if (parseNode.GetChildNode("requested_checks") is { } nullNodeRequestedChecks && nullNodeRequestedChecks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestedChecks = null;
             if (parseNode.GetChildNode("request_id") is null) { _explicitNullValueRequestId = default!; _explicitNullProperties?.Remove("request_id"); }
             else if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
             if (parseNode.GetChildNode("risk_check") is null) { _explicitNullValueRiskCheck = default!; _explicitNullProperties?.Remove("risk_check"); }
@@ -95,6 +97,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>An ISO8601 formatted timestamp.</summary>
         public DateTimeOffset? RedactedAt { get => _explicitNullValueRedactedAt; set { _explicitNullValueRedactedAt = value; AdditionalData?.Remove("redacted_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redacted_at"); else _explicitNullProperties?.Remove("redacted_at"); } }
         private DateTimeOffset? _explicitNullValueRedactedAt = default!;
+        /// <summary>The optional checks requested for this business verification.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationRequestedChecks? RequestedChecks { get => _explicitNullValueRequestedChecks; set { _explicitNullValueRequestedChecks = value; AdditionalData?.Remove("requested_checks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_checks"); else _explicitNullProperties?.Remove("requested_checks"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationRequestedChecks? _explicitNullValueRequestedChecks = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationRequestedChecks RequestedChecks { get => _explicitNullValueRequestedChecks; set { _explicitNullValueRequestedChecks = value; AdditionalData?.Remove("requested_checks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_checks"); else _explicitNullProperties?.Remove("requested_checks"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationRequestedChecks _explicitNullValueRequestedChecks = default!;
+#endif
         /// <summary>A unique identifier for the request, which can be used for troubleshooting. This identifier, like all Plaid identifiers, is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -171,6 +183,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "redacted_at", n => { RedactedAt = n.GetDateTimeOffsetValue(); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
+                { "requested_checks", n => { RequestedChecks = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationRequestedChecks>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationRequestedChecks.CreateFromDiscriminatorValue); } },
                 { "risk_check", n => { RiskCheck = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessRiskCheck>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessRiskCheck.CreateFromDiscriminatorValue); } },
                 { "search_terms", n => { SearchTerms = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessSearchTerms>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessSearchTerms.CreateFromDiscriminatorValue); } },
                 { "shareable_url", n => { ShareableUrl = n.GetStringValue(); } },
@@ -191,6 +204,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessDigitalPresenceCheck>("digital_presence_check", DigitalPresenceCheck);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("redacted_at", RedactedAt);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationRequestedChecks>("requested_checks", RequestedChecks);
             writer.WriteStringValue("request_id", RequestId);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessRiskCheck>("risk_check", RiskCheck);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessSearchTerms>("search_terms", SearchTerms);

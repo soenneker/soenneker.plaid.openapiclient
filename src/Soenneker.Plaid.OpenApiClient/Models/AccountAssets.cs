@@ -97,15 +97,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public List<global::Soenneker.Plaid.OpenApiClient.Models.HistoricalBalance> HistoricalBalances { get => _explicitNullValueHistoricalBalances; set { _explicitNullValueHistoricalBalances = value; AdditionalData?.Remove("historical_balances"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("historical_balances"); else _explicitNullProperties?.Remove("historical_balances"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.HistoricalBalance> _explicitNullValueHistoricalBalances = default!;
 #endif
-        /// <summary>A set of fields describing the investments data on an account.</summary>
+        /// <summary>The investments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AssetReportInvestments? Investments { get => _explicitNullValueInvestments; set { _explicitNullValueInvestments = value; AdditionalData?.Remove("investments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investments"); else _explicitNullProperties?.Remove("investments"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.AssetReportInvestments? _explicitNullValueInvestments = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.AccountAssetsInvestments? Investments { get => _explicitNullValueInvestments; set { _explicitNullValueInvestments = value; AdditionalData?.Remove("investments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investments"); else _explicitNullProperties?.Remove("investments"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AccountAssetsInvestments? _explicitNullValueInvestments = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AssetReportInvestments Investments { get => _explicitNullValueInvestments; set { _explicitNullValueInvestments = value; AdditionalData?.Remove("investments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investments"); else _explicitNullProperties?.Remove("investments"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.AssetReportInvestments _explicitNullValueInvestments = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.AccountAssetsInvestments Investments { get => _explicitNullValueInvestments; set { _explicitNullValueInvestments = value; AdditionalData?.Remove("investments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investments"); else _explicitNullProperties?.Remove("investments"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AccountAssetsInvestments _explicitNullValueInvestments = default!;
 #endif
         /// <summary>The last 2-4 alphanumeric characters of an account&apos;s official account number. Note that the mask may be non-unique between an Item&apos;s accounts, and it may also not match the mask that the bank displays to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -180,7 +180,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public List<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransaction> Transactions { get => _explicitNullValueTransactions; set { _explicitNullValueTransactions = value; AdditionalData?.Remove("transactions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactions"); else _explicitNullProperties?.Remove("transactions"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportTransaction> _explicitNullValueTransactions = default!;
 #endif
-        /// <summary>`investment:` Investment account. In API versions 2018-05-22 and earlier, this type is called `brokerage` instead.`credit:` Credit card`depository:` Depository account`loan:` Loan account`other:` Non-specified account typeSee the [Account type schema](https://plaid.com/docs/api/accounts#account-type-schema) for a full listing of account types and corresponding subtypes.</summary>
+        /// <summary>`investment:` Investment account. In API versions 2018-05-22 and earlier, this type is called `brokerage` instead.`credit:` Credit card`depository:` Depository account`loan:` Loan account`payroll:` Payroll account`other:` Non-specified account typeSee the [Account type schema](https://plaid.com/docs/api/accounts#account-type-schema) for a full listing of account types and corresponding subtypes.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.AccountType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.AccountType? _explicitNullValueType = default!;
         /// <summary>The current verification status of an Auth Item initiated through Automated or Manual micro-deposits.  Returned for Auth Items only.`pending_automatic_verification`: The Item is pending automatic verification.`pending_manual_verification`: The Item is pending manual micro-deposit verification. Items remain in this state until the user successfully verifies the micro-deposit.`automatically_verified`: The Item has successfully been automatically verified.`manually_verified`: The Item has successfully been manually verified.`verification_expired`: Plaid was unable to automatically verify the deposit within 7 calendar days and will no longer attempt to validate the Item. Users may retry by submitting their information again through Link.`verification_failed`: The Item failed manual micro-deposit verification because the user exhausted all 3 verification attempts. Users may retry by submitting their information again through Link.`database_matched`: (deprecated) The Item has successfully been verified using Plaid&apos;s data sources. Only returned for Auth Items created via Database Match.</summary>
@@ -216,7 +216,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "balances", n => { Balances = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportAccountBalance>(global::Soenneker.Plaid.OpenApiClient.Models.AssetReportAccountBalance.CreateFromDiscriminatorValue); } },
                 { "days_available", n => { DaysAvailable = n.GetDoubleValue(); } },
                 { "historical_balances", n => { HistoricalBalances = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.HistoricalBalance>(global::Soenneker.Plaid.OpenApiClient.Models.HistoricalBalance.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "investments", n => { Investments = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportInvestments>(global::Soenneker.Plaid.OpenApiClient.Models.AssetReportInvestments.CreateFromDiscriminatorValue); } },
+                { "investments", n => { Investments = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountAssetsInvestments>(global::Soenneker.Plaid.OpenApiClient.Models.AccountAssetsInvestments.CreateFromDiscriminatorValue); } },
                 { "mask", n => { Mask = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "official_name", n => { OfficialName = n.GetStringValue(); } },
@@ -241,7 +241,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportAccountBalance>("balances", Balances);
             writer.WriteDoubleValue("days_available", DaysAvailable);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.HistoricalBalance>("historical_balances", HistoricalBalances);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AssetReportInvestments>("investments", Investments);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountAssetsInvestments>("investments", Investments);
             writer.WriteStringValue("mask", Mask);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("official_name", OfficialName);

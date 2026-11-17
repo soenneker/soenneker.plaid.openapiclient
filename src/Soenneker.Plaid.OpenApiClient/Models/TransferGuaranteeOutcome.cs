@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>The adaptive guarantee outcome for a transfer.`FULL_INSTANT`: The full transfer amount is guaranteed and funds are available instantly.`PARTIAL_INSTANT_ONLY`: A partial amount is guaranteed and available instantly; the remainder is not guaranteed.`PARTIAL_INSTANT_WITH_OBSERVATION_WINDOW`: A partial amount is guaranteed instantly; an additional amount is conditionally guaranteed subject to an observation window.`NOT_GUARANTEED`: Plaid did not provide a guarantee for this transfer.</summary>
+    /// <summary>The adaptive guarantee outcome for a transfer.`FULL_INSTANT`: The full transfer amount is guaranteed and funds are available instantly.`PARTIAL_INSTANT_ONLY`: A partial amount is guaranteed and available instantly; the remainder is not guaranteed.`PARTIAL_INSTANT_WITH_OBSERVATION_WINDOW`: None of the amount is guaranteed instantly. The full amount becomes guaranteed after an observation window if the transfer has not returned before the window expires.`NOT_GUARANTEED`: Plaid did not provide a guarantee for this transfer.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransferGuaranteeOutcome
     {

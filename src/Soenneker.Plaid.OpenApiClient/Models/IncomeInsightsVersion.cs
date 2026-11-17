@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>The version of Income Insights to use. Set this to `II2`. The value applies only to the request it is sent with; a version set in an earlier call, such as `/link/token/create` or `/cra/check_report/create`, is not reused.</summary>
+    /// <summary>The version of Income Insights to generate. `II2` is the only value you can set. If your integration has a default Income Insights version configured (integrations that started on Income Insights V1 keep V1 by default), omit this field to keep receiving that version, and set `II2` only when you are ready to migrate. If no default version is configured for your integration, this field is required and must be `II2`. The version is fixed when Income Insights is generated: if Income Insights is generated from `/link/token/create` or `/cra/check_report/create`, `/cra/check_report/income_insights/get` returns it at the version used in that call.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum IncomeInsightsVersion
     {

@@ -34,7 +34,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             else if (parseNode.GetChildNode("wire_routing") is { } nullNodeWireRouting && nullNodeWireRouting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WireRouting = null;
         }
 
-        /// <summary>The ACH account number for the account.At certain institutions, including Chase, PNC, and US Bank, you will receive a &quot;tokenized&quot; account number, which is not the user&apos;s actual account number. For important details on how this may impact your integration and on how to avoid fraud, user confusion, and ACH returns, see [Tokenized account numbers](https://plaid.com/docs/auth/#tokenized-account-numbers).</summary>
+        /// <summary>The ACH account number for the account. May be `null` for some non-depository accounts, but is never `null` for depository accounts.At certain institutions, including Chase, PNC, and US Bank, you will receive a &quot;tokenized&quot; account number, which is not the user&apos;s actual account number. For important details on how this may impact your integration and on how to avoid fraud, user confusion, and ACH returns, see [Tokenized account numbers](https://plaid.com/docs/auth/#tokenized-account-numbers).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; AdditionalData?.Remove("account"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
@@ -65,7 +65,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Indicates whether the account number is tokenized by the institution. For important details on how tokenized account numbers may impact your integration, see [Tokenized account numbers](https://plaid.com/docs/auth/#tokenized-account-numbers).</summary>
         public bool? IsTokenizedAccountNumber { get => _explicitNullValueIsTokenizedAccountNumber; set { _explicitNullValueIsTokenizedAccountNumber = value; AdditionalData?.Remove("is_tokenized_account_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_tokenized_account_number"); else _explicitNullProperties?.Remove("is_tokenized_account_number"); } }
         private bool? _explicitNullValueIsTokenizedAccountNumber = default!;
-        /// <summary>The ACH routing number for the account. For more information, see [Tokenized account numbers](https://plaid.com/docs/auth/#tokenized-account-numbers).</summary>
+        /// <summary>The ACH routing number for the account. May be `null` for some non-depository accounts, but is never `null` for depository accounts. For more information, see [Tokenized account numbers](https://plaid.com/docs/auth/#tokenized-account-numbers).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Routing { get => _explicitNullValueRouting; set { _explicitNullValueRouting = value; AdditionalData?.Remove("routing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routing"); else _explicitNullProperties?.Remove("routing"); } }

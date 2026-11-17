@@ -48,15 +48,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionBankIncomeResult> BankIncomeResults { get => _explicitNullValueBankIncomeResults; set { _explicitNullValueBankIncomeResults = value; AdditionalData?.Remove("bank_income_results"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bank_income_results"); else _explicitNullProperties?.Remove("bank_income_results"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionBankIncomeResult> _explicitNullValueBankIncomeResults = default!;
 #endif
-        /// <summary>The details of a document upload CRA session in Link</summary>
+        /// <summary>Deprecated. The details of a document upload CRA session in Link. The CRA document upload flow was never released, so this field is always `null`.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraDocumentUploadResult? CraDocumentUploadResults { get => _explicitNullValueCraDocumentUploadResults; set { _explicitNullValueCraDocumentUploadResults = value; AdditionalData?.Remove("cra_document_upload_results"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cra_document_upload_results"); else _explicitNullProperties?.Remove("cra_document_upload_results"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraDocumentUploadResult? _explicitNullValueCraDocumentUploadResults = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionResultsCraDocumentUploadResults? CraDocumentUploadResults { get => _explicitNullValueCraDocumentUploadResults; set { _explicitNullValueCraDocumentUploadResults = value; AdditionalData?.Remove("cra_document_upload_results"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cra_document_upload_results"); else _explicitNullProperties?.Remove("cra_document_upload_results"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionResultsCraDocumentUploadResults? _explicitNullValueCraDocumentUploadResults = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraDocumentUploadResult CraDocumentUploadResults { get => _explicitNullValueCraDocumentUploadResults; set { _explicitNullValueCraDocumentUploadResults = value; AdditionalData?.Remove("cra_document_upload_results"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cra_document_upload_results"); else _explicitNullProperties?.Remove("cra_document_upload_results"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraDocumentUploadResult _explicitNullValueCraDocumentUploadResults = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionResultsCraDocumentUploadResults CraDocumentUploadResults { get => _explicitNullValueCraDocumentUploadResults; set { _explicitNullValueCraDocumentUploadResults = value; AdditionalData?.Remove("cra_document_upload_results"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cra_document_upload_results"); else _explicitNullProperties?.Remove("cra_document_upload_results"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionResultsCraDocumentUploadResults _explicitNullValueCraDocumentUploadResults = default!;
 #endif
         /// <summary>The set of Plaid Check Item adds for the Link session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -146,7 +147,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bank_income_results", n => { BankIncomeResults = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionBankIncomeResult>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionBankIncomeResult.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "cra_document_upload_results", n => { CraDocumentUploadResults = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraDocumentUploadResult>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraDocumentUploadResult.CreateFromDiscriminatorValue); } },
+                { "cra_document_upload_results", n => { CraDocumentUploadResults = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionResultsCraDocumentUploadResults>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionResultsCraDocumentUploadResults.CreateFromDiscriminatorValue); } },
                 { "cra_item_add_results", n => { CraItemAddResults = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraItemAddResult>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraItemAddResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cra_report_results", n => { CraReportResults = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraReportResult>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraReportResult.CreateFromDiscriminatorValue); } },
                 { "cra_update_results", n => { CraUpdateResults = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraUpdateResult>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraUpdateResult.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -163,7 +164,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionBankIncomeResult>("bank_income_results", BankIncomeResults);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraDocumentUploadResult>("cra_document_upload_results", CraDocumentUploadResults);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionResultsCraDocumentUploadResults>("cra_document_upload_results", CraDocumentUploadResults);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraItemAddResult>("cra_item_add_results", CraItemAddResults);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraReportResult>("cra_report_results", CraReportResults);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionCraUpdateResult>("cra_update_results", CraUpdateResults);

@@ -56,10 +56,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; AdditionalData?.Remove("client_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
         private string _explicitNullValueClientId = default!;
 #endif
-        /// <summary>`true` to fetch &quot;fast&quot; version of asset report. Defaults to false if omitted. Can only be used if `/asset_report/create` was called with `options.add_ons` set to `[&quot;fast_assets&quot;]`.</summary>
+        /// <summary>If `true`, retrieves the Fast Asset Report. If `false`, retrieves the Full Asset Report. To set this field to `true`, you must call `/asset_report/create` with `options.add_ons` set to `[&quot;fast_assets&quot;]`.</summary>
         public bool? FastReport { get => _explicitNullValueFastReport; set { _explicitNullValueFastReport = value; AdditionalData?.Remove("fast_report"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fast_report"); else _explicitNullProperties?.Remove("fast_report"); } }
         private bool? _explicitNullValueFastReport = default!;
-        /// <summary>`true` if you would like to retrieve the Asset Report with Insights, `false` otherwise. This field defaults to `false` if omitted.</summary>
+        /// <summary>If `true`, retrieves the Asset Report with Insights.</summary>
         public bool? IncludeInsights { get => _explicitNullValueIncludeInsights; set { _explicitNullValueIncludeInsights = value; AdditionalData?.Remove("include_insights"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_insights"); else _explicitNullProperties?.Remove("include_insights"); } }
         private bool? _explicitNullValueIncludeInsights = default!;
         /// <summary>An optional object to filter or add data to `/asset_report/get` results. If provided, must be non-`null`.</summary>

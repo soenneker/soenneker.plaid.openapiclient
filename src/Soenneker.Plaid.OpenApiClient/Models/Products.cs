@@ -159,6 +159,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning disable CS1591
         CraIncomeComplete,
         #pragma warning restore CS1591
+        [EnumMember(Value = "cra_home_lending_voa")]
+        #pragma warning disable CS1591
+        CraHomeLendingVoa,
+        #pragma warning restore CS1591
         [EnumMember(Value = "layer")]
         #pragma warning disable CS1591
         Layer,

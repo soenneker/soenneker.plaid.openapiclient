@@ -147,15 +147,15 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public string IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; AdditionalData?.Remove("iso_currency_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
         private string _explicitNullValueIsoCurrencyCode = default!;
 #endif
-        /// <summary>A representation of where a transaction took place. Location data is provided only for transactions at physical locations, not for online transactions. Location data availability depends primarily on the merchant and is most likely to be populated for transactions at large retail chains; small, local businesses are less likely to have location data available.</summary>
+        /// <summary>The location property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.Location? Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; AdditionalData?.Remove("location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.Location? _explicitNullValueLocation = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransactionLocation? Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; AdditionalData?.Remove("location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransactionLocation? _explicitNullValueLocation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.Location Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; AdditionalData?.Remove("location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.Location _explicitNullValueLocation = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransactionLocation Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; AdditionalData?.Remove("location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransactionLocation _explicitNullValueLocation = default!;
 #endif
         /// <summary>The merchant name, as enriched by Plaid from the `name` field. This is typically a more human-readable version of the merchant counterparty in the transaction. For some bank transactions (such as checks or account transfers) where there is no meaningful merchant name, this value will be `null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -259,7 +259,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "date", n => { Date = n.GetDateValue(); } },
                 { "date_transacted", n => { DateTransacted = n.GetStringValue(); } },
                 { "iso_currency_code", n => { IsoCurrencyCode = n.GetStringValue(); } },
-                { "location", n => { Location = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Location>(global::Soenneker.Plaid.OpenApiClient.Models.Location.CreateFromDiscriminatorValue); } },
+                { "location", n => { Location = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransactionLocation>(global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransactionLocation.CreateFromDiscriminatorValue); } },
                 { "merchant_name", n => { MerchantName = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "original_description", n => { OriginalDescription = n.GetStringValue(); } },
@@ -287,7 +287,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDateValue("date", Date);
             writer.WriteStringValue("date_transacted", DateTransacted);
             writer.WriteStringValue("iso_currency_code", IsoCurrencyCode);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.Location>("location", Location);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportTransactionLocation>("location", Location);
             writer.WriteStringValue("merchant_name", MerchantName);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("original_description", OriginalDescription);

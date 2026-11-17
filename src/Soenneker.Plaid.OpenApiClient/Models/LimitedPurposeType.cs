@@ -3,13 +3,21 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>A specific use case for a limited purpose checking account. Limited purpose checking accounts will reject or return ACH transactions that aren&apos;t for eligible use cases. For example, a `RENT_MORTGAGE` limited purpose checking account will reject ACH transactions that are not specifically rent or mortgage payments.</summary>
+    /// <summary>A specific use case for a limited purpose checking account. Limited purpose checking accounts will reject or return ACH transactions that aren&apos;t for eligible use cases. For example, a `RENT_MORTGAGE` limited purpose checking account will reject ACH transactions that are not specifically rent or mortgage payments, and an `AUTO_LOAN` account will reject ACH transactions that are not auto loan payments. A `GENERAL_PURPOSE` limited purpose checking account accepts any ACH transaction within the limit the institution allows for the account.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum LimitedPurposeType
     {
         [EnumMember(Value = "RENT_MORTGAGE")]
         #pragma warning disable CS1591
         RentMortgage,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "AUTO_LOAN")]
+        #pragma warning disable CS1591
+        AutoLoan,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "GENERAL_PURPOSE")]
+        #pragma warning disable CS1591
+        GeneralPurpose,
         #pragma warning restore CS1591
     }
 }

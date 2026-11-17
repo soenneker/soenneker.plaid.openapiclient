@@ -35,6 +35,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning disable CS1591
         PendingDisconnect,
         #pragma warning restore CS1591
+        [EnumMember(Value = "CONSENT_UPDATED")]
+        #pragma warning disable CS1591
+        ConsentUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "RECURRING_TRANSACTIONS_UPDATE")]
         #pragma warning disable CS1591
         RecurringTransactionsUpdate,

@@ -54,12 +54,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>The Items, and their accounts, used to generate this product. Always empty when `scope` is `PLAID_NETWORK`, or if this product failed to generate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseItem>? Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
-        private List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseItem>? _explicitNullValueItems = default!;
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetIncomeInsightsItem>? Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetIncomeInsightsItem>? _explicitNullValueItems = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseItem> Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
-        private List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseItem> _explicitNullValueItems = default!;
+        public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetIncomeInsightsItem> Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
+        private List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetIncomeInsightsItem> _explicitNullValueItems = default!;
 #endif
         /// <summary>Income Insights report metadata returned by `/cra/report/get`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -101,7 +101,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "attributes", n => { Attributes = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetIncomeInsightsAttributes>(global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetIncomeInsightsAttributes.CreateFromDiscriminatorValue); } },
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.PlaidError>(global::Soenneker.Plaid.OpenApiClient.Models.PlaidError.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseItem>(global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetIncomeInsightsItem>(global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetIncomeInsightsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetIncomeInsightsMetadata>(global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetIncomeInsightsMetadata.CreateFromDiscriminatorValue); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
@@ -116,7 +116,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             base.Serialize(writer);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetIncomeInsightsAttributes>("attributes", Attributes);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.PlaidError>("errors", Errors);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseItem>("items", Items);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetIncomeInsightsItem>("items", Items);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetIncomeInsightsMetadata>("metadata", Metadata);
             writer.WriteStringValue("version", Version);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             

@@ -29,6 +29,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             else if (parseNode.GetChildNode("institution_value") is { } nullNodeInstitutionValue && nullNodeInstitutionValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstitutionValue = null;
             if (parseNode.GetChildNode("iso_currency_code") is null) { _explicitNullValueIsoCurrencyCode = default!; _explicitNullProperties?.Remove("iso_currency_code"); }
             else if (parseNode.GetChildNode("iso_currency_code") is { } nullNodeIsoCurrencyCode && nullNodeIsoCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsoCurrencyCode = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
             if (parseNode.GetChildNode("quantity") is null) { _explicitNullValueQuantity = default!; _explicitNullProperties?.Remove("quantity"); }
             else if (parseNode.GetChildNode("quantity") is { } nullNodeQuantity && nullNodeQuantity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quantity = null;
             if (parseNode.GetChildNode("security_id") is null) { _explicitNullValueSecurityId = default!; _explicitNullProperties?.Remove("security_id"); }
@@ -75,6 +77,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public string IsoCurrencyCode { get => _explicitNullValueIsoCurrencyCode; set { _explicitNullValueIsoCurrencyCode = value; AdditionalData?.Remove("iso_currency_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_currency_code"); else _explicitNullProperties?.Remove("iso_currency_code"); } }
         private string _explicitNullValueIsoCurrencyCode = default!;
+#endif
+        /// <summary>The name of the security.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
+#nullable restore
+#else
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The total quantity of the asset held, as reported by the financial institution. If the security is an option, `quantity` will reflect the total number of options (typically the number of contracts multiplied by 100), not the number of contracts.</summary>
         public double? Quantity { get => _explicitNullValueQuantity; set { _explicitNullValueQuantity = value; AdditionalData?.Remove("quantity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quantity"); else _explicitNullProperties?.Remove("quantity"); } }
@@ -155,6 +167,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "institution_price_as_of", n => { InstitutionPriceAsOf = n.GetDateValue(); } },
                 { "institution_value", n => { InstitutionValue = n.GetDoubleValue(); } },
                 { "iso_currency_code", n => { IsoCurrencyCode = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "quantity", n => { Quantity = n.GetDoubleValue(); } },
                 { "security_id", n => { SecurityId = n.GetStringValue(); } },
                 { "tax_lots", n => { TaxLots = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLot>(global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLot.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -176,6 +189,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteDateValue("institution_price_as_of", InstitutionPriceAsOf);
             writer.WriteDoubleValue("institution_value", InstitutionValue);
             writer.WriteStringValue("iso_currency_code", IsoCurrencyCode);
+            writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("quantity", Quantity);
             writer.WriteStringValue("security_id", SecurityId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.HoldingTaxLot>("tax_lots", TaxLots);

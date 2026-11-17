@@ -18,6 +18,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("base_report_version") is null) { _explicitNullValueBaseReportVersion = default!; _explicitNullProperties?.Remove("base_report_version"); }
+            else if (parseNode.GetChildNode("base_report_version") is { } nullNodeBaseReportVersion && nullNodeBaseReportVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseReportVersion = null;
             if (parseNode.GetChildNode("client_report_id") is null) { _explicitNullValueClientReportId = default!; _explicitNullProperties?.Remove("client_report_id"); }
             else if (parseNode.GetChildNode("client_report_id") is { } nullNodeClientReportId && nullNodeClientReportId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientReportId = null;
             if (parseNode.GetChildNode("exclude_transactions") is null) { _explicitNullValueExcludeTransactions = default!; _explicitNullProperties?.Remove("exclude_transactions"); }
@@ -32,6 +34,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The version of the Base Report to use. `V1` and `V2` are supported. Defaults to `V1`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateBaseReportOptionsBaseReportVersion? BaseReportVersion { get => _explicitNullValueBaseReportVersion; set { _explicitNullValueBaseReportVersion = value; AdditionalData?.Remove("base_report_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_report_version"); else _explicitNullProperties?.Remove("base_report_version"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateBaseReportOptionsBaseReportVersion? _explicitNullValueBaseReportVersion = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateBaseReportOptionsBaseReportVersion BaseReportVersion { get => _explicitNullValueBaseReportVersion; set { _explicitNullValueBaseReportVersion = value; AdditionalData?.Remove("base_report_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_report_version"); else _explicitNullProperties?.Remove("base_report_version"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateBaseReportOptionsBaseReportVersion _explicitNullValueBaseReportVersion = default!;
+#endif
         /// <summary>Client-generated identifier, which can be used by lenders to track loan applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,6 +106,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "base_report_version", n => { BaseReportVersion = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateBaseReportOptionsBaseReportVersion>(global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateBaseReportOptionsBaseReportVersion.CreateFromDiscriminatorValue); } },
                 { "client_report_id", n => { ClientReportId = n.GetStringValue(); } },
                 { "exclude_transactions", n => { ExcludeTransactions = n.GetBoolValue(); } },
                 { "gse_options", n => { GseOptions = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsBaseReportGseOptions>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsBaseReportGseOptions.CreateFromDiscriminatorValue); } },
@@ -108,6 +121,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCheckReportCreateBaseReportOptionsBaseReportVersion>("base_report_version", BaseReportVersion);
             writer.WriteStringValue("client_report_id", ClientReportId);
             writer.WriteBoolValue("exclude_transactions", ExcludeTransactions);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsBaseReportGseOptions>("gse_options", GseOptions);

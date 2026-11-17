@@ -32,8 +32,12 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             else if (parseNode.GetChildNode("days_available") is { } nullNodeDaysAvailable && nullNodeDaysAvailable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DaysAvailable = null;
             if (parseNode.GetChildNode("historical_balances") is null) { _explicitNullValueHistoricalBalances = default!; _explicitNullProperties?.Remove("historical_balances"); }
             else if (parseNode.GetChildNode("historical_balances") is { } nullNodeHistoricalBalances && nullNodeHistoricalBalances.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HistoricalBalances = null;
+            if (parseNode.GetChildNode("holder_category") is null) { _explicitNullValueHolderCategory = default!; _explicitNullProperties?.Remove("holder_category"); }
+            else if (parseNode.GetChildNode("holder_category") is { } nullNodeHolderCategory && nullNodeHolderCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HolderCategory = null;
             if (parseNode.GetChildNode("identity_match") is null) { _explicitNullValueIdentityMatch = default!; _explicitNullProperties?.Remove("identity_match"); }
             else if (parseNode.GetChildNode("identity_match") is { } nullNodeIdentityMatch && nullNodeIdentityMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdentityMatch = null;
+            if (parseNode.GetChildNode("investments") is null) { _explicitNullValueInvestments = default!; _explicitNullProperties?.Remove("investments"); }
+            else if (parseNode.GetChildNode("investments") is { } nullNodeInvestments && nullNodeInvestments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Investments = null;
             if (parseNode.GetChildNode("mask") is null) { _explicitNullValueMask = default!; _explicitNullProperties?.Remove("mask"); }
             else if (parseNode.GetChildNode("mask") is { } nullNodeMask && nullNodeMask.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mask = null;
             if (parseNode.GetChildNode("metadata") is null) { _explicitNullValueMetadata = default!; _explicitNullProperties?.Remove("metadata"); }
@@ -119,6 +123,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportHistoricalBalance> HistoricalBalances { get => _explicitNullValueHistoricalBalances; set { _explicitNullValueHistoricalBalances = value; AdditionalData?.Remove("historical_balances"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("historical_balances"); else _explicitNullProperties?.Remove("historical_balances"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportHistoricalBalance> _explicitNullValueHistoricalBalances = default!;
 #endif
+        /// <summary>Indicates the account&apos;s categorization as either a personal or a business account. This field is currently in beta; to request access, contact your account manager. Coverage varies by institution, with approximately 70% of accounts populated overall.</summary>
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAccountHolderCategory? HolderCategory { get => _explicitNullValueHolderCategory; set { _explicitNullValueHolderCategory = value; AdditionalData?.Remove("holder_category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("holder_category"); else _explicitNullProperties?.Remove("holder_category"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAccountHolderCategory? _explicitNullValueHolderCategory = default!;
         /// <summary>Scores for how closely the user&apos;s identity, as provided via `/user/create` or `/user/update`, matches the account owner information reported by the financial institution. Only present if the report was created with `include_identity_match` set to `true`, and omitted for accounts that were not scored. Within each score object, `score` is `null` when either the user or the financial institution did not provide that field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -128,6 +135,16 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #else
         public global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAccountIdentityMatch IdentityMatch { get => _explicitNullValueIdentityMatch; set { _explicitNullValueIdentityMatch = value; AdditionalData?.Remove("identity_match"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_match"); else _explicitNullProperties?.Remove("identity_match"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAccountIdentityMatch _explicitNullValueIdentityMatch = default!;
+#endif
+        /// <summary>This field contains investment data only for investment accounts when `include_investments` in `/cra/report/create` or `cra_report_parameter.include_investments` in `/link/token/create` is set to `true`. This field may be omitted if recent investment data was unavailable at report generation. The account remains in the report when this field is omitted.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAccountInvestments? Investments { get => _explicitNullValueInvestments; set { _explicitNullValueInvestments = value; AdditionalData?.Remove("investments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investments"); else _explicitNullProperties?.Remove("investments"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAccountInvestments? _explicitNullValueInvestments = default!;
+#nullable restore
+#else
+        public global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAccountInvestments Investments { get => _explicitNullValueInvestments; set { _explicitNullValueInvestments = value; AdditionalData?.Remove("investments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("investments"); else _explicitNullProperties?.Remove("investments"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAccountInvestments _explicitNullValueInvestments = default!;
 #endif
         /// <summary>The last 2-4 alphanumeric characters of an account&apos;s official account number. Note that the mask may be non-unique between an Item&apos;s accounts, and it may also not match the mask that the bank displays to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -202,7 +219,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportTransaction> Transactions { get => _explicitNullValueTransactions; set { _explicitNullValueTransactions = value; AdditionalData?.Remove("transactions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactions"); else _explicitNullProperties?.Remove("transactions"); } }
         private List<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportTransaction> _explicitNullValueTransactions = default!;
 #endif
-        /// <summary>`investment:` Investment account. In API versions 2018-05-22 and earlier, this type is called `brokerage` instead.`credit:` Credit card`depository:` Depository account`loan:` Loan account`other:` Non-specified account typeSee the [Account type schema](https://plaid.com/docs/api/accounts#account-type-schema) for a full listing of account types and corresponding subtypes.</summary>
+        /// <summary>`investment:` Investment account. In API versions 2018-05-22 and earlier, this type is called `brokerage` instead.`credit:` Credit card`depository:` Depository account`loan:` Loan account`payroll:` Payroll account`other:` Non-specified account typeSee the [Account type schema](https://plaid.com/docs/api/accounts#account-type-schema) for a full listing of account types and corresponding subtypes.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.AccountType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.AccountType? _explicitNullValueType = default!;
         /// <summary>
@@ -237,7 +254,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "consumer_disputes", n => { ConsumerDisputes = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDispute>(global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDispute.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "days_available", n => { DaysAvailable = n.GetIntValue(); } },
                 { "historical_balances", n => { HistoricalBalances = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportHistoricalBalance>(global::Soenneker.Plaid.OpenApiClient.Models.BaseReportHistoricalBalance.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "holder_category", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAccountHolderCategory>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueHolderCategory = default; _explicitNullProperties?.Remove("holder_category"); AdditionalData["holder_category"] = unknown; } else { HolderCategory = parsed; AdditionalData.Remove("holder_category"); } } },
                 { "identity_match", n => { IdentityMatch = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAccountIdentityMatch>(global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAccountIdentityMatch.CreateFromDiscriminatorValue); } },
+                { "investments", n => { Investments = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAccountInvestments>(global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAccountInvestments.CreateFromDiscriminatorValue); } },
                 { "mask", n => { Mask = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAccountMetadata>(global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAccountMetadata.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -263,7 +282,9 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.ConsumerDispute>("consumer_disputes", ConsumerDisputes);
             writer.WriteIntValue("days_available", DaysAvailable);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportHistoricalBalance>("historical_balances", HistoricalBalances);
+            writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAccountHolderCategory>("holder_category", HolderCategory);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAccountIdentityMatch>("identity_match", IdentityMatch);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetBaseReportAccountInvestments>("investments", Investments);
             writer.WriteStringValue("mask", Mask);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAccountMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);

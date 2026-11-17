@@ -35,7 +35,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>An array of limited purpose types. Restricts which kinds of limited purpose checking accounts may be connected in Link to prevent users from connecting them for unsupported use cases. Required when &apos;limited purpose checking&apos; is in the subtypes filter.</summary>
+        /// <summary>An array of limited purpose types. Restricts which kinds of limited purpose checking accounts may be connected in Link to prevent users from connecting them for unsupported use cases. Only allowed when `limited purpose checking` is in `account_subtypes`. If omitted or empty while `limited purpose checking` is in `account_subtypes`, only `GENERAL_PURPOSE` limited purpose checking accounts may be connected. `GENERAL_PURPOSE` accounts may be connected with any `limited_purpose_types` value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Plaid.OpenApiClient.Models.LimitedPurposeType?>? LimitedPurposeTypes { get => _explicitNullValueLimitedPurposeTypes; set { _explicitNullValueLimitedPurposeTypes = value; AdditionalData?.Remove("limited_purpose_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limited_purpose_types"); else _explicitNullProperties?.Remove("limited_purpose_types"); } }

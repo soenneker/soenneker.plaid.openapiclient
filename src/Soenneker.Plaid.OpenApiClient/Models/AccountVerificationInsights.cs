@@ -36,25 +36,25 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>Indicates the score of the name match between the given name provided during database verification (available in the [`verification_name`](https://plaid.com/docs/api/products/auth/#auth-get-response-accounts-verification-name) field if using standard Database Auth, or provided in the request if using `/auth/verify`) and matched Plaid network accounts. If defined, will be a value between 0 and 100. Will be undefined if name matching was not enabled for the database verification session or if there were no eligible Plaid network matches to compare the given name with. For Items at Canadian institutions, name matching is not currently supported, so this field will always be omitted.</summary>
         public int? NameMatchScore { get => _explicitNullValueNameMatchScore; set { _explicitNullValueNameMatchScore = value; AdditionalData?.Remove("name_match_score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name_match_score"); else _explicitNullProperties?.Remove("name_match_score"); } }
         private int? _explicitNullValueNameMatchScore = default!;
-        /// <summary>Status information about the account and routing number in the Plaid network.</summary>
+        /// <summary>The network_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsNetworkStatus? NetworkStatus { get => _explicitNullValueNetworkStatus; set { _explicitNullValueNetworkStatus = value; AdditionalData?.Remove("network_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_status"); else _explicitNullProperties?.Remove("network_status"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsNetworkStatus? _explicitNullValueNetworkStatus = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsNetworkStatusComposed? NetworkStatus { get => _explicitNullValueNetworkStatus; set { _explicitNullValueNetworkStatus = value; AdditionalData?.Remove("network_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_status"); else _explicitNullProperties?.Remove("network_status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsNetworkStatusComposed? _explicitNullValueNetworkStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsNetworkStatus NetworkStatus { get => _explicitNullValueNetworkStatus; set { _explicitNullValueNetworkStatus = value; AdditionalData?.Remove("network_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_status"); else _explicitNullProperties?.Remove("network_status"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsNetworkStatus _explicitNullValueNetworkStatus = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsNetworkStatusComposed NetworkStatus { get => _explicitNullValueNetworkStatus; set { _explicitNullValueNetworkStatus = value; AdditionalData?.Remove("network_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_status"); else _explicitNullProperties?.Remove("network_status"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsNetworkStatusComposed _explicitNullValueNetworkStatus = default!;
 #endif
-        /// <summary>Information about known ACH returns for the account and routing number.</summary>
+        /// <summary>The previous_returns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsPreviousReturns? PreviousReturns { get => _explicitNullValuePreviousReturns; set { _explicitNullValuePreviousReturns = value; AdditionalData?.Remove("previous_returns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_returns"); else _explicitNullProperties?.Remove("previous_returns"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsPreviousReturns? _explicitNullValuePreviousReturns = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsPreviousReturnsComposed? PreviousReturns { get => _explicitNullValuePreviousReturns; set { _explicitNullValuePreviousReturns = value; AdditionalData?.Remove("previous_returns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_returns"); else _explicitNullProperties?.Remove("previous_returns"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsPreviousReturnsComposed? _explicitNullValuePreviousReturns = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsPreviousReturns PreviousReturns { get => _explicitNullValuePreviousReturns; set { _explicitNullValuePreviousReturns = value; AdditionalData?.Remove("previous_returns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_returns"); else _explicitNullProperties?.Remove("previous_returns"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsPreviousReturns _explicitNullValuePreviousReturns = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsPreviousReturnsComposed PreviousReturns { get => _explicitNullValuePreviousReturns; set { _explicitNullValuePreviousReturns = value; AdditionalData?.Remove("previous_returns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_returns"); else _explicitNullProperties?.Remove("previous_returns"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsPreviousReturnsComposed _explicitNullValuePreviousReturns = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsights"/> and sets the default values.
@@ -83,8 +83,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             {
                 { "account_number_format", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsAccountNumberFormat>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAccountNumberFormat = default; _explicitNullProperties?.Remove("account_number_format"); AdditionalData["account_number_format"] = unknown; } else { AccountNumberFormat = parsed; AdditionalData.Remove("account_number_format"); } } },
                 { "name_match_score", n => { NameMatchScore = n.GetIntValue(); } },
-                { "network_status", n => { NetworkStatus = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsNetworkStatus>(global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsNetworkStatus.CreateFromDiscriminatorValue); } },
-                { "previous_returns", n => { PreviousReturns = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsPreviousReturns>(global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsPreviousReturns.CreateFromDiscriminatorValue); } },
+                { "network_status", n => { NetworkStatus = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsNetworkStatusComposed>(global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsNetworkStatusComposed.CreateFromDiscriminatorValue); } },
+                { "previous_returns", n => { PreviousReturns = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsPreviousReturnsComposed>(global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsPreviousReturnsComposed.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -96,8 +96,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsAccountNumberFormat>("account_number_format", AccountNumberFormat);
             writer.WriteIntValue("name_match_score", NameMatchScore);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsNetworkStatus>("network_status", NetworkStatus);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsPreviousReturns>("previous_returns", PreviousReturns);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsNetworkStatusComposed>("network_status", NetworkStatus);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsightsPreviousReturnsComposed>("previous_returns", PreviousReturns);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

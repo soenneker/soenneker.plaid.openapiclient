@@ -141,18 +141,18 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <summary>See the [Account type schema](https://plaid.com/docs/api/accounts/#account-type-schema) for a full listing of account types and corresponding subtypes.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.AccountSubtype? Subtype { get => _explicitNullValueSubtype; set { _explicitNullValueSubtype = value; AdditionalData?.Remove("subtype"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtype"); else _explicitNullProperties?.Remove("subtype"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.AccountSubtype? _explicitNullValueSubtype = default!;
-        /// <summary>`investment:` Investment account. In API versions 2018-05-22 and earlier, this type is called `brokerage` instead.`credit:` Credit card`depository:` Depository account`loan:` Loan account`other:` Non-specified account typeSee the [Account type schema](https://plaid.com/docs/api/accounts#account-type-schema) for a full listing of account types and corresponding subtypes.</summary>
+        /// <summary>`investment:` Investment account. In API versions 2018-05-22 and earlier, this type is called `brokerage` instead.`credit:` Credit card`depository:` Depository account`loan:` Loan account`payroll:` Payroll account`other:` Non-specified account typeSee the [Account type schema](https://plaid.com/docs/api/accounts#account-type-schema) for a full listing of account types and corresponding subtypes.</summary>
         public global::Soenneker.Plaid.OpenApiClient.Models.AccountType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.AccountType? _explicitNullValueType = default!;
-        /// <summary>Insights from performing database verification for the account. Only returned for Auth Items using Database Auth.</summary>
+        /// <summary>The verification_insights property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsights? VerificationInsights { get => _explicitNullValueVerificationInsights; set { _explicitNullValueVerificationInsights = value; AdditionalData?.Remove("verification_insights"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verification_insights"); else _explicitNullProperties?.Remove("verification_insights"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsights? _explicitNullValueVerificationInsights = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.AccountBaseVerificationInsights? VerificationInsights { get => _explicitNullValueVerificationInsights; set { _explicitNullValueVerificationInsights = value; AdditionalData?.Remove("verification_insights"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verification_insights"); else _explicitNullProperties?.Remove("verification_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AccountBaseVerificationInsights? _explicitNullValueVerificationInsights = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsights VerificationInsights { get => _explicitNullValueVerificationInsights; set { _explicitNullValueVerificationInsights = value; AdditionalData?.Remove("verification_insights"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verification_insights"); else _explicitNullProperties?.Remove("verification_insights"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsights _explicitNullValueVerificationInsights = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.AccountBaseVerificationInsights VerificationInsights { get => _explicitNullValueVerificationInsights; set { _explicitNullValueVerificationInsights = value; AdditionalData?.Remove("verification_insights"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verification_insights"); else _explicitNullProperties?.Remove("verification_insights"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.AccountBaseVerificationInsights _explicitNullValueVerificationInsights = default!;
 #endif
         /// <summary>The account holder name that was used for micro-deposit and/or database verification. Only returned for Auth Items created via micro-deposit or database verification. This name was manually-entered by the user during Link, unless it was otherwise provided via the `user.legal_name` request field in `/link/token/create` for the Link session that created the Item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -204,7 +204,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
                 { "persistent_account_id", n => { PersistentAccountId = n.GetStringValue(); } },
                 { "subtype", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountSubtype>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSubtype = default; _explicitNullProperties?.Remove("subtype"); AdditionalData["subtype"] = unknown; } else { Subtype = parsed; AdditionalData.Remove("subtype"); } } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
-                { "verification_insights", n => { VerificationInsights = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsights>(global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsights.CreateFromDiscriminatorValue); } },
+                { "verification_insights", n => { VerificationInsights = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountBaseVerificationInsights>(global::Soenneker.Plaid.OpenApiClient.Models.AccountBaseVerificationInsights.CreateFromDiscriminatorValue); } },
                 { "verification_name", n => { VerificationName = n.GetStringValue(); } },
                 { "verification_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessAccountVerificationStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueVerificationStatus = default; _explicitNullProperties?.Remove("verification_status"); AdditionalData["verification_status"] = unknown; } else { VerificationStatus = parsed; AdditionalData.Remove("verification_status"); } } },
             };
@@ -228,7 +228,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
             writer.WriteStringValue("persistent_account_id", PersistentAccountId);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountSubtype>("subtype", Subtype);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountType>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountVerificationInsights>("verification_insights", VerificationInsights);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AccountBaseVerificationInsights>("verification_insights", VerificationInsights);
             writer.WriteStringValue("verification_name", VerificationName);
             writer.WriteEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessAccountVerificationStatus>("verification_status", VerificationStatus);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

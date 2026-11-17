@@ -363,5 +363,13 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         #pragma warning disable CS1591
         Anchorage,
         #pragma warning restore CS1591
+        [EnumMember(Value = "affina")]
+        #pragma warning disable CS1591
+        Affina,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "whop")]
+        #pragma warning disable CS1591
+        Whop,
+        #pragma warning restore CS1591
     }
 }

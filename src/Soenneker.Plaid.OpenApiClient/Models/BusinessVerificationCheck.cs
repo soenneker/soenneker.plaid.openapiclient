@@ -20,8 +20,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("address") is null) { _explicitNullValueAddress = default!; _explicitNullProperties?.Remove("address"); }
             else if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
-            if (parseNode.GetChildNode("match_details") is null) { _explicitNullValueMatchDetails = default!; _explicitNullProperties?.Remove("match_details"); }
-            else if (parseNode.GetChildNode("match_details") is { } nullNodeMatchDetails && nullNodeMatchDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchDetails = null;
+            if (parseNode.GetChildNode("business_details") is null) { _explicitNullValueBusinessDetails = default!; _explicitNullProperties?.Remove("business_details"); }
+            else if (parseNode.GetChildNode("business_details") is { } nullNodeBusinessDetails && nullNodeBusinessDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessDetails = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
             if (parseNode.GetChildNode("officers") is null) { _explicitNullValueOfficers = default!; _explicitNullProperties?.Remove("officers"); }
@@ -40,25 +40,25 @@ namespace Soenneker.Plaid.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Summary of how a specific business field matched against data provider results</summary>
+        /// <summary>How the submitted address matched data provider records, and how the provider validated it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary? _explicitNullValueAddress = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessAddressMatch? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessAddressMatch? _explicitNullValueAddress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary _explicitNullValueAddress = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessAddressMatch Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessAddressMatch _explicitNullValueAddress = default!;
 #endif
-        /// <summary>Detailed information about the business from data provider results</summary>
+        /// <summary>The business the data provider matched, and the records it holds for it. When there is no business search result, for example when only industry classification ran, every scalar is `null` and every list is empty. `incorporation_date` is the date the business was incorporated, or `null` when not available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybMatchDetails? MatchDetails { get => _explicitNullValueMatchDetails; set { _explicitNullValueMatchDetails = value; AdditionalData?.Remove("match_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_details"); else _explicitNullProperties?.Remove("match_details"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybMatchDetails? _explicitNullValueMatchDetails = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessDetails? BusinessDetails { get => _explicitNullValueBusinessDetails; set { _explicitNullValueBusinessDetails = value; AdditionalData?.Remove("business_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_details"); else _explicitNullProperties?.Remove("business_details"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessDetails? _explicitNullValueBusinessDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybMatchDetails MatchDetails { get => _explicitNullValueMatchDetails; set { _explicitNullValueMatchDetails = value; AdditionalData?.Remove("match_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_details"); else _explicitNullProperties?.Remove("match_details"); } }
-        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybMatchDetails _explicitNullValueMatchDetails = default!;
+        public global::Soenneker.Plaid.OpenApiClient.Models.BusinessDetails BusinessDetails { get => _explicitNullValueBusinessDetails; set { _explicitNullValueBusinessDetails = value; AdditionalData?.Remove("business_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_details"); else _explicitNullProperties?.Remove("business_details"); } }
+        private global::Soenneker.Plaid.OpenApiClient.Models.BusinessDetails _explicitNullValueBusinessDetails = default!;
 #endif
         /// <summary>Summary of how a specific business field matched against data provider results</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,7 +90,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary RegisteredAgent { get => _explicitNullValueRegisteredAgent; set { _explicitNullValueRegisteredAgent = value; AdditionalData?.Remove("registered_agent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registered_agent"); else _explicitNullProperties?.Remove("registered_agent"); } }
         private global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary _explicitNullValueRegisteredAgent = default!;
 #endif
-        /// <summary>A score from 0 to 100 indicating the confidence in the identity verification of the business.</summary>
+        /// <summary>A score from 0 to 100 indicating confidence in the business identity assessment. `null` when no score is available, including when industry classification succeeds without a business search result.</summary>
         public int? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; AdditionalData?.Remove("score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
         private int? _explicitNullValueScore = default!;
         /// <summary>Status of the business identity verification check</summary>
@@ -143,8 +143,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary.CreateFromDiscriminatorValue); } },
-                { "match_details", n => { MatchDetails = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybMatchDetails>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybMatchDetails.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessAddressMatch>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessAddressMatch.CreateFromDiscriminatorValue); } },
+                { "business_details", n => { BusinessDetails = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessDetails>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessDetails.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary.CreateFromDiscriminatorValue); } },
                 { "officers", n => { Officers = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary.CreateFromDiscriminatorValue); } },
                 { "registered_agent", n => { RegisteredAgent = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary.CreateFromDiscriminatorValue); } },
@@ -161,8 +161,8 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary>("address", Address);
-            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessKybMatchDetails>("match_details", MatchDetails);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessAddressMatch>("address", Address);
+            writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessDetails>("business_details", BusinessDetails);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary>("name", Name);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary>("officers", Officers);
             writer.WriteObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessFieldMatchSummary>("registered_agent", RegisteredAgent);

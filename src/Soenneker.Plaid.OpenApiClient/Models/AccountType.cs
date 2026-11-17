@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Plaid.OpenApiClient.Models
 {
-    /// <summary>`investment:` Investment account. In API versions 2018-05-22 and earlier, this type is called `brokerage` instead.`credit:` Credit card`depository:` Depository account`loan:` Loan account`other:` Non-specified account typeSee the [Account type schema](https://plaid.com/docs/api/accounts#account-type-schema) for a full listing of account types and corresponding subtypes.</summary>
+    /// <summary>`investment:` Investment account. In API versions 2018-05-22 and earlier, this type is called `brokerage` instead.`credit:` Credit card`depository:` Depository account`loan:` Loan account`payroll:` Payroll account`other:` Non-specified account typeSee the [Account type schema](https://plaid.com/docs/api/accounts#account-type-schema) for a full listing of account types and corresponding subtypes.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AccountType
     {
@@ -26,6 +26,10 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         [EnumMember(Value = "brokerage")]
         #pragma warning disable CS1591
         Brokerage,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "payroll")]
+        #pragma warning disable CS1591
+        Payroll,
         #pragma warning restore CS1591
         [EnumMember(Value = "other")]
         #pragma warning disable CS1591

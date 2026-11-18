@@ -144,7 +144,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "base_report", n => { BaseReport = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsBaseReport>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsBaseReport.CreateFromDiscriminatorValue); } },
                 { "cashflow_insights", n => { CashflowInsights = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsCashflowInsights>(global::Soenneker.Plaid.OpenApiClient.Models.LinkTokenCreateRequestCraOptionsCashflowInsights.CreateFromDiscriminatorValue); } },

@@ -65,7 +65,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "apr_percentage", n => { AprPercentage = n.GetDoubleValue(); } },
                 { "apr_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AprAprType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAprType = default; _explicitNullProperties?.Remove("apr_type"); AdditionalData["apr_type"] = unknown; } else { AprType = parsed; AdditionalData.Remove("apr_type"); } } },

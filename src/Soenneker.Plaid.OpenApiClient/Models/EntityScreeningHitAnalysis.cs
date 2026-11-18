@@ -80,7 +80,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "documents", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDocuments = default; _explicitNullProperties?.Remove("documents"); AdditionalData["documents"] = unknown; } else { Documents = parsed; AdditionalData.Remove("documents"); } } },
                 { "email_addresses", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEmailAddresses = default; _explicitNullProperties?.Remove("email_addresses"); AdditionalData["email_addresses"] = unknown; } else { EmailAddresses = parsed; AdditionalData.Remove("email_addresses"); } } },

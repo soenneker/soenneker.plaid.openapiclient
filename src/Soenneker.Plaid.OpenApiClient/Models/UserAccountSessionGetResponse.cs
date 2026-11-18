@@ -110,7 +110,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "identity", n => { Identity = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentity>(global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentity.CreateFromDiscriminatorValue); } },
                 { "identity_edit_history", n => { IdentityEditHistory = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditHistory>(global::Soenneker.Plaid.OpenApiClient.Models.UserAccountIdentityEditHistory.CreateFromDiscriminatorValue); } },

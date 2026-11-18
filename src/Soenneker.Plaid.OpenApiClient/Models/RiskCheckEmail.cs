@@ -137,7 +137,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(15)
             {
                 { "breach_count", n => { BreachCount = n.GetIntValue(); } },
                 { "domain_is_custom", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckEmailDomainIsCustom>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDomainIsCustom = default; _explicitNullProperties?.Remove("domain_is_custom"); AdditionalData["domain_is_custom"] = unknown; } else { DomainIsCustom = parsed; AdditionalData.Remove("domain_is_custom"); } } },

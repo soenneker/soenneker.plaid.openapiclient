@@ -80,7 +80,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "accept_tos", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAcceptTos = default; _explicitNullProperties?.Remove("accept_tos"); AdditionalData["accept_tos"] = unknown; } else { AcceptTos = parsed; AdditionalData.Remove("accept_tos"); } } },
                 { "documentary_verification", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.IdentityVerificationStepStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDocumentaryVerification = default; _explicitNullProperties?.Remove("documentary_verification"); AdditionalData["documentary_verification"] = unknown; } else { DocumentaryVerification = parsed; AdditionalData.Remove("documentary_verification"); } } },

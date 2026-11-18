@@ -117,7 +117,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "classic_disablement_date", n => { ClassicDisablementDate = n.GetStringValue(); } },
                 { "environments", n => { Environments = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitutionEnvironments>(global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitutionEnvironments.CreateFromDiscriminatorValue); } },

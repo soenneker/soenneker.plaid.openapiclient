@@ -73,7 +73,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "completion_redirect_uri", n => { CompletionRedirectUri = n.GetStringValue(); } },
                 { "delivery_method", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.HostedLinkDeliveryMethod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDeliveryMethod = default; _explicitNullProperties?.Remove("delivery_method"); AdditionalData["delivery_method"] = unknown; } else { DeliveryMethod = parsed; AdditionalData.Remove("delivery_method"); } } },

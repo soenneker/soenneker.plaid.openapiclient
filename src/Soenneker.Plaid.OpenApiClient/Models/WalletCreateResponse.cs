@@ -110,7 +110,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "balance", n => { Balance = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletBalance>(global::Soenneker.Plaid.OpenApiClient.Models.WalletBalance.CreateFromDiscriminatorValue); } },
                 { "numbers", n => { Numbers = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.WalletNumbers>(global::Soenneker.Plaid.OpenApiClient.Models.WalletNumbers.CreateFromDiscriminatorValue); } },

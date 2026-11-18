@@ -187,7 +187,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(14)
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
                 { "ach_class", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.AchClass>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAchClass = default; _explicitNullProperties?.Remove("ach_class"); AdditionalData["ach_class"] = unknown; } else { AchClass = parsed; AdditionalData.Remove("ach_class"); } } },

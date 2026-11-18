@@ -98,7 +98,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
                 { "reason_code", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ProductsTerminateReasonCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueReasonCode = default; _explicitNullProperties?.Remove("reason_code"); AdditionalData["reason_code"] = unknown; } else { ReasonCode = parsed; AdditionalData.Remove("reason_code"); } } },

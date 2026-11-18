@@ -120,7 +120,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
                 { "consumer_report_permissible_purpose", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraReportGetRequestConsumerReportPermissiblePurpose>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueConsumerReportPermissiblePurpose = default; _explicitNullProperties?.Remove("consumer_report_permissible_purpose"); AdditionalData["consumer_report_permissible_purpose"] = unknown; } else { ConsumerReportPermissiblePurpose = parsed; AdditionalData.Remove("consumer_report_permissible_purpose"); } } },

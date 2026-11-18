@@ -93,7 +93,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "latest_scored_event", n => { LatestScoredEvent = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LatestScoredEvent>(global::Soenneker.Plaid.OpenApiClient.Models.LatestScoredEvent.CreateFromDiscriminatorValue); } },
                 { "reports", n => { Reports = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.ProtectReport>(global::Soenneker.Plaid.OpenApiClient.Models.ProtectReport.CreateFromDiscriminatorValue)?.AsList(); } },

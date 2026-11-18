@@ -86,7 +86,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "decision", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecision>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDecision = default; _explicitNullProperties?.Remove("decision"); AdditionalData["decision"] = unknown; } else { Decision = parsed; AdditionalData.Remove("decision"); } } },
                 { "decision_rationale", n => { DecisionRationale = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale>(global::Soenneker.Plaid.OpenApiClient.Models.TransferAuthorizationDecisionRationale.CreateFromDiscriminatorValue); } },

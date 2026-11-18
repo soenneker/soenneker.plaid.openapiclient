@@ -81,7 +81,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "days_since_last_occurrence", n => { DaysSinceLastOccurrence = n.GetIntValue(); } },
                 { "days_with_negative_balance", n => { DaysWithNegativeBalance = n.GetIntValue(); } },

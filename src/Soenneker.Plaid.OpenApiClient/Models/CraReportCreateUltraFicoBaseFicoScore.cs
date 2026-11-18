@@ -77,7 +77,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "base_fico_score_version", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraUltraFicoBaseFicoScoreVersion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBaseFicoScoreVersion = default; _explicitNullProperties?.Remove("base_fico_score_version"); AdditionalData["base_fico_score_version"] = unknown; } else { BaseFicoScoreVersion = parsed; AdditionalData.Remove("base_fico_score_version"); } } },
                 { "bureau", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CraUltraFicoBureau>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBureau = default; _explicitNullProperties?.Remove("bureau"); AdditionalData["bureau"] = unknown; } else { Bureau = parsed; AdditionalData.Remove("bureau"); } } },

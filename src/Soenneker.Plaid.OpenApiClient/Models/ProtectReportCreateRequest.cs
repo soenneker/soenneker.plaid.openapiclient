@@ -156,7 +156,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(11)
             {
                 { "ach_return_code", n => { AchReturnCode = n.GetStringValue(); } },
                 { "bank_account", n => { BankAccount = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectBankAccount>(global::Soenneker.Plaid.OpenApiClient.Models.ProtectBankAccount.CreateFromDiscriminatorValue); } },

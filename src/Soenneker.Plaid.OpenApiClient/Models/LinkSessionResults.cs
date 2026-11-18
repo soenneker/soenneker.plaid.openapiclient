@@ -144,7 +144,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "bank_income_results", n => { BankIncomeResults = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionBankIncomeResult>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionBankIncomeResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cra_document_upload_results", n => { CraDocumentUploadResults = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionResultsCraDocumentUploadResults>(global::Soenneker.Plaid.OpenApiClient.Models.LinkSessionResultsCraDocumentUploadResults.CreateFromDiscriminatorValue); } },

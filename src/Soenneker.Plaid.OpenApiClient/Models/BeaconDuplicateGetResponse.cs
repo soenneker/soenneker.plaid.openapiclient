@@ -105,7 +105,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "analysis", n => { Analysis = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryAnalysis>(global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryAnalysis.CreateFromDiscriminatorValue); } },
                 { "beacon_user1", n => { BeaconUser1 = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserRevision>(global::Soenneker.Plaid.OpenApiClient.Models.BeaconUserRevision.CreateFromDiscriminatorValue); } },

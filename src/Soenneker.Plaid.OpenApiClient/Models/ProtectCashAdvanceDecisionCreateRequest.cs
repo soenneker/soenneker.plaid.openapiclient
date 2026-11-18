@@ -130,7 +130,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "advance_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAdvanceType = default; _explicitNullProperties?.Remove("advance_type"); AdditionalData["advance_type"] = unknown; } else { AdvanceType = parsed; AdditionalData.Remove("advance_type"); } } },
                 { "cash_advance", n => { CashAdvance = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceInfo>(global::Soenneker.Plaid.OpenApiClient.Models.CashAdvanceInfo.CreateFromDiscriminatorValue); } },

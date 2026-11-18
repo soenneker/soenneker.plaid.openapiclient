@@ -93,7 +93,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "current", n => { Current = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraCurrentModeledIncome>(global::Soenneker.Plaid.OpenApiClient.Models.CraCurrentModeledIncome.CreateFromDiscriminatorValue); } },
                 { "iso_currency_code", n => { IsoCurrencyCode = n.GetStringValue(); } },

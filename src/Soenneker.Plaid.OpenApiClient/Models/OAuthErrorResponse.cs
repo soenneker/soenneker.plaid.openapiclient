@@ -89,7 +89,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "error", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.OAuthErrorCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueError = default; _explicitNullProperties?.Remove("error"); AdditionalData["error"] = unknown; } else { Error = parsed; AdditionalData.Remove("error"); } } },
                 { "error_description", n => { ErrorDescription = n.GetStringValue(); } },

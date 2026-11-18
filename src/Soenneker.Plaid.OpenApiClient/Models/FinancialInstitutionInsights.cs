@@ -93,7 +93,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "detected_accounts", n => { DetectedAccounts = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.DetectedAccount>(global::Soenneker.Plaid.OpenApiClient.Models.DetectedAccount.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "entity_id", n => { EntityId = n.GetStringValue(); } },

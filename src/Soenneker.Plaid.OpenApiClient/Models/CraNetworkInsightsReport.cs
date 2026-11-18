@@ -86,7 +86,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "generated_time", n => { GeneratedTime = n.GetDateTimeOffsetValue(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraNetworkInsightsItem>(global::Soenneker.Plaid.OpenApiClient.Models.CraNetworkInsightsItem.CreateFromDiscriminatorValue)?.AsList(); } },

@@ -105,7 +105,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "business", n => { Business = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationCreateRequestBusiness>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessVerificationCreateRequestBusiness.CreateFromDiscriminatorValue); } },
                 { "client_id", n => { ClientId = n.GetStringValue(); } },

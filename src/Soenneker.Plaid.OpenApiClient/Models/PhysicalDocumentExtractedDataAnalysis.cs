@@ -67,7 +67,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "date_of_birth", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.DocumentDateOfBirthMatchCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDateOfBirth = default; _explicitNullProperties?.Remove("date_of_birth"); AdditionalData["date_of_birth"] = unknown; } else { DateOfBirth = parsed; AdditionalData.Remove("date_of_birth"); } } },
                 { "expiration_date", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ExpirationDate>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueExpirationDate = default; _explicitNullProperties?.Remove("expiration_date"); AdditionalData["expiration_date"] = unknown; } else { ExpirationDate = parsed; AdditionalData.Remove("expiration_date"); } } },

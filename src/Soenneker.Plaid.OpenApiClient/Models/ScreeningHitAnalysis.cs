@@ -70,7 +70,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "dates_of_birth", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDatesOfBirth = default; _explicitNullProperties?.Remove("dates_of_birth"); AdditionalData["dates_of_birth"] = unknown; } else { DatesOfBirth = parsed; AdditionalData.Remove("dates_of_birth"); } } },
                 { "documents", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.MatchSummaryCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDocuments = default; _explicitNullProperties?.Remove("documents"); AdditionalData["documents"] = unknown; } else { Documents = parsed; AdditionalData.Remove("documents"); } } },

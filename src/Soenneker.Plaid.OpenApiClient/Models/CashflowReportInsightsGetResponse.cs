@@ -98,7 +98,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "account_insights", n => { AccountInsights = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportAccountInsights>(global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportAccountInsights.CreateFromDiscriminatorValue); } },
                 { "accounts", n => { Accounts = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.BusinessAccount>(global::Soenneker.Plaid.OpenApiClient.Models.BusinessAccount.CreateFromDiscriminatorValue)?.AsList(); } },

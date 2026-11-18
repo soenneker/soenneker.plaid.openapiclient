@@ -224,7 +224,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(19)
             {
                 { "affected_products", n => { AffectedProducts = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.Products>()?.AsList(); } },
                 { "attribution", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BetaIssuesV1IssueAttribution>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAttribution = default; _explicitNullProperties?.Remove("attribution"); AdditionalData["attribution"] = unknown; } else { Attribution = parsed; AdditionalData.Remove("attribution"); } } },

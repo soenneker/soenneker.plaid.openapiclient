@@ -100,7 +100,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "expected_average_amount", n => { ExpectedAverageAmount = n.GetStringValue(); } },
                 { "expected_frequency", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.OriginatorExpectedTransferFrequency>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueExpectedFrequency = default; _explicitNullProperties?.Remove("expected_frequency"); AdditionalData["expected_frequency"] = unknown; } else { ExpectedFrequency = parsed; AdditionalData.Remove("expected_frequency"); } } },

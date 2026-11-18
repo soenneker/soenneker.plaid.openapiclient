@@ -81,7 +81,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "first_party_synthetic_fraud", n => { FirstPartySyntheticFraud = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.SyntheticFraud>(global::Soenneker.Plaid.OpenApiClient.Models.SyntheticFraud.CreateFromDiscriminatorValue); } },
                 { "risk_level", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskLevel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRiskLevel = default; _explicitNullProperties?.Remove("risk_level"); AdditionalData["risk_level"] = unknown; } else { RiskLevel = parsed; AdditionalData.Remove("risk_level"); } } },

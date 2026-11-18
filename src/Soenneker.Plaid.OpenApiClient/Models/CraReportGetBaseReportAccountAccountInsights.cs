@@ -126,7 +126,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "average_days_between_transactions", n => { AverageDaysBetweenTransactions = n.GetDoubleValue(); } },
                 { "average_inflow_amounts", n => { AverageInflowAmounts = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAverageFlowInsights>(global::Soenneker.Plaid.OpenApiClient.Models.BaseReportAverageFlowInsights.CreateFromDiscriminatorValue)?.AsList(); } },

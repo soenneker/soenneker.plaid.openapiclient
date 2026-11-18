@@ -86,7 +86,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "base_fico_score", n => { BaseFicoScore = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsBaseFicoScore>(global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsBaseFicoScore.CreateFromDiscriminatorValue); } },
                 { "fico_scoring_request_id", n => { FicoScoringRequestId = n.GetStringValue(); } },

@@ -92,7 +92,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "city", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.HiddenMatchSummaryCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCity = default; _explicitNullProperties?.Remove("city"); AdditionalData["city"] = unknown; } else { City = parsed; AdditionalData.Remove("city"); } } },
                 { "international_details", n => { InternationalDetails = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.KycCheckDetailsInternationalAddress>(global::Soenneker.Plaid.OpenApiClient.Models.KycCheckDetailsInternationalAddress.CreateFromDiscriminatorValue); } },

@@ -295,7 +295,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(22)
             {
                 { "adjusted_reference", n => { AdjustedReference = n.GetStringValue(); } },
                 { "adjusted_scheme", n => { AdjustedScheme = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme>(global::Soenneker.Plaid.OpenApiClient.Models.PaymentScheme.CreateFromDiscriminatorValue); } },

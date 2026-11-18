@@ -105,7 +105,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "credit", n => { Credit = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CreditCardLiability>(global::Soenneker.Plaid.OpenApiClient.Models.CreditCardLiability.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "line_of_credit", n => { LineOfCredit = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.LineOfCreditLiability>(global::Soenneker.Plaid.OpenApiClient.Models.LineOfCreditLiability.CreateFromDiscriminatorValue)?.AsList(); } },

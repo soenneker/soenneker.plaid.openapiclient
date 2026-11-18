@@ -110,7 +110,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "client_report_id", n => { ClientReportId = n.GetStringValue(); } },
                 { "fico", n => { Fico = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsFicoResults>(global::Soenneker.Plaid.OpenApiClient.Models.CraPartnerInsightsFicoResults.CreateFromDiscriminatorValue); } },

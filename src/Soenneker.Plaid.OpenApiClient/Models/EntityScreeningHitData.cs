@@ -117,7 +117,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "documents", n => { Documents = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitDocumentsItems>(global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitDocumentsItems.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "email_addresses", n => { EmailAddresses = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitEmailsItems>(global::Soenneker.Plaid.OpenApiClient.Models.EntityScreeningHitEmailsItems.CreateFromDiscriminatorValue)?.AsList(); } },

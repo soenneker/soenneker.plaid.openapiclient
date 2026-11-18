@@ -114,7 +114,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "activity", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ActivityType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueActivityProp = default; _explicitNullProperties?.Remove("activity"); AdditionalData["activity"] = unknown; } else { ActivityProp = parsed; AdditionalData.Remove("activity"); } } },
                 { "authentication", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ItemCreateAuthentication>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAuthentication = default; _explicitNullProperties?.Remove("authentication"); AdditionalData["authentication"] = unknown; } else { Authentication = parsed; AdditionalData.Remove("authentication"); } } },

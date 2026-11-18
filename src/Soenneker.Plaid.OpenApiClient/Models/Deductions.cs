@@ -95,7 +95,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "breakdown", n => { Breakdown = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.DeductionsBreakdown>(global::Soenneker.Plaid.OpenApiClient.Models.DeductionsBreakdown.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "subtotals", n => { Subtotals = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.Total>(global::Soenneker.Plaid.OpenApiClient.Models.Total.CreateFromDiscriminatorValue)?.AsList(); } },

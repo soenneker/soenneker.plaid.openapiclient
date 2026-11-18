@@ -101,7 +101,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "check_amount", n => { CheckAmount = n.GetDoubleValue(); } },
                 { "distribution_breakdown", n => { DistributionBreakdown = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.DistributionBreakdown>(global::Soenneker.Plaid.OpenApiClient.Models.DistributionBreakdown.CreateFromDiscriminatorValue)?.AsList(); } },

@@ -80,7 +80,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "income_category", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeCategory>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIncomeCategory = default; _explicitNullProperties?.Remove("income_category"); AdditionalData["income_category"] = unknown; } else { IncomeCategory = parsed; AdditionalData.Remove("income_category"); } } },
                 { "income_description", n => { IncomeDescription = n.GetStringValue(); } },

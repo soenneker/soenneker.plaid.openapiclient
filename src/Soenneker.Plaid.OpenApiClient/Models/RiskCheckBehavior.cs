@@ -67,7 +67,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "bot_detected", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckBehaviorBotDetectedLabel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBotDetected = default; _explicitNullProperties?.Remove("bot_detected"); AdditionalData["bot_detected"] = unknown; } else { BotDetected = parsed; AdditionalData.Remove("bot_detected"); } } },
                 { "fraud_ring_detected", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckBehaviorFraudRingDetectedLabel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFraudRingDetected = default; _explicitNullProperties?.Remove("fraud_ring_detected"); AdditionalData["fraud_ring_detected"] = unknown; } else { FraudRingDetected = parsed; AdditionalData.Remove("fraud_ring_detected"); } } },

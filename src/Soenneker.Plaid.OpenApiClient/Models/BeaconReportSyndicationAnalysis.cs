@@ -92,7 +92,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "address", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAddress = default; _explicitNullProperties?.Remove("address"); AdditionalData["address"] = unknown; } else { Address = parsed; AdditionalData.Remove("address"); } } },
                 { "date_of_birth", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BeaconMatchSummaryCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDateOfBirth = default; _explicitNullProperties?.Remove("date_of_birth"); AdditionalData["date_of_birth"] = unknown; } else { DateOfBirth = parsed; AdditionalData.Remove("date_of_birth"); } } },

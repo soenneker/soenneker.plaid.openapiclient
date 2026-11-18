@@ -115,7 +115,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "aamva_verification", n => { AamvaVerification = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.AamvaAnalysis>(global::Soenneker.Plaid.OpenApiClient.Models.AamvaAnalysis.CreateFromDiscriminatorValue); } },
                 { "authenticity", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.DocumentAuthenticityMatchCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAuthenticity = default; _explicitNullProperties?.Remove("authenticity"); AdditionalData["authenticity"] = unknown; } else { Authenticity = parsed; AdditionalData.Remove("authenticity"); } } },

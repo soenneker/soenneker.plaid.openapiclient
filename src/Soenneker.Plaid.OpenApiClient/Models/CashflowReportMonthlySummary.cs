@@ -201,7 +201,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(17)
             {
                 { "average_daily_ending_balance", n => { AverageDailyEndingBalance = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyEndingBalance>(global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyEndingBalance.CreateFromDiscriminatorValue); } },
                 { "average_daily_inflow_amount", n => { AverageDailyInflowAmount = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyInflowAmount>(global::Soenneker.Plaid.OpenApiClient.Models.CashflowReportMonthlySummaryAverageDailyInflowAmount.CreateFromDiscriminatorValue); } },

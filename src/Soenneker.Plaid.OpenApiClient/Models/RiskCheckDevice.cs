@@ -84,7 +84,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "factors", n => { Factors = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ip_proxy_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.ProxyType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIpProxyType = default; _explicitNullProperties?.Remove("ip_proxy_type"); AdditionalData["ip_proxy_type"] = unknown; } else { IpProxyType = parsed; AdditionalData.Remove("ip_proxy_type"); } } },

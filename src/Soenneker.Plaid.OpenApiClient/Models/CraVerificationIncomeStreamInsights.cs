@@ -91,7 +91,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "income_category", n => { IncomeCategory = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeCategory>(global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeCategory.CreateFromDiscriminatorValue); } },
                 { "income_provider", n => { IncomeProvider = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeProvider>(global::Soenneker.Plaid.OpenApiClient.Models.CraVerificationIncomeProvider.CreateFromDiscriminatorValue); } },

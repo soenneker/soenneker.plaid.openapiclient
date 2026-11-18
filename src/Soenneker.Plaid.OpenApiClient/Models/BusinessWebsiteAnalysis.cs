@@ -93,7 +93,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "email_is_deliverable", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEmailIsDeliverable = default; _explicitNullProperties?.Remove("email_is_deliverable"); AdditionalData["email_is_deliverable"] = unknown; } else { EmailIsDeliverable = parsed; AdditionalData.Remove("email_is_deliverable"); } } },
                 { "is_parked", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.BusinessCheckBooleanStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIsParked = default; _explicitNullProperties?.Remove("is_parked"); AdditionalData["is_parked"] = unknown; } else { IsParked = parsed; AdditionalData.Remove("is_parked"); } } },

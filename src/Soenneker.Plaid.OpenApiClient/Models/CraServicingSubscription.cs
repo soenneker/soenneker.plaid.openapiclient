@@ -110,7 +110,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "cadence", n => { Cadence = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CraSubscriptionCadence>(global::Soenneker.Plaid.OpenApiClient.Models.CraSubscriptionCadence.CreateFromDiscriminatorValue); } },
                 { "products", n => { Products = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CraSubscriptionProductConfig>(global::Soenneker.Plaid.OpenApiClient.Models.CraSubscriptionProductConfig.CreateFromDiscriminatorValue)?.AsList(); } },

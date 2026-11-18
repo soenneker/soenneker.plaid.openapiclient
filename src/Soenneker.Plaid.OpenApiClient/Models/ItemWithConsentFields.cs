@@ -216,7 +216,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(16)
             {
                 { "auth_method", n => { AuthMethod = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ItemAuthMethod>(global::Soenneker.Plaid.OpenApiClient.Models.ItemAuthMethod.CreateFromDiscriminatorValue); } },
                 { "available_products", n => { AvailableProducts = n.GetCollectionOfEnumValues<global::Soenneker.Plaid.OpenApiClient.Models.Products>()?.AsList(); } },

@@ -141,7 +141,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "behavior", n => { Behavior = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckBehavior>(global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckBehavior.CreateFromDiscriminatorValue); } },
                 { "devices", n => { Devices = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckDevice>(global::Soenneker.Plaid.OpenApiClient.Models.RiskCheckDevice.CreateFromDiscriminatorValue)?.AsList(); } },

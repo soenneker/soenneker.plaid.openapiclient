@@ -136,7 +136,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentAmount>(global::Soenneker.Plaid.OpenApiClient.Models.ProtectIncidentAmount.CreateFromDiscriminatorValue); } },
                 { "idv_session_id", n => { IdvSessionId = n.GetStringValue(); } },

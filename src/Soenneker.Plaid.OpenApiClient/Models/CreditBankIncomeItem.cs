@@ -110,7 +110,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "bank_income_accounts", n => { BankIncomeAccounts = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeAccount>(global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeAccount.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "bank_income_sources", n => { BankIncomeSources = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeSource>(global::Soenneker.Plaid.OpenApiClient.Models.CreditBankIncomeSource.CreateFromDiscriminatorValue)?.AsList(); } },

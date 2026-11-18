@@ -126,7 +126,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(12)
             {
                 { "document_id", n => { DocumentId = n.GetStringValue(); } },
                 { "document_metadata", n => { DocumentMetadata = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata>(global::Soenneker.Plaid.OpenApiClient.Models.CreditDocumentMetadata.CreateFromDiscriminatorValue); } },

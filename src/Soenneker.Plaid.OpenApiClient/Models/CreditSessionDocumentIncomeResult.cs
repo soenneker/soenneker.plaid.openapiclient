@@ -72,7 +72,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "num_1099s_uploaded", n => { Num1099sUploaded = n.GetIntValue(); } },
                 { "num_bank_statements_uploaded", n => { NumBankStatementsUploaded = n.GetIntValue(); } },

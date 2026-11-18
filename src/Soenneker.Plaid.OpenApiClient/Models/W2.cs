@@ -297,7 +297,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(21)
             {
                 { "allocated_tips", n => { AllocatedTips = n.GetStringValue(); } },
                 { "box_12", n => { Box12 = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.W2Box12>(global::Soenneker.Plaid.OpenApiClient.Models.W2Box12.CreateFromDiscriminatorValue)?.AsList(); } },

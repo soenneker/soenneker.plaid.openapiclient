@@ -79,7 +79,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "flowdown_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerFlowdownStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFlowdownStatus = default; _explicitNullProperties?.Remove("flowdown_status"); AdditionalData["flowdown_status"] = unknown; } else { FlowdownStatus = parsed; AdditionalData.Remove("flowdown_status"); } } },
                 { "institutions", n => { Institutions = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitution>(global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerOAuthInstitution.CreateFromDiscriminatorValue)?.AsList(); } },

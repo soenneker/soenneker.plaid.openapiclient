@@ -67,7 +67,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "age_estimate_lower_bound", n => { AgeEstimateLowerBound = n.GetIntValue(); } },
                 { "age_estimate_upper_bound", n => { AgeEstimateUpperBound = n.GetIntValue(); } },

@@ -141,7 +141,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "BUSINESS_NEED_ACCOUNT_REVIEW", n => { BUSINESSNEEDACCOUNTREVIEW = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases>(global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases.CreateFromDiscriminatorValue); } },
                 { "BUSINESS_NEED_TRANSACTION", n => { BUSINESSNEEDTRANSACTION = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases>(global::Soenneker.Plaid.OpenApiClient.Models.PartnerEndCustomerCraUseCases.CreateFromDiscriminatorValue); } },

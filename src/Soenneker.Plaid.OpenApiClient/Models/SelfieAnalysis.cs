@@ -79,7 +79,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "age_check", n => { AgeCheck = n.GetObjectValue<global::Soenneker.Plaid.OpenApiClient.Models.SelfieAgeCheck>(global::Soenneker.Plaid.OpenApiClient.Models.SelfieAgeCheck.CreateFromDiscriminatorValue); } },
                 { "document_comparison", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.SelfieAnalysisDocumentComparison>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDocumentComparison = default; _explicitNullProperties?.Remove("document_comparison"); AdditionalData["document_comparison"] = unknown; } else { DocumentComparison = parsed; AdditionalData.Remove("document_comparison"); } } },

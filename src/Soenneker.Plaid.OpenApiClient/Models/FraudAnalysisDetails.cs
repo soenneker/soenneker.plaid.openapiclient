@@ -82,7 +82,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "detail_check", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsDetailCheck>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDetailCheck = default; _explicitNullProperties?.Remove("detail_check"); AdditionalData["detail_check"] = unknown; } else { DetailCheck = parsed; AdditionalData.Remove("detail_check"); } } },
                 { "image_composition_check", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.FraudAnalysisDetailsImageCompositionCheck>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueImageCompositionCheck = default; _explicitNullProperties?.Remove("image_composition_check"); AdditionalData["image_composition_check"] = unknown; } else { ImageCompositionCheck = parsed; AdditionalData.Remove("image_composition_check"); } } },

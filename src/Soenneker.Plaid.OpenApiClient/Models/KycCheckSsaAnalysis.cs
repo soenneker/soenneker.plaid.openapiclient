@@ -77,7 +77,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "date_of_birth_match", n => { var parsed = n.GetEnumValue<global::Soenneker.Plaid.OpenApiClient.Models.KycCheckSsaAnalysisDateOfBirthMatch>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDateOfBirthMatch = default; _explicitNullProperties?.Remove("date_of_birth_match"); AdditionalData["date_of_birth_match"] = unknown; } else { DateOfBirthMatch = parsed; AdditionalData.Remove("date_of_birth_match"); } } },
                 { "is_deceased", n => { IsDeceased = n.GetBoolValue(); } },

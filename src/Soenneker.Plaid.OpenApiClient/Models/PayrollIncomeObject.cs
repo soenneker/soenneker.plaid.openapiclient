@@ -105,7 +105,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
                 { "form1099s", n => { Form1099s = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.Credit1099>(global::Soenneker.Plaid.OpenApiClient.Models.Credit1099.CreateFromDiscriminatorValue)?.AsList(); } },

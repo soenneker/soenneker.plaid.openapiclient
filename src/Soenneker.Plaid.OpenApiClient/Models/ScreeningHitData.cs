@@ -93,7 +93,7 @@ namespace Soenneker.Plaid.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "dates_of_birth", n => { DatesOfBirth = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitDateOfBirthItem>(global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitDateOfBirthItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "documents", n => { Documents = n.GetCollectionOfObjectValues<global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitDocumentsItems>(global::Soenneker.Plaid.OpenApiClient.Models.ScreeningHitDocumentsItems.CreateFromDiscriminatorValue)?.AsList(); } },
